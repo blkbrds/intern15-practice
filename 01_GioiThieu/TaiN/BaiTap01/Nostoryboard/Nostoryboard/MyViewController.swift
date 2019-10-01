@@ -9,17 +9,14 @@
 import UIKit
 
 class MyViewController: UIViewController {
+    
+    let colors: [UIColor] = [.red,.yellow,.black,.blue]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    let colors: [UIColor] = [.red,.yellow,.black,.blue]
 
     @IBAction func button(_ sender: Any) {
         view.backgroundColor = colors.randomElement()
     }
-    
-
 }
