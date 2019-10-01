@@ -45,6 +45,12 @@
 3. [Swift OOP](https://drive.google.com/file/d/1bbUahjDn3aqrXXW6Bx5shJP2lhj04H8d/view?usp=sharing)
 4. [View](https://drive.google.com/file/d/1W1OchgKXKDxHjBNInX2kRyXpFx7QeUkQ/view?usp=sharing)
 5. [Custom View](https://drive.google.com/file/d/1wjFXfwMcYI228FJ98MuZVmrnFGYfOnOb/view?usp=sharing)
+6. [Drawing](https://drive.google.com/file/d/1b-MJXqsYEI5a1s11XHZKyMTdKAgGHqHt/view?usp=sharing)
+7. [Autolayout](https://drive.google.com/file/d/1X_EzavLUUqyCXcKRQ55bPXYh9FFvUPCp/view?usp=sharing)
+8. [MVC](https://drive.google.com/file/d/1hTdEcjzh4wpXzV22LgkjxS3RQy_jqq4J/view?usp=sharing)
+9. [Navigation](https://drive.google.com/file/d/19vi_MTDjRODEvvcsRbZUL1zcrr_7JKiU/view?usp=sharing)
+10. [Protocol](https://drive.google.com/file/d/13zWAwvznUp1YPcFvDh6E1HAxmTILE25x/view?usp=sharing)
+11. [TableView](https://drive.google.com/file/d/1x__947M8SOUH53nu7t-4wOx5SuXJFfae/view?usp=sharing)
 
 *(Updating)*
 
