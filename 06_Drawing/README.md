@@ -1,4 +1,4 @@
-# Phần 05: Drawing
+# Phần 06: Drawing
 
 ---
 
