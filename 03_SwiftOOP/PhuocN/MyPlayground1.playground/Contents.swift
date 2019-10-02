@@ -93,4 +93,3 @@ let danhSach = [HocSinh(hoTen: "nguyen A", namSinh: Date(day: 10, month: 5, year
                 HocSinh(hoTen: "le n", namSinh: Date(day: 10, month: 5, year: 1997), tongDiem: 7),
                 HocSinh(hoTen: "le m", namSinh: Date(day: 10, month: 5, year: 1997), tongDiem: 7)]
 danhSach.sapXepDsHocSinh()
-

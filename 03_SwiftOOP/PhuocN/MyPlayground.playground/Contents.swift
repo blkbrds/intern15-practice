@@ -50,7 +50,3 @@ func tamGiacPytago(in tamgiacs: [TamGiac]) {
     print(tamgiac.mangCanh)
   }
 }
-
-
-
-

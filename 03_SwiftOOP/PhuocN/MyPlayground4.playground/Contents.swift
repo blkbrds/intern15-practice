@@ -52,4 +52,3 @@ class A {
 }
 
 A.tinhTong(n: 10)
-
