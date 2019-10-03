@@ -6,14 +6,14 @@ class DaGiac {
   var mangCanh: [Int]
 
   init?(soCanh: Int, mangCanh: [Int]) {
-    guard soCanh != 0 else { return nil }
+    guard soCanh > 0 else { return nil }
     self.soCanh = soCanh
     guard mangCanh.count >= soCanh else { return nil }
     self.mangCanh = Array(mangCanh[0..<soCanh])
   }
 
   func inCacCanh() {
-    self.mangCanh.forEach {print($0)}
+    self.mangCanh.forEach { print($0) }
   }
 
   func chuVi() -> Int {
@@ -23,6 +23,7 @@ class DaGiac {
 
 class TamGiac: DaGiac {
   init?(mangCanh: [Int]) {
+    guard mangCanh.count == 3 else { return nil }
     super.init(soCanh: 3, mangCanh: mangCanh)
   }
 

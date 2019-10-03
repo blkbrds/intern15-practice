@@ -32,11 +32,13 @@ class CSTack {
   }
   
   func max() -> Int {
-    return arr.max() ?? 0
+    guard let max = arr.max() else { return 0 }
+    return max
   }
   
   func min() -> Int {
-    return arr.min() ?? 0
+    guard let min = arr.min() else { return 0 }
+    return min
   }
 }
 
