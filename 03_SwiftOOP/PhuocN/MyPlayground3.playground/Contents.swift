@@ -20,7 +20,7 @@ class PhanSo {
   func rutGon() -> PhanSo {
     var a = self.tuSo
     var b = self.mauSo
-    while a != b{
+    while a != b {
       if a > b {
         a = a - b
       } else {

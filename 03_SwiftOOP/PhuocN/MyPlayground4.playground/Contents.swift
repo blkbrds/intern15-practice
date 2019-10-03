@@ -13,17 +13,17 @@ class CSTack {
     return arr.count >= soPhanTu
   }
   
-  func stackTrong() -> Bool{
+  func stackTrong() -> Bool {
     return arr.isEmpty
   }
   
   func them(element: Int) {
-    guard !stackDay() else {return}
+    guard !stackDay() else { return }
     arr.append(element)
   }
   
   func xoa() {
-    guard !stackTrong() else {return}
+    guard !stackTrong() else { return }
     arr.removeLast()
   }
   

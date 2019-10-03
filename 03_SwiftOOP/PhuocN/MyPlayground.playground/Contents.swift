@@ -31,7 +31,7 @@ class TamGiac: DaGiac {
   }
 
   func dienTich() -> Double {
-    let p = Double(chuVi())/2
+    let p = Double(chuVi()) / 2
     return sqrt(p * (p - Double(mangCanh[0])) * (p - Double(mangCanh[1])) * (p - Double(mangCanh[2])))
   }
 }

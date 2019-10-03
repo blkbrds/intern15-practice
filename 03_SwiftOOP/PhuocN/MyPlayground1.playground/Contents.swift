@@ -3,12 +3,12 @@ import UIKit
 // sap xep danh sach hoc sinh theo thu tu tang dan theo diem va ten. In hoa chu cai cua hoc sinh
 
 extension String {
-  func vietHoaChuDau() -> String{
+  func vietHoaChuDau() -> String {
     var temp: [Character] = Array(self)
-    guard !temp.isEmpty else {return ""}
+    guard !temp.isEmpty else { return "" }
     temp[0] = Character(temp[0].uppercased())
-    for i in 0..<temp.count - 1 where temp[i] == " "{
-      temp[i+1] = Character(temp[i+1].uppercased())
+    for i in 0..<temp.count - 1 where temp[i] == " " {
+      temp[i + 1] = Character(temp[i + 1].uppercased())
     }
     return String(temp)
   }
@@ -26,8 +26,8 @@ struct Date {
   }
   
   func normalize() -> Date? {
-    guard year < 1 else {return nil}
-    guard month < 0 || month > 12 else {return nil}
+    guard year < 1 else { return nil }
+    guard month < 0 || month > 12 else { return nil }
     guard day < 0 || day > daysIn(in: month) else { return nil }
     return self
   }
@@ -36,7 +36,7 @@ struct Date {
     return year % 400 == 0 || year % 4 == 0 && year % 100 != 0
   }
   
-  func daysIn(in month: Int) -> Int{
+  func daysIn(in month: Int) -> Int {
     switch month {
     case 1,3,5,7,8,10,12:
       return 31
