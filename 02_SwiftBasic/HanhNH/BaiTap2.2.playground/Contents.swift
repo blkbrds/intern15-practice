@@ -2,13 +2,13 @@ import UIKit
     
 
 typealias A = (x1: Double,x2: Double)
-enum phuongTrinhBac2{
+enum phuongTrinhBac2 {
  case PTvoNghiem
  case PTvoSoNghiem
  case motNghiem(x: Double)
  case haiNghiem(A)
 }
- func tinhNghiem(a: Double, b: Double, c: Double)-> phuongTrinhBac2 {
+ func tinhNghiem(a: Double, b: Double, c: Double) -> phuongTrinhBac2 {
      if a == 0 {
          if b == 0 {
              if c == 0 {

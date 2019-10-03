@@ -1,7 +1,7 @@
 import UIKit
 public func phuongTrinhBacNhat2An(a1 : Double, b1 : Double, c1 : Double, a2 : Double, b2 : Double, c2 : Double)
 {
-   let D : Double = a1 * b2 - a2 * b1
+   let D  : Double = a1 * b2 - a2 * b1
    let Dx : Double = c1 * b2 - c2 * b1
    let Dy : Double = a1 * c2 - a2 * c1
    if D == 0 {
