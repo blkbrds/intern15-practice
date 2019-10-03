@@ -15,7 +15,7 @@ func tinhNghiem (a: Double, b: Double, c: Double) -> phuongTrinhBac2 {
             }
             return . PTVoNghiem
         } else {
-            let x: Double = (-c / b)
+            let x: Double = -c / b
             return . PTCoMotNghiem(x: x)
         }
     } else {
