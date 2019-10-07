@@ -1,10 +1,10 @@
 import UIKit
 
-func fiBonacy (n: Int) {
+func fibonacy(n: Int) {
     var a: Int = 0
     var b: Int = 1
     var c: Int = a + b
-    var Tong: Int = 0
+    var tong: Int = 0
     var n = n - 2
     while n > 0 {
         print(c)
@@ -12,19 +12,19 @@ func fiBonacy (n: Int) {
         b = c
         c = a + b
         n = n - 1
-        Tong = Tong + c
+        tong = tong + c
     }
-    print(Tong)
+    print(tong)
 }
-fiBonacy(n: 10)
+fibonacy(n: 10)
 
 //Tính sin(x), cos(x) bằng công thức Chuỗi Taylor
-let temp : Float = 0.0000001
-func sinX(x : Float) -> Float {
-    var s : Float = 0
-    let b : Float = x * Float.pi / 180
-    var a : Float = b
-    var i : Float = 3
+let temp: Float = 0.0000001
+func sinX(x: Float) -> Float {
+    var s: Float = 0
+    let b: Float = x * Float.pi / 180
+    var a: Float = b
+    var i: Float = 3
     while abs(a) >= temp {
         s = s + a
         a = a * (-(b * b / (i * (i - 1))))
@@ -33,25 +33,25 @@ func sinX(x : Float) -> Float {
     return s
 }
 func cosX(x: Float) -> Float {
-    var S : Float = 0
-    let X : Float = x * Float.pi / 180
-    var a : Float = X
-    var i : Float = 3
+    var s: Float = 0
+    let x: Float = x * Float.pi / 180
+    var a: Float = x
+    var i: Float = 3
     while abs(a) >= temp {
-        S = S + a
-        a = a * (-1) * (X * X) / (i * (i + 1))
+        s = s + a
+        a = a * (-1) * (x * x) / (i * (i + 1))
         i = i + 2
     }
-    return S
+    return s
 }
-print("Sin(30) = \(sinX(x:30))")
-print("Cos(30) = \(cosX(x:30))")
+print("Sin(30) = \(sinX(x: 30))")
+print("Cos(30) = \(cosX(x: 30))")
 
 //chi so hanh phúc
 func isHappyNumber() {
     var tong: Int = 0
     for i in 3..<50 {
-        for j in 1..<i - 1 where i % j == 0{
+        for j in 1..<i - 1 where i % j == 0 {
             tong = tong + j
         }
         if tong == i {

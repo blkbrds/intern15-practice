@@ -1,47 +1,47 @@
 import UIKit
 
-enum phuongTrinhBac2{
-    case PTVoNghiem
-    case PTVoSoNghiem
-    case PTCoMotNghiem(x: Double)
-    case PTCoHaiNghiem(x1: Double, x2: Double)
+enum PhuongTrinhBac2 {
+    case pTVoNghiem
+    case pTVoSoNghiem
+    case pTCoMotNghiem(x: Double)
+    case pTCoHaiNghiem(x1: Double, x2: Double)
 }
 
-func tinhNghiem (a: Double, b: Double, c: Double) -> phuongTrinhBac2 {
+func tinhNghiem(a: Double, b: Double, c: Double) -> PhuongTrinhBac2 {
     if(a == 0) {
         if(b == 0) {
             if(c == 0) {
-                return .PTVoSoNghiem
+                return .pTVoSoNghiem
             }
-            return . PTVoNghiem
+            return .pTVoNghiem
         } else {
             let x: Double = -c / b
-            return . PTCoMotNghiem(x: x)
+            return .pTCoMotNghiem(x: x)
         }
     } else {
         let delta: Double = b * b - 4 * a * c
         if(delta < 0) {
-            return . PTVoNghiem
+            return .pTVoNghiem
         }
         else if(delta == 0) {
             let x: Double = (-b / 2 * a)
-            return . PTCoMotNghiem(x: x)
+            return .pTCoMotNghiem(x: x)
         }
         else {
             let x1: Double = (-b + sqrt(delta)) / (2 * a)
             let x2: Double = (-b - sqrt(delta)) / (2 * a)
-            return .PTCoHaiNghiem(x1: x1, x2: x2)
+            return .pTCoHaiNghiem(x1: x1, x2: x2)
         }
     }
 }
-let nghiem = tinhNghiem(a: 0, b: 4,c : 4)
+let nghiem = tinhNghiem(a: 0, b: 4, c: 4)
 switch nghiem {
-case .PTVoNghiem:
+case .pTVoNghiem:
     print("phuong trinh vo nghiem")
-case .PTVoSoNghiem:
+case .pTVoSoNghiem:
     print("phuong trinh vo so nghiem")
-case .PTCoMotNghiem(x: let nghiem):
+case .pTCoMotNghiem(x: let nghiem):
     print("Pt co 1 nghiem : \(nghiem)")
-case .PTCoHaiNghiem(x: let nghiem):
+case .pTCoHaiNghiem(x: let nghiem):
     print("pt co 2 nghiem: \(nghiem)")
 }
