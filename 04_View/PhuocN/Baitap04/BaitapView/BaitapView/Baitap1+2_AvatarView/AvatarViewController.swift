@@ -24,10 +24,8 @@ class AvatarViewController: UIViewController {
       if i % 3 == 0 && i != 0{
         cot = 0
         dong += 1
-        creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing ) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong),image: img[i],name: userName[i])
-      }else {
-        creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing ) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong),image: img[i],name: userName[i])
       }
+      creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing ) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong),image: img[i],name: userName[i])
       cot += 1
     }
   }
