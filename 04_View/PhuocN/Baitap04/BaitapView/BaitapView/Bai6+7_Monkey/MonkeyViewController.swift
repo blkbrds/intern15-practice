@@ -13,7 +13,7 @@ class MonkeyViewController: UIViewController {
   @IBOutlet weak var image: UIImageView!
   @IBOutlet weak var commentImage: UIImageView!
   @IBOutlet weak var commentLabel: UILabel!
-  
+  var scale: CGFloat = 0
   override func viewDidLoad() {
     super.viewDidLoad()
     image.isUserInteractionEnabled = true
