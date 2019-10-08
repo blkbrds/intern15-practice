@@ -10,8 +10,8 @@ import UIKit
 
 class AvatarViewController: UIViewController {
   
-  let userName: [String] = ["Bat Man", "Super Man", "Wonder Woman", "Hulk", "Iron Man", "Thor","Captain Amercian" , "Black Panther", "Thanos","anc"]
-  let img: [String] = ["bat_man.jpg", "super_man.jpeg", "wonder_woman.jpg", "hulk.jpg", "iron_man.jpg", "thor.jpeg",
+  let names: [String] = ["Bat Man", "Super Man", "Wonder Woman", "Hulk", "Iron Man", "Thor","Captain Amercian" , "Black Panther", "Thanos","anc"]
+  let images: [String] = ["bat_man.jpg", "super_man.jpeg", "wonder_woman.jpg", "hulk.jpg", "iron_man.jpg", "thor.jpeg",
                        "Captain.jpg", "black_panter.jpeg", "thanos.jpg","aaa"]
   let spacing: CGFloat = 10
   var heightAvatarView = 160
@@ -20,12 +20,12 @@ class AvatarViewController: UIViewController {
     super.viewDidLoad()
     var cot = 0
     var dong = 0
-    for i in 0..<userName.count{
+    for i in 0..<names.count{
       if i % 3 == 0 && i != 0{
         cot = 0
         dong += 1
       }
-      creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing ) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong),image: img[i],name: userName[i])
+      creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing ) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong),image: img[i],name: names[i])
       cot += 1
     }
   }
