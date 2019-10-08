@@ -35,6 +35,7 @@ extension DatePickerViewController: DatePickerViewDelegate {
 
 extension DatePickerViewController: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
+    view.endEditing(true)
     datePickerView.isHidden = false
     UIView.animate(withDuration: 0.5) {
       self.datePickerView.alpha = 1
