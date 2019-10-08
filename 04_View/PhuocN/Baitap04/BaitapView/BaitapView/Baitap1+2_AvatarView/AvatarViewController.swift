@@ -25,7 +25,7 @@ class AvatarViewController: UIViewController {
         cot = 0
         dong += 1
       }
-      creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing ) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong),image: img[i],name: names[i])
+      creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing ) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong),image: images[i],name: names[i])
       cot += 1
     }
   }
