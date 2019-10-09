@@ -21,7 +21,7 @@ class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     private func configView() {
         mokeyView.isUserInteractionEnabled = true
-        
+
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
         pinch.delegate = self
         mokeyView.addGestureRecognizer(pinch)
@@ -35,11 +35,11 @@ class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
         longPressed.delaysTouchesBegan = true
         longPressed.delegate = self
         mokeyView.addGestureRecognizer(longPressed)
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(comment))
         tapGesture.numberOfTapsRequired = 1
         mokeyView.addGestureRecognizer(tapGesture)
-        
+
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubuleComment))
         doubleTapGesture.numberOfTapsRequired = 2
         mokeyView.addGestureRecognizer(doubleTapGesture)

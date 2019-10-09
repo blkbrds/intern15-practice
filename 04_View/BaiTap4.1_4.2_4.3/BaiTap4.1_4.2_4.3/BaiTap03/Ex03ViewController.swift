@@ -9,7 +9,7 @@
 import UIKit
 
 class Ex03ViewController: UIViewController {
-    
+
     @IBOutlet weak var labelView: UILabel!
     @IBOutlet weak var passworkText: UITextField!
     @IBOutlet weak var userNameText: UITextField!
@@ -17,7 +17,7 @@ class Ex03ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     let userName: String = "hanhnguyen3"
     let passwork: String = "123123"
-    enum Error : String{
+    enum Error: String {
         case khongNhapChu = "Không nhập"
         case nhapSai = "Nhập sai "
         case thieu = "Thiếu "
@@ -41,7 +41,7 @@ class Ex03ViewController: UIViewController {
             labelView.text = Error.khongNhapChu.rawValue
         case (userName, passwork):
             labelView.text = "Nhập đúng "
-        case ("",""):
+        case ("", ""):
             labelView.text = Error.thieu.rawValue
         default:
             labelView.text = Error.nhapSai.rawValue
