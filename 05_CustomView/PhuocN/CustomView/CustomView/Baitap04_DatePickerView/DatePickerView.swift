@@ -9,50 +9,67 @@
 import UIKit
 
 protocol DatePickerViewDelegate: class {
-  func selectDate(date: Date)
+  func selectDate(pickerView: DatePickerView,action: DatePickerView.Action,selectDate: Date?)
 }
-
 class DatePickerView: UIView {
   
+  enum Action {
+    case hide
+    case show
+    case done
+    case cancel
+  }
+  
   weak var delegate: DatePickerViewDelegate?
-  let datePickerView = UIDatePicker()
-  let button = UIButton()
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    self.layer.borderColor = UIColor.black.cgColor
-    self.layer.borderWidth = 1
-    setupButton()
-    setupDatePickerView()
+  
+  @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var contentView: UIView!
+  @IBOutlet weak var datePickerView: UIDatePicker!
+  
+  func config() {
+    backgroundView.alpha = 0.5
+    contentView.alpha = 1
+    self.isHidden = true
   }
   
-  func setupButton() {
-    button.backgroundColor = .systemGroupedBackground
-    button.setTitle("Done", for: .normal)
-    button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-    button.setTitleColor(.systemBlue, for: .normal)
-    button.contentHorizontalAlignment = .left
-    button.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 50)
-    button.addTarget(self, action: #selector(selectPickerView), for: .touchUpInside)
-    self.addSubview(button)
-  }
-  
-  func setupDatePickerView() {
-    datePickerView.datePickerMode = .date
-    datePickerView.backgroundColor = .lightGray
-    datePickerView.contentMode = .scaleToFill
-    datePickerView.frame = CGRect(x: 0, y: 50, width: self.frame.width, height: self.frame.height - 50)
-    self.addSubview(datePickerView)
-  }
-  
-  @objc func selectPickerView() {
-    delegate?.selectDate(date: datePickerView.date)
-    UIView.animate(withDuration: 0.5) {
-      self.alpha = 0
+  func hide(animation: Bool) {
+    if animation {
+      UIView.animate(withDuration: 0.5, animations: {
+        self.backgroundView.alpha = 0
+        self.contentView.alpha = 0
+      }) { (done) in
+        self.isHidden = true
+      }
+    }else {
+      backgroundView.alpha = 0
+      self.contentView.alpha = 0
+      self.isHidden = true
     }
   }
   
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
+  func show(animation: Bool) {
+    self.isHidden = false
+    if animation {
+      UIView.animate(withDuration: 0.5) {
+        self.backgroundView.alpha = 0.5
+        self.contentView.alpha = 1
+      }
+    }else {
+      backgroundView.alpha = 0.5
+      self.contentView.alpha = 1
+    }
+  }
+  
+  @IBAction func done(_ sender: Any) {
+    hide(animation: true)
+    guard let delegate = delegate else { return }
+    delegate.selectDate(pickerView: self, action: .done, selectDate: datePickerView.date)
+  }
+  
+  @IBAction func cancel(_ sender: Any) {
+    hide(animation: true)
+    guard let delegate = delegate else { return }
+    delegate.selectDate(pickerView: self, action: .cancel, selectDate: nil)
   }
 }
 

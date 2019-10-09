@@ -9,23 +9,24 @@
 import UIKit
 
 class DatePickerViewController: UIViewController {
-
+  
   @IBOutlet weak var dateTextField: UITextField!
-  var datePickerView = DatePickerView()
+  var datePickerView: DatePickerView?
   
   override func viewDidLoad() {
-        super.viewDidLoad()
-    datePickerView = DatePickerView(frame: CGRect(x: 0, y: 500, width: UIScreen.main.bounds.width, height: 300))
-    datePickerView.delegate = self
-    datePickerView.alpha = 0
-    datePickerView.isHidden = true
-    self.view.addSubview(datePickerView)
+    super.viewDidLoad()
+    datePickerView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
+    datePickerView?.config()
+    datePickerView?.delegate = self
+    self.view.addSubview(datePickerView!)
     dateTextField.delegate = self
   }
+
 }
 
 extension DatePickerViewController: DatePickerViewDelegate {
-  func selectDate(date: Date) {
+  func selectDate(pickerView: DatePickerView, action: DatePickerView.Action, selectDate: Date?) {
+    guard let date = selectDate else { return }
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MMMM dd, yyyy"
     let dateString = dateFormatter.string(from: date)
@@ -35,18 +36,7 @@ extension DatePickerViewController: DatePickerViewDelegate {
 
 extension DatePickerViewController: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
+    datePickerView?.show(animation: true)
     view.endEditing(true)
-    datePickerView.isHidden = false
-    UIView.animate(withDuration: 0.5) {
-      self.datePickerView.alpha = 1
-    }
-  }
-  
-  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    datePickerView.isHidden = false
-    UIView.animate(withDuration: 0.5) {
-      self.datePickerView.alpha = 1
-    }
-    return true
   }
 }
