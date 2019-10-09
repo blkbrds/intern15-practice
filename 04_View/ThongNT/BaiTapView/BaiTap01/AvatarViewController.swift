@@ -26,16 +26,5 @@ class AvatarViewController: UIViewController {
         userName.textColor = .black
         userName.textAlignment = .center
         view.addSubview(userName)
-
-        userAvatar.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapUserAvatar(sender:)))
-        userAvatar.addGestureRecognizer(tap)
-
-
-
     }
-    @objc func tapUserAvatar(sender: UITapGestureRecognizer) {
-        print ("oh yeahhh")
-    }
-
 }

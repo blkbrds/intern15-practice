@@ -31,22 +31,22 @@ class MonkeyViewController: UIViewController {
 
         let tap = UITapGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleTap(sender:)))
         monkeyView.addGestureRecognizer(tap)
-        
+
         let doubleTap = UITapGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleDoubleTap(sender:)))
         doubleTap.numberOfTapsRequired = 2
         monkeyView.addGestureRecognizer(doubleTap)
 
     }
-    
-    @objc func handleDoubleTap(sender : UITapGestureRecognizer){
+
+    @objc func handleDoubleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
-             self.monkeylabel.text = "Khỉ là tôi"
-             self.monkeylabel.alpha = 1
-         }) { _ in
-             UIView.animate(withDuration: 0.5, delay: 4, animations: {
-                 self.monkeylabel.alpha = 0
-             })
-         }
+            self.monkeylabel.text = "Khỉ là tôi"
+            self.monkeylabel.alpha = 1
+        }) { _ in
+            UIView.animate(withDuration: 0.5, delay: 4, animations: {
+                self.monkeylabel.alpha = 0
+            })
+        }
     }
 
     @objc func handleTap(sender: UITapGestureRecognizer) {
