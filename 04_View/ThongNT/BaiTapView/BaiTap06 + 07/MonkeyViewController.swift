@@ -8,54 +8,53 @@
 
 import UIKit
 
-class MonkeyViewController: UIViewController {
+final class MonkeyViewController: UIViewController {
     @IBOutlet weak var monkeyView: UIImageView!
-    @IBOutlet weak var monkeylabel: UILabel!
+    @IBOutlet weak var monkeyLabel: UILabel!
+
     var scaleSize: CGSize = CGSize.zero
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         scaleSize = monkeyView.frame.size
 
-        let rotate = UIRotationGestureRecognizer(target: self, action: #selector(MonkeyViewController.handleRotate(sender:)))
-        monkeyView.addGestureRecognizer(rotate)
+        let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(MonkeyViewController.handleRotate(sender:)))
+        monkeyView.addGestureRecognizer(rotateGestureRecognizer)
 
-        let pinch = UIPinchGestureRecognizer (target: self, action: #selector(MonkeyViewController.handlePinch(sender:)))
-        monkeyView.addGestureRecognizer(pinch)
+        let pinchGestureRecognizer = UIPinchGestureRecognizer (target: self, action: #selector(MonkeyViewController.handlePinch(sender:)))
+        monkeyView.addGestureRecognizer(pinchGestureRecognizer)
 
-        let longPress = UILongPressGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleLongPress(sender:)))
-        longPress.minimumPressDuration = 4
-        monkeyView.addGestureRecognizer(longPress)
+        let longPressGestureRecognizer = UILongPressGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleLongPress(sender:)))
+        longPressGestureRecognizer.minimumPressDuration = 4
+        monkeyView.addGestureRecognizer(longPressGestureRecognizer)
 
-        let tap = UITapGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleTap(sender:)))
-        monkeyView.addGestureRecognizer(tap)
+        let tapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleTap(sender:)))
+        monkeyView.addGestureRecognizer(tapGestureRecognizer)
 
-        let doubleTap = UITapGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleDoubleTap(sender:)))
-        doubleTap.numberOfTapsRequired = 2
-        monkeyView.addGestureRecognizer(doubleTap)
+        let doubleTapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleDoubleTap(sender:)))
+        doubleTapGestureRecognizer.numberOfTapsRequired = 2
+        monkeyView.addGestureRecognizer(doubleTapGestureRecognizer)
 
     }
 
     @objc func handleDoubleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
-            self.monkeylabel.text = "Khỉ là tôi"
-            self.monkeylabel.alpha = 1
+            self.monkeyLabel.text = "Khỉ là tôi"
+            self.monkeyLabel.alpha = 1
         }) { _ in
             UIView.animate(withDuration: 0.5, delay: 4, animations: {
-                self.monkeylabel.alpha = 0
+                self.monkeyLabel.alpha = 0
             })
         }
     }
 
     @objc func handleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
-            self.monkeylabel.text = "Tôi là khỉ"
-            self.monkeylabel.alpha = 1
+            self.monkeyLabel.text = "Tôi là khỉ"
+            self.monkeyLabel.alpha = 1
         }) { _ in
             UIView.animate(withDuration: 0.5, delay: 4, animations: {
-                self.monkeylabel.alpha = 0
+                self.monkeyLabel.alpha = 0
             })
         }
     }

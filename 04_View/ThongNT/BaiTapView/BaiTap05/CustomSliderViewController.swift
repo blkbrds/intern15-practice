@@ -5,45 +5,40 @@
 //  Created by PCI0018 on 10/8/19.
 //  Copyright © 2019 Asian Tech. All rights reserved.
 //
-
 import UIKit
 
-class CustomSliderViewController: UIViewController {
-    @IBOutlet weak var sliderBar: UIView!
-    @IBOutlet weak var sliderButton: UILabel!
-    // view that change color follow the button
-    @IBOutlet var colorView: UIView!
+final class CustomSliderViewController: UIViewController {
+    @IBOutlet weak var sliderBarView: UIView!
+    @IBOutlet weak var sliderLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sliderBar.layer.borderWidth = 1
-        sliderBar.layer.cornerRadius = 20
-        sliderBar.layer.borderColor = UIColor.black.cgColor
+        sliderBarView.layer.borderWidth = 1
+        sliderBarView.layer.cornerRadius = 20
+        sliderBarView.layer.borderColor = UIColor.black.cgColor
 
-        sliderButton.layer.cornerRadius = 20
-        sliderButton.clipsToBounds = true
+        sliderLabel.text = "0 %"
+        sliderLabel.layer.cornerRadius = 20
+        sliderLabel.clipsToBounds = true
+        sliderLabel.center = CGPoint(x: sliderBarView.frame.midX, y: sliderBarView.frame.maxY)
 
         colorView.layer.cornerRadius = 20
+        colorView.frame = CGRect(x: sliderBarView.frame.maxX, y: sliderBarView.frame.maxY, width: 0, height: 0)
 
-        sliderButton.center = CGPoint(x: sliderBar.frame.midX, y: sliderBar.frame.maxY)
-        colorView.frame = CGRect(x: sliderBar.frame.maxX, y: sliderBar.frame.maxY, width: 0, height: 0)
-
-        sliderButton.text = "0 %"
-
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(CustomSliderViewController.handlePan(sender:)))
-        sliderButton.addGestureRecognizer(pan)
-
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(CustomSliderViewController.handlePan(sender:)))
+        sliderLabel.addGestureRecognizer(panGestureRecognizer)
     }
+
     @objc func handlePan(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
-        if sliderButton.center.y + translation.y >= sliderBar.frame.minY && sliderButton.center.y + translation.y <= sliderBar.frame.maxY {
-            sliderButton.center = CGPoint(x: sliderButton.center.x, y: sliderButton.center.y + translation.y)
+        if sliderLabel.center.y + translation.y >= sliderBarView.frame.minY && sliderLabel.center.y + translation.y <= sliderBarView.frame.maxY {
+            sliderLabel.center = CGPoint(x: sliderLabel.center.x, y: sliderLabel.center.y + translation.y)
             sender.setTranslation(CGPoint.zero, in: view)
-            colorView.frame = CGRect(x: sliderBar.frame.minX, y: sliderButton.center.y, width: sliderBar.frame.width, height: sliderBar.frame.maxY - sliderButton.center.y)
-            sliderButton.text = "\(Int((sliderBar.frame.maxY - sliderButton.center.y) / (sliderBar.frame.maxY - sliderBar.frame.minY) * 100)) %"
-        } else if sliderButton.center.y + translation.y < sliderBar.frame.minY {
-            sliderButton.text = "100 %"
-            
+            colorView.frame = CGRect(x: sliderBarView.frame.minX, y: sliderLabel.center.y, width: sliderBarView.frame.width, height: sliderBarView.frame.maxY - sliderLabel.center.y)
+            sliderLabel.text = "\(Int((sliderBarView.frame.maxY - sliderLabel.center.y) / (sliderBarView.frame.maxY - sliderBarView.frame.minY) * 100)) %"
+        } else if sliderLabel.center.y + translation.y < sliderBarView.frame.minY {
+            sliderLabel.text = "100 %"
         }
     }
 }

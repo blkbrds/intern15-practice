@@ -40,37 +40,30 @@ class BaiTap02ViewController: UIViewController {
             y += 200
         }
     }
-
+    
     func createUser(x: Int, y: Int, index: Int) {
         // add avatar
         let frame = CGRect(x: 20 + x, y: 50 + y, width: 120, height: 120)
-        let userAvatar = UIImageView(image: UIImage(named: users[index].avatar))
-        userAvatar.frame = frame
-        userAvatar.contentMode = .scaleToFill
-
+        let userAvatarImageView = UIImageView(image: UIImage(named: users[index].avatar))
+        userAvatarImageView.frame = frame
+        userAvatarImageView.contentMode = .scaleToFill
         // cho phép chạm
-        userAvatar.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapUserAvatar(sender:)))
-        tap.name = users[index].name
-
-        userAvatar.addGestureRecognizer(tap)
-        view.addSubview(userAvatar)
-
+        userAvatarImageView.isUserInteractionEnabled = true
+        let avatarTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapUserAvatar(sender:)))
+        avatarTapGestureRecognizer.name = users[index].name
+        userAvatarImageView.addGestureRecognizer(avatarTapGestureRecognizer)
+        view.addSubview(userAvatarImageView)
         // add user name
-        let userName = UILabel(frame: CGRect(x: 20 + x, y: 170 + y, width: 120, height: 40))
-        userName.text = users[index].name
-        userName.backgroundColor = .white
-        userName.textColor = .black
-        userName.textAlignment = .center
-        view.addSubview(userName)
-        //   UIScreen.main.bounds.width
-
-
+        let userNameLabel = UILabel(frame: CGRect(x: 20 + x, y: 170 + y, width: 120, height: 40))
+        userNameLabel.text = users[index].name
+        userNameLabel.backgroundColor = .white
+        userNameLabel.textColor = .black
+        userNameLabel.textAlignment = .center
+        view.addSubview(userNameLabel)
     }
-
+    
     @objc func tapUserAvatar(sender: UITapGestureRecognizer) {
         guard let name = sender.name else { return }
         print (name)
     }
-
 }

@@ -10,11 +10,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var userNameText: UITextField!
-    @IBOutlet weak var passWordText: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passWordTextField: UITextField!
     @IBOutlet weak var informLabel: UILabel!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var clearBtn: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
+    
     let userName: String = "admin"
     let passWord: String = "admin123"
 
@@ -26,21 +27,18 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameText.delegate = self
-        userNameText.tag = 0
-        passWordText.delegate = self
-        passWordText.tag = 1
+        userNameTextField.delegate = self
+        userNameTextField.tag = 0
+        passWordTextField.delegate = self
+        passWordTextField.tag = 1
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    @IBAction func loginButton(_ sender: Any) {
-        login()
-    }
-
+    
     func login () {
-        switch (userNameText.text, passWordText.text) {
+        switch (userNameTextField.text, passWordTextField.text) {
         case ("", ""):
             informLabel.text = Error.khongNhapChu.rawValue
         case (userName, passWord):
@@ -52,16 +50,18 @@ class LoginViewController: UIViewController {
         }
         view.endEditing(true)
     }
-
-    @IBAction func clearButton(_ sender: Any) {
-        userNameText.text = ""
-        passWordText.text = ""
+    
+    @IBAction func loginButton(_ sender: Any) {
+        login()
     }
 
+    @IBAction func clearButton(_ sender: Any) {
+        userNameTextField.text = ""
+        passWordTextField.text = ""
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
-
     //ban phim di xuong
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -70,10 +70,9 @@ extension LoginViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 0 {
-            passWordText.becomeFirstResponder() }
+            passWordTextField.becomeFirstResponder() }
         if textField.tag == 1 {
             login()
         }
-
     }
 }
