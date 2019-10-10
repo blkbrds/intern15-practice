@@ -13,8 +13,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var user: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         //Add user
         let frame = CGRect(x: 50, y: 100, width: 100, height: 100)
         let userAvatar = UIImageView(image: UIImage(named: "avatar.png"))
@@ -39,15 +37,4 @@ class HomeViewController: UIViewController {
     @objc func buttonDidClick() {
         print("Button is clicked!")
     }
-
-    /*
-        // MARK: - Navigation
-
-        // In a storyboard-based application, you will often want to do a little preparation before navigation
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Get the new view controller using segue.destination.
-            // Pass the selected object to the new view controller.
-        }
-        */
-
 }

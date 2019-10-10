@@ -19,7 +19,6 @@ class Ex04ViewController: UIViewController {
         }
     }
     @IBOutlet weak var ViewMau: UIView!
-
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var SilerView03: UISlider!
     @IBOutlet weak var SilerView02: UISlider!

@@ -10,12 +10,13 @@ import UIKit
 struct Person {
     var name: String
     var avatar: String
+
     init(name: String, avatar: String) {
         self.name = name
         self.avatar = avatar
     }
 }
-class Ex02ViewController: UIViewController {
+final class Ex02ViewController: UIViewController {
     var user: [Person] =
         [Person(name: "Hanh", avatar: "avatar.png"),
             Person(name: "Hanh", avatar: "avatar.png"),
@@ -29,8 +30,6 @@ class Ex02ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         show()
-
-        // Do any additional setup after loading the view.
     }
     func addProfileView(frame: CGRect, user: Person) -> UIView {
         let contaier = UIView(frame: frame)
@@ -62,15 +61,5 @@ class Ex02ViewController: UIViewController {
         }
 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
