@@ -51,11 +51,11 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func loginButton(_ sender: Any) {
+    @IBAction func tapLoginButton(_ sender: Any) {
         login()
     }
 
-    @IBAction func clearButton(_ sender: Any) {
+    @IBAction func tapClearButton(_ sender: Any) {
         userNameTextField.text = ""
         passWordTextField.text = ""
     }

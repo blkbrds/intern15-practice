@@ -11,7 +11,6 @@ import UIKit
 class AvatarViewController: UIViewController {
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         // add user avatar
         let frame = CGRect(x: 30, y: 50, width: 100, height: 100)
