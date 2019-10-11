@@ -51,31 +51,26 @@ class SliderView: UIView {
   
   override func draw(_ rect: CGRect) {
     let percent: CGFloat = value / 100.0
-    let reset = UIGraphicsGetCurrentContext()
-    reset?.setStrokeColor(UIColor.green.cgColor)
-    reset?.move(to: CGPoint(x: 0,y: 0))
-    reset?.addLine(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
-    reset?.addLine(to: CGPoint(x: self.bounds.width,y: 0))
-    reset?.addLine(to: CGPoint.zero)
-    reset?.setFillColor(UIColor.white.cgColor)
-    reset?.fillPath()
-    
-    let context2 = UIGraphicsGetCurrentContext()
-    context2?.move(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
-    context2?.addLine(to: CGPoint(x: self.bounds.midX + self.bounds.width / 2 * percent,y: self.bounds.maxY - self.bounds.height * percent - 15))
-    context2?.addLine(to: CGPoint(x: self.bounds.midX - self.bounds.width / 2 * percent, y: self.bounds.maxY - self.bounds.height * percent - 15))
-    context2?.addLine(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
-    context2?.setFillColor(UIColor.systemBlue.cgColor)
-    context2?.fillPath()
-    
     let context = UIGraphicsGetCurrentContext()
-    context?.setLineWidth(1)
-    context?.setStrokeColor(UIColor.blue.cgColor)
+    context?.setStrokeColor(UIColor.green.cgColor)
     context?.move(to: CGPoint(x: 0,y: 0))
     context?.addLine(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
     context?.addLine(to: CGPoint(x: self.bounds.width,y: 0))
     context?.addLine(to: CGPoint.zero)
+    context?.setLineWidth(1)
+    context?.setStrokeColor(UIColor.blue.cgColor)
+    context?.setFillColor(UIColor.white.cgColor)
     context?.strokePath()
+    context?.closePath()
+    context?.fillPath()
+    
+    let context1 = UIGraphicsGetCurrentContext()
+    context1?.move(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
+    context1?.addLine(to: CGPoint(x: self.bounds.midX + self.bounds.width / 2 * percent,y: self.bounds.maxY - self.bounds.height * percent - 15))
+    context1?.addLine(to: CGPoint(x: self.bounds.midX - self.bounds.width / 2 * percent, y: self.bounds.maxY - self.bounds.height * percent - 15))
+    context1?.addLine(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
+    context1?.setFillColor(UIColor.systemBlue.cgColor)
+    context1?.fillPath()
   }
   
   @objc func panThumb(_ sender: UIPanGestureRecognizer) {
