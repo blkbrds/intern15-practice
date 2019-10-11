@@ -9,6 +9,7 @@
 import UIKit
 
 class LineChartView: UIView {
+  
   var lines: [CGFloat] = [23, 5, 15, 59, 32, 33, 90, 79] {
     didSet {
       if lines != oldValue {
