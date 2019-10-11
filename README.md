@@ -51,6 +51,13 @@
 9. [Navigation](https://drive.google.com/file/d/19vi_MTDjRODEvvcsRbZUL1zcrr_7JKiU/view?usp=sharing)
 10. [Protocol](https://drive.google.com/file/d/13zWAwvznUp1YPcFvDh6E1HAxmTILE25x/view?usp=sharing)
 11. [TableView](https://drive.google.com/file/d/1x__947M8SOUH53nu7t-4wOx5SuXJFfae/view?usp=sharing)
+12. CollectionView
+13. TabbarController
+14. MVVM
+15. API
+16. Realm
+17. MapView
+18. Mapper
 
 *(Updating)*
 
