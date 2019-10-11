@@ -50,7 +50,7 @@ class SliderView: UIView {
   }
   
   override func draw(_ rect: CGRect) {
-    let i: CGFloat = value / 100.0
+    let percent: CGFloat = value / 100.0
     let reset = UIGraphicsGetCurrentContext()
     reset?.setStrokeColor(UIColor.green.cgColor)
     reset?.move(to: CGPoint(x: 0,y: 0))
@@ -62,8 +62,8 @@ class SliderView: UIView {
     
     let context2 = UIGraphicsGetCurrentContext()
     context2?.move(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
-    context2?.addLine(to: CGPoint(x: self.bounds.midX + self.bounds.width / 2 * i,y: self.bounds.maxY - self.bounds.height * i - 15))
-    context2?.addLine(to: CGPoint(x: self.bounds.midX - self.bounds.width / 2 * i, y: self.bounds.maxY - self.bounds.height * i - 15))
+    context2?.addLine(to: CGPoint(x: self.bounds.midX + self.bounds.width / 2 * percent,y: self.bounds.maxY - self.bounds.height * percent - 15))
+    context2?.addLine(to: CGPoint(x: self.bounds.midX - self.bounds.width / 2 * percent, y: self.bounds.maxY - self.bounds.height * percent - 15))
     context2?.addLine(to: CGPoint(x: self.bounds.midX,y: self.bounds.maxY - 15))
     context2?.setFillColor(UIColor.systemBlue.cgColor)
     context2?.fillPath()

@@ -13,7 +13,7 @@ struct User {
   let imageName: String
 }
 
-class AvatarViewController: UIViewController {
+final class AvatarViewController: UIViewController {
   
   let users = [User(username: "Bat Man", imageName: "bat_man"),
                User(username: "Super Man", imageName: "super_man.jpeg"),
@@ -60,8 +60,8 @@ class AvatarViewController: UIViewController {
   }
   
   func createListAvatar() {
-    var cot:CGFloat = 0
-    var dong:CGFloat = 0
+    var cot: CGFloat = 0
+    var dong: CGFloat = 0
     for i in 0..<users.count{
       if i % 3 == 0 && i != 0{
         cot = 0

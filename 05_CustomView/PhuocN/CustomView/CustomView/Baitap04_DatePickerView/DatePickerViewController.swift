@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DatePickerViewController: UIViewController {
+final class DatePickerViewController: UIViewController {
   
   @IBOutlet weak var dateTextField: UITextField!
   

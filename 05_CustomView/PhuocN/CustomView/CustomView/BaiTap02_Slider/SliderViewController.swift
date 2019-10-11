@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SliderViewController: UIViewController {
+final class SliderViewController: UIViewController {
   
   @IBOutlet weak var valueTextField: UITextField!
   

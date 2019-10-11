@@ -11,7 +11,6 @@ import UIKit
 class BagdeNumberButton: UIButton {
   
   enum position {
-    
     case topLeft
     case topRight
     case topCenter
@@ -61,14 +60,14 @@ class BagdeNumberButton: UIButton {
   let heightBagde: CGFloat = 20
   
   let numberBadgeLabel: UILabel = {
-    let lable = UILabel()
-    lable.backgroundColor = .red
-    lable.numberOfLines = 0
-    lable.textColor = .white
-    lable.textAlignment = .center
-    lable.clipsToBounds = true
-    lable.font = UIFont.systemFont(ofSize: 12)
-    return lable
+    let label = UILabel()
+    label.backgroundColor = .red
+    label.numberOfLines = 0
+    label.textColor = .white
+    label.textAlignment = .center
+    label.clipsToBounds = true
+    label.font = UIFont.systemFont(ofSize: 12)
+    return label
   }()
   
   override init(frame: CGRect) {

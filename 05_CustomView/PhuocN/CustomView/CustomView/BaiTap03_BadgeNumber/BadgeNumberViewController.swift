@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BadgeNumberViewController: UIViewController {
+final class BadgeNumberViewController: UIViewController {
   
   let button = BagdeNumberButton()
   
