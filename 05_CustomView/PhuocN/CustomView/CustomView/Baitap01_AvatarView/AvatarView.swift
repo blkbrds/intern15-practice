@@ -15,7 +15,7 @@ protocol AvatarViewDelegate: class {
 class AvatarView: UIView {
   
   weak var delegate: AvatarViewDelegate?
-  let avatarImg: UIImageView = {
+  let avatarImageView: UIImageView = {
     let img = UIImageView()
     img.contentMode = .scaleToFill
     return img
@@ -31,16 +31,15 @@ class AvatarView: UIView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.layer.borderColor = UIColor.black.cgColor
-    self.layer.borderWidth = 0.5
+    layer.borderColor = UIColor.black.cgColor
+    layer.borderWidth = 0.5
     
-    avatarImg.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height * 0.8)
-    userNameLabel.frame = CGRect(x: 0, y: avatarImg.frame.maxY, width: self.frame.width, height: self.frame.height * 0.2)
+    avatarImageView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height * 0.8)
+    userNameLabel.frame = CGRect(x: 0, y: avatarImageView.frame.maxY, width: self.frame.width, height: self.frame.height * 0.2)
     
-    self.addSubview(avatarImg)
-    self.addSubview(userNameLabel)
-    
-    self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleAvatarView)))
+    addSubview(avatarImageView)
+    addSubview(userNameLabel)
+    addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleAvatarView)))
   }
   
   @objc func handleAvatarView() {

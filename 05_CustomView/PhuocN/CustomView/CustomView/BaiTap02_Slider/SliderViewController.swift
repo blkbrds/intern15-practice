@@ -10,36 +10,33 @@ import UIKit
 
 class SliderViewController: UIViewController {
   
-  @IBOutlet weak var valueTF: UITextField!
+  @IBOutlet weak var valueTextField: UITextField!
+  
   var value: Int = 0 {
     didSet {
-      valueTF.text = String(value)
+      valueTextField.text = String(value)
     }
   }
   
-  let slider = SliderView(frame: CGRect(x: 170, y: 100, width: 50, height: 390))
+  let sliderView = SliderView(frame: CGRect(x: 170, y: 100, width: 50, height: 390))
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    valueTF.text = String(value)
-    valueTF.delegate = self
-    slider.frame.size = CGSize(width: 50, height: 400)
-    slider.center = view.center
-    slider.delegate = self
-    self.view.addSubview(slider)
+    valueTextField.text = String(value)
+    valueTextField.delegate = self
+    sliderView.frame.size = CGSize(width: 50, height: 400)
+    sliderView.center = view.center
+    sliderView.delegate = self
+    self.view.addSubview(sliderView)
   }
   
   @IBAction func changValue(_ sender: Any) {
-    guard let text = valueTF.text else { return }
+    guard let text = valueTextField.text else { return }
     guard let value = Int(text) else { return }
     self.value = value
-    slider.isChange = false
-    slider.value = CGFloat(value)
+    sliderView.isChange = false
+    sliderView.value = CGFloat(value)
   }
-  
-  @objc func tap() {
-    print("tap")
-  }
-  
 }
 
 extension SliderViewController: SliderViewDelegate {

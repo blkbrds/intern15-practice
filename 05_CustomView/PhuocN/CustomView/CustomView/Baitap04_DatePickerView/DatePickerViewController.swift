@@ -11,6 +11,7 @@ import UIKit
 class DatePickerViewController: UIViewController {
   
   @IBOutlet weak var dateTextField: UITextField!
+  
   var datePickerView: DatePickerView?
   
   override func viewDidLoad() {
@@ -18,10 +19,9 @@ class DatePickerViewController: UIViewController {
     datePickerView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
     datePickerView?.config()
     datePickerView?.delegate = self
-    self.view.addSubview(datePickerView!)
+    view.addSubview(datePickerView!)
     dateTextField.delegate = self
   }
-
 }
 
 extension DatePickerViewController: DatePickerViewDelegate {
@@ -30,7 +30,7 @@ extension DatePickerViewController: DatePickerViewDelegate {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MMMM dd, yyyy"
     let dateString = dateFormatter.string(from: date)
-    self.dateTextField.text = dateString
+    dateTextField.text = dateString
   }
 }
 

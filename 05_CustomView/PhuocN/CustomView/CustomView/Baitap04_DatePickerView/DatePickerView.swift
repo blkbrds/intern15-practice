@@ -9,8 +9,9 @@
 import UIKit
 
 protocol DatePickerViewDelegate: class {
-  func selectDate(pickerView: DatePickerView,action: DatePickerView.Action,selectDate: Date?)
+  func selectDate(pickerView: DatePickerView, action: DatePickerView.Action, selectDate: Date?)
 }
+
 class DatePickerView: UIView {
   
   enum Action {
@@ -29,7 +30,7 @@ class DatePickerView: UIView {
   func config() {
     backgroundView.alpha = 0.5
     contentView.alpha = 1
-    self.isHidden = true
+    isHidden = true
   }
   
   func hide(animation: Bool) {
@@ -40,10 +41,10 @@ class DatePickerView: UIView {
       }) { (done) in
         self.isHidden = true
       }
-    }else {
+    } else {
       backgroundView.alpha = 0
-      self.contentView.alpha = 0
-      self.isHidden = true
+      contentView.alpha = 0
+      isHidden = true
     }
   }
   
@@ -54,9 +55,9 @@ class DatePickerView: UIView {
         self.backgroundView.alpha = 0.5
         self.contentView.alpha = 1
       }
-    }else {
+    } else {
       backgroundView.alpha = 0.5
-      self.contentView.alpha = 1
+      contentView.alpha = 1
     }
   }
   

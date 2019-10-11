@@ -11,6 +11,7 @@ import UIKit
 class BagdeNumberButton: UIButton {
   
   enum position {
+    
     case topLeft
     case topRight
     case topCenter
@@ -20,7 +21,7 @@ class BagdeNumberButton: UIButton {
     case bottomRight
     case bottomCenter
     
-    func atPosition(ỉnRect bounds: CGRect) -> CGPoint {
+    func addNumberBadgeLabelAtPositon(inRect bounds: CGRect) -> CGPoint {
       switch self {
       case .topLeft:
         return CGPoint(x: 0, y: 0)
@@ -44,21 +45,22 @@ class BagdeNumberButton: UIButton {
   
   var numberBagdePosition: position = .topLeft {
     didSet {
-      numberBagdeLable.center = self.numberBagdePosition.atPosition(ỉnRect: bounds)
+      numberBadgeLabel.center = numberBagdePosition.addNumberBadgeLabelAtPositon(inRect: bounds)
     }
   }
+  
   var text: String = "" {
     didSet {
-      let width = text.width(constraintedHeight: heightBagde, font: numberBagdeLable.font)
-      numberBagdeLable.frame.size = CGSize(width: width + 10, height: heightBagde)
-      numberBagdeLable.center = self.numberBagdePosition.atPosition(ỉnRect: bounds)
-      numberBagdeLable.text = text
+      let width = text.width(constraintedHeight: heightBagde, font: numberBadgeLabel.font)
+      numberBadgeLabel.frame.size = CGSize(width: width + 10, height: heightBagde)
+      numberBadgeLabel.center = numberBagdePosition.addNumberBadgeLabelAtPositon(inRect: bounds)
+      numberBadgeLabel.text = text
     }
   }
   
   let heightBagde: CGFloat = 20
   
-  let numberBagdeLable: UILabel = {
+  let numberBadgeLabel: UILabel = {
     let lable = UILabel()
     lable.backgroundColor = .red
     lable.numberOfLines = 0
@@ -71,18 +73,17 @@ class BagdeNumberButton: UIButton {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    let width = text.width(constraintedHeight: heightBagde, font: numberBagdeLable.font)
-    numberBagdeLable.frame.size = CGSize(width: width + 30, height: heightBagde)
-    numberBagdeLable.center = self.numberBagdePosition.atPosition(ỉnRect: frame)
-    numberBagdeLable.text = text
-    numberBagdeLable.layer.cornerRadius = numberBagdeLable.frame.height / 2
-    self.addSubview(numberBagdeLable)
+    let width = text.width(constraintedHeight: heightBagde, font: numberBadgeLabel.font)
+    numberBadgeLabel.frame.size = CGSize(width: width + 30, height: heightBagde)
+    numberBadgeLabel.center = numberBagdePosition.addNumberBadgeLabelAtPositon(inRect: frame)
+    numberBadgeLabel.text = text
+    numberBadgeLabel.layer.cornerRadius = numberBadgeLabel.frame.height / 2
+    addSubview(numberBadgeLabel)
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
 }
 
 extension String {

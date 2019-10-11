@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: windowScene)
     window?.makeKeyAndVisible()
-    window?.rootViewController = DatePickerViewController()
+    window?.rootViewController = AvatarViewController()
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {}
@@ -28,7 +28,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func sceneWillEnterForeground(_ scene: UIScene) {}
 
   func sceneDidEnterBackground(_ scene: UIScene) {}
-
-
 }
 

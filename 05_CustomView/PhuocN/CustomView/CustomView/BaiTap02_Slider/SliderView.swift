@@ -14,19 +14,7 @@ protocol SliderViewDelegate: class {
 
 class SliderView: UIView {
   
-  var isChange = false
-  weak var delegate: SliderViewDelegate?
-  var value: CGFloat = 0 {
-    didSet {
-      thumbLb.text = "\(Int(value))"
-      if !isChange {
-        thumbLb.frame = CGRect(x: 0, y: frame.height - 15 - CGFloat(value) / 100.0 * frame.height, width: 50, height: 30)
-      }
-      setNeedsDisplay()
-    }
-  }
-  
-  let thumbLb: UILabel = {
+  let thumbLabel: UILabel = {
     let label = UILabel()
     label.textAlignment = .center
     label.backgroundColor = .gray
@@ -38,14 +26,26 @@ class SliderView: UIView {
     return label
   }()
   
+  weak var delegate: SliderViewDelegate?
+  var isChange = false
+  var value: CGFloat = 0 {
+    didSet {
+      thumbLabel.text = "\(Int(value))"
+      if !isChange {
+        thumbLabel.frame = CGRect(x: 0, y: frame.height - 15 - CGFloat(value) / 100.0 * frame.height, width: 50, height: 30)
+      }
+      setNeedsDisplay()
+    }
+  }
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
-    thumbLb.frame = CGRect(x: 0, y: frame.height - 30 - CGFloat(value) / 100.0 * frame.height, width: 50, height: 30)
-    thumbLb.text = String(Int(value))
-    thumbLb.isUserInteractionEnabled = true
+    thumbLabel.frame = CGRect(x: 0, y: frame.height - 30 - CGFloat(value) / 100.0 * frame.height, width: 50, height: 30)
+    thumbLabel.text = String(Int(value))
+    thumbLabel.isUserInteractionEnabled = true
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panThumb(_:)))
-    thumbLb.addGestureRecognizer(panGesture)
-    self.addSubview(thumbLb)
+    thumbLabel.addGestureRecognizer(panGesture)
+    addSubview(thumbLabel)
     backgroundColor = .white
   }
   
@@ -80,10 +80,10 @@ class SliderView: UIView {
   
   @objc func panThumb(_ sender: UIPanGestureRecognizer) {
     let transition = sender.translation(in: self)
-    guard thumbLb.center.y + transition.y <= frame.height - 15 && thumbLb.center.y + transition.y + 1 >= 0 else { return }
-    thumbLb.center = CGPoint(x: thumbLb.center.x, y: thumbLb.center.y + transition.y)
+    guard thumbLabel.center.y + transition.y <= frame.height - 15 && thumbLabel.center.y + transition.y + 1 >= 0 else { return }
+    thumbLabel.center = CGPoint(x: thumbLabel.center.x, y: thumbLabel.center.y + transition.y)
     sender.setTranslation(CGPoint.zero, in: self)
-    value = (frame.height - 15 - thumbLb.center.y) * 100.0 / (frame.height - 15)
+    value = (frame.height - 15 - thumbLabel.center.y) * 100.0 / (frame.height - 15)
     isChange = true
     delegate?.changeValue(value: value)
   }

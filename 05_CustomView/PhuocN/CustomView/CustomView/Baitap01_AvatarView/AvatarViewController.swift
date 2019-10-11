@@ -10,47 +10,48 @@ import UIKit
 
 struct User {
   let username: String
-  let image: String
+  let imageName: String
 }
 
 class AvatarViewController: UIViewController {
   
-  let users = [User(username: "Bat Man", image: "bat_man"),
-               User(username: "Super Man", image: "super_man.jpeg"),
-               User(username: "Wonder Woman", image: "wonder_woman.jpg"),
-               User(username: "Thanos", image: "thanos.jpg"),
-               User(username: "Iron Man", image: "iron_man.jpg"),
-               User(username: "Hulk", image: "hulk.jpg"),
-               User(username: "Captain", image: "Captain.jpg"),
-               User(username: "Thor", image: "thor.jpeg"),
-               User(username: "Black Panther", image: "black_panter.jpeg"),
-               User(username: "Bat Man", image: "bat_man.jpg"),
-               User(username: "Super Man", image: "super_man.jpeg"),
-               User(username: "Wonder Woman", image: "wonder_woman.jpg"),
-               User(username: "Thanos", image: "thanos.jpg"),
-               User(username: "Iron Man", image: "iron_man.jpg"),
-               User(username: "Hulk", image: "hulk.jpg"),
-               User(username: "Captain", image: "Captain.jpg"),
-               User(username: "Thor", image: "thor.jpeg"),
-               User(username: "Black Panther", image: "black_panter.jpeg"),
-               User(username: "Bat Man", image: "bat_man.jpg"),
-               User(username: "Super Man", image: "super_man.jpeg"),
-               User(username: "Wonder Woman", image: "wonder_woman.jpg"),
-               User(username: "Thanos", image: "thanos.jpg"),
-               User(username: "Iron Man", image: "iron_man.jpg"),
-               User(username: "Hulk", image: "hulk.jpg"),
-               User(username: "Captain", image: "Captain.jpg"),
-               User(username: "Thor", image: "thor.jpeg"),
-               User(username: "Black Panther", image: "black_panter.jpeg"),
-               User(username: "Bat Man", image: "bat_man.jpg"),
-               User(username: "Super Man", image: "super_man.jpeg"),
-               User(username: "Wonder Woman", image: "wonder_woman.jpg"),
-               User(username: "Thanos", image: "thanos.jpg"),
-               User(username: "Iron Man", image: "iron_man.jpg"),
-               User(username: "Hulk", image: "hulk.jpg")]
-  @IBOutlet weak var scrollView: UIScrollView!
+  let users = [User(username: "Bat Man", imageName: "bat_man"),
+               User(username: "Super Man", imageName: "super_man.jpeg"),
+               User(username: "Wonder Woman", imageName: "wonder_woman.jpg"),
+               User(username: "Thanos", imageName: "thanos.jpg"),
+               User(username: "Iron Man", imageName: "iron_man.jpg"),
+               User(username: "Hulk", imageName: "hulk.jpg"),
+               User(username: "Captain", imageName: "Captain.jpg"),
+               User(username: "Thor", imageName: "thor.jpeg"),
+               User(username: "Black Panther", imageName: "black_panter.jpeg"),
+               User(username: "Bat Man", imageName: "bat_man.jpg"),
+               User(username: "Super Man", imageName: "super_man.jpeg"),
+               User(username: "Wonder Woman", imageName: "wonder_woman.jpg"),
+               User(username: "Thanos", imageName: "thanos.jpg"),
+               User(username: "Iron Man", imageName: "iron_man.jpg"),
+               User(username: "Hulk", imageName: "hulk.jpg"),
+               User(username: "Captain", imageName: "Captain.jpg"),
+               User(username: "Thor", imageName: "thor.jpeg"),
+               User(username: "Black Panther", imageName: "black_panter.jpeg"),
+               User(username: "Bat Man", imageName: "bat_man.jpg"),
+               User(username: "Super Man", imageName: "super_man.jpeg"),
+               User(username: "Wonder Woman", imageName: "wonder_woman.jpg"),
+               User(username: "Thanos", imageName: "thanos.jpg"),
+               User(username: "Iron Man", imageName: "iron_man.jpg"),
+               User(username: "Hulk", imageName: "hulk.jpg"),
+               User(username: "Captain", imageName: "Captain.jpg"),
+               User(username: "Thor", imageName: "thor.jpeg"),
+               User(username: "Black Panther", imageName: "black_panter.jpeg"),
+               User(username: "Bat Man", imageName: "bat_man.jpg"),
+               User(username: "Super Man", imageName: "super_man.jpeg"),
+               User(username: "Wonder Woman", imageName: "wonder_woman.jpg"),
+               User(username: "Thanos", imageName: "thanos.jpg"),
+               User(username: "Iron Man", imageName: "iron_man.jpg"),
+               User(username: "Hulk", imageName: "hulk.jpg")]
   let heightAvatar = 160
   let spacing = 10
+  
+  @IBOutlet weak var scrollView: UIScrollView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -67,10 +68,10 @@ class AvatarViewController: UIViewController {
         dong += 1
       }
       let avatar = AvatarView(frame: CGRect(x: ((scrollView.frame.width  - 2 * CGFloat(spacing)) / 3 + CGFloat(spacing)) * cot,y: (CGFloat(heightAvatar) +  CGFloat(spacing)) * dong, width: (scrollView.frame.width - CGFloat(spacing) * 2) / 3, height: CGFloat(heightAvatar)))
-      if let image = UIImage(named: users[i].image) {
-        avatar.avatarImg.image = image
-      }else {
-        avatar.avatarImg.image = UIImage(named: "DefaultAvatar.png")
+      if let image = UIImage(named: users[i].imageName) {
+        avatar.avatarImageView.image = image
+      } else {
+        avatar.avatarImageView.image = UIImage(named: "DefaultAvatar.png")
       }
       avatar.userNameLabel.text = users[i].username
       scrollView.addSubview(avatar)
