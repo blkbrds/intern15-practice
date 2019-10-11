@@ -29,6 +29,7 @@ class PieChartView: UIView {
       setNeedsDisplay()
     }
   }
+  
   var sum: CGFloat {
     return pies.reduce(0) {$0 + $1.value}
   }

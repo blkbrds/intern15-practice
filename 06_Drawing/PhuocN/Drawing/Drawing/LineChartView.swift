@@ -9,7 +9,7 @@
 import UIKit
 
 class LineChartView: UIView {
-  var lines: [CGFloat] = [23,5,15,59,32,33,90,79] {
+  var lines: [CGFloat] = [23, 5, 15, 59, 32, 33, 90, 79] {
     didSet {
       if lines != oldValue {
         setNeedsDisplay()
@@ -24,6 +24,7 @@ class LineChartView: UIView {
       }
     }
   }
+  
   var lineColor = UIColor.blue {
     didSet {
       if lineColor != oldValue {
@@ -31,6 +32,7 @@ class LineChartView: UIView {
       }
     }
   }
+  
   var maskColor = UIColor.systemBlue {
     didSet {
       if maskColor != oldValue {
