@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Ex9ViewController" customModule="AutoLayout" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLable" destination="ny6-zL-Rqn" id="SB0-EA-hxY"/>
+                <outlet property="imageScrollView" destination="pKv-c5-xMl" id="l4a-F7-uA5"/>
+                <outlet property="leftButton" destination="MZi-DT-b8O" id="2uV-PI-5QQ"/>
+                <outlet property="rightButton" destination="yZz-K8-QMT" id="iyp-r0-LqN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKv-c5-xMl">
+                    <rect key="frame" x="39" y="124" width="336" height="272"/>
+                    <color key="backgroundColor" red="0.0" green="0.24010059929999999" blue="0.005029965753" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" secondItem="pKv-c5-xMl" secondAttribute="width" multiplier="0.8" id="cQJ-VB-Tx1"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Pgy-Gk-5T8"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="xR5-G2-jFd"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZi-DT-b8O">
+                    <rect key="frame" x="5" y="215" width="26" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button" image="icons8-hidden-left"/>
+                    <connections>
+                        <action selector="handleLeftButton:" destination="-1" eventType="touchUpInside" id="A3L-uZ-q4Q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZz-K8-QMT">
+                    <rect key="frame" x="383" y="215" width="26" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="5c6-jv-elJ"/>
+                    </constraints>
+                    <state key="normal" title="Right" image="icons8-right"/>
+                    <connections>
+                        <action selector="handleRighttButton:" destination="-1" eventType="touchUpInside" id="u1B-QK-vbw"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-zL-Rqn">
+                    <rect key="frame" x="31" y="425.5" width="352" height="284.5"/>
+                    <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-1D-iHb">
+                    <rect key="frame" x="20" y="730" width="110" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.24010059929999999" blue="0.005029965753" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="K33-0j-nRz"/>
+                        <constraint firstAttribute="width" constant="110" id="hj5-5A-5jJ"/>
+                    </constraints>
+                    <state key="normal" title="Like">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WB3-B0-AS5">
+                    <rect key="frame" x="152" y="730" width="110" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.24010059929999999" blue="0.005029965753" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="Ydo-dR-7Vj"/>
+                        <constraint firstAttribute="height" constant="40" id="lOR-1k-Uq8"/>
+                    </constraints>
+                    <state key="normal" title="Like">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSW-ED-BNM">
+                    <rect key="frame" x="284" y="730" width="110" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.24010059929999999" blue="0.005029965753" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="naE-6R-iSJ"/>
+                        <constraint firstAttribute="height" constant="40" id="usD-SA-A07"/>
+                    </constraints>
+                    <state key="normal" title="Like">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ny6-zL-Rqn" firstAttribute="leading" secondItem="pKv-c5-xMl" secondAttribute="leading" id="1oT-dg-kiq"/>
+                <constraint firstItem="pKv-c5-xMl" firstAttribute="leading" secondItem="MZi-DT-b8O" secondAttribute="trailing" id="2Id-v8-5fy"/>
+                <constraint firstItem="yZz-K8-QMT" firstAttribute="centerY" secondItem="pKv-c5-xMl" secondAttribute="centerY" id="335-BS-fgv"/>
+                <constraint firstItem="uSW-ED-BNM" firstAttribute="height" secondItem="C5M-1D-iHb" secondAttribute="height" id="5yJ-x7-cgw"/>
+                <constraint firstItem="pKv-c5-xMl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="6zF-O4-SqA"/>
+                <constraint firstItem="pKv-c5-xMl" firstAttribute="trailing" secondItem="ny6-zL-Rqn" secondAttribute="trailing" id="79v-HR-baM"/>
+                <constraint firstItem="ny6-zL-Rqn" firstAttribute="top" secondItem="pKv-c5-xMl" secondAttribute="bottom" constant="20" id="7Qy-CE-X4Y"/>
+                <constraint firstItem="WB3-B0-AS5" firstAttribute="width" secondItem="C5M-1D-iHb" secondAttribute="width" id="8KU-Ol-pp6"/>
+                <constraint firstItem="uSW-ED-BNM" firstAttribute="top" secondItem="C5M-1D-iHb" secondAttribute="top" id="AvY-YJ-Nwe"/>
+                <constraint firstItem="WB3-B0-AS5" firstAttribute="top" secondItem="C5M-1D-iHb" secondAttribute="top" id="Btr-GR-KyI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yZz-K8-QMT" secondAttribute="trailing" constant="5" id="GaK-I8-RsE"/>
+                <constraint firstItem="WB3-B0-AS5" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="JBc-xZ-eWp"/>
+                <constraint firstItem="C5M-1D-iHb" firstAttribute="top" secondItem="ny6-zL-Rqn" secondAttribute="bottom" constant="20" id="Qad-Co-YXd"/>
+                <constraint firstItem="MZi-DT-b8O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="RHe-OP-WRb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uSW-ED-BNM" secondAttribute="trailing" constant="20" id="TgG-Zh-hoa"/>
+                <constraint firstItem="pKv-c5-xMl" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.85" id="VPx-et-XOm"/>
+                <constraint firstItem="C5M-1D-iHb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="X9N-fE-AYu"/>
+                <constraint firstItem="MZi-DT-b8O" firstAttribute="centerY" secondItem="pKv-c5-xMl" secondAttribute="centerY" id="XZ5-lE-0Hx"/>
+                <constraint firstItem="WB3-B0-AS5" firstAttribute="height" secondItem="C5M-1D-iHb" secondAttribute="height" id="YNr-X1-5lM"/>
+                <constraint firstItem="MZi-DT-b8O" firstAttribute="height" secondItem="yZz-K8-QMT" secondAttribute="height" id="gDg-kE-KjC"/>
+                <constraint firstItem="yZz-K8-QMT" firstAttribute="leading" secondItem="pKv-c5-xMl" secondAttribute="trailing" id="hKC-Ah-4XB"/>
+                <constraint firstItem="uSW-ED-BNM" firstAttribute="width" secondItem="C5M-1D-iHb" secondAttribute="width" id="sSc-OR-JEh"/>
+                <constraint firstItem="pKv-c5-xMl" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="u4b-ED-jgd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icons8-hidden-left" width="48" height="48"/>
+        <image name="icons8-right" width="48" height="48"/>
+    </resources>
+</document>
