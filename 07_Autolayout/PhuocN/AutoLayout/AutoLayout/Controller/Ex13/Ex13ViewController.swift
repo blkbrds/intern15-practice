@@ -10,11 +10,24 @@ import UIKit
 
 class Ex13ViewController: ExerciseViewController {
   
+
+    @IBOutlet weak var infoStackView: UIStackView!
     @IBOutlet weak var trailingEditButtonconstaint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
     super.viewDidLoad()
-        
-    setupNavi()
+       
+        infoStackView.distribution = .fillEqually
+        for i in 0..<4 {
+            let infoView = Bundle.main.loadNibNamed("InfoView", owner: self, options: nil)?.first as? InfoView
+            if i % 2 == 0 {
+                infoView?.backgroundColor = UIColor.systemTeal
+            }else {
+                infoView?.backgroundColor = UIColor.white
+            }
+            infoStackView.addArrangedSubview(infoView!)
+        }
+        setupNavi()
   }
     override func viewLayoutMarginsDidChange() {
         if UIScreen.main.bounds.width > 500 {
@@ -43,23 +56,6 @@ class CircleButton: UIButton {
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     self.layer.cornerRadius = self.frame.height / 2
-    //fatalError("init(coder:) has not been implemented")
-  }
-}
-
-class CircleImage: UIImageView {
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    self.layer.cornerRadius = self.frame.height / 2
-    self.layer.borderColor = UIColor(displayP3Red: 241/255, green: 196/255, blue: 15/255, alpha: 1).cgColor
-    self.layer.borderWidth = 5
-  }
-  
-  required init?(coder: NSCoder) {
-    super.init(coder: coder)
-    self.layer.cornerRadius = self.frame.height / 2
-    self.layer.borderColor = UIColor(displayP3Red: 241/255, green: 196/255, blue: 15/255, alpha: 1).cgColor
-    self.layer.borderWidth = 5
   }
 }
 

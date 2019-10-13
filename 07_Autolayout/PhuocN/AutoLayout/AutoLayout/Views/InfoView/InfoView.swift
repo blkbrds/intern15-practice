@@ -9,13 +9,19 @@
 import UIKit
 
 class InfoView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    @IBOutlet weak var imageView: UIImageView!
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        imageView.layer.cornerRadius = imageView.frame.height / 2
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+       
+    }
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }

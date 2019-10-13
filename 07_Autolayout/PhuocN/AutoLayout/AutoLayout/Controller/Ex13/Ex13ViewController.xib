@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Ex13ViewController" customModule="AutoLayout" customModuleProvider="target">
             <connections>
+                <outlet property="infoStackView" destination="8Fs-7q-aa8" id="Rra-Ah-PMd"/>
                 <outlet property="trailingEditButtonconstaint" destination="ObW-Y0-XKh" id="rTZ-Gt-Kf6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -97,34 +98,16 @@
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-7q-aa8">
                             <rect key="frame" x="0.0" y="300" width="414" height="474"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blN-uo-mpY" customClass="InfoView" customModule="AutoLayout" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="118.66666666666667"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-3M-Q8u" customClass="InfoView" customModule="AutoLayout" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="118.66666666666669" width="414" height="118.33333333333331"/>
-                                    <color key="backgroundColor" red="0.91309931509999998" green="0.86889982880000005" blue="0.72942529970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNz-cX-E2C" customClass="InfoView" customModule="AutoLayout" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="236.99999999999997" width="414" height="118.66666666666666"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xi-5q-iLX" customClass="InfoView" customModule="AutoLayout" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="355.66666666666663" width="414" height="118.33333333333331"/>
-                                    <color key="backgroundColor" red="0.91309931509999998" green="0.86889982880000005" blue="0.72942529970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </view>
-                            </subviews>
                         </stackView>
                     </subviews>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="El6-85-A4z" secondAttribute="trailing" id="0Py-38-hvX"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="El6-85-A4z" secondAttribute="bottom" id="6NH-1Z-pfs"/>
-                <constraint firstItem="El6-85-A4z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="abf-tI-voZ"/>
-                <constraint firstItem="El6-85-A4z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="urX-nG-7h4"/>
+                <constraint firstItem="El6-85-A4z" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2Sc-vf-a6F"/>
+                <constraint firstItem="El6-85-A4z" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Xwp-TL-24O"/>
+                <constraint firstItem="El6-85-A4z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="n7j-oI-PqA"/>
+                <constraint firstItem="El6-85-A4z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nyC-da-lVq"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <nil key="simulatedBottomBarMetrics"/>
