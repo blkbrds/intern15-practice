@@ -10,7 +10,8 @@ import UIKit
 
 class Ex13ViewController: ExerciseViewController {
   
-
+    let rowColor: UIColor = UIColor(displayP3Red: 249/255, green: 246/255, blue: 238/255, alpha: 1)
+    
     @IBOutlet weak var infoStackView: UIStackView!
     @IBOutlet weak var trailingEditButtonconstaint: NSLayoutConstraint!
     
@@ -21,7 +22,7 @@ class Ex13ViewController: ExerciseViewController {
         for i in 0..<4 {
             let infoView = Bundle.main.loadNibNamed("InfoView", owner: self, options: nil)?.first as? InfoView
             if i % 2 == 0 {
-                infoView?.backgroundColor = UIColor.systemTeal
+                infoView?.backgroundColor = rowColor
             }else {
                 infoView?.backgroundColor = UIColor.white
             }

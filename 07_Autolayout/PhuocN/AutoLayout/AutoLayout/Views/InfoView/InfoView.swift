@@ -13,15 +13,16 @@ class InfoView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        imageView.layer.cornerRadius = imageView.frame.height / 2
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-       
     }
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.layer.cornerRadius = self.imageView.frame.width / 2
+        imageView.layer.borderColor = UIColor.yellow.cgColor
+        imageView.layer.borderWidth = 3
     }
 }

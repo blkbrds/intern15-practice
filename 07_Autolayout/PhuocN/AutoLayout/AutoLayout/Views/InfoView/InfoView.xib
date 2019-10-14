@@ -20,26 +20,26 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wi-MZ-7qK">
-                    <rect key="frame" x="210" y="36.5" width="34.5" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <rect key="frame" x="210" y="36.5" width="33" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sj6-F1-GqV">
-                    <rect key="frame" x="210" y="76.5" width="377" height="22.5"/>
+                    <rect key="frame" x="210" y="66.5" width="377" height="22.5"/>
                     <string key="text">Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply dummy text of the printing </string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:30" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aQ-aQ-PvL">
-                    <rect key="frame" x="21.5" y="46.5" width="68.5" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <rect key="frame" x="24.5" y="46.5" width="65.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
+                    <color key="highlightedColor" red="0.18328112363815308" green="0.22138863801956177" blue="0.29020488262176514" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="am" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3I-Wn-LMA">
-                    <rect key="frame" x="66.5" y="81.5" width="23.5" height="20.5"/>
+                    <rect key="frame" x="66.5" y="76.5" width="23.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -52,12 +52,12 @@
                 <constraint firstItem="5aQ-aQ-PvL" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="9lK-Od-64D"/>
                 <constraint firstItem="DND-Mp-77n" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="CcO-0B-J1b"/>
                 <constraint firstItem="n3I-Wn-LMA" firstAttribute="trailing" secondItem="5aQ-aQ-PvL" secondAttribute="trailing" id="OvH-Ym-ccW"/>
-                <constraint firstItem="n3I-Wn-LMA" firstAttribute="top" secondItem="5aQ-aQ-PvL" secondAttribute="bottom" constant="5" id="Q26-vc-yIv"/>
+                <constraint firstItem="n3I-Wn-LMA" firstAttribute="top" secondItem="5aQ-aQ-PvL" secondAttribute="bottom" id="Q26-vc-yIv"/>
                 <constraint firstItem="6Wi-MZ-7qK" firstAttribute="leading" secondItem="DND-Mp-77n" secondAttribute="trailing" constant="10" id="WFq-Ms-R3S"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Sj6-F1-GqV" secondAttribute="bottom" constant="10" id="cSv-ap-doF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Sj6-F1-GqV" secondAttribute="bottom" constant="20" id="cSv-ap-doF"/>
                 <constraint firstItem="DND-Mp-77n" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.7" id="ePR-5Z-mRp"/>
                 <constraint firstItem="DND-Mp-77n" firstAttribute="leading" secondItem="5aQ-aQ-PvL" secondAttribute="trailing" constant="10" id="fjE-RV-Ouy"/>
-                <constraint firstItem="Sj6-F1-GqV" firstAttribute="top" secondItem="6Wi-MZ-7qK" secondAttribute="bottom" constant="10" id="ft4-Lv-2PQ"/>
+                <constraint firstItem="Sj6-F1-GqV" firstAttribute="top" secondItem="6Wi-MZ-7qK" secondAttribute="bottom" id="ft4-Lv-2PQ"/>
                 <constraint firstItem="Sj6-F1-GqV" firstAttribute="leading" secondItem="DND-Mp-77n" secondAttribute="trailing" constant="10" id="qew-8Y-ph9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Sj6-F1-GqV" secondAttribute="trailing" constant="10" id="zTk-tl-Oye"/>
             </constraints>
