@@ -9,23 +9,23 @@
 import UIKit
 
 class Ex12ViewController: ExerciseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 
 class BorderLabel: UILabel {
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    self.layer.borderWidth = 0.25
-    self.layer.borderColor = UIColor.black.cgColor
-  }
-  
-  required init?(coder: NSCoder) {
-    super.init(coder: coder)
-    self.layer.borderWidth = 0.25
-    self.layer.borderColor = UIColor.black.cgColor
-    //fatalError("init(coder:) has not been implemented")
-  }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.layer.borderWidth = 0.25
+        self.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.layer.borderWidth = 0.25
+        self.layer.borderColor = UIColor.black.cgColor
+        //fatalError("init(coder:) has not been implemented")
+    }
 }

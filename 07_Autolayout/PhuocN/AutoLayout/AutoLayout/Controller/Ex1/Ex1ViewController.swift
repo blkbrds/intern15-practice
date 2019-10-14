@@ -11,8 +11,8 @@ import UIKit
 class Ex1ViewController: ExerciseViewController {
     
     // MARK: - Properties
-    @IBOutlet weak var heightView: NSLayoutConstraint!
-    @IBOutlet weak var heightEqualSuperView: NSLayoutConstraint!
+    @IBOutlet private weak var heightView: NSLayoutConstraint!
+    @IBOutlet private weak var heightEqualSuperView: NSLayoutConstraint!
     
     //MARK: - life cycle
     override func viewDidLoad() {

@@ -10,17 +10,7 @@ import UIKit
 
 class Ex41ViewController: ExerciseViewController {
 
-  @IBOutlet weak var horizontalView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-  
-  @IBAction func choiceDirection(_ sender: UISegmentedControl) {
-    switch sender.selectedSegmentIndex {
-    case 0:
-      horizontalView.isHidden = false
-    default:
-      horizontalView.isHidden = true
-    }
-  }
 }

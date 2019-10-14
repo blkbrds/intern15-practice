@@ -13,5 +13,4 @@ class Ex7_5ViewController: ExerciseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }

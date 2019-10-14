@@ -9,8 +9,8 @@
 import UIKit
 
 class Ex14ViewController: ExerciseViewController {
-
-    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet private weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: 1200)

@@ -10,12 +10,11 @@ import UIKit
 
 class Ex3ViewController: ExerciseViewController {
     
-    @IBOutlet weak var trailingWithSuperViewContrait: NSLayoutConstraint!
-    @IBOutlet weak var leadingWithSuperViewContrait: NSLayoutConstraint!
-    @IBOutlet weak var leadingWithHoziContraint: NSLayoutConstraint!
-    @IBOutlet weak var trailingWithHoziContraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var heightSquareContraint: NSLayoutConstraint!
+    @IBOutlet private weak var trailingWithSuperViewContrait: NSLayoutConstraint!
+    @IBOutlet private weak var leadingWithSuperViewContrait: NSLayoutConstraint!
+    @IBOutlet private weak var leadingWithHoziContraint: NSLayoutConstraint!
+    @IBOutlet private weak var trailingWithHoziContraint: NSLayoutConstraint!
+    @IBOutlet private weak var heightSquareContraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

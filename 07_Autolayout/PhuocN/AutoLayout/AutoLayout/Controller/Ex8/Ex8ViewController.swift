@@ -9,10 +9,8 @@
 import UIKit
 
 class Ex8ViewController: ExerciseViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-  }
-
+    }
 }

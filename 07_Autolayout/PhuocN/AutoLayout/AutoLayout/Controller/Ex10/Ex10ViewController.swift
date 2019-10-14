@@ -11,10 +11,10 @@ import UIKit
 class Ex10ViewController: ExerciseViewController {
     
     //MARK: - Properties
-    @IBOutlet weak var view4: UIView!
-    @IBOutlet weak var view3: UIView!
-    @IBOutlet weak var view2: UIView!
-    @IBOutlet weak var view1: UIView!
+    @IBOutlet private weak var view4: UIView!
+    @IBOutlet private weak var view3: UIView!
+    @IBOutlet private weak var view2: UIView!
+    @IBOutlet private weak var view1: UIView!
     @IBOutlet var heightContraintLayout: [NSLayoutConstraint]!
     // [view1.height, view2.height, view3.height, view4.height]
     
@@ -62,5 +62,4 @@ class Ex10ViewController: ExerciseViewController {
         self.heightContraintLayout[2].constant = 64
         self.heightContraintLayout[3].constant = 128
     }
-    
 }
