@@ -17,6 +17,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ay3-aq-sYH">
+                    <rect key="frame" x="10" y="44" width="394" height="122"/>
+                    <string key="text">5 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Kích thước 5 hình không đổi
+Khoảng cách giữa 5 hình và giữa các cạnh
+thay đổi theo kích thước màn hình</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4C6-gT-nZ1" userLabel="View3">
                     <rect key="frame" x="182" y="428" width="50" height="50"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -87,12 +99,14 @@
             <constraints>
                 <constraint firstItem="9Qj-6a-v3m" firstAttribute="width" secondItem="9Qj-6a-v3m" secondAttribute="height" id="0wv-aM-AUx"/>
                 <constraint firstItem="Sf6-6j-tJJ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="5M2-nQ-ndQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ay3-aq-sYH" secondAttribute="trailing" constant="10" id="6Qg-t9-nxR"/>
                 <constraint firstItem="tln-Q6-Tkb" firstAttribute="width" secondItem="xxm-NL-FR0" secondAttribute="width" id="9cQ-jW-gNB"/>
                 <constraint firstItem="4C6-gT-nZ1" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="A1v-MW-pIc"/>
                 <constraint firstItem="SUF-B6-i5u" firstAttribute="centerY" secondItem="tln-Q6-Tkb" secondAttribute="centerY" id="AlY-l8-8xW"/>
                 <constraint firstItem="Wkj-Aw-RtC" firstAttribute="width" secondItem="Wkj-Aw-RtC" secondAttribute="height" id="BWl-Y9-7VA"/>
                 <constraint firstItem="FA2-eE-BLG" firstAttribute="leading" secondItem="4C6-gT-nZ1" secondAttribute="trailing" id="D3W-on-Yb7"/>
                 <constraint firstItem="Wkj-Aw-RtC" firstAttribute="leading" secondItem="FA2-eE-BLG" secondAttribute="trailing" id="DbM-Ta-ZcD"/>
+                <constraint firstItem="Ay3-aq-sYH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="H8e-hS-RUm"/>
                 <constraint firstItem="4C6-gT-nZ1" firstAttribute="leading" secondItem="xxm-NL-FR0" secondAttribute="trailing" id="HCr-Jb-ptM"/>
                 <constraint firstItem="tln-Q6-Tkb" firstAttribute="centerY" secondItem="xxm-NL-FR0" secondAttribute="centerY" id="Hps-6n-Iz6"/>
                 <constraint firstItem="tln-Q6-Tkb" firstAttribute="centerY" secondItem="9Qj-6a-v3m" secondAttribute="centerY" id="IX5-dT-LP5"/>
@@ -106,6 +120,7 @@
                 <constraint firstItem="Sf6-6j-tJJ" firstAttribute="width" secondItem="Sf6-6j-tJJ" secondAttribute="height" id="iMV-q5-7ft"/>
                 <constraint firstItem="tln-Q6-Tkb" firstAttribute="leading" secondItem="Sf6-6j-tJJ" secondAttribute="trailing" id="kmU-dF-VVI"/>
                 <constraint firstItem="9Qj-6a-v3m" firstAttribute="centerY" secondItem="4C6-gT-nZ1" secondAttribute="centerY" id="lSf-kT-pan"/>
+                <constraint firstItem="Ay3-aq-sYH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="msJ-mM-qga"/>
                 <constraint firstItem="xxm-NL-FR0" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="n8C-0X-gNj"/>
                 <constraint firstItem="kNG-DR-vNj" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="rn4-7x-bT5"/>
                 <constraint firstItem="FA2-eE-BLG" firstAttribute="centerY" secondItem="tln-Q6-Tkb" secondAttribute="centerY" id="uQk-3t-4an"/>

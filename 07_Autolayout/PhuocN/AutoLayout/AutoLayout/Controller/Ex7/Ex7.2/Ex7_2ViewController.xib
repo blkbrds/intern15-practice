@@ -17,6 +17,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgD-du-cEV">
+                    <rect key="frame" x="10" y="44" width="394" height="143.5"/>
+                    <string key="text">5 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Kích thước 5 hình bằng nhau và chúng thay
+đổi kích thước khi thay đổi kích thước màn
+hình
+Khoảng cách giữa 5 hình và giữa các cạnh
+không thay đổi</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pB-en-Ujc">
                     <rect key="frame" x="143" y="389" width="128" height="128"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -68,6 +82,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2pB-en-Ujc" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="0MW-7Y-bWQ"/>
+                <constraint firstItem="dgD-du-cEV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="0PK-2v-s6h"/>
                 <constraint firstItem="2pB-en-Ujc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2Br-wf-hS3"/>
                 <constraint firstItem="jpL-CR-AKz" firstAttribute="top" secondItem="DDm-CO-Lch" secondAttribute="bottom" constant="30" id="Gxn-Ig-nBl"/>
                 <constraint firstItem="KKg-4f-aB6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="OGM-cA-zQt"/>
@@ -75,10 +90,12 @@
                 <constraint firstItem="DDm-CO-Lch" firstAttribute="top" secondItem="2pB-en-Ujc" secondAttribute="bottom" constant="30" id="Odm-0n-D9b"/>
                 <constraint firstItem="KKg-4f-aB6" firstAttribute="height" secondItem="2pB-en-Ujc" secondAttribute="height" id="Qms-ow-z5K"/>
                 <constraint firstItem="jpL-CR-AKz" firstAttribute="height" secondItem="2pB-en-Ujc" secondAttribute="height" id="T9C-VR-XvZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dgD-du-cEV" secondAttribute="trailing" constant="10" id="TDX-qs-a9e"/>
                 <constraint firstItem="DDm-CO-Lch" firstAttribute="height" secondItem="2pB-en-Ujc" secondAttribute="height" id="VeI-5P-ncZ"/>
                 <constraint firstItem="jpL-CR-AKz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XqI-65-OI6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jpL-CR-AKz" secondAttribute="bottom" constant="30" id="iPl-vD-lLb"/>
                 <constraint firstItem="DDm-CO-Lch" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="k4w-gJ-rmd"/>
+                <constraint firstItem="dgD-du-cEV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nEV-Lf-Aae"/>
                 <constraint firstItem="KKg-4f-aB6" firstAttribute="top" secondItem="7yl-Iy-6w2" secondAttribute="bottom" constant="30" id="nbw-Vg-lSw"/>
                 <constraint firstItem="jpL-CR-AKz" firstAttribute="width" secondItem="jpL-CR-AKz" secondAttribute="height" id="sPY-Cd-uin"/>
                 <constraint firstItem="7yl-Iy-6w2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vQQ-J0-Yuo"/>

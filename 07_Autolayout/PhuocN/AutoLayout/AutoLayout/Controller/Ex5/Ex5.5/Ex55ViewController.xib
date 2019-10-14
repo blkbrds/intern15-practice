@@ -51,6 +51,18 @@
                     <rect key="frame" x="52" y="422" width="62" height="62"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iv-P9-4UT">
+                    <rect key="frame" x="10" y="44" width="394" height="122"/>
+                    <string key="text">4 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Các khoảng các và các kích thước của hình
+vuông tỉ lệ với size màn hình
+Các hình thì kích thước bằng nhau</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -77,9 +89,12 @@
                 <constraint firstItem="S4I-lL-k0q" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="jps-5T-hzR"/>
                 <constraint firstItem="byy-xE-Kz4" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="k6o-ky-EUJ"/>
                 <constraint firstItem="byy-xE-Kz4" firstAttribute="leading" secondItem="S4I-lL-k0q" secondAttribute="trailing" id="vao-iX-KCS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1iv-P9-4UT" secondAttribute="trailing" constant="10" id="vgL-Po-rMp"/>
+                <constraint firstItem="1iv-P9-4UT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="w0K-cy-r2a"/>
                 <constraint firstItem="0f6-dt-m5n" firstAttribute="leading" secondItem="M4M-bp-P6E" secondAttribute="trailing" id="wD8-th-os2"/>
                 <constraint firstItem="M4M-bp-P6E" firstAttribute="width" secondItem="McD-ak-mQ8" secondAttribute="height" id="xIa-5p-oom"/>
                 <constraint firstItem="S4I-lL-k0q" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.05" id="xP6-rN-Leh"/>
+                <constraint firstItem="1iv-P9-4UT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="xpd-Vp-gNo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>

@@ -17,6 +17,19 @@
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p21-Sv-xbt">
+                    <rect key="frame" x="54" y="0.0" width="788" height="142.5"/>
+                    <string key="text">4 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Khoản cách giữa 4 hình vuông không đổi
+Kích thước 4 hình vuông không đổi
+Khoảng cách giữa cạnh với 2 hình vuông
+ngoài thay đổi</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyT-Rt-n8A" userLabel="View2">
                     <rect key="frame" x="378" y="166.5" width="60" height="60"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -54,15 +67,18 @@
             <constraints>
                 <constraint firstItem="JjF-0K-zRY" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="3AH-9j-CVO"/>
                 <constraint firstItem="ug1-mN-dR9" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="3Zb-eH-NJT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p21-Sv-xbt" secondAttribute="trailing" constant="10" id="Dvc-Qe-xjO"/>
                 <constraint firstItem="Nje-2j-P9q" firstAttribute="width" secondItem="Nje-2j-P9q" secondAttribute="height" id="IEe-DW-dns"/>
                 <constraint firstItem="JjF-0K-zRY" firstAttribute="width" secondItem="JjF-0K-zRY" secondAttribute="height" id="KcL-aE-wXe"/>
                 <constraint firstItem="ug1-mN-dR9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="10" id="Nm1-9V-JFK"/>
                 <constraint firstItem="JjF-0K-zRY" firstAttribute="width" secondItem="JjF-0K-zRY" secondAttribute="height" id="RHP-81-Ibr"/>
+                <constraint firstItem="p21-Sv-xbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="aoQ-5z-jAy"/>
                 <constraint firstItem="KyT-Rt-n8A" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="-10" id="azx-Es-IMa"/>
                 <constraint firstItem="Nje-2j-P9q" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="hkh-Pq-5TI"/>
                 <constraint firstItem="KyT-Rt-n8A" firstAttribute="leading" secondItem="Nje-2j-P9q" secondAttribute="trailing" constant="20" id="jpi-J4-QTK"/>
                 <constraint firstItem="KyT-Rt-n8A" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="mYo-ZD-1It"/>
                 <constraint firstItem="ug1-mN-dR9" firstAttribute="width" secondItem="ug1-mN-dR9" secondAttribute="height" id="q8t-nw-8NZ"/>
+                <constraint firstItem="p21-Sv-xbt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r7m-Rk-PsT"/>
                 <constraint firstItem="JjF-0K-zRY" firstAttribute="leading" secondItem="ug1-mN-dR9" secondAttribute="trailing" constant="20" id="ri7-eU-QXh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

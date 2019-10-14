@@ -17,6 +17,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tf1-TJ-ex7">
+                    <rect key="frame" x="10" y="44" width="394" height="162.5"/>
+                    <string key="text">5 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Kích thước 5 hình bằng nhau và chúng thay
+đổi kích thước khi thay đổi kích thước màn
+hình
+Khoảng cách giữa 5 hình và giữa các cạnh
+không thay đổi</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVq-4D-A8n" userLabel="View3">
                     <rect key="frame" x="177.5" y="423.5" width="59" height="59"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
@@ -55,11 +69,14 @@
                 <constraint firstItem="Yje-7N-xvH" firstAttribute="height" secondItem="cVq-4D-A8n" secondAttribute="height" id="Eli-6r-nNq"/>
                 <constraint firstItem="wMI-9w-EUh" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="H9U-fy-7Fk"/>
                 <constraint firstItem="X1S-zT-sW4" firstAttribute="leading" secondItem="ie6-Rg-IXA" secondAttribute="trailing" constant="20" id="ITM-6j-agY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tf1-TJ-ex7" secondAttribute="trailing" constant="10" id="VvI-yh-Fik"/>
                 <constraint firstItem="X1S-zT-sW4" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gdY-TT-C02"/>
                 <constraint firstItem="Yje-7N-xvH" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="giS-Qr-Sj1"/>
                 <constraint firstItem="ie6-Rg-IXA" firstAttribute="width" secondItem="ie6-Rg-IXA" secondAttribute="height" id="gn1-CB-D7b"/>
                 <constraint firstItem="X1S-zT-sW4" firstAttribute="height" secondItem="cVq-4D-A8n" secondAttribute="height" id="hi9-EG-LGD"/>
+                <constraint firstItem="tf1-TJ-ex7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ktx-dq-3yc"/>
                 <constraint firstItem="ie6-Rg-IXA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="lHu-62-1Tg"/>
+                <constraint firstItem="tf1-TJ-ex7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ofL-3E-Nyy"/>
                 <constraint firstItem="cVq-4D-A8n" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="sbY-d2-Xlz"/>
                 <constraint firstItem="cVq-4D-A8n" firstAttribute="leading" secondItem="wMI-9w-EUh" secondAttribute="trailing" constant="20" id="t0X-fu-rN1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X1S-zT-sW4" secondAttribute="trailing" constant="20" id="vmJ-o3-FlN"/>

@@ -69,9 +69,23 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCB-Bd-75K">
+                    <rect key="frame" x="10" y="44" width="394" height="125.5"/>
+                    <string key="text">5 hình vuông nằm ở vị trí chính giữa theo
+chiều dài
+Canh đều chính giữa so với trục ngang 
+Khoản cách giữa 5 hình vuông không đổi
+Kích thước 5 hình vuông không đổi
+Khoảng cách giữa cạnh với 2 hình vuông
+ngoài thay đổi</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NCB-Bd-75K" secondAttribute="trailing" constant="10" id="1eL-bt-2KO"/>
                 <constraint firstItem="QZT-nL-5of" firstAttribute="top" secondItem="1vo-jJ-dz7" secondAttribute="bottom" constant="30" id="5AQ-9g-y82"/>
                 <constraint firstItem="Zjc-7G-PSd" firstAttribute="centerX" secondItem="9Cy-OO-I0C" secondAttribute="centerX" id="5gV-Vd-o9I"/>
                 <constraint firstItem="1vo-jJ-dz7" firstAttribute="top" secondItem="9Cy-OO-I0C" secondAttribute="bottom" constant="30" id="AyH-oC-ngR"/>
@@ -79,11 +93,13 @@
                 <constraint firstItem="orc-ZH-pEu" firstAttribute="centerX" secondItem="9Cy-OO-I0C" secondAttribute="centerX" id="BSF-Dx-73i"/>
                 <constraint firstItem="QZT-nL-5of" firstAttribute="centerX" secondItem="9Cy-OO-I0C" secondAttribute="centerX" id="E81-5m-QZP"/>
                 <constraint firstItem="9Cy-OO-I0C" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Ipy-CM-och"/>
+                <constraint firstItem="NCB-Bd-75K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="aJP-pI-AcH"/>
                 <constraint firstItem="Zjc-7G-PSd" firstAttribute="top" secondItem="orc-ZH-pEu" secondAttribute="bottom" constant="30" id="bt8-VQ-c2Z"/>
                 <constraint firstItem="9Cy-OO-I0C" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="fl3-WB-DG7"/>
                 <constraint firstItem="1vo-jJ-dz7" firstAttribute="width" secondItem="1vo-jJ-dz7" secondAttribute="height" id="fuu-GF-Uhq"/>
                 <constraint firstItem="9Cy-OO-I0C" firstAttribute="top" secondItem="Zjc-7G-PSd" secondAttribute="bottom" constant="30" id="gWC-Lb-XXh"/>
                 <constraint firstItem="1vo-jJ-dz7" firstAttribute="centerX" secondItem="9Cy-OO-I0C" secondAttribute="centerX" id="jcZ-pw-rm4"/>
+                <constraint firstItem="NCB-Bd-75K" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jtK-nd-seE"/>
                 <constraint firstItem="QZT-nL-5of" firstAttribute="width" secondItem="QZT-nL-5of" secondAttribute="height" id="pVQ-n3-gQZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

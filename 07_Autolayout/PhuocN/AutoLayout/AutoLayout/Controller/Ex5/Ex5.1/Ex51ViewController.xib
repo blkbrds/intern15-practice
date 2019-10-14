@@ -58,10 +58,23 @@
                     <rect key="frame" x="329" y="423" width="60" height="60"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlE-RU-tVO">
+                    <rect key="frame" x="10" y="44" width="394" height="122"/>
+                    <string key="text">4 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Kích thước 3 hình không đổi
+Khoảng cách giữa 3 hình và giữa các cạnh
+thay đổi theo kích thước màn hình</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="bzc-hH-eyw" firstAttribute="height" secondItem="D0f-DB-xhw" secondAttribute="height" id="3VY-4Y-kfy"/>
+                <constraint firstItem="WlE-RU-tVO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3wi-Y1-JeR"/>
                 <constraint firstItem="veP-Si-6ED" firstAttribute="leading" secondItem="meD-aR-YtB" secondAttribute="trailing" id="5ft-6T-QGZ"/>
                 <constraint firstItem="9ZS-WT-ftH" firstAttribute="leading" secondItem="veP-Si-6ED" secondAttribute="trailing" id="BNw-QC-ryq"/>
                 <constraint firstItem="veP-Si-6ED" firstAttribute="width" secondItem="D0f-DB-xhw" secondAttribute="height" id="IGD-WZ-Zdg"/>
@@ -79,6 +92,8 @@
                 <constraint firstItem="jWC-kE-ve2" firstAttribute="height" secondItem="D0f-DB-xhw" secondAttribute="height" id="jto-zU-Z0Y"/>
                 <constraint firstItem="bzc-hH-eyw" firstAttribute="leading" secondItem="9ZS-WT-ftH" secondAttribute="trailing" id="k51-bf-SNZ"/>
                 <constraint firstItem="9ZS-WT-ftH" firstAttribute="width" secondItem="meD-aR-YtB" secondAttribute="width" id="kLW-P7-FYW"/>
+                <constraint firstItem="WlE-RU-tVO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="nMo-fi-eT4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WlE-RU-tVO" secondAttribute="trailing" constant="10" id="o83-Ly-wVz"/>
                 <constraint firstItem="bzc-hH-eyw" firstAttribute="height" secondItem="veP-Si-6ED" secondAttribute="height" id="shp-Js-S9y"/>
                 <constraint firstItem="meD-aR-YtB" firstAttribute="leading" secondItem="D0f-DB-xhw" secondAttribute="trailing" id="sz9-dy-MHn"/>
                 <constraint firstItem="vB6-A8-HiJ" firstAttribute="leading" secondItem="jWC-kE-ve2" secondAttribute="trailing" id="tOb-ZO-iSn"/>

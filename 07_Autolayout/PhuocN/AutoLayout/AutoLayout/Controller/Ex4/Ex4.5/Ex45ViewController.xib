@@ -58,18 +58,33 @@
                         <constraint firstItem="syg-S3-H0r" firstAttribute="centerX" secondItem="Gn1-99-8ZN" secondAttribute="centerX" id="X1D-zQ-EK3"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOa-gF-hpa">
+                    <rect key="frame" x="10" y="44" width="394" height="122"/>
+                    <string key="text">3 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Các khoảng các và các kích thước của hình
+vuông tỉ lệ với size màn hình
+Các hình thì kích thước bằng nhau</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="syg-S3-H0r" firstAttribute="height" secondItem="3GN-zG-4ur" secondAttribute="height" id="5rA-vf-STv"/>
                 <constraint firstItem="Gn1-99-8ZN" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="6gR-Kv-use"/>
+                <constraint firstItem="cOa-gF-hpa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="8Mj-iP-ulG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gn1-99-8ZN" secondAttribute="trailing" id="CI4-zZ-tbY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cOa-gF-hpa" secondAttribute="trailing" constant="10" id="F0L-e4-0qa"/>
                 <constraint firstItem="LJJ-mf-n7x" firstAttribute="trailing" secondItem="3GN-zG-4ur" secondAttribute="leading" id="PMR-z5-E2p"/>
                 <constraint firstItem="Gn1-99-8ZN" firstAttribute="height" secondItem="3GN-zG-4ur" secondAttribute="height" id="QNY-IL-xv2"/>
                 <constraint firstItem="Gn1-99-8ZN" firstAttribute="leading" secondItem="3GN-zG-4ur" secondAttribute="trailing" id="QvN-kI-TOr"/>
                 <constraint firstItem="3GN-zG-4ur" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="XgY-E3-efE"/>
                 <constraint firstItem="3GN-zG-4ur" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.2" id="Xie-JT-EsD"/>
                 <constraint firstItem="LJJ-mf-n7x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r5L-0D-IjR"/>
+                <constraint firstItem="cOa-gF-hpa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r9P-18-buD"/>
                 <constraint firstItem="LJJ-mf-n7x" firstAttribute="height" secondItem="3GN-zG-4ur" secondAttribute="height" id="sLY-nK-6XY"/>
                 <constraint firstItem="3GN-zG-4ur" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wb8-9k-gUz"/>
                 <constraint firstItem="uju-PO-phR" firstAttribute="height" secondItem="3GN-zG-4ur" secondAttribute="height" id="xw7-hN-TYq"/>

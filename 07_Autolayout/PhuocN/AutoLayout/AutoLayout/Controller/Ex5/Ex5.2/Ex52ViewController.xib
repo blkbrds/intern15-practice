@@ -36,6 +36,20 @@
                         <constraint firstAttribute="width" secondItem="fIM-tJ-BeI" secondAttribute="height" id="IaF-A3-G3P"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7b-UA-nc2">
+                    <rect key="frame" x="10" y="44" width="394" height="162.5"/>
+                    <string key="text">4 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Kích thước 4 hình bằng nhau và chúng thay
+đổi kích thước khi thay đổi kích thước màn
+hình
+Khoảng cách giữa 4 hình và giữa các cạnh
+không thay đổi</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -47,13 +61,16 @@
                 <constraint firstItem="l7e-p5-eVf" firstAttribute="leading" secondItem="J8c-l1-Z6c" secondAttribute="trailing" constant="20" id="DJN-qF-boN"/>
                 <constraint firstItem="fIM-tJ-BeI" firstAttribute="height" secondItem="5lk-Pf-bvN" secondAttribute="height" id="Ftn-25-sMS"/>
                 <constraint firstItem="l7e-p5-eVf" firstAttribute="height" secondItem="J8c-l1-Z6c" secondAttribute="height" id="LWW-v0-IHW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n7b-UA-nc2" secondAttribute="trailing" constant="10" id="Sec-Eq-isC"/>
                 <constraint firstItem="l7e-p5-eVf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Td8-Fm-KFr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l7e-p5-eVf" secondAttribute="trailing" constant="20" id="YVI-Am-RV2"/>
+                <constraint firstItem="n7b-UA-nc2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="dEi-Sd-qxW"/>
                 <constraint firstItem="5lk-Pf-bvN" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ez8-Wk-aCy"/>
                 <constraint firstItem="5lk-Pf-bvN" firstAttribute="leading" secondItem="fIM-tJ-BeI" secondAttribute="trailing" constant="20" id="hEn-OZ-YPN"/>
                 <constraint firstItem="l7e-p5-eVf" firstAttribute="width" secondItem="l7e-p5-eVf" secondAttribute="height" id="iFJ-zb-B6P"/>
                 <constraint firstItem="fIM-tJ-BeI" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="kG9-B0-QXm"/>
                 <constraint firstItem="J8c-l1-Z6c" firstAttribute="width" secondItem="J8c-l1-Z6c" secondAttribute="height" id="lTy-uO-ijB"/>
+                <constraint firstItem="n7b-UA-nc2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="me0-qa-zCY"/>
                 <constraint firstItem="5lk-Pf-bvN" firstAttribute="width" secondItem="fIM-tJ-BeI" secondAttribute="height" id="qfU-kQ-beU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
