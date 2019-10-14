@@ -51,7 +51,7 @@ class BagdeNumberButton: UIButton {
   var text: String = "" {
     didSet {
       let width = text.width(constraintedHeight: heightBagde, font: numberBadgeLabel.font)
-      //numberBadgeLabel.frame.size = CGSize(width: width + 10, height: heightBagde)
+      numberBadgeLabel.frame.size = CGSize(width: width + 10, height: heightBagde)
       numberBadgeLabel.center = numberBagdePosition.addNumberBadgeLabelAtPositon(inRect: bounds)
       numberBadgeLabel.text = text
     }
