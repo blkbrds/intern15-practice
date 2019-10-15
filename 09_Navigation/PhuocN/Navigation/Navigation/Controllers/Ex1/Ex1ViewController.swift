@@ -26,8 +26,9 @@ class Ex1ViewController: BaseViewController {
         self.title = exercise?.name
     }
     
-    override func setupData() {
+    @IBAction func pushToNextView() {
+        let vc = View1ViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
-    
     
 }
