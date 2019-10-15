@@ -69,7 +69,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             vc.exercise = self.exercises[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
-            let vc = Ex2ViewController()
+            let vc = LoginViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         case 2:
             let vc = Ex3ViewController()
