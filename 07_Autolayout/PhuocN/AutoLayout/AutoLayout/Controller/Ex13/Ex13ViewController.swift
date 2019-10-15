@@ -20,20 +20,20 @@ class Ex13ViewController: ExerciseViewController {
         
         infoStackView.distribution = .fillEqually
         for i in 0..<4 {
-            let infoView = Bundle.main.loadNibNamed("InfoView", owner: self, options: nil)?.first as? InfoView
+            guard let infoView = Bundle.main.loadNibNamed("InfoView", owner: self, options: nil)?.first as? InfoView else { return }
             if i % 2 == 0 {
-                infoView?.backgroundColor = rowColor
-            }else {
-                infoView?.backgroundColor = UIColor.white
+                infoView.backgroundColor = rowColor
+            } else {
+                infoView.backgroundColor = UIColor.white
             }
-            infoStackView.addArrangedSubview(infoView!)
+            infoStackView.addArrangedSubview(infoView)
         }
         setupNavi()
     }
     override func viewLayoutMarginsDidChange() {
         if UIScreen.main.bounds.width > 500 {
             trailingEditButtonconstaint.priority = UILayoutPriority.defaultLow
-        }else {
+        } else {
             trailingEditButtonconstaint.priority = UILayoutPriority.required
         }
     }
