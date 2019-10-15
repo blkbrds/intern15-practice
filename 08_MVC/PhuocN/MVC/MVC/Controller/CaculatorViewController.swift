@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CaculatorViewController: UIViewController {
+final class CaculatorViewController: UIViewController {
     
     //MARK: - Properties
     var number: Number = Number()
