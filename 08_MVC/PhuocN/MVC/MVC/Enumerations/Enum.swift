@@ -8,16 +8,11 @@
 
 import Foundation
 
-//enum Result {
-//    case error(Bool)
-//    case result(Float)
-//    case overSize(String)
-//}
-
 enum Error: String {
     case overSize = "Over caculate"
     case error = "Not a number"
 }
+
 enum Operators: String {
     case plus = "+"
     case mutiplied = "X"

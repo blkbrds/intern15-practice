@@ -10,14 +10,14 @@ import Foundation
 
 final class OperatorManager  {
     
-    static let caculate: OperatorManager = OperatorManager()
-    var operate: Operators = .none
+    static let share: OperatorManager = OperatorManager()
+    var `operator`: Operators = .none
     
     private init() {}
     
-    func caculated(result: Float?, number: Float) -> Float? {
+    func calculatedResultWithOperator(result: Float?, number: Float) -> Float? {
         guard let result = result else { return nil }
-        switch operate {
+        switch self.operator {
         case .divide:
             return number == 0 ? nil : result / number
         case .mutiplied:

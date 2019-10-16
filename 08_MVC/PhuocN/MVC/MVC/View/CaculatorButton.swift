@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CaculatorButton: UIButton {
+class CalculatorButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         config()

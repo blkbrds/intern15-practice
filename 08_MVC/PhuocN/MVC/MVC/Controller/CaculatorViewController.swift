@@ -11,8 +11,9 @@ import UIKit
 final class CaculatorViewController: UIViewController {
     
     //MARK: - Properties
-    var number: Number = Number()
-    var isCaculated: Bool = false
+    private var number: Number = Number()
+    private var isCaculated: Bool = false
+    private var limitNumber: Float = 999999
     
     @IBOutlet private weak var resultLabel: UILabel!
     
@@ -24,7 +25,7 @@ final class CaculatorViewController: UIViewController {
     @IBAction func handleNumberButton(_ sender: UIButton) {
         if let _ = number.result {
             number.number = 0
-            guard number.number < 999999 else {
+            guard number.number <= limitNumber else {
                 return
             }
             number.convertToNumber(with: sender.tag)
@@ -36,18 +37,18 @@ final class CaculatorViewController: UIViewController {
     @IBAction func handleOperatorButton(_ sender: UIButton) {
         guard let _ = number.result else { return }
         if isCaculated {
-            number.result = OperatorManager.caculate.caculated(result: number.result, number: number.number)
+            number.result = OperatorManager.share.calculatedResultWithOperator(result: number.result, number: number.number)
             showResult(result: number.result)
         }
         switch sender.tag {
         case 0:
-            OperatorManager.caculate.operate = .divide
+            OperatorManager.share.operator = .divide
         case 1:
-            OperatorManager.caculate.operate = .mutiplied
+            OperatorManager.share.operator = .mutiplied
         case 2:
-            OperatorManager.caculate.operate = .plus
+            OperatorManager.share.operator = .plus
         case 3:
-            OperatorManager.caculate.operate = .subtract
+            OperatorManager.share.operator = .subtract
         default:
             break
         }
@@ -59,13 +60,13 @@ final class CaculatorViewController: UIViewController {
         number.number = 0
         number.result = 0
         isCaculated = false
-        OperatorManager.caculate.operate = .none
+        OperatorManager.share.operator = .none
     }
     
-    @IBAction func equal(_ sender: Any) {
-        number.result = OperatorManager.caculate.caculated(result: number.result, number: number.number)
+    @IBAction func calculatedResult(_ sender: Any) {
+        number.result = OperatorManager.share.calculatedResultWithOperator(result: number.result, number: number.number)
         showResult(result: number.result)
-        OperatorManager.caculate.operate = .none
+        OperatorManager.share.operator = .none
         guard let result = number.result else { return }
         number.number = result
     }
@@ -73,13 +74,13 @@ final class CaculatorViewController: UIViewController {
     @IBAction func oppositeNumber(_ sender: Any) {
         number.number = -1 * number.number
         resultLabel.text = String(number.number)
-        OperatorManager.caculate.operate = .none
+        OperatorManager.share.operator = .none
     }
     
     @IBAction func convertPercent(_ sender: Any) {
         number.number = number.number / 100
         resultLabel.text = String(number.number)
-        OperatorManager.caculate.operate = .none
+        OperatorManager.share.operator = .none
     }
     
     func showResult(result: Float?) {
@@ -87,7 +88,7 @@ final class CaculatorViewController: UIViewController {
             resultLabel.text = Error.error.rawValue
             return
         }
-        if result <= 999999 {
+        if result <= limitNumber {
             resultLabel.text = String(result)
         } else {
             resultLabel.text = Error.overSize.rawValue

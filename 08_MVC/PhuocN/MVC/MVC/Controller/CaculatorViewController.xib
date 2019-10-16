@@ -34,7 +34,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="En3-hm-a1O">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="114.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLP-P4-AR8" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLP-P4-AR8" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.59910994580958898" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -45,7 +45,7 @@
                                                 <action selector="clearResultLabel" destination="-1" eventType="touchUpInside" id="j6X-he-q0Z"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBk-IB-w6h" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBk-IB-w6h" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="103.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.59910994580958898" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -56,7 +56,7 @@
                                                 <action selector="oppositeNumber:" destination="-1" eventType="touchUpInside" id="SXI-uL-Vkj"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3Q-A5-vaR" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3Q-A5-vaR" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="207" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.59910994580958898" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -67,7 +67,7 @@
                                                 <action selector="convertPercent:" destination="-1" eventType="touchUpInside" id="C2J-QF-GhN"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4d-xb-Ymx" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4d-xb-Ymx" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="310.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" red="0.89530714899999997" green="0.4766427654" blue="0.24595997429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -83,7 +83,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KPC-y4-1I6">
                                     <rect key="frame" x="0.0" y="114.5" width="414" height="114.5"/>
                                     <subviews>
-                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-C1-gmO" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-C1-gmO" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -94,7 +94,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="zex-Eg-XfG"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKI-dY-EyY" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKI-dY-EyY" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="103.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -105,7 +105,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="Dlk-ad-Zcg"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-a4-N0Z" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-a4-N0Z" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="207" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -116,7 +116,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="JYd-dZ-Iq2"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qs-RT-4cL" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qs-RT-4cL" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="310.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" red="0.89530714899999997" green="0.4766427654" blue="0.24595997429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -132,7 +132,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gtc-kg-HrJ">
                                     <rect key="frame" x="0.0" y="229" width="414" height="114.5"/>
                                     <subviews>
-                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcy-iB-2FQ" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcy-iB-2FQ" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -143,7 +143,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="MsF-H0-KGQ"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-Jh-rou" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzv-Jh-rou" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="103.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -154,7 +154,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="2mg-Gg-qrP"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLL-cX-5f0" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLL-cX-5f0" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="207" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -165,7 +165,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="b29-YM-4Hz"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R82-u7-al1" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R82-u7-al1" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="310.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" red="0.89530714899999997" green="0.4766427654" blue="0.24595997429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
@@ -181,7 +181,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ShJ-Ct-HpA">
                                     <rect key="frame" x="0.0" y="343.5" width="414" height="114.5"/>
                                     <subviews>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYD-2S-VmH" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYD-2S-VmH" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -192,7 +192,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="IfX-y9-gXb"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoG-Jj-vqu" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoG-Jj-vqu" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="103.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -203,7 +203,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="XC3-wi-2XO"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNg-as-otr" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNg-as-otr" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="207" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -214,7 +214,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="3o7-su-CSI"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZx-oA-P8d" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZx-oA-P8d" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="310.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" red="0.89530714899999997" green="0.4766427654" blue="0.24595997429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
@@ -230,7 +230,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Xoe-T6-1ax">
                                     <rect key="frame" x="0.0" y="458" width="414" height="114.5"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2m-1B-eOY" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2m-1B-eOY" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="207" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -241,7 +241,7 @@
                                                 <action selector="handleNumberButton:" destination="-1" eventType="touchUpInside" id="vQb-Fx-qo3"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAR-yS-2pg" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAR-yS-2pg" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="207" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
@@ -249,7 +249,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlD-s4-3y4" customClass="CaculatorButton" customModule="MVC" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlD-s4-3y4" customClass="CalculatorButton" customModule="MVC" customModuleProvider="target">
                                             <rect key="frame" x="310.5" y="0.0" width="103.5" height="114.5"/>
                                             <color key="backgroundColor" red="0.89530714899999997" green="0.4766427654" blue="0.24595997429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
@@ -257,7 +257,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <action selector="equal:" destination="-1" eventType="touchUpInside" id="2RJ-OC-MGq"/>
+                                                <action selector="calculatedResult:" destination="-1" eventType="touchUpInside" id="2RJ-OC-MGq"/>
                                             </connections>
                                         </button>
                                     </subviews>
