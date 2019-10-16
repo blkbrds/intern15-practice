@@ -8,11 +8,11 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+final class EditViewController: UIViewController {
     
-    @IBOutlet weak var confirmPassTextField: UITextField!
-    @IBOutlet weak var newPassTextField: UITextField!
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet private weak var confirmPassTextField: UITextField!
+    @IBOutlet private weak var newPassTextField: UITextField!
+    @IBOutlet private weak var userNameTextField: UITextField!
     
     var user: User?
     

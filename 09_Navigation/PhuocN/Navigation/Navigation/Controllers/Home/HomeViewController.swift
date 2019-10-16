@@ -74,9 +74,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             let vc = ListProfileViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 3:
-            let vc = Ex4ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
         default:
             // create the alert
             let alert = UIAlertController(title: "Warning",

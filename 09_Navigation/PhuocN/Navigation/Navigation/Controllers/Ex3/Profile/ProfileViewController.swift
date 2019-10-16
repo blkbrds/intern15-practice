@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var userNameTextField: UITextField!
     var user: User?
     override func viewDidLoad() {
         super.viewDidLoad()

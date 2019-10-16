@@ -30,6 +30,46 @@
                         <action selector="pushToNextView" destination="-1" eventType="touchUpInside" id="DAl-5S-fv7"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhO-0m-elF">
+                    <rect key="frame" x="20" y="250" width="136" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Gradient Navigation"/>
+                    <connections>
+                        <action selector="changeBackgroundNavigation" destination="-1" eventType="touchUpInside" id="Pwg-At-WUn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jg-sB-5K3">
+                    <rect key="frame" x="254" y="249" width="146" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="New Feed Navigation"/>
+                    <connections>
+                        <action selector="changeTincolorNavigation" destination="-1" eventType="touchUpInside" id="DuP-Rf-3eh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsD-Nm-aoE">
+                    <rect key="frame" x="134" y="387" width="147" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Bar button navigation"/>
+                    <connections>
+                        <action selector="changeBarButtonItemNavigation" destination="-1" eventType="touchUpInside" id="0vs-DI-uqa"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er1-Da-Hgs">
+                    <rect key="frame" x="254" y="322" width="117" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Group navigation"/>
+                    <connections>
+                        <action selector="addGroupBarButtonNavigation" destination="-1" eventType="touchUpInside" id="TeT-sM-FPE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fe-qQ-7JC">
+                    <rect key="frame" x="0.0" y="322" width="117" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Search Navigtion"/>
+                    <connections>
+                        <action selector="addSearchBarNavigation" destination="-1" eventType="touchUpInside" id="7f3-sZ-Civ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

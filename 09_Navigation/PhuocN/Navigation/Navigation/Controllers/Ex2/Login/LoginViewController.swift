@@ -8,10 +8,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passWordTextField: UITextField!
+    @IBOutlet private weak var userNameTextField: UITextField!
+    @IBOutlet private weak var passWordTextField: UITextField!
     
     var users: [User] = []
     

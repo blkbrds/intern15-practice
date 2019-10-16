@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ListProfileViewController: UIViewController {
+final class ListProfileViewController: UIViewController {
     
-    @IBOutlet weak var profileScrollView: UIScrollView!
+    @IBOutlet private weak var profileScrollView: UIScrollView!
     
     var users: [User] = []
     let heightAvatar = 160

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class WellcomeViewController: UIViewController {
+final class WellcomeViewController: UIViewController {
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet private weak var userNameLabel: UILabel!
     var userName: String = ""
     var user: User?
     
