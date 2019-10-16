@@ -34,10 +34,8 @@ class AvatarView: UIView {
         super.init(frame: frame)
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 0.5
-        
         avatarImageView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height * 0.8)
         userNameLabel.frame = CGRect(x: 0, y: avatarImageView.frame.maxY, width: self.frame.width, height: self.frame.height * 0.2)
-        
         addSubview(avatarImageView)
         addSubview(userNameLabel)
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleAvatarView)))
@@ -46,14 +44,13 @@ class AvatarView: UIView {
     @objc func handleAvatarView() {
         delegate?.tap(user: userNameLabel.text, withIndex: index)
     }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 0.5
-        
         avatarImageView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height * 0.8)
         userNameLabel.frame = CGRect(x: 0, y: avatarImageView.frame.maxY, width: self.frame.width, height: self.frame.height * 0.2)
-        
         addSubview(avatarImageView)
         addSubview(userNameLabel)
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleAvatarView)))
