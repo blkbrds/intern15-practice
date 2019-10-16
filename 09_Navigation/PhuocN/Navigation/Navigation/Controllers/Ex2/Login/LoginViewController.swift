@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         users = []
         fetchData()
         userNameTextField.text = ""

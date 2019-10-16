@@ -32,10 +32,7 @@ class EditViewController: UIViewController {
             let pass = newPassTextField.text, pass != "",
             let confirmPass = confirmPassTextField.text, confirmPass == pass else { return }
         UserDefaults.standard.set(user, forKey: "username")
-        guard let userEdit = self.user else {
-            print("Fall")
-            return
-        }
+        guard let userEdit = self.user else { return }
         DataManagement.share.writePlistToList(user: userEdit, username: user, password: pass)
         navigationController?.popViewController(animated: true)
     }

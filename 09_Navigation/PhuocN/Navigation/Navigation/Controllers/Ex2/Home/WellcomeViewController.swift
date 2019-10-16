@@ -20,6 +20,7 @@ class WellcomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         guard let username = UserDefaults.standard.string(forKey: "username") else { return }
         userNameLabel.text = "Wellcome \(username)"
     }

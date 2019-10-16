@@ -74,7 +74,7 @@ class DataManagement {
         }
     }
     
-    func writePlistToList(user: User, username: String, password: String) {
+    func writePlistToList(user: User, username: String, password: String? = nil) {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let path = documentDirectory.appending("/users.plist")
         let data: [String: String] = ["username" : user.username, "password" : user.password, "avatar": user.avatarImageName]
@@ -84,7 +84,11 @@ class DataManagement {
             for item in dataSource {
                 if item["username"] == user.username {
                     dataSource[i]["username"] = username
-                    dataSource[i]["password"] = password
+                    if let password = password {
+                        dataSource[i]["password"] = password
+                    } else {
+                        dataSource[i]["password"] = user.password
+                    }
                     dataSource[i]["avatar"] = user.avatarImageName
                     print(dataSource[i])
                 }
