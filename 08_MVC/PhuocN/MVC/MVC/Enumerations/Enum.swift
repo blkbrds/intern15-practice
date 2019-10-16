@@ -20,5 +20,3 @@ enum Operators: String {
     case subtract = "-"
     case none
 }
-
-
