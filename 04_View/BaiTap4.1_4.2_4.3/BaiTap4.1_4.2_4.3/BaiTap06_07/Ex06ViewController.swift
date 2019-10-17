@@ -1,10 +1,3 @@
-//
-//  Ex06ViewController.swift
-//  BaiTap4.1_4.2_4.3
-//
-//  Created by ANH NGUYỄN on 10/9/19.
-//  Copyright © 2019 asiantech. All rights reserved.
-//
 
 import UIKit
 
@@ -88,9 +81,7 @@ class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
                 self.commentImage.alpha = 0
                 self.commentLable.alpha = 0
             }
-
         }
         print("hhahhahahahahah")
     }
-
 }
