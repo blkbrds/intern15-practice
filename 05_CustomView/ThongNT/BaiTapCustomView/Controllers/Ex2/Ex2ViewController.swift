@@ -11,29 +11,22 @@ import UIKit
 class Ex2ViewController: BaseViewController {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var valueTextField: UITextField!
-    let triangleView = MySliderView()
+    let triangle = Bundle.main.loadNibNamed("MySliderView", owner: self, options: nil)?[0] as? MySliderView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let frame = CGRect(x: 180, y: 230, width: 50, height: 400)
+        triangle?.frame = frame
+        triangle?.delegate = self
+        view.addSubview(triangle!)
         
         valueTextField.text = "0 %"
-        let frame = CGRect(x: 182, y: 170, width: 50, height: 550)
-        triangleView.delegate = self
-        triangleView.frame = frame
-        triangleView.backgroundColor = .white
-        view.addSubview(triangleView)
-        
-        let avatarView = Bundle.main.loadNibNamed("MySliderView", owner: self, options: nil)?[0] as? MySliderView
-        view.addSubview(avatarView!)
-        
-        
-        valueTextField.text = "0 %"
-        //valueTextField.delegate = self
         valueTextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
     }
     
     @objc func textFieldDidChange(textField: UITextField) {
-        
+        guard let int = Int(valueTextField.text!) else { return }
+        triangle?.receiveValue = int
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -46,7 +39,7 @@ class Ex2ViewController: BaseViewController {
 }
 
 extension Ex2ViewController: MySliderViewDelegate{
-    func mySliderView(mySliderView: MySliderView, valueOfTextField: Int) {
-        valueTextField.text = "\(valueOfTextField) %"
+    func sendValue(value: Int) {
+        valueTextField.text = "\(value) %"
     }
 }
