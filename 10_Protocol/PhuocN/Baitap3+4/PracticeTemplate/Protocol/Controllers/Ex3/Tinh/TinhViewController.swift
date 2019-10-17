@@ -15,6 +15,7 @@ protocol TinhViewControllerDataSource: class {
 
 class TinhViewController: UIViewController {
     
+     private let cellIdentifier: String = "cell"
     weak var dataSource: TinhViewControllerDataSource?
     @IBOutlet private weak var tableView: UITableView!
     var data: [Tinh] = []
@@ -24,17 +25,17 @@ class TinhViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView(frame: .zero)
         setupNavi()
     }
     
-    func setupNavi() {
+    private func setupNavi() {
         self.title = "Tinh"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Huyen", style: .plain, target: self, action: #selector(pushToNextView))
     }
     
-    @objc func pushToNextView() {
+    @objc private func pushToNextView() {
         let vc = HuyenViewController()
         guard let tinh = tinhSelected else { return }
         vc.data = tinh.huyen
@@ -49,11 +50,17 @@ extension TinhViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.systemGreen.cgColor
         cell.textLabel?.text = data[indexPath.row].name
         cell.selectionStyle = .none
+        data.enumerated().forEach {
+            if let tinh = dataSource?.getTinhSelected().tinh, $1.name == tinh && indexPath.row == $0 {
+                cell.backgroundColor = .systemGreen
+                tinhSelected = data[indexPath.row]
+            }
+        }
         return cell
     }
     

@@ -61,6 +61,4 @@ extension Ex3ViewController: MienViewControllerDataSource {
     func getMienSelected() -> (mien: String?, tinh: String?, huyen: String?) {
         return (mienLabel.text, tinhLabel.text, huyenLabel.text)
     }
-    
-    
 }

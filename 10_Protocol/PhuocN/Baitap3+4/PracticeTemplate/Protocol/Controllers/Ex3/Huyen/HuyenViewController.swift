@@ -16,6 +16,7 @@ protocol HuyenViewControllerDataSource: class {
 
 class HuyenViewController: UIViewController {
     
+    private let cellIdentifier: String = "cell"
     var huyenSelected: Huyen?
     weak var dataSource: HuyenViewControllerDataSource?
     var data: [Huyen] = []
@@ -26,29 +27,17 @@ class HuyenViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView(frame: .zero)
         setupNavi()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        guard let huyenName = dataSource?.getHuyenSelected() else { return }
-        data.enumerated().forEach {
-            if $1.name == huyenName {
-                tableView.cellForRow(at: IndexPath(row: $0, section: 0))?.backgroundColor = .systemRed
-                tableView.reloadRows(at: [IndexPath(row: $0, section: 0)], with: .none)
-                return
-            }
-        }
-    }
-    
-    func setupNavi() {
+    private func setupNavi() {
         self.title = "Huyen"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(popToLocationView))
     }
     
-    @objc func popToLocationView() {
+    @objc private func popToLocationView() {
         guard let navi = navigationController else { return }
         for vc in navi.viewControllers {
             if let vc = vc as? Ex3ViewController {
@@ -66,11 +55,17 @@ extension HuyenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.systemRed.cgColor
         cell.textLabel?.text = data[indexPath.row].name
         cell.selectionStyle = .none
+        data.enumerated().forEach {
+            if let huyen = dataSource?.getHuyenSelected(), $1.name == huyen && indexPath.row == $0 {
+                cell.backgroundColor = .systemRed
+                huyenSelected = data[indexPath.row]
+            }
+        }
         return cell
     }
     

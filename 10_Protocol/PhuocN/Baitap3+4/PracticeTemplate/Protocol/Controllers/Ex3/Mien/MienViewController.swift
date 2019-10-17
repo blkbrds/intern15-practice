@@ -14,6 +14,7 @@ protocol MienViewControllerDataSource: class {
 
 class MienViewController: UIViewController {
     
+    private let cellIdentifier: String = "cell"
     weak var dataSource: MienViewControllerDataSource?
     
     @IBOutlet private weak var tableView: UITableView!
@@ -26,21 +27,21 @@ class MienViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setupNavi()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
     
-    func setupNavi() {
+    private func setupNavi() {
         self.title = "Mien"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tinh", style: .plain, target: self, action: #selector(pushToNextView))
     }
     
-    @objc func pushToNextView() {
+    @objc private func pushToNextView() {
         let vc = TinhViewController()
         if let mien = mienSelected {
-        vc.data = mien.tinh
-        vc.dataSource = self
+            vc.data = mien.tinh
+            vc.dataSource = self
         }
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -52,14 +53,17 @@ extension MienViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.systemBlue.cgColor
         cell.textLabel?.text = data[indexPath.row].name
         cell.selectionStyle = .none
-//        if indexPath.row == 3 {
-//            cell.backgroundColor = .systemBlue
-//        }
+        data.enumerated().forEach {
+            if let mien = dataSource?.getMienSelected().mien, $1.name == mien && indexPath.row == $0 {
+                cell.backgroundColor = .systemBlue
+                mienSelected = data[indexPath.row]
+            }
+        }
         return cell
     }
     
