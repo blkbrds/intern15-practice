@@ -14,7 +14,7 @@ protocol AvatarViewDelegate: class {
 
 class AvatarView: UIView {
     
-    var index: Int = 0
+    var indexOfUser: Int = 0
     weak var delegate: AvatarViewDelegate?
     
     let avatarImageView: UIImageView = {
@@ -43,10 +43,7 @@ class AvatarView: UIView {
         addSubview(userNameLabel)
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleAvatarView)))
     }
-    
-    @objc func handleAvatarView() {
-        delegate?.tap(user: userNameLabel.text, withIndex: index)
-    }
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         layer.borderColor = UIColor.black.cgColor
@@ -58,5 +55,9 @@ class AvatarView: UIView {
         addSubview(avatarImageView)
         addSubview(userNameLabel)
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleAvatarView)))
+    }
+    
+    @objc private func handleAvatarView() {
+        delegate?.tap(user: userNameLabel.text, withIndex: indexOfUser)
     }
 }

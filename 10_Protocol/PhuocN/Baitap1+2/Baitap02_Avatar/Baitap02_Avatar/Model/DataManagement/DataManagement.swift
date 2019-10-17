@@ -8,6 +8,14 @@
 
 import Foundation
 
+enum Key: String {
+    case userName = "username"
+    case password = "password"
+    case avatar = "avatar"
+    case exerciseName = "name"
+    case exerciseDescription = "description"
+}
+
 class DataManagement {
     // MARK: - Signleton
     public static var share: DataManagement = {
@@ -15,16 +23,16 @@ class DataManagement {
         return dataManagement
     }()
     // MARK: - public function
-     private init() {}
-    
+    private init() {}
+  
     func getUser(fileName: String, type: String) -> [User] {
         guard let array = NSArray(contentsOfFile: getFileDocumentPath(fileName: fileName, type: type)) else { return [] }
         var users: [User] = []
         for item in array {
             let dict = item as! NSDictionary
-            let user = User(username: dict.object(forKey: "username") as! String,
-                            password: dict.object(forKey: "password") as! String,
-                            avatarImageName: dict.object(forKey: "avatar") as! String)
+            let user = User(userName: dict.object(forKey: Key.userName.rawValue) as! String,
+                            password: dict.object(forKey: Key.password.rawValue) as! String,
+                            avatarImageName: dict.object(forKey: Key.avatar.rawValue) as! String)
             users.append(user)
         }
         return users
@@ -65,19 +73,19 @@ class DataManagement {
     func writePlistToList(user: User, username: String, password: String? = nil) {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let path = documentDirectory.appending("/users.plist")
-        let data: [String: String] = ["username" : user.userName, "password" : user.password, "avatar": user.avatarImageName]
+        let data: [String: String] = [Key.userName.rawValue : user.userName, Key.password.rawValue : user.password, Key.avatar.rawValue: user.avatarImageName]
         let someData = NSArray(object: data)
         if var dataSource = NSArray(contentsOfFile: path) as? [[String: String]] {
             var i = 0
             for item in dataSource {
-                if item["username"] == user.userName {
-                    dataSource[i]["username"] = username
+                if item[Key.userName.rawValue] == user.userName {
+                    dataSource[i][Key.userName.rawValue] = username
                     if let password = password {
-                        dataSource[i]["password"] = password
+                        dataSource[i][Key.password.rawValue] = password
                     } else {
-                        dataSource[i]["password"] = user.password
+                        dataSource[i][Key.password.rawValue] = user.password
                     }
-                    dataSource[i]["avatar"] = user.avatarImageName
+                    dataSource[i][Key.avatar.rawValue] = user.avatarImageName
                     print(dataSource[i])
                 }
                 i += 1

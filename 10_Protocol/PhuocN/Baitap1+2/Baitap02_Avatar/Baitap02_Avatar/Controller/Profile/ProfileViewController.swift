@@ -12,26 +12,28 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var userNameTextField: UITextField!
+    
     var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavi()
         setupUI()
     }
     
-    func setupUI() {
+    private func setupUI() {
         guard let user = user else { return }
         avatarImageView.image = UIImage(named: user.avatarImageName)
         userNameTextField.text = user.userName
     }
     
-    func setupNavi() {
+    private func setupNavi() {
         title = "Profile"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(editProfile))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popToView))
     }
     
-    @objc func editProfile() {
+    @objc private func editProfile() {
         if let user = self.user, let username = userNameTextField.text, username != user.userName {
             DataManagement.share.writePlistToList(user: user, username: username)
             navigationController?.popViewController(animated: true)
@@ -40,7 +42,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @objc func popToView() {
+    @objc private func popToView() {
         navigationController?.popViewController(animated: true)
     }
 }

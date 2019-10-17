@@ -33,14 +33,14 @@ class ListProfileViewController: UIViewController {
         createListAvatar()
     }
     
-    func fetchData() {
+    private func fetchData() {
         DataManagement.share.preparePlistForObject(forResource: "users", ofType: "plist", withURL: "/users.plist")
         users = DataManagement.share.getUser(fileName: "users", type: "plist")
         print(users)
         
     }
     
-    func createListAvatar() {
+    private func createListAvatar() {
         var cot: CGFloat = 0
         var dong: CGFloat = 0
         for i in 0..<users.count{
@@ -57,7 +57,7 @@ class ListProfileViewController: UIViewController {
                 avatar.avatarImageView.image = UIImage(named: "DefaultAvatar.png")
             }
             avatar.userNameLabel.text = users[i].userName
-            avatar.index = i
+            avatar.indexOfUser = i
             profileScrollView.addSubview(avatar)
             avatar.delegate = self
             cot += 1
