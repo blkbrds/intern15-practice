@@ -58,8 +58,8 @@ extension MienViewController: UITableViewDataSource, UITableViewDelegate {
         cell.layer.borderColor = UIColor.systemBlue.cgColor
         cell.textLabel?.text = data[indexPath.row].name
         cell.selectionStyle = .none
-        data.enumerated().forEach {
-            if let mien = dataSource?.getMienSelected().mien, $1.name == mien && indexPath.row == $0 {
+        if let mien = dataSource?.getMienSelected().mien {
+            for (offset, element) in data.enumerated() where mien == element.name && indexPath.row == offset{
                 cell.backgroundColor = .systemBlue
                 mienSelected = data[indexPath.row]
             }

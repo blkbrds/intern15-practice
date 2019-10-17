@@ -18,8 +18,8 @@ class HuyenViewController: UIViewController {
     
     private let cellIdentifier: String = "cell"
     var huyenSelected: Huyen?
-    weak var dataSource: HuyenViewControllerDataSource?
     var data: [Huyen] = []
+    weak var dataSource: HuyenViewControllerDataSource?
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -60,8 +60,8 @@ extension HuyenViewController: UITableViewDataSource, UITableViewDelegate {
         cell.layer.borderColor = UIColor.systemRed.cgColor
         cell.textLabel?.text = data[indexPath.row].name
         cell.selectionStyle = .none
-        data.enumerated().forEach {
-            if let huyen = dataSource?.getHuyenSelected(), $1.name == huyen && indexPath.row == $0 {
+        if let huyen = dataSource?.getHuyenSelected() {
+            for (offset, element) in data.enumerated() where huyen == element.name && indexPath.row == offset{
                 cell.backgroundColor = .systemRed
                 huyenSelected = data[indexPath.row]
             }

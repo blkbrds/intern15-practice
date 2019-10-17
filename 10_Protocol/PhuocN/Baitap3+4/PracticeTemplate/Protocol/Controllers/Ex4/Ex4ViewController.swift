@@ -10,6 +10,7 @@ import UIKit
 
 class Ex4ViewController: BaseViewController {
     
+    private var searchLocations: [String] = []
     private let cellIdentifier: String = "cell"
     private let locations: [String] = ["An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre",
                                "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông",
@@ -17,7 +18,6 @@ class Ex4ViewController: BaseViewController {
                                "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai",
                                "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Quảng Bình", "Quảng Nam",
                                "Quảng Ngãi", "Đà Nẵng", "Hải Phòng", "Hà Nội",  "TP.HCM", "Thừa Thiên Huế"]
-    private var searchLocations: [String] = []
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!

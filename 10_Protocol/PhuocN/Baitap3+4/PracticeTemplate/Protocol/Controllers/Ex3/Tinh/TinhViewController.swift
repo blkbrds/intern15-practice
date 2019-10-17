@@ -15,7 +15,7 @@ protocol TinhViewControllerDataSource: class {
 
 class TinhViewController: UIViewController {
     
-     private let cellIdentifier: String = "cell"
+    private let cellIdentifier: String = "cell"
     weak var dataSource: TinhViewControllerDataSource?
     @IBOutlet private weak var tableView: UITableView!
     var data: [Tinh] = []
@@ -55,8 +55,8 @@ extension TinhViewController: UITableViewDataSource, UITableViewDelegate {
         cell.layer.borderColor = UIColor.systemGreen.cgColor
         cell.textLabel?.text = data[indexPath.row].name
         cell.selectionStyle = .none
-        data.enumerated().forEach {
-            if let tinh = dataSource?.getTinhSelected().tinh, $1.name == tinh && indexPath.row == $0 {
+        if let tinh = dataSource?.getTinhSelected().tinh {
+            for (offset, element) in data.enumerated() where tinh == element.name && indexPath.row == offset{
                 cell.backgroundColor = .systemGreen
                 tinhSelected = data[indexPath.row]
             }

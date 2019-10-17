@@ -35,10 +35,6 @@ class Ex3ViewController: BaseViewController {
         tinhLabel.text = tinh
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: config
     override func setupUI() {
         super.setupUI()
@@ -46,10 +42,7 @@ class Ex3ViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pushToNextViewController))
     }
     
-    override func setupData() {
-    }
-    
-    @objc func pushToNextViewController() {
+    @objc private func pushToNextViewController() {
         let vc = MienViewController()
         vc.dataSource = self
         navigationController?.pushViewController(vc, animated: true)

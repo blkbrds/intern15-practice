@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Tinh: Location {
+class Tinh {
     var name: String
     var huyen: [Huyen]
     
