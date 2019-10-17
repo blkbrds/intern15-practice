@@ -8,34 +8,36 @@
 
 import UIKit
 
-class View4ViewController: UIViewController {
+final class View4ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "View 4"
     }
     
-    @IBAction func popToPreView() {
+    @IBAction private func popToPreViewTouchUpInside() {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func popToRootView() {
+    @IBAction private func popToRootViewTouchUpInside() {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction func popToView1() {
-        for vc in navigationController!.viewControllers {
+    @IBAction private func popToView1TouchUpInside() {
+        guard let navi = navigationController else { return }
+        for vc in navi.viewControllers {
             if let vc = vc as? View1ViewController {
-                navigationController?.popToViewController(vc, animated: true)
+                navi.popToViewController(vc, animated: true)
                 return
             }
         }
     }
     
-    @IBAction func popToView2() {
-        for vc in navigationController!.viewControllers {
+    @IBAction private func popToView2TouchUpInside() {
+        guard let navi = navigationController else { return }
+        for vc in navi.viewControllers {
             if let vc = vc as? View2ViewController {
-                navigationController?.popToViewController(vc, animated: true)
+                navi.popToViewController(vc, animated: true)
                 return
             }
         }

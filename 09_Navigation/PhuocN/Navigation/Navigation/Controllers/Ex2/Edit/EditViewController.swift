@@ -21,15 +21,15 @@ final class EditViewController: UIViewController {
         setupNavi()
     }
     
-    func setupNavi() {
+    private func setupNavi() {
         title = "Edit"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(editUser))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popToView))
     }
     
-    @objc func editUser() {
-        guard let user = userNameTextField.text, user != "",
-            let pass = newPassTextField.text, pass != "",
+    @objc private func editUser() {
+        guard let user = userNameTextField.text, !user.isEmpty,
+            let pass = newPassTextField.text, !pass.isEmpty,
             let confirmPass = confirmPassTextField.text, confirmPass == pass else { return }
         UserDefaults.standard.set(user, forKey: "username")
         guard let userEdit = self.user else { return }
@@ -37,7 +37,7 @@ final class EditViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func popToView() {
+    @objc private func popToView() {
         navigationController?.popViewController(animated: true)
     }
 }

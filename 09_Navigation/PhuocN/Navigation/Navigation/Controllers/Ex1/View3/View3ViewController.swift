@@ -8,33 +8,33 @@
 
 import UIKit
 
-class View3ViewController: UIViewController {
-
+final class View3ViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "View 3"
     }
     
-    @IBAction func pushToNextView() {
+    @IBAction private func pushToNextViewTouchUpInside() {
         let vc = View4ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func popToPreView() {
-         navigationController?.popViewController(animated: true)
+    @IBAction private func popToPreViewTouchUpInside() {
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func popToRootView() {
+    @IBAction private func popToRootViewTouchUpInside() {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @IBAction func popToView1() {
-        for vc in navigationController!.viewControllers {
+    @IBAction private func popToView1TouchUpInside() {
+        guard let navi = navigationController else { return }
+        for vc in navi.viewControllers {
             if let vc = vc as? View1ViewController {
-                navigationController?.popToViewController(vc, animated: true)
+                navi.popToViewController(vc, animated: true)
                 return
             }
         }
     }
-
 }

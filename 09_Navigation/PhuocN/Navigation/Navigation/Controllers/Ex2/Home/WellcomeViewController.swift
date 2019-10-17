@@ -11,7 +11,8 @@ import UIKit
 final class WellcomeViewController: UIViewController {
     
     @IBOutlet private weak var userNameLabel: UILabel!
-    var userName: String = ""
+    
+    private var userName: String = ""
     var user: User?
     
     override func viewDidLoad() {
@@ -25,26 +26,25 @@ final class WellcomeViewController: UIViewController {
         userNameLabel.text = "Wellcome \(username)"
     }
     
-    func setupNavi() {
+    private func setupNavi() {
         title = "Home"
         let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(pushToEditViewController))
-        let logoutButton = UIButton(type: .system)
-        let attribute: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
-        logoutButton.setAttributedTitle(NSAttributedString(string: "Logout", attributes: attribute), for: .normal)
-        logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logoutButton)
+        let logOutButton = UIButton(type: .system)
+        let attribute: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)]
+        logOutButton.setAttributedTitle(NSAttributedString(string: "Logout", attributes: attribute), for: .normal)
+        logOutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logOutButton)
         navigationItem.rightBarButtonItem = editButton
     }
     
-    @objc func pushToEditViewController() {
+    @objc private func pushToEditViewController() {
         let vc = EditViewController()
         vc.user = user
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc func logout() {
+    @objc private func logout() {
         UserDefaults.standard.set(nil, forKey: "username")
         navigationController?.popViewController(animated: true)
     }
-    
 }

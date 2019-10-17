@@ -27,7 +27,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="pushToNextView" destination="-1" eventType="touchUpInside" id="JXA-cy-NWS"/>
+                        <action selector="pushToNextViewTouchUpInside" destination="-1" eventType="touchUpInside" id="JXA-cy-NWS"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-1c-iw6">
@@ -39,7 +39,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="popToPreView" destination="-1" eventType="touchUpInside" id="gHn-fq-TNc"/>
+                        <action selector="popToPreViewTouchUpInside" destination="-1" eventType="touchUpInside" id="gHn-fq-TNc"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLj-O2-LCq">
@@ -51,7 +51,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="popToRootView" destination="-1" eventType="touchUpInside" id="DHc-MN-QyM"/>
+                        <action selector="popToRootViewTouchUpInside" destination="-1" eventType="touchUpInside" id="DHc-MN-QyM"/>
                     </connections>
                 </button>
             </subviews>

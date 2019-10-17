@@ -14,7 +14,7 @@ protocol AvatarViewDelegate: class {
 
 class AvatarView: UIView {
     
-    var index: Int = 0
+    var indexOfuser: Int = 0
     weak var delegate: AvatarViewDelegate?
     let avatarImageView: UIImageView = {
         let img = UIImageView()
@@ -42,7 +42,7 @@ class AvatarView: UIView {
     }
     
     @objc func handleAvatarView() {
-        delegate?.tap(user: userNameLabel.text, withIndex: index)
+        delegate?.tap(user: userNameLabel.text, withIndex: indexOfuser)
     }
     
     required init?(coder: NSCoder) {

@@ -13,7 +13,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var userNameTextField: UITextField!
     @IBOutlet private weak var passWordTextField: UITextField!
     
-    var users: [User] = []
+    private var users: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,23 +32,23 @@ final class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func fetchData() {
+    private func fetchData() {
         DataManagement.share.preparePlistForObject(forResource: "users", ofType: "plist", withURL: "/users.plist")
         users = DataManagement.share.getUser(fileName: "users", type: "plist")
         print(users)
     }
     
-    func setupNavi() {
+    private func setupNavi() {
         title = "Login"
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(login))
         navigationItem.rightBarButtonItem = doneButton
     }
     
-    @objc func login () {
+    @objc private func login () {
         guard  let username = userNameTextField.text, username != "",
             let password = passWordTextField.text, password != "" else { return }
         UserDefaults.standard.set(username, forKey: "username")
-        for user in users where user.username == username && user.password == password {
+        for user in users where user.userName == username && user.password == password {
             let vc = WellcomeViewController()
             vc.user = user
             navigationController?.pushViewController(vc, animated: true)
