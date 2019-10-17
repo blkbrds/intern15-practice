@@ -56,7 +56,7 @@ class ListProfileViewController: UIViewController {
             } else {
                 avatar.avatarImageView.image = UIImage(named: "DefaultAvatar.png")
             }
-            avatar.userNameLabel.text = users[i].username
+            avatar.userNameLabel.text = users[i].userName
             avatar.index = i
             profileScrollView.addSubview(avatar)
             avatar.delegate = self

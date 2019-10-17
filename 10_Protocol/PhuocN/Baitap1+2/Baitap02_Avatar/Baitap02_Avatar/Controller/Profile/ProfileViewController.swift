@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     func setupUI() {
         guard let user = user else { return }
         avatarImageView.image = UIImage(named: user.avatarImageName)
-        userNameTextField.text = user.username
+        userNameTextField.text = user.userName
     }
     
     func setupNavi() {
@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func editProfile() {
-        if let user = self.user, let username = userNameTextField.text, username != user.username {
+        if let user = self.user, let username = userNameTextField.text, username != user.userName {
             DataManagement.share.writePlistToList(user: user, username: username)
             navigationController?.popViewController(animated: true)
         } else {
