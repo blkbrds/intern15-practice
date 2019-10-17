@@ -8,23 +8,80 @@
 
 import UIKit
 
-class MienViewController: UIViewController {
+protocol MienViewControllerDataSource: class {
+    func getMienSelected() -> (mien: String?, tinh: String?, huyen: String?)
+}
 
+class MienViewController: UIViewController {
+    
+    weak var dataSource: MienViewControllerDataSource?
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
+    var data: [Mien] = miens
+    var mienSelected: Mien?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        setupNavi()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView(frame: .zero)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    func setupNavi() {
+        self.title = "Mien"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tinh", style: .plain, target: self, action: #selector(pushToNextView))
     }
-    */
+    
+    @objc func pushToNextView() {
+        let vc = TinhViewController()
+        if let mien = mienSelected {
+        vc.data = mien.tinh
+        vc.dataSource = self
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 
+extension MienViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.systemBlue.cgColor
+        cell.textLabel?.text = data[indexPath.row].name
+        cell.selectionStyle = .none
+//        if indexPath.row == 3 {
+//            cell.backgroundColor = .systemBlue
+//        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.backgroundColor = .systemBlue
+        mienSelected = data[indexPath.row]
+        for index in 0..<data.count where index != indexPath.row {
+            tableView.cellForRow(at: IndexPath(row: index, section: 0))?.backgroundColor = .white
+        }
+    }
+}
+
+extension MienViewController: TinhViewControllerDataSource {
+    func getTinhSelected() -> (tinh: String?, huyen: String?) {
+        return (dataSource?.getMienSelected().tinh, dataSource?.getMienSelected().huyen)
+    }
+    
+    func getMien() -> String? {
+        return mienSelected?.name
+    }
 }
