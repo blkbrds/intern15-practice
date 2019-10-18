@@ -9,4 +9,13 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    
+    var userName: String?
+    
+    @IBOutlet private weak var userNameLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userNameLabel.text = userName
+    }
 }
