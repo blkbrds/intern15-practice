@@ -8,9 +8,7 @@ class Ex2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let sliderView = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)?[0] as? SliderView
-//        sliderView?.frame = CGRect(x: 150, y: 200, width: 50, height: 200)
-//        view.addSubview(sliderView!)
+        
         fxSliderView = Bundle.main.loadNibNamed("FxSliderView", owner: self, options: nil)?.first as? FxSliderView
         fxSliderView.frame = CGRect(x: 150, y: 150, width: 80, height: 400)
         fxSliderView.delegate = self
@@ -31,7 +29,7 @@ extension Ex2ViewController: UITextFieldDelegate {
 
 extension Ex2ViewController: FxSliderViewDelegate {
     func fxSliderView(view: FxSliderView, didChangedWith percent: Float) {
-        valueTextfield.text = "\(percent)"
+        valueTextfield.text = String(percent)
     }
 }
 
