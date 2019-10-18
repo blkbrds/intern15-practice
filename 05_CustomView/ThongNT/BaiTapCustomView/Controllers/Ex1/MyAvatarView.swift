@@ -12,34 +12,35 @@ protocol MyAvatarViewDelegate: class {
     func myAvatarView(myAvatarView: MyAvatarView, didSelect name: String)
 }
 
-class MyAvatarView: UIView {
-    var userAvatarImageView: UIImageView?
-    var userNameLabel: UILabel?
+final class MyAvatarView: UIView {
 
     weak var delegate: MyAvatarViewDelegate?
+    private var userAvatarImageView: UIImageView
+    // dùng lại ở Ex1ViewController
+    var userNameLabel: UILabel
 
     override init(frame: CGRect) {
-        super.init(frame: frame)
-
         //add user avatar
         let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         userAvatarImageView = UIImageView(image: UIImage(named: "Avatar.png"))
-        userAvatarImageView?.frame = frame
-        userAvatarImageView?.contentMode = .scaleToFill
-        addSubview(userAvatarImageView!)
+        userAvatarImageView.frame = frame
+        userAvatarImageView.contentMode = .scaleToFill
 
         //add user name
         userNameLabel = UILabel(frame: CGRect(x: 0, y: 100, width: 100, height: 30))
-        userNameLabel?.text = "Ahihi"
-        userNameLabel?.backgroundColor = .lightGray
-        userNameLabel?.textColor = .blue
-        userNameLabel?.textAlignment = .center
-        addSubview(userNameLabel!)
+        userNameLabel.text = "Ahihi"
+        userNameLabel.backgroundColor = .lightGray
+        userNameLabel.textColor = .blue
+        userNameLabel.textAlignment = .center
 
         //Add button
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 130))
         button.isUserInteractionEnabled = true
         button.backgroundColor = .clear
+
+        super.init(frame: frame)
+        addSubview(userAvatarImageView)
+        addSubview(userNameLabel)
         button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
         addSubview(button)
     }
@@ -49,8 +50,7 @@ class MyAvatarView: UIView {
     }
 
     @objc func buttonClick() {
-        guard let name = userNameLabel!.text else { return }
+        guard let name = userNameLabel.text else { return }
         delegate?.myAvatarView(myAvatarView: self, didSelect: name)
     }
-
 }

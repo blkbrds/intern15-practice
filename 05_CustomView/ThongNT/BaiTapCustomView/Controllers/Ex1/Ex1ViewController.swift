@@ -13,12 +13,13 @@ struct User {
     let avatar: String
 }
 
-class Ex1ViewController: BaseViewController {
-    
-    @IBOutlet weak var avatarScrollView: UIScrollView!
+final class Ex1ViewController: BaseViewController {
+
+    @IBOutlet private weak var avatarScrollView: UIScrollView!
+
     var exercise: Exercise?
-    var y: Int = 0
-    var x: Int = 0
+    private var y: Int = 0
+    private var x: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,11 @@ class Ex1ViewController: BaseViewController {
     }
 
     func createUser(x: Int, y: Int, index: Int) {
-        let userView = MyAvatarView(frame: CGRect(x: 30 + x, y: 50 + y, width: 100, height: 130))
+        let frame = CGRect(x: 30 + x, y: 50 + y, width: 100, height: 130)
+        let userView = MyAvatarView()
+        userView.frame = frame
         userView.delegate = self
-        userView.userNameLabel?.text = "Name \(index)"
+        userView.userNameLabel.text = "Name \(index)"
         avatarScrollView.contentSize.height = CGFloat(y) + 400
         avatarScrollView.addSubview(userView)
     }
@@ -45,6 +48,6 @@ class Ex1ViewController: BaseViewController {
 
 extension Ex1ViewController: MyAvatarViewDelegate {
     func myAvatarView(myAvatarView: MyAvatarView, didSelect name: String) {
-        print("Select user name: \(name)")
+        print("Select user \(name)")
     }
 }

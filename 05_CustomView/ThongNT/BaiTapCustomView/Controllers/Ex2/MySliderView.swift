@@ -9,18 +9,32 @@
 import UIKit
 
 protocol MySliderViewDelegate: class {
-    func sendValue(value: Int)
+    func mySliderView(view: MySliderView, needPerform action: MySliderView.Action)
 }
 
-class MySliderView: UIView {
+final class MySliderView: UIView {
 
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var colorImageView: UIImageView!
-    @IBOutlet weak var valueLabel: UILabel!
+    enum Action {
+        case sendValue(Int)
+    }
+
+    @IBOutlet private weak var backgroundImageView: UIImageView!
+    @IBOutlet private weak var colorImageView: UIImageView!
+    @IBOutlet private weak var valueLabel: UILabel!
 
     weak var delegate: MySliderViewDelegate?
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        valueLabel.layer.cornerRadius = 3
+        valueLabel.text = "0 %"
+
+        let panValueLabel = UIPanGestureRecognizer(target: self, action: #selector(handlePanGuesture(sender:)))
+        valueLabel.addGestureRecognizer(panValueLabel)
+    }
+
     var receiveValue: Int = 0 {
-        didSet{
+        didSet {
             valueLabel.center = CGPoint(x: valueLabel.center.x, y: backgroundImageView.frame.maxY * (1 - CGFloat(receiveValue) * 0.01))
             colorImageView.frame = CGRect(x: backgroundImageView.frame.minX, y: valueLabel.center.y, width: backgroundImageView.frame.width, height: backgroundImageView.frame.maxY - valueLabel.center.y)
             let percentValue: Int = Int((backgroundImageView.frame.maxY - valueLabel.center.y) / (backgroundImageView.frame.maxY - backgroundImageView.frame.minY) * 100)
@@ -28,19 +42,11 @@ class MySliderView: UIView {
         }
     }
 
-    override func awakeFromNib() {
-        valueLabel.layer.cornerRadius = 3
-        valueLabel.text = "0 %"
-        
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(sender:)))
-        valueLabel.addGestureRecognizer(pan)
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.endEditing(true)
     }
 
-    @objc private func handlePan(sender: UIPanGestureRecognizer) {
+    @objc private func handlePanGuesture(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self)
         if valueLabel.center.y + translation.y >= backgroundImageView.frame.minY && valueLabel.center.y + translation.y <= backgroundImageView.frame.maxY {
             valueLabel.center = CGPoint(x: valueLabel.center.x, y: valueLabel.center.y + translation.y)
@@ -48,10 +54,10 @@ class MySliderView: UIView {
             colorImageView.frame = CGRect(x: backgroundImageView.frame.minX, y: valueLabel.center.y, width: backgroundImageView.frame.width, height: backgroundImageView.frame.maxY - valueLabel.center.y)
             let percentValue: Int = Int((backgroundImageView.frame.maxY - valueLabel.center.y) / (backgroundImageView.frame.maxY - backgroundImageView.frame.minY) * 100)
             valueLabel.text = "\(percentValue) %"
-            delegate?.sendValue(value: percentValue)
+            delegate?.mySliderView(view: self, needPerform: .sendValue(percentValue))
         } else if valueLabel.center.y + translation.y < backgroundImageView.frame.minY {
             valueLabel.text = "100 %"
-            delegate?.sendValue(value: 100)
+            delegate?.mySliderView(view: self, needPerform: .sendValue(100))
         }
     }
 }

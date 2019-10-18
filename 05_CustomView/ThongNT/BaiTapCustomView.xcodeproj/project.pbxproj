@@ -26,11 +26,14 @@
 		07E33E6D20DC9F1B004B6E52 /* exercises.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E33E6C20DC9F1B004B6E52 /* exercises.plist */; };
 		07E33E7020DC9FF4004B6E52 /* DataManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E33E6F20DC9FF4004B6E52 /* DataManagement.swift */; };
 		07E33E7320DCA04D004B6E52 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E33E7220DCA04D004B6E52 /* Exercise.swift */; };
-		B20889F22355C6E000D60C2A /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20889F12355C6E000D60C2A /* CustomButtonView.swift */; };
 		B208CD7223541BAF0068EC60 /* MyAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208CD7123541BAF0068EC60 /* MyAvatarView.swift */; };
 		B208CD7423541FB50068EC60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B208CD7323541FB50068EC60 /* Default-568h@2x.png */; };
 		B20A024F235813CC00AFFCF6 /* MySliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A024E235813CC00AFFCF6 /* MySliderView.swift */; };
 		B20A0251235813F000AFFCF6 /* MySliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20A0250235813F000AFFCF6 /* MySliderView.xib */; };
+		B20A02532358549E00AFFCF6 /* BadgeNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A02522358549E00AFFCF6 /* BadgeNumberView.swift */; };
+		B20A027D2358694E00AFFCF6 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20A027C2358694E00AFFCF6 /* DatePickerView.xib */; };
+		B20A027F2358697500AFFCF6 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A027E2358697500AFFCF6 /* DatePickerView.swift */; };
+		B20A02812358699E00AFFCF6 /* BadgeNumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B20A02802358699E00AFFCF6 /* BadgeNumberView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +58,14 @@
 		07E33E6C20DC9F1B004B6E52 /* exercises.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exercises.plist; sourceTree = "<group>"; };
 		07E33E6F20DC9FF4004B6E52 /* DataManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagement.swift; sourceTree = "<group>"; };
 		07E33E7220DCA04D004B6E52 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		B20889F12355C6E000D60C2A /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		B208CD7123541BAF0068EC60 /* MyAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAvatarView.swift; sourceTree = "<group>"; };
 		B208CD7323541FB50068EC60 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B20A024E235813CC00AFFCF6 /* MySliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySliderView.swift; sourceTree = "<group>"; };
 		B20A0250235813F000AFFCF6 /* MySliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySliderView.xib; sourceTree = "<group>"; };
+		B20A02522358549E00AFFCF6 /* BadgeNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeNumberView.swift; sourceTree = "<group>"; };
+		B20A027C2358694E00AFFCF6 /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		B20A027E2358697500AFFCF6 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		B20A02802358699E00AFFCF6 /* BadgeNumberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BadgeNumberView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +191,8 @@
 			children = (
 				07E33E3F20DC907B004B6E52 /* Ex3ViewController.swift */,
 				07E33E4020DC907B004B6E52 /* Ex3ViewController.xib */,
-				B20889F12355C6E000D60C2A /* CustomButtonView.swift */,
+				B20A02522358549E00AFFCF6 /* BadgeNumberView.swift */,
+				B20A02802358699E00AFFCF6 /* BadgeNumberView.xib */,
 			);
 			path = Ex3;
 			sourceTree = "<group>";
@@ -195,6 +202,8 @@
 			children = (
 				07E33E4320DC9095004B6E52 /* Ex4ViewController.swift */,
 				07E33E4420DC9095004B6E52 /* Ex4ViewController.xib */,
+				B20A027C2358694E00AFFCF6 /* DatePickerView.xib */,
+				B20A027E2358697500AFFCF6 /* DatePickerView.swift */,
 			);
 			path = Ex4;
 			sourceTree = "<group>";
@@ -303,10 +312,12 @@
 				07E33E6A20DC9826004B6E52 /* HomeCell.xib in Resources */,
 				07E33E4220DC907B004B6E52 /* Ex3ViewController.xib in Resources */,
 				07E33E1520DC8D36004B6E52 /* Assets.xcassets in Resources */,
+				B20A02812358699E00AFFCF6 /* BadgeNumberView.xib in Resources */,
 				B20A0251235813F000AFFCF6 /* MySliderView.xib in Resources */,
 				07E33E3E20DC906B004B6E52 /* Ex2ViewController.xib in Resources */,
 				B208CD7423541FB50068EC60 /* Default-568h@2x.png in Resources */,
 				07E33E2720DC8DD7004B6E52 /* HomeViewController.xib in Resources */,
+				B20A027D2358694E00AFFCF6 /* DatePickerView.xib in Resources */,
 				07E33E4620DC9095004B6E52 /* Ex4ViewController.xib in Resources */,
 				07E33E6D20DC9F1B004B6E52 /* exercises.plist in Resources */,
 				07E33E3A20DC9059004B6E52 /* Ex1ViewController.xib in Resources */,
@@ -321,12 +332,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E33E2C20DC8E5B004B6E52 /* BaseNavigationController.swift in Sources */,
+				B20A02532358549E00AFFCF6 /* BadgeNumberView.swift in Sources */,
 				07E33E7320DCA04D004B6E52 /* Exercise.swift in Sources */,
 				07E33E3920DC9059004B6E52 /* Ex1ViewController.swift in Sources */,
 				07E33E6920DC9826004B6E52 /* HomeCell.swift in Sources */,
 				07E33E4520DC9095004B6E52 /* Ex4ViewController.swift in Sources */,
+				B20A027F2358697500AFFCF6 /* DatePickerView.swift in Sources */,
 				07E33E7020DC9FF4004B6E52 /* DataManagement.swift in Sources */,
-				B20889F22355C6E000D60C2A /* CustomButtonView.swift in Sources */,
 				07E33E0E20DC8D34004B6E52 /* AppDelegate.swift in Sources */,
 				07E33E4120DC907B004B6E52 /* Ex3ViewController.swift in Sources */,
 				07E33E2620DC8DD7004B6E52 /* HomeViewController.swift in Sources */,

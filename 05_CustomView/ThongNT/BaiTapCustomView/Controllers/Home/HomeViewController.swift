@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
 
     // MARK: - Properties
-    @IBOutlet weak var tableView: UITableView!
-    var exercises: [Exercise] = []
+    @IBOutlet private weak var tableView: UITableView!
+    private var exercises: [Exercise] = []
     
     // MARK: - life cycle
     override func viewDidLoad() {
