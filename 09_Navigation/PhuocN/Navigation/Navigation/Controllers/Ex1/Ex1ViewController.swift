@@ -30,7 +30,6 @@ final class Ex1ViewController: BaseViewController {
     @IBAction private func changeBackgroundNavigation() {
         let image = UIImage(named: "ic-navigation")
         navigationController?.navigationBar.setBackgroundImage(image?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),resizingMode: .stretch), for: .default)
-        
     }
     
     @IBAction private func changeTintcolorNavigation() {

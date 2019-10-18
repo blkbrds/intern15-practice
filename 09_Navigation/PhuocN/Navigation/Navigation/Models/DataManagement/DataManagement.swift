@@ -17,7 +17,7 @@ enum Key: String {
 }
 
 class DataManagement {
-    // MARK: - Signleton
+    // MARK: - Singleton
     public static var share: DataManagement = {
         let dataManagement = DataManagement()
         return dataManagement
@@ -26,10 +26,10 @@ class DataManagement {
     private init() {}
     
     func getExercises(fileName: String, type: String) -> [Exercise] {
-        let array = NSArray(contentsOfFile: getFileDocumentPath(fileName: fileName, type: type))
+        guard let array = NSArray(contentsOfFile: getFileDocumentPath(fileName: fileName, type: type)) else { return [] }
         var exercises: [Exercise] = [] 
-        for item in array! {
-            let dict = item as! NSDictionary
+        for item in array {
+            guard let dict = item as? NSDictionary else { return [] }
             let ex = Exercise(name: dict.object(forKey: Key.exerciseName.rawValue) as! String,
                               description: dict.object(forKey: Key.exerciseDescription.rawValue) as! String)
             exercises.append(ex)
