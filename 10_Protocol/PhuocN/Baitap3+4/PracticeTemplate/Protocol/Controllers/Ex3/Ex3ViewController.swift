@@ -13,7 +13,7 @@ protocol Ex3ViewControllerDataSource: class {
 //    func getMienTinh() -> (String?,String?)
 }
 
-class Ex3ViewController: BaseViewController {
+final class Ex3ViewController: BaseViewController {
     
     weak var dataSource: Ex3ViewControllerDataSource?
     

@@ -12,15 +12,14 @@ protocol MienViewControllerDataSource: class {
     func getMienSelected() -> (mien: String?, tinh: String?, huyen: String?)
 }
 
-class MienViewController: UIViewController {
+final class MienViewController: UIViewController {
     
+    private var data: [Mien] = miens
+    private var mienSelected: Mien?
     private let cellIdentifier: String = "cell"
     weak var dataSource: MienViewControllerDataSource?
     
     @IBOutlet private weak var tableView: UITableView!
-    
-    var data: [Mien] = miens
-    var mienSelected: Mien?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,19 +30,18 @@ class MienViewController: UIViewController {
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
-    
     private func setupNavi() {
         self.title = "Mien"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tinh", style: .plain, target: self, action: #selector(pushToNextView))
     }
     
     @objc private func pushToNextView() {
-        let vc = TinhViewController()
         if let mien = mienSelected {
+            let vc = TinhViewController()
             vc.data = mien.tinh
             vc.dataSource = self
+            navigationController?.pushViewController(vc, animated: true)
         }
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

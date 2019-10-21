@@ -13,13 +13,14 @@ protocol TinhViewControllerDataSource: class {
     func getTinhSelected() -> (tinh: String?, huyen: String?)
 }
 
-class TinhViewController: UIViewController {
+final class TinhViewController: UIViewController {
     
     private let cellIdentifier: String = "cell"
     weak var dataSource: TinhViewControllerDataSource?
-    @IBOutlet private weak var tableView: UITableView!
     var data: [Tinh] = []
-    var tinhSelected: Tinh?
+    private var tinhSelected: Tinh?
+    
+    @IBOutlet private weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,8 @@ class TinhViewController: UIViewController {
     }
     
     @objc private func pushToNextView() {
-        let vc = HuyenViewController()
         guard let tinh = tinhSelected else { return }
+        let vc = HuyenViewController()
         vc.data = tinh.huyen
         vc.dataSource = self
         navigationController?.pushViewController(vc, animated: true)

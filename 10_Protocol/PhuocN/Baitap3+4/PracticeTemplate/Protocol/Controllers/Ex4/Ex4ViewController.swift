@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Ex4ViewController: BaseViewController {
+final class Ex4ViewController: BaseViewController {
     
     private var searchLocations: [String] = []
     private let cellIdentifier: String = "cell"

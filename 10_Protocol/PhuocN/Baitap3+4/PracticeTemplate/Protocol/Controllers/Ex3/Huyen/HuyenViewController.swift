@@ -14,10 +14,10 @@ protocol HuyenViewControllerDataSource: class {
     func getHuyenSelected() -> String?
 }
 
-class HuyenViewController: UIViewController {
+final class HuyenViewController: UIViewController {
     
     private let cellIdentifier: String = "cell"
-    var huyenSelected: Huyen?
+    private var huyenSelected: Huyen?
     var data: [Huyen] = []
     weak var dataSource: HuyenViewControllerDataSource?
     
@@ -61,7 +61,7 @@ extension HuyenViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = data[indexPath.row].name
         cell.selectionStyle = .none
         if let huyen = dataSource?.getHuyenSelected() {
-            for (offset, element) in data.enumerated() where huyen == element.name && indexPath.row == offset{
+            for (offset, element) in data.enumerated() where huyen == element.name && indexPath.row == offset {
                 cell.backgroundColor = .systemRed
                 huyenSelected = data[indexPath.row]
             }
