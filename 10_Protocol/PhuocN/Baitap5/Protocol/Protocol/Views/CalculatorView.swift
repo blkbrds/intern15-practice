@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CalculatorViewDelegate: class {
-    func calculatedResult(result: Float?)
+    func calculatedResult(_ result: Float?)
     func clear()
 }
 
@@ -17,7 +17,7 @@ protocol CalculatorViewDataSource: class {
     func getNumberToCalculated() -> (number1: Float, number2: Float)?
 }
 
-class CalculatorView: UIView {
+final class CalculatorView: UIView {
     
     enum Operators: String {
         case plus = "+"
@@ -51,31 +51,31 @@ class CalculatorView: UIView {
     
     @IBAction private func done() {
         hide()
-        delegate?.calculatedResult(result: result)
+        delegate?.calculatedResult(result)
     }
     
     @IBAction private func changeOperator(_ sender: UIButton) {
         switch sender.titleLabel?.text {
         case Operators.divide.rawValue:
-            self.operator = .divide
+            `operator` = .divide
         case Operators.plus.rawValue:
-            self.operator = .plus
+            `operator` = .plus
         case Operators.subtract.rawValue:
-            self.operator = .subtract
+            `operator` = .subtract
         case Operators.exponent.rawValue:
-            self.operator = .exponent
+            `operator` = .exponent
         case Operators.mutiplied.rawValue:
-            self.operator = .mutiplied
+            `operator` = .mutiplied
         default:
-            self.operator = .none
+            `operator` = .none
         }
-        guard let result = calculatedResultWithOperator(number1: number1, number2: number2) else {
+        guard let caculatedResult = calculatedResultWithOperator(number1: number1, number2: number2) else {
             resultLabel.text = "Error"
-            self.result = nil
+            result = nil
             return
         }
-        resultLabel.text = String(result)
-        self.result = result
+        resultLabel.text = String(caculatedResult)
+        result = caculatedResult
     }
     
     @IBAction private func clear() {
@@ -97,11 +97,9 @@ class CalculatorView: UIView {
         var frame = contentView.frame
         frame.origin.y -= frame.size.height
         if animation {
-            UIView.animate(withDuration: 0.5, animations: {
+            UIView.animate(withDuration: 0.5) {
                 self.maskBackgroundView.alpha = 0.7
                 self.contentView.frame = frame
-            }) { (done) in
-                
             }
         } else {
             self.contentView.frame = frame
@@ -115,7 +113,7 @@ class CalculatorView: UIView {
             UIView.animate(withDuration: 0.5, animations: {
                 self.maskBackgroundView.alpha = 0
                 self.contentView.frame = frame
-            }) { (done) in
+            }) { (_) in
                 self.isHidden = true
             }
         } else {

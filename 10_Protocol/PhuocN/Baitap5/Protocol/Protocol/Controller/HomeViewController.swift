@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var firstNumberTextField: UITextField!
@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         } else {
             let alert = UIAlertController(title: "Warning", message: "Nhap so can tinh", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
     }
     
@@ -46,14 +46,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: CalculatorViewDataSource {
     func getNumberToCalculated() -> (number1: Float, number2: Float)? {
-        guard let text1 = firstNumberTextField.text, let number1 = Float(text1),
-            let text2 = secondNumberTextField.text, let number2 = Float(text2) else { return nil }
-        return (number1, number2)
+        guard let firstString = firstNumberTextField.text, let firstNumber = Float(firstString),
+            let secondString = secondNumberTextField.text, let secondNumber = Float(secondString) else { return nil }
+        return (firstNumber, secondNumber)
     }
 }
 
 extension HomeViewController: CalculatorViewDelegate {
-    func calculatedResult(result: Float?) {
+    func calculatedResult(_ result: Float?) {
         guard let result = result else {
             resultLabel.text = "Result: Error"
             resultLabel.textColor = .systemRed
