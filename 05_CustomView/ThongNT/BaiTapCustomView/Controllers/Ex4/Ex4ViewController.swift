@@ -9,23 +9,46 @@
 import UIKit
 
 class Ex4ViewController: BaseViewController {
-    
+    @IBOutlet weak var showDateTextField: UITextField!
+
+    var dateView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        showDateTextField.delegate = self
+        showDateTextField.layer.borderColor = UIColor.black.cgColor
+        showDateTextField.layer.borderWidth = 0.5
+        showDateTextField.layer.cornerRadius = 5
+
+        if let dateView = dateView {
+            let frame = CGRect(x: 0, y: view.frame.maxY - dateView.frame.height, width: view.frame.width, height: dateView.frame.height)
+            dateView.frame = frame
+            dateView.delegate = self
+            view.addSubview(dateView)
+        }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
-    
-    // MARK: config
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Ex4"
+}
+
+extension Ex4ViewController: UITextFieldDelegate, DatePickerViewDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        self.dateView?.show()
+        return true
     }
-    
-    override func setupData() {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        dateView?.hide()
     }
-    
-    
+    func datePickerView(view: DatePickerView, needPerform: DatePickerView.Action, selectedDate: Date?) {
+        if let selectedDate = selectedDate {
+            let formatedDate = DateFormatter()
+            formatedDate.dateFormat = "MM - dd - YYYY"
+            let dateString = formatedDate.string(from: selectedDate)
+            showDateTextField.text = dateString
+        }
+    }
 }
