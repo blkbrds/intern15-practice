@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Contact {
+final class Contact {
     var name: String
     var phoneNumber: String
     init(name: String, phoneNumber: String) {

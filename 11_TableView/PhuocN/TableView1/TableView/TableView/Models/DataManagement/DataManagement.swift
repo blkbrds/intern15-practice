@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataManagement {
+final class DataManagement {
     public static let share: DataManagement = DataManagement()
     
     private init() {}

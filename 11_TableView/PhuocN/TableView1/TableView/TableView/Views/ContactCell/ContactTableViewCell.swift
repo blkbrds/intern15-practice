@@ -12,7 +12,7 @@ protocol ContactTableViewCellDelegate: class {
     func doSomeThing(_ contactTablecell: ContactTableViewCell)
 }
 
-class ContactTableViewCell: UITableViewCell {
+final class ContactTableViewCell: UITableViewCell {
     
     weak var delegate: ContactTableViewCellDelegate?
     var contact: Contact?
