@@ -1,20 +1,14 @@
-//
-//  chartView.swift
-//  BaiTap01
-//
-//  Created by ANH NGUYỄN on 10/20/19.
-//  Copyright © 2019 asiantech. All rights reserved.
-//
 
 import UIKit
-protocol chartViewDelegate: class {
-    func chartView(_chartView: ChartView, didSectIndex : Int )
+
+protocol ChartViewDelegate: class {
+    func chartView(_ chartView: ChartView, didSectIndex : Int )
 }
-class ChartView: UIView {
+final class ChartView: UIView {
     var chartColor: UIColor = .green {
-    didSet {
-        setNeedsDisplay()
-    }
+        didSet {
+            setNeedsDisplay()
+        }
     }
     
     override init(frame: CGRect) {
@@ -37,15 +31,11 @@ class ChartView: UIView {
         context?.addLine(to: CGPoint(x: 150, y: 60))
         context?.addLine(to: CGPoint(x: 200 , y: 80))
         context?.addLine(to: CGPoint(x: 230, y: 30))
-//        context?.addLine(to: CGPoint(x: 250, y: 40))
-//        context?.addLine(to: CGPoint(x: 270, y: 60))
         context?.addLine(to: CGPoint(x: 280, y: 80))
         context?.addLine(to: CGPoint(x: 340, y: 20))
         context?.addLine(to: CGPoint(x: 370, y: 50))
         context?.addLine(to: CGPoint(x: 400, y: 100))
         context?.addLine(to: CGPoint(x: 0, y: 100))
-       // context?.strokePath()
-//
         context?.setFillColor(UIColor.red.cgColor)
         context?.fillPath()
         
@@ -92,8 +82,5 @@ class ChartView: UIView {
         context12?.addArc(center: CGPoint(x: 280, y: 80), radius: 5, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         context12?.setFillColor(UIColor.blue.cgColor)
         context12?.fillPath()
-        
     }
-
-
 }

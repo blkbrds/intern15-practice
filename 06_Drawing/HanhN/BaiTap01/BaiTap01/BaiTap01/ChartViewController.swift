@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ChartViewController: UIViewController {
+final class ChartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -9,13 +9,10 @@ class ChartViewController: UIViewController {
         let chartView = ChartView(frame: frame)
         chartView.chartColor = .red
         view.addSubview(chartView)
-
     }
-
 }
-extension ChartViewController: chartViewDelegate {
-    func chartView(_chartView: ChartView, didSectIndex: Int) {
+extension ChartViewController: ChartViewDelegate {
+    func chartView(_ chartView: ChartView, didSectIndex: Int) {
         print("hihi \(didSectIndex).")
     }
-
 }
