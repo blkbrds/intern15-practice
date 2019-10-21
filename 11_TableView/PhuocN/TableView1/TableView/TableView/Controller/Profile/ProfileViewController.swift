@@ -8,14 +8,57 @@
 
 import UIKit
 
+protocol ProfileViewControllerDelegate: class {
+    //func editContact()
+    func addContact(contact: Contact)
+}
+
 final class ProfileViewController: UIViewController {
     
-    var userName: String?
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var phoneNumberTextField: UITextField!
     
-    @IBOutlet private weak var userNameLabel: UILabel!
+    enum Action {
+        case edit
+        case add
+    }
+    
+    weak var delegate: ProfileViewControllerDelegate?
+    var action: Action = .add
+    var contact: Contact?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameLabel.text = userName
+        setupUI()
+        setupNavi()
+    }
+    
+    private func setupNavi() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popToPreView))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(finishUpdateContact))
+    }
+    
+    private func setupUI() {
+        if let contact = contact {
+            nameTextField.text = contact.name
+            phoneNumberTextField.text = contact.phoneNumber
+        }
+    }
+    
+    @objc private func popToPreView() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func finishUpdateContact() {
+        guard let name = nameTextField.text, let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty else { return }
+        switch action {
+        case .add:
+            let contactAdd = Contact(name: name, phoneNumber: phoneNumber)
+            delegate?.addContact(contact: contactAdd)
+        case .edit:
+            contact?.name = name
+            contact?.phoneNumber = phoneNumber
+        }
+        navigationController?.popViewController(animated: true)
     }
 }
