@@ -51,13 +51,16 @@
 9. [Navigation](https://drive.google.com/file/d/19vi_MTDjRODEvvcsRbZUL1zcrr_7JKiU/view?usp=sharing)
 10. [Protocol](https://drive.google.com/file/d/13zWAwvznUp1YPcFvDh6E1HAxmTILE25x/view?usp=sharing)
 11. [TableView](https://drive.google.com/file/d/1x__947M8SOUH53nu7t-4wOx5SuXJFfae/view?usp=sharing)
-12. CollectionView
-13. TabbarController
-14. MVVM
-15. API
-16. Realm
-17. MapView
-18. Mapper
+12. [CollectionView](https://drive.google.com/file/d/1HL3UVG0R9VdCi3o-jkJvzYvkReEMt6Bd/view?usp=sharing)
+13. [TabbarController](https://drive.google.com/file/d/1rTptA24OL9TSXYq9Hkk0X8k1jWYgmMo4/view?usp=sharing)
+14. [MVVM](https://drive.google.com/file/d/16zAdOgcb06W90dxTdBnn_Lb9TRwJCeDJ/view?usp=sharing)
+15. [API](https://drive.google.com/file/d/101v43v11MQYJ26ISkqyQnI4pd-H0XrL0/view?usp=sharing)
+16. [Realm](https://drive.google.com/file/d/1Gf58ee85H96bigt83fcjvPT6vrez1-wb/view?usp=sharing)
+17. [MapView](https://drive.google.com/file/d/1-QYeX1hiAUC-_phfc_OhyDTDQI5rLHrW/view?usp=sharing)
+18. [Mapper](https://drive.google.com/file/d/1etxF1SVgsyF4fk3xv0lfavyrij2r1Ko9/view?usp=sharing)
 
-*(Updating)*
+*(Hoàn thành)*
 
+---
+
+> # "Kiến thức là sự tích luỹ."
