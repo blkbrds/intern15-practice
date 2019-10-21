@@ -40,7 +40,6 @@ class Bo: Thu {
     func ten() -> String {
         return "Bo"
     }
-    
 }
 
 class CaMap: Ca {
@@ -51,14 +50,12 @@ class CaMap: Ca {
     func ten() -> String {
         return "Ca map"
     }
-    
 }
 
 class Heo: Thu {
     var isDi: Bool {
         return true
     }
-    
     
     func ten() -> String {
         return "Heo"
@@ -77,7 +74,6 @@ class HaiCau: Ca, Thu {
     func ten() -> String {
         return "Hai cau"
     }
-    
 }
 
 class Doi: Thu, Chim {
@@ -92,7 +88,6 @@ class Doi: Thu, Chim {
     func ten() -> String {
         return "Doi"
     }
-    
 }
 
 class Ga: Chim {
@@ -121,7 +116,6 @@ class Vit: Ca, Chim, Thu {
     func ten() -> String {
         return "Vit"
     }
-    
 }
 
 class CaSau: Ca, Thu {
@@ -136,8 +130,7 @@ class CaSau: Ca, Thu {
     func ten() -> String {
         return "Ca sau"
     }
-    
 }
 
-var donaVats: [DongVat] = [CaChuon(), CaMap(), CaSau(), HaiCau(), Ga(), Vit(), Bo(), Doi(), Heo()]
-print(donaVats.map { $0.ten() })
+var dongVats: [DongVat] = [CaChuon(), CaMap(), CaSau(), HaiCau(), Ga(), Vit(), Bo(), Doi(), Heo()]
+print(dongVats.map { $0.ten() })

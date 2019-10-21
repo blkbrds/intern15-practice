@@ -12,15 +12,15 @@ protocol AvatarViewDelegate: class {
     func tap(user: String?, withIndex: Int)
 }
 
-class AvatarView: UIView {
+final class AvatarView: UIView {
     
     var indexOfUser: Int = 0
     weak var delegate: AvatarViewDelegate?
     
     let avatarImageView: UIImageView = {
-        let img = UIImageView()
-        img.contentMode = .scaleToFill
-        return img
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        return imageView
     }()
     
     let userNameLabel: UILabel = {

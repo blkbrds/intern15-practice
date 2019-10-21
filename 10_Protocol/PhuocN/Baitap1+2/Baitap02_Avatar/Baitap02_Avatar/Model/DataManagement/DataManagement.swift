@@ -17,14 +17,15 @@ enum Key: String {
 }
 
 class DataManagement {
-    // MARK: - Signleton
+    // MARK: - Singleton
     public static var share: DataManagement = {
         let dataManagement = DataManagement()
         return dataManagement
     }()
+    
+    // MARK: - private function
+       private init() {}
     // MARK: - public function
-    private init() {}
-  
     func getUser(fileName: String, type: String) -> [User] {
         guard let array = NSArray(contentsOfFile: getFileDocumentPath(fileName: fileName, type: type)) else { return [] }
         var users: [User] = []
@@ -38,7 +39,6 @@ class DataManagement {
         return users
     }
     
-    // MARK: - private function
     func getFileDocumentPath(fileName: String, type: String) -> String {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ListProfileViewController: UIViewController {
+final class ListProfileViewController: UIViewController {
     
     @IBOutlet private weak var profileScrollView: UIScrollView!
     
-    var users: [User] = []
-    let heightAvatar = 160
-    let spacing = 10
+    private var users: [User] = []
+    private let heightAvatar = 160
+    private let spacing = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,6 @@ class ListProfileViewController: UIViewController {
         } else {
             profileScrollView.contentSize = CGSize(width: 350, height: (users.count / 3 + 1) * heightAvatar + spacing)
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,8 +35,6 @@ class ListProfileViewController: UIViewController {
     private func fetchData() {
         DataManagement.share.preparePlistForObject(forResource: "users", ofType: "plist", withURL: "/users.plist")
         users = DataManagement.share.getUser(fileName: "users", type: "plist")
-        print(users)
-        
     }
     
     private func createListAvatar() {
@@ -50,16 +47,16 @@ class ListProfileViewController: UIViewController {
             }
             let originX = ((profileScrollView.frame.width  - 2 * CGFloat(spacing)) / 3 + CGFloat(spacing)) * cot
             let originY = (CGFloat(heightAvatar) +  CGFloat(spacing)) * dong
-            let avatar = AvatarView(frame: CGRect(x: originX, y: originY, width: (profileScrollView.frame.width - CGFloat(spacing) * 2) / 3, height: CGFloat(heightAvatar)))
+            let avatarView = AvatarView(frame: CGRect(x: originX, y: originY, width: (profileScrollView.frame.width - CGFloat(spacing) * 2) / 3, height: CGFloat(heightAvatar)))
             if let image = UIImage(named: users[i].avatarImageName) {
-                avatar.avatarImageView.image = image
+                avatarView.avatarImageView.image = image
             } else {
-                avatar.avatarImageView.image = UIImage(named: "DefaultAvatar.png")
+                avatarView.avatarImageView.image = UIImage(named: "DefaultAvatar.png")
             }
-            avatar.userNameLabel.text = users[i].userName
-            avatar.indexOfUser = i
-            profileScrollView.addSubview(avatar)
-            avatar.delegate = self
+            avatarView.userNameLabel.text = users[i].userName
+            avatarView.indexOfUser = i
+            profileScrollView.addSubview(avatarView)
+            avatarView.delegate = self
             cot += 1
         }
     }
