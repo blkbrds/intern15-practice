@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Ex5ViewController" customModule="PracticeTemplate" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cg9-n2-xGs" userLabel="Center">
+                    <rect key="frame" x="177" y="423" width="60" height="60"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cg9-n2-xGs" secondAttribute="height" multiplier="1:1" id="FmY-f0-bhw"/>
+                        <constraint firstAttribute="height" constant="60" id="UKX-wg-SB5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uB-dS-4b9">
+                    <rect key="frame" x="0.0" y="423" width="177" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdb-kx-1vw" userLabel="ViewTrai">
+                            <rect key="frame" x="58.5" y="0.0" width="60" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="pdb-kx-1vw" secondAttribute="height" multiplier="1:1" id="0wd-2R-psc"/>
+                                <constraint firstAttribute="height" constant="60" id="nfd-Wt-tVj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="pdb-kx-1vw" firstAttribute="centerY" secondItem="6uB-dS-4b9" secondAttribute="centerY" id="6QG-lh-nNP"/>
+                        <constraint firstItem="pdb-kx-1vw" firstAttribute="centerX" secondItem="6uB-dS-4b9" secondAttribute="centerX" id="yH2-CA-GH3"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMy-LT-VMH">
+                    <rect key="frame" x="237" y="423" width="177" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4B-N9-f8p" userLabel="ViewPhai">
+                            <rect key="frame" x="58.5" y="0.0" width="60" height="60"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="0ef-mU-f9e"/>
+                                <constraint firstAttribute="width" secondItem="X4B-N9-f8p" secondAttribute="height" multiplier="1:1" id="MJ6-n5-hMZ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="X4B-N9-f8p" firstAttribute="centerX" secondItem="VMy-LT-VMH" secondAttribute="centerX" id="4EY-qV-BIp"/>
+                        <constraint firstItem="X4B-N9-f8p" firstAttribute="centerY" secondItem="VMy-LT-VMH" secondAttribute="centerY" id="J3C-le-3WI"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phU-sq-df8">
+                    <rect key="frame" x="20" y="78" width="108" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.25490932160000002" green="0.48160311010000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Ex 4_2"/>
+                    <connections>
+                        <action selector="gotoEx5_2:" destination="-1" eventType="touchUpInside" id="2ej-Fm-NcZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2Y-UR-CZK">
+                    <rect key="frame" x="20" y="159" width="108" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.25490932160000002" green="0.48160311010000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Ex 4_4"/>
+                    <connections>
+                        <action selector="gotoEx5_4:" destination="-1" eventType="touchUpInside" id="ysq-2o-3sn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0m-bN-UTh">
+                    <rect key="frame" x="271" y="159" width="108" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.25490932160000002" green="0.48160311010000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Ex 4_5"/>
+                    <connections>
+                        <action selector="gotoEx5_5:" destination="-1" eventType="touchUpInside" id="eQZ-tI-Gi4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi7-aH-zem">
+                    <rect key="frame" x="271" y="78" width="108" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.25490932160000002" green="0.48160311010000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Ex 4_3"/>
+                    <connections>
+                        <action selector="gotoEx5_3:" destination="-1" eventType="touchUpInside" id="riD-H4-sXQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cg9-n2-xGs" firstAttribute="leading" secondItem="6uB-dS-4b9" secondAttribute="trailing" id="2Kk-Cr-AEY"/>
+                <constraint firstItem="cg9-n2-xGs" firstAttribute="height" secondItem="6uB-dS-4b9" secondAttribute="height" id="5W5-8v-cz2"/>
+                <constraint firstItem="6uB-dS-4b9" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="9a0-Qh-h3M"/>
+                <constraint firstItem="cg9-n2-xGs" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="IyL-xi-gVq"/>
+                <constraint firstItem="VMy-LT-VMH" firstAttribute="leading" secondItem="cg9-n2-xGs" secondAttribute="trailing" id="K8s-Vs-DdP"/>
+                <constraint firstItem="cg9-n2-xGs" firstAttribute="height" secondItem="VMy-LT-VMH" secondAttribute="height" id="Oh0-eJ-tzl"/>
+                <constraint firstItem="VMy-LT-VMH" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Tob-Ag-IJV"/>
+                <constraint firstItem="6uB-dS-4b9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="W8m-D1-afN"/>
+                <constraint firstItem="6uB-dS-4b9" firstAttribute="height" secondItem="VMy-LT-VMH" secondAttribute="height" id="eSg-Vl-OId"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VMy-LT-VMH" secondAttribute="trailing" id="mcg-LA-fhx"/>
+                <constraint firstItem="cg9-n2-xGs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="p5h-6E-Npc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="95.652173913043484" y="35.491071428571423"/>
+        </view>
+    </objects>
+</document>
