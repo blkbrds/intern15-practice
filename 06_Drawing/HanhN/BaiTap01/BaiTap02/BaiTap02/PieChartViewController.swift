@@ -14,7 +14,7 @@ final class PieChartViewController: UIViewController {
             Segment(color: .yellow, value: 40)
         ]
         view.addSubview(pieChartView)
-        // Do any additional setup after loading the view.
+        
     }
 }
 extension PieChartViewController: PieChartViewDelegate {
