@@ -17,13 +17,9 @@ final class ContactTableViewCell: UITableViewCell {
     weak var delegate: ContactTableViewCellDelegate?
     var contact: Contact?
     
-    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet private weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var contactImageView: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet private weak var contactImageView: UIImageView!
     
     func setupUI() {
         phoneNumberLabel.text = contact?.phoneNumber
@@ -35,7 +31,7 @@ final class ContactTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    @IBAction func handleButtonTouchUpInSide(_ sender: Any) {
+    @IBAction func handleButtonTouchUpInside(_ sender: Any) {
         delegate?.doSomeThing(self)
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 protocol ProfileViewControllerDelegate: class {
     //func editContact()
-    func addContact(contact: Contact)
+    func addContact(_ contact: Contact)
 }
 
 final class ProfileViewController: UIViewController {
@@ -54,7 +54,7 @@ final class ProfileViewController: UIViewController {
         switch action {
         case .add:
             let contactAdd = Contact(name: name, phoneNumber: phoneNumber)
-            delegate?.addContact(contact: contactAdd)
+            delegate?.addContact(contactAdd)
         case .edit:
             contact?.name = name
             contact?.phoneNumber = phoneNumber

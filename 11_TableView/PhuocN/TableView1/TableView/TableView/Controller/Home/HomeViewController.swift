@@ -8,14 +8,13 @@
 
 import UIKit
 
-var groupContact: [Contact] = DataManagement.share.getContact(fileName: "contacts", type: "plist")
-
 final class HomeViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
     
+    private var groupContact: [Contact] = DataManagement.share.getContact(fileName: "contacts", type: "plist")
     private let groupUser = Dictionary(grouping: DataManagement.share.getUser(fileName: "users", type: "plist")) { (user) -> String in
         return String(user.first!)
     }
@@ -24,7 +23,7 @@ final class HomeViewController: UIViewController {
     private var isSearch: Bool = false
     private var searchData: [Contact] = []
     private var cellSelectedIndexPath: IndexPath?
-    enum cellIdenfier: String {
+    enum CellIdenfier: String {
         case defaultCell = "cellDefault"
         case contactsCell = "contactCell"
     }
@@ -42,13 +41,14 @@ final class HomeViewController: UIViewController {
         fetchData()
         tableView.reloadData()
     }
+    
     //MARK: - private func
     private func fetchData() {
         contacts = Dictionary(grouping: groupContact) { (contact) -> String in
-            if contact.name.isEmpty {
+            guard let contactNameFirst = contact.name.first else {
                 return "#"
             }
-            return String(contact.name.first!.uppercased())
+            return String(contactNameFirst.uppercased())
         }
     }
     
@@ -57,8 +57,8 @@ final class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdenfier.defaultCell.rawValue)
-        tableView.register(UINib(nibName: "ContactTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellIdenfier.contactsCell.rawValue)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdenfier.defaultCell.rawValue)
+        tableView.register(UINib(nibName: "ContactTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: CellIdenfier.contactsCell.rawValue)
     }
     
     private func setupNavi() {
@@ -69,12 +69,12 @@ final class HomeViewController: UIViewController {
     private func editTableViewForSearch(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //searching phone number
         if searchData[indexPath.row].name.isEmpty {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdenfier.defaultCell.rawValue, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdenfier.defaultCell.rawValue, for: indexPath)
             cell.textLabel?.text = searchData[indexPath.row].phoneNumber
             return cell
         }
         //searching name
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdenfier.contactsCell.rawValue, for: indexPath) as! ContactTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdenfier.contactsCell.rawValue, for: indexPath) as! ContactTableViewCell
         cell.contact = searchData[indexPath.row]
         cell.backgroundColor = .white
         return cell
@@ -126,11 +126,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         // default table
         guard contacts.keys.sorted()[indexPath.section] != "#" else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdenfier.defaultCell.rawValue, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: CellIdenfier.defaultCell.rawValue, for: indexPath)
             cell.textLabel?.text = contacts["#"]?[indexPath.row].phoneNumber
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdenfier.contactsCell.rawValue, for: indexPath) as! ContactTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdenfier.contactsCell.rawValue, for: indexPath) as! ContactTableViewCell
         cell.contact = contacts[contacts.keys.sorted()[indexPath.section]]?[indexPath.row]
         cell.backgroundColor = .white
         cell.delegate = self
@@ -216,7 +216,7 @@ extension HomeViewController: ContactTableViewCellDelegate {
 }
 
 extension HomeViewController: ProfileViewControllerDelegate {
-    func addContact(contact: Contact) {
+    func addContact(_ contact: Contact) {
         groupContact.append(contact)
         isSearch = false
         fetchData()
