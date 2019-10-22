@@ -10,7 +10,7 @@ import UIKit
 
 final class PieChartView: UIView {
 
-    private var transformedvalues: [CGFloat] = []
+    private var transformedValues: [CGFloat] = []
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,10 +22,11 @@ final class PieChartView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-        guard !transformedvalues.isEmpty else { return }
+        super.draw(rect)
+        guard !transformedValues.isEmpty else { return }
         var starAngle: CGFloat = 0
         var endAngle: CGFloat = 0
-        for value in transformedvalues {
+        for value in transformedValues {
             endAngle = endAngle + value
             drawPie(radius: 120, startAngle: starAngle, endAngle: endAngle)
             starAngle = endAngle
@@ -58,11 +59,11 @@ final class PieChartView: UIView {
         pathInside.fill()
     }
 
-    func transformedValues(values: [CGFloat]) {
+    func transform(values: [CGFloat]) {
         var sum: CGFloat = 0
         for value in values {
-            sum = sum + value
+            sum += value
         }
-        transformedvalues = values.map { $0 * 2 * .pi / sum }
+        transformedValues = values.map { $0 * 2 * .pi / sum }
     }
 }

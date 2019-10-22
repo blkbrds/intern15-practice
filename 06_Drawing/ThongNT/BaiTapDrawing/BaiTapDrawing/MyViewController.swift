@@ -19,13 +19,13 @@ final class MyViewController: UIViewController {
         let frameTop = CGRect(x: 20, y: 30, width: view.bounds.width, height: view.bounds.height / 2 - 30)
         columnChartView.frame = frameTop
         columnChartView.backgroundColor = .white
-        columnChartView.transformValues(values: values)
+        columnChartView.transform(values: values)
         
         let pieChartView = PieChartView()
         let frameBottom = CGRect(x: 20, y: view.bounds.height / 2 + 30, width: view.bounds.width, height: view.bounds.height / 2 - 30)
         pieChartView.frame = frameBottom
         pieChartView.backgroundColor = .white
-        pieChartView.transformedValues(values: values)
+        pieChartView.transform(values: values)
         
         view.addSubview(columnChartView)
         view.addSubview(pieChartView)

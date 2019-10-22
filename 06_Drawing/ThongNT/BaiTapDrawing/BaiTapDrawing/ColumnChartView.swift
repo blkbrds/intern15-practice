@@ -22,21 +22,22 @@ final class ColumnChartView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
         // range between columns = weight of columns
         let range = bounds.width / CGFloat(transformedValues.count) / 2
         var parameter: CGFloat = 0.5
         for index in transformedValues {
-            drawColumn(columnHeight: index, columnWeight: range, space: parameter * range)
-            parameter = parameter + 2
+            drawColumn(height: index, weight: range, space: parameter * range)
+            parameter += 2
         }
     }
 
-    private func drawColumn(columnHeight: CGFloat, columnWeight: CGFloat, space: CGFloat) {
+    private func drawColumn(height: CGFloat, weight: CGFloat, space: CGFloat) {
         if let context = UIGraphicsGetCurrentContext() {
             context.move(to: CGPoint(x: bounds.minX + space, y: bounds.maxY))
-            context.addLine(to: CGPoint(x: bounds.minX + space, y: bounds.maxY - columnHeight))
-            context.addLine(to: CGPoint(x: bounds.minX + columnWeight + space, y: bounds.maxY - columnHeight))
-            context.addLine(to: CGPoint(x: bounds.minX + columnWeight + space, y: bounds.maxY))
+            context.addLine(to: CGPoint(x: bounds.minX + space, y: bounds.maxY - height))
+            context.addLine(to: CGPoint(x: bounds.minX + weight + space, y: bounds.maxY - height))
+            context.addLine(to: CGPoint(x: bounds.minX + weight + space, y: bounds.maxY))
             let red = CGFloat.random(in: 0...255)
             let green = CGFloat.random(in: 0...255)
             let blue = CGFloat.random(in: 0...255)
@@ -45,7 +46,7 @@ final class ColumnChartView: UIView {
         }
     }
 
-    func transformValues(values: [CGFloat]) {
+    func transform(values: [CGFloat]) {
         if let maxValue = values.max() {
             for value in values {
                 transformedValues.append(value * (bounds.height - 50) / maxValue)
