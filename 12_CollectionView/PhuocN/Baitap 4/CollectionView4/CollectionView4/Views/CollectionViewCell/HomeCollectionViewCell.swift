@@ -10,5 +10,11 @@ import UIKit
 
 final class HomeCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    
+    func configUI(avatarImage: UIImage?, cornerRadius: CGFloat = 0) {
+        avatarImageView.image = avatarImage
+        avatarImageView.layer.cornerRadius = cornerRadius
+        avatarImageView.contentMode = .scaleAspectFill
+    }
 }

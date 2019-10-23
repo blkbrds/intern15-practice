@@ -27,6 +27,7 @@ final class HomeTableViewCell: UITableViewCell {
 }
 
 extension HomeTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -36,8 +37,7 @@ extension HomeTableViewCell: UICollectionViewDataSource, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionCell", for: indexPath) as! HomeCollectionViewCell
-        cell.avatarImageView.image = data[indexPath.row].avatar
-        cell.avatarImageView.layer.cornerRadius = 15
+        cell.configUI(avatarImage: data[indexPath.row].avatar, cornerRadius: 15)
         return cell
     }
     

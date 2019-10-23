@@ -50,8 +50,7 @@ extension SliderTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionCell", for: indexPath) as! HomeCollectionViewCell
-        cell.avatarImageView.image = data[indexPath.row]
-        cell.avatarImageView.contentMode = .scaleAspectFill
+        cell.configUI(avatarImage: data[indexPath.row])
         return cell
     }
     
