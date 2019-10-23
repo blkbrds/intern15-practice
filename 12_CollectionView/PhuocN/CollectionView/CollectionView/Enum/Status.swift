@@ -12,6 +12,7 @@ import UIKit
 enum Status {
     case standard
     case small
+    
     var itemSize: CGSize {
         switch self {
         case .standard: return CGSize(width: 150, height: 180)

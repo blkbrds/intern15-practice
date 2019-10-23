@@ -21,6 +21,7 @@ enum Team: Int {
         case .xmen: return "X-men"
         }
     }
+    
     var teamAvatar: UIImage {
         switch self {
         case .avengers: return #imageLiteral(resourceName: "avengers")
@@ -53,6 +54,6 @@ enum Team: Int {
         }
     }
     
-     static var count: Int { return Team.xmen.rawValue + 1}
+    static var count: Int { return Team.xmen.rawValue + 1}
 }
 
