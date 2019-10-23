@@ -15,8 +15,8 @@ protocol PinterestLayoutDelegate: class {
 final class PinterestLayout: UICollectionViewLayout {
     
     weak var delegate: PinterestLayoutDelegate?
-    var numberColumns = 2
-    var cellPadding: CGFloat = 5
+    private var numberColumns = 2
+    private var cellPadding: CGFloat = 5
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
     private var width: CGFloat {
@@ -26,6 +26,11 @@ final class PinterestLayout: UICollectionViewLayout {
     
     override var collectionViewContentSize: CGSize {
         return CGSize(width: width, height: contentHeight)
+    }
+    
+    func configLayout(cellPadding: CGFloat = 5, numberOfColumns: Int = 2) {
+        self.cellPadding = cellPadding
+        self.numberColumns = numberOfColumns
     }
     
     override func prepare() {

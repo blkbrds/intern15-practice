@@ -10,10 +10,14 @@ import UIKit
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet private weak var photoImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         photoImageView.layer.cornerRadius = 15
+    }
+    
+    func configPhotoImage(image: UIImage?) {
+        photoImageView.image = image
     }
 }
