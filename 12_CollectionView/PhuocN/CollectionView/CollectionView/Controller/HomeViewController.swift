@@ -15,6 +15,7 @@ final class HomeViewController: UIViewController {
         case header = "headerCell"
         case footer = "footerCell"
     }
+    
     private var status = Status.standard
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -72,6 +73,7 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Team.count
     }
