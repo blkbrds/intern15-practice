@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
-struct AppColor {
+struct App {
+    struct Color {}
+}
+
+extension App.Color {
     static let tintColorTabBar = UIColor(displayP3Red: 33/255, green: 177/255, blue: 243/255, alpha: 1)
 }

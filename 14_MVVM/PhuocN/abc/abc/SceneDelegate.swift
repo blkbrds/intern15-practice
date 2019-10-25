@@ -9,7 +9,7 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
-
+    
     enum Status {
         case login
         case logOut
@@ -22,14 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
         return shared
     }
     
-    private override init() {
-        super.init()
-    }
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         print("connection")
         guard let windowScene = (scene as? UIWindowScene) else { return }
-       window = UIWindow(windowScene: windowScene)
+        window = UIWindow(windowScene: windowScene)
         if UserDefaults.standard.value(forKey: "username") != nil {
             configTabBar()
         } else {
@@ -38,6 +34,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
+    func sceneDidDisconnect(_ scene: UIScene) {
+        print("Did Dis COnnect")
+    }
+    
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        print("Did Become Active")
+    }
+    
+    func sceneWillResignActive(_ scene: UIScene) {
+        print("Will Resign Active")
+    }
+    
+    func sceneWillEnterForeground(_ scene: UIScene) {
+        print("Will enter foreground")
+    }
+    
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        print("DidEnterBackground")
+    }
+}
+
+//MARK: -Config RootView
+extension SceneDelegate {
     func configRootView(status: Status) {
         switch status {
         case .login:
@@ -56,7 +75,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
     private func configTabBar() {
         let homeVC = HomeViewController()
         let homeNavi = UINavigationController(rootViewController: homeVC)
-//        homeNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
         homeNavi.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "ic-home"), selectedImage: #imageLiteral(resourceName: "ic-home-selected"))
         
         let mapVC = MapViewController()
@@ -74,26 +92,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
         let tabBarController = BaseTabBarController()
         tabBarController.viewControllers = [homeNavi, mapNavi, favoriteNavi, profileNavi]
         window?.rootViewController = tabBarController
-    }
-    
-    func sceneDidDisconnect(_ scene: UIScene) {
-        print("Did Dis COnnect")
-    }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        print("Did Become Active")
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-        print("Will Resign Active")
-    }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        print("Will enter foreground")
-    }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        print("DidEnterBackground")
     }
 }
 

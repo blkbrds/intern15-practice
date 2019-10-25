@@ -8,23 +8,26 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     @IBOutlet private weak var passWordTextField: UITextField!
     @IBOutlet private weak var userNameTextField: UITextField!
     
-    private let userName: String = "abc"
-    private let passWord: String = "123"
-
+    var viewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    @IBAction func handleLogin(_ sender: Any) {
-        guard let userNameLogin = userNameTextField.text, userName == userNameLogin,
-              let passWordLogin = passWordTextField.text, passWord == passWordLogin else {
-            return
+    
+    @IBAction private func loginTouchUpInside(_ sender: Any) {
+        guard let userNameLogin = userNameTextField.text, let passWordLogin = passWordTextField.text else { return }
+        viewModel.login(username: userNameLogin, password: passWordLogin) { (done) in
+            if done == true {
+                UserDefaults.standard.set(userNameLogin, forKey: "username")
+                SceneDelegate.shared.configRootView(status: .login)
+            } else {
+                print("Not have this user")
+            }
         }
-        UserDefaults.standard.set(userName, forKey: "username")
-        SceneDelegate.shared.configRootView(status: .login)
     }
 }

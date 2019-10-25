@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Location {
+class Place {
     var name: String
     var avatar: String
     var address: String

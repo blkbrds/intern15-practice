@@ -8,20 +8,23 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: BaseViewController {
+    
     @IBOutlet weak var detailLabel: UILabel!
     
-    var viewModel: DetailViewModel?
+    var viewModel: DetailViewModel? {
+        didSet {
+            updateUI()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let viewModel = viewModel else {
-            print("Fail")
-            return
-        }
-        detailLabel.text = viewModel.data.name
     }
     
-    
+    override func updateUI() {
+        guard let viewModel = viewModel else { return }
+        //detailLabel.text = viewModel.namePlace
+        print(viewModel.namePlace)
+    }
 }

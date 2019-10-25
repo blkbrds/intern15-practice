@@ -13,20 +13,23 @@ final class HomeSlideCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var pageControll: UIPageControl!
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    var viewModel: HomeSlideCollectionCellViewModel?
+    var viewModel: HomeSlideCollectionCellViewModel? {
+        didSet {
+            updateUI()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //pageControll.
     }
     
-    func configCollectionView() {
+    func updateUI() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "SlideCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Cell")
     }
     
-    @IBAction func pageControllChangeValue(_ sender: UIPageControl) {
+    @IBAction private func pageControllChangeValue(_ sender: UIPageControl) {
         if sender.currentPage == 5 {
             sender.currentPage = 1
         }
@@ -38,13 +41,13 @@ extension HomeSlideCollectionViewCell: UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { fatalError("Don't have any image")}
-        return viewModel.data.count
+        return viewModel.slideImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SlideCollectionViewCell
         guard let viewModel = viewModel else { fatalError("Don't have any image") }
-        cell.setupImage(with: UIImage(named: viewModel.data[indexPath.row]))
+        cell.setupImage(with: UIImage(named: viewModel.slideImages[indexPath.row]))
         return cell
     }
     

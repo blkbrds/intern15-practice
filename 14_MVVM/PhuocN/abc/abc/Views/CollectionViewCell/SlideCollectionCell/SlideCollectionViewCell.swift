@@ -19,5 +19,4 @@ final class SlideCollectionViewCell: UICollectionViewCell {
     func setupImage(with image: UIImage?) {
         self.imageView.image = image
     }
-
 }

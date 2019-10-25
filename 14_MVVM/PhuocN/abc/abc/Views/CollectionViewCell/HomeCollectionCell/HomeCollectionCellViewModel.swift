@@ -10,17 +10,29 @@ import Foundation
 
 class HomeCollectionCellViewModel {
     
-    private(set) var data: Location
+    var title: String
+    var image: String
+    var distance: String
+    var address: String
+    var isFavorite: Bool
+    var rating: String
     
-    init(data: Location) {
-        self.data = data
+    init(title: String, image: String, distance: String, address: String, rating: String, isFavorite: Bool) {
+        self.title = title
+        self.image = image
+        self.distance = distance
+        self.address = address
+        self.rating = rating
+        self.isFavorite = isFavorite
     }
     
-    func likeItem() {
-        data.isFavorite = true
+    func likeItem(completion: (Bool) -> ()) {
+        isFavorite = true
+        completion(true)
     }
     
-    func unlike() {
-        data.isFavorite = false
+    func unlike(completion: (Bool) -> ()) {
+        isFavorite = false
+        completion(true)
     }
 }

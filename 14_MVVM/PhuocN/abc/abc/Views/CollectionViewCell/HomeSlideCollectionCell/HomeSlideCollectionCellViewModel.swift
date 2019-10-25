@@ -10,10 +10,10 @@ import Foundation
 
 class HomeSlideCollectionCellViewModel {
     
-    private(set) var data: [String]
+    private(set) var slideImages: [String]
     
-    init(data: [String]) {
-        self.data = data
+    init(slideImages: [String]) {
+        self.slideImages = slideImages
     }
 }
 
