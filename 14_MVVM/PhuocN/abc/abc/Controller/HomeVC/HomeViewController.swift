@@ -12,8 +12,8 @@ final class HomeViewController: BaseViewController {
     
     @IBOutlet private weak var homeCollectionView: UICollectionView!
     
-    var status: HomeShowStatus = .row
-    var viewModel = HomeViewModel()
+    private var status: HomeShowStatus = .row
+    private var viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
