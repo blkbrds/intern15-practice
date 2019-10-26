@@ -8,7 +8,7 @@
 
 import Foundation
 
-let placesOfApp: [Place] = [Place(name: "Coffee 1", avatar: "Coffee 1", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
+var placesTest = [Place(name: "Coffee 1", avatar: "Coffee 1", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
               Place(name: "Coffee 2", avatar: "Coffee 2", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
               Place(name: "Coffee 3", avatar: "Coffee 3", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: true),
               Place(name: "Coffee 4", avatar: "Coffee 4", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
@@ -19,12 +19,15 @@ let placesOfApp: [Place] = [Place(name: "Coffee 1", avatar: "Coffee 1", address:
               Place(name: "Coffee 9", avatar: "Coffee 9", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
               Place(name: "Coffee 10", avatar:"Coffee 10", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: true)]
 
-
 class HomeViewModel {
     
-    var places: [Place] = placesOfApp
+    var places: [Place] = []
     var numberOfSection: Int = 2
     var slideImages = ["Coffee 1", "Coffee 2", "Coffee 3", "Coffee 4", "Coffee 5"]
+    
+    func loadData(completion: (String, Bool) -> ()) {
+        self.places = placesTest
+    }
     
     func clickButton(name: String) {
         print("View Model --> name: \(name)")

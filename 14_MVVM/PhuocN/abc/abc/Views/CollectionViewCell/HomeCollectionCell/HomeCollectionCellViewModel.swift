@@ -9,7 +9,7 @@
 import Foundation
 
 class HomeCollectionCellViewModel {
-    
+
     var title: String
     var image: String
     var distance: String
@@ -17,22 +17,22 @@ class HomeCollectionCellViewModel {
     var isFavorite: Bool
     var rating: String
     
-    init(title: String, image: String, distance: String, address: String, rating: String, isFavorite: Bool) {
-        self.title = title
-        self.image = image
-        self.distance = distance
-        self.address = address
-        self.rating = rating
-        self.isFavorite = isFavorite
+    init(place: Place) {
+        self.title = place.name
+        self.image = place.avatar
+        self.distance = place.distance
+        self.address = place.address
+        self.rating = place.rates
+        self.isFavorite = place.isFavorite
     }
     
-    func likeItem(completion: (Bool) -> ()) {
-        isFavorite = true
-        completion(true)
-    }
-    
-    func unlike(completion: (Bool) -> ()) {
-        isFavorite = false
+    func setFavorite(completion: (Bool) -> ()) {
+//        if isFavorite {
+//            isFavorite = false
+//        } else {
+//            isFavorite = true
+//        }
+        isFavorite = isFavorite ? false : true
         completion(true)
     }
 }

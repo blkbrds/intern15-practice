@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F40365B2364591900FB9658 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F40365A2364591900FB9658 /* Color.swift */; };
 		0F7884EF235EE17E003F8CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7884EE235EE17E003F8CE5 /* AppDelegate.swift */; };
 		0F7884F1235EE17E003F8CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7884F0235EE17E003F8CE5 /* SceneDelegate.swift */; };
 		0F7884F8235EE17F003F8CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7884F7235EE17F003F8CE5 /* Assets.xcassets */; };
@@ -30,7 +31,7 @@
 		0FF6229823602FA100BA1BA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229723602FA100BA1BA4 /* BaseViewController.swift */; };
 		0FF6229A23602FC200BA1BA4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229923602FC200BA1BA4 /* BaseNavigationController.swift */; };
 		0FF6229C2360302400BA1BA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229B2360302400BA1BA4 /* BaseTabBarController.swift */; };
-		0FF6229F2360325200BA1BA4 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229E2360325200BA1BA4 /* AppColor.swift */; };
+		0FF6229F2360325200BA1BA4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229E2360325200BA1BA4 /* App.swift */; };
 		0FF622A1236036AE00BA1BA4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF622A0236036AE00BA1BA4 /* HomeViewModel.swift */; };
 		0FF622A32360373800BA1BA4 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF622A22360373800BA1BA4 /* Place.swift */; };
 		0FF622B22360506C00BA1BA4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF622B02360506C00BA1BA4 /* DetailViewController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F40365A2364591900FB9658 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0F7884EB235EE17E003F8CE5 /* abc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7884EE235EE17E003F8CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F7884F0235EE17E003F8CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +72,7 @@
 		0FF6229723602FA100BA1BA4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0FF6229923602FC200BA1BA4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0FF6229B2360302400BA1BA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		0FF6229E2360325200BA1BA4 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		0FF6229E2360325200BA1BA4 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		0FF622A0236036AE00BA1BA4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0FF622A22360373800BA1BA4 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		0FF622B02360506C00BA1BA4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +242,8 @@
 		0FF6229D2360323B00BA1BA4 /* Define */ = {
 			isa = PBXGroup;
 			children = (
-				0FF6229E2360325200BA1BA4 /* AppColor.swift */,
+				0FF6229E2360325200BA1BA4 /* App.swift */,
+				0F40365A2364591900FB9658 /* Color.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				0F78852B235EFBE2003F8CE5 /* LoginViewController.swift in Sources */,
 				0F788526235EF942003F8CE5 /* ProfileViewController.swift in Sources */,
 				0FF6229C2360302400BA1BA4 /* BaseTabBarController.swift in Sources */,
+				0F40365B2364591900FB9658 /* Color.swift in Sources */,
 				0F7884EF235EE17E003F8CE5 /* AppDelegate.swift in Sources */,
 				0FF8E1BC23618AA300662EC0 /* HomeShowStatus.swift in Sources */,
 				0F7884F1235EE17E003F8CE5 /* SceneDelegate.swift in Sources */,
@@ -406,7 +410,7 @@
 				0F87CB3E2361A5010047D083 /* HomeSlideCollectionCellViewModel.swift in Sources */,
 				0FF6229A23602FC200BA1BA4 /* BaseNavigationController.swift in Sources */,
 				0F78851D235EF836003F8CE5 /* MapViewController.swift in Sources */,
-				0FF6229F2360325200BA1BA4 /* AppColor.swift in Sources */,
+				0FF6229F2360325200BA1BA4 /* App.swift in Sources */,
 				0FF8E1C023618E7700662EC0 /* HomeGridCollectionViewCell.swift in Sources */,
 				0F788522235EF85E003F8CE5 /* FavoriteViewController.swift in Sources */,
 			);

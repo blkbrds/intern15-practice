@@ -25,3 +25,9 @@ class Place {
         self.isFavorite = isFavorite
     }
 }
+
+extension Place {
+    static var definePlaces: [Place] {
+        return placesTest
+    }
+}

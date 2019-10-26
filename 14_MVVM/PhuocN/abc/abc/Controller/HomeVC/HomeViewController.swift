@@ -53,6 +53,15 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
+    }
+    
+    override func loadData() {
+        viewModel.loadData { (error, done) in
+            if !done {
+                //show alert with string
+            }
+        }
     }
     
     override func setupUI() {
@@ -106,12 +115,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch status {
         case .row:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCollectionViewCell
-            cell.viewModel = HomeCollectionCellViewModel(title: viewModel.getItemAtIndexPath(indexPath).name, image: viewModel.getItemAtIndexPath(indexPath).avatar, distance: viewModel.getItemAtIndexPath(indexPath).distance, address: viewModel.getItemAtIndexPath(indexPath).address, rating: viewModel.getItemAtIndexPath(indexPath).rates, isFavorite: viewModel.getItemAtIndexPath(indexPath).isFavorite)
+            cell.viewModel = HomeCollectionCellViewModel(place: viewModel.getItemAtIndexPath(indexPath))
             cell.delegate = self
             return cell
         case .grid:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeGridCell", for: indexPath) as! HomeGridCollectionViewCell
-            cell.viewModel = HomeCollectionCellViewModel(title: viewModel.getItemAtIndexPath(indexPath).name, image: viewModel.getItemAtIndexPath(indexPath).avatar, distance: viewModel.getItemAtIndexPath(indexPath).distance, address: viewModel.getItemAtIndexPath(indexPath).address, rating: viewModel.getItemAtIndexPath(indexPath).rates, isFavorite: viewModel.getItemAtIndexPath(indexPath).isFavorite)
+            cell.viewModel = HomeCollectionCellViewModel(place: viewModel.getItemAtIndexPath(indexPath))
             cell.delegate = self
             return cell
         }
@@ -149,11 +158,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController: HomeCollectionViewCellDelegate {
     
     func favoriteItem(at cell: UICollectionViewCell, like: Bool) {
-        guard let index = homeCollectionView.indexPath(for: cell), index.item < viewModel.places.count else { return }
+        guard let index = homeCollectionView.indexPath(for: cell) else { return }
         viewModel.likePlace(at: index.item, like: like)
-        print("viewmodel", viewModel.places.map {$0.isFavorite})
-        print("App", placesOfApp.map {$0.isFavorite})
     }
 }
-
-

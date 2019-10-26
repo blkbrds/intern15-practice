@@ -50,23 +50,11 @@ final class HomeGridCollectionViewCell: UICollectionViewCell {
     
     @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         if let viewModel = viewModel {
-            if viewModel.isFavorite {
-                viewModel.unlike { (done) in
-                    if done {
-                        favoriteButton.setImage(#imageLiteral(resourceName: "ic-like"), for: .normal)
-                        delegate?.favoriteItem(at: self, like: false)
-                    } else {
-                        print("Fail to unlike")
-                    }
-                }
-            } else {
-                viewModel.likeItem { (done) in
-                    if done {
-                        favoriteButton.setImage(#imageLiteral(resourceName: "ic-like-selected"), for: .normal)
-                        delegate?.favoriteItem(at: self, like: true)
-                    } else {
-                        print("Fail to unlike")
-                    }
+            viewModel.setFavorite { (done) in
+                if done {
+                    updateUI()
+                } else {
+                    print("Can not change favorite")
                 }
             }
         }
