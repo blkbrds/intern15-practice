@@ -27,6 +27,7 @@ class HomeViewModel {
     
     func loadData(completion: (String, Bool) -> ()) {
         self.places = placesTest
+        completion("Sucessfully", true)
     }
     
     func clickButton(name: String) {

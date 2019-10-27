@@ -58,8 +58,8 @@ final class HomeViewController: BaseViewController {
     
     override func loadData() {
         viewModel.loadData { (error, done) in
-            if !done {
-                //show alert with string
+            if done {
+                updateUI()
             }
         }
     }

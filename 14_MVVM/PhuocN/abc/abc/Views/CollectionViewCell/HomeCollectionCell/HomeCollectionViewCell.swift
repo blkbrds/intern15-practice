@@ -45,12 +45,11 @@ final class HomeCollectionViewCell: UICollectionViewCell {
         addressLabel.text = viewModel.address
         rateLabel.text = viewModel.rating
         avatarImageView.image = UIImage(named: viewModel.image)
-        updateFavoriteButton()
+        updateFavoriteButton(isLike: viewModel.isFavorite)
     }
     
-    private func updateFavoriteButton() {
-        guard let viewModel = viewModel else { return }
-        if viewModel.isFavorite {
+    private func updateFavoriteButton(isLike: Bool) {
+        if isLike {
             favoriteButton.setImage(#imageLiteral(resourceName: "ic-like-selected"), for: .normal)
         } else {
             favoriteButton.setImage(#imageLiteral(resourceName: "ic-like"), for: .normal)
@@ -59,9 +58,9 @@ final class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         if let viewModel = viewModel {
-            viewModel.setFavorite { (done) in
+            viewModel.setFavorite { (done, isLike) in
                 if done {
-                    updateFavoriteButton()
+                    updateFavoriteButton(isLike: isLike)
                 } else {
                     print("Can not change favorite")
                 }
