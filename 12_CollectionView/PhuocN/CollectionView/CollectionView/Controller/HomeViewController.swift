@@ -101,11 +101,15 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let team = Team(rawValue: indexPath.section) else {
                 fatalError("Team is nil value")
             }
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CellIdentifier.header.rawValue, for: indexPath) as! HeaderCollectionViewCell
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CellIdentifier.header.rawValue, for: indexPath) as? HeaderCollectionViewCell else {
+                return UICollectionReusableView()
+            }
             header.update(avatar: team.teamAvatar, name: team.teamName, status: status)
             return header
         case UICollectionView.elementKindSectionFooter:
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: CellIdentifier.footer.rawValue, for: indexPath) as! FooterCollectionViewCell
+            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: CellIdentifier.footer.rawValue, for: indexPath) as? FooterCollectionViewCell else {
+                return UICollectionReusableView()
+            }
             return footer
         default:
             return UICollectionReusableView()
