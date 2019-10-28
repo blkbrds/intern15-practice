@@ -47,13 +47,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard indexPath.section > 0 else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SliderCell", for: indexPath) as! SliderTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SliderCell", for: indexPath) as? SliderTableViewCell else { return UITableViewCell() }
             cell.data = Team.teamAvatar
             return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeTableViewCell
-        guard let team = Team(rawValue: indexPath.section - 1) else {
-            fatalError("Team is nil")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeTableViewCell,
+            let team = Team(rawValue: indexPath.section - 1) else {
+                fatalError("Team is nil")
         }
         cell.data = team.members
         return cell

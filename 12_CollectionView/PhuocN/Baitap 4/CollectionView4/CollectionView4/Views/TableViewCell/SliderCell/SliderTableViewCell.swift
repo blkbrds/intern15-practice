@@ -23,14 +23,14 @@ final class SliderTableViewCell: UITableViewCell {
     @IBAction private func pushToNextImage(_ sender: Any) {
         if Int(index) < data.count - 1 {
             index += 1
-            self.collectionView.scrollToItem(at: IndexPath(item: Int(self.index), section: 0), at: .centeredHorizontally, animated: true)
+            collectionView.scrollToItem(at: IndexPath(item: Int(self.index), section: 0), at: .centeredHorizontally, animated: true)
         }
     }
     
     @IBAction private func popPreImage(_ sender: Any) {
         if index > 0 {
             index -= 1
-            self.collectionView.scrollToItem(at: IndexPath(item: Int(self.index), section: 0), at: .centeredHorizontally, animated: true)
+            collectionView.scrollToItem(at: IndexPath(item: Int(self.index), section: 0), at: .centeredHorizontally, animated: true)
         }
     }
     
