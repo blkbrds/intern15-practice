@@ -53,6 +53,6 @@ extension UIButton {
         case .bottomRight:
             badgeNumberLabel.center = CGPoint(x: bounds.maxX, y: bounds.maxY)
         }
-        self.addSubview(badgeNumberLabel)
+        addSubview(badgeNumberLabel)
     }
 }

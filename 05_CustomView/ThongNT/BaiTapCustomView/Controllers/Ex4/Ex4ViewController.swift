@@ -8,10 +8,10 @@
 
 import UIKit
 
-class Ex4ViewController: BaseViewController {
-    @IBOutlet weak var showDateTextField: UITextField!
+final class Ex4ViewController: BaseViewController {
+    @IBOutlet private weak var showDateTextField: UITextField!
 
-    var dateView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
+    private var dateView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +34,20 @@ class Ex4ViewController: BaseViewController {
     }
 }
 
-extension Ex4ViewController: UITextFieldDelegate, DatePickerViewDelegate {
+extension Ex4ViewController: UITextFieldDelegate {
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         view.endEditing(true)
-        self.dateView?.show()
+        dateView?.show()
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         dateView?.hide()
     }
+}
+
+extension Ex4ViewController: DatePickerViewDelegate {
+
     func datePickerView(view: DatePickerView, needPerform: DatePickerView.Action, selectedDate: Date?) {
         if let selectedDate = selectedDate {
             let formatedDate = DateFormatter()

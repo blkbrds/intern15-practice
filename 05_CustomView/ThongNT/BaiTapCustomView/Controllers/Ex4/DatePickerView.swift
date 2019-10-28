@@ -9,10 +9,10 @@
 import UIKit
 
 protocol DatePickerViewDelegate {
-    func datePickerView (view: DatePickerView, needPerform: DatePickerView.Action, selectedDate: Date?)
+    func datePickerView (view: DatePickerView, needPerform  : DatePickerView.Action, selectedDate: Date?)
 }
 
-class DatePickerView: UIView {
+final class DatePickerView: UIView {
 
     enum Action {
         case show
@@ -21,12 +21,13 @@ class DatePickerView: UIView {
         case cancel
     }
 
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var datePickerView: UIDatePicker!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private weak var datePickerView: UIDatePicker!
 
     var delegate: DatePickerViewDelegate?
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         contentView?.alpha = 0
     }
 

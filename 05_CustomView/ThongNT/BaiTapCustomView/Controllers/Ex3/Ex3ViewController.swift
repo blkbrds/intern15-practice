@@ -8,11 +8,11 @@
 
 import UIKit
 
-class Ex3ViewController: BaseViewController {
+final class Ex3ViewController: BaseViewController {
     
-    @IBOutlet weak var emailButton: UIButton!
-    @IBOutlet weak var friendButton: UIButton!
-    @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet private weak var emailButton: UIButton!
+    @IBOutlet private weak var friendButton: UIButton!
+    @IBOutlet private weak var photoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
