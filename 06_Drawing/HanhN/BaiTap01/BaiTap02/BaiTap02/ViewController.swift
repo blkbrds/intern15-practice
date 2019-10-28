@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  TableView
+//  BaiTap02
 //
-//  Created by PhuocNguyen on 10/18/19.
-//  Copyright © 2019 PhuocNguyen. All rights reserved.
+//  Created by ANH NGUYỄN on 10/21/19.
+//  Copyright © 2019 asiantech. All rights reserved.
 //
 
 import UIKit
