@@ -26,8 +26,8 @@ class HomeCollectionCellViewModel {
         self.isFavorite = place.isFavorite
     }
     
-    func setFavorite(completion: (Bool, Bool) -> ()) {
+    func setFavorite(completion: (Bool) -> ()) {
         isFavorite = isFavorite ? false : true
-        completion(true, isFavorite)
+        completion(true)
     }
 }

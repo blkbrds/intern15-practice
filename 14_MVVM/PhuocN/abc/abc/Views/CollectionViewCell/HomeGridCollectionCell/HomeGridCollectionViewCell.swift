@@ -41,11 +41,7 @@ final class HomeGridCollectionViewCell: UICollectionViewCell {
         addressLabel.text = viewModel.address
         rateLabel.text = viewModel.rating
         avatarImageView.image = UIImage(named: viewModel.image)
-        updateFavoriteButton(isLike: viewModel.isFavorite)
-    }
-    
-    private func updateFavoriteButton(isLike: Bool) {
-        if isLike {
+        if viewModel.isFavorite {
             favoriteButton.setImage(#imageLiteral(resourceName: "ic-like-selected"), for: .normal)
         } else {
             favoriteButton.setImage(#imageLiteral(resourceName: "ic-like"), for: .normal)
@@ -54,9 +50,10 @@ final class HomeGridCollectionViewCell: UICollectionViewCell {
     
     @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         if let viewModel = viewModel {
-            viewModel.setFavorite { (done, isLike) in
+            viewModel.setFavorite { (done) in
                 if done {
-                    updateFavoriteButton(isLike: isLike)
+                    //updateUI()
+                    delegate?.favoriteItem(at: self)
                 } else {
                     print("Can not change favorite")
                 }

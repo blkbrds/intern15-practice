@@ -157,8 +157,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension HomeViewController: HomeCollectionViewCellDelegate {
     
-    func favoriteItem(at cell: UICollectionViewCell, like: Bool) {
+    func favoriteItem(at cell: UICollectionViewCell) {
         guard let index = homeCollectionView.indexPath(for: cell) else { return }
-        viewModel.likePlace(at: index.item, like: like)
+        viewModel.likePlace(at: index.item)
+        homeCollectionView.reloadItems(at: [index])
     }
 }

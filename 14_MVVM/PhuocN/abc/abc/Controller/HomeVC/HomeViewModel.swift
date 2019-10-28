@@ -8,17 +8,6 @@
 
 import Foundation
 
-var placesTest = [Place(name: "Coffee 1", avatar: "Coffee 1", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
-              Place(name: "Coffee 2", avatar: "Coffee 2", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
-              Place(name: "Coffee 3", avatar: "Coffee 3", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: true),
-              Place(name: "Coffee 4", avatar: "Coffee 4", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
-              Place(name: "Coffee 5", avatar: "Coffee 5", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
-              Place(name: "Coffee 6", avatar: "Coffee 6", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
-              Place(name: "Coffee 7", avatar: "Coffee 7", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: true),
-              Place(name: "Coffee 8", avatar: "Coffee 8", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
-              Place(name: "Coffee 9", avatar: "Coffee 9", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: false),
-              Place(name: "Coffee 10", avatar:"Coffee 10", address: "1 Bach Dang", distance: "3 km", rates: "8/10", isFavorite: true)]
-
 class HomeViewModel {
     
     var places: [Place] = []
@@ -26,7 +15,7 @@ class HomeViewModel {
     var slideImages = ["Coffee 1", "Coffee 2", "Coffee 3", "Coffee 4", "Coffee 5"]
     
     func loadData(completion: (String, Bool) -> ()) {
-        self.places = placesTest
+        self.places = Place.places
         completion("Sucessfully", true)
     }
     
@@ -59,7 +48,7 @@ class HomeViewModel {
         return places.count
     }
     
-    func likePlace(at index: Int, like: Bool) {
-        places[index].isFavorite = like
+    func likePlace(at index: Int) {
+        places[index].isFavorite = !places[index].isFavorite
     }
 }
