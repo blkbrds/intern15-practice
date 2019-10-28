@@ -48,7 +48,8 @@ class HomeViewModel {
         return places.count
     }
     
-    func likePlace(at index: Int) {
+    func likePlace(at index: Int, completion: (Bool) -> ()) {
         places[index].isFavorite = !places[index].isFavorite
+        completion(true)
     }
 }

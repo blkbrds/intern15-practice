@@ -159,7 +159,10 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
     
     func favoriteItem(at cell: UICollectionViewCell) {
         guard let index = homeCollectionView.indexPath(for: cell) else { return }
-        viewModel.likePlace(at: index.item)
-        homeCollectionView.reloadItems(at: [index])
+        viewModel.likePlace(at: index.item) { done in
+            if done {
+                homeCollectionView.reloadItems(at: [index])
+            }
+        }
     }
 }
