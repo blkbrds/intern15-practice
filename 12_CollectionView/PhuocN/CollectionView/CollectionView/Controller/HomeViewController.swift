@@ -86,13 +86,11 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let team = Team(rawValue: indexPath.section) else {
-            fatalError("Team is nil value")
+        guard let team = Team(rawValue: indexPath.section),
+              let item = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.cell.rawValue, for: indexPath) as? HomeCollectionViewCell,
+              indexPath.row < team.members.count else {
+                fatalError("Fail")
         }
-        guard indexPath.row < team.members.count else {
-            fatalError("Member index is out range")
-        }
-        let item = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.cell.rawValue, for: indexPath) as! HomeCollectionViewCell
         item.updateCell(status: status, avatar: team.members[indexPath.row].avatar, name: team.members[indexPath.row].name)
         return item
     }
