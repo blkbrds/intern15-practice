@@ -40,8 +40,8 @@ final class ListProfileViewController: UIViewController {
     private func createListAvatar() {
         var cot: CGFloat = 0
         var dong: CGFloat = 0
-        for i in 0..<users.count{
-            if i % 3 == 0 && i != 0{
+        for i in 0..<users.count {
+            if i % 3 == 0 && i != 0 {
                 cot = 0
                 dong += 1
             }
