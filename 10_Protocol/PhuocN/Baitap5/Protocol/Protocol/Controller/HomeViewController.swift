@@ -23,7 +23,8 @@ final class HomeViewController: UIViewController {
         calculatorView?.config()
         calculatorView?.delegate = self
         calculatorView?.dataSource = self
-        view.addSubview(calculatorView!)
+        guard let calculatorView = calculatorView else { return }
+        view.addSubview(calculatorView)
     }
     
     @IBAction private func showCalculatorView() {
