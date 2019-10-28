@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
 
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
@@ -84,27 +84,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = Ex6ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         case 6:
-            let vc = Ex7ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 7:
             let vc = Ex8ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 8:
-            let vc = Ex9ViewController()
+        case 7:
+            let vc = MyViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 9:
+        case 8:
             let vc = Ex10ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 10:
+        case 9:
             let vc = Ex11ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 11:
+        case 10:
             let vc = Ex12ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 12:
+        case 11:
             let vc = Ex13ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 13:
+        case 12:
             let vc = Ex14ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
