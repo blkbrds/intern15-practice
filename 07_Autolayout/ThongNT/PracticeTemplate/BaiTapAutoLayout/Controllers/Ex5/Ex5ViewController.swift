@@ -1,31 +1,36 @@
 //
 //  Ex5ViewController.swift
-//  PracticeTemplate
+//  BaiTapAutoLayout
 //
-//  Created by Tien Le P. on 6/22/18.
-//  Copyright © 2018 Tien Le P. All rights reserved.
+//  Created by PCI0018 on 10/23/19.
+//  Copyright © 2019 Tien Le P. All rights reserved.
 //
 
 import UIKit
 
-class Ex5ViewController: BaseViewController {
-    
+final class Ex5ViewController: BaseViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func moveTo5(_ sender: Any) {
+        navigationController?.pushViewController(Sub5_ViewController(), animated: true)
     }
     
-    // MARK: config
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Ex5"
+    @IBAction func moveTo5_1(_ sender: Any) {
+        navigationController?.pushViewController(Sub5_1ViewController(), animated: true)
     }
     
-    override func setupData() {
+    @IBAction func moveTo5_2(_ sender: Any) {
+        navigationController?.pushViewController(Sub5_2ViewController(), animated: true)
     }
     
+    @IBAction func moveTo5_3(_ sender: Any) {
+        navigationController?.pushViewController(Sub5_3ViewController(), animated: true)
+    }
     
+    @IBAction func moveTo5_4(_ sender: Any) {
+        navigationController?.pushViewController(Sub5_4ViewController(), animated: true)
+    }
 }

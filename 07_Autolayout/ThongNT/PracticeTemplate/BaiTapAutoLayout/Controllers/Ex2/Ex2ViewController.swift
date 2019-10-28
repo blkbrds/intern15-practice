@@ -8,24 +8,12 @@
 
 import UIKit
 
-class Ex2ViewController: BaseViewController {
+final class Ex2ViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    @IBAction func moveNext(_ sender: Any) {
+        navigationController?.pushViewController(Sub2_1ViewController(), animated: true)
     }
-    
-    // MARK: config
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Ex2"
-    }
-    
-    override func setupData() {
-    }
-    
-    
 }

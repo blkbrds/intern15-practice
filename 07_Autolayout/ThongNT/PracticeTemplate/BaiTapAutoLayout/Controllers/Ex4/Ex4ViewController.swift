@@ -8,24 +8,28 @@
 
 import UIKit
 
-class Ex4ViewController: BaseViewController {
+final class Ex4ViewController: BaseViewController {
     
+    @IBOutlet weak var segment: UISegmentedControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    @IBAction func changeSection(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            navigationController?.pushViewController(Ex4ViewController(), animated: true)
+        case 1:
+            navigationController?.pushViewController(Sub4_1ViewController(), animated: true)
+        case 2:
+            navigationController?.pushViewController(Sub4_2ViewController(), animated: true)
+        case 3:
+            navigationController?.pushViewController(Sub4_3ViewController(), animated: true)
+        case 4:
+            navigationController?.pushViewController(Sub4_4ViewController(), animated: true)
+        default:
+            break
+        }
     }
-    
-    // MARK: config
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Ex4"
-    }
-    
-    override func setupData() {
-    }
-    
-    
 }
