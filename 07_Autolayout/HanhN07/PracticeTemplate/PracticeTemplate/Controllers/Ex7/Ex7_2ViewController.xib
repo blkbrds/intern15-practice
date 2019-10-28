@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Ex7_2ViewController" customModule="PracticeTemplate" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUV-pX-5MP" userLabel="ViewOne">
+                    <rect key="frame" x="67" y="133" width="145.5" height="148"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZ4-jX-bt1" userLabel="ViewThree">
+                    <rect key="frame" x="374" y="133" width="148" height="148"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="EZ4-jX-bt1" secondAttribute="height" multiplier="1:1" id="6rV-KF-9ul"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xch-z3-7hc" userLabel="ViewFour">
+                    <rect key="frame" x="530" y="133" width="148.5" height="148"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sB5-9C-1EO" userLabel="ViewFive">
+                    <rect key="frame" x="685.5" y="133" width="145.5" height="148"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyW-5d-el0" userLabel="ViewTwo">
+                    <rect key="frame" x="220.5" y="133" width="145.5" height="148"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="pyW-5d-el0" firstAttribute="leading" secondItem="SUV-pX-5MP" secondAttribute="trailing" constant="8" symbolic="YES" id="2Zz-Kx-4cT"/>
+                <constraint firstItem="EZ4-jX-bt1" firstAttribute="leading" secondItem="pyW-5d-el0" secondAttribute="trailing" constant="8" symbolic="YES" id="4fw-pb-dRO"/>
+                <constraint firstItem="sB5-9C-1EO" firstAttribute="width" secondItem="EZ4-jX-bt1" secondAttribute="height" multiplier="49:50" id="AAe-CN-GM6"/>
+                <constraint firstItem="Xch-z3-7hc" firstAttribute="width" secondItem="EZ4-jX-bt1" secondAttribute="height" id="AEX-3n-DWb"/>
+                <constraint firstItem="Xch-z3-7hc" firstAttribute="height" secondItem="EZ4-jX-bt1" secondAttribute="height" id="BNa-x3-QBb"/>
+                <constraint firstItem="sB5-9C-1EO" firstAttribute="height" secondItem="EZ4-jX-bt1" secondAttribute="height" id="BYu-QC-qpZ"/>
+                <constraint firstItem="Xch-z3-7hc" firstAttribute="leading" secondItem="EZ4-jX-bt1" secondAttribute="trailing" constant="8" symbolic="YES" id="C7H-bJ-xLn"/>
+                <constraint firstItem="SUV-pX-5MP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="MPa-Vf-a1c"/>
+                <constraint firstItem="EZ4-jX-bt1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="VJS-Va-JrV"/>
+                <constraint firstItem="SUV-pX-5MP" firstAttribute="height" secondItem="EZ4-jX-bt1" secondAttribute="height" id="crN-fH-Zsh"/>
+                <constraint firstItem="EZ4-jX-bt1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dnl-Zu-VoJ"/>
+                <constraint firstItem="pyW-5d-el0" firstAttribute="height" secondItem="EZ4-jX-bt1" secondAttribute="height" id="gq7-NY-cvZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sB5-9C-1EO" secondAttribute="trailing" constant="20" id="hOg-8f-amI"/>
+                <constraint firstItem="Xch-z3-7hc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="isy-hS-ffX"/>
+                <constraint firstItem="SUV-pX-5MP" firstAttribute="width" secondItem="EZ4-jX-bt1" secondAttribute="height" multiplier="49:50" id="llT-Gm-0i7"/>
+                <constraint firstItem="pyW-5d-el0" firstAttribute="width" secondItem="EZ4-jX-bt1" secondAttribute="height" multiplier="49:50" id="pAO-vG-BJg"/>
+                <constraint firstItem="sB5-9C-1EO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="rBk-gQ-ogW"/>
+                <constraint firstItem="sB5-9C-1EO" firstAttribute="leading" secondItem="Xch-z3-7hc" secondAttribute="trailing" constant="8" symbolic="YES" id="tyK-SP-GcF"/>
+                <constraint firstItem="pyW-5d-el0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vuw-Ct-dQT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="97"/>
+        </view>
+    </objects>
+</document>
