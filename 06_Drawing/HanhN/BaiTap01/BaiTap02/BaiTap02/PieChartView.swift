@@ -1,7 +1,7 @@
 
 import UIKit
-protocol pieChartViewDelegate: class {
-    func pieChartView(_piechartView: PieChartView, didSect index: Int)
+protocol PieChartViewDelegate: class {
+    func pieChartView(_ piechartView: PieChartView, didSect index: Int)
 }
 struct Segment {
     var color: UIColor

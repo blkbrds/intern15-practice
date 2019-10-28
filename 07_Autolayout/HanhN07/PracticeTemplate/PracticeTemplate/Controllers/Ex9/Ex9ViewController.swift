@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import UIKit
 
@@ -18,10 +19,24 @@ final class Ex9ViewController: BaseViewController {
         "Những hình ảnh này được lấy từ gói nội dung tải về (DLC) Extra Pack 2 sẽ phát hành vào 28/02 tới đây. Trong đó, người chơi có thể điều khiển các nhân vật mới như Jiren, Android 17, Fu và đặc biệt là Goku ở trạng thái Bản năng Vô cực Tối thượng.",
         "Ngoài những thêm thắt nêu trên, gói Extra Pack 2 còn bổ sung 5 nhiệm vụ mới, 8 skill mới và 5 đòn đặc biệt mới. Gói DLC này có giá 16.99 USD, nhưng người sở hữu Dragon Ball Xenoverse 2 có thể tải về gói miễn phí khác với 5 trang phục và 3 phụ kiện mới.",
         "Chiêm ngưỡng Bản năng Vô cực Tối thượng của Goku trong Dragon Ball Xenoverse 2 Dù chưa xuất hiện trên anime thế nhưng những hình ảnh đầu tiên của Bản năng Vô cực Tối thượng đã xuất hiện ngập tràn trên mạng."]
+=======
+//
+//  Ex9ViewController.swift
+//  PracticeTemplate
+//
+//  Created by Tien Le P. on 6/22/18.
+//  Copyright © 2018 Tien Le P. All rights reserved.
+//
+
+import UIKit
+
+class Ex9ViewController: BaseViewController {
+>>>>>>> master
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+<<<<<<< HEAD
     override func setupUI() {
         super.setupUI()
         self.title = "Ex9"
@@ -46,4 +61,21 @@ final class Ex9ViewController: BaseViewController {
             self.textLabel.text = self.infoText[self.index]
         })
     }
+=======
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: config
+    override func setupUI() {
+        super.setupUI()
+        self.title = "Ex9"
+    }
+    
+    override func setupData() {
+    }
+
+
+>>>>>>> master
 }

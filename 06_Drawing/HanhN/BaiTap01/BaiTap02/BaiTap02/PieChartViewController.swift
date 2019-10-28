@@ -1,7 +1,7 @@
 
 import UIKit
 
-class PieChartViewController: UIViewController {
+final class PieChartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,10 +14,14 @@ class PieChartViewController: UIViewController {
             Segment(color: .yellow, value: 40)
         ]
         view.addSubview(pieChartView)
+<<<<<<< HEAD
+=======
+        
+>>>>>>> master
     }
 }
-extension PieChartViewController: pieChartViewDelegate {
-    func pieChartView(_piechartView: PieChartView, didSect index: Int) {
+extension PieChartViewController: PieChartViewDelegate {
+    func pieChartView(_ piechartView: PieChartView, didSect index: Int) {
         print("hihi \(index).")
     }
 }

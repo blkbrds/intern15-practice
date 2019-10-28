@@ -8,6 +8,7 @@
 
 import UIKit
 
+<<<<<<< HEAD
 final class Ex4ViewController: BaseViewController {
 
     override func viewDidLoad() {
@@ -17,14 +18,35 @@ final class Ex4ViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+=======
+class Ex4ViewController: BaseViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: config
+>>>>>>> master
     override func setupUI() {
         super.setupUI()
         self.title = "Ex4"
     }
+<<<<<<< HEAD
     override func setupData() {
     }
     @IBAction func gotoEx4_1(_ sender: Any) {
         let vc = Ex4_1ViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+=======
+    
+    override func setupData() {
+    }
+    
+    
+>>>>>>> master
 }
