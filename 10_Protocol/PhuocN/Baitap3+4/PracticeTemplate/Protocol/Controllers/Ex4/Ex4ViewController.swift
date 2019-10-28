@@ -52,7 +52,8 @@ extension Ex4ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension Ex4ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchLocations = locations.filter { $0.uppercased().hasPrefix(searchText.uppercased()) }
+        let upperText = searchText.uppercased()
+        searchLocations = locations.filter { $0.uppercased().hasPrefix(upperText) }
         tableView.reloadData()
     }
     

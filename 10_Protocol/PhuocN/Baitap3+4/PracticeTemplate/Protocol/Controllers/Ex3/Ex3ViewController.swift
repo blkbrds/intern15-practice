@@ -10,7 +10,6 @@ import UIKit
 
 protocol Ex3ViewControllerDataSource: class {
     func getLocation() -> (mien: String?, tinh: String?, huyen: String?)
-//    func getMienTinh() -> (String?,String?)
 }
 
 final class Ex3ViewController: BaseViewController {
@@ -38,7 +37,7 @@ final class Ex3ViewController: BaseViewController {
     // MARK: config
     override func setupUI() {
         super.setupUI()
-        self.title = "Dia diem"
+        title = "Dia diem"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pushToNextViewController))
     }
     
@@ -47,7 +46,6 @@ final class Ex3ViewController: BaseViewController {
         vc.dataSource = self
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension Ex3ViewController: MienViewControllerDataSource {

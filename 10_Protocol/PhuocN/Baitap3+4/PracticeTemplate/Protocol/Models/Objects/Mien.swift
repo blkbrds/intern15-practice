@@ -18,7 +18,7 @@ class Mien {
     }
 }
 
-let miens: [Mien] = [Mien(name: "Mien 1", tinh: [Tinh(name: "Tinh 1.1", huyen: [Huyen(name: "Huyen 1.1.1"),
+let locations: [Mien] = [Mien(name: "Mien 1", tinh: [Tinh(name: "Tinh 1.1", huyen: [Huyen(name: "Huyen 1.1.1"),
                                                                                 Huyen(name: "Huyen 1.1.2"),
                                                                                 Huyen(name: "Huyen 1.1.3"),
                                                                                 Huyen(name: "Huyen 1.1.4"),

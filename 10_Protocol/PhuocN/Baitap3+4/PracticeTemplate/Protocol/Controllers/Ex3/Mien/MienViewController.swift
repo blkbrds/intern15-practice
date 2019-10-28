@@ -14,7 +14,7 @@ protocol MienViewControllerDataSource: class {
 
 final class MienViewController: UIViewController {
     
-    private var data: [Mien] = miens
+    private var miens: [Mien] = locations
     private var mienSelected: Mien?
     private let cellIdentifier: String = "cell"
     weak var dataSource: MienViewControllerDataSource?
@@ -31,14 +31,14 @@ final class MienViewController: UIViewController {
     }
     
     private func setupNavi() {
-        self.title = "Mien"
+        title = "Mien"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Tinh", style: .plain, target: self, action: #selector(pushToNextView))
     }
     
     @objc private func pushToNextView() {
         if let mien = mienSelected {
             let vc = TinhViewController()
-            vc.data = mien.tinh
+            vc.tinhs = mien.tinh
             vc.dataSource = self
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -47,19 +47,19 @@ final class MienViewController: UIViewController {
 
 extension MienViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return miens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.systemBlue.cgColor
-        cell.textLabel?.text = data[indexPath.row].name
+        cell.textLabel?.text = miens[indexPath.row].name
         cell.selectionStyle = .none
         if let mien = dataSource?.getMienSelected().mien {
-            for (offset, element) in data.enumerated() where mien == element.name && indexPath.row == offset{
+            for (offset, element) in miens.enumerated() where mien == element.name && indexPath.row == offset {
                 cell.backgroundColor = .systemBlue
-                mienSelected = data[indexPath.row]
+                mienSelected = miens[indexPath.row]
             }
         }
         return cell
@@ -71,8 +71,8 @@ extension MienViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.backgroundColor = .systemBlue
-        mienSelected = data[indexPath.row]
-        for index in 0..<data.count where index != indexPath.row {
+        mienSelected = miens[indexPath.row]
+        for index in 0..<miens.count where index != indexPath.row {
             tableView.cellForRow(at: IndexPath(row: index, section: 0))?.backgroundColor = .white
         }
     }

@@ -9,7 +9,6 @@
 import UIKit
 
 protocol HuyenViewControllerDataSource: class {
-    //func submitLocation(mien: String, tinh: String, huyen: String)
     func getMienTinh() -> (mien: String?,tinh: String?)
     func getHuyenSelected() -> String?
 }
@@ -18,7 +17,7 @@ final class HuyenViewController: UIViewController {
     
     private let cellIdentifier: String = "cell"
     private var huyenSelected: Huyen?
-    var data: [Huyen] = []
+    var huyens: [Huyen] = []
     weak var dataSource: HuyenViewControllerDataSource?
     
     @IBOutlet private weak var tableView: UITableView!
@@ -33,7 +32,7 @@ final class HuyenViewController: UIViewController {
     }
     
     private func setupNavi() {
-        self.title = "Huyen"
+        title = "Huyen"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(popToLocationView))
     }
     
@@ -51,19 +50,19 @@ final class HuyenViewController: UIViewController {
 
 extension HuyenViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return huyens.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.systemRed.cgColor
-        cell.textLabel?.text = data[indexPath.row].name
+        cell.textLabel?.text = huyens[indexPath.row].name
         cell.selectionStyle = .none
         if let huyen = dataSource?.getHuyenSelected() {
-            for (offset, element) in data.enumerated() where huyen == element.name && indexPath.row == offset {
+            for (offset, element) in huyens.enumerated() where huyen == element.name && indexPath.row == offset {
                 cell.backgroundColor = .systemRed
-                huyenSelected = data[indexPath.row]
+                huyenSelected = huyens[indexPath.row]
             }
         }
         return cell
@@ -75,8 +74,8 @@ extension HuyenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.backgroundColor = .systemRed
-        huyenSelected = data[indexPath.row]
-        for index in 0..<data.count where index != indexPath.row {
+        huyenSelected = huyens[indexPath.row]
+        for index in 0..<huyens.count where index != indexPath.row {
             tableView.cellForRow(at: IndexPath(row: index, section: 0))?.backgroundColor = .white
         }
     }

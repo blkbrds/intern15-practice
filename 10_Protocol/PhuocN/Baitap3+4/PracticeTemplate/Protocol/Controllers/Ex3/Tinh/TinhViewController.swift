@@ -17,7 +17,7 @@ final class TinhViewController: UIViewController {
     
     private let cellIdentifier: String = "cell"
     weak var dataSource: TinhViewControllerDataSource?
-    var data: [Tinh] = []
+    var tinhs: [Tinh] = []
     private var tinhSelected: Tinh?
     
     @IBOutlet private weak var tableView: UITableView!
@@ -32,14 +32,14 @@ final class TinhViewController: UIViewController {
     }
     
     private func setupNavi() {
-        self.title = "Tinh"
+        title = "Tinh"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Huyen", style: .plain, target: self, action: #selector(pushToNextView))
     }
     
     @objc private func pushToNextView() {
         guard let tinh = tinhSelected else { return }
         let vc = HuyenViewController()
-        vc.data = tinh.huyen
+        vc.huyens = tinh.huyen
         vc.dataSource = self
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -47,19 +47,19 @@ final class TinhViewController: UIViewController {
 
 extension TinhViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return tinhs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.systemGreen.cgColor
-        cell.textLabel?.text = data[indexPath.row].name
+        cell.textLabel?.text = tinhs[indexPath.row].name
         cell.selectionStyle = .none
         if let tinh = dataSource?.getTinhSelected().tinh {
-            for (offset, element) in data.enumerated() where tinh == element.name && indexPath.row == offset{
+            for (offset, element) in tinhs.enumerated() where tinh == element.name && indexPath.row == offset {
                 cell.backgroundColor = .systemGreen
-                tinhSelected = data[indexPath.row]
+                tinhSelected = tinhs[indexPath.row]
             }
         }
         return cell
@@ -71,8 +71,8 @@ extension TinhViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.backgroundColor = .systemGreen
-        tinhSelected = data[indexPath.row]
-        for index in 0..<data.count where index != indexPath.row {
+        tinhSelected = tinhs[indexPath.row]
+        for index in 0..<tinhs.count where index != indexPath.row {
             tableView.cellForRow(at: IndexPath(row: index, section: 0))?.backgroundColor = .white
         }
     }
