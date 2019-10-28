@@ -36,7 +36,9 @@ extension PhotoStreamViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PhotoCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotoCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         cell.configPhotoImage(image: UIImage(named: images[indexPath.row]))
         return cell
     }
