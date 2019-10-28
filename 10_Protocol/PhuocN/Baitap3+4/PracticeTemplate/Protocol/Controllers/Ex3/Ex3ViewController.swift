@@ -14,7 +14,16 @@ protocol Ex3ViewControllerDataSource: class {
 
 final class Ex3ViewController: BaseViewController {
     
-    weak var dataSource: Ex3ViewControllerDataSource?
+    weak var dataSource: Ex3ViewControllerDataSource? {
+        didSet {
+            guard let mien = dataSource?.getLocation().mien,
+                let tinh = dataSource?.getLocation().tinh,
+                let huyen = dataSource?.getLocation().huyen else { return }
+            huyenLabel.text = huyen
+            mienLabel.text = mien
+            tinhLabel.text = tinh
+        }
+    }
     
     @IBOutlet private weak var huyenLabel: UILabel!
     @IBOutlet private weak var tinhLabel: UILabel!
@@ -26,12 +35,12 @@ final class Ex3ViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let mien = dataSource?.getLocation().mien,
-            let tinh = dataSource?.getLocation().tinh,
-            let huyen = dataSource?.getLocation().huyen else { return }
-        huyenLabel.text = huyen
-        mienLabel.text = mien
-        tinhLabel.text = tinh
+//        guard let mien = dataSource?.getLocation().mien,
+//            let tinh = dataSource?.getLocation().tinh,
+//            let huyen = dataSource?.getLocation().huyen else { return }
+//        huyenLabel.text = huyen
+//        mienLabel.text = mien
+//        tinhLabel.text = tinh
     }
     
     // MARK: config
