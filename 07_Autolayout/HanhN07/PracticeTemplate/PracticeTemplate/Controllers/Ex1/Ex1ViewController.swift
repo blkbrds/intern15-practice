@@ -3,12 +3,10 @@ import UIKit
 
 final class Ex1ViewController: BaseViewController {
 
-        var exercise: Exercise?
-    
+    var exercise: Exercise?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -16,7 +14,6 @@ final class Ex1ViewController: BaseViewController {
         super.setupUI()
         self.title = exercise?.name
     }
-    
     override func setupData() {
     }
 }

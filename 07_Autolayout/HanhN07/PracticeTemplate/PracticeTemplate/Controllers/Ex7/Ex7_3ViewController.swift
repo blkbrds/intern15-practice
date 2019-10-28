@@ -12,7 +12,5 @@ final class Ex7_3ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
 }

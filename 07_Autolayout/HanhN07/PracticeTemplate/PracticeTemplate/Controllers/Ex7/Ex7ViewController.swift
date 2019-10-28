@@ -6,7 +6,6 @@ final class Ex7ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
     @IBAction func gotoEx7(_ sender: UIButton) {
         switch sender.tag {
         case 0:

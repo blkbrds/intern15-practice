@@ -9,7 +9,6 @@
 import UIKit
 
 final class Ex7_5ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
