@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+final class Results {
+
+    static let result = Results()
+    private(set) var result: Float = 0
+    
+    private init () { }
+
+    func setResult(r: Float) {
+        self.result = r
+    }
+}
