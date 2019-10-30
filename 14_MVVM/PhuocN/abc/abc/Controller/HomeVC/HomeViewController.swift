@@ -44,9 +44,16 @@ final class HomeViewController: BaseViewController {
     
     @IBOutlet private weak var homeCollectionView: UICollectionView!
     
+    enum Action {
+        case refresh
+        case loadMore
+        case loadData
+        case changeStatus
+    }
+    
     private var status: HomeShowStatus = .row {
         didSet{
-            updateUI()
+            updateUI(with: .changeStatus)
         }
     }
     private var viewModel = HomeViewModel()
@@ -57,9 +64,9 @@ final class HomeViewController: BaseViewController {
     }
     
     override func loadData() {
-        viewModel.loadData { (error, done) in
+        viewModel.loadData(loadMore: false) { (done, error) in
             if done {
-                updateUI()
+                self.updateUI(with: .loadData)
             }
         }
     }
@@ -68,20 +75,32 @@ final class HomeViewController: BaseViewController {
         title = "Home"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
         
-        homeCollectionView.delegate = self
-        homeCollectionView.dataSource = self
         homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HomeCell")
         homeCollectionView.register(UINib(nibName: "HomeGridCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HomeGridCell")
         homeCollectionView.register(UINib(nibName: "HomeSlideCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HomeSlideCell")
+        homeCollectionView.refreshControl = UIRefreshControl()
+        homeCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        homeCollectionView.delegate = self
+        homeCollectionView.dataSource = self
     }
     
-    override func updateUI() {
-        switch status {
-        case .grid:
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+    func updateUI(with perform: Action) {
+        switch perform {
+        case .refresh:
             homeCollectionView.reloadData()
-        case .row:
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+            homeCollectionView.refreshControl?.endRefreshing()
+        case .changeStatus:
+            switch status {
+            case .grid:
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+                homeCollectionView.reloadData()
+            case .row:
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+                homeCollectionView.reloadData()
+            }
+        case .loadMore:
+            homeCollectionView.reloadData()
+        case .loadData:
             homeCollectionView.reloadData()
         }
     }
@@ -92,6 +111,14 @@ final class HomeViewController: BaseViewController {
             status = .row
         case .row:
             status = .grid
+        }
+    }
+    
+    @objc private func refreshData() {
+        viewModel.loadData(loadMore: false) { (done, error) in
+            if done {
+                self.updateUI(with: .refresh)
+            }
         }
     }
 }
@@ -115,12 +142,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch status {
         case .row:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCollectionViewCell
-            cell.viewModel = HomeCollectionCellViewModel(place: viewModel.getItemAtIndexPath(indexPath))
+            cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath))
+            cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath).imageURL, index: indexPath.row)
             cell.delegate = self
             return cell
         case .grid:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeGridCell", for: indexPath) as! HomeGridCollectionViewCell
-            cell.viewModel = HomeCollectionCellViewModel(place: viewModel.getItemAtIndexPath(indexPath))
+            cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath))
+            cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath).imageURL, index: indexPath.row)
             cell.delegate = self
             return cell
         }
@@ -129,7 +158,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section != 0 {
             let detailVC = DetailViewController()
-            detailVC.viewModel = DetailViewModel(namePlace: viewModel.getItemAtIndexPath(indexPath).name)
+            //            detailVC.viewModel = DetailViewModel(namePlace: viewModel.getItemAtIndexPath(indexPath).name)
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }
@@ -153,16 +182,26 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return status.sectionInset
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == viewModel.getCount() - 4 {
+            viewModel.loadData(loadMore: true) { (done, error) in
+                if done {
+                    collectionView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension HomeViewController: HomeCollectionViewCellDelegate {
     
     func favoriteItem(at cell: UICollectionViewCell) {
-        guard let index = homeCollectionView.indexPath(for: cell) else { return }
-        viewModel.likePlace(at: index.item) { done in
-            if done {
-                homeCollectionView.reloadItems(at: [index])
-            }
-        }
+        //        guard let index = homeCollectionView.indexPath(for: cell) else { return }
+        //        viewModel.likePlace(at: index.item) { done in
+        //            if done {
+        //                homeCollectionView.reloadItems(at: [index])
+        //            }
+        //        }
     }
 }
