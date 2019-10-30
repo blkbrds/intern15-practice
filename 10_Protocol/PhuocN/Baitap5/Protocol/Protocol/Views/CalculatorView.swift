@@ -137,7 +137,6 @@ final class CalculatorView: UIView {
             for _ in 0..<Int(number2) {
                 result *= number1
             }
-            //            return [1...number2].reduce(1.0) { $0 * number1 }
             return result
         case .none:
             return nil
