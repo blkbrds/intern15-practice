@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2353D3236C1BEE0036B4E5 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2353D2236C1BEE0036B4E5 /* HomeTableViewCell.swift */; };
+		0F2353D7236C1FB40036B4E5 /* TableVIewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2353D6236C1FB40036B4E5 /* TableVIewExt.swift */; };
+		0F2353DA236C28C20036B4E5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2353D9236C28C20036B4E5 /* Category.swift */; };
 		0F57CA5C236BD68D00E66F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57CA5B236BD68D00E66F48 /* AppDelegate.swift */; };
 		0F57CA5E236BD68D00E66F48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57CA5D236BD68D00E66F48 /* SceneDelegate.swift */; };
 		0F57CA60236BD68D00E66F48 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57CA5F236BD68D00E66F48 /* HomeViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F2353D2236C1BEE0036B4E5 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		0F2353D6236C1FB40036B4E5 /* TableVIewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableVIewExt.swift; sourceTree = "<group>"; };
+		0F2353D9236C28C20036B4E5 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0F57CA58236BD68D00E66F48 /* DemoRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F57CA5B236BD68D00E66F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F57CA5D236BD68D00E66F48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2353D1236C1BD80036B4E5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0F2353D2236C1BEE0036B4E5 /* HomeTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0F2353D4236C1F070036B4E5 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				0F2353D5236C1F120036B4E5 /* Extension */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		0F2353D5236C1F120036B4E5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0F2353D6236C1FB40036B4E5 /* TableVIewExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0F2353D8236C28A50036B4E5 /* Scheme */ = {
+			isa = PBXGroup;
+			children = (
+				0F2353D9236C28C20036B4E5 /* Category.swift */,
+			);
+			path = Scheme;
+			sourceTree = "<group>";
+		};
 		0F57CA4F236BD68D00E66F48 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +105,7 @@
 		0F57CA5A236BD68D00E66F48 /* DemoRealm */ = {
 			isa = PBXGroup;
 			children = (
+				0F2353D4236C1F070036B4E5 /* Support */,
 				0F57CA74236BD9BF00E66F48 /* Model */,
 				0F57CA6F236BD6EC00E66F48 /* Views */,
 				0F57CA5B236BD68D00E66F48 /* AppDelegate.swift */,
@@ -82,6 +121,7 @@
 		0F57CA6F236BD6EC00E66F48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F2353D1236C1BD80036B4E5 /* Cell */,
 				0F57CA70236BD6F400E66F48 /* Screens */,
 			);
 			path = Views;
@@ -107,6 +147,7 @@
 		0F57CA74236BD9BF00E66F48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F2353D8236C28A50036B4E5 /* Scheme */,
 				0F57CA75236BD9C500E66F48 /* Realm */,
 			);
 			path = Model;
@@ -252,11 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2353D3236C1BEE0036B4E5 /* HomeTableViewCell.swift in Sources */,
 				0F57CA60236BD68D00E66F48 /* HomeViewController.swift in Sources */,
 				0F57CA5C236BD68D00E66F48 /* AppDelegate.swift in Sources */,
+				0F2353D7236C1FB40036B4E5 /* TableVIewExt.swift in Sources */,
 				0F57CA77236BD9D100E66F48 /* RealmManager.swift in Sources */,
 				0F57CA5E236BD68D00E66F48 /* SceneDelegate.swift in Sources */,
 				0F57CA73236BD72700E66F48 /* HomeViewModel.swift in Sources */,
+				0F2353DA236C28C20036B4E5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
