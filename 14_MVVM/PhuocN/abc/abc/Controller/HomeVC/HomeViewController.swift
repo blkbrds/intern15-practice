@@ -64,10 +64,12 @@ final class HomeViewController: BaseViewController {
     }
     
     override func loadData() {
-        viewModel.loadData(loadMore: false) { [weak self] done in
+        viewModel.loadData(loadMore: false) { [weak self] done, error in
             guard let self = self else { return }
             if done {
                 self.updateUI(with: .loadData)
+            } else {
+                self.showErrorAlert(with: error)
             }
         }
     }
@@ -75,7 +77,7 @@ final class HomeViewController: BaseViewController {
     override func setupUI() {
         title = "Home"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
-        viewModel.delegate = self
+        //viewModel.delegate = self
         
         homeCollectionView.register(withNib: HomeCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeGridCollectionViewCell.self)
@@ -117,12 +119,21 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc private func refreshData() {
-        viewModel.loadData(loadMore: false) { [weak self] done in
+        viewModel.loadData(loadMore: false) { [weak self] done, error in
             guard let self = self else { return }
             if done {
                 self.updateUI(with: .refresh)
+            } else {
+                self.showErrorAlert(with: error)
             }
         }
+    }
+    
+    func showErrorAlert(with message: String) {
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -188,10 +199,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == viewModel.getCount() - 4 {
-            viewModel.loadData(loadMore: true) { [weak self] done in
+            viewModel.loadData(loadMore: true) { [weak self] done, error  in
                 guard let self = self else { return }
                 if done {
                     collectionView.reloadData()
+                } else {
+                    self.showErrorAlert(with: error)
                 }
             }
         }
@@ -207,14 +220,5 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
         //                homeCollectionView.reloadItems(at: [index])
         //            }
         //        }
-    }
-}
-
-extension HomeViewController: HomeViewModelDelegate {
-    func showAlert(with message: String, type: HomeViewModel.Action) {
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
     }
 }

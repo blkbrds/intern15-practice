@@ -7,10 +7,10 @@
 //
 
 import UIKit
-
-protocol HomeViewModelDelegate: class {
-    func showAlert(with message: String, type: HomeViewModel.Action)
-}
+//
+//protocol HomeViewModelDelegate: class {
+//    func showAlert(with message: String, type: HomeViewModel.Action)
+//}
 
 class HomeViewModel {
     
@@ -20,7 +20,7 @@ class HomeViewModel {
     
     var videos: [Video] = []
     var pageNextToken = ""
-    weak var delegate: HomeViewModelDelegate?
+    //weak var delegate: HomeViewModelDelegate?
     var isLoadingData = false
     var numberOfSection: Int = 2
     var slideImages = ["Coffee 1", "Coffee 2", "Coffee 3", "Coffee 4", "Coffee 5"]
@@ -49,7 +49,7 @@ class HomeViewModel {
         return videos[indexPath.row]
     }
     
-    func loadData(loadMore: Bool, completed: @escaping (Bool) -> Void) {
+    func loadData(loadMore: Bool, completed: @escaping (Bool, String) -> Void) {
         if !loadMore {
             pageNextToken = ""
         }
@@ -60,22 +60,16 @@ class HomeViewModel {
                 guard let self = self else { return }
                 switch result {
                 case .failure(let error):
-                    completed(false)
-                    print(error.localizedDescription)
-                    // delegate --> show alert
-                    if let delegate = self.delegate {
-                        delegate.showAlert(with: error.localizedDescription, type: .alertError)
-                    }
+                    completed(false, error.localizedDescription)
                 case .success(let videoResult):
                     if !loadMore {
                         self.videos.removeAll()
                     }
                     self.pageNextToken = videoResult.pageNextToken
                     self.videos.append(contentsOf: videoResult.videos)
-                    completed(true)
+                    completed(true, "")
                 }
                 self.isLoadingData = false
-                print(self.videos.count)
             }
         } else {
             // show HUD
