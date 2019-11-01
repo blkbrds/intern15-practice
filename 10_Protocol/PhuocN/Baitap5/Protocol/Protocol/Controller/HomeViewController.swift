@@ -54,7 +54,7 @@ extension HomeViewController: CalculatorViewDataSource {
 }
 
 extension HomeViewController: CalculatorViewDelegate {
-    func calculatedResult(_ result: Float?) {
+    func calculatorView(_ view: CalculatorView, result: Float?, needPerform action: CalculatorView.Action) {
         guard let result = result else {
             resultLabel.text = "Result: Error"
             resultLabel.textColor = .systemRed
@@ -64,7 +64,7 @@ extension HomeViewController: CalculatorViewDelegate {
         resultLabel.text = "Result: \(result)"
     }
     
-    func clear() {
+    func calculatorView(_ view: CalculatorView, needPerform action: CalculatorView.Action) {
         clearResult()
     }
 }

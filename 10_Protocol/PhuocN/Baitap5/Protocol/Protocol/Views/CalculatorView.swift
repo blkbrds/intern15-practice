@@ -9,8 +9,8 @@
 import UIKit
 
 protocol CalculatorViewDelegate: class {
-    func calculatedResult(_ result: Float?)
-    func clear()
+    func calculatorView(_ view: CalculatorView, result: Float?, needPerform action: CalculatorView.Action)
+    func calculatorView(_ view: CalculatorView, needPerform action: CalculatorView.Action)
 }
 
 protocol CalculatorViewDataSource: class {
@@ -18,6 +18,11 @@ protocol CalculatorViewDataSource: class {
 }
 
 final class CalculatorView: UIView {
+    
+    enum Action {
+        case calculatorResult
+        case clear
+    }
     
     enum Operators: String {
         case plus = "+"
@@ -51,7 +56,7 @@ final class CalculatorView: UIView {
     
     @IBAction private func done() {
         hide()
-        delegate?.calculatedResult(result)
+        delegate?.calculatorView(self, result: result, needPerform: .calculatorResult)
     }
     
     @IBAction private func changeOperator(_ sender: UIButton) {
@@ -80,7 +85,7 @@ final class CalculatorView: UIView {
     
     @IBAction private func clear() {
         hide()
-        delegate?.clear()
+        delegate?.calculatorView(self, needPerform: .clear)
     }
     
     func show(animation: Bool = true) {
