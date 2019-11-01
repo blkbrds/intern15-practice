@@ -18,7 +18,8 @@ extension UIImageView {
         } else {
             image = nil
         }
-        ApiManager.Downloader.downloadImage(imageURL: urlString, index: index) { (image, index) in
+        ApiManager.Downloader.downloadImage(imageURL: urlString, index: index) { [weak self] (image, index) in
+            guard let self = self else { return }
             self.image = image
         }
     }

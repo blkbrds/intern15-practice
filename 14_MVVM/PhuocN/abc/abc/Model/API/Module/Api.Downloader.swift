@@ -15,18 +15,20 @@ extension ApiManager.Downloader {
     static func downloadImage(imageURL: String, index: Int, completion: @escaping (UIImage?, Int) -> Void) {
         if let cacheImage = imageCache.object(forKey: (imageURL as NSString)) as? UIImage {
             completion(cacheImage, index)
-        }
-        API.shared().request(urlString: imageURL) { (result) in
-            switch result {
-            case .failure(_):
-                completion(nil, index)
-            case .success(let data):
-                if let data = data,
-                    let image = UIImage(data: data) {
-                    self.imageCache.setObject(image, forKey: (imageURL as NSString))
-                    completion(image, index)
-                } else {
+        } else {
+            API.shared().request(urlString: imageURL) { result in
+                //guard let self = self else { return }
+                switch result {
+                case .failure(_):
                     completion(nil, index)
+                case .success(let data):
+                    if let data = data,
+                        let image = UIImage(data: data) {
+                        self.imageCache.setObject(image, forKey: (imageURL as NSString))
+                        completion(image, index)
+                    } else {
+                        completion(nil, index)
+                    }
                 }
             }
         }

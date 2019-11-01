@@ -22,7 +22,3 @@ struct ApiManager {
     struct Video {}
 }
 
-extension ApiManager.Audio {
-    
-    static var xxx: String { return ApiManager.Path.baseURL + "/xxx" }
-}

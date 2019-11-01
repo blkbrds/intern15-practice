@@ -64,7 +64,8 @@ final class HomeViewController: BaseViewController {
     }
     
     override func loadData() {
-        viewModel.loadData(loadMore: false) { (done, error) in
+        viewModel.loadData(loadMore: false) { [weak self] done in
+            guard let self = self else { return }
             if done {
                 self.updateUI(with: .loadData)
             }
@@ -74,10 +75,11 @@ final class HomeViewController: BaseViewController {
     override func setupUI() {
         title = "Home"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+        viewModel.delegate = self
         
-        homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HomeCell")
-        homeCollectionView.register(UINib(nibName: "HomeGridCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HomeGridCell")
-        homeCollectionView.register(UINib(nibName: "HomeSlideCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "HomeSlideCell")
+        homeCollectionView.register(withNib: HomeCollectionViewCell.self)
+        homeCollectionView.register(withNib: HomeGridCollectionViewCell.self)
+        homeCollectionView.register(withNib: HomeSlideCollectionViewCell.self)
         homeCollectionView.refreshControl = UIRefreshControl()
         homeCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         homeCollectionView.delegate = self
@@ -115,7 +117,8 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc private func refreshData() {
-        viewModel.loadData(loadMore: false) { (done, error) in
+        viewModel.loadData(loadMore: false) { [weak self] done in
+            guard let self = self else { return }
             if done {
                 self.updateUI(with: .refresh)
             }
@@ -135,19 +138,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeSlideCell", for: indexPath) as! HomeSlideCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(with: HomeSlideCollectionViewCell.self, indexPath: indexPath)
             cell.viewModel = HomeSlideCollectionCellViewModel(slideImages: viewModel.getSlideImage())
             return cell
         }
         switch status {
         case .row:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(with: HomeCollectionViewCell.self, indexPath: indexPath)
             cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath))
             cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath).imageURL, index: indexPath.row)
             cell.delegate = self
             return cell
         case .grid:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeGridCell", for: indexPath) as! HomeGridCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(with: HomeGridCollectionViewCell.self, indexPath: indexPath)
             cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath))
             cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath).imageURL, index: indexPath.row)
             cell.delegate = self
@@ -185,7 +188,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == viewModel.getCount() - 4 {
-            viewModel.loadData(loadMore: true) { (done, error) in
+            viewModel.loadData(loadMore: true) { [weak self] done in
+                guard let self = self else { return }
                 if done {
                     collectionView.reloadData()
                 }
@@ -203,5 +207,14 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
         //                homeCollectionView.reloadItems(at: [index])
         //            }
         //        }
+    }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func showAlert(with message: String, type: HomeViewModel.Action) {
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }

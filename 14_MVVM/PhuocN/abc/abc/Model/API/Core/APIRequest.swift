@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 
 extension API {
-    func request(urlString: String, completion: @escaping (APIResult) -> Void) {
+    typealias completion = (APIResult) -> Void
+    
+    func request(urlString: String, completion: @escaping completion) {
         guard let url = URL(string: urlString) else {
             completion(.failure(.errorURL))
             return
@@ -20,7 +22,7 @@ extension API {
         config.waitsForConnectivity = true
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url) { (data, _, error) in
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
+            DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(.error(error.localizedDescription)))
                 } else {
@@ -33,7 +35,7 @@ extension API {
         dataTask.resume()
     }
     
-    func request(url: URL, completion: @escaping (APIResult) -> Void) {
+    func request(url: URL, completion: @escaping completion) {
         let config = URLSessionConfiguration.ephemeral
         config.waitsForConnectivity = true
         let session = URLSession.shared
