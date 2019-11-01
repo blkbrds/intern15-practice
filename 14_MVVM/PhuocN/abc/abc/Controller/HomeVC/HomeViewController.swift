@@ -77,7 +77,6 @@ final class HomeViewController: BaseViewController {
     override func setupUI() {
         title = "Home"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
-        //viewModel.delegate = self
         
         homeCollectionView.register(withNib: HomeCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeGridCollectionViewCell.self)
