@@ -38,7 +38,7 @@ extension API {
         config.waitsForConnectivity = true
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url) { (data, _, error) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.async {
                 if let error = error {
                     completion(.failure(.error(error.localizedDescription)))
                 } else {
