@@ -26,7 +26,7 @@ class HomeViewController: BaseViewController {
     // MARK: - config
     override func setupUI() {
         super.setupUI()
-        self.title = "Part XXX"
+        self.title = "Navigation"
         tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
@@ -76,24 +76,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
             let vc = Ex4ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 4:
-            let vc = Ex5ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 5:
-            let vc = Ex6ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 6:
-            let vc = Ex7ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 7:
-            let vc = Ex8ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 8:
-            let vc = Ex9ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 9:
-            let vc = Ex10ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             // create the alert
