@@ -17,7 +17,5 @@ class BaseViewController: UIViewController {
     
     func setupUI() {}
     
-    func updateUI() {}
-    
     func loadData() {}
 }
