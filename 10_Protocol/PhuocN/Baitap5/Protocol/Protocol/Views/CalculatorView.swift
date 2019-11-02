@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CalculatorViewDelegate: class {
-    func calculatorView(_ view: CalculatorView, result: Float?, needPerform action: CalculatorView.Action)
+//    func calculatorView(_ view: CalculatorView, result: Float?, needPerform action: CalculatorView.Action)
     func calculatorView(_ view: CalculatorView, needPerform action: CalculatorView.Action)
 }
 
@@ -20,7 +20,7 @@ protocol CalculatorViewDataSource: class {
 final class CalculatorView: UIView {
     
     enum Action {
-        case calculatorResult
+        case calculatorResult(Float?)
         case clear
     }
     
@@ -56,7 +56,7 @@ final class CalculatorView: UIView {
     
     @IBAction private func done() {
         hide()
-        delegate?.calculatorView(self, result: result, needPerform: .calculatorResult)
+        delegate?.calculatorView(self, needPerform: .calculatorResult(result))
     }
     
     @IBAction private func changeOperator(_ sender: UIButton) {

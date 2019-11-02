@@ -40,7 +40,7 @@ final class HomeViewController: UIViewController {
     
     private func clearResult() {
         firstNumberTextField.text = ""
-         secondNumberTextField.text = ""
+        secondNumberTextField.text = ""
         resultLabel.text = ""
     }
 }
@@ -54,17 +54,19 @@ extension HomeViewController: CalculatorViewDataSource {
 }
 
 extension HomeViewController: CalculatorViewDelegate {
-    func calculatorView(_ view: CalculatorView, result: Float?, needPerform action: CalculatorView.Action) {
-        guard let result = result else {
-            resultLabel.text = "Result: Error"
-            resultLabel.textColor = .systemRed
-            return
-        }
-        resultLabel.textColor = .black
-        resultLabel.text = "Result: \(result)"
-    }
     
     func calculatorView(_ view: CalculatorView, needPerform action: CalculatorView.Action) {
-        clearResult()
+        switch action {
+        case .clear:
+            clearResult()
+        case .calculatorResult(let result):
+            guard let result = result else {
+                resultLabel.text = "Result: Error"
+                resultLabel.textColor = .systemRed
+                return
+            }
+            resultLabel.textColor = .black
+            resultLabel.text = "Result: \(result)"
+        }
     }
 }
