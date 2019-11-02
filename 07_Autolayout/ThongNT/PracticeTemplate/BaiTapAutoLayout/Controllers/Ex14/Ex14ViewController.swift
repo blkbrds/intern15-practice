@@ -9,9 +9,9 @@
 import UIKit
 
 final class Ex14ViewController: UIViewController {
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }

@@ -8,24 +8,21 @@
 
 import UIKit
 
-class Ex3ViewController: BaseViewController {
+final class Ex3ViewController: BaseViewController {
+    
+    @IBOutlet private weak var emailButton: UIButton!
+    @IBOutlet private weak var friendButton: UIButton!
+    @IBOutlet private weak var photoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailButton.layer.cornerRadius = 5
+        emailButton.addLocationToButton(location: .topLeft, value: "15")
+        
+        friendButton.layer.cornerRadius = 5
+        friendButton.addLocationToButton(location: .topRight, value: "99+")
+        
+        photoButton.layer.cornerRadius = 5
+        photoButton.addLocationToButton(location: .centerRight, value: "7")
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: config
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Ex3"
-    }
-    
-    override func setupData() {
-    }
-    
-    
 }

@@ -8,24 +8,9 @@
 
 import UIKit
 
-class Ex8ViewController: BaseViewController {
+final class Ex8ViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: config
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Ex8"
-    }
-    
-    override func setupData() {
-    }
-    
-    
 }
