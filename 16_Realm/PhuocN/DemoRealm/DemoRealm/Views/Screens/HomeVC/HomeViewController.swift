@@ -14,7 +14,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        print(RealmManager.shared.realm?.configuration.fileURL?.path)
     }
     
     private func setupUI() {
