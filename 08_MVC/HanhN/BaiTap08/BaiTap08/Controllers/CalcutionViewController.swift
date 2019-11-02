@@ -32,7 +32,7 @@ final class CalcutionViewController: UIViewController {
         else
         {
             resultLabelLabel.text = resultLabelLabel.text! + String((sender as AnyObject).tag - 1)
-            numberOnScreen = Double(resultLabelLabel.text!)
+            numberOnScreen = Double(resultLabelLabel.text!) as! Double
         }
     }
 
@@ -42,38 +42,29 @@ final class CalcutionViewController: UIViewController {
             previousNumber = Double(resultLabelLabel.text!)!
             if sender.tag == 12 {
                 resultLabelLabel.text = "/"
-            }
-            else if sender.tag == 13 {
+            } else if sender.tag == 13 {
                 resultLabelLabel.text = "x"
-            }
-            else if sender.tag == 14 {
+            } else if sender.tag == 14 {
                 resultLabelLabel.text = "-"
-            }
-            else if sender.tag == 15 {
+            } else if sender.tag == 15 {
                 resultLabelLabel.text = "+"
-            }
-            else if sender.tag == 17 {
+            } else if sender.tag == 17 {
                 resultLabelLabel.text = String(previousNumber / 100)
-            }
-            else if sender.tag == 18 {
+            } else if sender.tag == 18 {
                 resultLabelLabel.text = String(-previousNumber)
-            }
-            else {
+            } else {
                 resultLabelLabel.text = String(previousNumber)
             }
             operation = Double(sender.tag)
             preformingMath = true
-        }
-        else if sender.tag == 16 {
+        } else if sender.tag == 16 {
             if operation == 12 {
                 Data.share.calculateResult(operation: .div, previousNumber: previousNumber, numberOnScreen: numberOnScreen)
                 resultLabelLabel.text = ("\(Data.share.result)")
-            }
-            else if operation == 13 {
+            } else if operation == 13 {
                 Data.share.calculateResult(operation: .mul, previousNumber: previousNumber, numberOnScreen: numberOnScreen)
                 resultLabelLabel.text = ("\(Data.share.result)")
-            }
-            else if operation == 14 {
+            } else if operation == 14 {
                 Data.share.calculateResult(operation: .minus, previousNumber: previousNumber, numberOnScreen: numberOnScreen)
                 resultLabelLabel.text = ("\(Data.share.result)")
             }
@@ -81,8 +72,7 @@ final class CalcutionViewController: UIViewController {
                 Data.share.calculateResult(operation: .plus, previousNumber: previousNumber, numberOnScreen: numberOnScreen)
                 resultLabelLabel.text = ("\(Data.share.result)")
             }
-        }
-        else if sender.tag == 11 {
+        } else if sender.tag == 11 {
             resultLabelLabel.text = ""
             operation = 0
             previousNumber = 0
