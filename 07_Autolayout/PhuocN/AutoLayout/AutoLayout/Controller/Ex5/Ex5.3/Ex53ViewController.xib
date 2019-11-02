@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Ex53ViewController" customModule="AutoLayout" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pus-Aw-C3z">
+                    <rect key="frame" x="10" y="44" width="394" height="142.5"/>
+                    <string key="text">4 hình vuông nằm ở vị trí chính giữa theo
+chiều cao
+Canh đều chính giữa so với trục thẳng đứng
+Khoản cách giữa 2 cạnh so với 2 hình vuông
+ngoài không đổi
+Kích thước 4 hình vuông không đổi
+Khoảng cách giữa 4 hình vuông thay đổi</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQn-ME-3ej" userLabel="View1">
+                    <rect key="frame" x="20" y="423" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="3U4-U9-TXi"/>
+                        <constraint firstAttribute="width" secondItem="YQn-ME-3ej" secondAttribute="height" id="EFl-Vh-qNu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw5-vA-19d" userLabel="View4">
+                    <rect key="frame" x="334" y="423" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="nw5-vA-19d" secondAttribute="height" id="C9w-jT-arJ"/>
+                        <constraint firstAttribute="height" constant="60" id="Xja-Mi-LpL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfF-gQ-MHn" userLabel="View3">
+                    <rect key="frame" x="214" y="423" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="16A-cL-ZA3"/>
+                        <constraint firstAttribute="width" secondItem="zfF-gQ-MHn" secondAttribute="height" id="1Nz-Je-PxV"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNq-Vx-Ksj" userLabel="View2">
+                    <rect key="frame" x="140" y="423" width="60" height="60"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="3BP-EP-O0n"/>
+                        <constraint firstAttribute="width" secondItem="TNq-Vx-Ksj" secondAttribute="height" id="4yk-KL-suO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zfF-gQ-MHn" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="D3g-OF-eN8"/>
+                <constraint firstItem="Pus-Aw-C3z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Dui-AP-BgW"/>
+                <constraint firstItem="Pus-Aw-C3z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KGc-1c-L5O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zfF-gQ-MHn" secondAttribute="trailing" constant="140" id="Vfo-Kf-lyl"/>
+                <constraint firstItem="YQn-ME-3ej" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WOk-FL-X8T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pus-Aw-C3z" secondAttribute="trailing" constant="10" id="XP2-p5-kvi"/>
+                <constraint firstItem="TNq-Vx-Ksj" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="rBr-Me-DGj"/>
+                <constraint firstItem="nw5-vA-19d" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="rEY-qR-Dq2"/>
+                <constraint firstItem="YQn-ME-3ej" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="s6M-Pr-oYG"/>
+                <constraint firstItem="nw5-vA-19d" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-20" id="w0p-lI-DaN"/>
+                <constraint firstItem="TNq-Vx-Ksj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="140" id="wpb-K6-A8H"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="113"/>
+        </view>
+    </objects>
+</document>
