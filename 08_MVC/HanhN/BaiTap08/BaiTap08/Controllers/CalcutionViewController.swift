@@ -11,21 +11,20 @@ import UIKit
 final class CalcutionViewController: UIViewController {
 
     @IBOutlet weak var resultLabelLabel: UILabel!
-    
+
     var numberOnScreen: Double = 0
     var previousNumber: Double = 0
     var preformingMath = false
     var operation: Double = 0
     private var isCalculated: Bool = false
     private var limitNumber: Float = 999999
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     @IBAction func chooseNumber(_ sender: Any) {
-        if preformingMath == true
-        {
+        if preformingMath == true {
             resultLabelLabel.text = String((sender as AnyObject).tag - 1)
             numberOnScreen = Double(resultLabelLabel.text!)!
             preformingMath = false
@@ -33,13 +32,13 @@ final class CalcutionViewController: UIViewController {
         else
         {
             resultLabelLabel.text = resultLabelLabel.text! + String((sender as AnyObject).tag - 1)
-            numberOnScreen = Double(resultLabelLabel.text!)!
+            numberOnScreen = Double(resultLabelLabel.text!)
         }
     }
-    
+
     @IBAction func calculationButton(_ sender: UIButton) {
         if resultLabelLabel.text != "" && sender.tag != 11 && sender.tag != 16
-        {
+            {
             previousNumber = Double(resultLabelLabel.text!)!
             if sender.tag == 12 {
                 resultLabelLabel.text = "/"
@@ -57,10 +56,10 @@ final class CalcutionViewController: UIViewController {
                 resultLabelLabel.text = String(previousNumber / 100)
             }
             else if sender.tag == 18 {
-                resultLabelLabel.text = String(-previousNumber )
+                resultLabelLabel.text = String(-previousNumber)
             }
             else {
-                resultLabelLabel.text = String(previousNumber )
+                resultLabelLabel.text = String(previousNumber)
             }
             operation = Double(sender.tag)
             preformingMath = true
