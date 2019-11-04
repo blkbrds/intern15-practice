@@ -1,8 +1,7 @@
 
 import UIKit
 
-class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
-
+final class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var commentLable: UILabel!
     @IBOutlet weak var commentImage: UIImageView!
@@ -10,11 +9,9 @@ class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
-        // Do any additional setup after loading the view.
     }
     private func configView() {
         mokeyView.isUserInteractionEnabled = true
-
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch))
         pinch.delegate = self
         mokeyView.addGestureRecognizer(pinch)
@@ -36,10 +33,7 @@ class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(doubuleComment))
         doubleTapGesture.numberOfTapsRequired = 2
         mokeyView.addGestureRecognizer(doubleTapGesture)
-
-
     }
-
 
     @objc func handlePinch(_ sender: UIPinchGestureRecognizer) {
         guard sender.view != nil else { return }
@@ -61,6 +55,7 @@ class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
             mokeyView.transform = .identity
         }
     }
+    
     @objc func comment(seder: UITapGestureRecognizer) {
         commentLable.text = "toi khi la "
         self.commentImage.alpha = 1
@@ -72,6 +67,7 @@ class Ex06ViewController: UIViewController, UIGestureRecognizerDelegate {
 
         }
     }
+    
     @objc func doubuleComment(seder: UITapGestureRecognizer)
     {
         commentLable.text = "khi la toi"

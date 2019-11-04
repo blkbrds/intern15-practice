@@ -12,19 +12,13 @@ class Ex05ViewController: UIViewController {
         truView.layer.borderWidth = 1
         truView.layer.cornerRadius = 20
         truView.layer.borderColor = UIColor.black.cgColor
-
         silderButton.layer.cornerRadius = 20
         silderButton.clipsToBounds = true
-
         mauView.layer.cornerRadius = 20
-
         silderButton.center = CGPoint(x: truView.frame.midX, y: truView.frame.maxY)
         mauView.frame = CGRect(x: truView.frame.maxX, y: truView.frame.maxY, width: 0, height: 0)
-
         let pan = UIPanGestureRecognizer(target: self, action: #selector(Ex05ViewController.handlePan(sender:)))
         silderButton.addGestureRecognizer(pan)
-
-        // Do any additional setup after loading the view.
     }
     @objc func handlePan(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)

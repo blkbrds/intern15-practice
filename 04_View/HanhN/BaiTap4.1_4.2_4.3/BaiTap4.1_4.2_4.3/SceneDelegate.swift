@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = homeViewController
 
         return
-
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

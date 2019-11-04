@@ -1,7 +1,7 @@
 
 import UIKit
 
-class Ex04ViewController: UIViewController {
+final class Ex04ViewController: UIViewController {
 
     struct Color {
         var red: CGFloat = 0
@@ -11,6 +11,7 @@ class Ex04ViewController: UIViewController {
             return UIColor(displayP3Red: red / 255, green: green / 255, blue: blue / 255, alpha: 1)
         }
     }
+    
     @IBOutlet weak var ViewMau: UIView!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var SilerView03: UISlider!
@@ -20,7 +21,6 @@ class Ex04ViewController: UIViewController {
         super.viewDidLoad()
         ViewMau.layer.cornerRadius = 20
         colorLabel.text = "Clor (R: 128,G: 128,B: 128 )"
-        // Do any additional setup after loading the view.
     }
     var color = Color()
     @IBAction func redSiler(_ sender: Any) {
