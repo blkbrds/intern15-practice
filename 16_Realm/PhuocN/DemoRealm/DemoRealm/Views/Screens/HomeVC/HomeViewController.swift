@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    @IBOutlet weak var tableView: UITableView!
+final class HomeViewController: UIViewController {
+    
+    @IBOutlet private weak var tableView: UITableView!
     
     private var viewModel = HomeViewModel()
     
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    @objc internal func addCategory() {
+    @objc private func addCategory() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "AddCategoryVC") as AddCategoryViewController
         vc.delegate = self
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func removeCategory() {
-        RealmManager.shared.deleteAllObject(with: viewModel.categories) { [weak self] result in
+        RealmManager.shared.deleteAllObject(with: viewModel.getCategories()) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failture(let error):

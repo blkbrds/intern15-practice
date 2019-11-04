@@ -25,6 +25,8 @@
 		0F9F89C923700538007D36DA /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89C823700538007D36DA /* CategoryTableViewCell.swift */; };
 		0F9F89CB2370079A007D36DA /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89CA2370079A007D36DA /* CategoryViewModel.swift */; };
 		0F9F89CE23700E51007D36DA /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89CD23700E51007D36DA /* AddPostViewController.swift */; };
+		0F9F89D123702B06007D36DA /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89D023702B06007D36DA /* PostDetailViewController.swift */; };
+		0F9F89D323703010007D36DA /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89D223703010007D36DA /* PostDetailViewModel.swift */; };
 		4AA37AB6BA8D0CBA5C4DD93F /* Pods_DemoRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5090F4EC1CDC862FB37330C /* Pods_DemoRealm.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		0F9F89C823700538007D36DA /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		0F9F89CA2370079A007D36DA /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		0F9F89CD23700E51007D36DA /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		0F9F89D023702B06007D36DA /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		0F9F89D223703010007D36DA /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
 		90643EF037493A839AD3E8C1 /* Pods-DemoRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoRealm.release.xcconfig"; path = "Target Support Files/Pods-DemoRealm/Pods-DemoRealm.release.xcconfig"; sourceTree = "<group>"; };
 		A26A6954D172F83174974146 /* Pods-DemoRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoRealm.debug.xcconfig"; path = "Target Support Files/Pods-DemoRealm/Pods-DemoRealm.debug.xcconfig"; sourceTree = "<group>"; };
 		C5090F4EC1CDC862FB37330C /* Pods_DemoRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +151,7 @@
 		0F57CA70236BD6F400E66F48 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0F9F89CF23702AED007D36DA /* PostDetailVC */,
 				0F9F89CC23700E35007D36DA /* AddPostVC */,
 				0F9F89C5236FFE18007D36DA /* CategoryVC */,
 				0F9F89C0236FD5D6007D36DA /* AddCategoryVC */,
@@ -204,6 +209,15 @@
 				0F9F89CD23700E51007D36DA /* AddPostViewController.swift */,
 			);
 			path = AddPostVC;
+			sourceTree = "<group>";
+		};
+		0F9F89CF23702AED007D36DA /* PostDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F89D023702B06007D36DA /* PostDetailViewController.swift */,
+				0F9F89D223703010007D36DA /* PostDetailViewModel.swift */,
+			);
+			path = PostDetailVC;
 			sourceTree = "<group>";
 		};
 		CD7174F3A43BD38C6E9E4143 /* Pods */ = {
@@ -338,7 +352,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9F89D323703010007D36DA /* PostDetailViewModel.swift in Sources */,
 				0F9F89CB2370079A007D36DA /* CategoryViewModel.swift in Sources */,
+				0F9F89D123702B06007D36DA /* PostDetailViewController.swift in Sources */,
 				0F9F89CE23700E51007D36DA /* AddPostViewController.swift in Sources */,
 				0F2353D3236C1BEE0036B4E5 /* HomeTableViewCell.swift in Sources */,
 				0F57CA60236BD68D00E66F48 /* HomeViewController.swift in Sources */,

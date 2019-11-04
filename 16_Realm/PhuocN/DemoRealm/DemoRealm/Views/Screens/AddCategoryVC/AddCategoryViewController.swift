@@ -12,7 +12,7 @@ protocol AddCategoryViewControllerDelegate: class {
     func addCategoryToRealm(with object: Category)
 }
 
-class AddCategoryViewController: UIViewController {
+final class AddCategoryViewController: UIViewController {
     
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
@@ -24,7 +24,7 @@ class AddCategoryViewController: UIViewController {
         setupUI()
     }
     
-    func setupUI() {
+    private func setupUI() {
         title = "Add Category"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneCreate))
     }

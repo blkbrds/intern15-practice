@@ -14,8 +14,15 @@ final class RealmManager {
     
     enum RealmResult {
         case sucessful
-        case failture(Error)
+        case failture(RealmError)
     }
+    
+    enum RealmError: Error {
+        case errorConfig
+        case error(String)
+        case errorOutTransaction
+    }
+    
     static let shared = RealmManager()
     var realm: Realm? {
         do {
@@ -32,40 +39,51 @@ final class RealmManager {
 extension RealmManager {
     
     func fetchObject<T: Object>(type: T.Type, completion: completion) -> [T] {
-        guard let realm = realm else { return [] }
-            //completion(.failture())
+        guard let realm = realm else {
+            completion(.failture(.error("Realm is not exist")))
+            return []
+        }
         var objects: [T] = []
         let realmObject = realm.objects(type)
-        realmObject.forEach { objects.append($0)}
+        realmObject.forEach { objects.append($0) }
         completion(.sucessful)
         return objects
     }
     
-    func writeObject(action: () -> (), completion: completion?) {
-        realm?.beginWrite()
-        action()
+    func writeObject(action: () -> (), completion: completion? = nil) {
+        guard let realm = realm else {
+            completion?(.failture(.errorConfig))
+            return
+        }
         do {
-            if realm!.isInWriteTransaction {
-                try realm?.commitWrite()
-                completion?(.sucessful)
-            } else {
-                print("fail")
+            try realm.write {
+                if realm.isInWriteTransaction {
+                    action()
+                    completion?(.sucessful)
+                } else {
+                    completion?(.failture(.errorOutTransaction))
+                }
             }
-        } catch {
-            realm?.cancelWrite()
-            completion?(.failture(error))
+        } catch let err {
+            completion?(.failture(.error(err.localizedDescription)))
         }
     }
     
-    func addObject<T: Object>(with object: T ,update: Bool = false, completion: completion?) {
+    func addObject<T: Object>(with object: T , completion: completion? = nil) {
         writeObject(action: {
             realm?.add(object)
         }, completion: completion)
     }
     
-    func deleteAllObject<T: Object>(with objects: [T], completion: completion?) {
+    func deleteAllObject<T: Object>(with objects: [T], completion: completion? = nil) {
         writeObject(action: {
             realm?.delete(objects)
+        }, completion: completion)
+    }
+    
+    func deleteObject<T: Object>(with object: T, completion: completion? = nil) {
+        writeObject(action: {
+            realm?.delete(object)
         }, completion: completion)
     }
 }

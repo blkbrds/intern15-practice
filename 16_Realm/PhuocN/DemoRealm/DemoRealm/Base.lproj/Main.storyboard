@@ -245,6 +245,81 @@
             </objects>
             <point key="canvasLocation" x="2750.7246376811595" y="99.776785714285708"/>
         </scene>
+        <!--Post Detail View Controller-->
+        <scene sceneID="xYi-cK-irE">
+            <objects>
+                <viewController storyboardIdentifier="PostDetailVC" id="YAo-uR-TdS" customClass="PostDetailViewController" customModule="DemoRealm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Aw-uA-eIm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izk-Wn-STJ">
+                                <rect key="frame" x="20" y="64" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8F-w3-ec1">
+                                <rect key="frame" x="20" y="100" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="3US-PW-fIe">
+                                <rect key="frame" x="20" y="709" width="374" height="133"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2Y-Lb-bI7">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.24010059929999999" blue="0.005029965753" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="afn-Al-CSz"/>
+                                        </constraints>
+                                        <state key="normal" title="EDIT">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editTouchUpInside:" destination="YAo-uR-TdS" eventType="touchUpInside" id="jeC-qy-2gK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bw-cK-kgi">
+                                        <rect key="frame" x="0.0" y="83" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.24010059929999999" blue="0.005029965753" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8st-1J-MU3"/>
+                                        </constraints>
+                                        <state key="normal" title="DELETE">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteTouchUpInside:" destination="YAo-uR-TdS" eventType="touchUpInside" id="l3t-tB-had"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="izk-Wn-STJ" firstAttribute="leading" secondItem="vlR-Ji-ZvM" secondAttribute="leading" constant="20" id="25A-e4-cKb"/>
+                            <constraint firstItem="vlR-Ji-ZvM" firstAttribute="trailing" secondItem="3US-PW-fIe" secondAttribute="trailing" constant="20" id="2lE-05-ncB"/>
+                            <constraint firstItem="3US-PW-fIe" firstAttribute="leading" secondItem="vlR-Ji-ZvM" secondAttribute="leading" constant="20" id="2xk-7t-as9"/>
+                            <constraint firstItem="F8F-w3-ec1" firstAttribute="top" secondItem="izk-Wn-STJ" secondAttribute="bottom" constant="20" id="6Gr-oc-VSy"/>
+                            <constraint firstItem="vlR-Ji-ZvM" firstAttribute="trailing" secondItem="F8F-w3-ec1" secondAttribute="trailing" constant="20" id="GY8-Zh-BfG"/>
+                            <constraint firstItem="vlR-Ji-ZvM" firstAttribute="bottom" secondItem="3US-PW-fIe" secondAttribute="bottom" constant="20" id="Hgp-bJ-iCu"/>
+                            <constraint firstItem="F8F-w3-ec1" firstAttribute="leading" secondItem="vlR-Ji-ZvM" secondAttribute="leading" constant="20" id="KqC-j4-eWM"/>
+                            <constraint firstItem="vlR-Ji-ZvM" firstAttribute="trailing" secondItem="izk-Wn-STJ" secondAttribute="trailing" constant="20" id="cmd-TV-5Lg"/>
+                            <constraint firstItem="izk-Wn-STJ" firstAttribute="top" secondItem="vlR-Ji-ZvM" secondAttribute="top" constant="20" id="lEG-Ij-PIO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vlR-Ji-ZvM"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="F8F-w3-ec1" id="wKk-UJ-Ifb"/>
+                        <outlet property="dateLabel" destination="izk-Wn-STJ" id="mgp-KK-bmp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BIz-ct-ggb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3677" y="-106"/>
+        </scene>
         <!--Add Post View Controller-->
         <scene sceneID="Jyv-Jv-tCo">
             <objects>
@@ -298,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V30-dX-MMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3610" y="104"/>
+            <point key="canvasLocation" x="3678" y="540"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0FQ-yI-Cpr">

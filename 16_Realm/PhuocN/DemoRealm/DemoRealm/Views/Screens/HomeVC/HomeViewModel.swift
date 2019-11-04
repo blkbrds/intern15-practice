@@ -8,8 +8,8 @@
 
 import Foundation
 
-class HomeViewModel {
-    var categories: [Category] {
+final class HomeViewModel {
+    private var categories: [Category] {
         return RealmManager.shared.fetchObject(type: Category.self, completion: { result in
             switch result {
             case .failture(let error):
@@ -18,6 +18,10 @@ class HomeViewModel {
                 print("Success")
             }
         })
+    }
+    
+    func getCategories() -> [Category] {
+        return categories
     }
     
     func getCount() -> Int {

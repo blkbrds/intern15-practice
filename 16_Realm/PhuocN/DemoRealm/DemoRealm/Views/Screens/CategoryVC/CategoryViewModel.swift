@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CategoryViewModel {
+final class CategoryViewModel {
     var category: Category
     
     init(category: Category) {
