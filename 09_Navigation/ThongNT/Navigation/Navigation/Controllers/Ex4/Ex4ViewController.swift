@@ -9,9 +9,19 @@
 import UIKit
 
 class Ex4ViewController: BaseViewController {
+    
+    enum addCustomNaviBarButton: Int {
+        case addBackground
+        case addSearchBar
+        case addGradientBar
+        case addItem
+        case addItems
+        case clear
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,26 +34,21 @@ class Ex4ViewController: BaseViewController {
     }
 
     @IBAction func clickToGoVC(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
-            clearAll()
+        clearAll()
+        guard let addCustomNaviBarButton = addCustomNaviBarButton(rawValue: sender.tag)  else {return}
+        switch addCustomNaviBarButton {
+        case .addBackground:
             backgroundNavi()
-        case 1:
-            clearAll()
+        case .addSearchBar:
             searchBarInNavi()
-        case 2:
-            clearAll()
+        case .addGradientBar:
             gradientNaviBar()
-        case 3:
-            clearAll()
+        case .addItem:
             naviBarItem()
-        case 4:
-            clearAll()
+        case .addItems:
             naviBarItems()
-        case 5:
+        case .clear:
             clearAll()
-        default:
-            break
         }
     }
 
@@ -66,9 +71,10 @@ class Ex4ViewController: BaseViewController {
         let gradientLayer = CAGradientLayer()
         let flareRed = UIColor(displayP3Red: 241.0 / 255.0, green: 39.0 / 255.0, blue: 17.0 / 255.0, alpha: 1.0)
         let flareOrange = UIColor(displayP3Red: 245.0 / 255.0, green: 175.0 / 255.0, blue: 25.0 / 255.0, alpha: 1.0)
-        var updatedFrame = self.navigationController!.navigationBar.bounds
-        updatedFrame.size.height += 20
-        gradientLayer.frame = updatedFrame
+        if var updatedFrame = navigationController?.navigationBar.bounds {
+            updatedFrame.size.height += 20
+            gradientLayer.frame = updatedFrame
+        }
         gradientLayer.colors = [flareRed.cgColor, flareOrange.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0) // vertical gradient start
         gradientLayer.endPoint = CGPoint(x: 1, y: 0) // vertical gradient end
@@ -76,7 +82,9 @@ class Ex4ViewController: BaseViewController {
         gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.navigationController!.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
+        if let naviController = navigationController {
+            naviController.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
+        }
     }
 
     private func naviBarItem () {
@@ -100,7 +108,7 @@ class Ex4ViewController: BaseViewController {
         navigationItem.leftBarButtonItems = [pauseButton, playButton]
     }
 
-    @objc func anyWayAction() {}
+    @objc func anyWayAction() { }
 
     private func clearAll() {
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
@@ -108,7 +116,7 @@ class Ex4ViewController: BaseViewController {
         navigationItem.leftBarButtonItems = nil
         navigationItem.rightBarButtonItems = nil
     }
-    
+
     override func setupData() {
     }
 }

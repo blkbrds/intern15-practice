@@ -8,29 +8,35 @@ import UIKit
 final class HomeAvatarViewController: BaseViewController {
 
     @IBOutlet private weak var avatarScrollView: UIScrollView!
-    
+
     private var user: AvatarData = AvatarData()
     private var users: [AvatarData] = []
     private let maxX: CGFloat = UIScreen.main.bounds.width
     private let minX: CGFloat = 0
-
-    var exercise: Exercise?
     private var y: Int = 0
     private var x: Int = 0
 
+    var exercise: Exercise?
+
+    //MARK: - Override function
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         setupData()
         updateUserViews()
     }
-    
+
+    override func setupData() {
+        users = AvatarData.parseData(array: Ex3DataManagement.share.getData())
+    }
+
+    //MARK: - Private function
     private func updateUserViews() {
-        removeSubView()
+        removeSubview()
         x = 0
         y = 0
         for (index, user) in users.enumerated() {
@@ -42,15 +48,11 @@ final class HomeAvatarViewController: BaseViewController {
             }
         }
     }
-    
-    private func removeSubView() {
+
+    private func removeSubview() {
         for subView in avatarScrollView.subviews where subView is AvatarView {
             subView.removeFromSuperview()
         }
-    }
-    
-    override func setupData() {
-        users = AvatarData.parseData(array: Ex3DataManagement.share.getData())
     }
 
     private func configUserView(x: Int, y: Int, index: Int, user: AvatarData) {
@@ -65,8 +67,11 @@ final class HomeAvatarViewController: BaseViewController {
 }
 
 extension HomeAvatarViewController: AvatarViewDelegate {
-    func avatarView(view: AvatarView, needperformAction: AvatarView.Action, username: String) {
-        UserDefaults.standard.set(username, forKey: "usernameClicked")
+    func avatarView(view: AvatarView, needsPerform action: AvatarView.Action) {
+        switch action {
+        case .gotoProfile(let username):
+            UserDefaults.standard.set(username, forKey: "usernameClicked")
+        }
         let vc = ProfileViewController()
         vc.users = users
         navigationController?.pushViewController(vc, animated: true)

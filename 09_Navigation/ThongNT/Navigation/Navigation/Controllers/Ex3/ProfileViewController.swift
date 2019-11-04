@@ -8,7 +8,7 @@ import UIKit
 final class ProfileViewController: UIViewController {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet private weak var usernameTextField: UITextField!
 
     private var currentName: String = ""
     var users: [AvatarData] = []
@@ -25,6 +25,7 @@ final class ProfileViewController: UIViewController {
         let userDefault = UserDefaults.standard
         if let currentName = userDefault.string(forKey: "usernameClicked") {
             usernameTextField.text = currentName
+            self.currentName = currentName
         }
     }
 

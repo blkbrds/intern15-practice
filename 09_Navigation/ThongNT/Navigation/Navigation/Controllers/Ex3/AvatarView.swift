@@ -5,13 +5,13 @@
 import UIKit
 
 protocol AvatarViewDelegate: class {
-    func avatarView(view: AvatarView, needperformAction: AvatarView.Action, username: String)
+    func avatarView(view: AvatarView, needsPerform action: AvatarView.Action)
 }
 
 final class AvatarView: UIView {
     
     enum Action {
-        case gotoProfile
+        case gotoProfile(username: String)
     }
     
     weak var delegate: AvatarViewDelegate?
@@ -50,6 +50,6 @@ final class AvatarView: UIView {
 
     @objc func buttonClick() {
         guard let username = userNameLabel.text else { return }
-        delegate?.avatarView(view: self, needperformAction: .gotoProfile, username: username)
+        delegate?.avatarView(view: self, needsPerform: .gotoProfile(username: username))
     }
 }
