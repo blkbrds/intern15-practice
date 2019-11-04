@@ -21,7 +21,6 @@ class Ex4ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +47,7 @@ class Ex4ViewController: BaseViewController {
         case .addItems:
             naviBarItems()
         case .clear:
-            clearAll()
+            break
         }
     }
 
@@ -61,7 +60,7 @@ class Ex4ViewController: BaseViewController {
         let searchBar: UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 300, height: 20))
         searchBar.placeholder = "Search"
         let leftNavBarButton = UIBarButtonItem(customView: searchBar)
-        self.navigationItem.leftBarButtonItem = leftNavBarButton
+        navigationItem.leftBarButtonItem = leftNavBarButton
 
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(anyWayAction))
         navigationItem.rightBarButtonItem = cancelButton
@@ -95,7 +94,7 @@ class Ex4ViewController: BaseViewController {
     @objc func like() {
         let alert = UIAlertController(title: "THÔNG BÁO", message: "Click để làm gì???", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
     private func naviBarItems() {
@@ -115,8 +114,5 @@ class Ex4ViewController: BaseViewController {
         navigationController?.navigationBar.backgroundColor = .white
         navigationItem.leftBarButtonItems = nil
         navigationItem.rightBarButtonItems = nil
-    }
-
-    override func setupData() {
     }
 }

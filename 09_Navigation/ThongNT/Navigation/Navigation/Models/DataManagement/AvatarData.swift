@@ -15,8 +15,8 @@ final class AvatarData {
 
     init() { }
 
-    init (username: String, avatarString: String) {
-        self.name = username
+    init(username: String, avatarString: String) {
+        name = username
         self.avatarString = avatarString
     }
 }
