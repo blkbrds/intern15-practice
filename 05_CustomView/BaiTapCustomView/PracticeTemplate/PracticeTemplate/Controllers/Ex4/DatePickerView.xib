@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerView" customModule="PracticeTemplate" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="DatePickerView" customModule="PracticeTemplate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAT-G9-0dm">
+                    <rect key="frame" x="0.0" y="-11" width="414" height="862"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HeS-TQ-W51">
+                    <rect key="frame" x="0.0" y="562" width="414" height="300"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xok-IK-mys">
+                            <rect key="frame" x="8" y="53" width="414" height="216"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        </datePicker>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39V-d2-kY9">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Done" id="S3q-a3-oo1">
+                                    <connections>
+                                        <action selector="done:" destination="i5M-Pr-FkT" id="Euz-nv-mY1"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem width="87" style="plain" systemItem="fixedSpace" id="nZA-3g-pXh"/>
+                                <barButtonItem title="Select date" id="7FQ-V9-xGD">
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </barButtonItem>
+                                <barButtonItem width="159" style="plain" systemItem="fixedSpace" id="sYo-GA-u7p"/>
+                                <barButtonItem title="Cancel" id="GwI-PL-5fO">
+                                    <connections>
+                                        <action selector="cancel:" destination="i5M-Pr-FkT" id="C27-4r-fsL"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="iMd-KA-zyP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HeS-TQ-W51" secondAttribute="trailing" id="1IN-UC-3KF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IAT-G9-0dm" secondAttribute="bottom" id="Nw6-xb-mq4"/>
+                <constraint firstItem="IAT-G9-0dm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bBf-vH-HTC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HeS-TQ-W51" secondAttribute="bottom" id="fbf-jV-0Th"/>
+                <constraint firstItem="HeS-TQ-W51" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hGK-gL-zpB"/>
+                <constraint firstItem="IAT-G9-0dm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iOr-oL-EbZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IAT-G9-0dm" secondAttribute="trailing" id="oiN-YA-aiF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outlet property="contentView" destination="HeS-TQ-W51" id="ukd-Xl-24m"/>
+                <outlet property="datePikerView" destination="xok-IK-mys" id="Ea9-Ft-Web"/>
+                <outlet property="makeView" destination="IAT-G9-0dm" id="SPh-Tm-53f"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </view>
+    </objects>
+</document>
