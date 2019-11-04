@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HomeGridCollectionViewCell: UICollectionViewCell {
+final class HomeGridCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
     
     weak var delegate: HomeCollectionViewCellDelegate?
     var viewModel: HomeCollectionCellViewModel? {
@@ -19,10 +19,10 @@ final class HomeGridCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var distanceLabel: UILabel!
     @IBOutlet private weak var favoriteButton: UIButton!
-    @IBOutlet private weak var rateLabel: UILabel!
-    @IBOutlet private weak var addressLabel: UILabel!
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var pusblishedLabel: UILabel!
+    @IBOutlet private weak var channelLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var videoImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,28 +36,21 @@ final class HomeGridCollectionViewCell: UICollectionViewCell {
     
     private func updateUI() {
         guard let viewModel = viewModel else { return }
-        distanceLabel.text = viewModel.distance
-        nameLabel.text = viewModel.title
-        addressLabel.text = viewModel.address
-        rateLabel.text = viewModel.rating
-        avatarImageView.image = UIImage(named: viewModel.image)
-        if viewModel.isFavorite {
-            favoriteButton.setImage(#imageLiteral(resourceName: "ic-like-selected"), for: .normal)
-        } else {
-            favoriteButton.setImage(#imageLiteral(resourceName: "ic-like"), for: .normal)
-        }
+        channelLabel.text = viewModel.channel
+        titleLabel.text = viewModel.title
+        pusblishedLabel.text = viewModel.published
     }
     
     @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         if let viewModel = viewModel {
-            viewModel.setFavorite { (done) in
-                if done {
-                    //updateUI()
-                    delegate?.favoriteItem(at: self)
-                } else {
-                    print("Can not change favorite")
-                }
-            }
+//            viewModel.setFavorite { (done) in
+//                if done {
+//                    //updateUI()
+//                    delegate?.favoriteItem(at: self)
+//                } else {
+//                    print("Can not change favorite")
+//                }
+//            }
         }
     }
 }
