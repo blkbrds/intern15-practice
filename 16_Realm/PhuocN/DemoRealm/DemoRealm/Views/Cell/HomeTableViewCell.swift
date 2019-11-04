@@ -18,4 +18,11 @@ class HomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configUI(category: Category) {
+        titleLabel.text = category.name
+        countLabel.text = category.count > 1 ? "\(category.count) views" : "\(category.count) view"
+        typeLabel.text = category.type
+        dateLabel.text = category.date.description
+    }
 }

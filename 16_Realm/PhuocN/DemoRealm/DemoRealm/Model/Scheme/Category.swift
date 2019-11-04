@@ -9,6 +9,15 @@
 import Foundation
 import RealmSwift
 
-final class Category {
+final class Category: Object {
+    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var name: String = ""
+    @objc dynamic var type: String = ""
+    @objc dynamic var date: Date = Date()
+    @objc dynamic var count: Int = 0
+    var posts = List<Post>()
     
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }
