@@ -10,22 +10,36 @@ import UIKit
 
 class Ex3ViewController: BaseViewController {
     
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var usersNameTextField: UITextField!
+    
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavi()
+        setupUI()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: config
     override func setupUI() {
-        super.setupUI()
-        self.title = "Ex3"
+         guard let user = user else { return }
+         avatarImageView.image = UIImage(named: user.avatarImageView)
+         usersNameTextField.text = user.userName
     }
     
-    override func setupData() {
+    private func setupNavi() {
+        title = "Profile"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(editProfile))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popToView))
     }
-    
-    
+    @objc private func editProfile() {
+        if let user = self.user, let username = usersNameTextField.text, username != user.userName {
+            Ex2DataManagement.shared.writePlistToList(user: user, username: username)
+             navigationController?.popViewController(animated: true)
+        } else {
+            print("loi roi")
+        }
+    }
+    @objc private func popToView() {
+        navigationController?.popViewController(animated: true)
+    }
 }
