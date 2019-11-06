@@ -42,11 +42,11 @@
 		0F9F89FC237127BD007D36DA /* Api.Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89FB237127BD007D36DA /* Api.Comment.swift */; };
 		0F9F89FE23714ABF007D36DA /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89FD23714ABF007D36DA /* TableViewExt.swift */; };
 		0F9F8A02237152FC007D36DA /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A00237152FC007D36DA /* CommentTableViewCell.swift */; };
-		0F9F8A03237152FC007D36DA /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F8A01237152FC007D36DA /* CommentTableViewCell.xib */; };
 		0F9F8A0623715FD7007D36DA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0523715FD7007D36DA /* RealmManager.swift */; };
 		0F9F8A0823716B62007D36DA /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0723716B62007D36DA /* FavoriteViewModel.swift */; };
 		0F9F8A0D23716DCC007D36DA /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0B23716DCC007D36DA /* FavoriteTableViewCell.swift */; };
 		0F9F8A0E23716DCC007D36DA /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0C23716DCC007D36DA /* FavoriteTableViewCell.xib */; };
+		0FAA4E0E2372B60200DC8358 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FAA4E0C2372B60200DC8358 /* CommentTableViewCell.xib */; };
 		0FF6229823602FA100BA1BA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229723602FA100BA1BA4 /* BaseViewController.swift */; };
 		0FF6229A23602FC200BA1BA4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229923602FC200BA1BA4 /* BaseNavigationController.swift */; };
 		0FF6229C2360302400BA1BA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229B2360302400BA1BA4 /* BaseTabBarController.swift */; };
@@ -104,11 +104,11 @@
 		0F9F89FB237127BD007D36DA /* Api.Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Comment.swift; sourceTree = "<group>"; };
 		0F9F89FD23714ABF007D36DA /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
 		0F9F8A00237152FC007D36DA /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
-		0F9F8A01237152FC007D36DA /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0F9F8A0523715FD7007D36DA /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		0F9F8A0723716B62007D36DA /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		0F9F8A0B23716DCC007D36DA /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		0F9F8A0C23716DCC007D36DA /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
+		0FAA4E0C2372B60200DC8358 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		0FF6229723602FA100BA1BA4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0FF6229923602FC200BA1BA4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0FF6229B2360302400BA1BA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				0F9F8A00237152FC007D36DA /* CommentTableViewCell.swift */,
-				0F9F8A01237152FC007D36DA /* CommentTableViewCell.xib */,
+				0FAA4E0C2372B60200DC8358 /* CommentTableViewCell.xib */,
 			);
 			path = CommentCell;
 			sourceTree = "<group>";
@@ -526,12 +526,12 @@
 				0F788527235EF942003F8CE5 /* ProfileViewController.xib in Resources */,
 				0F87CB3C2361A4690047D083 /* HomeSlideCollectionViewCell.xib in Resources */,
 				0F7884FB235EE17F003F8CE5 /* LaunchScreen.storyboard in Resources */,
-				0F9F8A03237152FC007D36DA /* CommentTableViewCell.xib in Resources */,
 				0F9F8A0E23716DCC007D36DA /* FavoriteTableViewCell.xib in Resources */,
 				0F7884F8235EE17F003F8CE5 /* Assets.xcassets in Resources */,
 				0F788505235EE631003F8CE5 /* HomeViewController.xib in Resources */,
 				0FF8E1B723613FF500662EC0 /* HomeCollectionViewCell.xib in Resources */,
 				0FF8E1C123618E7700662EC0 /* HomeGridCollectionViewCell.xib in Resources */,
+				0FAA4E0E2372B60200DC8358 /* CommentTableViewCell.xib in Resources */,
 				0F788523235EF85E003F8CE5 /* FavoriteViewController.xib in Resources */,
 				0FF622B32360506C00BA1BA4 /* DetailViewController.xib in Resources */,
 				0F78852C235EFBE2003F8CE5 /* LoginViewController.xib in Resources */,
