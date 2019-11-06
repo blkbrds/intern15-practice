@@ -25,10 +25,10 @@ final class Data {
 
     func calculateResult(operation: MathOperation, previousNumber: Double, numberOnScreen: Double) {
         switch operation {
-        case.div: result = (previousNumber / numberOnScreen)
-        case.mul: result = (previousNumber * numberOnScreen)
-        case.plus: result = (previousNumber + numberOnScreen)
-        case.minus: result = (previousNumber - numberOnScreen)
+        case. div: result = previousNumber / numberOnScreen
+        case. mul: result = previousNumber * numberOnScreen
+        case. plus: result = previousNumber + numberOnScreen
+        case. minus: result = previousNumber - numberOnScreen
         default:
             break
         }

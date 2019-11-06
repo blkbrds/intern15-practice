@@ -26,7 +26,7 @@ final class CalcutionViewController: UIViewController {
     @IBAction func chooseNumber(_ sender: Any) {
         if preformingMath == true {
             resultLabelLabel.text = String((sender as AnyObject).tag - 1)
-            numberOnScreen = Double(resultLabelLabel.text!)!
+            numberOnScreen = Double(resultLabelLabel.text!) as! Double
             preformingMath = false
         }
         else
