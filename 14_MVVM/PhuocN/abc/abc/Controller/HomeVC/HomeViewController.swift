@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 enum HomeShowStatus {
     case grid
@@ -57,6 +58,7 @@ final class HomeViewController: BaseViewController {
         }
     }
     private var viewModel = HomeViewModel()
+    private var notificationToken: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,9 +171,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section != 0 {
+        if indexPath.section != 0, let cell = collectionView.cellForItem(at: indexPath) as? HomeCollectionViewCell {
             let detailVC = DetailViewController()
-            //            detailVC.viewModel = DetailViewModel(namePlace: viewModel.getItemAtIndexPath(indexPath).name)
+            detailVC.viewModel = DetailViewModel(video: viewModel.getVideo(at: indexPath), imageVideo: cell.videoImageView.image!)
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }

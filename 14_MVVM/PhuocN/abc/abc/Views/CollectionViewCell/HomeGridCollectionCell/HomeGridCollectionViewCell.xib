@@ -31,17 +31,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dW-sn-DnY">
-                        <rect key="frame" x="186" y="10" width="30" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Kog-Rw-RBY"/>
-                            <constraint firstAttribute="width" secondItem="8dW-sn-DnY" secondAttribute="height" id="ucb-qi-0TC"/>
-                        </constraints>
-                        <state key="normal" title="Button" image="ic-like-selected"/>
-                        <connections>
-                            <action selector="favoriteButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ojv-Uh-9tv"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-oL-MII">
                         <rect key="frame" x="10" y="104" width="44.5" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -61,8 +50,6 @@
                 <constraint firstItem="C0b-xi-z9c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8pz-D5-MjI"/>
                 <constraint firstItem="tXT-3Y-QAP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="N2Z-p8-jBp"/>
                 <constraint firstAttribute="bottom" secondItem="C0b-xi-z9c" secondAttribute="bottom" constant="110" id="QT8-JI-Za4"/>
-                <constraint firstAttribute="trailing" secondItem="8dW-sn-DnY" secondAttribute="trailing" constant="10" id="SQa-1h-6OT"/>
-                <constraint firstItem="8dW-sn-DnY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="XJ7-RQ-g4R"/>
                 <constraint firstItem="rcc-q7-e8O" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="aZi-TF-mOa"/>
                 <constraint firstAttribute="trailing" secondItem="zrM-la-bD1" secondAttribute="trailing" constant="10" id="ffm-QJ-vZV"/>
                 <constraint firstItem="tXT-3Y-QAP" firstAttribute="top" secondItem="C0b-xi-z9c" secondAttribute="bottom" constant="10" id="iOs-87-Ruh"/>
@@ -78,7 +65,6 @@
             <connections>
                 <outlet property="channelLabel" destination="rcc-q7-e8O" id="uzG-Ya-mZZ"/>
                 <outlet property="distanceLabel" destination="zrM-la-bD1" id="YRQ-Qq-HmG"/>
-                <outlet property="favoriteButton" destination="8dW-sn-DnY" id="xjR-TW-Ppf"/>
                 <outlet property="pusblishedLabel" destination="hlW-oL-MII" id="Zhl-y3-EjQ"/>
                 <outlet property="titleLabel" destination="tXT-3Y-QAP" id="sXq-p7-Xf8"/>
                 <outlet property="videoImageView" destination="C0b-xi-z9c" id="Ixv-4q-O3T"/>
@@ -86,7 +72,4 @@
             <point key="canvasLocation" x="47.826086956521742" y="181.80803571428569"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="ic-like-selected" width="50" height="50"/>
-    </resources>
 </document>

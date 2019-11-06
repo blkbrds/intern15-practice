@@ -6,19 +6,28 @@
 //  Copyright © 2019 PhuocNguyen. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 import UIKit
 
-final class Video {
-    var imageURL: String
-    var title: String
-    var channel: String
-    var published: String
+final class Video: Object {
     
-    init(dict: [String: Any]) {
+    @objc dynamic var id: String = ""
+    @objc dynamic var imageURL: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var channel: String = ""
+    @objc dynamic var published: String = ""
+    @objc dynamic var isFavorite: Bool = false
+    
+    required convenience init(dict: [String: Any]) {
+        self.init(value: dict)
         self.title = dict["title"] as? String ?? ""
         self.imageURL = dict["imageURL"] as? String ?? ""
         self.channel = dict["channelTitle"] as? String ?? ""
         self.published = dict["publishedAt"] as? String ?? ""
+        self.id = dict["id"] as? String ?? ""
+    }
+    
+    override class func primaryKey() -> String? {
+        return "id"
     }
 }

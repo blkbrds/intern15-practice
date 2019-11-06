@@ -17,7 +17,6 @@ protocol HomeCollectionViewCellDelegate: class {
 final class HomeCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
     
     @IBOutlet private weak var distanceLabel: UILabel!
-    @IBOutlet private weak var favoriteButton: UIButton!
     @IBOutlet private weak var pusblishedLabel: UILabel!
     @IBOutlet private weak var channelLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -45,18 +44,6 @@ final class HomeCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
         channelLabel.text = viewModel.channel
         titleLabel.text = viewModel.title
         pusblishedLabel.text = viewModel.published
-    }
-    
-    @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
-//        if let viewModel = viewModel {
-//            viewModel.setFavorite { (done) in
-//                if done {
-//                    //updateUI()
-//                    delegate?.favoriteItem(at: self)
-//                } else {
-//                    print("Can not change favorite")
-//                }
-//            }
-//        }
+       
     }
 }

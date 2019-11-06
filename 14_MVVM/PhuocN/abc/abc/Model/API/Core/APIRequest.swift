@@ -14,10 +14,9 @@ extension API {
     
     func request(urlString: String, completion: @escaping completion) {
         guard let url = URL(string: urlString) else {
-            completion(.failure(.errorURL))
+             completion(.failure(.errorURL))
             return
         }
-        
         let config = URLSessionConfiguration.ephemeral
         config.waitsForConnectivity = true
         let session = URLSession.shared

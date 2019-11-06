@@ -39,6 +39,7 @@ extension ApiManager.Video {
                     if let items = json["items"] as? [[String: Any]] {
                         for item in items {
                             var dict: [String: Any] = [:]
+                            dict["id"] = item["id"]
                             if let snippet = item["snippet"] as? [String: Any] {
                                 dict["title"] = snippet["title"]
                                 dict["channelTitle"] = snippet["channelTitle"]

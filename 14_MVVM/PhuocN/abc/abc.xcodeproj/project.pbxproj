@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,15 @@
 		0F87CB422361AA240047D083 /* SlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87CB402361AA240047D083 /* SlideCollectionViewCell.swift */; };
 		0F87CB432361AA240047D083 /* SlideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F87CB412361AA240047D083 /* SlideCollectionViewCell.xib */; };
 		0F87CB45236297C20047D083 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87CB44236297C20047D083 /* LoginViewModel.swift */; };
+		0F9F89FA2371256C007D36DA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89F92371256C007D36DA /* Comment.swift */; };
+		0F9F89FC237127BD007D36DA /* Api.Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89FB237127BD007D36DA /* Api.Comment.swift */; };
+		0F9F89FE23714ABF007D36DA /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F89FD23714ABF007D36DA /* TableViewExt.swift */; };
+		0F9F8A02237152FC007D36DA /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A00237152FC007D36DA /* CommentTableViewCell.swift */; };
+		0F9F8A03237152FC007D36DA /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F8A01237152FC007D36DA /* CommentTableViewCell.xib */; };
+		0F9F8A0623715FD7007D36DA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0523715FD7007D36DA /* RealmManager.swift */; };
+		0F9F8A0823716B62007D36DA /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0723716B62007D36DA /* FavoriteViewModel.swift */; };
+		0F9F8A0D23716DCC007D36DA /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0B23716DCC007D36DA /* FavoriteTableViewCell.swift */; };
+		0F9F8A0E23716DCC007D36DA /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F8A0C23716DCC007D36DA /* FavoriteTableViewCell.xib */; };
 		0FF6229823602FA100BA1BA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229723602FA100BA1BA4 /* BaseViewController.swift */; };
 		0FF6229A23602FC200BA1BA4 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229923602FC200BA1BA4 /* BaseNavigationController.swift */; };
 		0FF6229C2360302400BA1BA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6229B2360302400BA1BA4 /* BaseTabBarController.swift */; };
@@ -53,9 +62,11 @@
 		0FF8E1BC23618AA300662EC0 /* HomeShowStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8E1BB23618AA300662EC0 /* HomeShowStatus.swift */; };
 		0FF8E1C023618E7700662EC0 /* HomeGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF8E1BE23618E7700662EC0 /* HomeGridCollectionViewCell.swift */; };
 		0FF8E1C123618E7700662EC0 /* HomeGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF8E1BF23618E7700662EC0 /* HomeGridCollectionViewCell.xib */; };
+		F068A9E915316D659585DC37 /* Pods_abc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0664F49471E75F5AF1B360BE /* Pods_abc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0664F49471E75F5AF1B360BE /* Pods_abc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F40365A2364591900FB9658 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0F57C975236931B900E66F48 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		0F57C979236931E700E66F48 /* API+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+Data.swift"; sourceTree = "<group>"; };
@@ -89,6 +100,15 @@
 		0F87CB402361AA240047D083 /* SlideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionViewCell.swift; sourceTree = "<group>"; };
 		0F87CB412361AA240047D083 /* SlideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideCollectionViewCell.xib; sourceTree = "<group>"; };
 		0F87CB44236297C20047D083 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0F9F89F92371256C007D36DA /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		0F9F89FB237127BD007D36DA /* Api.Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Comment.swift; sourceTree = "<group>"; };
+		0F9F89FD23714ABF007D36DA /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
+		0F9F8A00237152FC007D36DA /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		0F9F8A01237152FC007D36DA /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		0F9F8A0523715FD7007D36DA /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		0F9F8A0723716B62007D36DA /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		0F9F8A0B23716DCC007D36DA /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		0F9F8A0C23716DCC007D36DA /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		0FF6229723602FA100BA1BA4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		0FF6229923602FC200BA1BA4 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0FF6229B2360302400BA1BA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -104,6 +124,8 @@
 		0FF8E1BB23618AA300662EC0 /* HomeShowStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShowStatus.swift; sourceTree = "<group>"; };
 		0FF8E1BE23618E7700662EC0 /* HomeGridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FF8E1BF23618E7700662EC0 /* HomeGridCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeGridCollectionViewCell.xib; sourceTree = "<group>"; };
+		2ED84E1C868AB6BF082A13D0 /* Pods-abc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abc.release.xcconfig"; path = "Target Support Files/Pods-abc/Pods-abc.release.xcconfig"; sourceTree = "<group>"; };
+		87D9A386E373E8071F94DFFA /* Pods-abc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abc.debug.xcconfig"; path = "Target Support Files/Pods-abc/Pods-abc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F068A9E915316D659585DC37 /* Pods_abc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +165,7 @@
 			children = (
 				0F57C97D236931E700E66F48 /* Api.Video.swift */,
 				0F57C97F236931E700E66F48 /* Api.Downloader.swift */,
+				0F9F89FB237127BD007D36DA /* Api.Comment.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -151,6 +175,7 @@
 			children = (
 				0F57C980236931E700E66F48 /* Video.swift */,
 				0FF622A22360373800BA1BA4 /* Place.swift */,
+				0F9F89F92371256C007D36DA /* Comment.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -160,6 +185,7 @@
 			children = (
 				0F57C98C2369357900E66F48 /* CollectionViewExt.swift */,
 				0F57C98D2369357900E66F48 /* ImageViewExt.swift */,
+				0F9F89FD23714ABF007D36DA /* TableViewExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -169,6 +195,8 @@
 			children = (
 				0F7884ED235EE17E003F8CE5 /* abc */,
 				0F7884EC235EE17E003F8CE5 /* Products */,
+				F7C40C01C075E7368F723021 /* Pods */,
+				19709293379A14CBA7A6E0E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +230,7 @@
 		0F788516235EF7F4003F8CE5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0F9F89FF237152DD007D36DA /* TableViewCell */,
 				0FF622AA23603FCF00BA1BA4 /* CollectionViewCell */,
 			);
 			path = Views;
@@ -231,6 +260,7 @@
 			children = (
 				0F788520235EF85E003F8CE5 /* FavoriteViewController.swift */,
 				0F788521235EF85E003F8CE5 /* FavoriteViewController.xib */,
+				0F9F8A0723716B62007D36DA /* FavoriteViewModel.swift */,
 			);
 			path = FavoriteVC;
 			sourceTree = "<group>";
@@ -273,9 +303,45 @@
 			path = SlideCollectionCell;
 			sourceTree = "<group>";
 		};
+		0F9F89FF237152DD007D36DA /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F8A0A23716DB4007D36DA /* FavoriteCell */,
+				0F9F8A0923716DA4007D36DA /* CommentCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		0F9F8A0423715FC8007D36DA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F8A0523715FD7007D36DA /* RealmManager.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		0F9F8A0923716DA4007D36DA /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F8A00237152FC007D36DA /* CommentTableViewCell.swift */,
+				0F9F8A01237152FC007D36DA /* CommentTableViewCell.xib */,
+			);
+			path = CommentCell;
+			sourceTree = "<group>";
+		};
+		0F9F8A0A23716DB4007D36DA /* FavoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F8A0B23716DCC007D36DA /* FavoriteTableViewCell.swift */,
+				0F9F8A0C23716DCC007D36DA /* FavoriteTableViewCell.xib */,
+			);
+			path = FavoriteCell;
+			sourceTree = "<group>";
+		};
 		0FF6229323602F4A00BA1BA4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0F9F8A0423715FC8007D36DA /* Realm */,
 				0F57C98A2369320700E66F48 /* Object */,
 				0F57C977236931E700E66F48 /* API */,
 			);
@@ -379,6 +445,23 @@
 			path = HomeGridCollectionCell;
 			sourceTree = "<group>";
 		};
+		19709293379A14CBA7A6E0E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0664F49471E75F5AF1B360BE /* Pods_abc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7C40C01C075E7368F723021 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87D9A386E373E8071F94DFFA /* Pods-abc.debug.xcconfig */,
+				2ED84E1C868AB6BF082A13D0 /* Pods-abc.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,9 +469,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F7884FF235EE17F003F8CE5 /* Build configuration list for PBXNativeTarget "abc" */;
 			buildPhases = (
+				E7D57CD0882F8AF0BE762327 /* [CP] Check Pods Manifest.lock */,
 				0F7884E7235EE17E003F8CE5 /* Sources */,
 				0F7884E8235EE17E003F8CE5 /* Frameworks */,
 				0F7884E9235EE17E003F8CE5 /* Resources */,
+				F937D265FD6A1572C49684AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -441,6 +526,8 @@
 				0F788527235EF942003F8CE5 /* ProfileViewController.xib in Resources */,
 				0F87CB3C2361A4690047D083 /* HomeSlideCollectionViewCell.xib in Resources */,
 				0F7884FB235EE17F003F8CE5 /* LaunchScreen.storyboard in Resources */,
+				0F9F8A03237152FC007D36DA /* CommentTableViewCell.xib in Resources */,
+				0F9F8A0E23716DCC007D36DA /* FavoriteTableViewCell.xib in Resources */,
 				0F7884F8235EE17F003F8CE5 /* Assets.xcassets in Resources */,
 				0F788505235EE631003F8CE5 /* HomeViewController.xib in Resources */,
 				0FF8E1B723613FF500662EC0 /* HomeCollectionViewCell.xib in Resources */,
@@ -454,6 +541,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E7D57CD0882F8AF0BE762327 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-abc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F937D265FD6A1572C49684AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-abc/Pods-abc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-abc/Pods-abc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-abc/Pods-abc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F7884E7235EE17E003F8CE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -462,6 +591,7 @@
 				0F87CB45236297C20047D083 /* LoginViewModel.swift in Sources */,
 				0F57C982236931E700E66F48 /* ApiManager.swift in Sources */,
 				0FF622B52360591200BA1BA4 /* DetailViewModel.swift in Sources */,
+				0F9F89FE23714ABF007D36DA /* TableViewExt.swift in Sources */,
 				0F57C984236931E700E66F48 /* APIRequest.swift in Sources */,
 				0F57C981236931E700E66F48 /* API+Data.swift in Sources */,
 				0F78852B235EFBE2003F8CE5 /* LoginViewController.swift in Sources */,
@@ -469,10 +599,12 @@
 				0F57C988236931E700E66F48 /* Video.swift in Sources */,
 				0F788526235EF942003F8CE5 /* ProfileViewController.swift in Sources */,
 				0F57C985236931E700E66F48 /* Api.Video.swift in Sources */,
+				0F9F89FA2371256C007D36DA /* Comment.swift in Sources */,
 				0F57C983236931E700E66F48 /* API.swift in Sources */,
 				0FF6229C2360302400BA1BA4 /* BaseTabBarController.swift in Sources */,
 				0F40365B2364591900FB9658 /* Color.swift in Sources */,
 				0F7884EF235EE17E003F8CE5 /* AppDelegate.swift in Sources */,
+				0F9F89FC237127BD007D36DA /* Api.Comment.swift in Sources */,
 				0FF8E1BC23618AA300662EC0 /* HomeShowStatus.swift in Sources */,
 				0F7884F1235EE17E003F8CE5 /* SceneDelegate.swift in Sources */,
 				0FF622B22360506C00BA1BA4 /* DetailViewController.swift in Sources */,
@@ -480,8 +612,10 @@
 				0F57C98F2369357900E66F48 /* ImageViewExt.swift in Sources */,
 				0F788504235EE631003F8CE5 /* HomeViewController.swift in Sources */,
 				0FF622A32360373800BA1BA4 /* Place.swift in Sources */,
+				0F9F8A0D23716DCC007D36DA /* FavoriteTableViewCell.swift in Sources */,
 				0F87CB3B2361A4690047D083 /* HomeSlideCollectionViewCell.swift in Sources */,
 				0FF6229823602FA100BA1BA4 /* BaseViewController.swift in Sources */,
+				0F9F8A0623715FD7007D36DA /* RealmManager.swift in Sources */,
 				0FF622A1236036AE00BA1BA4 /* HomeViewModel.swift in Sources */,
 				0F57C976236931B900E66F48 /* Key.swift in Sources */,
 				0F87CB422361AA240047D083 /* SlideCollectionViewCell.swift in Sources */,
@@ -491,7 +625,9 @@
 				0F78851D235EF836003F8CE5 /* MapViewController.swift in Sources */,
 				0FF6229F2360325200BA1BA4 /* App.swift in Sources */,
 				0FF8E1C023618E7700662EC0 /* HomeGridCollectionViewCell.swift in Sources */,
+				0F9F8A02237152FC007D36DA /* CommentTableViewCell.swift in Sources */,
 				0F788522235EF85E003F8CE5 /* FavoriteViewController.swift in Sources */,
+				0F9F8A0823716B62007D36DA /* FavoriteViewModel.swift in Sources */,
 				0F57C98E2369357900E66F48 /* CollectionViewExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,6 +762,7 @@
 		};
 		0F788500235EE17F003F8CE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87D9A386E373E8071F94DFFA /* Pods-abc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -643,6 +780,7 @@
 		};
 		0F788501235EE17F003F8CE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ED84E1C868AB6BF082A13D0 /* Pods-abc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

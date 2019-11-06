@@ -15,10 +15,10 @@ struct ApiManager {
         static let baseURL = "https://www.googleapis.com/youtube/v3/"
     }
     
-    struct Audio {}
-    
     struct Downloader {}
     
     struct Video {}
+    
+    struct Comment {}
 }
 

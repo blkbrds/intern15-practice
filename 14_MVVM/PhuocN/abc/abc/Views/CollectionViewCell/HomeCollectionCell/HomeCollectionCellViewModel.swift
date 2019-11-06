@@ -14,11 +14,13 @@ class HomeCollectionCellViewModel {
     var title: String
     var channel: String
     var published: String
+    var isLike: Bool
     
     init(video: Video) {
         self.title = video.title
         self.imageURL = video.imageURL
         self.channel = video.channel
         self.published = video.published
+        self.isLike = video.isFavorite
     }
 }

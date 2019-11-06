@@ -63,10 +63,23 @@ class HomeViewModel {
                     completed(false, error.localizedDescription)
                 case .success(let videoResult):
                     if !loadMore {
-                        self.videos.removeAll()
+                        if RealmManager.shared.realm.isEmpty {
+                            RealmManager.shared.addObjects(with: videoResult.videos)
+                        } else {
+//                            RealmManager.shared.realm.refresh()
+//                            RealmManager.shared.addObjects(with: videoResult.videos)
+                        }
+                    } else {
+                        for video in videoResult.videos {
+                            RealmManager.shared.writeObject(action: {
+                                RealmManager.shared.realm.create(Video.self, value: video, update: .modified)
+                            })
+                        }
+                        
+                        self.videos.append(contentsOf: videoResult.videos)
                     }
+                    self.videos = RealmManager.shared.fetchObject(type: Video.self, completion: nil)
                     self.pageNextToken = videoResult.pageNextToken
-                    self.videos.append(contentsOf: videoResult.videos)
                     completed(true, "")
                 }
                 self.isLoadingData = false
