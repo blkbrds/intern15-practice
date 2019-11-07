@@ -53,7 +53,5 @@ enum Team: Int {
                             Member(name: "Deadpool", avatar: #imageLiteral(resourceName: "deadpool"))]
         }
     }
-    
-    static var count: Int { return Team.xmen.rawValue + 1}
 }
 

@@ -10,6 +10,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
+    // MARK: - properties
     enum CellIdentifier: String {
         case cell = "cell"
         case header = "headerCell"
@@ -17,15 +18,18 @@ final class HomeViewController: UIViewController {
     }
     
     private var status = Status.standard
+    private let teams: [Team] = [.avengers, .guardians, .xmen]
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         setupNavi()
     }
     
+    // MARK: - private func
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "HeaderCollectionViewCell", bundle: Bundle.main), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CellIdentifier.header.rawValue)
@@ -61,6 +65,7 @@ final class HomeViewController: UIViewController {
         collectionView.setCollectionViewLayout(flowLayout, animated: true)
     }
     
+    // MARK: - Action
     @objc private func turnOnStandardMode() {
         changeFlowLayout(status: .standard)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Small", style: .plain, target: self, action: #selector(turnOnSmallMode))
@@ -72,39 +77,32 @@ final class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - tableview datasource
 extension HomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Team.count
+        return teams.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let team = Team(rawValue: section) else {
-            fatalError("Team is nil value")
-        }
-        return team.members.count
+        return teams[section].members.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let team = Team(rawValue: indexPath.section),
-              let item = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.cell.rawValue, for: indexPath) as? HomeCollectionViewCell,
-              indexPath.row < team.members.count else {
-                fatalError("Fail")
+        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.cell.rawValue, for: indexPath) as? HomeCollectionViewCell else {
+                fatalError("Can no have this cell")
         }
-        item.updateCell(status: status, avatar: team.members[indexPath.row].avatar, name: team.members[indexPath.row].name)
+        item.updateCell(status: status, avatar: teams[indexPath.section].members[indexPath.row].avatar, name: teams[indexPath.section].members[indexPath.row].name)
         return item
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let team = Team(rawValue: indexPath.section) else {
-                fatalError("Team is nil value")
-            }
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CellIdentifier.header.rawValue, for: indexPath) as? HeaderCollectionViewCell else {
                 return UICollectionReusableView()
             }
-            header.update(avatar: team.teamAvatar, name: team.teamName, status: status)
+            header.update(avatar: teams[indexPath.section].teamAvatar, name: teams[indexPath.section].teamName, status: status)
             return header
         case UICollectionView.elementKindSectionFooter:
             guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: CellIdentifier.footer.rawValue, for: indexPath) as? FooterCollectionViewCell else {
