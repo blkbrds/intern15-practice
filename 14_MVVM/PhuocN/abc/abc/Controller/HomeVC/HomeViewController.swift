@@ -84,7 +84,7 @@ final class HomeViewController: BaseViewController {
         homeCollectionView.register(withNib: HomeCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeGridCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeSlideCollectionViewCell.self)
-        homeCollectionView.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCell")
+        homeCollectionView.register(withNib: HomeHeaderCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
         homeCollectionView.refreshControl = UIRefreshControl()
         homeCollectionView.refreshControl?.tintColor = .white
         homeCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
@@ -196,8 +196,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCell", for: indexPath)
+            let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, with: HomeHeaderCollectionViewCell.self, indexPath: indexPath)
             headerCell.backgroundColor = UIColor.darkGray
+            headerCell.titleLabel.text = viewModel.getRegionTitle(at: indexPath.section)
             return headerCell
         default:
             return UICollectionViewCell()
@@ -205,6 +206,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 50)
+        return CGSize(width: collectionView.frame.width, height: 70)
     }
 }

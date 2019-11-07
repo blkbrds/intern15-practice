@@ -35,9 +35,11 @@ extension API {
     }
     
     func request(url: URL, completion: @escaping completion) {
-        let config = URLSessionConfiguration.ephemeral
-        config.waitsForConnectivity = true
-        let session = URLSession.shared
+        let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = 15
+        config.timeoutIntervalForResource = 15
+        //config.waitsForConnectivity = true
+        let session = URLSession(configuration: config)
         let dataTask = session.dataTask(with: url) { (data, _, error) in
             DispatchQueue.main.async {
                 if let error = error {

@@ -21,6 +21,4 @@ extension Data {
         }
         return json
     }
-    
-   
 }

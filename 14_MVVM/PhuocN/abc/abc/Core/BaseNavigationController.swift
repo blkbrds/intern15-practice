@@ -17,4 +17,5 @@ class BaseNavigationController: UINavigationController {
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
                                                                    NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
     }
+    
 }
