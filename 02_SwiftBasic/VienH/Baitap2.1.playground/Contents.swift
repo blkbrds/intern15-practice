@@ -1,10 +1,10 @@
 import UIKit
 
-func hinhcau(bankinh: Double) {
+func hinhcau(bankinh: Double) -> (Double, Double) {
 
     let dienTich = (4 * .pi * bankinh * bankinh).rounded()
     let theTich = (4 / 3 * (.pi * bankinh * bankinh * bankinh)).rounded()
-    print("Dien tich la", dienTich)
-    print("The tich la", theTich)
+    return (theTich, dienTich)
+    
 }
-hinhcau(bankinh: 2)
+print("Diện tích là: \(hinhcau(bankinh: 3).0)")
