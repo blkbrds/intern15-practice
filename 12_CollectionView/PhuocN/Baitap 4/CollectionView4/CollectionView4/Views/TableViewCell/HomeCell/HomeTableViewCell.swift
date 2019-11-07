@@ -26,6 +26,7 @@ final class HomeTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - tableview datasource, tableviewdelegate
 extension HomeTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -36,7 +37,7 @@ extension HomeTableViewCell: UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
         cell.configUI(avatarImage: data[indexPath.row].avatar, cornerRadius: 15)
         return cell
     }

@@ -42,6 +42,7 @@ final class SliderTableViewCell: UITableViewCell {
     }
 }
 
+//MARK: - tableviewDatasource, tableviewDelegate
 extension SliderTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

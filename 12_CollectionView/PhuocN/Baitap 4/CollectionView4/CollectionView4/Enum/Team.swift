@@ -6,7 +6,6 @@
 //  Copyright © 2019 PhuocNguyen. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 enum Team: Int {
@@ -22,8 +21,12 @@ enum Team: Int {
         }
     }
     
-    static var teamAvatar: [UIImage] {
-        return [#imageLiteral(resourceName: "guardians"), #imageLiteral(resourceName: "avengers"), #imageLiteral(resourceName: "xmen")]
+    var teamAvatar: UIImage {
+        switch self {
+        case .avengers: return #imageLiteral(resourceName: "avengers")
+        case .xmen: return #imageLiteral(resourceName: "xmen")
+        case .guardians: return #imageLiteral(resourceName: "guardians")
+        }
     }
     
     var members: [Member] {
@@ -49,6 +52,4 @@ enum Team: Int {
                             Member(name: "Deadpool", avatar: #imageLiteral(resourceName: "deadpool"))]
         }
     }
-    
-    static var count: Int { return Team.xmen.rawValue + 1}
 }

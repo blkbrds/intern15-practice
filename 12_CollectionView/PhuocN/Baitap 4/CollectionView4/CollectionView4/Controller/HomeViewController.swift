@@ -10,13 +10,18 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
+    // MARK: - IBOutlet
     @IBOutlet private weak var tableView: UITableView!
     
+    private let teams: [Team] = [.avengers, .guardians, .xmen]
+    
+    // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
     
+    // MARK: - config
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -25,20 +30,18 @@ final class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - tableview datasource, tableview delegate
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Team.count + 1
+        return teams.count + 1
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return nil
         }
-        guard let team = Team(rawValue: section - 1) else {
-            fatalError("Team is nil")
-        }
-        return team.teamName
+        return teams[section - 1].teamName
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,14 +51,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard indexPath.section > 0 else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "SliderCell", for: indexPath) as? SliderTableViewCell else { return UITableViewCell() }
-            cell.data = Team.teamAvatar
+            cell.data = teams.map { $0.teamAvatar }
             return cell
         }
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeTableViewCell,
-            let team = Team(rawValue: indexPath.section - 1) else {
-                fatalError("Team is nil")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeTableViewCell else {
+            fatalError("Don't have this cell")
         }
-        cell.data = team.members
+        cell.data = teams[indexPath.section - 1].members
         return cell
     }
     
