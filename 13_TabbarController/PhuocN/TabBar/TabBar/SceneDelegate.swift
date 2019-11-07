@@ -55,24 +55,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
     }
     
     func login() {
-        let homeVC = HomeViewController()
-        let homeNavi = UINavigationController(rootViewController: homeVC)
-        homeNavi.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "ic-home"), selectedImage: #imageLiteral(resourceName: "ic-home-selected"))
-        
-        let mapVC = MapViewController()
-        let mapNavi = UINavigationController(rootViewController: mapVC)
-        mapNavi.tabBarItem = UITabBarItem(title: "Map", image: #imageLiteral(resourceName: "ic-map"), selectedImage: #imageLiteral(resourceName: "ic-map-selected"))
-        
-        let settingVC = SettingViewController()
-        let settingNavi = UINavigationController(rootViewController: settingVC)
-        settingNavi.tabBarItem = UITabBarItem(title: "Setting", image: #imageLiteral(resourceName: "ic-setting"), selectedImage: #imageLiteral(resourceName: "ic-setting-selected"))
-        
-        let profileVC = ProfileViewController()
-        let profileNavi = UINavigationController(rootViewController: profileVC)
-        profileNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
-        
         let tabBarController = BaseTabBarController()
-        tabBarController.viewControllers = [homeNavi, mapNavi, settingNavi, profileNavi]
         window?.rootViewController = tabBarController
     }
     

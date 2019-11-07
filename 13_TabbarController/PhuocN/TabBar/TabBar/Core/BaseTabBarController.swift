@@ -9,13 +9,49 @@
 import UIKit
 
 class BaseTabBarController: UITabBarController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTabBar()
+    
+    static weak var shared: BaseTabBarController?
+    
+    private var homeScreen = UINavigationController(rootViewController: HomeViewController())
+    private var mapScreen = UINavigationController(rootViewController: MapViewController())
+    private var settingScreen = UINavigationController(rootViewController: SettingViewController())
+    private var profileScreen = UINavigationController(rootViewController: ProfileViewController())
+    
+    enum ScreenType: Int {
+        case home = 0
+        case map
+        case setting
+        case profile
+        
+        var title: String {
+            switch self {
+            case .home: return "Home"
+            case .map: return "Map"
+            case .profile: return "Profile"
+            case .setting: return "Setting"
+            }
+        }
     }
     
-    func setupTabBar() {
-        tabBarController?.tabBar.tintColor = UIColor(displayP3Red: 33/255, green: 177/255, blue: 243/255, alpha: 1)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        BaseTabBarController.shared = self
+        configViewController()
+        configUI()
+    }
+    
+    private func configViewController() {
+        homeScreen.tabBarItem = UITabBarItem(title: ScreenType.home.title, image: #imageLiteral(resourceName: "ic-home"), tag: ScreenType.home.rawValue)
+        mapScreen.tabBarItem = UITabBarItem(title: ScreenType.map.title, image: #imageLiteral(resourceName: "ic-map"), tag: ScreenType.map.rawValue)
+        settingScreen.tabBarItem = UITabBarItem(title: ScreenType.setting.title, image: #imageLiteral(resourceName: "ic-setting"), tag: ScreenType.setting.rawValue)
+        profileScreen.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        
+        setViewControllers([homeScreen, mapScreen, settingScreen, profileScreen], animated: true)
+    }
+}
+
+extension BaseTabBarController {
+    private func configUI() {
+        tabBar.tintColor = .systemBlue
     }
 }
