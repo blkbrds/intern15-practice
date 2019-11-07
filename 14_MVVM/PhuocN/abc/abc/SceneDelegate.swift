@@ -74,19 +74,19 @@ extension SceneDelegate {
     
     private func configTabBar() {
         let homeVC = HomeViewController()
-        let homeNavi = UINavigationController(rootViewController: homeVC)
+        let homeNavi = BaseNavigationController(rootViewController: homeVC)
         homeNavi.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "ic-home"), selectedImage: #imageLiteral(resourceName: "ic-grid"))
         
         let mapVC = MapViewController()
-        let mapNavi = UINavigationController(rootViewController: mapVC)
+        let mapNavi = BaseNavigationController(rootViewController: mapVC)
         mapNavi.tabBarItem = UITabBarItem(title: "Map", image: #imageLiteral(resourceName: "ic-map"), selectedImage: #imageLiteral(resourceName: "ic-map-selected"))
         
         let favoriteVC = FavoriteViewController()
-        let favoriteNavi = UINavigationController(rootViewController: favoriteVC)
+        let favoriteNavi = BaseNavigationController(rootViewController: favoriteVC)
         favoriteNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         
         let profileVC = ProfileViewController()
-        let profileNavi = UINavigationController(rootViewController: profileVC)
+        let profileNavi = BaseNavigationController(rootViewController: profileVC)
         profileNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
         
         let tabBarController = BaseTabBarController()

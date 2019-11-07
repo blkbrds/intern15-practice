@@ -10,19 +10,18 @@ import Foundation
 
 extension ApiManager.Video {
     struct QueryString {
-        func getVideoYoutube(token: String, maxResult: Int) -> String {
-            return  "https://www.googleapis.com/youtube/v3/videos?pageToken=\(token)&part=contentDetails,id,snippet&chart=mostPopular&regionCode=VN&maxResults=\(maxResult)&key=\(Key.youtubeKey)"
+        func getVideoYoutube(token: String, maxResult: Int, regionCode: String) -> String {
+            return  "https://www.googleapis.com/youtube/v3/videos?pageToken=\(token)&part=contentDetails,id,snippet&chart=mostPopular&regionCode=\(regionCode)&maxResults=\(maxResult)&key=\(Key.youtubeKey)"
         }
     }
     
-    struct VideoResult {
+    struct VideoResult: Error {
         var videos: [Video]
         var pageNextToken: String
     }
     
-    static func getVideo(token: String, maxResult: Int, completion: @escaping APICompletion<VideoResult>) {
-        let urlString = QueryString().getVideoYoutube(token: token, maxResult: maxResult)
-        
+    static func getVideo(token: String, maxResult: Int, regionCode: String, completion: @escaping APICompletion<VideoResult>) {
+        let urlString = QueryString().getVideoYoutube(token: token, maxResult: maxResult, regionCode: regionCode)
         guard let url = URL(string: urlString) else {
             completion(.failure(.errorURL))
             return
@@ -40,6 +39,7 @@ extension ApiManager.Video {
                         for item in items {
                             var dict: [String: Any] = [:]
                             dict["id"] = item["id"]
+                            dict["region"] = regionCode
                             if let snippet = item["snippet"] as? [String: Any] {
                                 dict["title"] = snippet["title"]
                                 dict["channelTitle"] = snippet["channelTitle"]

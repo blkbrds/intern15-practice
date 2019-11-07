@@ -66,11 +66,12 @@ final class HomeViewController: BaseViewController {
     }
     
     override func loadData() {
-        viewModel.loadData(loadMore: false) { [weak self] done, error in
+        viewModel.loadAllVideo { [weak self] done, error in
             guard let self = self else { return }
             if done {
                 self.updateUI(with: .loadData)
             } else {
+                self.updateUI(with: .loadData)
                 self.showErrorAlert(with: error)
             }
         }
@@ -83,7 +84,9 @@ final class HomeViewController: BaseViewController {
         homeCollectionView.register(withNib: HomeCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeGridCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeSlideCollectionViewCell.self)
+        homeCollectionView.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCell")
         homeCollectionView.refreshControl = UIRefreshControl()
+        homeCollectionView.refreshControl?.tintColor = .white
         homeCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
@@ -120,7 +123,7 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc private func refreshData() {
-        viewModel.loadData(loadMore: false) { [weak self] done, error in
+        viewModel.loadAllVideo { [weak self] done, error in
             guard let self = self else { return }
             if done {
                 self.updateUI(with: .refresh)
@@ -131,6 +134,7 @@ final class HomeViewController: BaseViewController {
     }
     
     func showErrorAlert(with message: String) {
+        self.homeCollectionView.refreshControl?.endRefreshing()
         let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
@@ -141,52 +145,43 @@ final class HomeViewController: BaseViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModel.numberOfSection
+        return viewModel.numberOfSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberRowOfSection(at: section)
+        return viewModel.getNumberRowAtSection(section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(with: HomeSlideCollectionViewCell.self, indexPath: indexPath)
-            cell.viewModel = HomeSlideCollectionCellViewModel(slideImages: viewModel.getSlideImage())
-            return cell
-        }
         switch status {
         case .row:
             let cell = collectionView.dequeueReusableCell(with: HomeCollectionViewCell.self, indexPath: indexPath)
-            cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath))
-            cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath).imageURL, index: indexPath.row)
-            cell.delegate = self
+            cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath)!)
+            cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath)!.imageURL, index: indexPath.row)
             return cell
         case .grid:
             let cell = collectionView.dequeueReusableCell(with: HomeGridCollectionViewCell.self, indexPath: indexPath)
-            cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath))
-            cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath).imageURL, index: indexPath.row)
-            cell.delegate = self
+            cell.viewModel = HomeCollectionCellViewModel(video: viewModel.getVideo(at: indexPath)!)
+            cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath)!.imageURL, index: indexPath.row)
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section != 0, let cell = collectionView.cellForItem(at: indexPath) as? HomeCollectionViewCell {
+        if let video = viewModel.getVideo(at: indexPath),
+            let cell = collectionView.cellForItem(at: indexPath) as? HomeCollectionViewCell {
             let detailVC = DetailViewController()
-            detailVC.viewModel = DetailViewModel(video: viewModel.getVideo(at: indexPath), imageVideo: cell.videoImageView.image!)
+            detailVC.viewModel = DetailViewModel(video: video, imageVideo: cell.videoImageView.image!)
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.section == 0 {
-            return CGSize(width: collectionView.bounds.width, height: 250)
-        }
         switch status {
         case .grid:
             return CGSize(width: (collectionView.bounds.width - 40) / 2, height: 300)
         case .row:
-            return CGSize(width: collectionView.bounds.width, height: 150)
+            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.width * 0.95)
         }
     }
     
@@ -198,28 +193,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return status.sectionInset
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.getCount() - 4 {
-            viewModel.loadData(loadMore: true) { [weak self] done, error  in
-                guard let self = self else { return }
-                if done {
-                    collectionView.reloadData()
-                } else {
-                    self.showErrorAlert(with: error)
-                }
-            }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCell", for: indexPath)
+            headerCell.backgroundColor = UIColor.darkGray
+            return headerCell
+        default:
+            return UICollectionViewCell()
         }
     }
-}
-
-extension HomeViewController: HomeCollectionViewCellDelegate {
     
-    func favoriteItem(at cell: UICollectionViewCell) {
-        //        guard let index = homeCollectionView.indexPath(for: cell) else { return }
-        //        viewModel.likePlace(at: index.item) { done in
-        //            if done {
-        //                homeCollectionView.reloadItems(at: [index])
-        //            }
-        //        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
     }
 }

@@ -35,8 +35,7 @@ final class HomeCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
     }
     
     private func setupUI() {
-        layer.borderColor = App.Color.tintColorTabBar.cgColor
-        layer.borderWidth = 0.5
+        backgroundColor = App.Color.backgroudColor
     }
     
     private func updateUI() {
