@@ -1,44 +1,45 @@
 import UIKit
 
 //Tổng của 10 số Fibonacy đầu tiên
-func fibonacci(n: Int) -> Int {
-  var a = 1
-  var b = 1
-  var next = 0
-  for i in 0..<n {
-    if i <= 1 {
-      next = i
-    } else {
-      next = a + b
-      a = b
-      b = next
+func fibonacy(n: Int) -> Int {
+    var a = 1
+    var b = 1
+    var c = 0
+    for i in 0..<n {
+        if i <= 1 {
+            c = i
+        } else {
+            c = a + b
+            a = b
+            b = c
+        }
     }
-  }
-  return next
+    return c
 }
 
-func tinhTong(n: Int) -> Int {
-  var tong = 0
-  for i in 0..<n {
-    tong += fibonacci(n: i)
-  }
-  return tong
+func tinhTongNFibonacyDauTien(n: Int) -> Int {
+    var tong = 0
+    for i in 0..<n {
+        tong += fibonacy(n: i)
+    }
+    return tong
 }
 
-let tongFi = tinhTong(n: 10)
-print("Tong 10 so Fibonacci dau tien la: \(tongFi)")
+let tongDayFibonacy = tinhTongNFibonacyDauTien(n: 10)
+print("Tong 10 so Fibonacci dau tien la: \(tongDayFibonacy)")
 
 //Liệt kê 10 số Fibonacy đầu tiên
-func lietKe(n: Int){
-  for i in 0..<n {
-    let fi = fibonacci(n: i)
-    print("F(\(i)) = \(fi)")
-  }
+func lietKeNFibonacyDautien(n: Int) {
+    for i in 0..<n {
+        let soFibonacy = fibonacy(n: i)
+        print("F(\(i)) = \(soFibonacy)")
+    }
 }
-lietKe(n: 10)
+print("\nLiet ke 10 so fibonacy dau tien")
+lietKeNFibonacyDautien(n: 10)
 
 //Tính sin(x), cos(x) bằng công thức Chuỗi Taylor
-func giaiThua(n: Int) -> Int{
+func giaiThua(n: Int) -> Int {
     if n == 0 || n == 1 {
         return 1
     } else {
@@ -46,55 +47,80 @@ func giaiThua(n: Int) -> Int{
     }
 }
 
-func sinx(goc: Double) -> Double{
-    let saiso = 0.00001
-    var tinhtoan = 1.0
+func sinX(goc: Double) -> Double {
+    let saiSo = 0.00001
+    var tinhToan = 1.0
     var n = 0
-    var sinx = 0.0
+    var sinX = 0.0
     let gocRad = goc * .pi / 180
-    while tinhtoan > saiso {
-        tinhtoan = pow(gocRad, Double((2 * n + 1))) / Double(giaiThua(n: 2 * n + 1))
+    while tinhToan > saiSo {
+        tinhToan = pow(gocRad, Double((2 * n + 1))) / Double(giaiThua(n: 2 * n + 1))
         if n % 2 == 0 {
-            sinx += tinhtoan
+            sinX += tinhToan
         } else {
-            sinx -= tinhtoan
+            sinX -= tinhToan
         }
         n += 1
     }
-    return sinx
+    return sinX
 }
 
-func cosx(goc: Double) -> Double{
-    let saiso = 0.00001
-    var tinhtoan = 1.0
+func cosX(goc: Double) -> Double {
+    let saiSo = 0.00001
+    var tinhToan = 1.0
     var n = 0
-    var cosx = 0.0
+    var cosX = 0.0
     let gocRad = goc * .pi / 180
-    while tinhtoan > saiso {
-        tinhtoan = pow(gocRad, Double((2 * n))) / Double(giaiThua(n: 2 * n))
+    while tinhToan > saiSo {
+        tinhToan = pow(gocRad, Double((2 * n))) / Double(giaiThua(n: 2 * n))
         if n % 2 == 0 {
-            cosx += tinhtoan
+            cosX += tinhToan
         } else {
-            cosx -= tinhtoan
+            cosX -= tinhToan
         }
         n += 1
     }
-    return cosx
+    return cosX
 }
-print("\nSin(90) = \(sinx(goc: 90))")
-print("\nCos(45) = \(cosx(goc: 45))")
 
-/*Liệt kê các số hạnh phúc bé hơn 10.000 : Số hạnh phúc là số https://en.wikipedia.org/wiki/Happy_number */
-func ktSoHanhPhuc(so: Int) -> Bool{
+print("\nSin(90) = \(sinX(goc: 90))")
+print("\nCos(45) = \(cosX(goc: 45))")
+
+/*Liệt kê các số hạnh phúc bé hơn 100 : Số hạnh phúc là số https://en.wikipedia.org/wiki/Happy_number */
+func tongBinhPhuongMoiSo(so: Int) -> Int { // Tong binh phuong tung so trong mot so
+    var soTam = so
+    var tong = 0
+    var phanDu = 0
+    while soTam > 0 {
+        phanDu = soTam % 10
+        tong += phanDu * phanDu
+        soTam = soTam / 10
+    }
+    return tong
+}
+
+func ktSoHanhPhuc(so: Int) -> Bool {
     if so == 1 {
         return true
     }
     var hanhPhuc = so
-    if hanhPhuc < 10 {
-        hanhPhuc = hanhPhuc * hanhPhuc
+    var mangTam: [Int] = []
+    while hanhPhuc > 1 && !mangTam.contains(hanhPhuc) {
+        mangTam.append(hanhPhuc)
+        hanhPhuc = tongBinhPhuongMoiSo(so: hanhPhuc)
     }
     
-    return false
+    return hanhPhuc == 1
 }
 
-print(ktSoHanhPhuc(so: 5))
+func lietKeSoHanhPhuc(n: Int) -> [Int] {
+    var mangHanhPhuc: [Int] = []
+    for i in 0..<n {
+        if ktSoHanhPhuc(so: i) {
+            mangHanhPhuc.append(i)
+        }
+    }
+    return mangHanhPhuc
+}
+
+print("\nLiet ke so hanh phuc nho hon 100: \(lietKeSoHanhPhuc(n: 100))")

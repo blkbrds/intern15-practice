@@ -1,46 +1,47 @@
 import UIKit
 
-enum phuongTrinhBac2 {
-    case PTvoNghiem
-    case PTvoSoNghiem
-    case motNghiem(x: Double)
-    case haiNghiem(x1: Double, x2: Double)
+enum PhuongTrinhBac2 {
+    case PTVoNghiem
+    case PTVoSoNghiem
+    case PTCo1Nghiem(x: Double)
+    case PTCo2Nghiem(x1: Double, x2: Double)
 }
 
-func giaiPTBac2(a: Double, b: Double, c: Double) -> phuongTrinhBac2 {
+func giaiPTBac2(a: Double, b: Double, c: Double) -> PhuongTrinhBac2 {
     if a == 0 {
         if b == 0 {
             if c == 0 {
-                return .PTvoSoNghiem
+                return .PTVoSoNghiem
             }
-            return .PTvoNghiem
+            return .PTVoNghiem
         } else {
             let x: Double = -c / b
-            return .motNghiem(x: x)
+            return .PTCo1Nghiem(x: x)
         }
     } else {
         let denta: Double = b * b - 4 * a * c
         if denta < 0 {
-            return .PTvoNghiem
+            return .PTVoNghiem
         } else if denta == 0 {
             let x: Double = -b / (2 * a)
-            return .motNghiem(x: x)
+            return .PTCo1Nghiem(x: x)
         } else {
             let x1: Double = (-b + sqrt(denta)) / (2 * a)
             let x2: Double = (b + sqrt(denta)) / (2 * a)
-            return .haiNghiem(x1: x1, x2: x2)
+            return .PTCo2Nghiem(x1: x1, x2: x2)
         }
     }
 }
 
 let nghiem = giaiPTBac2(a: -1, b: 2, c: 3)
+
 switch nghiem {
-case .PTvoNghiem:
+case .PTVoNghiem:
     print("PT Vo Nghiem")
-case .PTvoSoNghiem:
+case .PTVoSoNghiem:
     print("PT Vo So Nghiem")
-case .motNghiem(x: let nghiem):
+case .PTCo1Nghiem(x: let nghiem):
     print("PT có 1 nghiem  : \(nghiem)")
-case .haiNghiem(x: let nghiem):         //tra ve tuples
+case .PTCo2Nghiem(x: let nghiem): //tra ve tuples
     print("PT có 2 nghiem : \(nghiem)")
 }
