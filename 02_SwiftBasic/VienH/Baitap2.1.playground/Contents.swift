@@ -1,6 +1,6 @@
 import UIKit
 
-func hinhcau(bankinh: Double) -> (Double, Double) {
+func hinhCau(bankinh: Double) -> (Double, Double) {
 
     let dienTich = (4 * .pi * bankinh * bankinh).rounded()
     let theTich = (4 / 3 * (.pi * bankinh * bankinh * bankinh)).rounded()
