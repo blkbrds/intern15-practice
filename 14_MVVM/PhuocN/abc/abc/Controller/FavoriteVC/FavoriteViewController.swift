@@ -37,7 +37,7 @@ class FavoriteViewController: BaseViewController {
             case .update(_, _, _, _):
                 self.viewModel.fetchDataFromRealm { (done) in
                     if !done {
-                        // show alert and return
+                        self.showErrorAlert(mess: "Can not load favorite videos")
                     }
                 }
                 self.tableView.reloadData()
@@ -61,13 +61,20 @@ class FavoriteViewController: BaseViewController {
             if done {
                 self.tableView.reloadData()
             } else {
-                // show alert
+                self.showErrorAlert(mess: "Can not load favorite videos")
             }
         }
     }
     
     @objc private func deleteAllFavoriteVideo() {
         showAlert(title: "Warning", mess: "Do you want to delete all your favorite", need: .removeAll)
+    }
+    
+    func showErrorAlert(mess: String) {
+        let alert = UIAlertController(title: "Error", message: mess, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     func showAlert(title: String, mess: String, need perform: Action, index: Int = 0) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 import RealmSwift
 
 class DetailViewController: BaseViewController {
@@ -14,7 +15,7 @@ class DetailViewController: BaseViewController {
     @IBOutlet weak var channelLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var videoImageView: UIImageView!
+    @IBOutlet weak var webKit: WKWebView!
     
     var notificationToken: NotificationToken?
     
@@ -25,6 +26,8 @@ class DetailViewController: BaseViewController {
         loadData()
         updateUI()
         changeValueFromRealm()
+        guard let viewModel = viewModel else { return }
+        playVideo(videoId: viewModel.videoId)
     }
     
     func changeValueFromRealm() {
@@ -36,13 +39,13 @@ class DetailViewController: BaseViewController {
                 break
             case .update(let videos, _, _, let modifier):
                 for index in modifier {
-                    print(videos, modifier)
                     if videos[index].id == self.viewModel?.videoId {
-                        self.viewModel?.changeLike()
-                        self.updateUI()
+                        self.viewModel?.changeLike { [weak self] (done) in
+                            guard let self = self else { return }
+                            self.updateUI()
+                        }
                     }
                 }
-                self.updateUI()
             case .error(let error):
                 fatalError("\(error)")
             }
@@ -73,7 +76,7 @@ class DetailViewController: BaseViewController {
         guard let viewModel = viewModel else { return }
         channelLabel.text = viewModel.channel
         titleLabel.text = viewModel.title
-        videoImageView.image = viewModel.imageVideo
+        //videoImageView.image = viewModel.imageVideo
         if viewModel.isLike {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic-like-selected"), style: .done, target: self, action: #selector(likeBarButton))
         } else {
@@ -81,19 +84,30 @@ class DetailViewController: BaseViewController {
         }
     }
     
-    @objc private func likeBarButton() {
-        viewModel?.likeVideo(completion: { (done) in
+    func playVideo(videoId: String) {
+        viewModel?.playVideo(completion: { [weak self] (done, error, request) in
+            guard let self = self else { return }
             if done {
-                //self.updateUI()
+                guard let request = request else { return }
+                self.webKit.load(request)
             } else {
-                // show Alert
+                self.showErrorAlert(with: "Can not load this video")
             }
         })
     }
     
-//    deinit {
-//        self.notificationToken?.invalidate()
-//    }
+    @objc private func likeBarButton() {
+        viewModel?.likeVideo(completion: { [weak self] (done) in
+            guard let self = self else { return }
+            if !done {
+                self.showErrorAlert(with: "Can not like this video")
+            }
+        })
+    }
+    
+    //    deinit {
+    //        self.notificationToken?.invalidate()
+    //    }
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {

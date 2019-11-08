@@ -76,7 +76,16 @@ class DetailViewModel {
         }
     }
     
-    func changeLike() {
+    func playVideo(completion: (Bool, String, URLRequest?) -> ()) {
+        guard let url = URL(string: "https://www.youtube.com/embed/\(videoId)") else {
+            completion(false, "Can load this video", nil)
+            return
+        }
+        completion(true, "", URLRequest(url: url))
+    }
+    
+    func changeLike(completion: (Bool) -> ()) {
         isLike = !isLike
+        completion(true)
     }
 }

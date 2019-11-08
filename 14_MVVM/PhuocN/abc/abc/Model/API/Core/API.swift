@@ -41,6 +41,11 @@ struct API {
         return shareAPI
     }
     
+    struct Path {
+        static let baseURL = ""
+        static let playVideo = "https://www.youtube.com/embed/"
+    }
+    
 //    weak var delegate: APIDelegate?
     
     //init

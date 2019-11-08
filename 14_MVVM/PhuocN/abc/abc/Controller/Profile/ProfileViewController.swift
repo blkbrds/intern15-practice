@@ -15,7 +15,5 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        UserDefaults.standard.set(nil, forKey: "username")
-        SceneDelegate.shared.configRootView(status: .logOut)
     }
 }

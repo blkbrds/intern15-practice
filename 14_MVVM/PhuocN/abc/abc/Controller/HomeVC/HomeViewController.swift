@@ -133,12 +133,9 @@ final class HomeViewController: BaseViewController {
         }
     }
     
-    func showErrorAlert(with message: String) {
-        self.homeCollectionView.refreshControl?.endRefreshing()
-        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
+    override func showErrorAlert(with message: String) {
+        super.showErrorAlert(with: message)
+        homeCollectionView.refreshControl?.endRefreshing()
     }
 }
 
@@ -172,6 +169,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = collectionView.cellForItem(at: indexPath) as? HomeCollectionViewCell {
             let detailVC = DetailViewController()
             detailVC.viewModel = DetailViewModel(video: video, imageVideo: cell.videoImageView.image!)
+            //present(detailVC, animated: true, completion: nil)
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }

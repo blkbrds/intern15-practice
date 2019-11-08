@@ -26,11 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
         print("connection")
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        if UserDefaults.standard.value(forKey: "username") != nil {
-            configTabBar()
-        } else {
-            configLoginNavi()
-        }
+        configTabBar()
         window?.makeKeyAndVisible()
     }
     
@@ -57,21 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
 
 //MARK: -Config RootView
 extension SceneDelegate {
-    func configRootView(status: Status) {
-        switch status {
-        case .login:
-            configTabBar()
-        case .logOut:
-            configLoginNavi()
-        }
-    }
-    
-    private func configLoginNavi() {
-        let loginVC = LoginViewController()
-        let loginNavi = BaseNavigationController(rootViewController: loginVC)
-        window?.rootViewController = loginNavi
-    }
-    
+
     private func configTabBar() {
         let homeVC = HomeViewController()
         let homeNavi = BaseNavigationController(rootViewController: homeVC)
