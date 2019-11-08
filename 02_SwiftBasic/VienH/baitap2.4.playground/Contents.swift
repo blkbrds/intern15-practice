@@ -1,25 +1,22 @@
-
 import UIKit
 
 func lietKeFibonacci(n: Int, a: Int, b: Int, c: Int) -> Int {
     var a: Int = 0
     var b: Int = 1
     var c: Int = a + b
-    var kq: Int = 0
+    var ketqua: Int = 0
     var n = n - 2
     while n > 0 {
         a = b
         b = c
         c = a + b
         n -= 1
-        kq = kq + c
+        ketqua = ketqua + c
     }
-    return kq
+    return ketqua
 }
-
-let kq = lietKeFibonacci(n: 20, a: 0, b: 1, c: 0)
-print("Ket qua tra ve: \(kq)")
-
+let ketQua = lietKeFibonacci(n: 20, a: 0, b: 1, c: 0)
+print("Ket qua tra ve: \(ketQua)")
 // Liet ke 100 so Fibonanci va tinh tong
 
 
@@ -53,7 +50,7 @@ print ("Sin(30) = \(sinX(x: 30))")
 print ("Cos(30) = \(cosX(x: 30))")
 // Tinh xin(x), cos(x) bang chuoi Taylor
 
-func cshp(max: Int) -> Int {
+func conSoHanhPhuc(max: Int) -> Int {
     var tong: Int = 0
     for i in 3..<max {
         for j in 1..<i - 1 where i % j == 0 {
@@ -65,8 +62,8 @@ func cshp(max: Int) -> Int {
     }
     return tong
 }
-let sohanhphuc = cshp(max: 10000)
-print("Tong cac so hanh phuc la: \(sohanhphuc)")
+let soHanhPhuc = conSoHanhPhuc(max: 10000)
+print("Tong cac so hanh phuc la: \(soHanhPhuc)")
 // Liet ke cac so hanh phuc < 10000
 
 

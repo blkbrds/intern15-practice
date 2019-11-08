@@ -1,12 +1,11 @@
 import UIKit
 
-enum KetQua {
-    case ptvsn
-    case ptvn
-    case pt2n(x:Double, y:Double)
+enum ketQua {
+    case phuongTrinhVoSoNghiem
+    case phuongTrinhVoNghiem
+    case phuongTrinhHaiNghiem(x: Double, y: Double)
 }
-
-func ptb1(a1: Float, b1: Float, c1: Float, a2: Float, b2: Float, c2: Float) -> KetQua {
+func phuongTrinhBacNhat(a1: Float, b1: Float, c1: Float, a2: Float, b2: Float, c2: Float) -> ketQua {
     var d = a1 * b2 - a2 * b1
     var dx = c1 * b2 - c2 * b1
     var dy = a1 * c2 - a2 * c1
@@ -15,25 +14,23 @@ func ptb1(a1: Float, b1: Float, c1: Float, a2: Float, b2: Float, c2: Float) -> K
     dy = a1 * c2 - a2 * c1
     if d == 0 {
         if dx + dy == 0 {
-            return .ptvn
-        }
-        else {
-            return .ptvsn
+            return .phuongTrinhVoNghiem
+        } else {
+            return .phuongTrinhVoSoNghiem
         }
     } else {
         let x = Double(dx / d)
         let y = Double(dy / d)
-        return .pt2n (x: x, y: y)
+        return .phuongTrinhHaiNghiem (x: x, y: y)
     }
 }
-
- let phuongtrinhbatnhat = ptb1(a1: 4, b1: 4, c1: -6, a2: 4, b2: 6, c2: 8)
-switch phuongtrinhbatnhat{
-case.ptvn:
+let phuongtrinhbatnhat = phuongTrinhBacNhat(a1: 4, b1: 4, c1: -6, a2: 4, b2: 6, c2: 8)
+switch phuongtrinhbatnhat {
+case.phuongTrinhVoNghiem:
     print("phuong trinh vo nghiem")
-case.ptvsn:
+case.phuongTrinhVoSoNghiem:
     print("phuong trinh vo so nghiem")
-case.pt2n(let x):
+case.phuongTrinhHaiNghiem(let x):
     print("phuong trinh co 2 ngiem:\(x)")
 default:
     break

@@ -1,43 +1,36 @@
 import UIKit
 
-enum KetQua {
-    case ptvn
-    case pt1n(x: Double)
-    case pt2n(x1: Double, x2: Double)
+enum ketQua {
+    case phuongTrinhVoNghiem
+    case phuongTrinhMotNghiem(x: Double)
+    case phuongTrinhHaiNghiem(x1: Double, x2: Double)
 }
-
-func ptb2(a: Float, b: Float, c: Float) -> KetQua {
-
+func phuongTrinhBac2(a: Float, b: Float, c: Float) -> ketQua {
     var delta: Float = (b * b) - (4 * a * c)
     var x1: Float = 0
     var x2: Float = 0
-
     if delta < 0 {
-        return .ptvn
+        return .phuongTrinhVoNghiem
     } else if delta == 0 {
         x1 = -b / (2 * a)
-        return .pt1n(x: Double(x1))
-
+        return .phuongTrinhMotNghiem(x: Double(x1))
     } else {
         delta = sqrt(delta)
         x1 = (-b + delta) / (2 * a)
         x2 = (-b - delta) / (2 * a)
-        return .pt2n(x1: Double(x1), x2: Double(x2))
+        return .phuongTrinhHaiNghiem(x1: Double(x1), x2: Double(x2))
     }
 }
-
-let phuongTrinh = ptb2(a: 1, b: -9, c: 3)
-
+let phuongTrinh = phuongTrinhBac2(a: 1, b: -9, c: 3)
 switch phuongTrinh {
-case .ptvn:
+case .phuongTrinhVoNghiem:
     print("phuong trinh vo nghiem.")
-case .pt1n(let x):
+case .phuongTrinhMotNghiem(let x):
     print("phuong trinh có 1 nghiệm: \(x)")
-case .pt2n(let x):
+case .phuongTrinhHaiNghiem(let x):
     print("Phuong trinh co 2 nghiệm: \(x)")
 default:
-   break
-    
+    break
 }
 
 
