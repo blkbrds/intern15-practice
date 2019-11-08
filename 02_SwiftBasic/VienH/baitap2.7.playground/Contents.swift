@@ -1,6 +1,7 @@
 import UIKit
+
 extension Array where Element: Equatable {
-    func change(using array: (of: Element, with: Element)...) -> Array{
+    func change(using array: (of: Element, with: Element)...) -> Array {
         var newArr: Array<Element> = self
         for replacement in array {
             for (index, item) in self.enumerated() {
