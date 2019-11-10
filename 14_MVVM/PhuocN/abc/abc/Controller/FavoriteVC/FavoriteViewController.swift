@@ -115,6 +115,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(with: FavoriteTableViewCell.self, indexPath: indexPath)
         cell.titleLabel.text = viewModel.getVideo(at: indexPath.row).title
         cell.channelLabel.text = viewModel.getVideo(at: indexPath.row).channel
+        cell.videoImageView.setImageWith(urlString: viewModel.getVideo(at: indexPath.row).imageURL, index: indexPath.row)
         return cell
     }
     
@@ -126,5 +127,9 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         if editingStyle == .delete {
             self.showAlert(title: "Warning", mess: "Do you want to remove this like", need: .remove, index: indexPath.row)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
 }

@@ -79,7 +79,9 @@ final class HomeViewController: BaseViewController {
     
     override func setupUI() {
         title = "Home"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+        let changeStatusButton = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+        let searchButton = UIBarButtonItem(image: UIImage(named: "ic-search"), style: .plain, target: self, action: #selector(search))
+        navigationItem.rightBarButtonItems = [changeStatusButton, searchButton]
         
         homeCollectionView.register(withNib: HomeCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeGridCollectionViewCell.self)
@@ -92,7 +94,7 @@ final class HomeViewController: BaseViewController {
         homeCollectionView.dataSource = self
     }
     
-    func updateUI(with perform: Action) {
+    private func updateUI(with perform: Action) {
         switch perform {
         case .refresh:
             homeCollectionView.reloadData()
@@ -100,10 +102,10 @@ final class HomeViewController: BaseViewController {
         case .changeStatus:
             switch status {
             case .grid:
-                navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+                navigationItem.rightBarButtonItems?[0] = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
                 homeCollectionView.reloadData()
             case .row:
-                navigationItem.rightBarButtonItem = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
+                navigationItem.rightBarButtonItems?[0] = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
                 homeCollectionView.reloadData()
             }
         case .loadMore:
@@ -131,6 +133,12 @@ final class HomeViewController: BaseViewController {
                 self.showErrorAlert(with: error)
             }
         }
+    }
+    
+    @objc private func search() {
+        let searchVC = SearchViewController()
+        //present(searchVC, animated: true, completion: nil)
+        navigationController?.pushViewController(searchVC, animated: true)
     }
     
     override func showErrorAlert(with message: String) {

@@ -72,11 +72,10 @@ class DetailViewController: BaseViewController {
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
-    func updateUI() {
+    private func updateUI() {
         guard let viewModel = viewModel else { return }
         channelLabel.text = viewModel.channel
         titleLabel.text = viewModel.title
-        //videoImageView.image = viewModel.imageVideo
         if viewModel.isLike {
             navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic-like-selected"), style: .done, target: self, action: #selector(likeBarButton))
         } else {

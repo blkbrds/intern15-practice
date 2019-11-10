@@ -13,6 +13,4 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var channelLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
-    
 }

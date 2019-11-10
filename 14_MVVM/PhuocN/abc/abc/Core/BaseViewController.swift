@@ -19,6 +19,8 @@ class BaseViewController: UIViewController {
     
     func loadData() {}
     
+    //func updateUI() {}
+    
     //MARK: -Alert
     func showErrorAlert(with message: String) {
         //self.homeCollectionView.refreshControl?.endRefreshing()
