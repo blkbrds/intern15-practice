@@ -28,19 +28,18 @@ class FavoriteViewController: BaseViewController {
     }
     
     func changeVideoValueFromRealm() {
-        let result = RealmManager.shared.realm.objects(Video.self)
+        let result = RealmManager.shared.realm.objects(PlayList.self)
         notificationToken = result.observe({ [weak self] (changes: RealmCollectionChange) in
             guard let self = self else { return }
             switch changes {
             case .initial:
                 self.tableView.reloadData()
-            case .update(_, _, _, _):
+            case .update(_, let deletions, let insertions, _):
                 self.viewModel.fetchDataFromRealm { (done) in
-                    if !done {
-                        self.showErrorAlert(mess: "Can not load favorite videos")
+                    if done {
+                        self.tableView.applyChange(insertions: insertions, deletions: deletions)
                     }
                 }
-                self.tableView.reloadData()
             case .error(let error):
                 fatalError("\(error)")
             }

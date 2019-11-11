@@ -9,7 +9,7 @@
 import RealmSwift
 import UIKit
 
-final class Video: Object {
+class Video: Object {
     
     @objc dynamic var id: String = ""
     @objc dynamic var imageURL: String = ""

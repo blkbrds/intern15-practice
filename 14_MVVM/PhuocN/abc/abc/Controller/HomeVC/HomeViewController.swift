@@ -62,6 +62,7 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(RealmManager.shared.realm.configuration.fileURL?.path)
         loadData()
     }
     

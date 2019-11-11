@@ -34,4 +34,16 @@ extension UITableView {
         }
         return cell
     }
+    
+    func indexFromRow(in section: Int = 0, for row: Int) -> IndexPath {
+        return IndexPath(row: row, section: section)
+    }
+    
+    func applyChange(section: Int = 0, insertions: [Int] = [], deletions: [Int] = [], updates: [Int] = []) {
+        beginUpdates()
+        insertRows(at: insertions.map { indexFromRow(in: section, for: $0) }, with: .bottom)
+        deleteRows(at: deletions.map { indexFromRow(in: section, for: $0) }, with: .top)
+        reloadRows(at: updates.map { indexFromRow(in: section, for: $0) }, with: .fade)
+        endUpdates()
+    }
 }

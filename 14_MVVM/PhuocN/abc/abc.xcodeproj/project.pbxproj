@@ -18,6 +18,7 @@
 		0F57C988236931E700E66F48 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57C980236931E700E66F48 /* Video.swift */; };
 		0F57C98E2369357900E66F48 /* CollectionViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57C98C2369357900E66F48 /* CollectionViewExt.swift */; };
 		0F57C98F2369357900E66F48 /* ImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57C98D2369357900E66F48 /* ImageViewExt.swift */; };
+		0F5FC5C12378F4840031A751 /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FC5C02378F4840031A751 /* PlayList.swift */; };
 		0F7884EF235EE17E003F8CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7884EE235EE17E003F8CE5 /* AppDelegate.swift */; };
 		0F7884F1235EE17E003F8CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7884F0235EE17E003F8CE5 /* SceneDelegate.swift */; };
 		0F7884F8235EE17F003F8CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7884F7235EE17F003F8CE5 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		0F57C980236931E700E66F48 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		0F57C98C2369357900E66F48 /* CollectionViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExt.swift; sourceTree = "<group>"; };
 		0F57C98D2369357900E66F48 /* ImageViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExt.swift; sourceTree = "<group>"; };
+		0F5FC5C02378F4840031A751 /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		0F7884EB235EE17E003F8CE5 /* abc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7884EE235EE17E003F8CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F7884F0235EE17E003F8CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				0F57C980236931E700E66F48 /* Video.swift */,
 				0FF622A22360373800BA1BA4 /* Place.swift */,
 				0F9F89F92371256C007D36DA /* Comment.swift */,
+				0F5FC5C02378F4840031A751 /* PlayList.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -224,7 +227,6 @@
 				0FF6229D2360323B00BA1BA4 /* Define */,
 				0FF6229623602F8600BA1BA4 /* Core */,
 				0FF6229523602F6100BA1BA4 /* Support */,
-				0FF6229423602F5500BA1BA4 /* ViewModels */,
 				0FF6229323602F4A00BA1BA4 /* Model */,
 				0FF622A423603F2D00BA1BA4 /* Controller */,
 				0F788516235EF7F4003F8CE5 /* Views */,
@@ -376,13 +378,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0FF6229423602F5500BA1BA4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		0FF6229523602F6100BA1BA4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +500,7 @@
 				0F7884E8235EE17E003F8CE5 /* Frameworks */,
 				0F7884E9235EE17E003F8CE5 /* Resources */,
 				F937D265FD6A1572C49684AB /* [CP] Embed Pods Frameworks */,
+				9731CB02921C0989B604BC4C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -575,6 +571,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9731CB02921C0989B604BC4C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-abc/Pods-abc-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-abc/Pods-abc-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-abc/Pods-abc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E7D57CD0882F8AF0BE762327 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -657,6 +670,7 @@
 				0F7FCCF723780B7A002FA7BE /* SearchDetailViewController.swift in Sources */,
 				0FAA4E392374263B00DC8358 /* HomeHeaderCollectionViewCell.swift in Sources */,
 				0F78851D235EF836003F8CE5 /* MapViewController.swift in Sources */,
+				0F5FC5C12378F4840031A751 /* PlayList.swift in Sources */,
 				0FF6229F2360325200BA1BA4 /* App.swift in Sources */,
 				0FF8E1C023618E7700662EC0 /* HomeGridCollectionViewCell.swift in Sources */,
 				0FAA4E3E2375205600DC8358 /* SearchViewController.swift in Sources */,

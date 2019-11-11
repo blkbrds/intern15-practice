@@ -9,5 +9,5 @@
 import Foundation
 
 struct Key {
-    static let youtubeKey = "AIzaSyBnITkXMcJvj_1dYimnnldBQnNvAN-9m3s"
+    static let youtubeKey = "AIzaSyDIJ9UssMoN9IfR9KnTc4lb3B9NtHpRF-c"
 }

@@ -96,7 +96,6 @@ class HomeViewModel {
                 downloadGroup.leave()
             }
         }
-        //downloadGroup.wait()
         downloadGroup.notify(queue: DispatchQueue.main) {
             if let error = storedError {
                 completed(false, error.localizedDescription)

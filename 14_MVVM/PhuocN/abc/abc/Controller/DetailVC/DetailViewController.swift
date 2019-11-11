@@ -31,31 +31,27 @@ class DetailViewController: BaseViewController {
     }
     
     func changeValueFromRealm() {
-        let result = RealmManager.shared.realm.objects(Video.self)
+        let result = RealmManager.shared.realm.objects(PlayList.self)
         notificationToken = result.observe({ [weak self] (changes: RealmCollectionChange) in
             guard let self = self else { return }
             switch changes {
             case .initial:
                 break
-            case .update(let videos, _, _, let modifier):
-                for index in modifier {
-                    if videos[index].id == self.viewModel?.videoId {
-                        self.viewModel?.changeLike { [weak self] (done) in
-                            guard let self = self else { return }
-                            self.updateUI()
-                        }
+            case .update(_, _, _, _):
+                self.viewModel?.changeLike(completion: { done in
+                    if done {
+                        self.updateUI()
                     }
-                }
+                })
             case .error(let error):
                 fatalError("\(error)")
             }
         })
     }
     
-    
     override func loadData() {
         guard let viewModel = viewModel else { return }
-        viewModel.loadData(loadMore: false) { [weak self] (done, error) in
+        viewModel.loadComment(loadMore: false) { [weak self] (done, error) in
             guard let self = self else { return }
             if done {
                 self.tableView.reloadData()
@@ -96,7 +92,13 @@ class DetailViewController: BaseViewController {
     }
     
     @objc private func likeBarButton() {
-        viewModel?.likeVideo(completion: { [weak self] (done) in
+//        viewModel?.addToPlayList(completion: { [weak self] (done) in
+//            guard let self = self else { return }
+//            if !done {
+//                self.showErrorAlert(with: "Can not like this video")
+//            }
+//        })
+        viewModel?.changePlayList(completion: { [weak self] done in
             guard let self = self else { return }
             if !done {
                 self.showErrorAlert(with: "Can not like this video")

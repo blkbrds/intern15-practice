@@ -9,10 +9,10 @@
 import Foundation
 
 class FavoriteViewModel {
-    var videos: [Video] = []
+    var playList: [PlayList] = []
     
     func fetchDataFromRealm(comletion: @escaping (Bool) -> ()) {
-        let video = RealmManager.shared.fetchObject(type: Video.self, completion: { (result) in
+        let video = RealmManager.shared.fetchObject(type: PlayList.self, completion: { (result) in
             switch result {
             case .failture( _):
                 comletion(false)
@@ -20,29 +20,26 @@ class FavoriteViewModel {
             case .sucessful:
                 break
             }
-        }).filter { $0.isFavorite }
-        self.videos = video
+        })
+        self.playList = video
         comletion(true)
     }
     
-    func getAllVideo() -> [Video] {
-        return videos
+    func getAllVideo() -> [PlayList] {
+        return playList
     }
     
     func getCount() -> Int {
-        return videos.count
+        return playList.count
     }
     
-    func getVideo(at index: Int) -> Video {
-        return videos[index]
+    func getVideo(at index: Int) -> PlayList {
+        return playList[index]
     }
     
     func deleteAllLikeVideo(completion: @escaping (Bool) -> ()) {
-        RealmManager.shared.writeObject(action: {
-            for video in videos {
-                RealmManager.shared.realm.create(Video.self, value: ["id": video.id, "isFavorite": false], update: .modified)
-            }
-        }) { (result) in
+        let playList = RealmManager.shared.fetchObject(type: PlayList.self, completion: nil)
+        RealmManager.shared.deleteAllObject(with: playList) { result in
             switch result {
             case .sucessful:
                 completion(true)
@@ -54,9 +51,8 @@ class FavoriteViewModel {
     }
     
     func deleteLikeVideo(index: Int, completion: @escaping (Bool) -> ()) {
-        RealmManager.shared.writeObject(action: {
-            RealmManager.shared.realm.create(Video.self, value: ["id": videos[index].id, "isFavorite": false], update: .modified)
-        }) { (result) in
+        let playList = RealmManager.shared.fetchObject(type: PlayList.self, completion: nil)[index]
+        RealmManager.shared.deleteObject(with: playList) { result in
             switch result {
             case .sucessful:
                 completion(true)

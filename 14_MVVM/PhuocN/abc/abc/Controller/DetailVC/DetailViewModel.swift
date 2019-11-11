@@ -26,13 +26,14 @@ class DetailViewModel {
         self.isLike = video.isFavorite 
         self.videoId = video.id
         self.imageVideo = imageVideo
+        self.isLike = RealmManager.shared.realm.objects(PlayList.self).contains { $0.id == videoId }
     }
     
     func getComment(at index: Int) -> Comment {
         return comment[index]
     }
     
-    func loadData(loadMore: Bool, completed: @escaping (Bool, String) -> Void) {
+    func loadComment(loadMore: Bool, completed: @escaping (Bool, String) -> Void) {
         if !loadMore {
             pageNextToken = ""
         }
@@ -61,17 +62,39 @@ class DetailViewModel {
         }
     }
     
-    func likeVideo(completion: @escaping (Bool) -> ()) {
-        let isFavorite = isLike
-        RealmManager.shared.writeObject(action: {
-            RealmManager.shared.realm.create(Video.self, value: ["id": videoId, "isFavorite": !isFavorite], update: .modified)
-        }) { (result) in
-            switch result {
-            case .sucessful:
-                completion(true)
-            case .failture(let error):
-                completion(false)
-                print(error.localizedDescription)
+    func changePlayList(completion: @escaping (Bool) -> ()) {
+        if !isLike {
+            addToPlayList(completion: completion)
+        } else {
+            removeToPlayList(completion: completion)
+        }
+    }
+    
+    func removeToPlayList(completion: @escaping (Bool) -> ()) {
+        if let playList = RealmManager.shared.realm.objects(PlayList.self).filter({ $0.id == self.videoId }).first {
+            RealmManager.shared.deleteObject(with: playList) { result in
+                switch result {
+                case .sucessful:
+                    completion(true)
+                case .failture(let error):
+                    completion(false)
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func addToPlayList(completion: @escaping (Bool) -> ()) {
+        if let video = RealmManager.shared.realm.objects(Video.self).filter({ $0.id == self.videoId }).first {
+            let playList = PlayList(video: video)
+            RealmManager.shared.addObject(with: playList) { (result) in
+                switch result {
+                case .sucessful:
+                    completion(true)
+                case .failture(let error):
+                    completion(false)
+                    print(error.localizedDescription)
+                }
             }
         }
     }

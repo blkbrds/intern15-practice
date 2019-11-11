@@ -11,7 +11,7 @@ import Foundation
 extension ApiManager.Video {
     struct QueryString {
         func getVideoYoutube(token: String, maxResult: Int, regionCode: String) -> String {
-            return  "https://www.googleapis.com/youtube/v3/videos?pageToken=\(token)&part=contentDetails,id,snippet&chart=mostPopular&regionCode=\(regionCode)&maxResults=\(maxResult)&key=\(Key.youtubeKey)"
+            return  "https://www.googleapis.com/youtube/v3/videos?pageToken=\(token)&part=contentDetails,id,snippet&chart=mostPopular&regionCode=\(regionCode)&maxResults=\(maxResult)&key=AIzaSyDIJ9UssMoN9IfR9KnTc4lb3B9NtHpRF-c"
         }
         
         func getSearchQuery(searchKey: String, pageToken: String, maxResult: Int) -> String {
