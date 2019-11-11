@@ -11,8 +11,7 @@ import Foundation
 extension ApiManager.Comment {
     struct CommentQueryString {
         static func getComments(videoId: String, pageToken: String, maxResults: Int) -> String {
-//            return "https://www.googleapis.com/youtube/v3/commentThreads?key=\(Key.youtubeKey)&textFormat=plainText&part=snippet&videoId=\(videoId)s&maxResults=\(maxResults)&pageToken=\(pageToken)"
-            return "https://www.googleapis.com/youtube/v3/commentThreads?key=\(Key.youtubeKey)&textFormat=plainText&part=snippet&videoId=\(videoId)&maxResults=5&pageToken=\(pageToken)"
+            return "https://www.googleapis.com/youtube/v3/commentThreads?key=\(Key.youtubeKey)&textFormat=plainText&part=snippet&videoId=\(videoId)&maxResults=\(maxResults)&pageToken=\(pageToken)"
         }
     }
     

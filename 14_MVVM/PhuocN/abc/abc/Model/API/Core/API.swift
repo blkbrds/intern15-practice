@@ -12,6 +12,8 @@ import Foundation
 enum APIError: Error {
     case error(String)
     case errorURL
+    case errorAccessToken
+    case errorResponse
     
     var localizedDescription: String {
         switch self {
@@ -19,6 +21,10 @@ enum APIError: Error {
             return string
         case .errorURL:
             return "URL String is error."
+        case .errorAccessToken:
+            return "Access token is error"
+        case .errorResponse:
+            return "Response is error"
         }
     }
 }

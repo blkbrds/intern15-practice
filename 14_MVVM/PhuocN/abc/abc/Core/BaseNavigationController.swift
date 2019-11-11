@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleAPIClientForREST
+import GoogleSignIn
 
 class BaseNavigationController: UINavigationController {
 
@@ -19,6 +21,6 @@ class BaseNavigationController: UINavigationController {
         navigationBar.tintColor = App.Color.mainColor
         navigationBar.barTintColor = App.Color.backgroudColor
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                                                   NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
+                                                                   NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 22)]
     }
 }

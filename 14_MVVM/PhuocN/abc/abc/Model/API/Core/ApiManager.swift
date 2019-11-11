@@ -20,4 +20,6 @@ struct ApiManager {
     struct Video {}
     
     struct Comment {}
+    
+    struct Rating {}
 }

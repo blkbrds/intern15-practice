@@ -14,7 +14,7 @@ extension API {
     
     func request(urlString: String, completion: @escaping completion) {
         guard let url = URL(string: urlString) else {
-             completion(.failure(.errorURL))
+            completion(.failure(.errorURL))
             return
         }
         let config = URLSessionConfiguration.ephemeral
@@ -52,5 +52,70 @@ extension API {
             }
         }
         dataTask.resume()
+    }
+    
+    func request(url: String, header: [String: String] = [:], completion: @escaping completion) {
+        guard let url = URL(string: url) else {
+            completion(.failure(.errorURL))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        guard let youtubeAccessToken = UserDefaults.standard.value(forKey: "youtubeAccessToken") as? String else {
+            completion(.failure(.errorAccessToken))
+            return
+        }
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(youtubeAccessToken)", forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, _, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(.failure(.error(error.localizedDescription)))
+                } else {
+                    if let data = data {
+                        print(data)
+                        completion(.success(data))
+                    }
+                }
+            }
+        }.resume()
+    }
+    
+    func requestPost(url: String, header: [String: String] = [:], completion: @escaping completion) {
+        guard let url = URL(string: url) else {
+            completion(.failure(.errorURL))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let youtubeAccessToken = UserDefaults.standard.value(forKey: "youtubeAccessToken") as? String else {
+            completion(.failure(.errorAccessToken))
+            return
+        }
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(youtubeAccessToken)", forHTTPHeaderField: "Authorization")
+        
+        let session = URLSession.shared
+        session.configuration.timeoutIntervalForRequest = 10
+        session.configuration.timeoutIntervalForResource = 10
+        session.dataTask(with: request) { (data, response, error) in
+            if let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) {
+                print(httpResponse.statusCode)
+                DispatchQueue.main.async {
+                    if let error = error {
+                        completion(.failure(.error(error.localizedDescription)))
+                    } else {
+                        if let data = data {
+                            print(data)
+                            completion(.success(data))
+                        }
+                    }
+                }
+            } else {
+                completion(.failure(.errorResponse))
+            }
+        }.resume()
     }
 }

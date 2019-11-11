@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
     
@@ -25,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIApplicationDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         print("connection")
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        GIDSignIn.sharedInstance().clientID = "781713938343-1cij4e3vf3q6ntp1kj63452j61shj9e5.apps.googleusercontent.com"
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = BaseTabBarController()
         window?.makeKeyAndVisible()

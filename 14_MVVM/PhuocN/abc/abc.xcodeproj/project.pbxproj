@@ -19,6 +19,11 @@
 		0F57C98E2369357900E66F48 /* CollectionViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57C98C2369357900E66F48 /* CollectionViewExt.swift */; };
 		0F57C98F2369357900E66F48 /* ImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57C98D2369357900E66F48 /* ImageViewExt.swift */; };
 		0F5FC5C12378F4840031A751 /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FC5C02378F4840031A751 /* PlayList.swift */; };
+		0F5FC5C3237912C80031A751 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F5FC5C2237912C80031A751 /* GoogleService-Info.plist */; };
+		0F5FC5C8237942400031A751 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FC5C6237942400031A751 /* RatingTableViewCell.swift */; };
+		0F5FC5C9237942400031A751 /* RatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F5FC5C7237942400031A751 /* RatingTableViewCell.xib */; };
+		0F5FC5CB237945710031A751 /* RatingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FC5CA237945710031A751 /* RatingCellViewModel.swift */; };
+		0F5FC5CD237948D80031A751 /* Api.Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5FC5CC237948D80031A751 /* Api.Rating.swift */; };
 		0F7884EF235EE17E003F8CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7884EE235EE17E003F8CE5 /* AppDelegate.swift */; };
 		0F7884F1235EE17E003F8CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7884F0235EE17E003F8CE5 /* SceneDelegate.swift */; };
 		0F7884F8235EE17F003F8CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7884F7235EE17F003F8CE5 /* Assets.xcassets */; };
@@ -85,6 +90,11 @@
 		0F57C98C2369357900E66F48 /* CollectionViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExt.swift; sourceTree = "<group>"; };
 		0F57C98D2369357900E66F48 /* ImageViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExt.swift; sourceTree = "<group>"; };
 		0F5FC5C02378F4840031A751 /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
+		0F5FC5C2237912C80031A751 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F5FC5C6237942400031A751 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewCell.swift; sourceTree = "<group>"; };
+		0F5FC5C7237942400031A751 /* RatingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingTableViewCell.xib; sourceTree = "<group>"; };
+		0F5FC5CA237945710031A751 /* RatingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCellViewModel.swift; sourceTree = "<group>"; };
+		0F5FC5CC237948D80031A751 /* Api.Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Rating.swift; sourceTree = "<group>"; };
 		0F7884EB235EE17E003F8CE5 /* abc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = abc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7884EE235EE17E003F8CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F7884F0235EE17E003F8CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +188,7 @@
 				0F57C97D236931E700E66F48 /* Api.Video.swift */,
 				0F57C97F236931E700E66F48 /* Api.Downloader.swift */,
 				0F9F89FB237127BD007D36DA /* Api.Comment.swift */,
+				0F5FC5CC237948D80031A751 /* Api.Rating.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -201,6 +212,16 @@
 				0F9F89FD23714ABF007D36DA /* TableViewExt.swift */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		0F5FC5C52379422B0031A751 /* RatingCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F5FC5C6237942400031A751 /* RatingTableViewCell.swift */,
+				0F5FC5C7237942400031A751 /* RatingTableViewCell.xib */,
+				0F5FC5CA237945710031A751 /* RatingCellViewModel.swift */,
+			);
+			path = RatingCell;
 			sourceTree = "<group>";
 		};
 		0F7884E2235EE17E003F8CE5 = {
@@ -235,6 +256,7 @@
 				0F7884F7235EE17F003F8CE5 /* Assets.xcassets */,
 				0F7884F9235EE17F003F8CE5 /* LaunchScreen.storyboard */,
 				0F7884FC235EE17F003F8CE5 /* Info.plist */,
+				0F5FC5C2237912C80031A751 /* GoogleService-Info.plist */,
 			);
 			path = abc;
 			sourceTree = "<group>";
@@ -318,6 +340,7 @@
 		0F9F89FF237152DD007D36DA /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				0F5FC5C52379422B0031A751 /* RatingCell */,
 				0F9F8A0A23716DB4007D36DA /* FavoriteCell */,
 				0F9F8A0923716DA4007D36DA /* CommentCell */,
 			);
@@ -555,12 +578,14 @@
 				0F7884FB235EE17F003F8CE5 /* LaunchScreen.storyboard in Resources */,
 				0F9F8A0E23716DCC007D36DA /* FavoriteTableViewCell.xib in Resources */,
 				0F7884F8235EE17F003F8CE5 /* Assets.xcassets in Resources */,
+				0F5FC5C9237942400031A751 /* RatingTableViewCell.xib in Resources */,
 				0F788505235EE631003F8CE5 /* HomeViewController.xib in Resources */,
 				0F7FCCF823780B7A002FA7BE /* SearchDetailViewController.xib in Resources */,
 				0FF8E1B723613FF500662EC0 /* HomeCollectionViewCell.xib in Resources */,
 				0FAA4E3F2375205600DC8358 /* SearchViewController.xib in Resources */,
 				0FF8E1C123618E7700662EC0 /* HomeGridCollectionViewCell.xib in Resources */,
 				0FAA4E0E2372B60200DC8358 /* CommentTableViewCell.xib in Resources */,
+				0F5FC5C3237912C80031A751 /* GoogleService-Info.plist in Resources */,
 				0F788523235EF85E003F8CE5 /* FavoriteViewController.xib in Resources */,
 				0FF622B32360506C00BA1BA4 /* DetailViewController.xib in Resources */,
 				0FAA4E3A2374263B00DC8358 /* HomeHeaderCollectionViewCell.xib in Resources */,
@@ -649,6 +674,7 @@
 				0F40365B2364591900FB9658 /* Color.swift in Sources */,
 				0F7884EF235EE17E003F8CE5 /* AppDelegate.swift in Sources */,
 				0F9F89FC237127BD007D36DA /* Api.Comment.swift in Sources */,
+				0F5FC5CB237945710031A751 /* RatingCellViewModel.swift in Sources */,
 				0FF8E1BC23618AA300662EC0 /* HomeShowStatus.swift in Sources */,
 				0F7884F1235EE17E003F8CE5 /* SceneDelegate.swift in Sources */,
 				0FF622B22360506C00BA1BA4 /* DetailViewController.swift in Sources */,
@@ -657,11 +683,13 @@
 				0F788504235EE631003F8CE5 /* HomeViewController.swift in Sources */,
 				0FF622A32360373800BA1BA4 /* Place.swift in Sources */,
 				0F9F8A0D23716DCC007D36DA /* FavoriteTableViewCell.swift in Sources */,
+				0F5FC5CD237948D80031A751 /* Api.Rating.swift in Sources */,
 				0F7FCCFA23780B89002FA7BE /* SearchDetailViewModel.swift in Sources */,
 				0F87CB3B2361A4690047D083 /* HomeSlideCollectionViewCell.swift in Sources */,
 				0FF6229823602FA100BA1BA4 /* BaseViewController.swift in Sources */,
 				0F9F8A0623715FD7007D36DA /* RealmManager.swift in Sources */,
 				0FF622A1236036AE00BA1BA4 /* HomeViewModel.swift in Sources */,
+				0F5FC5C8237942400031A751 /* RatingTableViewCell.swift in Sources */,
 				0F57C976236931B900E66F48 /* Key.swift in Sources */,
 				0F87CB422361AA240047D083 /* SlideCollectionViewCell.swift in Sources */,
 				0FF8E1B92361401300662EC0 /* HomeCollectionCellViewModel.swift in Sources */,

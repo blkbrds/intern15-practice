@@ -12,10 +12,9 @@ import RealmSwift
 
 class DetailViewController: BaseViewController {
     
-    @IBOutlet weak var channelLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var webKit: WKWebView!
+    @IBOutlet weak var maskView: UIView!
     
     var notificationToken: NotificationToken?
     
@@ -24,7 +23,6 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        updateUI()
         changeValueFromRealm()
         guard let viewModel = viewModel else { return }
         playVideo(videoId: viewModel.videoId)
@@ -38,11 +36,7 @@ class DetailViewController: BaseViewController {
             case .initial:
                 break
             case .update(_, _, _, _):
-                self.viewModel?.changeLike(completion: { done in
-                    if done {
-                        self.updateUI()
-                    }
-                })
+                self.tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
             case .error(let error):
                 fatalError("\(error)")
             }
@@ -55,28 +49,23 @@ class DetailViewController: BaseViewController {
             guard let self = self else { return }
             if done {
                 self.tableView.reloadData()
-            } else {
-                print("Fail")
+            }
+        }
+        viewModel.checkRating { (done, error) in
+            if done {
+                self.tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
             }
         }
     }
     
     override func setupUI() {
+        maskView.isHidden = true
         tableView.register(withNib: CommentTableViewCell.self)
+        tableView.register(withNib: RatingTableViewCell.self)
+        tableView.register(with: UITableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
-    }
-    
-    private func updateUI() {
-        guard let viewModel = viewModel else { return }
-        channelLabel.text = viewModel.channel
-        titleLabel.text = viewModel.title
-        if viewModel.isLike {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic-like-selected"), style: .done, target: self, action: #selector(likeBarButton))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic-like"), style: .plain, target: self, action: #selector(likeBarButton))
-        }
     }
     
     func playVideo(videoId: String) {
@@ -92,41 +81,90 @@ class DetailViewController: BaseViewController {
     }
     
     @objc private func likeBarButton() {
-//        viewModel?.addToPlayList(completion: { [weak self] (done) in
+//        viewModel?.changePlayList(completion: { [weak self] done in
 //            guard let self = self else { return }
 //            if !done {
 //                self.showErrorAlert(with: "Can not like this video")
 //            }
 //        })
-        viewModel?.changePlayList(completion: { [weak self] done in
-            guard let self = self else { return }
-            if !done {
-                self.showErrorAlert(with: "Can not like this video")
-            }
-        })
     }
     
     //    deinit {
     //        self.notificationToken?.invalidate()
     //    }
+    
+    func showHUB() {
+        maskView.isHidden = false
+    }
+    
+    func endHUB() {
+        maskView.isHidden = true
+    }
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Comment"
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.getNumberOfSection() ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel?.titleOfSection(for: section)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.comment.count ?? 0
+        return viewModel?.numberRowOfSection(at: section) ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(with: CommentTableViewCell.self, indexPath: indexPath)
-        cell.nameAuthLabel.text = viewModel?.getComment(at: indexPath.row).authorDisplayName
-        cell.contentCommentLabel.text = viewModel?.getComment(at: indexPath.row).textDisplay
-        if let url = viewModel?.getComment(at: indexPath.row).authorProfileImageUrl {
-            cell.avatarImageView.setImageWith(urlString: url, index: indexPath.row)
+        if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(with: CommentTableViewCell.self, indexPath: indexPath)
+            cell.nameAuthLabel.text = viewModel?.getComment(at: indexPath.row).authorDisplayName
+            cell.contentCommentLabel.text = viewModel?.getComment(at: indexPath.row).textDisplay
+            if let url = viewModel?.getComment(at: indexPath.row).authorProfileImageUrl {
+                cell.avatarImageView.setImageWith(urlString: url, index: indexPath.row)
+            }
+            return cell
         }
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(with: UITableViewCell.self, indexPath: indexPath)
+            cell.textLabel?.text = viewModel?.title
+            cell.textLabel?.numberOfLines = 0
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(with: RatingTableViewCell.self, indexPath: indexPath)
+        if let videoId = viewModel?.videoId, let rating = viewModel?.rating, let isPlayList = viewModel?.isPlayList {
+            cell.viewModel = RatingCellViewModel(videoId: videoId,rating: rating, isPlayList: isPlayList)
+        }
+        cell.delegate = self
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let viewModel = viewModel, indexPath.row == viewModel.getCommentCount() - 4 && indexPath.section == 1 {
+            viewModel.loadComment(loadMore: true, completed: { [weak self] (done, error) in
+                guard let self = self else { return }
+                if done {
+                    self.tableView.reloadData()
+                } else {
+                    self.showErrorAlert(with: error)
+                }
+            })
+        }
+    }
+}
+
+extension DetailViewController: RatingCellDelegate {
+    func ratingCell(_ cell: RatingTableViewCell, needPerform: RatingTableViewCell.Action, rating: String) {
+        showHUB()
+        viewModel?.ratingVideo(rating: rating, completion: { [weak self] (done, error) in
+            guard let self = self else { return }
+            if done {
+                self.tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+            } else {
+                self.showErrorAlert(with: error)
+            }
+            self.endHUB()
+        })
     }
 }

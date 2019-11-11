@@ -79,10 +79,11 @@ final class HomeViewController: BaseViewController {
     }
     
     override func setupUI() {
+        super.setupUI()
         title = "Home"
         let changeStatusButton = UIBarButtonItem(image: status.image, style: .plain, target: self, action: #selector(changeMode))
         let searchButton = UIBarButtonItem(image: UIImage(named: "ic-search"), style: .plain, target: self, action: #selector(search))
-        navigationItem.rightBarButtonItems = [changeStatusButton, searchButton]
+        navigationItem.rightBarButtonItems! += [changeStatusButton, searchButton]
         
         homeCollectionView.register(withNib: HomeCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeGridCollectionViewCell.self)

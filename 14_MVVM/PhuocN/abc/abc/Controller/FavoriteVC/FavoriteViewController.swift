@@ -47,11 +47,12 @@ class FavoriteViewController: BaseViewController {
     }
     
     override func setupUI() {
+        super.setupUI()
         tableView.register(withNib: FavoriteTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteAllFavoriteVideo))
+        navigationItem.rightBarButtonItems! += [UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteAllFavoriteVideo))]
     }
     
     override func loadData() {
