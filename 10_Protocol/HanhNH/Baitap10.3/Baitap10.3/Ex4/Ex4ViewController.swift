@@ -13,7 +13,7 @@ final class Ex4ViewController: UIViewController {
     private var searchBarLocation: [String] = []
     private var location: [String] = ["Da Nang", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông",
         "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang",
-        "Hòa Bình", "Hưng Yên", "Khánh Hòa",]
+        "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Yen Bai"]
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
