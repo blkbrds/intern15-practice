@@ -39,7 +39,6 @@ final class TinhViewController: UIViewController {
     @objc private func pushToNextView() {
         guard let tinh = tinhSelected else { return }
         let vc = HuyenViewController()
-        vc.huyens = tinh.huyen
         vc.dataSource = self
         navigationController?.pushViewController(vc, animated: true)
     }

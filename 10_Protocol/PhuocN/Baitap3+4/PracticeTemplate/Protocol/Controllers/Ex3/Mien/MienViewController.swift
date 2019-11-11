@@ -28,6 +28,9 @@ final class MienViewController: UIViewController {
         setupNavi()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView(frame: .zero)
+        guard let tinhs = dataSource.ge else {
+            <#statements#>
+        }
     }
     
     private func setupNavi() {
@@ -38,7 +41,6 @@ final class MienViewController: UIViewController {
     @objc private func pushToNextView() {
         if let mien = mienSelected {
             let vc = TinhViewController()
-            vc.tinhs = mien.tinh
             vc.dataSource = self
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -79,7 +81,7 @@ extension MienViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MienViewController: TinhViewControllerDataSource {
-    func getTinhSelected() -> (tinh: String?, huyen: String?) {
+    func getTinhSelected() -> (tinh: String?, huyen: String?) {ß
         return (dataSource?.getMienSelected().tinh, dataSource?.getMienSelected().huyen)
     }
     
