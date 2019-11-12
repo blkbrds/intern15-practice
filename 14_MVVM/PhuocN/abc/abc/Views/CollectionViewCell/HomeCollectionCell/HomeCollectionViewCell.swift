@@ -38,12 +38,11 @@ final class HomeCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradientLayer.locations = [0, 1]
+        gradientLayer.locations = [0, 0.9]
         let width = UIScreen.main.bounds.width - 40
         gradientLayer.frame = CGRect(x: 0, y: 0, width: width, height: width * 0.6)
-        layer.addSublayer(gradientLayer)
+        videoImageView.layer.addSublayer(gradientLayer)
         layer.cornerRadius = 10
-        
         clipsToBounds = true
     }
     
