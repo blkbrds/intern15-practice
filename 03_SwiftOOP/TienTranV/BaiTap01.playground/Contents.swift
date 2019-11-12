@@ -14,21 +14,21 @@ final class PhanSo {
     }
 
     func phepCong(phanSoThuHai: PhanSo) -> PhanSo {
-        let kqTuSo = tuSo * phanSoThuHai.mauSo + phanSoThuHai.tuSo * mauSo
-        let kqMauSo = mauSo * phanSoThuHai.mauSo
-        return PhanSo(tuSo: kqTuSo, mauSo: kqMauSo)
+        let ketQuaTuSo = tuSo * phanSoThuHai.mauSo + phanSoThuHai.tuSo * mauSo
+        let ketQuaMauSo = mauSo * phanSoThuHai.mauSo
+        return PhanSo(tuSo: ketQuaTuSo, mauSo: ketQuaMauSo)
     }
 
     func phepTru(phanSoThuHai: PhanSo) -> PhanSo {
-        let kqTuSo = tuSo * phanSoThuHai.mauSo - phanSoThuHai.tuSo * mauSo
-        let kqMauSo = mauSo * phanSoThuHai.mauSo
-        return PhanSo(tuSo: kqTuSo, mauSo: kqMauSo)
+        let ketQuaTuSo = tuSo * phanSoThuHai.mauSo - phanSoThuHai.tuSo * mauSo
+        let ketQuaMauSo = mauSo * phanSoThuHai.mauSo
+        return PhanSo(tuSo: ketQuaTuSo, mauSo: ketQuaMauSo)
     }
 
     func phepNhan(phanSoThuHai: PhanSo) -> PhanSo {
-        let kqTuSo = tuSo * phanSoThuHai.tuSo
-        let kqMauSo = mauSo * phanSoThuHai.mauSo
-        return PhanSo(tuSo: kqTuSo, mauSo: kqMauSo)
+        let ketQuaTuSo = tuSo * phanSoThuHai.tuSo
+        let ketQuaMauSo = mauSo * phanSoThuHai.mauSo
+        return PhanSo(tuSo: ketQuaTuSo, mauSo: ketQuaMauSo)
     }
 
     func phepChia(phanSoThuHai: PhanSo) -> PhanSo {

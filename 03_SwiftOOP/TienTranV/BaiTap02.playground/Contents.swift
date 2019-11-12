@@ -10,11 +10,11 @@ class DaGiac {
     }
 
     func tinhChuVi() -> Int {
-        var tinhToan = 0
+        var chuVi = 0
         for i in 0..<soCanh {
-            tinhToan += mangKichThuocCanh[i]
+            chuVi += mangKichThuocCanh[i]
         }
-        return tinhToan
+        return chuVi
     }
 
     func kichThuocMoiCanh() -> [String: Int] {
