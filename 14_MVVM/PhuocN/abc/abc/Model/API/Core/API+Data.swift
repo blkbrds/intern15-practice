@@ -22,3 +22,14 @@ extension Data {
         return json
     }
 }
+
+extension Dictionary {
+    func convertToData() -> Data {
+        do {
+            let data = try JSONSerialization.data(withJSONObject: self, options: [])
+            return data
+        } catch {
+            fatalError("JSON casting error")
+        }
+    }
+}

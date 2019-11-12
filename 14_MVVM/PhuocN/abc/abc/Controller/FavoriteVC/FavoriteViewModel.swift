@@ -9,8 +9,25 @@
 import Foundation
 
 class FavoriteViewModel {
+    //MARK: -properties
     var playList: [PlayList] = []
     
+    //MARK: -public func
+    func getAllPlayList() -> [PlayList] {
+        return playList
+    }
+    
+    func getCount() -> Int {
+        return playList.count
+    }
+    
+    func getPlayList(at index: Int) -> PlayList {
+        return playList[index]
+    }
+}
+
+// MARK: - Request Api
+extension FavoriteViewModel {
     func fetchDataFromRealm(comletion: @escaping (Bool) -> ()) {
         let video = RealmManager.shared.fetchObject(type: PlayList.self, completion: { (result) in
             switch result {
@@ -23,18 +40,6 @@ class FavoriteViewModel {
         })
         self.playList = video
         comletion(true)
-    }
-    
-    func getAllVideo() -> [PlayList] {
-        return playList
-    }
-    
-    func getCount() -> Int {
-        return playList.count
-    }
-    
-    func getVideo(at index: Int) -> PlayList {
-        return playList[index]
     }
     
     func deleteAllLikeVideo(completion: @escaping (Bool) -> ()) {

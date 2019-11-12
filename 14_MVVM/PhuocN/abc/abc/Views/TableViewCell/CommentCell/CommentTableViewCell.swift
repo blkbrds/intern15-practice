@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommentTableViewCell: UITableViewCell {
+final class CommentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var contentCommentLabel: UILabel!
     @IBOutlet weak var nameAuthLabel: UILabel!

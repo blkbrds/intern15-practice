@@ -79,7 +79,7 @@ class HomeViewModel {
         self.videos.append(contentsOf: videos)
     }
     
-    func loadAllVideo(completed: @escaping (Bool, String) -> Void) {
+    func loadAllVideo(completed: @escaping completed) {
         let downloadGroup = DispatchGroup()
         var storedError: APIError?
         for region in regions {
@@ -105,34 +105,3 @@ class HomeViewModel {
         }
     }
 }
-
-//func loadData(loadMore: Bool, completed: @escaping (Bool, String) -> Void) {
-//       if !loadMore {
-//           pageNextToken = ""
-//       }
-//       //show HUD
-//       if !isLoadingData {
-//           isLoadingData = true
-//           ApiManager.Video.getVideo(token: pageNextToken, maxResult: 10) { [weak self] (result) in
-//               guard let self = self else { return }
-//               switch result {
-//               case .failure(let error):
-//                   completed(false, error.localizedDescription)
-//                   self.videos = RealmManager.shared.fetchObject(type: Video.self, completion: nil)
-//               case .success(let videoResult):
-//                   if !loadMore {
-//                       self.loadAndSaveDataToRealm(with: videoResult.videos)
-//                   } else {
-//                       self.loadMoreAndSaveToRealm(with: videoResult.videos)
-//                   }
-//                   self.videos = RealmManager.shared.fetchObject(type: Video.self, completion: nil)
-//                   self.pageNextToken = videoResult.pageNextToken
-//                   completed(true, "")
-//               }
-//               self.isLoadingData = false
-//           }
-//       } else {
-//           // show HUD
-//           print("Loading")
-//       }
-//   }

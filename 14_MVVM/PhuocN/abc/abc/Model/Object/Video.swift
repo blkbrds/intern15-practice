@@ -16,7 +16,6 @@ class Video: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var channel: String = ""
     @objc dynamic var published: String = ""
-    @objc dynamic var isFavorite: Bool = false
     @objc dynamic var regionCode: String = ""
     
     required convenience init(dict: [String: Any]) {

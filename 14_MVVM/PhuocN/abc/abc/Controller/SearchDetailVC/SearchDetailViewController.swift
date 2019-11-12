@@ -8,15 +8,17 @@
 
 import UIKit
 
-class SearchDetailViewController: BaseViewController {
+final class SearchDetailViewController: BaseViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
+    private var loadingData: Bool = false
     var viewModel: SearchDetailViewModel?
     enum Action {
         case loadData
         case loadMore
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,20 +33,20 @@ class SearchDetailViewController: BaseViewController {
     
     private func updateUI(with action: Action) {
         switch action {
-        case .loadData:
+        case .loadData, .loadMore:
             tableView.reloadData()
-        case .loadMore:
-            tableView.reloadData()
-        }
+        } 
     }
     
     override func loadData() {
         viewModel?.loadSearchVideo(loadMore: false) { [weak self] (done, error) in
             guard let self = self else { return }
+            self.loadingData = true
             if !done {
                 self.showErrorAlert(with: error)
             } else {
-                self.tableView.reloadData()
+                self.updateUI(with: .loadData)
+                self.loadingData = false
             }
         }
     }
@@ -65,13 +67,19 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let viewModel = viewModel, indexPath.row == viewModel.getCount() - 4 {
-            viewModel.loadSearchVideo(loadMore: true) { [weak self] done, error  in
-                guard let self = self else { return }
-                if done {
-                    tableView.reloadData()
-                } else {
-                    self.showErrorAlert(with: error)
+        if let viewModel = viewModel {
+            if !loadingData && indexPath.row == viewModel.getCount() - 2 {
+                loadingData = true
+                viewModel.loadSearchVideo(loadMore: true) { [weak self] done, error  in
+                    guard let self = self else { return }
+                    if done {
+                        self.updateUI(with: .loadMore)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                            self.loadingData = false
+                        }
+                    } else {
+                        self.showErrorAlert(with: error)
+                    }
                 }
             }
         }
@@ -79,5 +87,13 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailViewController()
+        if let viewModel = viewModel {
+            detailVC.viewModel = DetailViewModel(video: viewModel.getVideo(at: indexPath.row))
+        }
+        present(detailVC, animated: true, completion: nil)
     }
 }

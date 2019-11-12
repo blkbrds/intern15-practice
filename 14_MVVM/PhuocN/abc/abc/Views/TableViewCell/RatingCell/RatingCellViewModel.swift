@@ -11,9 +11,16 @@ import Foundation
 final class RatingCellViewModel {
     var rating: (like: Bool, disLike: Bool)
     var isPlayList: Bool
-    let videoId: String
+    let video: Video?
+
+    private var id: String {
+        if let video = video {
+            return video.id
+        }
+        return ""
+    }
     
-    init(videoId: String,rating: String, isPlayList: Bool) {
+    init(video: Video, rating: String, isPlayList: Bool) {
         switch rating {
         case "like":
             self.rating = (true, false)
@@ -23,7 +30,7 @@ final class RatingCellViewModel {
             self.rating = (false, false)
         }
         self.isPlayList = isPlayList
-        self.videoId = videoId
+        self.video = video
     }
     
     func changePlayList(completion: @escaping (Bool, String) -> ()) {
@@ -35,7 +42,7 @@ final class RatingCellViewModel {
     }
     
     private func removeToPlayList(completion: @escaping (Bool, String) -> ()) {
-        if let playList = RealmManager.shared.realm.objects(PlayList.self).filter({ $0.id == self.videoId }).first {
+        if let video = video, let playList = RealmManager.shared.realm.objects(PlayList.self).filter({ $0.id == video.id }).first {
             RealmManager.shared.deleteObject(with: playList) { result in
                 switch result {
                 case .sucessful:
@@ -48,7 +55,7 @@ final class RatingCellViewModel {
     }
     
     private func addToPlayList(completion: @escaping (Bool, String) -> ()) {
-        if let video = RealmManager.shared.realm.objects(Video.self).filter({ $0.id == self.videoId }).first {
+        if let video = video {
             let playList = PlayList(video: video)
             RealmManager.shared.addObject(with: playList) { (result) in
                 switch result {

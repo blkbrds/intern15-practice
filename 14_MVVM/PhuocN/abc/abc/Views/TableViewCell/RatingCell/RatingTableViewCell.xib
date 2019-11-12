@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vsc-et-plg">
-                        <rect key="frame" x="10" y="10" width="152" height="44"/>
+                        <rect key="frame" x="10" y="10" width="206" height="44"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-Lt-Ma5">
                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -50,6 +50,16 @@
                                     <action selector="addPlayListTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dqT-mI-Hca"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-oy-5em">
+                                <rect key="frame" x="162" y="0.0" width="44" height="44"/>
+                                <color key="tintColor" red="0.12941176469999999" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="square.and.pencil" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addComment:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CcJ-GA-yb8"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -73,5 +83,6 @@
         <image name="bag.fill.badge.plus" catalog="system" width="64" height="58"/>
         <image name="ic-dislike" width="25" height="25"/>
         <image name="ic-like" width="25" height="25"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
 </document>

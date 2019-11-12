@@ -10,6 +10,7 @@ import UIKit
 
 final class HomeSlideCollectionViewCell: UICollectionViewCell {
     
+    //MARK: -IBOutlet
     @IBOutlet private weak var pageControll: UIPageControl!
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -19,10 +20,7 @@ final class HomeSlideCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+    //MARK: -config
     func updateUI() {
         collectionView.register(withNib: SlideCollectionViewCell.self)
         collectionView.dataSource = self

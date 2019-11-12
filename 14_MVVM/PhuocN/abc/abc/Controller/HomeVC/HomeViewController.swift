@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 
+//MARK: -enum
 enum HomeShowStatus {
     case grid
     case row
@@ -43,8 +44,10 @@ enum HomeShowStatus {
 
 final class HomeViewController: BaseViewController {
     
+    //MARK: -IBOulet
     @IBOutlet private weak var homeCollectionView: UICollectionView!
     
+    //MARK: -Properties
     enum Action {
         case refresh
         case loadMore
@@ -60,12 +63,14 @@ final class HomeViewController: BaseViewController {
     private var viewModel = HomeViewModel()
     private var notificationToken: NotificationToken?
     
+    //MARK: -lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         print(RealmManager.shared.realm.configuration.fileURL?.path)
         loadData()
     }
     
+    //MARK: -config
     override func loadData() {
         viewModel.loadAllVideo { [weak self] done, error in
             guard let self = self else { return }
@@ -117,6 +122,7 @@ final class HomeViewController: BaseViewController {
         }
     }
     
+    //MARK: -Private action
     @objc private func changeMode() {
         switch status {
         case .grid:
@@ -139,16 +145,17 @@ final class HomeViewController: BaseViewController {
     
     @objc private func search() {
         let searchVC = SearchViewController()
-        //present(searchVC, animated: true, completion: nil)
         navigationController?.pushViewController(searchVC, animated: true)
     }
     
+    //MARK: -alert action
     override func showErrorAlert(with message: String) {
         super.showErrorAlert(with: message)
         homeCollectionView.refreshControl?.endRefreshing()
     }
 }
 
+//MARK: -colletionView delegate, datasource
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -175,12 +182,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let video = viewModel.getVideo(at: indexPath),
-            let cell = collectionView.cellForItem(at: indexPath) as? HomeCollectionViewCell {
+        if let video = viewModel.getVideo(at: indexPath) {
             let detailVC = DetailViewController()
-            detailVC.viewModel = DetailViewModel(video: video, imageVideo: cell.videoImageView.image!)
-            //present(detailVC, animated: true, completion: nil)
-            navigationController?.pushViewController(detailVC, animated: true)
+            detailVC.viewModel = DetailViewModel(video: video)
+            present(detailVC, animated: true, completion: nil)
         }
     }
     

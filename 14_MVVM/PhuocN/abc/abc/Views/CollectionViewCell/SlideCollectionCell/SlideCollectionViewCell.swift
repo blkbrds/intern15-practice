@@ -11,11 +11,7 @@ import UIKit
 final class SlideCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+  
     func setupImage(with image: UIImage?) {
         self.imageView.image = image
     }

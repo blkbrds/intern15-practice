@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController {
-    @IBOutlet weak var tableView: UITableView!
+final class SearchViewController: BaseViewController {
+    
+    @IBOutlet private weak var tableView: UITableView!
     
     private var searchKeys: [String] {
         get {
@@ -22,7 +23,6 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func setupUI() {
@@ -44,6 +44,7 @@ class SearchViewController: BaseViewController {
     }
 }
 
+//MARK: -tableview datasource, delegate
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchs.count
@@ -67,6 +68,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: -searchBar delegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }

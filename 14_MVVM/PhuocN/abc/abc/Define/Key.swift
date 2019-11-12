@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias completed = (Bool, String) -> ()
+
 struct Key {
-    static let youtubeKey = "AIzaSyDIJ9UssMoN9IfR9KnTc4lb3B9NtHpRF-c"
+    static let youtubeKey = "AIzaSyDU2Z_5SBOjklJOYQ-f8RAzvvHUVDyCi_g"
 }

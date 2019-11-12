@@ -16,112 +16,22 @@ class DetailViewModel {
     let videoId: String
     var title: String
     var channel: String
-    var imageVideo: UIImage
+    let video: Video
     var comment: [Comment] = []
     var isLoadingData = false
     var pageNextToken = ""
     var rating: String?
     
-    init(video: Video, imageVideo: UIImage) {
+    init(video: Video) {
         self.channel = video.channel
         self.title = video.title
         self.videoId = video.id
-        self.imageVideo = imageVideo
+        self.video = video
     }
     
     func getComment(at index: Int) -> Comment {
         return comment[index]
     }
-    
-    func checkRating(completed: @escaping (Bool, String) -> Void) {
-        ApiManager.Rating.getRating(videoId: videoId) { (ratingResult, error) in
-            if let rating = ratingResult {
-                self.rating = rating
-                completed(true, "")
-            } else {
-                completed(false, error)
-            }
-        }
-    }
-    
-    func loadComment(loadMore: Bool, completed: @escaping (Bool, String) -> Void) {
-        if !loadMore {
-            pageNextToken = ""
-        }
-        //isLoadingData = false
-        if !isLoadingData {
-            isLoadingData = true
-            ApiManager.Comment.getComment(videoId: videoId, pageToken: pageNextToken, maxResults: 10) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .failure(let error):
-                    completed(false, error.localizedDescription)
-                case .success(let commentResult):
-                    if !loadMore {
-                        self.comment.removeAll()
-                    }
-                    self.comment.append(contentsOf: commentResult.comment)
-                    self.pageNextToken = commentResult.pageToken
-                    print(self.pageNextToken)
-                    completed(true, "")
-                }
-                self.isLoadingData = false
-            }
-        } else {
-            // show HUD
-            print("Loading")
-        }
-    }
-    
-//    func changePlayList(completion: @escaping (Bool) -> ()) {
-//        if !isPlayList {
-//            addToPlayList(completion: completion)
-//        } else {
-//            removeToPlayList(completion: completion)
-//        }
-//    }
-//
-//    func removeToPlayList(completion: @escaping (Bool) -> ()) {
-//        if let playList = RealmManager.shared.realm.objects(PlayList.self).filter({ $0.id == self.videoId }).first {
-//            RealmManager.shared.deleteObject(with: playList) { result in
-//                switch result {
-//                case .sucessful:
-//                    completion(true)
-//                case .failture(let error):
-//                    completion(false)
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-//    }
-//
-//    func addToPlayList(completion: @escaping (Bool) -> ()) {
-//        if let video = RealmManager.shared.realm.objects(Video.self).filter({ $0.id == self.videoId }).first {
-//            let playList = PlayList(video: video)
-//            RealmManager.shared.addObject(with: playList) { (result) in
-//                switch result {
-//                case .sucessful:
-//                    completion(true)
-//                case .failture(let error):
-//                    completion(false)
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-//    }
-//
-    func playVideo(completion: (Bool, String, URLRequest?) -> ()) {
-        guard let url = URL(string: "https://www.youtube.com/embed/\(videoId)") else {
-            completion(false, "Can load this video", nil)
-            return
-        }
-        completion(true, "", URLRequest(url: url))
-    }
-//
-//    func changeLike(completion: (Bool) -> ()) {
-//        isPlayList = !isPlayList
-//        completion(true)
-//    }
     
     func getNumberOfSection() -> Int {
         return 2
@@ -142,20 +52,88 @@ class DetailViewModel {
         return nil
     }
     
-    func ratingVideo(rating: String, completion: @escaping (Bool, String) -> ()) {
+    
+    
+    func getCommentCount() -> Int {
+        return comment.count
+    }
+}
+
+//MARK: -Api request
+extension DetailViewModel {
+    
+    //MARK: -comment
+    func loadComment(loadMore: Bool, completed: @escaping completed) {
+        if !loadMore {
+            pageNextToken = ""
+        }
+        if !isLoadingData {
+            isLoadingData = true
+            ApiManager.Comment.getComment(videoId: videoId, pageToken: pageNextToken, maxResults: 10) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .failure(let error):
+                    completed(false, error.localizedDescription)
+                case .success(let commentResult):
+                    if !loadMore {
+                        self.comment.removeAll()
+                    }
+                    self.comment.append(contentsOf: commentResult.comment)
+                    self.pageNextToken = commentResult.pageToken
+                    completed(true, "")
+                }
+                self.isLoadingData = false
+            }
+        } else {
+            // show HUD
+            print("Loading")
+        }
+    }
+    
+    func addComment(mess: String, completion: @escaping completed) {
+        ApiManager.Comment.addComment(videoId: videoId, mess: mess) { result in
+            switch result {
+            case .failure(let error):
+                completion(false, error.localizedDescription)
+            case .success(let commentResult):
+                if let comment = commentResult.comment.first {
+                    self.comment.insert(comment, at: 0)
+                    completion(true, "")
+                } else {
+                    completion(false, "Comment is not load")
+                }
+            }
+        }
+    }
+    
+    //MARK: -rating
+    func ratingVideo(rating: String, completion: @escaping completed) {
         ApiManager.Rating.rating(videoId: videoId, rating: rating) { done, error  in
             if done {
                 self.rating = rating
-                print(rating, "rating")
                 completion(true, "")
             } else {
-                self.rating = rating
                 completion(false, error)
             }
         }
     }
     
-    func getCommentCount() -> Int {
-        return comment.count
+    func checkRating(completed: @escaping completed) {
+          ApiManager.Rating.getRating(videoId: videoId) { (ratingResult, error) in
+              if let rating = ratingResult {
+                  self.rating = rating
+                  completed(true, "")
+              } else {
+                  completed(false, error)
+              }
+          }
+      }
+    
+    func playVideo(completion: (Bool, String, URLRequest?) -> ()) {
+        guard let url = URL(string: "https://www.youtube.com/embed/\(videoId)") else {
+            completion(false, "Can load this video", nil)
+            return
+        }
+        completion(true, "", URLRequest(url: url))
     }
 }

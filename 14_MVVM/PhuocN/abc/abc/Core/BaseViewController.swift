@@ -27,7 +27,6 @@ class BaseViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     
     func setupUI() {
         let rightBarButton = UIBarButtonItem()
-        signInButton.bounds.size = CGSize(width: 30, height: 30)
         rightBarButton.customView = signInButton
         navigationItem.rightBarButtonItem = rightBarButton
     }
