@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		F0C4CDDE237AB7090068765D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4CDDD237AB7090068765D /* AppDelegate.swift */; };
 		F0C4CDE0237AB7090068765D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4CDDF237AB7090068765D /* SceneDelegate.swift */; };
-		F0C4CDE2237AB7090068765D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4CDE1237AB7090068765D /* ViewController.swift */; };
-		F0C4CDE5237AB7090068765D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C4CDE3237AB7090068765D /* Main.storyboard */; };
 		F0C4CDE7237AB70A0068765D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C4CDE6237AB70A0068765D /* Assets.xcassets */; };
 		F0C4CDEA237AB70A0068765D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C4CDE8237AB70A0068765D /* LaunchScreen.storyboard */; };
+		F0C4CDF3237AB77B0068765D /* SliderBackgroudColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4CDF1237AB77B0068765D /* SliderBackgroudColorViewController.swift */; };
+		F0C4CDF4237AB77B0068765D /* SliderBackgroudColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C4CDF2237AB77B0068765D /* SliderBackgroudColorViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F0C4CDDA237AB7090068765D /* BaiTap04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTap04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C4CDDD237AB7090068765D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C4CDDF237AB7090068765D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F0C4CDE1237AB7090068765D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F0C4CDE4237AB7090068765D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0C4CDE6237AB70A0068765D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0C4CDE9237AB70A0068765D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0C4CDEB237AB70B0068765D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0C4CDF1237AB77B0068765D /* SliderBackgroudColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBackgroudColorViewController.swift; sourceTree = "<group>"; };
+		F0C4CDF2237AB77B0068765D /* SliderBackgroudColorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderBackgroudColorViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +58,11 @@
 			children = (
 				F0C4CDDD237AB7090068765D /* AppDelegate.swift */,
 				F0C4CDDF237AB7090068765D /* SceneDelegate.swift */,
-				F0C4CDE1237AB7090068765D /* ViewController.swift */,
-				F0C4CDE3237AB7090068765D /* Main.storyboard */,
 				F0C4CDE6237AB70A0068765D /* Assets.xcassets */,
 				F0C4CDE8237AB70A0068765D /* LaunchScreen.storyboard */,
 				F0C4CDEB237AB70B0068765D /* Info.plist */,
+				F0C4CDF1237AB77B0068765D /* SliderBackgroudColorViewController.swift */,
+				F0C4CDF2237AB77B0068765D /* SliderBackgroudColorViewController.xib */,
 			);
 			path = BaiTap04;
 			sourceTree = "<group>";
@@ -126,8 +126,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C4CDEA237AB70A0068765D /* LaunchScreen.storyboard in Resources */,
+				F0C4CDF4237AB77B0068765D /* SliderBackgroudColorViewController.xib in Resources */,
 				F0C4CDE7237AB70A0068765D /* Assets.xcassets in Resources */,
-				F0C4CDE5237AB7090068765D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +138,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0C4CDE2237AB7090068765D /* ViewController.swift in Sources */,
 				F0C4CDDE237AB7090068765D /* AppDelegate.swift in Sources */,
 				F0C4CDE0237AB7090068765D /* SceneDelegate.swift in Sources */,
+				F0C4CDF3237AB77B0068765D /* SliderBackgroudColorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F0C4CDE3237AB7090068765D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0C4CDE4237AB7090068765D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F0C4CDE8237AB70A0068765D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
