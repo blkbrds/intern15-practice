@@ -26,18 +26,18 @@ enum HomeShowStatus {
     var sectionInset: UIEdgeInsets {
         switch self {
         case .grid:
-            return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         case .row:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            return UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
         }
     }
     
     var minimumSpacingOfItem: CGFloat {
         switch self {
         case .grid:
-            return 20
+            return 10
         case .row:
-            return 0
+            return 20
         }
     }
 }
@@ -194,7 +194,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         case .grid:
             return CGSize(width: (collectionView.bounds.width - 40) / 2, height: 300)
         case .row:
-            return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.width * 0.95)
+            return CGSize(width: collectionView.bounds.width - 40, height: collectionView.bounds.width * 0.5)
         }
     }
     
@@ -203,14 +203,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return status.sectionInset
+        status.sectionInset
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let headerCell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, with: HomeHeaderCollectionViewCell.self, indexPath: indexPath)
-            headerCell.backgroundColor = UIColor.darkGray
             headerCell.titleLabel.text = viewModel.getRegionTitle(at: indexPath.section)
             return headerCell
         default:
@@ -220,5 +219,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 70)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        navigationScroll(with: scrollView)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 1) {
+            cell.alpha = 1
+        }
     }
 }

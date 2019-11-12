@@ -11,5 +11,6 @@ import UIKit
 
 extension App.Color {
     static let mainColor = UIColor(displayP3Red: 33/255, green: 177/255, blue: 243/255, alpha: 1)
-    static let backgroudColor = UIColor(white: 50/255, alpha: 1)
+    static let backgroudColor = UIColor(named: "backgroundcolor")
+    static let viewColor = UIColor(named: "viewColor")
 }

@@ -16,7 +16,6 @@ protocol HomeCollectionViewCellDelegate: class {
 
 final class HomeCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
     
-    @IBOutlet private weak var distanceLabel: UILabel!
     @IBOutlet private weak var pusblishedLabel: UILabel!
     @IBOutlet private weak var channelLabel: UILabel!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -36,6 +35,16 @@ final class HomeCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
     
     private func setupUI() {
         backgroundColor = App.Color.backgroudColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0, 1]
+        let width = UIScreen.main.bounds.width - 40
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: width, height: width * 0.6)
+        layer.addSublayer(gradientLayer)
+        layer.cornerRadius = 10
+        
+        clipsToBounds = true
     }
     
     private func updateUI() {
@@ -43,6 +52,5 @@ final class HomeCollectionViewCell: UICollectionViewCell, HomeCollectionCell {
         channelLabel.text = viewModel.channel
         titleLabel.text = viewModel.title
         pusblishedLabel.text = viewModel.published
-       
     }
 }

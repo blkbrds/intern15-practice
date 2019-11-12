@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,18 +18,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-l2-Dcw">
-                        <rect key="frame" x="20" y="20" width="280" height="115"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="20" y="65.5" width="280" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                        <color key="textColor" name="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" name="sectionCollectionColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="CNj-l2-Dcw" secondAttribute="bottom" constant="20" id="Kof-Wk-hac"/>
-                <constraint firstAttribute="trailing" secondItem="CNj-l2-Dcw" secondAttribute="trailing" constant="20" id="Lq4-FY-T2q"/>
-                <constraint firstItem="CNj-l2-Dcw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="SK5-65-Pjv"/>
-                <constraint firstItem="CNj-l2-Dcw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="lEl-oL-y9J"/>
+                <constraint firstItem="CNj-l2-Dcw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="5uy-dL-5tn"/>
+                <constraint firstItem="CNj-l2-Dcw" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lyL-jO-Zbj"/>
+                <constraint firstAttribute="trailing" secondItem="CNj-l2-Dcw" secondAttribute="trailing" constant="20" id="y1v-r3-4Ff"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="320" height="155"/>
@@ -38,4 +39,12 @@
             <point key="canvasLocation" x="40.579710144927539" y="130.91517857142856"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="sectionCollectionColor">
+            <color red="0.17299999296665192" green="0.17299999296665192" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -54,6 +54,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(with: UITableViewCell.self, indexPath: indexPath)
         cell.textLabel?.text = searchs[indexPath.row]
         cell.accessoryType = .disclosureIndicator
+        cell.backgroundColor = .clear
         return cell
     }
     

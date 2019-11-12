@@ -19,7 +19,6 @@ final class SearchDetailViewController: BaseViewController {
         case loadMore
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()

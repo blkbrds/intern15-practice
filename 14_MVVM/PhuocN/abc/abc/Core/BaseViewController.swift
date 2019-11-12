@@ -29,6 +29,7 @@ class BaseViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         let rightBarButton = UIBarButtonItem()
         rightBarButton.customView = signInButton
         navigationItem.rightBarButtonItem = rightBarButton
+        view.backgroundColor = App.Color.viewColor
     }
     
     func loadData() {}
@@ -94,5 +95,12 @@ class BaseViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         )
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func navigationScroll(with scrollView: UIScrollView) {
+        let safeAreaTop = UIApplication.shared.windows.filter { $0.isKeyWindow }.first?.safeAreaInsets.top ?? 0
+        let magicalSafeAreaTop: CGFloat = safeAreaTop + (navigationController?.navigationBar.frame.height ?? 0)
+        let offSet = scrollView.contentOffset.y + magicalSafeAreaTop
+        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offSet))
     }
 }

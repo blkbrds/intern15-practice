@@ -145,4 +145,16 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         detailVC.viewModel = DetailViewModel(video: viewModel.getPlayList(at: indexPath.row).convertToVideo())
         present(detailVC, animated: true, completion: nil)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        navigationScroll(with: scrollView)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rotation = CATransform3DTranslate(CATransform3DIdentity, -UIScreen.main.bounds.width, 10, 0)
+        cell.layer.transform = rotation
+        UIView.animate(withDuration: 1) {
+            cell.layer.transform = CATransform3DIdentity
+        }
+    }
 }
