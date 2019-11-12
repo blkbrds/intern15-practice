@@ -27,15 +27,18 @@ final class DistrictViewController: UIViewController {
         setupNavi()
         setUpUI()
     }
+    
     private func setUpUI() {
         districtTableView.register(UITableViewCell.self, forCellReuseIdentifier: "distrctCell")
     }
+    
     private func setupNavi() {
         title = "Tỉnh"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneDistrict))
 
 
     }
+    
     @objc func doneDistrict() {
         guard let navigation = navigationController else { return }
         for vc in navigation.viewControllers {
@@ -45,6 +48,7 @@ final class DistrictViewController: UIViewController {
         }
     }
 }
+
 extension DistrictViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return huyens.count

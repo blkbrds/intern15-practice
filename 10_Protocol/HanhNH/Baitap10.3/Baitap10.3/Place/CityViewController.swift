@@ -11,9 +11,11 @@ protocol CityViewControllerDataSource: class {
     func getRegion() -> String?
     func getTinhSelected() -> (tinh: String?, huyen: String?)
 }
+
 final class CityViewController: UIViewController {
 
     @IBOutlet weak var citysTableView: UITableView!
+    
     weak var dataSource: CityViewControllerDataSource?
     var citys: [Tinh] = []
     private var citysDistrict: Tinh?
@@ -75,6 +77,7 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
+
 extension CityViewController: DistrctViewControllerDataSource {
     func getRegionCity() -> (mien: String?, tinh: String?) {
         return (dataSource?.getRegion(), citysDistrict?.name)

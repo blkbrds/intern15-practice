@@ -16,6 +16,7 @@ final class RegionViewController: UIViewController {
     private var regions: [Region] = location
     private var regionSelected: Region?
     weak var dataSource: RegionViewControllerDataSource?
+    
     @IBOutlet weak var regionTabveView: UITableView!
 
     override func viewDidLoad() {
@@ -25,16 +26,19 @@ final class RegionViewController: UIViewController {
         setupNavi()
         setupUI()
     }
+    
     private func setupUI() {
         regionTabveView.register(UITableViewCell.self, forCellReuseIdentifier: "regionCell")
         regionTabveView.dataSource = self
     }
+    
     private func setupNavi() {
         title = "Miền"
         let tinhButton = UIBarButtonItem(title: "Tỉnh", style: .plain, target: self, action: #selector(tinhRegion))
         navigationItem.rightBarButtonItem = tinhButton
 
     }
+    
     @objc func tinhRegion() {
         if let mien = regionSelected {
             let vc = CityViewController()
@@ -45,6 +49,7 @@ final class RegionViewController: UIViewController {
 
     }
 }
+
 extension RegionViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

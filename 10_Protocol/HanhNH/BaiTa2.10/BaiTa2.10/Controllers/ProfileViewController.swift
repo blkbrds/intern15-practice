@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var userNameTextField: UITextField!

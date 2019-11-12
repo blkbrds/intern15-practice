@@ -43,6 +43,7 @@ final class PlaceViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
 extension PlaceViewController: RegionViewControllerDataSource {
     func getRegionSelected() -> (mien: String?, tinh: String?, huyen: String?) {
         return(mienLabel.text, tinhLabel.text, huyenLabel.text)

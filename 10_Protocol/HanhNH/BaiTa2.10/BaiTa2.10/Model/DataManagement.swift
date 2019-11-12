@@ -13,7 +13,7 @@ enum key: String {
 }
 
 class DataManagement {
-    
+
     public static var share: DataManagement = {
         let dataManagement = DataManagement()
         return dataManagement
@@ -21,7 +21,7 @@ class DataManagement {
     
     private init() {}
     
-    func getUser(fileName: String, type: String) -> [User] {
+    func getUsers(fileName: String, type: String) -> [User] {
         guard let arry = NSArray(contentsOfFile:getFileDocumentPath(fileName: fileName, type: type) ) else {return []}
         var users: [User] = []
         for item in arry {
@@ -33,6 +33,7 @@ class DataManagement {
         }
         return users
     }
+    
     func getFileDocumentPath(fileName: String, type: String) -> String {
         guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return "" }
         let url = NSURL(fileURLWithPath: path)
@@ -50,6 +51,7 @@ class DataManagement {
             return (Bundle.main.path(forResource: fileName, ofType: type)) ?? ""
         }
     }
+    
     func preparePlistForObject(forResource: String, ofType: String, withURL plistURL: String) {
         guard let rootPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, .userDomainMask, true).first else { return }
         let plistPathInDoc = rootPath.appendingFormat(plistURL)
@@ -62,6 +64,7 @@ class DataManagement {
             }
         }
     }
+    
     func writePlistToList(user: User, username: String) {
         guard let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return }
             let path = documentDirectory.appending("/Property.plist")

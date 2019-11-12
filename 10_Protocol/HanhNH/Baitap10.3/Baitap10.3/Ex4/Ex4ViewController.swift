@@ -14,23 +14,26 @@ final class Ex4ViewController: UIViewController {
     private var location: [String] = ["Da Nang", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông",
         "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang",
         "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Yen Bai"]
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         setUpUI()
-        tableView.dataSource = self
-        tableView.delegate = self
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
         searchBarLocation = location
-        searchBar.delegate = self
-
     }
+    
     func setUpUI() {
         title = "Ex4"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Ex4Cell")
+        tableView.dataSource = self
+        tableView.delegate = self
+         searchBar.delegate = self
     }
 }
+
 extension Ex4ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchBarLocation.count
@@ -45,7 +48,9 @@ extension Ex4ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
 }
+
 extension Ex4ViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let upperText = searchText.uppercased()
