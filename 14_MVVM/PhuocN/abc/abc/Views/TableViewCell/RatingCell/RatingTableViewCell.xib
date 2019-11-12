@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,7 +70,7 @@
                     <constraint firstItem="vsc-et-plg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="IsK-U4-UxF"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="backgroundcolor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addPlayListButton" destination="G6A-pN-hpm" id="ydj-16-Y03"/>
@@ -84,5 +85,8 @@
         <image name="ic-dislike" width="25" height="25"/>
         <image name="ic-like" width="25" height="25"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+        <namedColor name="backgroundcolor">
+            <color red="0.28200000524520874" green="0.28200000524520874" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
