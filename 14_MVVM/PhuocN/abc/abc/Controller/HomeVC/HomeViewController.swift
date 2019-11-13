@@ -185,6 +185,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if let video = viewModel.getVideo(at: indexPath) {
             let detailVC = DetailViewController()
             detailVC.viewModel = DetailViewModel(video: video)
+            if #available(iOS 13.0, *) {
+               if detailVC.modalPresentationStyle == .automatic {
+                 detailVC.modalPresentationStyle = .fullScreen
+               }
+            }
+            //detailVC.modalPresentationStyle = .fullScreen
             present(detailVC, animated: true, completion: nil)
         }
     }

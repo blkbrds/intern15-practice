@@ -46,8 +46,6 @@ class DetailViewModel {
         return nil
     }
     
-    
-    
     func getCommentCount() -> Int {
         return comment.count
     }

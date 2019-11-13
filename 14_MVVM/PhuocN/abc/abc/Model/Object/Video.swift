@@ -15,7 +15,7 @@ class Video: Object {
     @objc dynamic var imageURL: String = ""
     @objc dynamic var title: String = ""
     @objc dynamic var channel: String = ""
-    @objc dynamic var published: String = ""
+    @objc dynamic var published = Date()
     @objc dynamic var regionCode: String = ""
     
     required convenience init(dict: [String: Any]) {
@@ -23,10 +23,13 @@ class Video: Object {
         self.title = dict["title"] as? String ?? ""
         self.imageURL = dict["imageURL"] as? String ?? ""
         self.channel = dict["channelTitle"] as? String ?? ""
-        self.published = dict["publishedAt"] as? String ?? ""
         self.id = dict["id"] as? String ?? ""
         self.regionCode = dict["region"] as? String ?? ""
+        if let dateString = dict["publishedAt"] as? String, let date = dateString.convertToDate() {
+            self.published = date
+        }
     }
+    
     
     override class func primaryKey() -> String? {
         return "id"

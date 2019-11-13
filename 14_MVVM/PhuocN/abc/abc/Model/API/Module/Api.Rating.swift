@@ -47,6 +47,7 @@ extension ApiManager.Rating {
             switch result {
             case .failure(let error):
                 completion(false, error.localizedDescription)
+                print(error.localizedDescription)
             case .success(_):
                 completion(true, "")
             }

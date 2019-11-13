@@ -14,7 +14,7 @@ final class PlayList: Object {
     @objc dynamic var imageURL: String = ""
     @objc dynamic var title: String = ""
     @objc dynamic var channel: String = ""
-    @objc dynamic var published: String = ""
+    @objc dynamic var published: Date = Date()
     
     required convenience init(video: Video) {
         self.init(value: video)

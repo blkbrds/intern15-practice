@@ -103,4 +103,8 @@ class BaseViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         let offSet = scrollView.contentOffset.y + magicalSafeAreaTop
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offSet))
     }
+    
+    @objc func dismiss(completion: (() -> ())? = nil) {
+        dismiss(animated: true, completion: completion)
+    }
 }

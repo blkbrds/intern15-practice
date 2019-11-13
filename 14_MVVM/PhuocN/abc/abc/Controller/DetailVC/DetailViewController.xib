@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="abc" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="vtl-x2-ulR" id="54V-nJ-u49"/>
                 <outlet property="commentTextField" destination="A95-1v-MRK" id="bJn-LK-M4E"/>
                 <outlet property="maskView" destination="BMq-Rz-aYu" id="QCH-B2-Cu1"/>
                 <outlet property="tableView" destination="iXH-lM-mD9" id="aBs-dX-jRE"/>
@@ -36,6 +37,15 @@
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtl-x2-ulR">
+                    <rect key="frame" x="10" y="54" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vtl-x2-ulR" secondAttribute="height" id="D9H-pv-dlk"/>
+                        <constraint firstAttribute="height" constant="30" id="OYl-3A-d8G"/>
+                    </constraints>
+                    <color key="tintColor" red="0.12941176469999999" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="chevron.left" catalog="system"/>
+                </button>
                 <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMq-Rz-aYu">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -59,6 +69,7 @@
                 <constraint firstItem="iXH-lM-mD9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ISN-9g-MjC"/>
                 <constraint firstItem="A95-1v-MRK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="IXq-yO-HPZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iXH-lM-mD9" secondAttribute="bottom" id="IhE-Js-HQR"/>
+                <constraint firstItem="vtl-x2-ulR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="KoI-2v-Zea"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iXH-lM-mD9" secondAttribute="trailing" id="MA3-am-K7m"/>
                 <constraint firstItem="iXH-lM-mD9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="R8e-cc-w73"/>
                 <constraint firstItem="Qpg-V5-MDm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Sip-9n-SfF"/>
@@ -69,6 +80,7 @@
                 <constraint firstItem="A95-1v-MRK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="bgV-qy-T1m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BMq-Rz-aYu" secondAttribute="bottom" id="fcj-Ae-H04"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BMq-Rz-aYu" secondAttribute="trailing" id="hQT-x6-lt8"/>
+                <constraint firstItem="vtl-x2-ulR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kzY-YD-Sa5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A95-1v-MRK" secondAttribute="trailing" constant="10" id="ta3-q1-9g1"/>
                 <constraint firstItem="BMq-Rz-aYu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vbt-My-neG"/>
             </constraints>
@@ -76,4 +88,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
         </view>
     </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="46" height="64"/>
+    </resources>
 </document>

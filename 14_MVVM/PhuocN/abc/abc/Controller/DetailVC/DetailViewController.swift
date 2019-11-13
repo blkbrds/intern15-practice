@@ -17,6 +17,7 @@ class DetailViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var webKit: WKWebView!
     @IBOutlet private weak var maskView: UIView!
+    @IBOutlet private weak var backButton: UIButton!
     
     //MARK: -Properties
     enum Action {
@@ -36,7 +37,6 @@ class DetailViewController: BaseViewController {
         loadData()
         changeValueFromRealm()
         playVideo()
-        print("id -->", viewModel?.video.title, viewModel?.isPlayList)
     }
     
     //MARK: -Config
@@ -53,6 +53,10 @@ class DetailViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
+        backButton.addTarget(self, action: #selector(dismiss(animated:completion:)), for: .touchUpInside)
+        if #available(iOS 13.0, *) {
+            backButton.isHidden = true
+        }
     }
     
     override func loadData() {
@@ -193,6 +197,7 @@ extension DetailViewController: RatingCellDelegate {
                 self.updateUI(action: .rating)
             } else {
                 self.showErrorAlert(with: error)
+                print("Rating --> fail: ", error)
             }
             self.endHUB()
         })

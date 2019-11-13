@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 extension UICollectionView {
     func register(with cell: AnyClass) {
         let className = String(describing: cell)

@@ -19,6 +19,6 @@ class HomeCollectionCellViewModel {
         self.title = video.title
         self.imageURL = video.imageURL
         self.channel = video.channel
-        self.published = video.published
+        self.published = video.published.convertToString()
     }
 }

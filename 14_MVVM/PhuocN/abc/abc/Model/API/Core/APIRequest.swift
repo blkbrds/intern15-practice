@@ -104,19 +104,18 @@ extension API {
         session.configuration.timeoutIntervalForRequest = 10
         session.configuration.timeoutIntervalForResource = 10
         session.dataTask(with: request) { (data, response, error) in
-            if let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                if let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) {
                     if let error = error {
                         completion(.failure(.error(error.localizedDescription)))
                     } else {
                         if let data = data {
-                            print(data)
                             completion(.success(data))
                         }
                     }
+                } else {
+                    completion(.failure(.errorResponse))
                 }
-            } else {
-                completion(.failure(.errorResponse))
             }
         }.resume()
     }
