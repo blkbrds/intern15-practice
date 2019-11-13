@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Ex4ViewController" customModule="Navigation" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aW8-Ul-hgh">
+                    <rect key="frame" x="103.66666666666669" y="225.66666666666666" width="207" height="32.999999999999972"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Background Navi Bar">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickToGoVC:" destination="-1" eventType="touchUpInside" id="lkR-jG-eYu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.90000000000000002" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMl-nm-oCS">
+                    <rect key="frame" x="103.66666666666669" y="288.66666666666669" width="207" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Search Bar in Navi bar">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickToGoVC:" destination="-1" eventType="touchUpInside" id="x8T-IN-vZh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.90000000000000002" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFz-gm-woG">
+                    <rect key="frame" x="103.66666666666669" y="351.66666666666669" width="207" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Gradient Navi Bar">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickToGoVC:" destination="-1" eventType="touchUpInside" id="dJL-ym-S7e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.90000000000000002" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-HU-8su">
+                    <rect key="frame" x="103.66666666666669" y="477.66666666666669" width="207" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Bar Button Items">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickToGoVC:" destination="-1" eventType="touchUpInside" id="wcX-3k-2Qt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.90000000000000002" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo3-O3-bgk">
+                    <rect key="frame" x="103.66666666666669" y="414.66666666666669" width="207" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Bar Button Item">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickToGoVC:" destination="-1" eventType="touchUpInside" id="kCy-7E-3Nf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.59999999999999998" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAl-AM-GLB">
+                    <rect key="frame" x="103.66666666666669" y="540.66666666666663" width="207" height="33"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Clear ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickToGoVC:" destination="-1" eventType="touchUpInside" id="Iqe-bW-1EK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kFz-gm-woG" firstAttribute="top" secondItem="rMl-nm-oCS" secondAttribute="bottom" constant="30" id="124-H5-SWj"/>
+                <constraint firstItem="wo3-O3-bgk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="28M-dA-XhN"/>
+                <constraint firstItem="GAl-AM-GLB" firstAttribute="top" secondItem="MCo-HU-8su" secondAttribute="bottom" constant="30" id="43z-Wr-ti7"/>
+                <constraint firstItem="rMl-nm-oCS" firstAttribute="top" secondItem="aW8-Ul-hgh" secondAttribute="bottom" constant="30" id="6Ju-HZ-l0w"/>
+                <constraint firstItem="aW8-Ul-hgh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9BZ-ku-iys"/>
+                <constraint firstItem="kFz-gm-woG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FeP-Gv-cPa"/>
+                <constraint firstItem="MCo-HU-8su" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IQ4-Kh-nz6"/>
+                <constraint firstItem="kFz-gm-woG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TRe-yO-PzW"/>
+                <constraint firstItem="MCo-HU-8su" firstAttribute="top" secondItem="wo3-O3-bgk" secondAttribute="bottom" constant="30" id="ZB6-Fh-mTd"/>
+                <constraint firstItem="GAl-AM-GLB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bv4-d8-MtN"/>
+                <constraint firstItem="wo3-O3-bgk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hmk-JJ-lQt"/>
+                <constraint firstItem="MCo-HU-8su" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="ms8-K4-Vjg"/>
+                <constraint firstItem="kFz-gm-woG" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="no2-5J-CT7"/>
+                <constraint firstItem="rMl-nm-oCS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="omE-x3-GQs"/>
+                <constraint firstItem="wo3-O3-bgk" firstAttribute="top" secondItem="kFz-gm-woG" secondAttribute="bottom" constant="30" id="p7g-6R-i7K"/>
+                <constraint firstItem="rMl-nm-oCS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="qA4-lW-Tm7"/>
+                <constraint firstItem="GAl-AM-GLB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="up4-MM-xOW"/>
+                <constraint firstItem="aW8-Ul-hgh" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="wvE-1x-hyy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="133.69565217391306"/>
+        </view>
+    </objects>
+</document>

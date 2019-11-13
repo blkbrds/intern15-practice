@@ -10,24 +10,15 @@ import Foundation
 
 class HomeCollectionCellViewModel {
 
+    var imageURL: String
     var title: String
-    var image: String
-    var distance: String
-    var address: String
-    var isFavorite: Bool
-    var rating: String
+    var channel: String
+    var published: String
     
-    init(place: Place) {
-        self.title = place.name
-        self.image = place.avatar
-        self.distance = place.distance
-        self.address = place.address
-        self.rating = place.rates
-        self.isFavorite = place.isFavorite
-    }
-    
-    func setFavorite(completion: (Bool) -> ()) {
-        isFavorite = isFavorite ? false : true
-        completion(true)
+    init(video: Video) {
+        self.title = video.title
+        self.imageURL = video.imageURL
+        self.channel = video.channel
+        self.published = video.published
     }
 }

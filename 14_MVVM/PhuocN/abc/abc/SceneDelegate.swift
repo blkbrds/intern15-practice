@@ -75,7 +75,7 @@ extension SceneDelegate {
     private func configTabBar() {
         let homeVC = HomeViewController()
         let homeNavi = UINavigationController(rootViewController: homeVC)
-        homeNavi.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "ic-home"), selectedImage: #imageLiteral(resourceName: "ic-home-selected"))
+        homeNavi.tabBarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "ic-home"), selectedImage: #imageLiteral(resourceName: "ic-grid"))
         
         let mapVC = MapViewController()
         let mapNavi = UINavigationController(rootViewController: mapVC)

@@ -1,10 +1,3 @@
-//
-//  HomeViewController.swift
-//  PracticeTemplate
-//
-//  Created by Tien Le P. on 6/22/18.
-//  Copyright © 2018 Tien Le P. All rights reserved.
-//
 
 import UIKit
 
@@ -26,14 +19,13 @@ class HomeViewController: BaseViewController {
     // MARK: - config
     override func setupUI() {
         super.setupUI()
-        self.title = "Part XXX"
+        self.title = "Protocol"
         tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
     override func setupData() {
         exercises = DataManagement.share.getExercises(fileName: "exercises", type: "plist")
     }
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -52,11 +44,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? HomeCell
-
         let ex = exercises[indexPath.row]
         cell?.titleLabel.text = ex.name
         cell?.subTitleLabel.text = ex.description
-        
         return cell!
     }
     
@@ -79,21 +69,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
             let vc = Ex5ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 5:
-            let vc = Ex6ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 6:
-            let vc = Ex7ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 7:
-            let vc = Ex8ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 8:
-            let vc = Ex9ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 9:
-            let vc = Ex10ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             // create the alert
