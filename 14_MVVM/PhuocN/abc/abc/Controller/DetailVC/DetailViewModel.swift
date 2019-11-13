@@ -11,11 +11,8 @@ import UIKit
 class DetailViewModel {
     
     var isPlayList: Bool {
-        return RealmManager.shared.realm.objects(PlayList.self).contains { $0.id == videoId }
+        return RealmManager.shared.realm.objects(PlayList.self).contains { $0.id == video.id }
     }
-    let videoId: String
-    var title: String
-    var channel: String
     let video: Video
     var comment: [Comment] = []
     var isLoadingData = false
@@ -23,9 +20,6 @@ class DetailViewModel {
     var rating: String?
     
     init(video: Video) {
-        self.channel = video.channel
-        self.title = video.title
-        self.videoId = video.id
         self.video = video
     }
     
@@ -69,7 +63,7 @@ extension DetailViewModel {
         }
         if !isLoadingData {
             isLoadingData = true
-            ApiManager.Comment.getComment(videoId: videoId, pageToken: pageNextToken, maxResults: 10) { [weak self] result in
+            ApiManager.Comment.getComment(videoId: video.id, pageToken: pageNextToken, maxResults: 10) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .failure(let error):
@@ -91,7 +85,7 @@ extension DetailViewModel {
     }
     
     func addComment(mess: String, completion: @escaping completed) {
-        ApiManager.Comment.addComment(videoId: videoId, mess: mess) { result in
+        ApiManager.Comment.addComment(videoId: video.id, mess: mess) { result in
             switch result {
             case .failure(let error):
                 completion(false, error.localizedDescription)
@@ -108,7 +102,7 @@ extension DetailViewModel {
     
     //MARK: -rating
     func ratingVideo(rating: String, completion: @escaping completed) {
-        ApiManager.Rating.rating(videoId: videoId, rating: rating) { done, error  in
+        ApiManager.Rating.rating(videoId: video.id, rating: rating) { done, error  in
             if done {
                 self.rating = rating
                 completion(true, "")
@@ -119,7 +113,7 @@ extension DetailViewModel {
     }
     
     func checkRating(completed: @escaping completed) {
-          ApiManager.Rating.getRating(videoId: videoId) { (ratingResult, error) in
+        ApiManager.Rating.getRating(videoId: video.id) { (ratingResult, error) in
               if let rating = ratingResult {
                   self.rating = rating
                   completed(true, "")
@@ -130,7 +124,7 @@ extension DetailViewModel {
       }
     
     func playVideo(completion: (Bool, String, URLRequest?) -> ()) {
-        guard let url = URL(string: "https://www.youtube.com/embed/\(videoId)") else {
+        guard let url = URL(string: "https://www.youtube.com/embed/\(video.id)") else {
             completion(false, "Can load this video", nil)
             return
         }

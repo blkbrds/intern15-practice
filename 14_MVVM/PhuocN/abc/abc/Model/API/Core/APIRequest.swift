@@ -36,9 +36,8 @@ extension API {
     
     func request(url: URL, completion: @escaping completion) {
         let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 15
-        config.timeoutIntervalForResource = 15
-        config.waitsForConnectivity = true
+        config.timeoutIntervalForRequest = 10
+        config.timeoutIntervalForResource = 10
         let session = URLSession(configuration: config)
         let dataTask = session.dataTask(with: url) { (data, _, error) in
             DispatchQueue.main.async {

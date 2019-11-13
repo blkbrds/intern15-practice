@@ -36,6 +36,7 @@ class DetailViewController: BaseViewController {
         loadData()
         changeValueFromRealm()
         playVideo()
+        print("id -->", viewModel?.video.title, viewModel?.isPlayList)
     }
     
     //MARK: -Config
@@ -58,9 +59,10 @@ class DetailViewController: BaseViewController {
         guard let viewModel = viewModel else { return }
         viewModel.loadComment(loadMore: false) { [weak self] (done, error) in
             guard let self = self else { return }
-            if done {
-                self.updateUI(action: .loadData)
+            if !done {
+                self.showErrorAlert(with: error)
             }
+            self.updateUI(action: .loadData)
         }
         viewModel.checkRating { (done, error) in
             if done {
@@ -153,8 +155,8 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(with: RatingTableViewCell.self, indexPath: indexPath)
-        if let video = viewModel?.video, let rating = viewModel?.rating, let isPlayList = viewModel?.isPlayList {
-            cell.viewModel = RatingCellViewModel(video: video,rating: rating, isPlayList: isPlayList)
+        if let video = viewModel?.video, let isPlayList = viewModel?.isPlayList {
+            cell.viewModel = RatingCellViewModel(video: video,rating: viewModel?.rating, isPlayList: isPlayList)
         }
         cell.delegate = self
         return cell

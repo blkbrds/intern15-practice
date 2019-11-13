@@ -102,6 +102,7 @@ class HomeViewModel {
             } else {
                 completed(true, "")
             }
+            print("--> videos: ", self.videos)
         }
     }
 }

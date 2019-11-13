@@ -11,16 +11,11 @@ import Foundation
 final class RatingCellViewModel {
     var rating: (like: Bool, disLike: Bool)
     var isPlayList: Bool
-    let video: Video?
-
-    private var id: String {
-        if let video = video {
-            return video.id
-        }
-        return ""
-    }
+    let video: Video
     
-    init(video: Video, rating: String, isPlayList: Bool) {
+    init(video: Video, rating: String?, isPlayList: Bool) {
+        self.isPlayList = isPlayList
+        self.video = video
         switch rating {
         case "like":
             self.rating = (true, false)
@@ -29,8 +24,7 @@ final class RatingCellViewModel {
         default:
             self.rating = (false, false)
         }
-        self.isPlayList = isPlayList
-        self.video = video
+        
     }
     
     func changePlayList(completion: @escaping (Bool, String) -> ()) {
@@ -42,7 +36,7 @@ final class RatingCellViewModel {
     }
     
     private func removeToPlayList(completion: @escaping (Bool, String) -> ()) {
-        if let video = video, let playList = RealmManager.shared.realm.objects(PlayList.self).filter({ $0.id == video.id }).first {
+        if let playList = RealmManager.shared.realm.objects(PlayList.self).filter({ $0.id == self.video.id }).first {
             RealmManager.shared.deleteObject(with: playList) { result in
                 switch result {
                 case .sucessful:
@@ -55,15 +49,13 @@ final class RatingCellViewModel {
     }
     
     private func addToPlayList(completion: @escaping (Bool, String) -> ()) {
-        if let video = video {
-            let playList = PlayList(video: video)
-            RealmManager.shared.addObject(with: playList) { (result) in
-                switch result {
-                case .sucessful:
-                    completion(true, "")
-                case .failture(let error):
-                    completion(false, error.localizedDescription)
-                }
+        let playList = PlayList(video: video)
+        RealmManager.shared.addObject(with: playList) { (result) in
+            switch result {
+            case .sucessful:
+                completion(true, "")
+            case .failture(let error):
+                completion(false, error.localizedDescription)
             }
         }
     }

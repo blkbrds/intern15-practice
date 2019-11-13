@@ -95,7 +95,7 @@ final class HomeViewController: BaseViewController {
         homeCollectionView.register(withNib: HomeSlideCollectionViewCell.self)
         homeCollectionView.register(withNib: HomeHeaderCollectionViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
         homeCollectionView.refreshControl = UIRefreshControl()
-        homeCollectionView.refreshControl?.tintColor = .white
+        homeCollectionView.refreshControl?.tintColor = App.Color.mainColor
         homeCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self

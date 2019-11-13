@@ -60,6 +60,7 @@ final class RatingTableViewCell: UITableViewCell {
     
     //MARK: -IBACtion
     @IBAction private func addPlayListTouchUpInside(_ sender: Any) {
+        print("Tap add --> playlist:",viewModel?.isPlayList)
         viewModel?.changePlayList(completion: { done, error in
             if !done {
                 print(error)
