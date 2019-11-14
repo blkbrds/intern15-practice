@@ -45,7 +45,9 @@ final class SearchDetailViewController: BaseViewController {
                 self.showErrorAlert(with: error)
             } else {
                 self.updateUI(with: .loadData)
-                self.loadingData = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.loadingData = false
+                }
             }
         }
     }
@@ -67,18 +69,16 @@ extension SearchDetailViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let viewModel = viewModel {
-            if !loadingData && indexPath.row == viewModel.getCount() - 2 {
+            if !loadingData && indexPath.row == viewModel.getCount() - 1 {
                 loadingData = true
                 viewModel.loadSearchVideo(loadMore: true) { [weak self] done, error  in
                     guard let self = self else { return }
                     if done {
                         self.updateUI(with: .loadMore)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                            self.loadingData = false
-                        }
                     } else {
                         self.showErrorAlert(with: error)
                     }
+                    self.loadingData = false
                 }
             }
         }
