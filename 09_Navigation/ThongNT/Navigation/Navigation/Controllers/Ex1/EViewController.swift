@@ -19,21 +19,32 @@ final class EViewController: UIViewController {
         switch sender.tag {
         case 0:
             // go to vc C
-            if let viewControllerC = navigationController?.viewControllers[3] {
-                navigationController?.popToViewController(viewControllerC, animated: true)
+            guard let naviController = navigationController else { return }
+            for vc in naviController.viewControllers {
+                if let vc = vc as? CViewController {
+                    navigationController?.popToViewController(vc, animated: true)
+                    return
+                }
             }
         case 1:
             // go to vc B
-            if let viewControllerB = navigationController?.viewControllers[2] {
-                navigationController?.popToViewController(viewControllerB, animated: true)
+            guard let naviController = navigationController else { return }
+            for vc in naviController.viewControllers {
+                if let vc = vc as? BViewController {
+                    navigationController?.popToViewController(vc, animated: true)
+                    return
+                }
             }
         case 2:
             // go to vc D
             navigationController?.popViewController(animated: true)
         case 3:
             // go to root
-            if let viewControllerA = navigationController?.viewControllers[1] {
-                navigationController?.popToViewController(viewControllerA, animated: true)
+            guard let naviController = navigationController else { return }
+            for vc in naviController.viewControllers {
+                if let vc = vc as? Ex1ViewController {
+                    navigationController?.popToViewController(vc, animated: true)
+                }
             }
         default:
             break

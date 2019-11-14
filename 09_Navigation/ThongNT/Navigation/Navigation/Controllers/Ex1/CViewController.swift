@@ -25,8 +25,12 @@ final class CViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         case 2:
             // go to root vc
-            if let viewControllerA = navigationController?.viewControllers[1] {
-                navigationController?.popToViewController(viewControllerA, animated: true)
+            guard let navigationController = navigationController else { return }
+            for vc in navigationController.viewControllers {
+                if let vc = vc as? Ex1ViewController {
+                    navigationController.popToViewController(vc, animated: true)
+                    return
+                }
             }
         default:
             break
