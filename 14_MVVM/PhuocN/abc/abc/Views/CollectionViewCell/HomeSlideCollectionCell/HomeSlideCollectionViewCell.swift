@@ -24,9 +24,9 @@ final class HomeSlideCollectionViewCell: UICollectionViewCell {
     }
     
     func updateUI() {
+        collectionView.register(withNib: SlideCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "SlideCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Cell")
     }
     
     @IBAction private func pageControllChangeValue(_ sender: UIPageControl) {
@@ -45,7 +45,7 @@ extension HomeSlideCollectionViewCell: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SlideCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(with: SlideCollectionViewCell.self, indexPath: indexPath)
         guard let viewModel = viewModel else { fatalError("Don't have any image") }
         cell.setupImage(with: UIImage(named: viewModel.slideImages[indexPath.row]))
         return cell

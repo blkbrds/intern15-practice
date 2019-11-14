@@ -16,26 +16,26 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-hI-LLU">
-                        <rect key="frame" x="10" y="10" width="114" height="76"/>
+                        <rect key="frame" x="10" y="10" width="91" height="76"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="5Nn-hI-LLU" secondAttribute="height" multiplier="1.5" id="nf5-Co-Tk1"/>
+                            <constraint firstAttribute="width" secondItem="5Nn-hI-LLU" secondAttribute="height" multiplier="1.2" id="nf5-Co-Tk1"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3H-Ms-JAi">
-                        <rect key="frame" x="144" y="15" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3H-Ms-JAi">
+                        <rect key="frame" x="111" y="15" width="165" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQQ-n5-w3v">
-                        <rect key="frame" x="144" y="37.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="111" y="45.5" width="32" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJW-Un-WbB">
-                        <rect key="frame" x="144" y="60" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="111" y="71.5" width="32" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -51,7 +51,7 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cat-xI-bRg">
-                        <rect key="frame" x="283" y="62.5" width="33" height="16"/>
+                        <rect key="frame" x="283" y="71.5" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -60,27 +60,28 @@
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Cat-xI-bRg" secondAttribute="trailing" constant="10" id="19f-Ix-9W4"/>
+                <constraint firstItem="WJW-Un-WbB" firstAttribute="top" secondItem="AQQ-n5-w3v" secondAttribute="bottom" constant="10" id="9wW-nW-Gz8"/>
                 <constraint firstItem="WJW-Un-WbB" firstAttribute="leading" secondItem="R3H-Ms-JAi" secondAttribute="leading" id="CJU-a5-cTV"/>
                 <constraint firstAttribute="leading" secondItem="5Nn-hI-LLU" secondAttribute="leading" constant="-10" id="H5M-qb-nFu"/>
-                <constraint firstItem="R3H-Ms-JAi" firstAttribute="leading" secondItem="5Nn-hI-LLU" secondAttribute="trailing" constant="20" id="NBv-39-0sA"/>
+                <constraint firstItem="R3H-Ms-JAi" firstAttribute="leading" secondItem="5Nn-hI-LLU" secondAttribute="trailing" constant="10" id="NBv-39-0sA"/>
                 <constraint firstItem="lyI-AK-ytg" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="NIh-wr-shH"/>
+                <constraint firstItem="AQQ-n5-w3v" firstAttribute="top" secondItem="R3H-Ms-JAi" secondAttribute="bottom" constant="10" id="PDS-36-dgE"/>
                 <constraint firstItem="5Nn-hI-LLU" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" constant="-10" id="Wnc-Qx-hfn"/>
-                <constraint firstItem="WJW-Un-WbB" firstAttribute="bottom" secondItem="5Nn-hI-LLU" secondAttribute="bottom" constant="-5" id="bpa-gf-Xee"/>
                 <constraint firstItem="Cat-xI-bRg" firstAttribute="centerY" secondItem="WJW-Un-WbB" secondAttribute="centerY" id="h1X-k1-ick"/>
-                <constraint firstItem="AQQ-n5-w3v" firstAttribute="centerY" secondItem="5Nn-hI-LLU" secondAttribute="centerY" id="jBc-Ox-nAL"/>
                 <constraint firstAttribute="trailing" secondItem="lyI-AK-ytg" secondAttribute="trailing" constant="10" id="l1P-wY-vYy"/>
+                <constraint firstItem="lyI-AK-ytg" firstAttribute="leading" secondItem="R3H-Ms-JAi" secondAttribute="trailing" constant="10" id="mib-Dz-z8v"/>
                 <constraint firstAttribute="top" secondItem="5Nn-hI-LLU" secondAttribute="top" constant="-10" id="oPR-fN-vfr"/>
                 <constraint firstItem="R3H-Ms-JAi" firstAttribute="top" secondItem="5Nn-hI-LLU" secondAttribute="top" constant="5" id="qtd-xA-KvG"/>
                 <constraint firstItem="AQQ-n5-w3v" firstAttribute="leading" secondItem="R3H-Ms-JAi" secondAttribute="leading" id="w9p-HI-XxJ"/>
             </constraints>
             <size key="customSize" width="326" height="96"/>
             <connections>
-                <outlet property="addressLabel" destination="AQQ-n5-w3v" id="LWf-Iw-zur"/>
-                <outlet property="avatarImageView" destination="5Nn-hI-LLU" id="1RG-45-Feg"/>
+                <outlet property="channelLabel" destination="AQQ-n5-w3v" id="LWf-Iw-zur"/>
                 <outlet property="distanceLabel" destination="Cat-xI-bRg" id="kH1-Zf-0cp"/>
                 <outlet property="favoriteButton" destination="lyI-AK-ytg" id="glq-Pl-hgJ"/>
-                <outlet property="nameLabel" destination="R3H-Ms-JAi" id="QJr-m1-5Zx"/>
-                <outlet property="rateLabel" destination="WJW-Un-WbB" id="Sd2-KY-6uY"/>
+                <outlet property="pusblishedLabel" destination="WJW-Un-WbB" id="Sd2-KY-6uY"/>
+                <outlet property="titleLabel" destination="R3H-Ms-JAi" id="QJr-m1-5Zx"/>
+                <outlet property="videoImageView" destination="5Nn-hI-LLU" id="1RG-45-Feg"/>
             </connections>
             <point key="canvasLocation" x="121.73913043478262" y="107.14285714285714"/>
         </collectionViewCell>

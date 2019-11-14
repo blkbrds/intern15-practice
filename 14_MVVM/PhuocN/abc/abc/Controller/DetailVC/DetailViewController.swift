@@ -22,7 +22,7 @@ class DetailViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func updateUI() {
+    func updateUI() {
         guard let viewModel = viewModel else { return }
         //detailLabel.text = viewModel.namePlace
         print(viewModel.namePlace)

@@ -66,7 +66,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = LoginViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         case 2:
-            let vc = Ex3ViewController()
+            let vc = HomeAvatarViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         case 3:
             let vc = Ex4ViewController()
