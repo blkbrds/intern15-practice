@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B213A147237D6EBF008DF41D /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B213A146237D6EBF008DF41D /* PinterestLayout.swift */; };
 		B24390E0237D44F700E2E475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24390DF237D44F700E2E475 /* AppDelegate.swift */; };
 		B24390E2237D44F700E2E475 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24390E1237D44F700E2E475 /* SceneDelegate.swift */; };
 		B24390E9237D44FA00E2E475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24390E8237D44FA00E2E475 /* Assets.xcassets */; };
@@ -14,9 +15,11 @@
 		B24390F6237D458000E2E475 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24390F4237D458000E2E475 /* HomeViewController.xib */; };
 		B24390FB237D47B900E2E475 /* Ex2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24390F9237D47B900E2E475 /* Ex2ViewController.swift */; };
 		B24390FC237D47B900E2E475 /* Ex2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24390FA237D47B900E2E475 /* Ex2ViewController.xib */; };
+		B2F061B2237E4BC300DE4936 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F061B1237E4BC300DE4936 /* MyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B213A146237D6EBF008DF41D /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		B24390DC237D44F700E2E475 /* CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24390DF237D44F700E2E475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24390E1237D44F700E2E475 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		B24390F4237D458000E2E475 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		B24390F9237D47B900E2E475 /* Ex2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex2ViewController.swift; sourceTree = "<group>"; };
 		B24390FA237D47B900E2E475 /* Ex2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Ex2ViewController.xib; sourceTree = "<group>"; };
+		B2F061B1237E4BC300DE4936 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			children = (
 				B24390F3237D458000E2E475 /* HomeViewController.swift */,
 				B24390F4237D458000E2E475 /* HomeViewController.xib */,
+				B2F061B1237E4BC300DE4936 /* MyCell.swift */,
 			);
 			path = Ex01;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			children = (
 				B24390F9237D47B900E2E475 /* Ex2ViewController.swift */,
 				B24390FA237D47B900E2E475 /* Ex2ViewController.xib */,
+				B213A146237D6EBF008DF41D /* PinterestLayout.swift */,
 			);
 			path = Ex02;
 			sourceTree = "<group>";
@@ -157,8 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B213A147237D6EBF008DF41D /* PinterestLayout.swift in Sources */,
 				B24390FB237D47B900E2E475 /* Ex2ViewController.swift in Sources */,
 				B24390E0237D44F700E2E475 /* AppDelegate.swift in Sources */,
+				B2F061B2237E4BC300DE4936 /* MyCell.swift in Sources */,
 				B24390E2237D44F700E2E475 /* SceneDelegate.swift in Sources */,
 				B24390F5237D458000E2E475 /* HomeViewController.swift in Sources */,
 			);
