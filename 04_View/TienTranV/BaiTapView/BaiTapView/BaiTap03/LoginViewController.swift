@@ -8,17 +8,17 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passWordTextField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet private weak var userNameTextField: UITextField!
+    @IBOutlet private weak var passWordTextField: UITextField!
+    @IBOutlet private weak var errorLabel: UILabel!
 
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var clearButton: UIButton!
+    @IBOutlet private weak var loginButton: UIButton!
 
-    let username = "Admin"
-    let admin = "Admin123"
+    private let username = "Admin"
+    private let admin = "Admin123"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         clearButton.addTarget(self, action: #selector(tapClearButton(_:)), for: .touchUpInside)
     }
 
-    func initView() {
+    private func initView() {
         setUpUITextField(textField: userNameTextField)
         setUpUITextField(textField: passWordTextField)
         setUpButton(button: clearButton)
@@ -41,19 +41,19 @@ class LoginViewController: UIViewController {
         passWordTextField.isSecureTextEntry = true
     }
 
-    func setUpUITextField(textField: UITextField) {
+    private func setUpUITextField(textField: UITextField) {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.layer.borderWidth = 1
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 5
     }
 
-    func setUpButton(button: UIButton) {
+    private func setUpButton(button: UIButton) {
         button.clipsToBounds = true
         button.layer.cornerRadius = 5
     }
 
-    func exception(stringData: (String, String)) -> String {
+    private func exception(stringData: (String, String)) -> String {
         var errorString = ""
 
         switch stringData {
@@ -70,8 +70,8 @@ class LoginViewController: UIViewController {
         return errorString
     }
 
-    func login() {
-        let stringData: (String, String) = (self.userNameTextField.text ?? "", self.passWordTextField.text ?? "")
+    private func login() {
+        let stringData: (String, String) = (userNameTextField.text ?? "", passWordTextField.text ?? "")
 
         if stringData == (username, admin) {
             errorLabel.isHidden = true
@@ -83,21 +83,20 @@ class LoginViewController: UIViewController {
         }
     }
 
-    @objc func tapLoginButton(_ sender: Any) {
+    @objc private func tapLoginButton(_ sender: Any) {
         login()
         passWordTextField.endEditing(true)
     }
 
-    @objc func tapClearButton(_ sender: Any) {
+    @objc private func tapClearButton(_ sender: Any) {
         userNameTextField.text = nil
         passWordTextField.text = nil
         errorLabel.isHidden = true
     }
 
-    @objc func tapToScreen(_ sender: UITapGestureRecognizer) {
-        self.view.endEditing(true)
+    @objc private func tapToScreen(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
-
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -115,5 +114,4 @@ extension LoginViewController: UITextFieldDelegate {
             login()
         }
     }
-
 }

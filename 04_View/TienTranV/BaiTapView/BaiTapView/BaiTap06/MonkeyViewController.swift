@@ -8,16 +8,16 @@
 
 import UIKit
 
-class MonkeyViewController: UIViewController {
+final class MonkeyViewController: UIViewController {
 
-    @IBOutlet weak var monkeyImageView: UIImageView!
+    @IBOutlet private weak var monkeyImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
 
-    func setUpView() {
+    private func setUpView() {
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(recognizer:)))
         let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate(recognizer:)))
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
@@ -29,28 +29,24 @@ class MonkeyViewController: UIViewController {
         monkeyImageView.addGestureRecognizer(longPressGesture)
     }
 
-    @objc func handlePinch(recognizer: UIPinchGestureRecognizer) {
-        print("handlePinch")
+    @objc private func handlePinch(recognizer: UIPinchGestureRecognizer) {
         guard let view = recognizer.view else { return }
         guard recognizer.scale <= 2 && recognizer.scale >= 0.5 else { return }
         view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
     }
 
-    @objc func handleRotate(recognizer: UIRotationGestureRecognizer) {
-        print("handleRotate")
+    @objc private func handleRotate(recognizer: UIRotationGestureRecognizer) {
         if let view = recognizer.view {
             view.transform = view.transform.rotated(by: recognizer.rotation)
             recognizer.rotation = 0
         }
     }
 
-    @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
+    @objc private func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         if let view = recognizer.view {
             UIView.animate(withDuration: 3.0) {
                 view.transform = view.transform.scaledBy(x: 1.0, y: 1.0)
                 view.transform = CGAffineTransform(rotationAngle: 0)
-
-                print("handleLongPress")
             }
         }
     }

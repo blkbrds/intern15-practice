@@ -8,34 +8,33 @@
 
 import UIKit
 
-class CustomSliderViewController: UIViewController {
+final class CustomSliderViewController: UIViewController {
 
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var sliderBarView: UIView!
-    @IBOutlet weak var thumbSliderLabel: UILabel!
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var sliderBarView: UIView!
+    @IBOutlet private weak var thumbSliderLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-
     }
 
-    func setUpView() {
+    private func setUpView() {
         setUpThumbSliderLabel()
         setUpViewSlider(view: colorView)
         setUpViewSlider(view: sliderBarView)
         if view.tag == 1 {
-            view.frame = CGRect(x: 0, y: 0, width: self.sliderBarView.frame.width, height: sliderBarView.frame.midY)
+            view.frame = CGRect(x: 0, y: 0, width: sliderBarView.frame.width, height: sliderBarView.frame.midY)
         }
     }
 
-    func setUpViewSlider(view: UIView) {
+    private func setUpViewSlider(view: UIView) {
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 27
         view.layer.borderColor = UIColor.green.cgColor
     }
 
-    func setUpThumbSliderLabel() {
+    private func setUpThumbSliderLabel() {
         thumbSliderLabel.text = "50%"
         thumbSliderLabel.clipsToBounds = true
         thumbSliderLabel.layer.cornerRadius = 40

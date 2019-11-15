@@ -8,17 +8,17 @@
 
 import UIKit
 
-class MonkeyMessageViewController: UIViewController {
+final class MonkeyMessageViewController: UIViewController {
 
-    @IBOutlet weak var messageBoxLabel: UILabel!
-    @IBOutlet weak var monkeyImageView: UIImageView!
+    @IBOutlet private weak var messageBoxLabel: UILabel!
+    @IBOutlet private weak var monkeyImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
 
-    func setUpView() {
+    private func setUpView() {
         setUpLabel()
 
         let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate(recognizer:)))
@@ -34,7 +34,7 @@ class MonkeyMessageViewController: UIViewController {
         monkeyImageView.addGestureRecognizer(doubleTapGesture)
     }
 
-    func setUpLabel() {
+    private func setUpLabel() {
         messageBoxLabel.clipsToBounds = true
         messageBoxLabel.layer.borderColor = UIColor.black.cgColor
         messageBoxLabel.layer.borderWidth = 2
@@ -47,17 +47,15 @@ class MonkeyMessageViewController: UIViewController {
         messageBoxLabel.isHidden = true
     }
 
-    @objc func handleRotate(recognizer: UIRotationGestureRecognizer) {
+    @objc private func handleRotate(recognizer: UIRotationGestureRecognizer) {
         if let view = recognizer.view {
-            print("handleRotate")
             view.transform = view.transform.rotated(by: recognizer.rotation)
             recognizer.rotation = 0
         }
     }
 
-    @objc func oneTapGesture(recognizer: UITapGestureRecognizer) {
+    @objc private func oneTapGesture(recognizer: UITapGestureRecognizer) {
         if recognizer.view != nil {
-            print("one-tap")
             messageBoxLabel.isHidden = false
             messageBoxLabel.alpha = 1
             messageBoxLabel.text = "Tôi là khỉ"
@@ -69,9 +67,8 @@ class MonkeyMessageViewController: UIViewController {
         }
     }
 
-    @objc func doubleTapGesture(recognizer: UITapGestureRecognizer) {
+    @objc private func doubleTapGesture(recognizer: UITapGestureRecognizer) {
         if recognizer.view != nil {
-            print("double-tap")
             messageBoxLabel.isHidden = false
             messageBoxLabel.alpha = 1
             messageBoxLabel.text = "Khỉ là tôi"
@@ -82,5 +79,4 @@ class MonkeyMessageViewController: UIViewController {
             }
         }
     }
-
 }
