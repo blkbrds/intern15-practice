@@ -80,7 +80,8 @@ final class LoginViewController: BaseViewController {
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 0 {
-            passwordTextField.becomeFirstResponder() }
+            passwordTextField.becomeFirstResponder()
+        }
         if textField.tag == 1 {
             clickDone()
         }

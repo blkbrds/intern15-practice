@@ -16,7 +16,7 @@ final class SecondHomeViewController: UIViewController {
         title = "Home"
         
         guard let username = UserDefaults.standard.string(forKey: "usernamePresent") else { return }
-        usernameLabel.text = "\(username)"
+        usernameLabel.text = username
         
         let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(clickEditButton))
         navigationItem.rightBarButtonItems = [editButton]
