@@ -15,7 +15,7 @@ protocol HuyenViewControllerDataSource: class {
 final class HuyenViewController: UIViewController {
 
     enum Action {
-        case sendLocation (location: Location)
+        case sendLocation(location: Location)
     }
 
     @IBOutlet weak var tableView: UITableView!
@@ -26,14 +26,14 @@ final class HuyenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "District"
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(updateLocation))
-        navigationItem.rightBarButtonItem = doneButton
         setupData()
         setupUI()
     }
 
     private func setupUI() {
+        title = "District"
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(updateLocation))
+        navigationItem.rightBarButtonItem = doneButton
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "districtCells")
         tableView.delegate = self
         tableView.dataSource = self
@@ -58,7 +58,7 @@ final class HuyenViewController: UIViewController {
     }
 }
 
-extension HuyenViewController: UITableViewDelegate, UITableViewDataSource {
+extension HuyenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return districts.count
     }
@@ -68,7 +68,9 @@ extension HuyenViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = districts[indexPath.row].name
         return cell
     }
+}
 
+extension HuyenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         location.district = districts[indexPath.row].name
     }

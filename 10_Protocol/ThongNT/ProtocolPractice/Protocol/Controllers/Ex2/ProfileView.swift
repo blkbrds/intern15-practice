@@ -11,7 +11,7 @@ protocol ProfileViewDelegate: class {
     func profileView(view: ProfileView, needsPerform action: ProfileView.Action)
 }
 
-class ProfileView: UIView {
+final class ProfileView: UIView {
     enum Action {
         case gotoProfileVC(profileName: String)
     }
@@ -42,7 +42,7 @@ class ProfileView: UIView {
         super.init(frame: frame)
         addSubview(profileImageView)
         addSubview(profileNameLabel)
-        button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
+        button.addTarget(self, action: #selector(clickAvatarTouchUpInside), for: .touchUpInside)
         addSubview(button)
     }
 
@@ -50,7 +50,7 @@ class ProfileView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func buttonClick() {
+    @objc func clickAvatarTouchUpInside() {
         guard let profileName = profileNameLabel.text else { return }
         delegate?.profileView(view: self, needsPerform: .gotoProfileVC(profileName: profileName))
     }

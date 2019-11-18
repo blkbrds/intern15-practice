@@ -22,13 +22,13 @@ final class MienViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Miền"
-        let cityButton = UIBarButtonItem(title: "Tỉnh", style: .plain, target: self, action: #selector(changeCity))
-        navigationItem.rightBarButtonItem = cityButton
         setupUI()
     }
 
     private func setupUI() {
+        title = "Miền"
+        let cityButton = UIBarButtonItem(title: "Tỉnh", style: .plain, target: self, action: #selector(changeCity))
+        navigationItem.rightBarButtonItem = cityButton
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "thongCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -36,7 +36,7 @@ final class MienViewController: UIViewController {
 
     private func setupData() {
         guard let getLocation = self.dataSource?.getLocation() else { return }
-        self.location = getLocation
+        location = getLocation
     }
 
     // function thay đổi tỉnh/thành phố

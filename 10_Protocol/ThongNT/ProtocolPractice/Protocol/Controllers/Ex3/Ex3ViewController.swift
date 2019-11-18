@@ -13,12 +13,7 @@ final class Ex3ViewController: BaseViewController {
 
     weak var dataSource: Ex3ViewControllerDataSource? {
         didSet {
-            guard let state = dataSource?.getLocation().state,
-                let city = dataSource?.getLocation().city,
-                let district = dataSource?.getLocation().district else { return }
-            stateLabel.text = state
-            cityLabel.text = city
-            districtLabel.text = district
+            updateUI()
         }
     }
 
@@ -32,6 +27,15 @@ final class Ex3ViewController: BaseViewController {
         title = "Địa Điểm"
         let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(gotoStateVC))
         navigationItem.rightBarButtonItems = [editButton]
+    }
+
+    override func updateUI() {
+        guard let state = dataSource?.getLocation().state,
+            let city = dataSource?.getLocation().city,
+            let district = dataSource?.getLocation().district else { return }
+        stateLabel.text = state
+        cityLabel.text = city
+        districtLabel.text = district
     }
 
     // function thay đổi miền

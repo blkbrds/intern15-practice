@@ -23,14 +23,14 @@ final class TinhViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "City"
-        let districtButton = UIBarButtonItem(title: "District", style: .plain, target: self, action: #selector(changeDistrict))
-        navigationItem.rightBarButtonItem = districtButton
         setupUI()
         setupData()
     }
 
     private func setupUI() {
+        title = "City"
+        let districtButton = UIBarButtonItem(title: "District", style: .plain, target: self, action: #selector(changeDistrict))
+        navigationItem.rightBarButtonItem = districtButton
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Thong")
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,7 +51,7 @@ final class TinhViewController: UIViewController {
     }
 }
 
-extension TinhViewController: UITableViewDelegate, UITableViewDataSource {
+extension TinhViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cities.count
@@ -62,6 +62,9 @@ extension TinhViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = cities[indexPath.row].name
         return cell
     }
+}
+
+extension TinhViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         citySelected = cities[indexPath.row]
