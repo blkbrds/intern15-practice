@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="HomeCollectionViewCell" customModule="CollectionView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="177" height="205"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="177" height="205"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="l23-E0-OV3">
+                        <rect key="frame" x="10" y="10" width="157" height="157"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="l23-E0-OV3" secondAttribute="height" id="mgD-ar-DbI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utd-h3-JYV">
+                        <rect key="frame" x="10" y="177" width="157" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.30588235294117649" green="0.72851775933618412" blue="0.5658194267586486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="utd-h3-JYV" firstAttribute="top" secondItem="l23-E0-OV3" secondAttribute="bottom" constant="10" id="2UV-pA-y8M"/>
+                <constraint firstAttribute="top" secondItem="l23-E0-OV3" secondAttribute="top" constant="-10" id="BN9-0e-8af"/>
+                <constraint firstAttribute="trailing" secondItem="l23-E0-OV3" secondAttribute="trailing" constant="10" id="PpA-4Z-ECS"/>
+                <constraint firstAttribute="bottom" secondItem="utd-h3-JYV" secondAttribute="bottom" constant="10" id="erG-r9-ZbG"/>
+                <constraint firstItem="utd-h3-JYV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="gyB-4L-gRS"/>
+                <constraint firstAttribute="trailing" secondItem="utd-h3-JYV" secondAttribute="trailing" constant="10" id="iLl-iS-zrz"/>
+                <constraint firstItem="l23-E0-OV3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="iRm-Ao-EfS"/>
+            </constraints>
+            <size key="customSize" width="177" height="205"/>
+            <connections>
+                <outlet property="avatarImageView" destination="l23-E0-OV3" id="SSl-Aj-Ta7"/>
+                <outlet property="nameLabel" destination="utd-h3-JYV" id="bB2-9m-p8D"/>
+            </connections>
+            <point key="canvasLocation" x="229.71014492753625" y="113.50446428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>
