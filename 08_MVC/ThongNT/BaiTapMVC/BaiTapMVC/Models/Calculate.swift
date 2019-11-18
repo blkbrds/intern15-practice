@@ -1,8 +1,8 @@
 //
-//  Animals.swift
-//  ProtocolPractice
+//  Calculate.swift
+//  BaiTapMVC
 //
-//  Created by PCI0018 on 11/5/19.
+//  Created by PCI0018 on 10/28/19.
 //  Copyright © 2019 Asian Tech. All rights reserved.
 //
 
@@ -17,11 +17,11 @@ enum Operators: String {
 }
 
 final class Calculate {
-    
+
     static let share: Calculate = Calculate()
     var myOperators: Operators = .none
 
-    private init() {}
+    private init() { }
 
     func calculatedResultWithOperator(numberFirst: Float?, numberSecond: Float) -> Float? {
         guard let numberFirst = numberFirst else { return nil }
