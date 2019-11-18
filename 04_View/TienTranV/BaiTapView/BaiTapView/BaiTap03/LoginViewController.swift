@@ -71,15 +71,16 @@ final class LoginViewController: UIViewController {
     }
 
     private func login() {
-        let stringData: (String, String) = (userNameTextField.text ?? "", passWordTextField.text ?? "")
-
-        if stringData == (username, admin) {
-            errorLabel.isHidden = true
-            print("Đăng nhập thành công")
-        } else {
-            errorLabel.isHidden = false
-            errorLabel.text = exception(stringData: stringData)
-            errorLabel.textColor = .red
+        if let userName = userNameTextField.text, let password = passWordTextField.text {
+            let stringData: (String, String) = (userName, password)
+            if stringData == (username, admin) {
+                errorLabel.isHidden = true
+                print("Đăng nhập thành công")
+            } else {
+                errorLabel.isHidden = false
+                errorLabel.text = exception(stringData: stringData)
+                errorLabel.textColor = .red
+            }
         }
     }
 
@@ -108,7 +109,7 @@ extension LoginViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 0 {
-            self.passWordTextField.becomeFirstResponder()
+            passWordTextField.becomeFirstResponder()
         }
         if textField.tag == 1 {
             login()

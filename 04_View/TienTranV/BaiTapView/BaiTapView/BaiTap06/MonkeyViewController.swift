@@ -30,8 +30,7 @@ final class MonkeyViewController: UIViewController {
     }
 
     @objc private func handlePinch(recognizer: UIPinchGestureRecognizer) {
-        guard let view = recognizer.view else { return }
-        guard recognizer.scale <= 2 && recognizer.scale >= 0.5 else { return }
+        guard let view = recognizer.view, recognizer.scale <= 2 && recognizer.scale >= 0.5 else { return }
         view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
     }
 

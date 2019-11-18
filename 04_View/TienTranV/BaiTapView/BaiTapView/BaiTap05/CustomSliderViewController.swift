@@ -45,6 +45,7 @@ final class CustomSliderViewController: UIViewController {
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
         if let touch = touches.first {
             let position = touch.location(in: self.view)
             if position.x >= thumbSliderLabel.frame.minX,
@@ -58,7 +59,7 @@ final class CustomSliderViewController: UIViewController {
 
                 colorView.frame = CGRect(x: 0, y: 0, width: sliderBarView.frame.width, height: thumbSliderLabel.center.y - sliderBarView.frame.origin.y)
 
-                let percentSlider = 100 * (1 - (colorView.frame.height) / (sliderBarView.frame.height))
+                let percentSlider = 100 * (1 - colorView.frame.height / sliderBarView.frame.height)
 
                 thumbSliderLabel.text = "\(Int(percentSlider))%"
             }
