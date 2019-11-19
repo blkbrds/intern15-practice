@@ -30,7 +30,7 @@ final class CustomTableViewCell: UITableViewCell {
         customImageView.image = UIImage(named: imageName)
     }
 
-    @IBAction private func tapButton(_ sender: Any) {
+    @IBAction private func tapButtonTouchUpInside(_ sender: Any) {
         guard let name = nameLabel.text else { return }
         delegate?.cell(cell: self, needsPerform: .userTap(name: name))
     }
