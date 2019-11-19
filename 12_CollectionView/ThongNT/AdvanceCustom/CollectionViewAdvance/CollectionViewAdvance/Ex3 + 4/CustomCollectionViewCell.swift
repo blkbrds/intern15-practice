@@ -1,6 +1,3 @@
-//
-//  CustomCollectionViewCell.swift
-//  CollectionViewAdvance
 
 import UIKit
 
