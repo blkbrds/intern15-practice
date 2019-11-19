@@ -10,6 +10,12 @@ import UIKit
 
 final class MyButton: UIButton {
 
+    var badgeNumber = 0 {
+        didSet {
+            updateUI()
+        }
+    }
+
     enum PositionBadge {
         case bottomLeft
         case bottomCenter
@@ -48,7 +54,7 @@ final class MyButton: UIButton {
         }
     }
 
-    lazy var bagdeLabel: UILabel = {
+    lazy private var bagdeLabel: UILabel = {
         let label = UILabel()
         label.clipsToBounds = true
         label.layer.cornerRadius = 10
@@ -56,6 +62,7 @@ final class MyButton: UIButton {
         label.textAlignment = .center
         label.textColor = .white
         label.frame.size = CGSize(width: 50, height: 30)
+        label.numberOfLines = 0
         return label
     }()
 
@@ -67,7 +74,27 @@ final class MyButton: UIButton {
         }
     }
 
+    private func updateUI() {
+        if badgeNumber == 0 {
+            bagdeLabel.removeFromSuperview()
+        } else {
+            bagdeLabel.frame.size = CGSize(width: String(badgeNumber).width(constraintedHeight: bagdeLabel.frame.height, font: UIFont.systemFont(ofSize: 17)) + 20, height: bagdeLabel.frame.height)
+            bagdeLabel.text = String(badgeNumber)
+        }
+    }
+
     func editPositionBagde(position: PositionBadge) {
         bagdeLabel.center = position.position(with: bounds)
+    }
+}
+
+extension String {
+    func width(constraintedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: .greatestFiniteMagnitude, height: height))
+        label.numberOfLines = 0
+        label.text = self
+        label.font = font
+        label.sizeToFit()
+        return label.frame.width
     }
 }
