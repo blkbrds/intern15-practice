@@ -66,7 +66,7 @@ final class HomeViewController: UIViewController {
         var actions: [UIAlertAction] = [cancelAction, okAction]
         // check condition
         if searchResult.isEmpty {
-            message = "Còn mother gì mà xoá!"
+            message = "Không có gì để xoá bạn à!"
             actions = [cancelAction]
         }
         // add actions
@@ -124,7 +124,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = searchResult[indexPath.row]
-        cell.textLabel?.numberOfLines = 0
         return cell
     }
 

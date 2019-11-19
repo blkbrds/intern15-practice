@@ -94,14 +94,14 @@ extension SectionsViewController: DetailViewControllerDataSource {
 }
 
 extension SectionsViewController: CustomTableViewCellDelegate {
-    func sendName(view: CustomTableViewCell, needsPerform action: CustomTableViewCell.Tap) {
+    func cell(cell: CustomTableViewCell, needsPerform action: CustomTableViewCell.Action) {
         switch action {
         case .userTap(let name):
             let alert = UIAlertController(title: "TAP", message: "Bạn đã nhấp vào \(name)", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
                 alert.dismiss(animated: true, completion: nil)
             }))
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
     }
 }

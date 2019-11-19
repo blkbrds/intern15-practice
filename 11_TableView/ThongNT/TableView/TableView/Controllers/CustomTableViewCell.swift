@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CustomTableViewCellDelegate: class {
-    func sendName(view: CustomTableViewCell, needsPerform action: CustomTableViewCell.Tap)
+    func cell(cell: CustomTableViewCell, needsPerform action: CustomTableViewCell.Action)
 }
 
 final class CustomTableViewCell: UITableViewCell {
@@ -20,12 +20,8 @@ final class CustomTableViewCell: UITableViewCell {
 
     weak var delegate: CustomTableViewCellDelegate?
 
-    enum Tap {
-        case userTap (name: String)
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    enum Action {
+        case userTap(name: String)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,6 +36,6 @@ final class CustomTableViewCell: UITableViewCell {
 
     @IBAction private func tapButton(_ sender: Any) {
         guard let name = nameLabel.text else { return }
-        delegate?.sendName(view: self, needsPerform: .userTap(name: name))
+        delegate?.cell(cell: self, needsPerform: .userTap(name: name))
     }
 }
