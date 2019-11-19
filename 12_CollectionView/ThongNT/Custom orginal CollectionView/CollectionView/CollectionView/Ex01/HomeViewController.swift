@@ -10,9 +10,10 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
-    private var row: [Int] = Array(0...100)
+    private var rows: [Int] = Array(0...99)
+    private let cellIndetifer: String = "MyCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ final class HomeViewController: UIViewController {
     }
 
     private func configCollectionView() {
-        collectionView.register(MyCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(MyCell.self, forCellWithReuseIdentifier: cellIndetifer)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -40,14 +41,14 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return row.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return rows.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? MyCell else { fatalError("don't have this cell") }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIndetifer, for: indexPath) as? MyCell else { return UICollectionViewCell() }
         cell.backgroundColor = #colorLiteral(red: 0, green: 0.5603182912, blue: 0, alpha: 0.8818760702)
-        cell.textLabel.text = String(row[indexPath.row])
+        cell.textLabel.text = String(rows[indexPath.row])
         return cell
     }
 }

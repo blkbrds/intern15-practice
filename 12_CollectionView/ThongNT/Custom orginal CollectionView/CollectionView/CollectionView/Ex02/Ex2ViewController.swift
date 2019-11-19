@@ -10,10 +10,11 @@ import UIKit
 
 final class Ex2ViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private var heightArray: [CGFloat] = []
     private let numberOfItems: Int = 48
+    private let cellIndentifier: String = "UICollectionViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ final class Ex2ViewController: UIViewController {
     //MARK: - Private functions
     private func setupUI() {
         title = "Random Height"
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellIndentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         if let layout = collectionView.collectionViewLayout as? PinterestLayout {
@@ -50,7 +51,7 @@ extension Ex2ViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath)
         cell.backgroundColor = #colorLiteral(red: 0.3236978054, green: 0.1063579395, blue: 0.574860394, alpha: 0.7382009846)
         return cell
     }
