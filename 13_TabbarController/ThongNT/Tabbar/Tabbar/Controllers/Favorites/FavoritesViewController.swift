@@ -12,6 +12,11 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+    }
+    
+    //MARK: - Private Functions
+    private func setupUI() {
+        title = "Favorites"
     }
 }

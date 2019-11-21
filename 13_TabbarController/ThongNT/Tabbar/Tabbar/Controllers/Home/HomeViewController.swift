@@ -1,5 +1,5 @@
 //
-//  MapViewController.swift
+//  HomeViewController.swift
 //  Tabbar
 //
 //  Created by PCI0018 on 11/20/19.
@@ -8,9 +8,15 @@
 
 import UIKit
 
-final class MapViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    //MARK: - Private Functions
+    private func setupUI() {
+        title = "Home"
     }
 }

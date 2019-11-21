@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  MapViewController.swift
 //  Tabbar
 //
 //  Created by PCI0018 on 11/20/19.
@@ -8,9 +8,15 @@
 
 import UIKit
 
-final class ProfileViewController: UIViewController {
+final class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    //MARK: - Private Functions
+    private func setupUI() {
+        title = "Map"
     }
 }
