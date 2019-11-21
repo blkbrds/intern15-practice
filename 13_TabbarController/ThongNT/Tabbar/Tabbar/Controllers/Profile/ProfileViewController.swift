@@ -24,7 +24,7 @@ final class ProfileViewController: UIViewController {
     }
     
     @objc private func logout() {
-        
+        // handle later
     }
     
 }

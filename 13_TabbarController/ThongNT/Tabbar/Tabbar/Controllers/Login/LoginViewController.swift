@@ -30,10 +30,6 @@ final class LoginViewController: UIViewController {
         navigationItem.rightBarButtonItems = [doneButton]
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
     @objc private func clickDone() {
         switch (userNameTextField.text, passwordTextField.text) {
         case ("", ""):
@@ -53,14 +49,15 @@ final class LoginViewController: UIViewController {
 
     private func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        //create button OK
+        // create button OK
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 }
