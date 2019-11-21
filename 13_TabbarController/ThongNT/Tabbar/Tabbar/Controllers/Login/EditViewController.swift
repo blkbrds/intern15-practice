@@ -8,23 +8,23 @@
 
 import UIKit
 
-final class EditViewController: UIViewController {
+final class EditViewController: BaseViewController {
 
     @IBOutlet private weak var newPasswordTextField: UITextField!
     @IBOutlet private weak var confirmPasswordTextField: UITextField!
-    @IBOutlet private weak var usernameTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.delegate = self
+        setupUI()
         newPasswordTextField.delegate = self
         confirmPasswordTextField.delegate = self
-        
-        title = "Edit"
-        guard let usernamePresent = UserDefaults.standard.string(forKey: "usernamePresent") else { return }
-        usernameTextField.text = "\(usernamePresent)"
+    }
 
-        // add cancel button by custome view
+    override func setupUI() {
+        super.setupUI()
+        title = "Edit"
+
+        // Add cancel button by custom view
         let cancelButton = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 44))
         cancelButton.addTarget(self, action: #selector(clickCancelButton), for: .touchUpInside)
         cancelButton.setTitle("Cancel", for: .normal)
@@ -48,9 +48,14 @@ final class EditViewController: UIViewController {
 
     @objc private func clickDone() {
         guard let newPassword = newPasswordTextField.text, !newPassword.isEmpty, let confirmPass = confirmPasswordTextField.text, confirmPass == newPassword else { return }
-        UserDefaults.standard.set(newPassword, forKey: "newPasswordKey")
-        guard let usernamePresent = UserDefaults.standard.string(forKey: "usernamePresent") else { return }
-        navigationController?.popViewController(animated: true)
+        UserDefaults.standard.setValue(newPassword, forKey: "newPassword")
+
+        let alert = UIAlertController(title: "Thông Báo", message: "Bạn cần đăng nhập lại sau khi đổi mật khẩu", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            SceneDelegate.shared.willLogin()
+        }))
+        present(alert, animated: true, completion: nil)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -63,10 +68,8 @@ extension EditViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 0:
-            newPasswordTextField.becomeFirstResponder()
-        case 1:
             confirmPasswordTextField.becomeFirstResponder()
-        case 2:
+        case 1:
             clickDone()
         default:
             break

@@ -8,23 +8,28 @@
 
 import UIKit
 
-final class ProfileViewController: UIViewController {
+final class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
-    
-    //MARK: - Private functions
-    private func setupUI() {
+
+    override func setupUI() {
         title = "Profile"
-        
+
         let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
         navigationItem.rightBarButtonItem = logoutButton
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(goToEditVC))
+        navigationItem.leftBarButtonItem = editButton
     }
-    
+
     @objc private func logout() {
-        // handle later
+        UserDefaults.standard.set(nil, forKey: "LoginStatus")
+        SceneDelegate.shared.willLogin()
     }
-    
+
+    @objc private func goToEditVC() {
+        navigationController?.pushViewController(EditViewController(), animated: true)
+    }
 }

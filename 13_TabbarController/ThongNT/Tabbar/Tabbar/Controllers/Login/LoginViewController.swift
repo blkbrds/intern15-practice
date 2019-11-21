@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: BaseViewController {
 
     @IBOutlet private weak var userNameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -25,12 +25,18 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         userNameTextField.delegate = self
         passwordTextField.delegate = self
+    }
+
+    override func setupUI() {
+        super.setupUI()
         title = "Login"
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(clickDone))
         navigationItem.rightBarButtonItems = [doneButton]
     }
 
     @objc private func clickDone() {
+        guard let newPassword = UserDefaults.standard.value(forKey: "newPassword") as? String else { return }
+        user.password = newPassword
         switch (userNameTextField.text, passwordTextField.text) {
         case ("", ""):
             createAlert(title: "WARNING", message: Error.khongNhapChu.rawValue)
@@ -39,7 +45,8 @@ final class LoginViewController: UIViewController {
         case (_, _):
             if let username = userNameTextField.text, let password = passwordTextField.text {
                 if user.name == username, user.password == password {
-                    navigationController?.pushViewController(HomeViewController(), animated: true)
+                    UserDefaults.standard.set(true, forKey: "LoginStatus")
+                    SceneDelegate.shared.didLogin()
                 }
             }
             createAlert(title: "WARNING", message: Error.nhapSai.rawValue)
@@ -49,7 +56,6 @@ final class LoginViewController: UIViewController {
 
     private func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        // create button OK
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))

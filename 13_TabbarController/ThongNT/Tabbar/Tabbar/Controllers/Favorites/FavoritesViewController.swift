@@ -8,15 +8,14 @@
 
 import UIKit
 
-final class FavoritesViewController: UIViewController {
+final class FavoritesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
-    
-    //MARK: - Private Functions
-    private func setupUI() {
+
+    override func setupUI() {
         title = "Favorites"
     }
 }
