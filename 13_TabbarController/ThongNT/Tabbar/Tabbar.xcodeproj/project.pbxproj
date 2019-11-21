@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B228686E23863BA2005659F6 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B228686C23863BA2005659F6 /* EditViewController.xib */; };
+		B228686F23863BA2005659F6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228686D23863BA2005659F6 /* EditViewController.swift */; };
+		B228687223863BD6005659F6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B228687023863BD6005659F6 /* LoginViewController.xib */; };
+		B228687323863BD6005659F6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228687123863BD6005659F6 /* LoginViewController.swift */; };
+		B228687623864120005659F6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228687523864120005659F6 /* BaseViewController.swift */; };
+		B22868782386412F005659F6 /* BaseTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22868772386412F005659F6 /* BaseTabbarController.swift */; };
 		B23AC90423851EF000E4E781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23AC90323851EF000E4E781 /* AppDelegate.swift */; };
 		B23AC90623851EF000E4E781 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23AC90523851EF000E4E781 /* SceneDelegate.swift */; };
 		B23AC90D23851EF100E4E781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B23AC90C23851EF100E4E781 /* Assets.xcassets */; };
@@ -18,10 +24,15 @@
 		B23AC9262385222900E4E781 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23AC9242385222900E4E781 /* FavoritesViewController.xib */; };
 		B23AC9292385224600E4E781 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23AC9272385224600E4E781 /* MapViewController.swift */; };
 		B23AC92A2385224600E4E781 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23AC9282385224600E4E781 /* MapViewController.xib */; };
-		B23AC92D2385254F00E4E781 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23AC92C2385254F00E4E781 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B228686C23863BA2005659F6 /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		B228686D23863BA2005659F6 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		B228687023863BD6005659F6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B228687123863BD6005659F6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B228687523864120005659F6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B22868772386412F005659F6 /* BaseTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabbarController.swift; sourceTree = "<group>"; };
 		B23AC90023851EF000E4E781 /* Tabbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23AC90323851EF000E4E781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B23AC90523851EF000E4E781 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +46,6 @@
 		B23AC9242385222900E4E781 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		B23AC9272385224600E4E781 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B23AC9282385224600E4E781 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
-		B23AC92C2385254F00E4E781 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B228686623863AD5005659F6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B228687123863BD6005659F6 /* LoginViewController.swift */,
+				B228687023863BD6005659F6 /* LoginViewController.xib */,
+				B228686D23863BA2005659F6 /* EditViewController.swift */,
+				B228686C23863BA2005659F6 /* EditViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B228686723863AEE005659F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B228686623863AD5005659F6 /* Login */,
+				B23AC91E238521E700E4E781 /* Profile */,
+				B23AC91D238521DA00E4E781 /* Favorites */,
+				B23AC91C238521D000E4E781 /* Map */,
+				B23AC91B238521C600E4E781 /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B2286874238640F4005659F6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B228687523864120005659F6 /* BaseViewController.swift */,
+				B22868772386412F005659F6 /* BaseTabbarController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		B23AC8F723851EF000E4E781 = {
 			isa = PBXGroup;
 			children = (
@@ -68,11 +110,8 @@
 		B23AC90223851EF000E4E781 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				B23AC92B2385252F00E4E781 /* Bass Class */,
-				B23AC91E238521E700E4E781 /* Profile */,
-				B23AC91D238521DA00E4E781 /* Favorites */,
-				B23AC91C238521D000E4E781 /* Map */,
-				B23AC91B238521C600E4E781 /* Home */,
+				B2286874238640F4005659F6 /* Core */,
+				B228686723863AEE005659F6 /* Controllers */,
 				B23AC90323851EF000E4E781 /* AppDelegate.swift */,
 				B23AC90523851EF000E4E781 /* SceneDelegate.swift */,
 				B23AC90C23851EF100E4E781 /* Assets.xcassets */,
@@ -115,14 +154,6 @@
 				B23AC9202385220500E4E781 /* ProfileViewController.xib */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		B23AC92B2385252F00E4E781 /* Bass Class */ = {
-			isa = PBXGroup;
-			children = (
-				B23AC92C2385254F00E4E781 /* BaseViewController.swift */,
-			);
-			path = "Bass Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +219,8 @@
 				B23AC9262385222900E4E781 /* FavoritesViewController.xib in Resources */,
 				B23AC92A2385224600E4E781 /* MapViewController.xib in Resources */,
 				B23AC91A23851F6100E4E781 /* HomeViewController.xib in Resources */,
+				B228687223863BD6005659F6 /* LoginViewController.xib in Resources */,
+				B228686E23863BA2005659F6 /* EditViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,13 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B228687323863BD6005659F6 /* LoginViewController.swift in Sources */,
 				B23AC90423851EF000E4E781 /* AppDelegate.swift in Sources */,
 				B23AC9292385224600E4E781 /* MapViewController.swift in Sources */,
 				B23AC90623851EF000E4E781 /* SceneDelegate.swift in Sources */,
 				B23AC9212385220500E4E781 /* ProfileViewController.swift in Sources */,
+				B228687623864120005659F6 /* BaseViewController.swift in Sources */,
 				B23AC9252385222900E4E781 /* FavoritesViewController.swift in Sources */,
-				B23AC92D2385254F00E4E781 /* BaseViewController.swift in Sources */,
 				B23AC91923851F6100E4E781 /* HomeViewController.swift in Sources */,
+				B228686F23863BA2005659F6 /* EditViewController.swift in Sources */,
+				B22868782386412F005659F6 /* BaseTabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
