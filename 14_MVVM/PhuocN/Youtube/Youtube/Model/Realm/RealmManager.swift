@@ -84,4 +84,6 @@ extension RealmManager {
             realm.delete(object)
         }, completion: completion)
     }
+    
+    struct VideoRealm {}
 }

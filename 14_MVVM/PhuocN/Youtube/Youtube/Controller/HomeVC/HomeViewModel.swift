@@ -52,20 +52,14 @@ final class HomeViewModel {
         return videosDict[regions[indexPath.section].code]?[indexPath.row]
     }
     
-    func loadAndSaveDataToRealm(with region: String, videos: [Video]) {
-        if RealmManager.shared.realm.isEmpty {
-            RealmManager.shared.addObjects(with: videos)
-        } else {
-            let realmVideos = RealmManager.shared.fetchObject(type: Video.self, completion: nil).filter { $0.regionCode == region }
-            for video in realmVideos {
-                if !videos.contains(where: { $0.id == video.id }) {
-                    RealmManager.shared.deleteObject(with: video)
-                }
-            }
-            for video in videos {
-                RealmManager.shared.writeObject(action: {
-                    RealmManager.shared.realm.create(Video.self, value: video, update: .modified)
-                }, completion: nil)
+    func loadAndSaveDataToRealm(with region: String, videos: [Video], completed: @escaping completed) {
+        RealmManager.VideoRealm.loadAndSaveDataToRealm(with: region, videos: videos) { [weak self] (error) in
+            guard let self = self else { return }
+            if let error = error {
+                completed(false, error.localizedDescription)
+            } else {
+                self.videosDict[region] = videos
+                completed(true, "")
             }
         }
     }
@@ -84,11 +78,11 @@ final class HomeViewModel {
         var storedError: APIError?
         for region in regions {
             downloadGroup.enter()
-            ApiManager.Video.getVideo(token: pageNextToken, maxResult: 5, regionCode: region.code) { result in
+            ApiManager.Video.getVideo(token: pageNextToken, maxResult: 5, regionCode: region.code) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(let videoResult):
-                    self.loadAndSaveDataToRealm(with: region.code, videos: videoResult.videos)
-                    self.videosDict[region.code] = videoResult.videos
+                    self.loadAndSaveDataToRealm(with: region.code, videos: videoResult.videos, completed: completed)
                 case .failure(let error):
                     self.videosDict[region.code] = RealmManager.shared.fetchObject(type: Video.self, completion: nil).filter { $0.regionCode == region.code }
                     storedError = error
@@ -99,8 +93,6 @@ final class HomeViewModel {
         downloadGroup.notify(queue: DispatchQueue.main) {
             if let error = storedError {
                 completed(false, error.localizedDescription)
-            } else {
-                completed(true, "")
             }
             print("--> videos: ", self.videos)
         }
