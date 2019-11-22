@@ -21,17 +21,13 @@ final class CalculatorViewController: UIViewController {
     private var isCalculated: Bool = true
     private var shouldClearText: Bool = true
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     // MARK: - IBActions
 
-    @IBAction private func chooseNumber(_ sender: UIButton) {
-        getNumber(string: "\(sender.tag)")
+    @IBAction private func chooseNumberButtonTouchUpInside(_ sender: UIButton) {
+        inputNumber(string: "\(sender.tag)")
     }
 
-    @IBAction private func chooseOpertor(_ sender: UIButton) {
+    @IBAction private func chooseOpertorButtonTouchUpInside(_ sender: UIButton) {
         switch sender.tag {
             // plus
         case 0:
@@ -54,7 +50,7 @@ final class CalculatorViewController: UIViewController {
         }
     }
 
-    @IBAction private func clickOnEqualButton(_ sender: UIButton) {
+    @IBAction private func clickOnEqualButtonTouchUpInside(_ sender: UIButton) {
         if isCalculated {
             resultLabel.text = "\(Results.result.result)"
             Calculate.share.myOperators = .none
@@ -69,7 +65,7 @@ final class CalculatorViewController: UIViewController {
         shouldClearText = true
     }
 
-    @IBAction private func clearButton(_ sender: Any) {
+    @IBAction private func clearButtonTouchUpInside(_ sender: Any) {
         resultLabel.text = ""
         Calculate.share.myOperators = .none
         Results.result.setResult(r: 0)
@@ -79,7 +75,7 @@ final class CalculatorViewController: UIViewController {
     }
 
     // MARK: - Private functions
-    private func getNumber(string: String) {
+    private func inputNumber(string: String) {
         if shouldClearText {
             resultLabel.text = ""
             Calculate.share.myOperators = .none
