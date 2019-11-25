@@ -1,8 +1,8 @@
 //
 //  FavoritesViewController.swift
-//  Tabbar
+//  BaiTapTongHop
 //
-//  Created by PCI0018 on 11/20/19.
+//  Created by PCI0018 on 11/25/19.
 //  Copyright © 2019 Asian Tech. All rights reserved.
 //
 
@@ -12,11 +12,6 @@ final class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-    }
-    
-    //MARK: - Private Functions
-    private func setupUI() {
-        title = "Favorites"
+
     }
 }
