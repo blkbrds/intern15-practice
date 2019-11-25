@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MapViewController.swift
 //  BaiTapTongHop
 //
 //  Created by PCI0018 on 11/22/19.
@@ -8,11 +8,9 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class MapViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }
