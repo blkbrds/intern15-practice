@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,13 @@
 		B241AE49238B8CC600844F41 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE32238B8CC600844F41 /* UIViewControllerExt.swift */; };
 		B241AE4A238B8CC600844F41 /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE33238B8CC600844F41 /* CollectionExt.swift */; };
 		B241AE4B238B8CC600844F41 /* NSErrorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE34238B8CC600844F41 /* NSErrorExt.swift */; };
+		B241AE53238BC7CC00844F41 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE51238BC7CC00844F41 /* HomeTableViewCell.swift */; };
+		B241AE54238BC7CC00844F41 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B241AE52238BC7CC00844F41 /* HomeTableViewCell.xib */; };
+		B241AE57238BCF9500844F41 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE55238BCF9500844F41 /* DetailViewController.swift */; };
+		B241AE58238BCF9500844F41 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B241AE56238BCF9500844F41 /* DetailViewController.xib */; };
+		B241AE5A238BD0B900844F41 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE59238BD0B900844F41 /* Place.swift */; };
+		B241AE5C238BD48D00844F41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE5B238BD48D00844F41 /* HomeViewModel.swift */; };
+		B241AE5E238BD96B00844F41 /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE5D238BD96B00844F41 /* HomeCellViewModel.swift */; };
 		B2732CB62387993B00E1CDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2732CB52387993B00E1CDCE /* AppDelegate.swift */; };
 		B2732CB82387993B00E1CDCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2732CB72387993B00E1CDCE /* SceneDelegate.swift */; };
 		B2732CBF2387993D00E1CDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2732CBE2387993D00E1CDCE /* Assets.xcassets */; };
@@ -75,6 +82,13 @@
 		B241AE32238B8CC600844F41 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		B241AE33238B8CC600844F41 /* CollectionExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
 		B241AE34238B8CC600844F41 /* NSErrorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExt.swift; sourceTree = "<group>"; };
+		B241AE51238BC7CC00844F41 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		B241AE52238BC7CC00844F41 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		B241AE55238BCF9500844F41 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B241AE56238BCF9500844F41 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		B241AE59238BD0B900844F41 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		B241AE5B238BD48D00844F41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B241AE5D238BD96B00844F41 /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		B2732CB22387993B00E1CDCE /* BaiTapTongHop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapTongHop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2732CB52387993B00E1CDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2732CB72387993B00E1CDCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +122,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B22B46A3238BE49E00342D5D /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				B2732CF623879CE100E1CDCE /* HomeViewController.swift */,
+				B2732CF723879CE100E1CDCE /* HomeViewController.xib */,
+				B241AE5B238BD48D00844F41 /* HomeViewModel.swift */,
+				B241AE5F238BD97300844F41 /* Cell */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		B22B46A4238BE4AF00342D5D /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				B241AE55238BCF9500844F41 /* DetailViewController.swift */,
+				B241AE56238BCF9500844F41 /* DetailViewController.xib */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
 		B241AE09238B822000844F41 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +173,7 @@
 		B241AE15238B8CC500844F41 /* Schema */ = {
 			isa = PBXGroup;
 			children = (
+				B241AE59238BD0B900844F41 /* Place.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -227,6 +262,16 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
+		B241AE5F238BD97300844F41 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B241AE51238BC7CC00844F41 /* HomeTableViewCell.swift */,
+				B241AE52238BC7CC00844F41 /* HomeTableViewCell.xib */,
+				B241AE5D238BD96B00844F41 /* HomeCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B2732CA92387993B00E1CDCE = {
 			isa = PBXGroup;
 			children = (
@@ -266,18 +311,18 @@
 				B241AE12238B825400844F41 /* Profile */,
 				B241AE09238B822000844F41 /* Favorites */,
 				B2732CFB23879D2500E1CDCE /* Map */,
-				B2732CFA23879CE600E1CDCE /* Home */,
+				B2732CFA23879CE600E1CDCE /* HomeTabbar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B2732CFA23879CE600E1CDCE /* Home */ = {
+		B2732CFA23879CE600E1CDCE /* HomeTabbar */ = {
 			isa = PBXGroup;
 			children = (
-				B2732CF623879CE100E1CDCE /* HomeViewController.swift */,
-				B2732CF723879CE100E1CDCE /* HomeViewController.xib */,
+				B22B46A4238BE4AF00342D5D /* DetailVC */,
+				B22B46A3238BE49E00342D5D /* HomeVC */,
 			);
-			path = Home;
+			path = HomeTabbar;
 			sourceTree = "<group>";
 		};
 		B2732CFB23879D2500E1CDCE /* Map */ = {
@@ -295,7 +340,6 @@
 				021BCDFBFC775982D5CA4BE9 /* Pods-BaiTapTongHop.debug.xcconfig */,
 				A42295CBE3C6F0F8443EE1E7 /* Pods-BaiTapTongHop.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -361,8 +405,10 @@
 			files = (
 				B2732CBF2387993D00E1CDCE /* Assets.xcassets in Resources */,
 				B2732CFF23879D3700E1CDCE /* MapViewController.xib in Resources */,
+				B241AE58238BCF9500844F41 /* DetailViewController.xib in Resources */,
 				B241AE0D238B823600844F41 /* FavoritesViewController.xib in Resources */,
 				B241AE11238B825100844F41 /* ProfileViewController.xib in Resources */,
+				B241AE54238BC7CC00844F41 /* HomeTableViewCell.xib in Resources */,
 				B2732CF923879CE100E1CDCE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +469,10 @@
 				B241AE0C238B823600844F41 /* FavoritesViewController.swift in Sources */,
 				B241AE37238B8CC600844F41 /* Error.swift in Sources */,
 				B241AE46238B8CC600844F41 /* ImageView.swift in Sources */,
+				B241AE5E238BD96B00844F41 /* HomeCellViewModel.swift in Sources */,
+				B241AE57238BCF9500844F41 /* DetailViewController.swift in Sources */,
+				B241AE53238BC7CC00844F41 /* HomeTableViewCell.swift in Sources */,
+				B241AE5A238BD0B900844F41 /* Place.swift in Sources */,
 				B241AE3C238B8CC600844F41 /* Errors.swift in Sources */,
 				B241AE38238B8CC600844F41 /* ApiManager.swift in Sources */,
 				B2732CF323879CAB00E1CDCE /* BaseTabbarController.swift in Sources */,
@@ -430,6 +480,7 @@
 				B241AE36238B8CC600844F41 /* RequestSerializer.swift in Sources */,
 				B2732CB62387993B00E1CDCE /* AppDelegate.swift in Sources */,
 				B241AE43238B8CC600844F41 /* ScrollView.swift in Sources */,
+				B241AE5C238BD48D00844F41 /* HomeViewModel.swift in Sources */,
 				B241AE3E238B8CC600844F41 /* CollectionCell.swift in Sources */,
 				B241AE44238B8CC600844F41 /* TableView.swift in Sources */,
 				B241AE39238B8CC600844F41 /* ResponseSerializer.swift in Sources */,

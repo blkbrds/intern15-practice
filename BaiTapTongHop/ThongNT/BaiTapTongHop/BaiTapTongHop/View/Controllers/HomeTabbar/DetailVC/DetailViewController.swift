@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  DetailViewController.swift
 //  BaiTapTongHop
 //
 //  Created by PCI0018 on 11/25/19.
@@ -8,15 +8,11 @@
 
 import UIKit
 
-final class ProfileViewController: ViewController {
+final class DetailViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-    }
-    
-    override func setupUI() {
-        super.setupUI()
-        title = "Profile"
+
+        // Do any additional setup after loading the view.
     }
 }
