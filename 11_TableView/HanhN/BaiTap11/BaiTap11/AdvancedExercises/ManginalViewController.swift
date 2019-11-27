@@ -18,6 +18,7 @@ final class ManginalViewController: UIViewController {
         super.viewDidLoad()
         configTableView()
         setUpUI()
+
     }
 
     func configTableView() {
@@ -49,7 +50,9 @@ extension ManginalViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManginalTableViewCell", for: indexPath) as! ManginalTableViewCell
         let vc = account[indexPath.row]
         cell.updateTabelCell(avatar: vc.image, name: vc.name, subtile: vc.subtile)
-
+        cell.delegate = self
+        cell.index = indexPath.row
+        cell.name = vc.name
         return cell
     }
 
@@ -57,3 +60,10 @@ extension ManginalViewController: UITableViewDataSource, UITableViewDelegate {
         return 120
     }
 }
+
+extension ManginalViewController: ManginalTableViewCellDelegate {
+    func sendIndex(view: ManginalTableViewCell, needsPerform action: ManginalTableViewCell.Action, index: Int, name: String) {
+            print("\(name) \(index)")
+    }
+}
+

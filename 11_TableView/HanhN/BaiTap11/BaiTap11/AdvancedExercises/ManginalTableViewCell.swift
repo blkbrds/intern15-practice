@@ -7,12 +7,24 @@
 //
 
 import UIKit
+protocol ManginalTableViewCellDelegate: class {
+    func sendIndex(view: ManginalTableViewCell, needsPerform action: ManginalTableViewCell.Action, index: Int, name: String)
+}
 
 class ManginalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var goKuImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subtileLabel: UILabel!
+    @IBOutlet weak var button: UIButton!
+
+    enum Action {
+        case click(name: String)
+    }
+
+    weak var delegate: ManginalTableViewCellDelegate?
+    var index: Int = 0
+    var name: String = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +33,11 @@ class ManginalTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
 
+    @IBAction func tapMeButton(_ sender: Any) {
+        guard let name: String = nameLabel.text else { return }
+        delegate?.sendIndex(view: self, needsPerform: .click(name: name), index: index, name: name)
     }
 
     func updateTabelCell(avatar: String, name: String = "", subtile: String = "") {
@@ -30,3 +46,5 @@ class ManginalTableViewCell: UITableViewCell {
         subtileLabel.text = subtile
     }
 }
+
+
