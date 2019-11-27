@@ -27,7 +27,7 @@ final class Ex02ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    // lấy dữ liệu từ file plist
     func loadData() {
         user = DataManagement.share.getUser(fileName: "nameList", type: "plist")
     }
@@ -56,3 +56,4 @@ extension Ex02ViewController: UITableViewDelegate {
         navigationController?.pushViewController(contactDeTaiViewController, animated: true)
     }
 }
+// bai 3: cach van dung delegate didSelect

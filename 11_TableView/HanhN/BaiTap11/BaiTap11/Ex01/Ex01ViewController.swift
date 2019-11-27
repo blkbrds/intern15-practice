@@ -15,25 +15,26 @@ class Ex01ViewController: UIViewController {
         super.viewDidLoad()
         seupUI()
     }
-    
+
     func seupUI() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellView")
         tableView.dataSource = self
     }
-    
+
 }
 extension Ex01ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellView", for: indexPath)
         cell.textLabel?.text = "Name \(indexPath.row)"
         return cell
     }
 }
+//bai 1: bài tập này học được cách đưa ra các dãy số bằng phương pháp indexPath.row

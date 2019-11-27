@@ -11,8 +11,8 @@ import UIKit
 class Ex03ViewController: UIViewController {
 
     @IBOutlet weak var contactNameLabel: UILabel!
-    
-    var contact : String = ""
+
+    var contact: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.contactNameLabel.text = contact
