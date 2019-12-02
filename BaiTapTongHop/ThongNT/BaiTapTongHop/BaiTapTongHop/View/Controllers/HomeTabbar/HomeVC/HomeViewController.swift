@@ -196,20 +196,6 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
     }
 }
 
-//MARK: - Extension UISearchControllerDelegate
-extension HomeViewController: UISearchBarDelegate {
-    
-//    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        var currentText = ""
-//        if let searchText = searchBar.text {
-//            currentText = searchText
-//        }
-//        let keyword = (currentText as NSString).replacingCharacters(in: range, with: text)
-//        search(keyword: keyword)
-//    }
-}
-
-
 extension HomeViewController {
     
     struct Config {

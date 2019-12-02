@@ -11,12 +11,6 @@ import MVVM
 
 final class HomeViewModel: ViewModel {
     
-    var searchPlaces: [Place] = []
-    
-//    func search(keyword: String) {
-//        searchPlaces = getPlaces(keyword: keyword)
-//    }
-    
     func getPlaces(by keyword: String) -> [String] {
         return [""]
     }
