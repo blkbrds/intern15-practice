@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8FEAAA7DE53DA48A3729F3CE /* Pods_BaiTapTongHop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6655B635F14A057DC97B144 /* Pods_BaiTapTongHop.framework */; };
+		B228016D2390B9E400EA6143 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228016B2390B9E400EA6143 /* DetailTableViewCell.swift */; };
+		B228016E2390B9E400EA6143 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B228016C2390B9E400EA6143 /* DetailTableViewCell.xib */; };
+		B22801712390BC9A00EA6143 /* DetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22801702390BC9A00EA6143 /* DetailCellViewModel.swift */; };
+		B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2295D0E238F5F7A001846AF /* DetailViewModel.swift */; };
+		B2381B11238D0D3F0053EA77 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2381B0F238D0D3F0053EA77 /* HomeCollectionViewCell.swift */; };
+		B2381B12238D0D3F0053EA77 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2381B10238D0D3F0053EA77 /* HomeCollectionViewCell.xib */; };
 		B241AE0C238B823600844F41 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE0A238B823600844F41 /* FavoritesViewController.swift */; };
 		B241AE0D238B823600844F41 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B241AE0B238B823600844F41 /* FavoritesViewController.xib */; };
 		B241AE10238B825100844F41 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE0E238B825100844F41 /* ProfileViewController.swift */; };
@@ -55,6 +61,12 @@
 /* Begin PBXFileReference section */
 		021BCDFBFC775982D5CA4BE9 /* Pods-BaiTapTongHop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapTongHop.debug.xcconfig"; path = "Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop.debug.xcconfig"; sourceTree = "<group>"; };
 		A42295CBE3C6F0F8443EE1E7 /* Pods-BaiTapTongHop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapTongHop.release.xcconfig"; path = "Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop.release.xcconfig"; sourceTree = "<group>"; };
+		B228016B2390B9E400EA6143 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		B228016C2390B9E400EA6143 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		B22801702390BC9A00EA6143 /* DetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellViewModel.swift; sourceTree = "<group>"; };
+		B2295D0E238F5F7A001846AF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		B2381B0F238D0D3F0053EA77 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B2381B10238D0D3F0053EA77 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B241AE0A238B823600844F41 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		B241AE0B238B823600844F41 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		B241AE0E238B825100844F41 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +134,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B228016F2390BC4300EA6143 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B228016B2390B9E400EA6143 /* DetailTableViewCell.swift */,
+				B228016C2390B9E400EA6143 /* DetailTableViewCell.xib */,
+				B22801702390BC9A00EA6143 /* DetailCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B22B46A3238BE49E00342D5D /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +160,8 @@
 			children = (
 				B241AE55238BCF9500844F41 /* DetailViewController.swift */,
 				B241AE56238BCF9500844F41 /* DetailViewController.xib */,
+				B2295D0E238F5F7A001846AF /* DetailViewModel.swift */,
+				B228016F2390BC4300EA6143 /* Cell */,
 			);
 			path = DetailVC;
 			sourceTree = "<group>";
@@ -268,6 +292,8 @@
 				B241AE51238BC7CC00844F41 /* HomeTableViewCell.swift */,
 				B241AE52238BC7CC00844F41 /* HomeTableViewCell.xib */,
 				B241AE5D238BD96B00844F41 /* HomeCellViewModel.swift */,
+				B2381B0F238D0D3F0053EA77 /* HomeCollectionViewCell.swift */,
+				B2381B10238D0D3F0053EA77 /* HomeCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -404,8 +430,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2732CBF2387993D00E1CDCE /* Assets.xcassets in Resources */,
+				B228016E2390B9E400EA6143 /* DetailTableViewCell.xib in Resources */,
 				B2732CFF23879D3700E1CDCE /* MapViewController.xib in Resources */,
 				B241AE58238BCF9500844F41 /* DetailViewController.xib in Resources */,
+				B2381B12238D0D3F0053EA77 /* HomeCollectionViewCell.xib in Resources */,
 				B241AE0D238B823600844F41 /* FavoritesViewController.xib in Resources */,
 				B241AE11238B825100844F41 /* ProfileViewController.xib in Resources */,
 				B241AE54238BC7CC00844F41 /* HomeTableViewCell.xib in Resources */,
@@ -480,12 +508,15 @@
 				B241AE36238B8CC600844F41 /* RequestSerializer.swift in Sources */,
 				B2732CB62387993B00E1CDCE /* AppDelegate.swift in Sources */,
 				B241AE43238B8CC600844F41 /* ScrollView.swift in Sources */,
+				B228016D2390B9E400EA6143 /* DetailTableViewCell.swift in Sources */,
 				B241AE5C238BD48D00844F41 /* HomeViewModel.swift in Sources */,
 				B241AE3E238B8CC600844F41 /* CollectionCell.swift in Sources */,
 				B241AE44238B8CC600844F41 /* TableView.swift in Sources */,
 				B241AE39238B8CC600844F41 /* ResponseSerializer.swift in Sources */,
 				B241AE47238B8CC600844F41 /* Button.swift in Sources */,
+				B2381B11238D0D3F0053EA77 /* HomeCollectionViewCell.swift in Sources */,
 				B241AE45238B8CC600844F41 /* TableCell.swift in Sources */,
+				B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */,
 				B241AE10238B825100844F41 /* ProfileViewController.swift in Sources */,
 				B2732CB82387993B00E1CDCE /* SceneDelegate.swift in Sources */,
 				B241AE3B238B8CC600844F41 /* String.swift in Sources */,
@@ -493,6 +524,7 @@
 				B241AE4A238B8CC600844F41 /* CollectionExt.swift in Sources */,
 				B241AE49238B8CC600844F41 /* UIViewControllerExt.swift in Sources */,
 				B241AE3F238B8CC600844F41 /* CollectionViewHeaderView.swift in Sources */,
+				B22801712390BC9A00EA6143 /* DetailCellViewModel.swift in Sources */,
 				B241AE41238B8CC600844F41 /* ViewController.swift in Sources */,
 				B241AE40238B8CC600844F41 /* Label.swift in Sources */,
 				B241AE42238B8CC600844F41 /* CollectionView.swift in Sources */,

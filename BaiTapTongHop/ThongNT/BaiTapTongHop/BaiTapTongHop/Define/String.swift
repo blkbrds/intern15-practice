@@ -14,8 +14,10 @@ extension App {
      Please localize defined strings in `Resources/Localizable.strings`.
      */
 
-    struct String { }
+    struct String {}
+    struct Home {}
 }
 
-extension App.String {
+extension App.Home {
+    static var alertMessage: String { return "Bạn có muốn xoá không?".localized() }
 }

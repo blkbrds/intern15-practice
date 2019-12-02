@@ -11,12 +11,18 @@ import MVVM
 
 final class HomeViewModel: ViewModel {
     
-    func getNumberOfPlaces() -> Int {
-        Place.places.count
+    var searchPlaces: [Place] = []
+    
+//    func search(keyword: String) {
+//        searchPlaces = getPlaces(keyword: keyword)
+//    }
+    
+    func getPlaces(by keyword: String) -> [String] {
+        return [""]
     }
     
-    func getPlace(at index: Int) -> Place {
-        return Place.places[index]
+    func getNumberOfPlaces() -> Int {
+        Place.places.count
     }
     
     func changeFavorite(at index: Int, completion: (Bool, String) -> ()) {
@@ -26,5 +32,13 @@ final class HomeViewModel: ViewModel {
             Place.places[index].favorite = !Place.places[index].favorite
             completion(true, "")
         }
+    }
+    
+    func getDetailViewModel() -> DetailViewModel {
+        return DetailViewModel(name: "Thong")
+    }
+    
+    func getHomeCellViewModel(indexPath: IndexPath) -> HomeCellViewModel {
+        return HomeCellViewModel(place: Place.places[indexPath.row])
     }
 }

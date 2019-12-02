@@ -10,9 +10,10 @@ import Foundation
 import MVVM
 
 final class HomeCellViewModel: ViewModel {
+    
     let title: String
     let address: String
-    let rating: Int
+    let rating: String
     let distance: String
     let favorite: Bool
     let thumbnailImage: String
@@ -24,5 +25,12 @@ final class HomeCellViewModel: ViewModel {
         distance = place.distance
         favorite = place.favorite
         thumbnailImage = ""
+    }
+    
+    func favoriteImage() -> String {
+        if favorite {
+            return "icon_heart_fill"
+        }
+        return "icon_heart"
     }
 }

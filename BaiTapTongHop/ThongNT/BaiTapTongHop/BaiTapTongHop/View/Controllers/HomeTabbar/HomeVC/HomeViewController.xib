@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BaiTapTongHop" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="7od-D9-OUo" id="rbb-bc-AZE"/>
                 <outlet property="tableView" destination="n4G-PQ-Jgo" id="n81-2E-qH3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,16 +23,30 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7od-D9-OUo">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HbJ-Dw-FPJ">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="7od-D9-OUo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8qx-SN-x6g"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7od-D9-OUo" secondAttribute="bottom" id="BqJ-kF-7Vz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="n4G-PQ-Jgo" secondAttribute="trailing" id="Dj6-d0-Opg"/>
-                <constraint firstItem="n4G-PQ-Jgo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cBo-Sk-L6N"/>
+                <constraint firstItem="n4G-PQ-Jgo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IkX-0a-nZr"/>
+                <constraint firstItem="7od-D9-OUo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qqe-kf-3w6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="n4G-PQ-Jgo" secondAttribute="bottom" id="rjT-Gm-QJW"/>
                 <constraint firstItem="n4G-PQ-Jgo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uVZ-58-Ts0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7od-D9-OUo" secondAttribute="trailing" id="vAk-8c-ycP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </view>
     </objects>
 </document>
