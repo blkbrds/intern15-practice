@@ -7,7 +7,7 @@
 
 import Foundation
 
-class City {
+final class City {
     
     var name: String
     var district: [District]

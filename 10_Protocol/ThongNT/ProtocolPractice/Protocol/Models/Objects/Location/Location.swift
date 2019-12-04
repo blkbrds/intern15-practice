@@ -7,13 +7,12 @@
 
 import Foundation
 
+final class Location {
 
-class Location {
-    
     var state: String
     var city: String
     var district: String
-    
+
     init(state: String = "", city: String = "", district: String = "") {
         self.state = state
         self.city = city

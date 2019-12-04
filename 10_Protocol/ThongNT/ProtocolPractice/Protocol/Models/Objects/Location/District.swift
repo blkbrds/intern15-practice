@@ -7,7 +7,7 @@
 
 import Foundation
 
-class District {
+final class District {
     
     var name: String
     init(name: String) {

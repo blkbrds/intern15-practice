@@ -28,9 +28,6 @@ final class MienViewController: UIViewController {
         setupNavi()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.tableFooterView = UIView(frame: .zero)
-        guard let tinhs = dataSource.ge else {
-            <#statements#>
-        }
     }
     
     private func setupNavi() {
@@ -81,7 +78,7 @@ extension MienViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MienViewController: TinhViewControllerDataSource {
-    func getTinhSelected() -> (tinh: String?, huyen: String?) {ß
+    func getTinhSelected() -> (tinh: String?, huyen: String?) {
         return (dataSource?.getMienSelected().tinh, dataSource?.getMienSelected().huyen)
     }
     

@@ -12,7 +12,7 @@ protocol CustomViewDataSource: class {
 }
 
 protocol CustomViewDelegate: class {
-    func sendResult(view: CustomView, needsPerfrom action: CustomView.sendResult)
+    func sendResult(view: CustomView, needsPerfrom action: CustomView.Action)
 }
 
 final class CustomView: UIView {
@@ -24,7 +24,7 @@ final class CustomView: UIView {
     @IBOutlet private weak var doneButton: UIBarButtonItem!
 
     // MARK: - Enum
-    enum sendResult {
+    enum Action {
         case cancel
         case clear
         case sendResult(result: Float)
@@ -46,10 +46,6 @@ final class CustomView: UIView {
 
     weak var dataSource: CustomViewDataSource?
     weak var delegate: CustomViewDelegate?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
     func reloadData() {
         guard let (x, y) = dataSource?.getValues() else { return }

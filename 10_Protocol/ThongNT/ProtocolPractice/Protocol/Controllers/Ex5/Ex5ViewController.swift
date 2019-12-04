@@ -51,7 +51,7 @@ final class Ex5ViewController: BaseViewController {
 }
 
 extension Ex5ViewController: CustomViewDataSource, CustomViewDelegate {
-    func sendResult(view: CustomView, needsPerfrom action: CustomView.sendResult) {
+    func sendResult(view: CustomView, needsPerfrom action: CustomView.Action) {
         switch action {
         case .sendResult(let result):
             resultLabel.text = "\(result)"
