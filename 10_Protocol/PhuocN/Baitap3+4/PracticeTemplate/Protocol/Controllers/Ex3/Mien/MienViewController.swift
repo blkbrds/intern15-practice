@@ -38,7 +38,6 @@ final class MienViewController: UIViewController {
     @objc private func pushToNextView() {
         if let mien = mienSelected {
             let vc = TinhViewController()
-            vc.tinhs = mien.tinh
             vc.dataSource = self
             navigationController?.pushViewController(vc, animated: true)
         }
