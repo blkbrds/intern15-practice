@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="TeamHeaderReusableView" customModule="CollectionViewAdvance" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Lo-nw-etS">
+                    <rect key="frame" x="10" y="5" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5Lo-nw-etS" secondAttribute="height" id="Eas-cG-AHJ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41z-p5-ZDq">
+                    <rect key="frame" x="60" y="0.0" width="260" height="50"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5Lo-nw-etS" secondAttribute="bottom" constant="5" id="Mo4-hq-hqx"/>
+                <constraint firstItem="5Lo-nw-etS" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="arR-xi-efE"/>
+                <constraint firstItem="41z-p5-ZDq" firstAttribute="leading" secondItem="5Lo-nw-etS" secondAttribute="trailing" constant="10" id="kpF-Sn-6g0"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="41z-p5-ZDq" secondAttribute="bottom" id="kx1-32-H4X"/>
+                <constraint firstItem="41z-p5-ZDq" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="peL-Nd-q1K"/>
+                <constraint firstItem="5Lo-nw-etS" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="5" id="qgD-eo-aZG"/>
+                <constraint firstAttribute="trailing" secondItem="41z-p5-ZDq" secondAttribute="trailing" id="vEy-n3-USP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="teamImageView" destination="5Lo-nw-etS" id="GNz-I1-twG"/>
+                <outlet property="teamNameLabel" destination="41z-p5-ZDq" id="bTw-JF-FQu"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </collectionReusableView>
+    </objects>
+</document>
