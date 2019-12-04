@@ -7,9 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="TableView" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionsViewController" customModule="TableView" customModuleProvider="target">
             <connections>
-                <outlet property="nameLabel" destination="xlQ-YO-CKj" id="FKB-fH-ri0"/>
+                <outlet property="tableView" destination="Ykp-nz-8GQ" id="Ulv-Hf-Af7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,20 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlQ-YO-CKj">
-                    <rect key="frame" x="170" y="160" width="74.333333333333314" height="36"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ykp-nz-8GQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="xlQ-YO-CKj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rNQ-oL-c1N"/>
-                <constraint firstItem="xlQ-YO-CKj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="160" id="sei-Ws-C3z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ykp-nz-8GQ" secondAttribute="bottom" id="F8c-qS-a6N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ykp-nz-8GQ" secondAttribute="trailing" id="KNe-47-SMH"/>
+                <constraint firstItem="Ykp-nz-8GQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="NoF-Vp-Yi2"/>
+                <constraint firstItem="Ykp-nz-8GQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="U4I-h2-RXw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="134"/>
+            <point key="canvasLocation" x="132" y="123"/>
         </view>
     </objects>
 </document>
