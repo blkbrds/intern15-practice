@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    @IBOutlet private weak var collecitonView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private let heroCellNibIndentifier: String = "HeroCollectionViewCell"
     private let customCollectionViewCellIndentifier: String = "CustomCollectionViewCell"
@@ -28,15 +28,15 @@ final class HomeViewController: UIViewController {
     }
 
     private func configCollectionView() {
-        collecitonView.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.8745098039, blue: 0.8745098039, alpha: 0.8)
+        collectionView.backgroundColor = #colorLiteral(red: 0.8980392157, green: 0.8745098039, blue: 0.8745098039, alpha: 0.8)
 
         let cellNib = UINib(nibName: customCollectionViewCellIndentifier, bundle: .main)
-        collecitonView.register(cellNib, forCellWithReuseIdentifier: customCollectionViewCellIndentifier)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: customCollectionViewCellIndentifier)
 
         let headerNib = UINib(nibName: teamCellNibIndentifier, bundle: .main)
-        collecitonView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: teamCellNibIndentifier)
-        collecitonView.dataSource = self
-        collecitonView.delegate = self
+        collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: teamCellNibIndentifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
 }
 
