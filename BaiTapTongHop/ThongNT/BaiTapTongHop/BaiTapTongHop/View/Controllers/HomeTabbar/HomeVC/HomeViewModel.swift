@@ -28,8 +28,8 @@ final class HomeViewModel: ViewModel {
         }
     }
     
-    func getDetailViewModel() -> DetailViewModel {
-        return DetailViewModel(name: "Thong")
+    func getDetailViewModel(indexPath: IndexPath) -> DetailViewModel {
+        return DetailViewModel(place: Place.places[indexPath.row])
     }
     
     func getHomeCellViewModel(indexPath: IndexPath) -> HomeCellViewModel {

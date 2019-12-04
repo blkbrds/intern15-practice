@@ -10,11 +10,13 @@ import Foundation
 
 final class Place {
 
-    var title: String
-    var address: String
-    var rating: String
-    var distance: String
-    var favorite: Bool
+    var title = ""
+    var address = ""
+    var rating = ""
+    var distance = ""
+    var favorite = false
+
+    init() { }
 
     init(title: String, address: String, rating: Int, distance: Float, favorite: Bool) {
         self.title = title

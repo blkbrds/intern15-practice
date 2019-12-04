@@ -15,10 +15,11 @@ final class HomeViewController: ViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     
     //MARK: - Private Properties
-    private var homeTableViewCellIdentifier: String = "HomeTableViewCell"
-    private var homeCollectionViewCellIdentifier: String = "HomeCollectionViewCell"
+    private var homeTableViewCellIdentifier: String = "HomeCell"
+    private var homeCollectionViewCellIdentifier: String = "HomeCollectionCell"
     private var searchPlaces: [Place] = []
     private var status: Layout = .row
+    var temp = PracticeAPI()
 
     var viewModel = HomeViewModel()
 
@@ -37,6 +38,12 @@ final class HomeViewController: ViewController {
         super.setupUI()
         title = "Home"
         setupData()
+        
+        temp.evolutionChains {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
 
         // Add change layout button on right navigation bar
         let changeLayoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "naviBar_icon_collection_icon.png"), style: .plain, target: self, action: #selector(switchLayout))
@@ -98,7 +105,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: homeTableViewCellIdentifier, for: indexPath) as? HomeTableViewCell else { return TableCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: homeTableViewCellIdentifier, for: indexPath) as? HomeCell else { return TableCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
         cell.delegate = self
         return cell
@@ -110,14 +117,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let OkButton = UIAlertAction(title: "OK", style: .default) { (action) in
+            let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
                 Place.places.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .left)
                 self.collectionView.reloadData()
             }
             let cancelButton = UIAlertAction(title: "Cancel", style: .default, handler: nil)
             let alert = UIAlertController(title: "Thông Báo", message: App.Home.alertMessage, preferredStyle: .alert)
-            alert.addAction(OkButton)
+            alert.addAction(okButton)
             alert.addAction(cancelButton)
             present(alert, animated: true, completion: nil)
         }
@@ -125,15 +132,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.viewModel = viewModel.getDetailViewModel()
+        vc.viewModel = viewModel.getDetailViewModel(indexPath: indexPath)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-//MARK: - Extension HomeTableViewCell Delegate
-extension HomeViewController: HomeTableViewCellDelegate {
+//MARK: - Extension HomeCell Delegate
+extension HomeViewController: HomeCellDelegate {
 
-    func cell(cell: HomeTableViewCell, needsPerform action: HomeTableViewCell.Action) {
+    func cell(cell: HomeCell, needsPerform action: HomeCell.Action) {
         switch action {
         case .addFavorite:
             guard let index = tableView.indexPath(for: cell) else {
@@ -153,14 +160,14 @@ extension HomeViewController: HomeTableViewCellDelegate {
 }
 
 //MARK: - Exetension CollectionView datasource, delegate, DelegateFlowLayout
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getNumberOfPlaces()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: homeCollectionViewCellIdentifier, for: indexPath) as? HomeCollectionViewCell else { return CollectionCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: homeCollectionViewCellIdentifier, for: indexPath) as? HomeCollectionCell else { return CollectionCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
         cell.delegate = self
         return cell
@@ -171,13 +178,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-//MARK: - Extension HomeCollectionViewCell Delegate
-extension HomeViewController: HomeCollectionViewCellDelegate {
+//MARK: - Extension HomeCollectionCell Delegate
+extension HomeViewController: HomeCollectionCellDelegate {
 
-    func addFavorite(view: HomeCollectionViewCell, needsPerform action: HomeCollectionViewCell.Action) {
+    func cell(cell: HomeCollectionCell, needsPerform action: HomeCollectionCell.Action) {
         switch action {
         case .addFavorite:
-            guard let index = collectionView.indexPath(for: view) else {
+            guard let index = collectionView.indexPath(for: cell) else {
                 alert(title: "Warning", msg: "Can not add Favortie", buttons: ["OK"], preferButton: "", handler: nil)
                 return
             }

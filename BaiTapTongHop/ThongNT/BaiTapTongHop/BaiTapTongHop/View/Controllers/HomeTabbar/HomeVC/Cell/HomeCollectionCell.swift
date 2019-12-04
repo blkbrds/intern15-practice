@@ -1,50 +1,49 @@
 //
-//  HomeTableViewCell.swift
+//  HomeCollectionCell.swift
 //  BaiTapTongHop
 //
-//  Created by PCI0018 on 11/25/19.
+//  Created by PCI0018 on 11/26/19.
 //  Copyright © 2019 Asian Tech. All rights reserved.
 //
 
 import UIKit
 
-protocol HomeTableViewCellDelegate: class {
-    func cell(cell: HomeTableViewCell, needsPerform action: HomeTableViewCell.Action)
+protocol HomeCollectionCellDelegate: class {
+    func cell(cell: HomeCollectionCell, needsPerform action: HomeCollectionCell.Action)
 }
 
-final class HomeTableViewCell: TableCell {
+final class HomeCollectionCell: UICollectionViewCell {
 
-    //MARK: - IBOulet
-    @IBOutlet private weak var favoriteButton: UIButton!
+    enum Action {
+        case addFavorite
+    }
+    
+    //MARK: - IBOulet 
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var distanceLabel: UILabel!
+    @IBOutlet private weak var favoriteButton: UIButton!
     
-    enum Action {
-        case addFavorite
-    }
-    
-    weak var delegate: HomeTableViewCellDelegate?
+    weak var delegate: HomeCollectionCellDelegate?
     var viewModel: HomeCellViewModel? {
         didSet {
             setupUI()
         }
     }
-    
+
     private func setupUI() {
-        selectionStyle = .none
+        layer.cornerRadius = 5
         guard let viewModel = viewModel else { return }
         titleLabel.text = viewModel.title
         addressLabel.text = viewModel.address
         ratingLabel.text = "\(viewModel.rating)"
         distanceLabel.text = viewModel.distance
-        favoriteButton.isSelected = viewModel.favorite
-        favoriteButton.setImage(UIImage(named: viewModel.favoriteImage()), for: .selected)
+        favoriteButton.setImage(UIImage(named: viewModel.favoriteImage), for: .normal)
     }
     
-    @IBAction func favortieButtonTouchUpInside(_ sender: Any) {
+    @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
         delegate?.cell(cell: self, needsPerform: .addFavorite)
     }
 }

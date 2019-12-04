@@ -9,10 +9,10 @@
 import Foundation
 
 final class DetailViewModel {
+    var place = Place()
+    init() {}
     
-    private(set) var name: String
-    
-    init(name: String = "") {
-        self.name = name
+    init(place: Place) {
+        self.place = place
     }
 }

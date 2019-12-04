@@ -33,9 +33,10 @@ final class DetailViewController: ViewController {
         super.setupUI()
         title = "Detail"
         configTableView()
+        let imageName = viewModel.place.favorite ? "icon_heart_fill.png" : "icon_heart.png"
         
-        let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: imageName).withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = favoriteButton
     }
 
     //MARK: - Private Functions
