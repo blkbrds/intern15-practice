@@ -1,8 +1,8 @@
 import UIKit
 
 func hinhCau(banKinh: Double) -> (dienTich: Double, theTich: Double) {
-    let dienTich = 4 * 3.14 * banKinh * banKinh
-    let theTich = (4 / 3) * 3.14 * banKinh * banKinh * banKinh
+    let dienTich = 4 * .pi * banKinh * banKinh
+    let theTich = (4 / 3) * .pi * banKinh * banKinh * banKinh
     return (dienTich, theTich)
 }
 

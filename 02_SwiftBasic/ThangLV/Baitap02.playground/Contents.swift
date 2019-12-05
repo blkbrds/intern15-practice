@@ -1,7 +1,8 @@
 import UIKit
 
 func giaiPhuongTrinh (a: Double, b: Double, c: Double) -> (x1: Double, x2: Double) {
-    var x1 = 0.0, x2 = 0.0
+    var x1: Double = 0
+    var x2: Double = 0
     if (a == 0) {
         return (-1.0, -1.0)
     } else {

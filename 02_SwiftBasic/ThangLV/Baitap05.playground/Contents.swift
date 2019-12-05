@@ -1,7 +1,8 @@
 import UIKit
 
-func findSubstring(string: String, substring: String) -> (Int) {
-    var index = 0, sum = 0
+func findSubstring(string: String, substring: String) -> Int {
+    var index: Int = 0
+    var sum: Int = 0
     for char in string {
         if substring.first == char {
             let startOfFoundCharacter = string.index(string.startIndex, offsetBy: index)
