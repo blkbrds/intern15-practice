@@ -43,7 +43,7 @@ final class HomeCollectionCell: UICollectionViewCell {
         favoriteButton.setImage(UIImage(named: viewModel.favoriteImage), for: .normal)
     }
     
-    @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         delegate?.cell(cell: self, needsPerform: .addFavorite)
     }
 }

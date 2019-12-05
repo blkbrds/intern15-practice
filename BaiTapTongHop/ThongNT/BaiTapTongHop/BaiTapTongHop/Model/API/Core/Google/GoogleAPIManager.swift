@@ -21,7 +21,6 @@ final class GoogleAPIManager {
                 let json = self.convertToJSON(from: data)
                 let response = PlaceResponse(count: json["count"] as? Int, previous: json["previous"] as? String, results: json["results"] as? [[String: Any]], next: json["next"] as? String)
                 guard let results = response.results else {
-//                    self.revolutions = []
                     return
                 }
                 var revolutions: [String] = []
@@ -30,7 +29,6 @@ final class GoogleAPIManager {
                         revolutions.append(revolution)
                     }
                 }
-//                self.revolutions = revolutions
             }
             completion()
         }

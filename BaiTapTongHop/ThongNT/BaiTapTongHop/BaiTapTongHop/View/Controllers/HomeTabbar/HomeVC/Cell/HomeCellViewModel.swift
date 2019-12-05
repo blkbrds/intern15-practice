@@ -32,11 +32,4 @@ final class HomeCellViewModel: ViewModel {
         favorite = place.favorite
         thumbnailImage = ""
     }
-
-//    func favoriteImage() -> String {
-//        if favorite {
-//            return "icon_heart_fill"
-//        }
-//        return "icon_heart"
-//    }
 }

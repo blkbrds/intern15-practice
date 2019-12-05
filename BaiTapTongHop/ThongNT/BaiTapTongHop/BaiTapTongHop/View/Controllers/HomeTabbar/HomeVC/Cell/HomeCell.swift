@@ -44,7 +44,7 @@ final class HomeCell: TableCell {
         favoriteButton.setImage(UIImage(named: viewModel.favoriteImage), for: .selected)
     }
     
-    @IBAction func favortieButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func favortieButtonTouchUpInside(_ sender: Any) {
         delegate?.cell(cell: self, needsPerform: .addFavorite)
     }
 }
