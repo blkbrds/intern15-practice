@@ -20,4 +20,6 @@ class BaseViewController: UIViewController {
     func setupUI() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
     }
+    
+    func updateUI() { }
 }
