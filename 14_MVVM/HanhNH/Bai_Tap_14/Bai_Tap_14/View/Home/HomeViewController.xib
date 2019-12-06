@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Bai_Tap_14" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="W08-p9-X5k" id="PhI-r8-IVl"/>
                 <outlet property="tableView" destination="vl2-tx-pfK" id="IlP-6c-AX8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,15 +19,29 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vl2-tx-pfK">
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vl2-tx-pfK">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="W08-p9-X5k">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0Xj-kb-znH">
+                        <size key="itemSize" width="125" height="240"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vl2-tx-pfK" secondAttribute="trailing" id="InJ-t2-dsF"/>
+                <constraint firstItem="W08-p9-X5k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Me0-f0-2WE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W08-p9-X5k" secondAttribute="trailing" id="X3F-1t-g1d"/>
                 <constraint firstItem="vl2-tx-pfK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bxD-eq-cya"/>
+                <constraint firstItem="W08-p9-X5k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="h86-6l-f5N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W08-p9-X5k" secondAttribute="bottom" id="hYW-2r-tYj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vl2-tx-pfK" secondAttribute="bottom" id="kNY-X1-XHA"/>
                 <constraint firstItem="vl2-tx-pfK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kQC-ME-A0O"/>
             </constraints>

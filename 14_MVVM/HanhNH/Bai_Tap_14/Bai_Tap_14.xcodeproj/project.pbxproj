@@ -25,6 +25,8 @@
 		8A68BCD9239A438E00801151 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BCD7239A438E00801151 /* HomeTableViewCell.swift */; };
 		8A68BCDA239A438E00801151 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A68BCD8239A438E00801151 /* HomeTableViewCell.xib */; };
 		8A68BCDC239A624200801151 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BCDB239A624200801151 /* Address.swift */; };
+		8A68BCE2239A664000801151 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A68BCE0239A664000801151 /* HomeCollectionViewCell.swift */; };
+		8A68BCE3239A664000801151 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A68BCE1239A664000801151 /* HomeCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		8A68BCD7239A438E00801151 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		8A68BCD8239A438E00801151 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		8A68BCDB239A624200801151 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		8A68BCE0239A664000801151 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A68BCE1239A664000801151 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		8A0955C1239A35DC00335A8E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8A68BCDE239A65FA00801151 /* HomeCollectionView */,
 				8A68BCD6239A41CE00801151 /* HomeCell */,
 				8A0955C2239A35EA00335A8E /* HomeViewController.swift */,
 				8A0955C3239A35EA00335A8E /* HomeViewController.xib */,
@@ -175,6 +180,15 @@
 			path = HomeCell;
 			sourceTree = "<group>";
 		};
+		8A68BCDE239A65FA00801151 /* HomeCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				8A68BCE0239A664000801151 /* HomeCollectionViewCell.swift */,
+				8A68BCE1239A664000801151 /* HomeCollectionViewCell.xib */,
+			);
+			path = HomeCollectionView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,6 +250,7 @@
 				8A0955D5239A36C600335A8E /* ProfileViewController.xib in Resources */,
 				8A68BCDA239A438E00801151 /* HomeTableViewCell.xib in Resources */,
 				8A0955BA239A358600335A8E /* LaunchScreen.storyboard in Resources */,
+				8A68BCE3239A664000801151 /* HomeCollectionViewCell.xib in Resources */,
 				8A0955B7239A358600335A8E /* Assets.xcassets in Resources */,
 				8A0955C5239A35EA00335A8E /* HomeViewController.xib in Resources */,
 				8A0955D0239A36AF00335A8E /* FavoriteViewController.xib in Resources */,
@@ -261,6 +276,7 @@
 				8A0955CF239A36AF00335A8E /* FavoriteViewController.swift in Sources */,
 				8A0955C4239A35EA00335A8E /* HomeViewController.swift in Sources */,
 				8A0955DC239A387900335A8E /* BaseTabBarViewController.swift in Sources */,
+				8A68BCE2239A664000801151 /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
