@@ -1,28 +1,47 @@
 import UIKit
 
-func giaiPhuongTrinh (a: Double, b: Double, c: Double) -> (x1: Double, x2: Double) {
+enum Nghiem {
+    case vonghiem
+    case motnghiem(Float)
+    case hainghiem(Float, Float)
+    case vosonghiem
+}
+
+func giaiPhuongTrinh (a: Double, b: Double, c: Double) -> Nghiem {
     var x1: Double = 0
     var x2: Double = 0
     if (a == 0) {
-        return (-1.0, -1.0)
+        return .vonghiem
     } else {
         let delta = b * b - 4 * a * c
         if (delta < 0) {
-            return (-1.0, -1.0)
-        }
-        else {
+            return .vonghiem
+        } else {
             if (delta == 0) {
                 x1 = (-b) / (2 * a)
                 x2 = (-b) / (2 * a)
-            }
-            else {
+            } else {
                 x1 = (-b + sqrt(delta)) / (2 * a)
                 x2 = ((-b - sqrt(delta)) / (2 * a))
             }
         }
     }
-    return (x1, x2)
+    return .hainghiem(Float(x1), Float(x2))
 }
 
-let a = 2.0, b = -3.0, c = -5.0
-print(giaiPhuongTrinh(a: a, b: b, c: c))
+let a: Double = 2
+let b: Double = -4
+let c: Double = 2
+let ketqua = giaiPhuongTrinh(a: a, b: b, c: c)
+
+//su dung
+switch ketqua {
+case .vonghiem:
+    print("Phuong trinh vo nghiem")
+case .vosonghiem:
+    print("Phuong trinh vo so nghiem")
+case .motnghiem(let x):
+    print("Phuong trinh nghiem x = \(x)")
+case .hainghiem(let x1, let x2):
+    print("Nghiem x1 = \(x1), x2 = \(x2)")
+}
