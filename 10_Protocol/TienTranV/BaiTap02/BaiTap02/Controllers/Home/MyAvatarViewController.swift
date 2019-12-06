@@ -10,11 +10,10 @@ import UIKit
 
 final class MyAvatarViewController: BaseViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollView: UIScrollView!
 
     private var isFirstLoad: Bool = true
     private var indexDidSelect: Int?
-
     private var listAvatarView: [MyAvatarView] = []
 
     override func viewDidLoad() {
@@ -81,7 +80,7 @@ extension MyAvatarViewController: ProfileViewControllerDelegate {
 
 // MARK: - MyAvatarViewDelegate
 extension MyAvatarViewController: MyAvatarViewDelegate {
-    func myAvatarView(myAvatarView: MyAvatarView, needPerformAction action: MyAvatarView.Action) {
+    func view(view: MyAvatarView, needPerformAction action: MyAvatarView.Action) {
         switch action {
         case .gotoProfile(let index):
             indexDidSelect = index

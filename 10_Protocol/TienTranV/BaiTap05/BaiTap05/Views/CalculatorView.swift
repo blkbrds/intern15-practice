@@ -14,7 +14,7 @@ protocol CalculatorViewDatasource: class {
 }
 
 protocol CalculatorViewDelegate: class {
-    func customView(customView: CalculatorView, needPerformAciton action: CalculatorView.Action)
+    func view(view: CalculatorView, needPerformAciton action: CalculatorView.Action)
 }
 
 final class CalculatorView: UIView {
@@ -29,7 +29,7 @@ final class CalculatorView: UIView {
     @IBOutlet private weak var yLabel: UILabel!
     @IBOutlet private weak var resultLabel: UILabel!
 
-    weak var datasoucre: CalculatorViewDatasource?
+    weak var datasource: CalculatorViewDatasource?
     weak var delegate: CalculatorViewDelegate?
 
     var x: Int?
@@ -41,23 +41,15 @@ final class CalculatorView: UIView {
         super.awakeFromNib()
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-
     func updateUI() {
-        guard let x = datasoucre?.getX(), let y = datasoucre?.getY() else { return }
+        guard let x = datasource?.getX(), let y = datasource?.getY() else { return }
         xLabel.text = String(x)
         yLabel.text = String(y)
         resultLabel.text = ""
     }
 
     @IBAction func buttonsTouchUpInside(_ sender: UIButton) {
-        guard let x = datasoucre?.getX(), let y = datasoucre?.getY() else { return }
+        guard let x = datasource?.getX(), let y = datasource?.getY() else { return }
         switch sender.tag {
         case 1:
             operatorButton = "+"
@@ -85,15 +77,15 @@ final class CalculatorView: UIView {
     }
 
     private func clearAction() {
-        delegate?.customView(customView: self, needPerformAciton: .clear)
+        delegate?.view(view: self, needPerformAciton: .clear)
     }
 
-    @IBAction func doneTouchUpInside(_ sender: Any) {
+    @IBAction private func doneTouchUpInside(_ sender: Any) {
         guard let result = result, let operatorButton = operatorButton else { return }
-        delegate?.customView(customView: self, needPerformAciton: .sendResultToVC(operatorButton: operatorButton, result: result))
+        delegate?.view(view: self, needPerformAciton: .sendResultToVC(operatorButton: operatorButton, result: result))
     }
 
-    @IBAction func cancelTouchUpInside(_ sender: Any) {
-        delegate?.customView(customView: self, needPerformAciton: .cancel)
+    @IBAction private func cancelTouchUpInside(_ sender: Any) {
+        delegate?.view(view: self, needPerformAciton: .cancel)
     }
 }

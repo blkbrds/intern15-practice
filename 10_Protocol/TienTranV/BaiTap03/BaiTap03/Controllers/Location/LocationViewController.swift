@@ -61,157 +61,157 @@ struct DummyData {
 
     static var regions: [Region] = {
         let regions = [
-            Region(regionName: "Miền 1",
+            Region(name: "Miền 1",
                 provinces: [
-                    Province(provinceName: "Tỉnh 1.1",
+                    Province(name: "Tỉnh 1.1",
                         districts: [
-                            District(districtName: "Huyện 1.1.1"),
-                            District(districtName: "Huyện 1.1.2"),
-                            District(districtName: "Huyện 1.1.3"),
-                            District(districtName: "Huyện 1.1.4"),
-                            District(districtName: "Huyện 1.1.5")
+                            District(name: "Huyện 1.1.1"),
+                            District(name: "Huyện 1.1.2"),
+                            District(name: "Huyện 1.1.3"),
+                            District(name: "Huyện 1.1.4"),
+                            District(name: "Huyện 1.1.5")
                         ]),
-                    Province(provinceName: "Tỉnh 1.2",
+                    Province(name: "Tỉnh 1.2",
                         districts: [
-                            District(districtName: "Huyện 1.2.1"),
-                            District(districtName: "Huyện 1.2.2"),
-                            District(districtName: "Huyện 1.2.3"),
-                            District(districtName: "Huyện 1.2.4"),
-                            District(districtName: "Huyện 1.2.5")
+                            District(name: "Huyện 1.2.1"),
+                            District(name: "Huyện 1.2.2"),
+                            District(name: "Huyện 1.2.3"),
+                            District(name: "Huyện 1.2.4"),
+                            District(name: "Huyện 1.2.5")
                         ]),
-                    Province(provinceName: "Tỉnh 1.3",
+                    Province(name: "Tỉnh 1.3",
                         districts: [
-                            District(districtName: "Huyện 1.3.1"),
-                            District(districtName: "Huyện 1.3.2"),
-                            District(districtName: "Huyện 1.3.3"),
-                            District(districtName: "Huyện 1.3.4"),
-                            District(districtName: "Huyện 1.3.5")
+                            District(name: "Huyện 1.3.1"),
+                            District(name: "Huyện 1.3.2"),
+                            District(name: "Huyện 1.3.3"),
+                            District(name: "Huyện 1.3.4"),
+                            District(name: "Huyện 1.3.5")
                         ]),
-                    Province(provinceName: "Tỉnh 1.4",
+                    Province(name: "Tỉnh 1.4",
                         districts: [
-                            District(districtName: "Huyện 1.4.1"),
-                            District(districtName: "Huyện 1.4.2"),
-                            District(districtName: "Huyện 1.4.3"),
-                            District(districtName: "Huyện 1.4.4"),
-                            District(districtName: "Huyện 1.4.5")
+                            District(name: "Huyện 1.4.1"),
+                            District(name: "Huyện 1.4.2"),
+                            District(name: "Huyện 1.4.3"),
+                            District(name: "Huyện 1.4.4"),
+                            District(name: "Huyện 1.4.5")
                         ]),
-                    Province(provinceName: "Tỉnh 1.5",
+                    Province(name: "Tỉnh 1.5",
                         districts: [
-                            District(districtName: "Huyện 1.5.1"),
-                            District(districtName: "Huyện 1.5.2"),
-                            District(districtName: "Huyện 1.5.3"),
-                            District(districtName: "Huyện 1.5.4"),
-                            District(districtName: "Huyện 1.5.5")
+                            District(name: "Huyện 1.5.1"),
+                            District(name: "Huyện 1.5.2"),
+                            District(name: "Huyện 1.5.3"),
+                            District(name: "Huyện 1.5.4"),
+                            District(name: "Huyện 1.5.5")
                         ]),
-                    Province(provinceName: "Tỉnh 1.6",
+                    Province(name: "Tỉnh 1.6",
                         districts: [
-                            District(districtName: "Huyện 1.6.1"),
-                            District(districtName: "Huyện 1.6.2"),
-                            District(districtName: "Huyện 1.6.3"),
-                            District(districtName: "Huyện 1.6.4"),
-                            District(districtName: "Huyện 1.6.5")
+                            District(name: "Huyện 1.6.1"),
+                            District(name: "Huyện 1.6.2"),
+                            District(name: "Huyện 1.6.3"),
+                            District(name: "Huyện 1.6.4"),
+                            District(name: "Huyện 1.6.5")
                         ]),
                 ]),
-            Region(regionName: "Miền 2",
+            Region(name: "Miền 2",
                 provinces: [
-                    Province(provinceName: "Tỉnh 2.1",
+                    Province(name: "Tỉnh 2.1",
                         districts: [
-                            District(districtName: "Huyện 2.1.1"),
-                            District(districtName: "Huyện 2.1.2"),
-                            District(districtName: "Huyện 2.1.3"),
-                            District(districtName: "Huyện 2.1.4"),
-                            District(districtName: "Huyện 2.1.5")
+                            District(name: "Huyện 2.1.1"),
+                            District(name: "Huyện 2.1.2"),
+                            District(name: "Huyện 2.1.3"),
+                            District(name: "Huyện 2.1.4"),
+                            District(name: "Huyện 2.1.5")
                         ]),
-                    Province(provinceName: "Tỉnh 2.2",
+                    Province(name: "Tỉnh 2.2",
                         districts: [
-                            District(districtName: "Huyện 2.2.1"),
-                            District(districtName: "Huyện 2.2.2"),
-                            District(districtName: "Huyện 2.2.3"),
-                            District(districtName: "Huyện 2.2.4"),
-                            District(districtName: "Huyện 2.2.5")
+                            District(name: "Huyện 2.2.1"),
+                            District(name: "Huyện 2.2.2"),
+                            District(name: "Huyện 2.2.3"),
+                            District(name: "Huyện 2.2.4"),
+                            District(name: "Huyện 2.2.5")
                         ]),
-                    Province(provinceName: "Tỉnh 2.3",
+                    Province(name: "Tỉnh 2.3",
                         districts: [
-                            District(districtName: "Huyện 2.3.1"),
-                            District(districtName: "Huyện 2.3.2"),
-                            District(districtName: "Huyện 2.3.3"),
-                            District(districtName: "Huyện 2.3.4"),
-                            District(districtName: "Huyện 2.3.5")
+                            District(name: "Huyện 2.3.1"),
+                            District(name: "Huyện 2.3.2"),
+                            District(name: "Huyện 2.3.3"),
+                            District(name: "Huyện 2.3.4"),
+                            District(name: "Huyện 2.3.5")
                         ]),
-                    Province(provinceName: "Tỉnh 2.4",
+                    Province(name: "Tỉnh 2.4",
                         districts: [
-                            District(districtName: "Huyện 2.4.1"),
-                            District(districtName: "Huyện 2.4.2"),
-                            District(districtName: "Huyện 2.4.3"),
-                            District(districtName: "Huyện 2.4.4"),
-                            District(districtName: "Huyện 2.4.5")
+                            District(name: "Huyện 2.4.1"),
+                            District(name: "Huyện 2.4.2"),
+                            District(name: "Huyện 2.4.3"),
+                            District(name: "Huyện 2.4.4"),
+                            District(name: "Huyện 2.4.5")
                         ]),
-                    Province(provinceName: "Tỉnh 2.5",
+                    Province(name: "Tỉnh 2.5",
                         districts: [
-                            District(districtName: "Huyện 2.5.1"),
-                            District(districtName: "Huyện 2.5.2"),
-                            District(districtName: "Huyện 2.5.3"),
-                            District(districtName: "Huyện 2.5.4"),
-                            District(districtName: "Huyện 2.5.5")
+                            District(name: "Huyện 2.5.1"),
+                            District(name: "Huyện 2.5.2"),
+                            District(name: "Huyện 2.5.3"),
+                            District(name: "Huyện 2.5.4"),
+                            District(name: "Huyện 2.5.5")
                         ]),
-                    Province(provinceName: "Tỉnh 2.6",
+                    Province(name: "Tỉnh 2.6",
                         districts: [
-                            District(districtName: "Huyện 2.6.1"),
-                            District(districtName: "Huyện 2.6.2"),
-                            District(districtName: "Huyện 2.6.3"),
-                            District(districtName: "Huyện 2.6.4"),
-                            District(districtName: "Huyện 2.6.5")
+                            District(name: "Huyện 2.6.1"),
+                            District(name: "Huyện 2.6.2"),
+                            District(name: "Huyện 2.6.3"),
+                            District(name: "Huyện 2.6.4"),
+                            District(name: "Huyện 2.6.5")
                         ]),
                 ]),
-            Region(regionName: "Miền 3",
+            Region(name: "Miền 3",
                 provinces: [
-                    Province(provinceName: "Tỉnh 3.1",
+                    Province(name: "Tỉnh 3.1",
                         districts: [
-                            District(districtName: "Huyện 3.1.1"),
-                            District(districtName: "Huyện 3.1.2"),
-                            District(districtName: "Huyện 3.1.3"),
-                            District(districtName: "Huyện 3.1.4"),
-                            District(districtName: "Huyện 3.1.5")
+                            District(name: "Huyện 3.1.1"),
+                            District(name: "Huyện 3.1.2"),
+                            District(name: "Huyện 3.1.3"),
+                            District(name: "Huyện 3.1.4"),
+                            District(name: "Huyện 3.1.5")
                         ]),
-                    Province(provinceName: "Tỉnh 3.2",
+                    Province(name: "Tỉnh 3.2",
                         districts: [
-                            District(districtName: "Huyện 3.2.1"),
-                            District(districtName: "Huyện 3.2.2"),
-                            District(districtName: "Huyện 3.2.3"),
-                            District(districtName: "Huyện 3.2.4"),
-                            District(districtName: "Huyện 3.2.5")
+                            District(name: "Huyện 3.2.1"),
+                            District(name: "Huyện 3.2.2"),
+                            District(name: "Huyện 3.2.3"),
+                            District(name: "Huyện 3.2.4"),
+                            District(name: "Huyện 3.2.5")
                         ]),
-                    Province(provinceName: "Tỉnh 3.3",
+                    Province(name: "Tỉnh 3.3",
                         districts: [
-                            District(districtName: "Huyện 3.3.1"),
-                            District(districtName: "Huyện 3.3.2"),
-                            District(districtName: "Huyện 3.3.3"),
-                            District(districtName: "Huyện 3.3.4"),
-                            District(districtName: "Huyện 3.3.5")
+                            District(name: "Huyện 3.3.1"),
+                            District(name: "Huyện 3.3.2"),
+                            District(name: "Huyện 3.3.3"),
+                            District(name: "Huyện 3.3.4"),
+                            District(name: "Huyện 3.3.5")
                         ]),
-                    Province(provinceName: "Tỉnh 3.4",
+                    Province(name: "Tỉnh 3.4",
                         districts: [
-                            District(districtName: "Huyện 3.4.1"),
-                            District(districtName: "Huyện 3.4.2"),
-                            District(districtName: "Huyện 3.4.3"),
-                            District(districtName: "Huyện 3.4.4"),
-                            District(districtName: "Huyện 3.4.5")
+                            District(name: "Huyện 3.4.1"),
+                            District(name: "Huyện 3.4.2"),
+                            District(name: "Huyện 3.4.3"),
+                            District(name: "Huyện 3.4.4"),
+                            District(name: "Huyện 3.4.5")
                         ]),
-                    Province(provinceName: "Tỉnh 3.5",
+                    Province(name: "Tỉnh 3.5",
                         districts: [
-                            District(districtName: "Huyện 3.5.1"),
-                            District(districtName: "Huyện 3.5.2"),
-                            District(districtName: "Huyện 3.5.3"),
-                            District(districtName: "Huyện 3.5.4"),
-                            District(districtName: "Huyện 3.5.5")
+                            District(name: "Huyện 3.5.1"),
+                            District(name: "Huyện 3.5.2"),
+                            District(name: "Huyện 3.5.3"),
+                            District(name: "Huyện 3.5.4"),
+                            District(name: "Huyện 3.5.5")
                         ]),
-                    Province(provinceName: "Tỉnh 3.6",
+                    Province(name: "Tỉnh 3.6",
                         districts: [
-                            District(districtName: "Huyện 3.6.1"),
-                            District(districtName: "Huyện 3.6.2"),
-                            District(districtName: "Huyện 3.6.3"),
-                            District(districtName: "Huyện 3.6.4"),
-                            District(districtName: "Huyện 3.6.5")
+                            District(name: "Huyện 3.6.1"),
+                            District(name: "Huyện 3.6.2"),
+                            District(name: "Huyện 3.6.3"),
+                            District(name: "Huyện 3.6.4"),
+                            District(name: "Huyện 3.6.5")
                         ])
                 ])
         ]

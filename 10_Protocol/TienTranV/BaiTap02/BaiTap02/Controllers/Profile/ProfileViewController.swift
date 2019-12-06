@@ -13,21 +13,16 @@ protocol ProfileViewControllerDelegate: class {
 }
 
 final class ProfileViewController: BaseViewController {
-
-    @IBOutlet private weak var avatarImageView: UIImageView!
-    @IBOutlet private weak var avartarNameTextField: UITextField!
-    var avatar: Avatar?
-    var index: Int?
-    
-    weak var delegate: ProfileViewControllerDelegate?
-
     enum Action {
         case reloadAvatarView(index: Int, newName: String)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var avartarNameTextField: UITextField!
+    
+    var avatar: Avatar?
+    var index: Int?
+    weak var delegate: ProfileViewControllerDelegate?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

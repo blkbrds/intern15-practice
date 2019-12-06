@@ -11,7 +11,7 @@ import Foundation
 final class District {
     var name: String
     
-    init(districtName name: String) {
+    init(name: String) {
         self.name = name
     }
 }

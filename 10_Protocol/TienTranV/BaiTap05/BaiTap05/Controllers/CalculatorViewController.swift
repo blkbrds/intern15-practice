@@ -13,7 +13,7 @@ final class CalculatorViewController: BaseViewController {
     @IBOutlet private weak var xTextField: UITextField!
     @IBOutlet private weak var yTextField: UITextField!
     @IBOutlet private weak var operatorButton: UIButton!
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet private weak var resultLabel: UILabel!
 
     private var calculatorView: CalculatorView?
 
@@ -29,9 +29,10 @@ final class CalculatorViewController: BaseViewController {
 
     private func setupCustumView() {
         calculatorView = Bundle.main.loadNibNamed("CalculatorView", owner: self, options: nil)?.first as? CalculatorView
-        calculatorView?.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 300, width: UIScreen.main.bounds.width, height: 300)
+        let calculatorViewHeight = CGFloat(300)
+        calculatorView?.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - calculatorViewHeight, width: UIScreen.main.bounds.width, height: calculatorViewHeight)
         calculatorView?.delegate = self
-        calculatorView?.datasoucre = self
+        calculatorView?.datasource = self
         guard let calculatorView = calculatorView else { return }
         view.addSubview(calculatorView)
         calculatorView.alpha = 0
@@ -39,8 +40,8 @@ final class CalculatorViewController: BaseViewController {
     }
 
     @IBAction private func operatorTouchUpInside(_ sender: Any) {
-        if xTextField?.text != ""
-            , yTextField?.text != "" {
+        if let xString = xTextField?.text, !xString.isEmpty
+            , let yString = yTextField?.text, !yString.isEmpty {
             guard let calculatorView = calculatorView else { return }
             UIView.animate(withDuration: 5) {
                 calculatorView.updateUI()
@@ -51,25 +52,7 @@ final class CalculatorViewController: BaseViewController {
     }
 }
 
-extension CalculatorViewController: CalculatorViewDatasource, CalculatorViewDelegate {
-    func customView(customView: CalculatorView, needPerformAciton action: CalculatorView.Action) {
-        switch action {
-        case .sendResultToVC(let operatorButton, let result):
-            self.resultLabel.text = "\(result) ="
-            self.operatorButton.setTitle(operatorButton, for: .normal)
-        case .cancel: break
-        case .clear:
-            self.xTextField.text = ""
-            self.yTextField.text = ""
-            self.resultLabel.text = ".........="
-        }
-        guard let calculatorView = calculatorView else { return }
-        UIView.animate(withDuration: 5) {
-            calculatorView.isHidden = true
-            calculatorView.alpha = 0
-        }
-    }
-
+extension CalculatorViewController: CalculatorViewDatasource {
     func getX() -> Int? {
         guard let xString = self.xTextField.text, let x = Int(xString) else { return nil }
         return x
@@ -78,5 +61,25 @@ extension CalculatorViewController: CalculatorViewDatasource, CalculatorViewDele
     func getY() -> Int? {
         guard let yString = self.yTextField.text, let y = Int(yString) else { return nil }
         return y
+    }
+}
+
+extension CalculatorViewController: CalculatorViewDelegate {
+    func view(view: CalculatorView, needPerformAciton action: CalculatorView.Action) {
+        switch action {
+        case .sendResultToVC(let operatorButton, let result):
+            self.resultLabel.text = "\(result) ="
+            self.operatorButton.setTitle(operatorButton, for: .normal)
+        case .cancel: break
+        case .clear:
+            xTextField.text = ""
+            yTextField.text = ""
+            resultLabel.text = ".........="
+        }
+        guard let calculatorView = calculatorView else { return }
+        UIView.animate(withDuration: 5) {
+            calculatorView.isHidden = true
+            calculatorView.alpha = 0
+        }
     }
 }

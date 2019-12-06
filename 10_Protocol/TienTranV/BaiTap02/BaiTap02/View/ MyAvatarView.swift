@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MyAvatarViewDelegate: class {
-    func myAvatarView(myAvatarView: MyAvatarView, needPerformAction action: MyAvatarView.Action)
+    func view(view: MyAvatarView, needPerformAction action: MyAvatarView.Action)
 }
 
 protocol MyAvatarViewDatasource: class {
@@ -74,7 +74,7 @@ final class MyAvatarView: UIView {
 
     @objc private func buttonDidClick(sender: UITapGestureRecognizer) {
         guard let index = index else { return }
-        delegate?.myAvatarView(myAvatarView: self, needPerformAction: .gotoProfile(index: index))
+        delegate?.view(view: self, needPerformAction: .gotoProfile(index: index))
     }
 
     // MARK: - Public

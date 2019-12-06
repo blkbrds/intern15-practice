@@ -12,7 +12,7 @@ final class Province {
     var name: String
     var districts: [District]
     
-    init(provinceName name: String, districts: [District]) {
+    init(name: String, districts: [District]) {
         self.name = name
         self.districts = districts
     }

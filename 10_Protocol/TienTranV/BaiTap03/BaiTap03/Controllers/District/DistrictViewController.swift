@@ -48,7 +48,7 @@ final class DistrictViewController: BaseViewController {
             let region = DummyData.regions.first(where: { $0.name == chooseLocation.region }),
             let province = region.provinces.first(where: { $0.name == chooseLocation.province }) else { return }
         self.chooseLocation = chooseLocation
-        self.view.subviews.forEach { (view) in
+        view.subviews.forEach { (view) in
             guard let districtButton = view as? UIButton else { return }
             setupButton(districtButton, title: province.districts[view.tag].name)
         }
@@ -64,7 +64,7 @@ final class DistrictViewController: BaseViewController {
 
 
     @objc private func handleDone() {
-        if let chooseDistrict = chooseLocation?.district, chooseDistrict != "" {
+        if let chooseDistrict = chooseLocation?.district, !chooseDistrict.isEmpty {
             guard let chooseLocation = chooseLocation else {
                 return
             }
