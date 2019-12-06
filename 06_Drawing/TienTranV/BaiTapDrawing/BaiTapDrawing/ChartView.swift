@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Values {
+struct Value {
     var value: CGFloat
     var color: UIColor
 }
@@ -24,7 +24,7 @@ final class ChartView: UIView {
     private let lineWidth: CGFloat = 20
     private var space: CGFloat = 0
 
-    var values: [Values] = [] {
+    var values: [Value] = [] {
         didSet {
             setNeedsDisplay()
         }
@@ -51,7 +51,7 @@ final class ChartView: UIView {
     private func drawChart() {
         drawLineHorizontal()
         
-        let value = values.map { (value: Values) -> CGFloat in
+        let value = values.map { (value: Value) -> CGFloat in
             return value.value
         }
         guard let maxValue = value.max() else { return }
