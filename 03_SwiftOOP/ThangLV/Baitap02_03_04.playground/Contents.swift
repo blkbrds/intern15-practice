@@ -10,7 +10,7 @@ class DaGiac {
     }
 
     func tinhChuVi() -> Int {
-        var chuVi = 0
+        var chuVi: Int = 0
         for i in 0...soCanh - 1 {
             chuVi += kichThuocCanh[i]
         }
@@ -39,14 +39,28 @@ class TamGiac: DaGiac {
     }
 
     func tinhDienTich() -> Double {
-        let p: Int = self.tinhChuVi() / 2
+        let p: Int = tinhChuVi() / 2
         let binhPhuong: Int = p * (p - a) * (p - b) * (p - c)
         return sqrt(Double(binhPhuong))
     }
 }
 
+func kiemTraPytago(tamGiac: TamGiac) -> Bool {
+    return ((tamGiac.a * tamGiac.a + tamGiac.b * tamGiac.b == tamGiac.c * tamGiac.c) ||
+            (tamGiac.b * tamGiac.b + tamGiac.c * tamGiac.c == tamGiac.a * tamGiac.a) ||
+            (tamGiac.a * tamGiac.a + tamGiac.c * tamGiac.c == tamGiac.b * tamGiac.b))
+}
+
+func lietKeTamGiac(mangTamGiac: [TamGiac]) {
+    for tamGiac in mangTamGiac where kiemTraPytago(tamGiac: tamGiac) {
+        print("\(tamGiac.a) \(tamGiac.b) \(tamGiac.c)")
+    }
+}
 var daGiac = DaGiac(soCanh: 5, kichThuocCanh: [2, 3, 4, 6, 5])
 print(daGiac.tinhChuVi())
 print(daGiac.inGiaTriCacCanh())
-var tamGiac = TamGiac(kichThuocCanh: [2,3,4])
-print(tamGiac.tinhDienTich())
+var tamGiac1 = TamGiac(kichThuocCanh: [2, 3, 4])
+var tamGiac2 = TamGiac(kichThuocCanh: [3, 4, 5])
+print(tamGiac1.tinhChuVi())
+var mangTamGiac: [TamGiac] = [tamGiac1, tamGiac2]
+lietKeTamGiac(mangTamGiac: mangTamGiac)
