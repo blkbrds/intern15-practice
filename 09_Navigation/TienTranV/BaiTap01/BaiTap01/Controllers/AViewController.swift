@@ -14,15 +14,15 @@ final class AViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
     }
-    
+
     override func setupUI() {
         super.setupUI()
         title = "ViewController A"
         navigationItem.leftBarButtonItems = []
     }
-    
+
     @IBAction private func nextToATouchUpInside(_ sender: Any) {
-        let vcB =  BViewController()
+        let vcB = BViewController()
         navigationController?.pushViewController(vcB, animated: true)
     }
 }

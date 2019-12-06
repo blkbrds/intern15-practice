@@ -22,15 +22,15 @@ final class DViewController: BaseViewController {
 
     @IBAction private func nextToViewTouchUpInside(_ sender: Any) {
         let vcE = EViewController()
-        navigationController?.pushViewController(vcE, animated: true)
+        pushViewController(viewController: vcE)
     }
 
     @IBAction private func popToViewControllerCTouchUpInside(_ sender: Any) {
         guard let viewControllers = navigationController?.viewControllers else {
             return
         }
-        for vc in viewControllers where vc is CViewController {
-            navigationController?.popToViewController(vc, animated: true)
+        for viewController in viewControllers where viewController is CViewController {
+            pushViewController(viewController: viewController)
         }
     }
 
@@ -38,8 +38,8 @@ final class DViewController: BaseViewController {
         guard let viewControllers = navigationController?.viewControllers else {
             return
         }
-        for vc in viewControllers where vc is BViewController {
-            navigationController?.popToViewController(vc, animated: true)
+        for viewController in viewControllers where viewController is BViewController {
+            pushViewController(viewController: viewController)
         }
     }
 

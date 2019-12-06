@@ -22,7 +22,7 @@ final class CViewController: BaseViewController {
     
     @IBAction private func nextToViewTouchUpInside(_ sender: Any) {
         let vcD = DViewController()
-        navigationController?.pushViewController(vcD, animated: true)
+        pushViewController(viewController: vcD)
     }
 
     @IBAction private func preToViewTouchUpInside(_ sender: Any) {

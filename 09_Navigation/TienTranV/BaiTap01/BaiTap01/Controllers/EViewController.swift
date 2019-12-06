@@ -24,8 +24,8 @@ final class EViewController: BaseViewController {
         guard let viewControllers = navigationController?.viewControllers else {
             return
         }
-        for vc in viewControllers where vc is CViewController {
-            navigationController?.popToViewController(vc, animated: true)
+        for viewcontroller in viewControllers where viewcontroller is CViewController {
+            pushViewController(viewController: viewcontroller)
         }
     }
 
@@ -33,8 +33,8 @@ final class EViewController: BaseViewController {
         guard let viewControllers = navigationController?.viewControllers else {
             return
         }
-        for vc in viewControllers where vc is BViewController {
-            navigationController?.popToViewController(vc, animated: true)
+        for viewController in viewControllers where viewController is BViewController {
+            pushViewController(viewController: viewController)
         }
     }
 
@@ -42,8 +42,8 @@ final class EViewController: BaseViewController {
         guard let viewControllers = navigationController?.viewControllers else {
             return
         }
-        for vc in viewControllers where vc is DViewController {
-            navigationController?.popToViewController(vc, animated: true)
+        for viewController in viewControllers where viewController is DViewController {
+            navigationController?.popToViewController(viewController, animated: true)
         }
     }
 

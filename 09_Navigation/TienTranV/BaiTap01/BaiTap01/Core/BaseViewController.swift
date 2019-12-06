@@ -22,6 +22,10 @@ class BaseViewController: UIViewController {
         navigationItem.leftBarButtonItems = [UIBarButtonItem(image: #imageLiteral(resourceName: "leftBarItem"), style: .plain, target: self, action: #selector(popToView))]
     }
 
+    func pushViewController(viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @objc private func popToView() {
         navigationController?.popViewController(animated: true)
     }

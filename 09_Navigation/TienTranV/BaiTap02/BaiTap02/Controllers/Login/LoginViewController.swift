@@ -42,8 +42,8 @@ final class LoginViewController: BaseViewController {
         title = "Login"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(tapLoginButton(_:)))
 
-        setUpUITextField(textField: userNameTextField)
-        setUpUITextField(textField: passWordTextField)
+        setupUITextField(textField: userNameTextField)
+        setupUITextField(textField: passWordTextField)
         setUpButton(button: clearButton)
         setUpButton(button: loginButton)
         errorLabel.isHidden = true
@@ -55,7 +55,7 @@ final class LoginViewController: BaseViewController {
         clearButton.addTarget(self, action: #selector(tapClearButton(_:)), for: .touchUpInside)
     }
 
-    private func setUpUITextField(textField: UITextField) {
+    private func setupUITextField(textField: UITextField) {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.layer.borderWidth = 1
         textField.clipsToBounds = true
@@ -131,5 +131,4 @@ extension LoginViewController {
         }
         return errorString
     }
-
 }
