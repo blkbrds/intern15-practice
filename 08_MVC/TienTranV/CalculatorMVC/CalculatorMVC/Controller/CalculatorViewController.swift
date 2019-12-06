@@ -14,7 +14,7 @@ enum Error: String {
 }
 
 extension String {
-    func toInteger() -> String{
+    func toInteger() -> String {
         guard let number = Float(self) else { return self }
         let temp = roundf(number)
         if temp - number == 0 {
@@ -51,9 +51,7 @@ final class CalculatorViewController: UIViewController {
 
     @IBAction private func numberButtonTouchUpInside(_ sender: UIButton) {
         if let _ = number.result {
-            guard number.number <= limitNumber else {
-                return
-            }
+            guard number.number <= limitNumber else { return }
             number.convertToNumber(with: sender.tag)
             resultLabel.text = String(number.number).toInteger()
             isCaculated = true
