@@ -48,13 +48,13 @@ final class MyButton: UIButton {
         }
     }
 
-    var isShowBagde: Bool = false {
+    var isShowBadge: Bool = false {
         didSet {
             showBadge()
         }
     }
 
-    lazy private var bagdeLabel: UILabel = {
+    lazy private var badgeLabel: UILabel = {
         let label = UILabel()
         label.clipsToBounds = true
         label.layer.cornerRadius = 10
@@ -67,24 +67,24 @@ final class MyButton: UIButton {
     }()
 
     private func showBadge() {
-        if isShowBagde {
-            addSubview(bagdeLabel)
+        if isShowBadge {
+            addSubview(badgeLabel)
         } else {
-            bagdeLabel.removeFromSuperview()
+            badgeLabel.removeFromSuperview()
         }
     }
 
     private func updateUI() {
         if badgeNumber == 0 {
-            bagdeLabel.removeFromSuperview()
+            badgeLabel.removeFromSuperview()
         } else {
-            bagdeLabel.frame.size = CGSize(width: String(badgeNumber).width(constraintedHeight: bagdeLabel.frame.height, font: UIFont.systemFont(ofSize: 17)) + 20, height: bagdeLabel.frame.height)
-            bagdeLabel.text = String(badgeNumber)
+            badgeLabel.frame.size = CGSize(width: String(badgeNumber).width(constraintedHeight: badgeLabel.frame.height, font: UIFont.systemFont(ofSize: 17)) + 20, height: badgeLabel.frame.height)
+            badgeLabel.text = String(badgeNumber)
         }
     }
 
     func editPositionBagde(position: PositionBadge) {
-        bagdeLabel.center = position.position(with: bounds)
+        badgeLabel.center = position.position(with: bounds)
     }
 }
 

@@ -39,7 +39,7 @@ final class MyAvatarViewController: UIViewController {
 
             let avatar = MyAvatarView(frame: frame)
 
-            avatar.updateUI(image: images[index], name: names[index])
+            avatar.updateUI(imageName: images[index], name: names[index])
             avatar.delegate = self
             scrollView.addSubview(avatar)
 

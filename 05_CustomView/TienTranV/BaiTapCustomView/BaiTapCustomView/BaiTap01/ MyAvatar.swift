@@ -45,18 +45,18 @@ final class MyAvatarView: UIView {
         guard let userNameLabel = userNameLabel else { return }
         addSubview(userNameLabel)
 
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(buttonDidClick))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
         tapGestureRecognizer.name = userNameLabel.text
         userNameLabel.isUserInteractionEnabled = true
         userNameLabel.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    func updateUI(image: String = "", name: String) {
-        userAvatarImageView?.image = UIImage(named: image)
+    func updateUI(imageName: String = "", name: String) {
+        userAvatarImageView?.image = UIImage(named: imageName)
         userNameLabel?.text = name
     }
 
-    @objc func buttonDidClick(sender: UITapGestureRecognizer) {
+    @objc private func tapGesture(sender: UITapGestureRecognizer) {
         if let userName = userNameLabel?.text {
             delegate?.nameAvatar(avatar: userName)
         }

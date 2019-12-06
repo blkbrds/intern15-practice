@@ -25,17 +25,19 @@ final class MySliderViewController: UIViewController {
     }
 }
 
-extension MySliderViewController: MySliderViewDelegate, MySliderViewDatasource {
-    func getValue(mySlider: MySliderView) -> Int {
-        guard let text = valueTextField.text, let getValue = Int(text) else { return 0 }
-        return getValue
-    }
-
-    func mySlider(mySlider: MySliderView, needPerform action: MySliderView.Action) {
+extension MySliderViewController: MySliderViewDelegate {
+    func mySlider(mySlider: MySliderView, needPerformAction action: MySliderView.Action) {
         switch action {
         case .getPercent(let value):
             valueTextField.text = "\(value)"
         }
+    }
+}
+
+extension MySliderViewController: MySliderViewDatasource {
+    func getValue(mySlider: MySliderView) -> Int {
+        guard let text = valueTextField.text, let getValue = Int(text) else { return 0 }
+        return getValue
     }
 }
 
