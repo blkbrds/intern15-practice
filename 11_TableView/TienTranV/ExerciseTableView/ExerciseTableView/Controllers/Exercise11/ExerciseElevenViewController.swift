@@ -11,7 +11,7 @@ import UIKit
 final class ExerciseElevenViewController: BaseViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
     private var messages: [String] = []
