@@ -21,8 +21,8 @@ final class EditViewController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(done))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(tapCancel))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(tapDone))
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,11 +32,11 @@ final class EditViewController: BaseViewController {
         passwordTextField.text = password
     }
 
-    @objc private func cancel() {
+    @objc private func tapCancel() {
         navigationController?.popViewController(animated: true)
     }
 
-    @objc private func done() {
+    @objc private func tapDone() {
         guard let userName = userNameTextField.text,
             !userName.isEmpty,
             let password = passwordTextField.text,

@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeViewController: BaseViewController {
 
-    var navBar: UINavigationBar?
+    private var navBar: UINavigationBar?
 
     override func viewDidLoad() {
         super.viewDidLoad()

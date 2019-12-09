@@ -13,13 +13,9 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     // MARK: - setup ui & data
-    func setupUI(){
-        
-    }
-    
-    func setupData(){
-        
-    }
+    func setupUI() { }
+
+    func setupData() { }
 }

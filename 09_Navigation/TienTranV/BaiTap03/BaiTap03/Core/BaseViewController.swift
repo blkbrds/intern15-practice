@@ -9,16 +9,13 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     // MARK: setup Data & UI
-    func setupData() {
-    }
-    
-    func setupUI() {
-        
-    }
+    func setupData() { }
+
+    func setupUI() { }
 }

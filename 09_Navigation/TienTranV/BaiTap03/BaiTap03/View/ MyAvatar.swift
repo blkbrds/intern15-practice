@@ -10,16 +10,14 @@ import UIKit
 
 protocol MyAvatarDelegate: class {
     func goToProfile(myAvatar: MyAvatarView, avatar: Avatar)
-
 }
-
 
 final class MyAvatarView: UIView {
 
     private var userAvatarImageView: UIImageView?
-    var userNameLabel: UILabel?
+    private var userNameLabel: UILabel?
 
-    var avatar: Avatar?
+    private var avatar: Avatar?
 
     weak var delegate: MyAvatarDelegate?
 

@@ -16,9 +16,9 @@ enum Key: String {
 
 final class ProfileViewController: BaseViewController {
 
-
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var avartarNameTextField: UITextField!
+    
     var avatar: Avatar?
 
     override func viewDidLoad() {

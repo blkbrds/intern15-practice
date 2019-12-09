@@ -13,7 +13,7 @@ enum Key: String {
     case password = "password"
 }
 
-class DataManagement {
+final class DataManagement {
     // MARK: - Singleton
     public static var share: DataManagement = {
         let dataManagement = DataManagement()

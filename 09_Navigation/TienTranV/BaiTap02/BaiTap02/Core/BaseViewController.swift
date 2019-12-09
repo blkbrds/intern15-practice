@@ -15,10 +15,7 @@ class BaseViewController: UIViewController {
     }
     
     // MARK: setup Data & UI
-    func setupData() {
-    }
+    func setupData() {}
     
-    func setupUI() {
-        
-    }
+    func setupUI() {}
 }

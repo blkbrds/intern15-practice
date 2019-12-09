@@ -10,21 +10,22 @@ import UIKit
 
 final class MyAvatarViewController: BaseViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollView: UIScrollView!
 
     private var avatars: [Avatar] = []
     var didSelectIndex: Int?
-    var isFirstLoad: Bool = true
+    private var isFirstLoad: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
         setupUI()
+        isFirstLoad = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !isFirstLoad {
+        if isFirstLoad {
             let indexRow = UserDefaults.standard.integer(forKey: Key.indexRow.rawValue)
             guard let avatarName = UserDefaults.standard.string(forKey: Key.avatarName.rawValue) else {
                 return }
@@ -39,7 +40,6 @@ final class MyAvatarViewController: BaseViewController {
                 myAvatar.updateUI(avatar: avatars[indexRow])
             }
         }
-        isFirstLoad = false
     }
 
     override func setupData() {

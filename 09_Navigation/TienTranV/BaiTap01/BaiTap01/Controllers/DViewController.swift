@@ -14,7 +14,7 @@ final class DViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
     }
-    
+
     override func setupUI() {
         super.setupUI()
         title = "ViewController D"
@@ -26,18 +26,14 @@ final class DViewController: BaseViewController {
     }
 
     @IBAction private func popToViewControllerCTouchUpInside(_ sender: Any) {
-        guard let viewControllers = navigationController?.viewControllers else {
-            return
-        }
+        guard let viewControllers = navigationController?.viewControllers else { return }
         for viewController in viewControllers where viewController is CViewController {
             pushViewController(viewController: viewController)
         }
     }
 
     @IBAction private func popToViewControllerBTouchUpInside(_ sender: Any) {
-        guard let viewControllers = navigationController?.viewControllers else {
-            return
-        }
+        guard let viewControllers = navigationController?.viewControllers else { return }
         for viewController in viewControllers where viewController is BViewController {
             pushViewController(viewController: viewController)
         }
