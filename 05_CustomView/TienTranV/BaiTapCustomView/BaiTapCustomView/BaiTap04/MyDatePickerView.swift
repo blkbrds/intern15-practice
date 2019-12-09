@@ -19,7 +19,7 @@ final class MyDatePickerView: UIView {
     }
 
     @IBOutlet private weak var doneButton: UIButton!
-    @IBOutlet private var contentView: UIView!
+    @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var datePicker: UIDatePicker!
 
     weak var delegate: MyDatePickerViewDelegate?

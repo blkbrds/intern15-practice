@@ -16,10 +16,10 @@
 		F09F1DC2237E8FFC00B7C1F3 /* MyAvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F1DC0237E8FFC00B7C1F3 /* MyAvatarViewController.swift */; };
 		F09F1DC3237E8FFC00B7C1F3 /* MyAvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F09F1DC1237E8FFC00B7C1F3 /* MyAvatarViewController.xib */; };
 		F09F1DC5237E903700B7C1F3 /*  MyAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F1DC4237E903700B7C1F3 /*  MyAvatar.swift */; };
+		F0F2AE86239E0CC000FF1AFA /* MySliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F2AE84239E0CC000FF1AFA /* MySliderView.swift */; };
+		F0F2AE87239E0CC000FF1AFA /* MySliderview.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F2AE85239E0CC000FF1AFA /* MySliderview.xib */; };
 		FF1F6DB6237EDD4E003CAFC0 /* MySliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F6DB4237EDD4E003CAFC0 /* MySliderViewController.swift */; };
 		FF1F6DB7237EDD4E003CAFC0 /* MySliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1F6DB5237EDD4E003CAFC0 /* MySliderViewController.xib */; };
-		FF508141238037380096F857 /* MySlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF508140238037380096F857 /* MySlider.xib */; };
-		FF5081432380378F0096F857 /* MySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5081422380378F0096F857 /* MySlider.swift */; };
 		FF7E7CE22382561F004A1CA7 /* MyDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7E7CE12382561F004A1CA7 /* MyDatePickerView.swift */; };
 		FF7E7CE42382562E004A1CA7 /* MyDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7E7CE32382562E004A1CA7 /* MyDatePickerView.xib */; };
 		FFD6298A238178F100F7EDCE /* MyButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD62988238178F100F7EDCE /* MyButtonViewController.swift */; };
@@ -39,10 +39,10 @@
 		F09F1DC0237E8FFC00B7C1F3 /* MyAvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAvatarViewController.swift; sourceTree = "<group>"; };
 		F09F1DC1237E8FFC00B7C1F3 /* MyAvatarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAvatarViewController.xib; sourceTree = "<group>"; };
 		F09F1DC4237E903700B7C1F3 /*  MyAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MyAvatar.swift"; sourceTree = "<group>"; };
+		F0F2AE84239E0CC000FF1AFA /* MySliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySliderView.swift; sourceTree = "<group>"; };
+		F0F2AE85239E0CC000FF1AFA /* MySliderview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySliderview.xib; sourceTree = "<group>"; };
 		FF1F6DB4237EDD4E003CAFC0 /* MySliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySliderViewController.swift; sourceTree = "<group>"; };
 		FF1F6DB5237EDD4E003CAFC0 /* MySliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySliderViewController.xib; sourceTree = "<group>"; };
-		FF508140238037380096F857 /* MySlider.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySlider.xib; sourceTree = "<group>"; };
-		FF5081422380378F0096F857 /* MySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySlider.swift; sourceTree = "<group>"; };
 		FF7E7CE12382561F004A1CA7 /* MyDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePickerView.swift; sourceTree = "<group>"; };
 		FF7E7CE32382562E004A1CA7 /* MyDatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyDatePickerView.xib; sourceTree = "<group>"; };
 		FFD62988238178F100F7EDCE /* MyButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonViewController.swift; sourceTree = "<group>"; };
@@ -106,10 +106,10 @@
 		FF1F6DB3237EDD28003CAFC0 /* BaiTap02 */ = {
 			isa = PBXGroup;
 			children = (
+				F0F2AE84239E0CC000FF1AFA /* MySliderView.swift */,
+				F0F2AE85239E0CC000FF1AFA /* MySliderview.xib */,
 				FF1F6DB4237EDD4E003CAFC0 /* MySliderViewController.swift */,
-				FF5081422380378F0096F857 /* MySlider.swift */,
 				FF1F6DB5237EDD4E003CAFC0 /* MySliderViewController.xib */,
-				FF508140238037380096F857 /* MySlider.xib */,
 			);
 			path = BaiTap02;
 			sourceTree = "<group>";
@@ -194,9 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09F1DB6237E8F1D00B7C1F3 /* LaunchScreen.storyboard in Resources */,
-				FF508141238037380096F857 /* MySlider.xib in Resources */,
 				FF7E7CE42382562E004A1CA7 /* MyDatePickerView.xib in Resources */,
 				F09F1DC3237E8FFC00B7C1F3 /* MyAvatarViewController.xib in Resources */,
+				F0F2AE87239E0CC000FF1AFA /* MySliderview.xib in Resources */,
 				F09F1DB3237E8F1D00B7C1F3 /* Assets.xcassets in Resources */,
 				F021227D23829D8C00E7DB95 /* MyDatePickerViewController.xib in Resources */,
 				FFD6298B238178F100F7EDCE /* MyButtonViewController.xib in Resources */,
@@ -211,7 +211,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5081432380378F0096F857 /* MySlider.swift in Sources */,
 				FF7E7CE22382561F004A1CA7 /* MyDatePickerView.swift in Sources */,
 				F021227C23829D8C00E7DB95 /* MyDatePickerViewController.swift in Sources */,
 				FF1F6DB6237EDD4E003CAFC0 /* MySliderViewController.swift in Sources */,
@@ -220,6 +219,7 @@
 				FFD6298A238178F100F7EDCE /* MyButtonViewController.swift in Sources */,
 				F09F1DAC237E8F1C00B7C1F3 /* SceneDelegate.swift in Sources */,
 				F09F1DC2237E8FFC00B7C1F3 /* MyAvatarViewController.swift in Sources */,
+				F0F2AE86239E0CC000FF1AFA /* MySliderView.swift in Sources */,
 				F09F1DC5237E903700B7C1F3 /*  MyAvatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

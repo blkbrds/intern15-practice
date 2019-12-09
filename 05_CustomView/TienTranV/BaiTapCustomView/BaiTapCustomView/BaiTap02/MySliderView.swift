@@ -22,7 +22,7 @@ final class MySliderView: UIView {
         case getPercent(Int)
     }
     
-    @IBOutlet private var contentView: UIView!
+    @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var thumbnailLabel: UILabel!
     @IBOutlet private weak var colorImageView: UIImageView!
 
@@ -30,6 +30,7 @@ final class MySliderView: UIView {
     weak var datasource: MySliderViewDatasource?
 
     override func awakeFromNib() {
+        super.awakeFromNib()
         setupUI()
     }
 
