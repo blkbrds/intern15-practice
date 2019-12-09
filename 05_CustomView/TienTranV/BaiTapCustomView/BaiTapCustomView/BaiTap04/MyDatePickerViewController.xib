@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyDatePickerViewController" customModule="BaiTapCustomView" customModuleProvider="target">
+            <connections>
+                <outlet property="dateTextField" destination="8rj-xe-JEp" id="TGI-Lx-lfh"/>
+                <outlet property="myDatePickerView" destination="sKF-gP-D96" id="XPg-3I-Wrt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKF-gP-D96" customClass="MyDatePickerView" customModule="BaiTapCustomView" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="512" width="414" height="350"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="350" id="Z7f-i3-4cC"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rj-xe-JEp">
+                    <rect key="frame" x="20" y="144" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="S0p-kr-kk6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sKF-gP-D96" secondAttribute="trailing" id="HSc-Ud-JeM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8rj-xe-JEp" secondAttribute="trailing" constant="20" id="MRn-iR-DU9"/>
+                <constraint firstItem="8rj-xe-JEp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="e0P-2e-fAa"/>
+                <constraint firstItem="sKF-gP-D96" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="nhp-yY-DNa"/>
+                <constraint firstItem="sKF-gP-D96" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="p6A-JI-q00"/>
+                <constraint firstItem="8rj-xe-JEp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="q6n-8A-Ibx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-571.01449275362324" y="85.714285714285708"/>
+        </view>
+    </objects>
+</document>
