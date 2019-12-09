@@ -18,6 +18,7 @@ final class ContactDetailViewController: BaseViewController {
     
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         guard let contactDetail = contactDetail else { return }
         contactDetailLabel.text = contactDetail
     }

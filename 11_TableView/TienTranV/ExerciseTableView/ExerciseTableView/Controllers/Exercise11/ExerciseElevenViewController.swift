@@ -33,7 +33,8 @@ final class ExerciseElevenViewController: BaseViewController {
         tableView.register(UINib(nibName: "ExerciseElevenCell", bundle: .main), forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.allowsMultipleSelection = true
-        tableView.dataSource = self    }
+        tableView.dataSource = self
+    }
 
     private func configNavigationBar() {
         title = "Reorder"

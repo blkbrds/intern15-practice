@@ -17,8 +17,8 @@ final class SectionsViewController: BaseViewController {
     private var animals: [String] = []
     private var vegetables: [String] = []
     private var flowers: [String] = []
-    private var gardent: [[String]] = []
-    private var gardentIndex: [String] = []
+    private var gardents: [[String]] = []
+    private var gardentIndexs: [String] = []
     private let cell = "cell"
 
     // MARK: - Override funcs
@@ -35,11 +35,11 @@ final class SectionsViewController: BaseViewController {
         self.animals = animals
         self.flowers = flowers
         self.vegetables = vegetables
-        gardent.append(animals)
-        gardent.append(flowers)
-        gardent.append(vegetables)
+        gardents.append(animals)
+        gardents.append(flowers)
+        gardents.append(vegetables)
         
-        gardentIndex = ["A", "F", "V"]
+        gardentIndexs = ["A", "F", "V"]
     }
 
     // MARK: - Privare funcs
@@ -51,16 +51,16 @@ final class SectionsViewController: BaseViewController {
 // MARK: - Extension: UITableViewDataSource
 extension SectionsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return gardent.count
+        return gardents.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gardent[section].count
+        return gardents[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cell , for: indexPath)
-        cell.textLabel?.text = gardent[indexPath.section][indexPath.row]
+        cell.textLabel?.text = gardents[indexPath.section][indexPath.row]
         let nameLable = UILabel()
         nameLable.frame = CGRect(x: 40, y: 25, width: 500, height: 20)
         nameLable.text = "Thông tin thêm ..."
@@ -81,7 +81,7 @@ extension SectionsViewController: UITableViewDataSource {
     }
 
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return gardentIndex
+        return gardentIndexs
     }
 
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {

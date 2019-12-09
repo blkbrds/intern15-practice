@@ -8,9 +8,10 @@
 
 import Foundation
 
-class DataManagement {
+final class DataManagement {
+    
     // MARK: - Singleton
-    private static var sharedDataManagement: DataManagement = {
+    private static let sharedDataManagement: DataManagement = {
         let dataManagement = DataManagement()
         return dataManagement
     }()
@@ -35,6 +36,7 @@ class DataManagement {
 
     // MARK: - Private func
     func getFileDocumentPath(fileName: String, type: String) -> String {
-        return (Bundle.main.path(forResource: fileName, ofType: type)) ?? ""
+        guard let path = Bundle.main.path(forResource: fileName, ofType: type) else { return ""}
+        return path
     }
 }

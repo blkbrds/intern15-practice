@@ -19,7 +19,6 @@ final class ExerciseElevenCell: UITableViewCell {
     // MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     // MARK: - Public funcs

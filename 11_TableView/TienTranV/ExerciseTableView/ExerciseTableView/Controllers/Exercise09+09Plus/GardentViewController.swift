@@ -17,9 +17,9 @@ final class GardentViewController: BaseViewController {
     private var animals: [Animal] = []
     private var vegetables: [Vegetable] = []
     private var flowers: [Flower] = []
-    private var gardent: [[Gardent]] = []
-    private var gardentIndex: [String] = []
-    private var gardentTitleForHeader: [String] = []
+    private var gardens: [[Gardent]] = []
+    private var gardenIndexs: [String] = []
+    private var gardenTitleForHeader: [String] = []
     private let cell = "gardentCell"
 
     // MARK: - Override funcs
@@ -31,32 +31,31 @@ final class GardentViewController: BaseViewController {
 
     override func setupData() {
         super.setupData()
-
         if let animalsString = DataManagement.shared().getDataFromFile(fileName: "Animals", type: "plist"),
             let vegetablesString = DataManagement.shared().getDataFromFile(fileName: "Vegetables", type: "plist"),
             let flowersString = DataManagement.shared().getDataFromFile(fileName: "Flowers", type: "plist") {
 
             animalsString.forEach { (animalStr) in
                 let animal = Animal(imageName: "animal", title: animalStr, subTitle: "xem thêm chi tiết vật nuôi...")
-                self.animals.append(animal)
+                animals.append(animal)
             }
 
             vegetablesString.forEach { (vegetableStr) in
                 let vegetable = Vegetable(imageName: "vegetable", title: vegetableStr, subTitle: "xem thêm chi tiết trái cây...")
-                self.vegetables.append(vegetable)
+                vegetables.append(vegetable)
             }
 
             flowersString.forEach { (flowerStr) in
                 let flower = Flower(imageName: "hoahong", title: flowerStr, subTitle: "xem thêm chi tiết loài hoa...")
-                self.flowers.append(flower)
+                flowers.append(flower)
             }
         }
 
-        gardent.append(flowers)
-        gardent.append(animals)
-        gardent.append(vegetables)
-        gardentIndex = ["F", "A", "V"]
-        gardentTitleForHeader = ["Flowers", "Animals", "Vegetables"]
+        gardens.append(flowers)
+        gardens.append(animals)
+        gardens.append(vegetables)
+        gardenIndexs = ["F", "A", "V"]
+        gardenTitleForHeader = ["Flowers", "Animals", "Vegetables"]
     }
 
     // MARK: - Private funcs
@@ -70,28 +69,28 @@ final class GardentViewController: BaseViewController {
 // MARK: - Extention: UITableViewDataSource
 extension GardentViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gardent[section].count
+        return gardens[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let gardentCell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! GardentCell
-        gardentCell.updateUI(gardent: { () -> Gardent in
-            return self.gardent[indexPath.section][indexPath.row]
+        gardentCell.updateUI(garden: { () -> Gardent in
+            return self.gardens[indexPath.section][indexPath.row]
         })
         gardentCell.delegate = self
         return gardentCell
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return gardent.count
+        return gardens.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return gardentTitleForHeader[section]
+        return gardenTitleForHeader[section]
     }
 
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return gardentIndex
+        return gardenIndexs
     }
 
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {

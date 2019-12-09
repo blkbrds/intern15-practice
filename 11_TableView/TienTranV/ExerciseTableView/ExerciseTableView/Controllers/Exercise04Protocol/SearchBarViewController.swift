@@ -50,21 +50,21 @@ final class SearchBarViewController: BaseViewController {
     }
 
     private func search(keyword: String) {
-        provinces = getContacts(keyword: keyword)
+        provinces = getProvinces(keyword: keyword)
         tableView.reloadData()
     }
 
-    private func getContacts(keyword: String) -> [String] {
+    private func getProvinces(keyword: String) -> [String] {
         if keyword.trimmingCharacters(in: CharacterSet(charactersIn: " ")) == "", keyword == "" {
             return provincesData
         } else {
-            var data: [String] = []
-            for contact in provincesData {
-                if let _ = contact.range(of: keyword) {
-                    data.append(contact)
+            var provinces: [String] = []
+            for province in provincesData {
+                if let _ = province.range(of: keyword) {
+                    provinces.append(province)
                 }
             }
-            return data
+            return provinces
         }
     }
 }

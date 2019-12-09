@@ -18,8 +18,9 @@ final class GardentCell: UITableViewCell {
     enum Action {
         case sendTitle(title: String)
     }
+    
     // MARK: - IBOutlets
-    @IBOutlet private weak var gardentImageView: UIImageView!
+    @IBOutlet private weak var gardenImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subTitleLabel: UILabel!
 
@@ -37,17 +38,18 @@ final class GardentCell: UITableViewCell {
 
     // MARK: - Private funcs
     private func setupUI() {
-        gardentImageView.clipsToBounds = true
-        gardentImageView.layer.cornerRadius = 40
-        gardentImageView.layer.borderWidth = 1
-        gardentImageView.layer.borderColor = UIColor.orange.cgColor
+        gardenImageView.clipsToBounds = true
+        gardenImageView.layer.cornerRadius = 40
+        gardenImageView.layer.borderWidth = 1
+        gardenImageView.layer.borderColor = UIColor.orange.cgColor
     }
 
     // MARK: - Public funcs
-    func updateUI(gardent: GetGardent) {
-        gardentImageView.image = UIImage(named: gardent().imageName)
-        titleLabel.text = gardent().title
-        subTitleLabel.text = gardent().subTitle
+    func updateUI(garden: GetGardent) {
+        let gardenVariable = garden()
+        gardenImageView.image = UIImage(named: gardenVariable.imageName)
+        titleLabel.text = gardenVariable.title
+        subTitleLabel.text = gardenVariable.subTitle
     }
 
     // MARK: - IBAction
