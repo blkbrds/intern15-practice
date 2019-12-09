@@ -26,12 +26,13 @@ final class CircleView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
         drawCircle()
     }
 
     private func drawCircle() {
-        let center = CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
-        let radius = min(self.bounds.width, self.bounds.height) / 2 - 20
+        let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+        let radius = min(bounds.width, bounds.height) / 2 - 20
 
         let sumValues = values.reduce(0) { $0 + $1 }
         var startAngle: CGFloat = .pi / 2
@@ -58,6 +59,6 @@ final class CircleView: UIView {
         shapeLayer.fillColor = color.cgColor
         shapeLayer.path = path.cgPath
 
-        self.layer.addSublayer(shapeLayer)
+        layer.addSublayer(shapeLayer)
     }
 }

@@ -18,11 +18,11 @@ final class ChartView: UIView {
     private var path: UIBezierPath?
 
     private var shapeLayer: CAShapeLayer?
-    private let bottom: CGFloat = 50
-    private let left: CGFloat = 30
-    private let right: CGFloat = 50
+    private let bottomPadding: CGFloat = 50
+    private let leftPađding: CGFloat = 30
+    private let rightPadding: CGFloat = 50
     private let lineWidth: CGFloat = 20
-    private var space: CGFloat = 0
+    private var spacePadding: CGFloat = 0
 
     var values: [Value] = [] {
         didSet {
@@ -32,12 +32,11 @@ final class ChartView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         backgroundColor = #colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 0.2548159247)
-        self.clipsToBounds = true
-        
-        
-        space = (self.bounds.width - 2 * right - CGFloat(values.count) * lineWidth) / 6
+        clipsToBounds = true
+
+        spacePadding = (bounds.width - 2 * rightPadding - CGFloat(values.count) * lineWidth) / 6
     }
 
     required init?(coder: NSCoder) {
@@ -45,25 +44,26 @@ final class ChartView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
         drawChart()
     }
 
     private func drawChart() {
         drawLineHorizontal()
-        
-        let value = values.map { (value: Value) -> CGFloat in
+
+        let value  = values.map { (value: Value) -> CGFloat in
             return value.value
         }
-        guard let maxValue = value.max() else { return }
-        var x: CGFloat = right
-        let yStart: CGFloat = self.bounds.height - bottom
+        guard let maxValue = valuesCGFloat.max() else { return }
+        var x: CGFloat = rightPadding
+        let yStart: CGFloat = bounds.height - bottomPadding
         var yEnd: CGFloat = yStart
 
         for index in 0..<values.count {
             yEnd -= 150 * values[index].value / maxValue
 
             drawLineVertical(x: x, yStart: yStart, yEnd: yEnd, color: values[index].color)
-            x += space
+            x += spacePadding
 
             yEnd = yStart
         }
@@ -79,16 +79,14 @@ final class ChartView: UIView {
         shapeLayer?.strokeColor = color.cgColor
         shapeLayer?.lineWidth = lineWidth
         shapeLayer?.path = path?.cgPath
-        guard let shapeLayer = shapeLayer else {
-            return
-        }
-        self.layer.addSublayer(shapeLayer)
+        guard let shapeLayer = shapeLayer else { return }
+        layer.addSublayer(shapeLayer)
     }
 
     private func drawLineHorizontal() {
         path = UIBezierPath()
-        path?.move(to: CGPoint(x: left, y: self.bounds.height - bottom))
-        path?.addLine(to: CGPoint(x: self.bounds.maxX - left, y: self.bounds.height - bottom))
+        path?.move(to: CGPoint(x: leftPađding, y: self.bounds.height - bottomPadding))
+        path?.addLine(to: CGPoint(x: self.bounds.maxX - leftPađding, y: self.bounds.height - bottomPadding))
         path?.close()
 
         shapeLayer = CAShapeLayer()
@@ -98,6 +96,6 @@ final class ChartView: UIView {
         guard let shapeLayer = shapeLayer else {
             return
         }
-        self.layer.addSublayer(shapeLayer)
+        layer.addSublayer(shapeLayer)
     }
 }
