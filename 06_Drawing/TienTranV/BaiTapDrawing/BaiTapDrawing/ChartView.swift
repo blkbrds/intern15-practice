@@ -51,8 +51,8 @@ final class ChartView: UIView {
     private func drawChart() {
         drawLineHorizontal()
 
-        let value  = values.map { (value: Value) -> CGFloat in
-            return value.value
+        let valuesCGFloat  = values.map { (item) -> CGFloat in
+            return item.value
         }
         guard let maxValue = valuesCGFloat.max() else { return }
         var x: CGFloat = rightPadding
