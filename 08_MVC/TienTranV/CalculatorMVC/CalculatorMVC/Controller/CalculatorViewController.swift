@@ -50,49 +50,49 @@ final class CalculatorViewController: UIViewController {
     }
 
     @IBAction private func numberButtonTouchUpInside(_ sender: UIButton) {
-        if let _ = number.result {
-            guard number.number <= limitNumber else { return }
+        if let _ = number.resultCalculated {
+            guard number.inputNumber <= limitNumber else { return }
             number.convertToNumber(with: sender.tag)
-            resultLabel.text = String(number.number).toInteger()
+            resultLabel.text = String(number.inputNumber).toInteger()
             isCaculated = true
         }
     }
 
     @IBAction private func operatorButtonTouchUpInside(_ sender: UIButton) {
-        guard let _ = number.result else { return }
+        guard let _ = number.resultCalculated else { return }
         if isCaculated {
-            number.result = OperatorManager.shared.calculatedResultWithOperator(result: number.result, number: number.number)
-            showResult(result: number.result)
+            number.resultCalculated = OperatorManager.shared().calculatedResultWithOperator(result: number.resultCalculated, number: number.inputNumber)
+            showResult(result: number.resultCalculated)
         }
         switch sender.tag {
         case 10:
-            OperatorManager.shared.operator = .plus
+            OperatorManager.shared().operator = .plus
         case 11:
-            OperatorManager.shared.operator = .subtract
+            OperatorManager.shared().operator = .subtract
         case 12:
-            OperatorManager.shared.operator = .mutiplied
+            OperatorManager.shared().operator = .mutiplied
         case 13:
-            OperatorManager.shared.operator = .divide
+            OperatorManager.shared().operator = .divide
         default:
             break
         }
-        number.number = 0
+        number.inputNumber = 0
         isCaculated = false
     }
 
     @IBAction private func acButtonTouchUpInside(_ sender: UIButton) {
         resultLabel.text = "0"
         isCaculated = false
-        number.number = 0
-        number.result = 0
-        OperatorManager.shared.operator = .none
+        number.inputNumber = 0
+        number.resultCalculated = 0
+        OperatorManager.shared().operator = .none
     }
 
-    @IBAction func equalButtonTouchUpInside(_ sender: Any) {
-        number.result = OperatorManager.shared.calculatedResultWithOperator(result: number.result, number: number.number)
-        showResult(result: number.result)
-        OperatorManager.shared.operator = .none
-        guard let result = number.result else { return }
-        number.number = result
+    @IBAction private func equalButtonTouchUpInside(_ sender: Any) {
+        number.resultCalculated = OperatorManager.shared().calculatedResultWithOperator(result: number.resultCalculated, number: number.inputNumber)
+        showResult(result: number.resultCalculated)
+        OperatorManager.shared().operator = .none
+        guard let result = number.resultCalculated else { return }
+        number.inputNumber = result
     }
 }

@@ -9,12 +9,12 @@
 import Foundation
 
 final class Number {
-    var number: Float = 0
-    var result: Float? = 0
+    var inputNumber: Float = 0
+    var resultCalculated: Float? = 0
 
     func convertToNumber(with number: Int) {
         guard number < 10000000 else { return }
         
-        self.number = self.number * 10 + Float(number)
+        self.inputNumber = self.inputNumber * 10 + Float(number)
     }
 }

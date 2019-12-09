@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Operators: String {
+enum Operator: String {
     case plus = "+"
     case mutiplied = "X"
     case divide = "/"
@@ -18,8 +18,16 @@ enum Operators: String {
 
 final class OperatorManager {
     
-    static let shared = OperatorManager()
-    var `operator`: Operators = .none
+    private static var sharedOperatorManager: OperatorManager = {
+        let operatorManager = OperatorManager()
+        return operatorManager
+    }()
+    
+    class func shared() -> OperatorManager {
+        return sharedOperatorManager
+    }
+    
+    var `operator`: Operator = .none
     
     private init() {}
     
