@@ -20,7 +20,7 @@ class Mang1c {
                 max = mangMotChieu[i]
             }
         }
-        return "Phan tu be nhat: \(max)"
+        return "Phan tu lon nhat: \(max)"
     }
 
     func inPhanTuBeNhat() -> String {
