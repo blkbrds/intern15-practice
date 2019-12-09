@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController {
         title = "Home"
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "tableViewMenu"), style: .plain, target: self, action: #selector(showTableView))
         navigationItem.rightBarButtonItem = tableViewButton
+        tableViewButton.tintColor = .black
     }
 
     @objc func showTableView() {
@@ -32,6 +33,7 @@ class HomeViewController: BaseViewController {
         tableView.isHidden = false
         let collectionViewButton = UIBarButtonItem(image: UIImage(named: "collectionMenu"), style: .plain, target: self, action: #selector(showCollectionView))
         navigationItem.rightBarButtonItem = collectionViewButton
+        collectionViewButton.tintColor = .black
     }
 
     @objc func showCollectionView() {
@@ -39,11 +41,20 @@ class HomeViewController: BaseViewController {
         tableView.isHidden = true
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "tableViewMenu"), style: .plain, target: self, action: #selector(showTableView))
         navigationItem.rightBarButtonItem = tableViewButton
+        tableViewButton.tintColor = .black
     }
 
     func configTableView() {
+        //cell
         let nib = UINib(nibName: "HomeTableViewCell", bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: "HomeTableViewCell")
+        
+        //header
+        let nib2 = UINib(nibName: "SliderTableViewCell", bundle: .main)
+        tableView.register(nib2, forCellReuseIdentifier: "SliderTableViewCell")
+        
+        //delegate & datasource
+        tableView.delegate = self
         tableView.dataSource = self
     }
 
@@ -53,18 +64,47 @@ class HomeViewController: BaseViewController {
         collectionView.dataSource = self
     }
 }
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        address.count
+        if section == 0 {
+            //slides
+            return 1
+        } else if section == 1 {
+            return address.count
+        }
+        
+        return 0
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //section dau tien vs section thu 2 la 0 vs 1
+        if indexPath.section == 0 {
+            return 150
+        } else if indexPath.section == 1 {
+            return 100
+        }
+        
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-        cell.updateTabViewCell(avatar: address[indexPath.row].avatarImage, name: address[indexPath.row].nameImage, distance: address[indexPath.row].distance, value: address[indexPath.row].value, address: address[indexPath.row].address)
-        return cell
+        if indexPath.section == 0 {
+            //slides
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath) as! SliderTableViewCell
+            return cell
+            
+        } else if indexPath.section == 1 {
+            //cells
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+            cell.updateTabViewCell(avatar: address[indexPath.row].avatarImage, name: address[indexPath.row].nameImage, distance: address[indexPath.row].distance, value: address[indexPath.row].value, address: address[indexPath.row].address)
+            return cell
+        }
+        
+        return UITableViewCell()
     }
 }
 extension HomeViewController: UICollectionViewDataSource {
