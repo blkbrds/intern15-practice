@@ -58,6 +58,7 @@ class SliderTableViewCell: UITableViewCell {
     }
 
     func configCollectionView() {
+        //config Header Collecion
         let nib = UINib(nibName: "SliderCollectionViewCell", bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: "SliderCollectionViewCell")
         collectionView.dataSource = self
@@ -68,6 +69,7 @@ extension SliderTableViewCell: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }

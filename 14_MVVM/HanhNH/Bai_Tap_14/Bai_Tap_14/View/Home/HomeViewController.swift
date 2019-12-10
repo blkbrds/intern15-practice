@@ -10,15 +10,53 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    var address: [Address] = Address.getDummyDatas()
-
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configData()
+        configUI()
+    }
+    
+    func updateUI() {
+        if viewModel.isShowTableView {
+            tableView.isHidden = false
+            collectionView.isHidden = true
+            
+            tableView.reloadData()
+        } else {
+            tableView.isHidden = true
+            collectionView.isHidden = false
+            
+            collectionView.reloadData()
+        }
+    }
+    
+    func configUI() {
         configTableView()
         configCollectionView()
+        //setupNavi
+    }
+    
+    func configData() {
+        //load Data
+        viewModel.loadData { (done) in
+            if done {
+                self.updateUI()
+            } else {
+                //show alertview --> bao' loi~
+                let alert = UIAlertController(title: "Error", message: "Khong Lay duoc DaTa", preferredStyle: UIAlertController.Style.alert)
+
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     override func setUpNaVi() {
@@ -29,19 +67,46 @@ class HomeViewController: BaseViewController {
     }
 
     @objc func showTableView() {
-        collectionView.isHidden = true
-        tableView.isHidden = false
+        //change barbutton
         let collectionViewButton = UIBarButtonItem(image: UIImage(named: "collectionMenu"), style: .plain, target: self, action: #selector(showCollectionView))
         navigationItem.rightBarButtonItem = collectionViewButton
         collectionViewButton.tintColor = .black
+        
+        //change isShow
+        viewModel.changeDisplay { (done) in
+            if done {
+                self.updateUI()
+            } else {
+                //show alertview --> bao' loi~
+                let alert = UIAlertController(title: "Error", message: "Khong Lay Duoc Data", preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     @objc func showCollectionView() {
-        collectionView.isHidden = false
-        tableView.isHidden = true
+      
+        
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "tableViewMenu"), style: .plain, target: self, action: #selector(showTableView))
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
+        
+        viewModel.changeDisplay { (done) in
+            if done {
+                self.updateUI()
+            } else {
+                //show alertview --> bao' loi~
+                let alert = UIAlertController(title: "Error", message: "Khong Lay duoc DaTa", preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
     }
 
     func configTableView() {
@@ -78,7 +143,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             //slides
             return 1
         } else if section == 1 {
-            return address.count
+            return viewModel.address.count
         }
         return 0
     }
@@ -90,7 +155,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.section == 1 {
             return 100
         }
-
         return 0
     }
 
@@ -103,10 +167,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.section == 1 {
             //cells
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-            cell.updateTabViewCell(avatar: address[indexPath.row].avatarImage, name: address[indexPath.row].nameImage, distance: address[indexPath.row].distance, value: address[indexPath.row].value, address: address[indexPath.row].address)
+            //gan vieModelCell = viewModel
+            cell.viewModelCell = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
-
         return UITableViewCell()
     }
 }
@@ -117,27 +181,30 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            //slider
+            //slider Header
             return 1
         } else if section == 1 {
-            return address.count
+            return viewModel.address.count
         }
         return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // 2 section
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionCell", for: indexPath)
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-            cell.updateCollectionView(image: address[indexPath.row].avatarImage, name: address[indexPath.row].nameImage, address: address[indexPath.row].address, distrance: address[indexPath.row].distance, value: address[indexPath.row].value)
+            let item = viewModel.address[indexPath.row]
+            cell.updateCollectionView(image: item.thumnailImage, name: item.nameImage, address: item.address, distrance: item.distance, value: item.rating)
             return cell
         }
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // xet frame size cho 2 section 
         if indexPath.section == 0 {
             let width = collectionView.frame.width - 40
             return CGSize(width: width, height: 150)

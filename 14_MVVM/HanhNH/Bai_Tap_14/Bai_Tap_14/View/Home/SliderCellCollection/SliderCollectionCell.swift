@@ -75,7 +75,7 @@ extension SliderCollectionCell: UICollectionViewDataSource {
 
 extension SliderCollectionCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = collectionView.frame.width - 10
+        let screenWidth = (collectionView.frame.width) - 10
         return CGSize(width: screenWidth, height: 150)
     }
 }

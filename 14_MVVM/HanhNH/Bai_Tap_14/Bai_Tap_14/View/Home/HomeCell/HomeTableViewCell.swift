@@ -16,6 +16,12 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var nameImageView: UILabel!
     @IBOutlet weak var addressImageView: UIImageView!
     
+    var viewModelCell: HomeCellTabelViewModel? {
+        didSet {
+            updateTabViewCell()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,11 +30,15 @@ class HomeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func updateTabViewCell(avatar: String, name: String, distance: String, value: String, address: String) {
-        addressImageView.image = UIImage(named: avatar)
-        nameImageView.text = name
-        distanceLabel.text = distance
-        valueLabel.text = value
-        addressLabel.text = address
+    private func updateTabViewCell() {
+        if  let viewModelCell = viewModelCell {
+            addressImageView.image = viewModelCell.thumnailImage
+            distanceLabel.text = String(viewModelCell.distance) + " km"
+            nameImageView.text = viewModelCell.name
+            valueLabel.text = viewModelCell.rating
+            addressLabel.text = viewModelCell.addres
+        } else {
+            print("nil")
+        }
     }
 }

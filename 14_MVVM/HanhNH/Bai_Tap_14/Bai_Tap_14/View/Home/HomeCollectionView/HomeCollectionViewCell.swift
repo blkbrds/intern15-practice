@@ -20,11 +20,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func updateCollectionView(image: String, name: String, address: String, distrance: String, value: String) {
-        addressImageView.image = UIImage(named: image)
+    func updateCollectionView(image: UIImage, name: String, address: String, distrance: Float, value: String) {
+        addressImageView.image = image
         nameAddressLabel.text = name
         addressLabel.text = address
-        distanceLabel.text = distrance
+        distanceLabel.text = String(distrance) + " km"
         valueLabel.text = value
     }
 }

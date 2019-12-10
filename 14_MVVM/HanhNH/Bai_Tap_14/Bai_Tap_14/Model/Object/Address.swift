@@ -7,17 +7,19 @@
 //
 
 import Foundation
+import UIKit
+
 class Address {
-    var avatarImage: String
+    var thumnailImage: UIImage
     var address: String
-    var value: String
-    var distance: String
+    var rating: String
+    var distance: Float
     var nameImage: String
 
-    init(avatar: String, address: String, name: String, distance: String, value: String) {
-        self.avatarImage = avatar
+    init(avatar: UIImage, address: String, name: String, distance: Float, value: String) {
+        self.thumnailImage = avatar
         self.address = address
-        self.value = value
+        self.rating = value
         self.distance = distance
         self.nameImage = name
     }
@@ -27,7 +29,7 @@ extension Address {
         var users: [Address] = []
 
         for i in 1...30 {
-            let user = Address(avatar: "Home", address: "To 38D PhongBac11", name: "Nha Cua Hanh", distance: "6km", value: "9/10")
+            let user = Address(avatar: UIImage(named: "Home")!, address: "To 38D PhongBac11", name: "Nha Cua Hanh", distance: 6, value: "9/10")
             users.append(user)
         }
         return users
