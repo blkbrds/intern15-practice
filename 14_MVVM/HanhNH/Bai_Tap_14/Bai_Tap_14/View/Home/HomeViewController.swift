@@ -196,8 +196,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-            let item = viewModel.address[indexPath.row]
-            cell.updateCollectionView(image: item.thumnailImage, name: item.nameImage, address: item.address, distrance: item.distance, value: item.rating)
+            cell.viewModelCollection = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
         return UICollectionViewCell()

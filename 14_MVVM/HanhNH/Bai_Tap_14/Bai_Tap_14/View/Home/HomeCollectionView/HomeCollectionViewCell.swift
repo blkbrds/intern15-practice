@@ -16,15 +16,25 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameAddressLabel: UILabel!
     @IBOutlet weak var addressImageView: UIImageView!
     
+    var viewModelCollection: HomeCellTabelViewModel? {
+        didSet {
+            updateCollectionView()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func updateCollectionView(image: UIImage, name: String, address: String, distrance: Float, value: String) {
-        addressImageView.image = image
-        nameAddressLabel.text = name
-        addressLabel.text = address
-        distanceLabel.text = String(distrance) + " km"
-        valueLabel.text = value
+    private func updateCollectionView() {
+        if let viewModelCollection = viewModelCollection {
+            addressImageView.image = viewModelCollection.thumnailImage
+            nameAddressLabel.text = viewModelCollection.name
+            addressLabel.text = viewModelCollection.addres
+            distanceLabel.text = String(viewModelCollection.distance) + " km"
+            valueLabel.text = viewModelCollection.rating
+        } else {
+            print("sai roi")
+        }
     }
 }
