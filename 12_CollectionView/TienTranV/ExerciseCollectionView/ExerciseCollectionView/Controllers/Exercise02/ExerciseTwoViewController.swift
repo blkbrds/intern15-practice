@@ -27,6 +27,9 @@ final class ExerciseTwoViewController: BaseViewController {
     // MARK: - Private funcs
     private func configCollectionView() {
         collectionView.register(UINib(nibName: nameCell, bundle: .main), forCellWithReuseIdentifier: nameCell)
+        if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
+            layout.delegate = self
+        }
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -36,7 +39,7 @@ final class ExerciseTwoViewController: BaseViewController {
     }
 }
 
-// MARK: - Extention:
+// MARK: - Extention: UICollectionViewDataSource
 extension ExerciseTwoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
@@ -48,6 +51,7 @@ extension ExerciseTwoViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - Extention: UICollectionViewDelegateFlowLayout
 extension ExerciseTwoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -63,6 +67,21 @@ extension ExerciseTwoViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: 50)
         default:
             return CGSize(width: width, height: 200)
+        }
+    }
+}
+
+// MARK: - Extention: UICollectionViewDelegateFlowLayout
+extension ExerciseTwoViewController: PinterestLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        let row = indexPath.row % 3
+        switch row {
+        case 0:
+            return 100
+        case 2:
+            return 50
+        default:
+            return 180
         }
     }
 }

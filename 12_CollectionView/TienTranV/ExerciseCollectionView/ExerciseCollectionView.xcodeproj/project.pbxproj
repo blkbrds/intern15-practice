@@ -19,6 +19,7 @@
 		F005033B239FA6AA0017C6B8 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0050339239FA6AA0017C6B8 /* BaseCollectionViewCell.swift */; };
 		F005033C239FA6AA0017C6B8 /* BaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F005033A239FA6AA0017C6B8 /* BaseCollectionViewCell.xib */; };
 		F0146E9F23A0858600E0AB41 /* ExerciseThreeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0146E9E23A0858600E0AB41 /* ExerciseThreeViewController+Extension.swift */; };
+		F014953B23A0AE7900B8A9EF /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014953A23A0AE7900B8A9EF /* PinterestLayout.swift */; };
 		F0FBB6E9239DF36B00719C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBB6E8239DF36B00719C2D /* AppDelegate.swift */; };
 		F0FBB6EB239DF36B00719C2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FBB6EA239DF36B00719C2D /* SceneDelegate.swift */; };
 		F0FBB6F2239DF36D00719C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FBB6F1239DF36D00719C2D /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		F0050339239FA6AA0017C6B8 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		F005033A239FA6AA0017C6B8 /* BaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCollectionViewCell.xib; sourceTree = "<group>"; };
 		F0146E9E23A0858600E0AB41 /* ExerciseThreeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseThreeViewController+Extension.swift"; sourceTree = "<group>"; };
+		F014953A23A0AE7900B8A9EF /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		F0FBB6E5239DF36B00719C2D /* ExerciseCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExerciseCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FBB6E8239DF36B00719C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FBB6EA239DF36B00719C2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 				F005033A239FA6AA0017C6B8 /* BaseCollectionViewCell.xib */,
 			);
 			path = Exercise04Cell;
+			sourceTree = "<group>";
+		};
+		F014953923A0AE5D00B8A9EF /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				F014953A23A0AE7900B8A9EF /* PinterestLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 		F0FBB6DC239DF36B00719C2D = {
@@ -234,6 +244,7 @@
 		F0FBB710239E003000719C2D /* Excercise02Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F014953923A0AE5D00B8A9EF /* Layouts */,
 				F0FBB71A239E02C600719C2D /* ExerciseTwoCollectionViewCell.swift */,
 				F0FBB71B239E02C600719C2D /* ExerciseTwoCollectionViewCell.xib */,
 			);
@@ -351,6 +362,7 @@
 				F0050329239F4A930017C6B8 /* Avatar.swift in Sources */,
 				F0FBB718239E014500719C2D /* ExerciseTwoViewController.swift in Sources */,
 				F0146E9F23A0858600E0AB41 /* ExerciseThreeViewController+Extension.swift in Sources */,
+				F014953B23A0AE7900B8A9EF /* PinterestLayout.swift in Sources */,
 				F005032C239F74670017C6B8 /* AvatarCell.swift in Sources */,
 				F0FBB71C239E02C600719C2D /* ExerciseTwoCollectionViewCell.swift in Sources */,
 			);
