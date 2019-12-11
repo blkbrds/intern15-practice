@@ -8,48 +8,70 @@
 
 import UIKit
 
-class SliderTableViewCell: UITableViewCell {
+protocol SliderTableViewDataSoucre: class {
+    func numberOfSection() -> Int
+    func numberRow(in section: Int) -> Int
+    func imageSlide(in indexPath: IndexPath) -> String
+}
 
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var retireButton: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
+final class SliderTableViewCell: UITableViewCell {
 
-    var images: [ImageSlider] = ImageSlider.getGetDummyDatas()
+    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private weak var retireButton: UIButton!
+    @IBOutlet private weak var collectionView: UICollectionView!
+
+//    private var images: [UIImage] = []
+    var sliderViewModel = SliderViewModel()
     var index: Int = 0
+    weak var dataSoucre: SliderTableViewDataSoucre?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         configCollectionView()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    func configData() {
+        //load Data
+//        guard let dataSource = dataSoucre else { return }
+//        images = dataSource.sliderImages()
+//        collectionView.reloadData()
+//        sliderViewModel.loadData { (done) in
+//            if done {
+//                self.updateUI()
+//            } else {
+//                //show alertview --> bao' loi~
+//                let alert = UIAlertController(title: "Error", message: "Khong Lay duoc DaTa", preferredStyle: UIAlertController.Style.alert)
+//                // add an action (button)
+//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//                // show the alert
+//                alert.present(alert, animated: true, completion: nil)
+//            }
+//        }
     }
 
-    @IBAction func retireTouchUpInside(_ sender: Any) {
+    @IBAction private func retireTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
         UIView.animate(withDuration: 0.5, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true
-        }) { (done) in
-            if self.index == self.images.count - 1 {
+        }) { done in
+            if self.index == (self.dataSoucre?.numberRow(in: self.index))! - 1 {
                 self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
                 self.retireButton.isEnabled = false
             }
         }
     }
 
-    @IBAction func nextTouchUpInside(_ sender: Any) {
-        guard index < images.count - 1 else { return }
+    @IBAction private func nextTouchUpInside(_ sender: Any) {
+        guard index < (dataSoucre?.numberRow(in: index))! - 1 else { return }
         index += 1
         UIView.animate(withDuration: 0.5, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
             self.retireButton.isEnabled = true
-        }) { (done) in
+        }) { done in
             if self.index == 0 {
                 self.nextButton.setImage(UIImage(named: "next"), for: .normal)
                 self.nextButton.isEnabled = false
@@ -67,16 +89,19 @@ class SliderTableViewCell: UITableViewCell {
 }
 extension SliderTableViewCell: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        return dataSoucre?.numberOfSection() ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return dataSoucre?.numberRow(in: section) ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for: indexPath) as! SliderCollectionViewCell
-        cell.updateSliderView(image: images[indexPath.row].imageSlider)
+        
+        let imageSlider = dataSoucre?.imageSlide(in: indexPath) ?? nil
+        cell.updateSliderView(image: imageSlider)
+        
         return cell
     }
 }

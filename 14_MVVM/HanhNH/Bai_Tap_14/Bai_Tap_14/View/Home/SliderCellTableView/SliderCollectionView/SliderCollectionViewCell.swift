@@ -16,7 +16,7 @@ class SliderCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func updateSliderView(image: String) {
-        imageCollection.image = UIImage(named: image)
+    func updateSliderView(image: String?) {
+        imageCollection.image = UIImage(named: image!)
     }
 }

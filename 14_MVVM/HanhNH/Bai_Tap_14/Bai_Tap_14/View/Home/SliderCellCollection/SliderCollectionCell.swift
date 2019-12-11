@@ -7,22 +7,34 @@
 //
 
 import UIKit
-
+protocol SliderCollectionCellDataSource: class {
+    func numberOfSectionCollection() -> Int
+    func numberRowImage(in section: Int) -> Int
+    func imageSlideCollection(in indexPath: IndexPath) -> String
+}
 class SliderCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var retireButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-
-    var image: [ImageSlider] = ImageSlider.getGetDummyDatas()
+    
+    weak var dataSouce: SliderCollectionCellDataSource?
     var index: Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
+//        configData()
         configCollection()
     }
+    
+//    func configData() {
+//        guard let dataSource = dataSouce else { return }
+//        image = dataSource.sliderImages()
+//        collectionView.reloadData()
+//    }
+    
     @IBAction func nextTouchUpInside(_ sender: Any) {
-        guard index < image.count - 1 else { return }
+        guard index < (dataSouce?.numberRowImage(in: index))! - 1 else { return }
         index += 1
         UIView.animate(withDuration: 0.5, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
@@ -43,7 +55,7 @@ class SliderCollectionCell: UICollectionViewCell {
             self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true
         }) { (done) in
-            if self.index == self.image.count - 1 {
+            if self.index == ((self.dataSouce?.numberRowImage(in: self.index))!) - 1 {
                 self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
                 self.retireButton.isEnabled = false
             }
@@ -59,16 +71,17 @@ class SliderCollectionCell: UICollectionViewCell {
 }
 extension SliderCollectionCell: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return dataSouce?.numberOfSectionCollection() ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return image.count
+        return dataSouce?.numberRowImage(in: section) ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderScrollCollectionViewCell", for: indexPath) as! SliderScrollCollectionViewCell
-        cell.updateCollection(image: image[indexPath.row].imageSlider)
+        let image = dataSouce?.imageSlideCollection(in: indexPath)
+        cell.updateCollection(image: image)
         return cell
     }
 }

@@ -18,7 +18,7 @@ class SliderScrollCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func updateCollection(image: String) {
-        imageCollectionView.image = UIImage(named: image)
+    func updateCollection(image: String?) {
+        imageCollectionView.image = UIImage(named: image!)
     }
 }

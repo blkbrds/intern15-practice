@@ -17,6 +17,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addressImageView: UIImageView!
     
     var viewModelCollection: HomeCellTabelViewModel? {
+        //gan du lieu thay doi thi didSet chạy.
         didSet {
             updateCollectionView()
         }
@@ -27,6 +28,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     private func updateCollectionView() {
+        //sau khi didSet chạy thì nó sẽ vào đây lây tất cả dữ liệu, việc tiếp theo là đưa lên.
         if let viewModelCollection = viewModelCollection {
             addressImageView.image = viewModelCollection.thumnailImage
             nameAddressLabel.text = viewModelCollection.name

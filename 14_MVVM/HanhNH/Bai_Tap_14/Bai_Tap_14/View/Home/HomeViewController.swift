@@ -25,12 +25,10 @@ class HomeViewController: BaseViewController {
         if viewModel.isShowTableView {
             tableView.isHidden = false
             collectionView.isHidden = true
-            
             tableView.reloadData()
         } else {
             tableView.isHidden = true
             collectionView.isHidden = false
-            
             collectionView.reloadData()
         }
     }
@@ -49,14 +47,14 @@ class HomeViewController: BaseViewController {
             } else {
                 //show alertview --> bao' loi~
                 let alert = UIAlertController(title: "Error", message: "Khong Lay duoc DaTa", preferredStyle: UIAlertController.Style.alert)
-
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
                 // show the alert
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        
+        viewModel.loadImagesSlide()
     }
 
     override func setUpNaVi() {
@@ -162,6 +160,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.section == 0 {
             //slider
             let cell = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath) as! SliderTableViewCell
+            cell.dataSoucre = self
             return cell
 
         } else if indexPath.section == 1 {
@@ -192,10 +191,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 2 section
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionCell", for: indexPath) as! SliderCollectionCell
+            cell.dataSouce = self
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+            //gan cho viewModelCollectionCell  = viewModel 
             cell.viewModelCollection = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
@@ -215,5 +216,32 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
+extension HomeViewController: SliderTableViewDataSoucre {
+    func numberOfSection() -> Int {
+        return viewModel.numberSectionSlide()
+    }
+    
+    func numberRow(in section: Int) -> Int {
+        return viewModel.numberImageSlide()
+    }
+    
+    func imageSlide(in indexPath: IndexPath) -> String {
+        return viewModel.imageSlide(in: indexPath.row).imageSlider
+    }
+    
+}
 
-
+extension HomeViewController:  SliderCollectionCellDataSource {
+    func numberOfSectionCollection() -> Int {
+//        return viewModel.numberSectionSlideCollection()
+        return viewModel.numberSectionSlide()
+    }
+    
+    func numberRowImage(in section: Int) -> Int {
+        return viewModel.numberImageSlide()
+    }
+    
+    func imageSlideCollection(in indexPath: IndexPath) -> String {
+        return viewModel.imageSlide(in: indexPath.row).imageSlider
+    }
+}
