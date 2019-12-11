@@ -32,7 +32,7 @@ func lietKeFibonacci() {
 func tongBinhPhuongCuaMotSo(soBanDau: Int) -> Int {
     var soTam: Int = 0
     var soDuocCopy: Int = soBanDau
-    while (soDuocCopy != 0) {
+    while soDuocCopy != 0 {
         soTam += (soDuocCopy % 10) * (soDuocCopy % 10)
         soDuocCopy /= 10
     }
@@ -54,7 +54,7 @@ func kiemTraSoHanhPhuc(soCanKiemTra: Int) -> Bool {
 
 func lietKeSoHanhPhuc() {
     for i in 1...100 {
-        if(kiemTraSoHanhPhuc(soCanKiemTra: i) == true) {
+        if kiemTraSoHanhPhuc(soCanKiemTra: i) == true {
             print(i)
         }
     }
