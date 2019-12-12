@@ -38,11 +38,11 @@ class SliderDetailTableViewCell: UITableViewCell {
         index -= 1
         UIView.animate(withDuration: 0.5, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
-            self.retireButton.setImage(UIImage(named: "nextright"), for: .normal)
+            self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
             self.retireButton.isEnabled = true
         }) { (done) in
             if self.index == self.images.count - 1 {
-                self.nextButton.setImage(UIImage(named: "nextleft"), for: .normal)
+                self.nextButton.setImage(UIImage(named: "next"), for: .normal)
                 self.nextButton.isEnabled = false
             }
         }
@@ -53,11 +53,11 @@ class SliderDetailTableViewCell: UITableViewCell {
         index += 1
         UIView.animate(withDuration: 0.5, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
-            self.nextButton.setImage(UIImage(named: "nextleft"), for: .normal)
+            self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true
         }) { (done) in
             if self.index == 0 {
-                self.retireButton.setImage(UIImage(named: "nextright"), for: .normal)
+                self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
                 self.retireButton.isEnabled = false
             }
         }

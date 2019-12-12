@@ -218,6 +218,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return CGSize(width: 0, height: 0)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailViewController(), animated: true)
+    }
 }
 
 extension HomeViewController: SliderTableViewDataSoucre {
