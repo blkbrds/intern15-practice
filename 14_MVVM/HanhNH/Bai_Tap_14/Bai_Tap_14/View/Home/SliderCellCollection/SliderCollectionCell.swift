@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol SliderCollectionCellDataSource: class {
     func numberOfSectionCollection() -> Int
     func numberRowImage(in section: Int) -> Int
@@ -17,7 +18,7 @@ class SliderCollectionCell: UICollectionViewCell {
     @IBOutlet weak var retireButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
     weak var dataSouce: SliderCollectionCellDataSource?
     var index: Int = 0
 
@@ -26,13 +27,7 @@ class SliderCollectionCell: UICollectionViewCell {
 //        configData()
         configCollection()
     }
-    
-//    func configData() {
-//        guard let dataSource = dataSouce else { return }
-//        image = dataSource.sliderImages()
-//        collectionView.reloadData()
-//    }
-    
+
     @IBAction func nextTouchUpInside(_ sender: Any) {
         guard index < (dataSouce?.numberRowImage(in: index))! - 1 else { return }
         index += 1
@@ -47,6 +42,7 @@ class SliderCollectionCell: UICollectionViewCell {
             }
         }
     }
+
     @IBAction func retireTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1

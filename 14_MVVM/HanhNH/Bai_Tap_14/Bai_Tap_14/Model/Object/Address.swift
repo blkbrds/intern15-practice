@@ -27,7 +27,6 @@ class Address {
 extension Address {
     static func getDummyDatas() -> [Address] {
         var users: [Address] = []
-
         for i in 1...30 {
             let user = Address(avatar: UIImage(named: "Home")!, address: "To 38D PhongBac11", name: "Nha Cua Hanh", distance: 6, value: "9/10")
             users.append(user)

@@ -30,25 +30,6 @@ final class SliderTableViewCell: UITableViewCell {
         configCollectionView()
     }
 
-    func configData() {
-        //load Data
-//        guard let dataSource = dataSoucre else { return }
-//        images = dataSource.sliderImages()
-//        collectionView.reloadData()
-//        sliderViewModel.loadData { (done) in
-//            if done {
-//                self.updateUI()
-//            } else {
-//                //show alertview --> bao' loi~
-//                let alert = UIAlertController(title: "Error", message: "Khong Lay duoc DaTa", preferredStyle: UIAlertController.Style.alert)
-//                // add an action (button)
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//                // show the alert
-//                alert.present(alert, animated: true, completion: nil)
-//            }
-//        }
-    }
-
     @IBAction private func retireTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
@@ -98,10 +79,9 @@ extension SliderTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCollectionViewCell", for: indexPath) as! SliderCollectionViewCell
-        
+
         let imageSlider = dataSoucre?.imageSlide(in: indexPath) ?? nil
         cell.updateSliderView(image: imageSlider)
-        
         return cell
     }
 }

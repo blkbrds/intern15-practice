@@ -9,36 +9,33 @@
 import UIKit
 
 class DetailViewController: BaseViewController {
-    
+
     @IBOutlet weak var detailTableView: UITableView!
-    
+
     var users: [Comment] = Comment.getDummyDatas()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         cofigTableView()
     }
-    
+
     override func setUpNaVi() {
         title = "Nha Cua Hanh"
     }
-    
+
     func cofigTableView () {
         let nib = UINib(nibName: "DetailTableViewCell", bundle: Bundle.main)
         detailTableView.register(nib, forCellReuseIdentifier: "DetailTableViewCell")
-        
         let nib2 = UINib(nibName: "SliderDetailTableViewCell", bundle: Bundle.main)
         detailTableView.register(nib2, forCellReuseIdentifier: "SliderDetailTableViewCell")
-        
         let nib3 = UINib(nibName: "CommentTableViewCell", bundle: Bundle.main)
         detailTableView.register(nib3, forCellReuseIdentifier: "CommentTableViewCell")
-        
         let nib4 = UINib(nibName: "MapTableViewCell", bundle: Bundle.main)
         detailTableView.register(nib4, forCellReuseIdentifier: "MapTableViewCell")
         detailTableView.dataSource = self
         detailTableView.delegate = self
     }
-    
+
 }
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,9 +53,9 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return users.count
         }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch  indexPath.section {
+        switch indexPath.section {
         case 0:
             return 150
         case 1:
@@ -69,7 +66,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableView.automaticDimension
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:

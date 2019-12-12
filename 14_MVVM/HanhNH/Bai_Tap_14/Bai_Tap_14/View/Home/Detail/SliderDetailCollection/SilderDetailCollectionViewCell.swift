@@ -10,11 +10,11 @@ import UIKit
 
 class SilderDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageDetail: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     func updateDetail(image: String) {
         imageDetail.image = UIImage(named: image)
     }

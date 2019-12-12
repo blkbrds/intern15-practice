@@ -9,11 +9,11 @@
 import Foundation
 class SliderViewModel {
     var images: [ImageSlider] = []
-    
+
     func loadData(completion: (Bool) -> ()) {
-        
+
         images = ImageSlider.getGetDummyDatas()
-        
+
         completion(true)
     }
 }

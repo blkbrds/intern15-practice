@@ -15,7 +15,7 @@ class MapViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
     override func setUpNaVi() {
         title = "Map"
     }

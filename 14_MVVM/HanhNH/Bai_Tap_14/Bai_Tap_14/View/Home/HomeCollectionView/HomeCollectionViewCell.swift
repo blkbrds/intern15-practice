@@ -15,18 +15,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var nameAddressLabel: UILabel!
     @IBOutlet weak var addressImageView: UIImageView!
-    
+
     var viewModelCollection: HomeCellTabelViewModel? {
         //gan du lieu thay doi thi didSet chạy.
         didSet {
             updateCollectionView()
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+
     private func updateCollectionView() {
         //sau khi didSet chạy thì nó sẽ vào đây lây tất cả dữ liệu, việc tiếp theo là đưa lên.
         if let viewModelCollection = viewModelCollection {

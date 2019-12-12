@@ -8,25 +8,24 @@
 
 import Foundation
 class HomeViewModel {
-    
+
     //poperties
     var address: [Address] = []
     var images: [ImageSlider] = []
     var isShowTableView: Bool = true
-    
+
     //request
     func loadData(completion: (Bool) -> ()) {
         //dummydata
         address = Address.getDummyDatas()
-        
+
         //call back
         completion(true)
     }
-    
+
     func loadImagesSlide() {
         images = ImageSlider.getGetDummyDatas()
     }
-    
     //actions
     func changeDisplay(completion: (Bool) -> ()) {
         //data
@@ -39,18 +38,17 @@ class HomeViewModel {
         guard indexPath.row < address.count else { return nil }
         return HomeCellTabelViewModel(address: address[indexPath.row])
     }
-    
     //image slider
     func numberImageSlide() -> Int {
         return images.count
     }
-    
+
     func numberSectionSlide() -> Int {
         return 1
     }
-    
+
     func imageSlide(in index: Int) -> ImageSlider {
         return images[index]
     }
-    
+
 }

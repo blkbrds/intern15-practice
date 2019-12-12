@@ -12,7 +12,7 @@ class HomeViewController: BaseViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    
+
     var viewModel = HomeViewModel()
 
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class HomeViewController: BaseViewController {
         configData()
         configUI()
     }
-    
+
     func updateUI() {
         if viewModel.isShowTableView {
             tableView.isHidden = false
@@ -32,13 +32,13 @@ class HomeViewController: BaseViewController {
             collectionView.reloadData()
         }
     }
-    
+
     func configUI() {
         configTableView()
         configCollectionView()
         //setupNavi
     }
-    
+
     func configData() {
         //load Data
         viewModel.loadData { (done) in
@@ -53,7 +53,6 @@ class HomeViewController: BaseViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
         viewModel.loadImagesSlide()
     }
 
@@ -69,7 +68,6 @@ class HomeViewController: BaseViewController {
         let collectionViewButton = UIBarButtonItem(image: UIImage(named: "collectionMenu"), style: .plain, target: self, action: #selector(showCollectionView))
         navigationItem.rightBarButtonItem = collectionViewButton
         collectionViewButton.tintColor = .black
-        
         //change isShow
         viewModel.changeDisplay { (done) in
             if done {
@@ -86,12 +84,10 @@ class HomeViewController: BaseViewController {
     }
 
     @objc func showCollectionView() {
-      
-        
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "tableViewMenu"), style: .plain, target: self, action: #selector(showTableView))
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
-        
+
         viewModel.changeDisplay { (done) in
             if done {
                 self.updateUI()
@@ -104,18 +100,16 @@ class HomeViewController: BaseViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
+
     }
 
     func configTableView() {
         //cell
         let nib = UINib(nibName: "HomeTableViewCell", bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: "HomeTableViewCell")
-
         //header
         let nib2 = UINib(nibName: "SliderTableViewCell", bundle: .main)
         tableView.register(nib2, forCellReuseIdentifier: "SliderTableViewCell")
-
         //delegate & datasource
         tableView.delegate = self
         tableView.dataSource = self
@@ -124,7 +118,6 @@ class HomeViewController: BaseViewController {
     func configCollectionView() {
         let nib = UINib(nibName: "HomeCollectionViewCell", bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: "HomeCollectionViewCell")
-
         let nib2 = UINib(nibName: "SliderCollectionCell", bundle: Bundle.main)
         collectionView.register(nib2, forCellWithReuseIdentifier: "SliderCollectionCell")
         collectionView.dataSource = self
@@ -172,7 +165,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(DetailViewController(), animated: true)
     }
@@ -191,7 +184,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 2 section
         if indexPath.section == 0 {
@@ -200,25 +193,25 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-            //gan cho viewModelCollectionCell  = viewModel 
+            //gan cho viewModelCollectionCell  = viewModel
             cell.viewModelCollection = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
         return UICollectionViewCell()
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // xet frame size cho 2 section 
+        // xet frame size cho 2 section
         if indexPath.section == 0 {
             let width = collectionView.frame.width - 40
             return CGSize(width: width, height: 150)
-        }else if indexPath.section == 1 {
+        } else if indexPath.section == 1 {
             let width = collectionView.frame.width
             return CGSize(width: width / 3, height: 250)
         }
         return CGSize(width: 0, height: 0)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigationController?.pushViewController(DetailViewController(), animated: true)
     }
@@ -228,27 +221,26 @@ extension HomeViewController: SliderTableViewDataSoucre {
     func numberOfSection() -> Int {
         return viewModel.numberSectionSlide()
     }
-    
+
     func numberRow(in section: Int) -> Int {
         return viewModel.numberImageSlide()
     }
-    
+
     func imageSlide(in indexPath: IndexPath) -> String {
         return viewModel.imageSlide(in: indexPath.row).imageSlider
     }
-    
 }
 
-extension HomeViewController:  SliderCollectionCellDataSource {
+extension HomeViewController: SliderCollectionCellDataSource {
     func numberOfSectionCollection() -> Int {
 //        return viewModel.numberSectionSlideCollection()
         return viewModel.numberSectionSlide()
     }
-    
+
     func numberRowImage(in section: Int) -> Int {
         return viewModel.numberImageSlide()
     }
-    
+
     func imageSlideCollection(in indexPath: IndexPath) -> String {
         return viewModel.imageSlide(in: indexPath.row).imageSlider
     }

@@ -9,15 +9,15 @@
 import UIKit
 
 class SliderScrollCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageCollectionView: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     func updateCollection(image: String?) {
         imageCollectionView.image = UIImage(named: image!)
     }
