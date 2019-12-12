@@ -172,6 +172,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailViewController(), animated: true)
+    }
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -187,7 +191,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 2 section
         if indexPath.section == 0 {

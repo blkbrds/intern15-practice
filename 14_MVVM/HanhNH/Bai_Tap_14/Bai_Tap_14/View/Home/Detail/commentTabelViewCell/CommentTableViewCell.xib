@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="168" id="KGk-i7-Jjw" customClass="CommentTableViewCell" customModule="Bai_Tap_14" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="168"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="313" height="168"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZK-wn-Icu">
+                        <rect key="frame" x="9" y="0.0" width="304" height="168"/>
+                        <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.  asaasas  asasasaasaaaas sasasasasasasasdskjfksafjksjfsdjfdskfjdslkfjsdlkjvdsklvnx,mvnm,xcvncxmvnxzm,vnzxmvnxzm,nv,mxz</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6ZK-wn-Icu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="4uI-6x-bWc"/>
+                    <constraint firstAttribute="trailing" secondItem="6ZK-wn-Icu" secondAttribute="trailing" id="7Ey-ki-nxV"/>
+                    <constraint firstItem="6ZK-wn-Icu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Kb1-NA-MfH"/>
+                    <constraint firstAttribute="bottom" secondItem="6ZK-wn-Icu" secondAttribute="bottom" id="nzc-Hv-RhE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="574.63768115942037" y="48.214285714285715"/>
+        </tableViewCell>
+    </objects>
+</document>
