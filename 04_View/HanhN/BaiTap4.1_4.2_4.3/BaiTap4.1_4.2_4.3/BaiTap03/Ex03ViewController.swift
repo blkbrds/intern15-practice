@@ -8,13 +8,16 @@ class Ex03ViewController: UIViewController {
     @IBOutlet weak var userNameText: UITextField!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+
     let userName: String = "hanhnguyen3"
     let passwork: String = "123123"
+
     enum Error: String {
         case khongNhapChu = "Không nhập"
         case nhapSai = "Nhập sai "
         case thieu = "Thiếu "
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameText.delegate = self
@@ -22,12 +25,15 @@ class Ex03ViewController: UIViewController {
         passworkText.delegate = self
         passworkText.tag = 1
     }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+
     @IBAction func loginButton(_ sender: Any) {
         login()
     }
+
     func login () {
         switch (userNameText.text, passworkText.text) {
         case ("", ""):
@@ -41,6 +47,7 @@ class Ex03ViewController: UIViewController {
         }
         view.endEditing(true)
     }
+
     @IBAction func clearButton(_ sender: Any) {
         userNameText.text = ""
         passworkText.text = ""
@@ -51,6 +58,7 @@ extension Ex03ViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 0 {
             passworkText.becomeFirstResponder() }
