@@ -13,11 +13,11 @@ protocol SliderCollectionCellDataSource: class {
     func numberRowImage(in section: Int) -> Int
     func imageSlideCollection(in indexPath: IndexPath) -> String
 }
-class SliderCollectionCell: UICollectionViewCell {
+final class SliderCollectionCell: UICollectionViewCell {
 
-    @IBOutlet weak var retireButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var retireButton: UIButton!
+    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     weak var dataSouce: SliderCollectionCellDataSource?
     var index: Int = 0
@@ -31,7 +31,7 @@ class SliderCollectionCell: UICollectionViewCell {
     @IBAction func nextTouchUpInside(_ sender: Any) {
         guard index < (dataSouce?.numberRowImage(in: index))! - 1 else { return }
         index += 1
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
             self.retireButton.isEnabled = true
@@ -46,7 +46,7 @@ class SliderCollectionCell: UICollectionViewCell {
     @IBAction func retireTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true

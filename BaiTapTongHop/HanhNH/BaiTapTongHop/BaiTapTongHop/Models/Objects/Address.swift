@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Address {
+final class Address {
     var thumnailImage: UIImage
     var address: String
     var rating: String

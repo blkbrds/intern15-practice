@@ -7,7 +7,8 @@
 //
 
 import Foundation
-class ImageSlider {
+
+final class ImageSlider {
     var imageName: String
 
     init(imageName: String) {

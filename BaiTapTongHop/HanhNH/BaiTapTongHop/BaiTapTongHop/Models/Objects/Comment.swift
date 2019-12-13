@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-class Comment {
+
+final class Comment {
     var avatarImage: UIImage
     var name: String
     var content: String

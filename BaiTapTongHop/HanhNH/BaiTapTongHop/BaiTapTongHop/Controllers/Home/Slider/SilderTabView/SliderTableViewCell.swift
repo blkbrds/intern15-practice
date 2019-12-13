@@ -20,7 +20,6 @@ final class SliderTableViewCell: UITableViewCell {
     @IBOutlet private weak var retireButton: UIButton!
     @IBOutlet private weak var collectionView: UICollectionView!
 
-//    private var images: [UIImage] = []
     var sliderViewModel = SliderViewModel()
     var index: Int = 0
     weak var dataSoucre: SliderTableViewDataSoucre?
@@ -33,7 +32,7 @@ final class SliderTableViewCell: UITableViewCell {
     @IBAction private func retireTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true
@@ -48,7 +47,7 @@ final class SliderTableViewCell: UITableViewCell {
     @IBAction private func nextTouchUpInside(_ sender: Any) {
         guard index < (dataSoucre?.numberRow(in: index))! - 1 else { return }
         index += 1
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
             self.retireButton.isEnabled = true

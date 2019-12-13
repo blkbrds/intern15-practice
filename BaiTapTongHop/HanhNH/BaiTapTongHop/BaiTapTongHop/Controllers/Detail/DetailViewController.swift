@@ -12,15 +12,44 @@ class DetailViewController: BaseViewController {
 
     @IBOutlet weak var detailTableView: UITableView!
 
-    var users: [Comment] = Comment.getDummyDatas()
+//    var users: [Comment] = Comment.getDummyDatas()
+    var viewModel = DetailViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
+        configData()
+    }
+
+    func updateUI() {
         cofigTableView()
+    }
+
+    func configData() {
+        //load Data
+        viewModel.loadData { (done) in
+            if done {
+                self.updateUI()
+            } else {
+                //show alertview --> bao' loi~
+                let alert = UIAlertController(title: "Error", message: "Khong Lay duoc DaTa", preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     override func setUpNaVi() {
         title = "Nha Cua Hanh"
+        let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-navi-favorites"), style: .plain, target: self, action: #selector(showFavorites))
+        navigationItem.rightBarButtonItem = tableViewButton
+        tableViewButton.tintColor = .black
+    }
+
+    @objc func showFavorites() {
+        navigationController?.pushViewController(FavoriteViewController(), animated: true)
     }
 
     func cofigTableView () {
@@ -50,7 +79,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         case 2:
             return 1
         default:
-            return users.count
+            return viewModel.comment.count
         }
     }
 
@@ -80,8 +109,8 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             let cell = detailTableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
-            let user = users[indexPath.row]
-            cell.updateDetail(image: user.avatarImage, status: user.content, name: user.name, day: user.createds)
+            let comment = viewModel.comment[indexPath.row]
+            cell.updateDetail(image: comment.avatarImage, status: comment.content, name: comment.name, day: comment.createds)
             return cell
         }
     }

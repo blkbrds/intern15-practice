@@ -8,20 +8,20 @@
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+final class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var nameImageView: UILabel!
-    @IBOutlet weak var addressImageView: UIImageView!
-    
+    @IBOutlet private weak var distanceLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var nameImageView: UILabel!
+    @IBOutlet private weak var addressImageView: UIImageView!
+
     var viewModelCell: HomeCellTabelViewModel? {
         didSet {
             updateTabViewCell()
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -29,9 +29,9 @@ class HomeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+
     private func updateTabViewCell() {
-        if  let viewModelCell = viewModelCell {
+        if let viewModelCell = viewModelCell {
             addressImageView.image = viewModelCell.thumnailImage
             distanceLabel.text = String(viewModelCell.distance) + " km"
             nameImageView.text = viewModelCell.name

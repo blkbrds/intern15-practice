@@ -14,12 +14,34 @@ class SliderDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var images: [ImageSlider] = ImageSlider.getGetDummyDatas()
+    var viewModel = SliderDetailViewModel()
+
     var index: Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        updateUI()
+        configData()
+    }
+
+    func updateUI() {
         configSilder()
+    }
+
+    func configData() {
+        //load Data
+        viewModel.loadData { (done) in
+            if done {
+                self.updateUI()
+            } else {
+                //show alertview --> bao' loi~
+                let alert = UIAlertController(title: "Error", message: "Khong Lay duoc DaTa", preferredStyle: UIAlertController.Style.alert)
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                // show the alert
+                alert.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,7 +63,7 @@ class SliderDetailTableViewCell: UITableViewCell {
             self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
             self.retireButton.isEnabled = true
         }) { (done) in
-            if self.index == self.images.count - 1 {
+            if self.index == self.viewModel.images.count - 1 {
                 self.nextButton.setImage(UIImage(named: "next"), for: .normal)
                 self.nextButton.isEnabled = false
             }
@@ -49,7 +71,7 @@ class SliderDetailTableViewCell: UITableViewCell {
     }
 
     @IBAction func nextTuchUpIndide(_ sender: Any) {
-        guard index < images.count - 1 else { return }
+        guard index < viewModel.images.count - 1 else { return }
         index += 1
         UIView.animate(withDuration: 0.5, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
@@ -68,12 +90,12 @@ extension SliderDetailTableViewCell: UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return viewModel.images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SilderDetailCollectionViewCell", for: indexPath) as! SilderDetailCollectionViewCell
-        cell.updateDetail(image: images[indexPath.row].imageName)
+        cell.updateDetail(image: viewModel.images[indexPath.row].imageName)
         return cell
     }
 }

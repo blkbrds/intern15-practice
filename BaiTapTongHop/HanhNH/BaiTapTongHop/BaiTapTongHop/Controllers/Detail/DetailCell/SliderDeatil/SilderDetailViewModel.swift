@@ -1,13 +1,14 @@
 //
-//  SliderViewModel.swift
-//  Bai_Tap_14
+//  SilderViewModel.swift
+//  BaiTapTongHop
 //
-//  Created by ANH NGUYỄN on 12/10/19.
+//  Created by ANH NGUYỄN on 12/13/19.
 //  Copyright © 2019 asiantech. All rights reserved.
 //
 
 import Foundation
-final class SliderViewModel {
+class SliderDetailViewModel {
+    
     var images: [ImageSlider] = []
 
     func loadData(completion: (Bool) -> ()) {
