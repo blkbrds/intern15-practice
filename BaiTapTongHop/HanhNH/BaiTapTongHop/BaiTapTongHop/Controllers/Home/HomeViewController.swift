@@ -167,7 +167,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        navigationController?.pushViewController(DetailViewController(), animated: true)
+        navigationController?.pushViewController(DetailViewController(), animated: true)
     }
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -203,7 +203,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // xet frame size cho 2 section
         if indexPath.section == 0 {
-            let width = collectionView.frame.width - 40
+            let width = collectionView.frame.width - 10
             return CGSize(width: width, height: 150)
         } else if indexPath.section == 1 {
             let width = collectionView.frame.width - 20
@@ -213,7 +213,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        navigationController?.pushViewController(DetailViewController(), animated: true)
+        navigationController?.pushViewController(DetailViewController(), animated: true)
     }
 }
 
