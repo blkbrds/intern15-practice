@@ -11,15 +11,17 @@ import Foundation
 final class Location {
     var name: String
     var address: String
-    var image: String
+    var imageName: String
     var rate: String
+    var distance: String
     var favorites: Bool
     
-    init(name: String, address: String, image: String = "", rate: String = "", favorites: Bool = false) {
+    init(name: String, address: String, imageName: String, rate: String = "", distance: String = "",  favorites: Bool = false) {
         self.name = name
         self.address = address
-        self.image = image
+        self.imageName = imageName
         self.rate = rate
+        self.distance = distance
         self.favorites = favorites
     }
 }

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BaseSlideImageCell" customModule="ExerciseMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="422" height="186"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="422" height="186"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="43J-X9-kd4">
+                        <rect key="frame" x="0.0" y="0.0" width="422" height="186"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eix-4U-cBu">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IE-va-j9o">
+                        <rect key="frame" x="15" y="75" width="21" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        <state key="normal" image="arrowshape.turn.up.left" catalog="system">
+                            <color key="titleShadowColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="previousSlideTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="AMY-Ey-4Oh"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAL-CC-K66">
+                        <rect key="frame" x="386" y="75" width="21" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        <state key="normal" image="arrowshape.turn.up.right" catalog="system">
+                            <color key="titleShadowColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="nextSlideTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="t5l-3P-61X"/>
+                        </connections>
+                    </button>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0ha-d5-2RO">
+                        <rect key="frame" x="191.5" y="129" width="39" height="37"/>
+                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </pageControl>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0ha-d5-2RO" secondAttribute="bottom" constant="20" id="1E8-4o-gm3"/>
+                <constraint firstAttribute="bottom" secondItem="43J-X9-kd4" secondAttribute="bottom" id="5NR-dQ-CP4"/>
+                <constraint firstAttribute="trailing" secondItem="43J-X9-kd4" secondAttribute="trailing" id="D6d-dq-BFW"/>
+                <constraint firstItem="2IE-va-j9o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="KaH-o1-B3N"/>
+                <constraint firstItem="43J-X9-kd4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RuL-dx-gtw"/>
+                <constraint firstItem="FAL-CC-K66" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="bdI-0E-7jy"/>
+                <constraint firstItem="43J-X9-kd4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hZo-of-Nya"/>
+                <constraint firstItem="2IE-va-j9o" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="lLG-wP-qhA"/>
+                <constraint firstItem="0ha-d5-2RO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tfz-ZI-Rcs"/>
+                <constraint firstAttribute="trailing" secondItem="FAL-CC-K66" secondAttribute="trailing" constant="15" id="xNQ-5G-teb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="422" height="186"/>
+            <connections>
+                <outlet property="collectionView" destination="43J-X9-kd4" id="vH5-lJ-BPF"/>
+                <outlet property="leftButton" destination="2IE-va-j9o" id="eZD-xK-DoF"/>
+                <outlet property="pageControl" destination="0ha-d5-2RO" id="S2u-Y6-ArF"/>
+                <outlet property="rightButton" destination="FAL-CC-K66" id="Mhp-i0-h1T"/>
+            </connections>
+            <point key="canvasLocation" x="-267" y="-86"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="64" height="52"/>
+    </resources>
+</document>
