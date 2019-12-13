@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyDatePickerView" customModule="BaiTapCustomView" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="wwE-h7-CUm"/>
+                <outlet property="datePicker" destination="l5H-Nz-SDg" id="cGw-64-9uR"/>
+                <outlet property="doneButton" destination="oo6-lC-QUC" id="mg1-gv-24b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="474"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oo6-lC-QUC">
+                    <rect key="frame" x="0.0" y="0.0" width="369" height="50"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Zl8-SW-Ncp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="    Done"/>
+                    <connections>
+                        <action selector="doneButtonAction:" destination="-1" eventType="touchUpInside" id="SKK-8t-97O"/>
+                    </connections>
+                </button>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="l5H-Nz-SDg">
+                    <rect key="frame" x="0.0" y="50" width="369" height="424"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="datePickerChanged:" destination="-1" eventType="valueChanged" id="PTQ-Ih-fDy"/>
+                    </connections>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="l5H-Nz-SDg" secondAttribute="bottom" id="27l-bM-f5R"/>
+                <constraint firstItem="l5H-Nz-SDg" firstAttribute="top" secondItem="oo6-lC-QUC" secondAttribute="bottom" id="LQa-fZ-FXc"/>
+                <constraint firstItem="l5H-Nz-SDg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QOL-Yc-jHA"/>
+                <constraint firstAttribute="trailing" secondItem="l5H-Nz-SDg" secondAttribute="trailing" id="Skv-2p-WUr"/>
+                <constraint firstItem="oo6-lC-QUC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fJH-0q-P8A"/>
+                <constraint firstItem="oo6-lC-QUC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fPV-Cn-s6J"/>
+                <constraint firstAttribute="trailing" secondItem="oo6-lC-QUC" secondAttribute="trailing" id="ih9-1t-xaE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-544.20289855072463" y="-7.3660714285714279"/>
+        </view>
+    </objects>
+</document>

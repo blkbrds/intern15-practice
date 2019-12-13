@@ -8,24 +8,26 @@
 
 import UIKit
 
-class Ex6ViewController: BaseViewController {
-    
+final class Ex6ViewController: BaseViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    @IBAction func move(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            navigationController?.pushViewController(Sub6_ViewController(), animated: true)
+        case 1:
+            navigationController?.pushViewController(Sub6_1ViewController(), animated: true)
+        case 2:
+            navigationController?.pushViewController(Sub6_2ViewController(), animated: true)
+        case 3:
+            navigationController?.pushViewController(Sub6_3ViewController(), animated: true)
+        case 4:
+            navigationController?.pushViewController(Sub6_4ViewController(), animated: true)
+        default:
+            break
+        }
     }
-    
-    // MARK: config
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Ex6"
-    }
-    
-    override func setupData() {
-    }
-    
-    
 }
