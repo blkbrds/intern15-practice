@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataManagement {
+final class DataManagement {
     // MARK: - Singleton
     private static let sharedDataManagement: DataManagement = {
         let dataManagement = DataManagement()

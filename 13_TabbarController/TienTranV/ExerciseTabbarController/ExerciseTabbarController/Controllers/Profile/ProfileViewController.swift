@@ -20,7 +20,7 @@ final class ProfileViewController: BaseViewController {
     }
     
     @IBAction private func logoutTouchUpInside(_ sender: Any) {
-        UserDefaults.standard.set(nil, forKey: "Is Login")
+        UserDefaults.standard.set(nil, forKey: "IsLogin")
         SceneDelegate.shared().configRootView(with: .logout)
     }
 }

@@ -18,17 +18,12 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     // MARK: - Singleton
     private static let sharedSceneDelegate: SceneDelegate = {
-        print("test singleton")
         guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { fatalError("Can not find SceneDelegate") }
         return sceneDelegate
     }()
 
     class func shared() -> SceneDelegate {
         return sharedSceneDelegate
-    }
-
-    private override init() {
-        super.init()
     }
     
     // MARK: - Properties
@@ -38,8 +33,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        print("A")
-        if UserDefaults.standard.value(forKey: "Is Login") == nil {
+        if UserDefaults.standard.value(forKey: "IsLogin") == nil {
             configRootView(with: .logout)
         } else {
             configRootView(with: .login)

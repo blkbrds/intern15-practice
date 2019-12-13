@@ -42,13 +42,13 @@ final class LoginViewController: BaseViewController {
         button.layer.cornerRadius = 5
     }
 
-    private func login() {
+    private func handleLogin() {
         UserDefaults.standard.set("login", forKey: "Is Login")
         SceneDelegate.shared().configRootView(with: .login)
     }
 
     @objc private func tapLoginButton() {
-        login()
+        handleLogin()
     }
 
     @objc private func tapClearButton() {
