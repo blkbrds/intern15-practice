@@ -14,6 +14,6 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         setUpNaVi()
     }
-    
-    func setUpNaVi() {}
+
+    func setUpNaVi() { }
 }
