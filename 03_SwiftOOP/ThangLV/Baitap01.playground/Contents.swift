@@ -17,7 +17,7 @@ class PhanSo {
         let tuSoMoi: Int
         let mauSoMoi: Int
 
-        if(self.mauSo == a.mauSo) {
+        if self.mauSo == a.mauSo {
             tuSoMoi = self.tuSo + a.tuSo
             mauSoMoi = self.mauSo
         } else {
@@ -31,7 +31,7 @@ class PhanSo {
         let tuSoMoi: Int
         let mauSoMoi: Int
 
-        if(self.mauSo == a.mauSo) {
+        if self.mauSo == a.mauSo {
             tuSoMoi = self.tuSo - a.tuSo
             mauSoMoi = self.mauSo
         } else {

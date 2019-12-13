@@ -46,9 +46,9 @@ class TamGiac: DaGiac {
 }
 
 func kiemTraPytago(tamGiac: TamGiac) -> Bool {
-    return ((tamGiac.a * tamGiac.a + tamGiac.b * tamGiac.b == tamGiac.c * tamGiac.c) ||
-            (tamGiac.b * tamGiac.b + tamGiac.c * tamGiac.c == tamGiac.a * tamGiac.a) ||
-            (tamGiac.a * tamGiac.a + tamGiac.c * tamGiac.c == tamGiac.b * tamGiac.b))
+    return (tamGiac.a * tamGiac.a + tamGiac.b * tamGiac.b == tamGiac.c * tamGiac.c ||
+            tamGiac.b * tamGiac.b + tamGiac.c * tamGiac.c == tamGiac.a * tamGiac.a ||
+            tamGiac.a * tamGiac.a + tamGiac.c * tamGiac.c == tamGiac.b * tamGiac.b)
 }
 
 func lietKeTamGiac(mangTamGiac: [TamGiac]) {
