@@ -23,10 +23,6 @@ final class ExerciseOneViewController: BaseViewController {
         configNavigationBar()
     }
     
-    override func setupData() {
-        super.setupData()
-    }
-    
     // MARK: - Private funcs
     private func configCollectionView() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cell)

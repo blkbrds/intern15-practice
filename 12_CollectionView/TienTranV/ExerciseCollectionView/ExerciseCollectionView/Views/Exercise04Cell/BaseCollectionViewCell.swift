@@ -16,9 +16,9 @@ final class BaseCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     private let avatarCell = "AvatarCell"
     private var avatars: [Avatar] = []
-    private var section: Int?
+    private var numberSection: Int?
     typealias GetAvatars = () -> [Avatar]
-    typealias GetSection = () -> Int
+    typealias GetNumberSection = () -> Int
 
     // MARK: - Life cycle
     override func awakeFromNib() {
@@ -27,9 +27,9 @@ final class BaseCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - Public funcs
-    func configData(getAvatars: GetAvatars, getSection: GetSection) {
-        self.avatars = getAvatars()
-        self.section = getSection()
+    func configData(getAvatars: GetAvatars, getNumberSection: GetNumberSection) {
+        avatars = getAvatars()
+        numberSection = getNumberSection()
     }
 
     // MARK: - Private funcs
@@ -48,9 +48,7 @@ extension BaseCollectionViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let avatarCell = collectionView.dequeueReusableCell(withReuseIdentifier: self.avatarCell, for: indexPath) as! AvatarCell
-        avatarCell.configUI { () -> Avatar in
-            return avatars[indexPath.row]
-        }
+        avatarCell.configUI { return avatars[indexPath.row] }
         return avatarCell
     }
 }
@@ -58,7 +56,7 @@ extension BaseCollectionViewCell: UICollectionViewDataSource {
 // MARK: - Extension: UICollectionViewDelegateFlowLayout
 extension BaseCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let section = section else { return CGSize(width: 0, height: 0) }
+        guard let section = numberSection else { return CGSize(width: 0, height: 0) }
         switch section {
         case 0:
             return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
@@ -68,7 +66,7 @@ extension BaseCollectionViewCell: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        guard let section = self.section else { return 0 }
+        guard let section = numberSection else { return 0 }
         switch section {
         case 0:
             return 0

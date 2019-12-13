@@ -18,8 +18,8 @@ final class AvatarCell: UICollectionViewCell {
     typealias GetAvatar = () -> Avatar
     
     // MARK: - Public funcs
-    func configUI(avatar: GetAvatar) {
-        let avatar = avatar()
+    func configUI(getAvatar: GetAvatar) {
+        let avatar = getAvatar()
         avatarImageView.image = UIImage(named: avatar.nameImage)
         nameLabel.text = avatar.name
     }

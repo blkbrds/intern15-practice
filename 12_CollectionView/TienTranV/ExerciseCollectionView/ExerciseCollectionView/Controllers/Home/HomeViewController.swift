@@ -14,7 +14,7 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
-    private var exercise: [String] = []
+    private var exercises: [String] = []
 
     // MARK: - Override funcs
     override func setupUI() {
@@ -25,10 +25,10 @@ final class HomeViewController: BaseViewController {
 
     override func setupData() {
         super.setupData()
-        exercise.append("Exercise 1")
-        exercise.append("Exercise 2")
-        exercise.append("Exercise 3")
-        exercise.append("Exercise 4")
+        exercises.append("Exercise 1")
+        exercises.append("Exercise 2")
+        exercises.append("Exercise 3")
+        exercises.append("Exercise 4")
     }
 
     // MARK: - Private funcs
@@ -42,12 +42,12 @@ final class HomeViewController: BaseViewController {
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exercise.count
+        return exercises.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = exercise[indexPath.row]
+        cell.textLabel?.text = exercises[indexPath.row]
         cell.textLabel?.textAlignment = .center
         return cell
     }

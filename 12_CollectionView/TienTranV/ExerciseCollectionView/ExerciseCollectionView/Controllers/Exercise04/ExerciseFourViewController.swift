@@ -48,17 +48,17 @@ final class ExerciseFourViewController: BaseViewController {
 
     // MARK: - @objc private funcs
     @objc private func nextAvatarTouchUpInside() {
-        let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
+        let visibleItems: NSArray = collectionView.indexPathsForVisibleItems as NSArray
         let currentItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
         let nextItem: NSIndexPath = NSIndexPath(row: currentItem.row + 1, section: 0)
-        self.collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
+        collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
     }
 
     @objc private func previousAvatarTouchUpInside() {
         let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
         let currentItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
         let nextItem: NSIndexPath = NSIndexPath(row: currentItem.row - 1, section: 0)
-        self.collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
+        collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
     }
 }
 
@@ -74,11 +74,7 @@ extension ExerciseFourViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let baseCell = collectionView.dequeueReusableCell(withReuseIdentifier: self.baseCollectionViewCell, for: indexPath) as! BaseCollectionViewCell
-        baseCell.configData(getAvatars: { () -> [Avatar] in
-            return avatars[indexPath.section]
-        }) { () -> Int in
-            return indexPath.section
-        }
+        baseCell.configData(getAvatars: { return avatars[indexPath.section] }) { return indexPath.section }
         return baseCell
     }
 }
