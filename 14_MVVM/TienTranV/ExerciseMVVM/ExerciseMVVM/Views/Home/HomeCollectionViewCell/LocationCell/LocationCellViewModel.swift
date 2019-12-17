@@ -17,7 +17,7 @@ final class LocationCellViewModel {
     var distance: String
     var favorites: Bool
 
-    init(nameLocation: String, locationImageName: String, address: String, rating: String = "", distance: String = "", favorites: Bool = false) {
+    init(nameLocation: String, locationImageName: String, address: String, rating: String = "8/10", distance: String = "3km", favorites: Bool = false) {
         self.locationImageName = locationImageName
         self.nameLocation = nameLocation
         self.address = address

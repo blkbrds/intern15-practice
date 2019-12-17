@@ -1,29 +1,19 @@
 //
-//  BaseSlideImageCell.swift
+//  BaseSlideImagesReusableView.swift
 //  ExerciseMVVM
 //
-//  Created by PCI0002 on 12/13/19.
+//  Created by PCI0002 on 12/17/19.
 //  Copyright © 2019 TranVanTien. All rights reserved.
 //
 
 import UIKit
 
-final class BaseSlideImageCell: UICollectionViewCell {
+class BaseSlideImagesReusableView: UICollectionReusableView {
 
     // MARK: - IBOutlets
-    @IBOutlet private weak var leftButton: UIButton!
-    @IBOutlet private weak var rightButton: UIButton!
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var collectionView: UICollectionView!
 
-    @IBAction func previousSlideTouchUpInside(_ sender: Any) {
-        previousTouchUpInside()
-    }
-    
-    @IBAction func nextSlideTouchUpInside(_ sender: Any) {
-        nextTouchUpInside()
-    }
-    
     // MARK: - Properties
     private let slideImageCell = "SlideImageCell"
     var viewModel = BaseSlideImageCellViewModel()
@@ -42,34 +32,14 @@ final class BaseSlideImageCell: UICollectionViewCell {
 
     private func configUI() {
         configCollectionView()
-        pageControl.numberOfPages = viewModel.numberOfItems()
-        leftButton.addTarget(self, action: #selector(nextTouchUpInside), for: .touchUpInside)
-        leftButton.addTarget(self, action: #selector(previousTouchUpInside), for: .touchUpInside)
-    }
-    
-    // MARK: - @objc private funcs
-    @objc private func nextTouchUpInside() {
-        let visibleItems: NSArray = collectionView.indexPathsForVisibleItems as NSArray
-        let currentItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
-        let nextItem: NSIndexPath = NSIndexPath(row: currentItem.row + 1, section: 0)
-        pageControl.currentPage = nextItem.row
-        pageControl.reloadInputViews()
-        collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
-    }
-
-    @objc private func previousTouchUpInside() {
-        let visibleItems: NSArray = self.collectionView.indexPathsForVisibleItems as NSArray
-        let currentItem: NSIndexPath = visibleItems.object(at: 0) as! NSIndexPath
-        let nextItem: NSIndexPath = NSIndexPath(row: currentItem.row - 1, section: 0)
-        pageControl.currentPage = nextItem.row
-        pageControl.reloadInputViews()
-        self.collectionView.scrollToItem(at: nextItem as IndexPath, at: .left, animated: true)
+        self.bringSubviewToFront(pageControl)
     }
 }
 
 // MARK: - Extension: UICollectionViewDataSource
-extension BaseSlideImageCell: UICollectionViewDataSource {
+extension BaseSlideImagesReusableView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        pageControl.numberOfPages = viewModel.numberOfItems()
         return viewModel.numberOfItems()
     }
 
@@ -80,10 +50,14 @@ extension BaseSlideImageCell: UICollectionViewDataSource {
         slideImageCell.viewModel = cellViewModel
         return slideImageCell
     }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageControl.currentPage = indexPath.row
+    }
 }
 
 // MARK: - Extension: UICollectionViewDelegateFlowLayout
-extension BaseSlideImageCell: UICollectionViewDelegateFlowLayout {
+extension BaseSlideImagesReusableView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
     }

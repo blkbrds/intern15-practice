@@ -18,11 +18,6 @@ final class LocationCell: UICollectionViewCell {
     @IBOutlet private weak var distanceLabel: UILabel!
     @IBOutlet private weak var favoritesImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     // MARK: - Properties
     var viewModel: LocationCellViewModel? {
         didSet {

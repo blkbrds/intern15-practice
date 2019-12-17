@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qq0-1N-bcA" customClass="LocationCell" customModule="ExerciseMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="111"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="382" height="111"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hinglands-coffee" translatesAutoresizingMaskIntoConstraints="NO" id="5x6-4h-OWv">
+                        <rect key="frame" x="5" y="5" width="158" height="96"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oNG-em-RND">
+                        <rect key="frame" x="351.5" y="16.5" width="20.5" height="17.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caffe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-1t-kp6">
+                        <rect key="frame" x="173" y="15" width="45" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đà Nẵng, Bạch Đằng" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wda-uM-8pK">
+                        <rect key="frame" x="173" y="45.5" width="159" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoN-0V-KaB">
+                        <rect key="frame" x="335.5" y="80" width="36.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fW-tY-s4K">
+                        <rect key="frame" x="173" y="80" width="37.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="d9Z-1t-kp6" firstAttribute="leading" secondItem="5x6-4h-OWv" secondAttribute="trailing" constant="10" id="1Eq-me-iEg"/>
+                <constraint firstItem="5x6-4h-OWv" firstAttribute="leading" secondItem="Qq0-1N-bcA" secondAttribute="leading" constant="5" id="8hv-w9-8Ii"/>
+                <constraint firstAttribute="bottom" secondItem="5x6-4h-OWv" secondAttribute="bottom" constant="10" id="BPr-hc-bbx"/>
+                <constraint firstItem="wda-uM-8pK" firstAttribute="leading" secondItem="d9Z-1t-kp6" secondAttribute="leading" id="Ofw-99-XS9"/>
+                <constraint firstItem="oNG-em-RND" firstAttribute="top" secondItem="Qq0-1N-bcA" secondAttribute="top" constant="15" id="Qri-Ve-sAj"/>
+                <constraint firstItem="5x6-4h-OWv" firstAttribute="width" secondItem="Qq0-1N-bcA" secondAttribute="width" multiplier="0.4" constant="5" id="SvI-wf-94y"/>
+                <constraint firstItem="2fW-tY-s4K" firstAttribute="bottom" secondItem="5x6-4h-OWv" secondAttribute="bottom" id="YKr-Ug-6kj"/>
+                <constraint firstItem="d9Z-1t-kp6" firstAttribute="top" secondItem="Qq0-1N-bcA" secondAttribute="top" constant="15" id="b1c-sL-yab"/>
+                <constraint firstItem="5x6-4h-OWv" firstAttribute="top" secondItem="Qq0-1N-bcA" secondAttribute="top" constant="5" id="bZp-Ic-oaK"/>
+                <constraint firstItem="UoN-0V-KaB" firstAttribute="bottom" secondItem="2fW-tY-s4K" secondAttribute="bottom" id="iQo-qv-1eu"/>
+                <constraint firstItem="2fW-tY-s4K" firstAttribute="leading" secondItem="wda-uM-8pK" secondAttribute="leading" id="knZ-fe-N5k"/>
+                <constraint firstAttribute="trailing" secondItem="oNG-em-RND" secondAttribute="trailing" constant="10" id="lj9-Oo-ZaU"/>
+                <constraint firstAttribute="trailing" secondItem="UoN-0V-KaB" secondAttribute="trailing" constant="10" id="nEa-ME-GG8"/>
+                <constraint firstItem="wda-uM-8pK" firstAttribute="top" secondItem="d9Z-1t-kp6" secondAttribute="bottom" constant="10" id="orw-mr-5qq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="IPi-V9-hTv"/>
+            <size key="customSize" width="445" height="39"/>
+            <connections>
+                <outlet property="addressLabel" destination="wda-uM-8pK" id="hVX-bw-cPp"/>
+                <outlet property="distanceLabel" destination="UoN-0V-KaB" id="M3P-Gl-P0K"/>
+                <outlet property="favoritesImageView" destination="oNG-em-RND" id="Fhh-BU-9gH"/>
+                <outlet property="locationImageView" destination="5x6-4h-OWv" id="iat-n2-ee8"/>
+                <outlet property="nameLocationLabel" destination="d9Z-1t-kp6" id="J4t-Mo-w3C"/>
+                <outlet property="ratingLabel" destination="2fW-tY-s4K" id="mQs-PZ-Gfc"/>
+            </connections>
+            <point key="canvasLocation" x="-721.73913043478262" y="-105.46875"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="hinglands-coffee" width="870" height="580"/>
+    </resources>
+</document>

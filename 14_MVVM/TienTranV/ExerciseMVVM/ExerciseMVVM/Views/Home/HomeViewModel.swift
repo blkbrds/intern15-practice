@@ -41,6 +41,7 @@ extension HomeViewModel {
                 Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
                 Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
                 Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
                 Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong")]
             return slides
         }()
@@ -48,13 +49,13 @@ extension HomeViewModel {
         static var locations: [Location] = {
             let locations = [Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
                 Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
                 Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"), Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
                 Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"), Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
                 Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
                 Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee")]
             return locations
