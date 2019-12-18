@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Avatar {
+final class Avatar {
     var avatarImageName: String
     var avatarName: String
     

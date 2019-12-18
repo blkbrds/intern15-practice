@@ -12,13 +12,14 @@ final class MyAvatarViewController: BaseViewController {
 
     @IBOutlet private weak var scrollView: UIScrollView!
 
-    private var isFirstLoad: Bool = true
+    private var isFirstLoad: Bool = false
     private var indexDidSelect: Int?
     private var listAvatarView: [MyAvatarView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        isFirstLoad = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -27,7 +28,6 @@ final class MyAvatarViewController: BaseViewController {
             guard let indexDidSelect = indexDidSelect else { return }
             listAvatarView[indexDidSelect].updateUI()
         }
-        isFirstLoad = false
     }
 
     override func setupUI() {

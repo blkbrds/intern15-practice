@@ -36,11 +36,7 @@ final class CalculatorView: UIView {
     var y: Int?
     var result: Double?
     var operatorButton: String?
-
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
+    
     func updateUI() {
         guard let x = datasource?.getX(), let y = datasource?.getY() else { return }
         xLabel.text = String(x)
@@ -48,7 +44,7 @@ final class CalculatorView: UIView {
         resultLabel.text = ""
     }
 
-    @IBAction func buttonsTouchUpInside(_ sender: UIButton) {
+    @IBAction private func buttonsTouchUpInside(_ sender: UIButton) {
         guard let x = datasource?.getX(), let y = datasource?.getY() else { return }
         switch sender.tag {
         case 1:

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol LocationViewControllerDataSource: class {
-    func getChooseLocation() -> ChooseLocation?
+    func getChooseLocation() -> Location?
 }
 
 final class LocationViewController: BaseViewController {
@@ -17,10 +17,10 @@ final class LocationViewController: BaseViewController {
     @IBOutlet private weak var regionLabel: UILabel!
     @IBOutlet private weak var provinceLabel: UILabel!
     @IBOutlet private weak var districtLabel: UILabel!
-    
-    var chooseLocation: ChooseLocation?
+
+    var chooseLocation: Location?
     weak var datasource: LocationViewControllerDataSource?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -50,9 +50,9 @@ final class LocationViewController: BaseViewController {
 }
 
 extension LocationViewController: RegionViewControllerDatasource {
-    func getChooseLocation() -> ChooseLocation?{
-        guard let region = regionLabel.text, let province = provinceLabel.text, let district = districtLabel.text else { return nil}
-        chooseLocation = ChooseLocation(chooseRegion: region, chooseProvince: province, chooseDistrict: district)
+    func getChooseLocation() -> Location? {
+        guard let region = regionLabel.text, let province = provinceLabel.text, let district = districtLabel.text else { return nil }
+        chooseLocation = Location(chooseRegion: region, chooseProvince: province, chooseDistrict: district)
         return chooseLocation
     }
 }

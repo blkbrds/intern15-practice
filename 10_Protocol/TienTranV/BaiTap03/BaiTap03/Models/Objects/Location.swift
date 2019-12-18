@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class ChooseLocation {
+final class Location {
     var region: String
     var province: String
     var district: String

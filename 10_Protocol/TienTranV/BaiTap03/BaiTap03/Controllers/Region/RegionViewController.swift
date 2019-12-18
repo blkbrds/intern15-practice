@@ -9,12 +9,12 @@
 import UIKit
 
 protocol RegionViewControllerDatasource: class {
-    func getChooseLocation() -> ChooseLocation?
+    func getChooseLocation() -> Location?
 }
 
 final class RegionViewController: BaseViewController {
 
-    var chooseLocation: ChooseLocation?
+    var chooseLocation: Location?
     weak var datasource: RegionViewControllerDatasource?
 
     private var region: Region?
@@ -28,7 +28,7 @@ final class RegionViewController: BaseViewController {
         super.viewWillAppear(animated)
         if let chooseLocation = datasource?.getChooseLocation() {
             self.chooseLocation = chooseLocation
-            view.subviews.forEach { (subview) in
+            view.subviews.forEach { subview in
                 guard let button = subview as? UIButton else { return }
                 if button.titleLabel?.text != chooseLocation.region {
                     button.backgroundColor = .white
@@ -47,7 +47,7 @@ final class RegionViewController: BaseViewController {
         let provinceBarButtonItem = UIBarButtonItem(title: "Tỉnh", style: .done, target: self, action: #selector(handleProvince))
         navigationItem.rightBarButtonItem = provinceBarButtonItem
 
-        self.view.subviews.forEach { (subview) in
+        self.view.subviews.forEach { subview in
             guard let button = subview as? UIButton else { return }
             setupButton(button, title: DummyData.regions[subview.tag].name)
         }
@@ -69,12 +69,10 @@ final class RegionViewController: BaseViewController {
         }
     }
 
-    @IBAction func regionButtonTouchUpInside(_ sender: UIButton) {
-        guard let region = sender.titleLabel?.text else {
-            return
-        }
+    @IBAction private func regionButtonTouchUpInside(_ sender: UIButton) {
+        guard let region = sender.titleLabel?.text else { return }
         chooseLocation?.region = region
-        view.subviews.forEach { (subview) in
+        view.subviews.forEach { subview in
             guard let button = subview as? UIButton else { return }
             if button.tag != sender.tag {
                 button.backgroundColor = .white
@@ -88,7 +86,7 @@ final class RegionViewController: BaseViewController {
 }
 
 extension RegionViewController: ProvinceViewControllerDatasource {
-    func getChooseLocation() -> ChooseLocation? {
+    func getChooseLocation() -> Location? {
         return chooseLocation
     }
 }

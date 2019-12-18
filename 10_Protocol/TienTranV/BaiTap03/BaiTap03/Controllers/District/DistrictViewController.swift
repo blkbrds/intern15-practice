@@ -9,12 +9,12 @@
 import UIKit
 
 protocol DistrictViewControllerDatasource: class {
-    func getChooseLocation() -> ChooseLocation?
+    func getLocation() -> Location?
 }
 
 final class DistrictViewController: BaseViewController {
 
-    var chooseLocation: ChooseLocation?
+    var chooseLocation: Location?
     weak var datasource: DistrictViewControllerDatasource?
 
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ final class DistrictViewController: BaseViewController {
         let doneBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(handleDone))
         navigationItem.rightBarButtonItem = doneBarButtonItem
 
-        guard let chooseLocation = datasource?.getChooseLocation(),
+        guard let chooseLocation = datasource?.getLocation(),
             let region = DummyData.regions.first(where: { $0.name == chooseLocation.region }),
             let province = region.provinces.first(where: { $0.name == chooseLocation.province }) else { return }
         self.chooseLocation = chooseLocation
@@ -65,9 +65,7 @@ final class DistrictViewController: BaseViewController {
 
     @objc private func handleDone() {
         if let chooseDistrict = chooseLocation?.district, !chooseDistrict.isEmpty {
-            guard let chooseLocation = chooseLocation else {
-                return
-            }
+            guard let chooseLocation = chooseLocation else { return }
             chooseLocation.toString()
             guard let navi = navigationController else { return }
             for vc in navi.viewControllers where vc is LocationViewController {
@@ -78,10 +76,8 @@ final class DistrictViewController: BaseViewController {
         }
     }
 
-    @IBAction func districtButtonTouchUpInside(_ sender: UIButton) {
-        guard let district = sender.titleLabel?.text else {
-            return
-        }
+    @IBAction private func districtButtonTouchUpInside(_ sender: UIButton) {
+        guard let district = sender.titleLabel?.text else { return }
         chooseLocation?.district = district
         view.subviews.forEach { (subview) in
             guard let button = subview as? UIButton else { return }
@@ -97,7 +93,7 @@ final class DistrictViewController: BaseViewController {
 }
 
 extension DistrictViewController: LocationViewControllerDataSource {
-    func getChooseLocation() -> ChooseLocation? {
+    func getChooseLocation() -> Location? {
         guard let chooseLocation = chooseLocation else { return nil }
         return chooseLocation
     }

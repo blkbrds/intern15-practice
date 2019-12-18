@@ -40,8 +40,8 @@ final class CalculatorViewController: BaseViewController {
     }
 
     @IBAction private func operatorTouchUpInside(_ sender: Any) {
-        if let xString = xTextField?.text, !xString.isEmpty
-            , let yString = yTextField?.text, !yString.isEmpty {
+        if let xString = xTextField?.text, !xString.isEmpty,
+            let yString = yTextField?.text, !yString.isEmpty {
             guard let calculatorView = calculatorView else { return }
             UIView.animate(withDuration: 5) {
                 calculatorView.updateUI()
@@ -67,9 +67,9 @@ extension CalculatorViewController: CalculatorViewDatasource {
 extension CalculatorViewController: CalculatorViewDelegate {
     func view(view: CalculatorView, needPerformAciton action: CalculatorView.Action) {
         switch action {
-        case .sendResultToVC(let operatorButton, let result):
-            self.resultLabel.text = "\(result) ="
-            self.operatorButton.setTitle(operatorButton, for: .normal)
+        case .sendResultToVC(let `operator`, let result):
+            resultLabel.text = "\(result) ="
+            operatorButton.setTitle(`operator`, for: .normal)
         case .cancel: break
         case .clear:
             xTextField.text = ""

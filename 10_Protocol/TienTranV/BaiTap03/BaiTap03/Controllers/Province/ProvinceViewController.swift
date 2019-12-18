@@ -9,12 +9,12 @@
 import UIKit
 
 protocol ProvinceViewControllerDatasource: class {
-    func getChooseLocation() -> ChooseLocation?
+    func getChooseLocation() -> Location?
 }
 
 final class ProvinceViewController: BaseViewController {
 
-    var chooseLocation: ChooseLocation?
+    var chooseLocation: Location?
     weak var datasource: ProvinceViewControllerDatasource?
 
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ final class ProvinceViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let chooseLocation = chooseLocation {
-            view.subviews.forEach { (subview) in
+            view.subviews.forEach { subview in
                 guard let button = subview as? UIButton else { return }
                 if button.titleLabel?.text != chooseLocation.province {
                     button.backgroundColor = .white
@@ -44,9 +44,10 @@ final class ProvinceViewController: BaseViewController {
         let districtBarButtonItem = UIBarButtonItem(title: "Huyện", style: .done, target: self, action: #selector(handleDistrict))
         navigationItem.rightBarButtonItem = districtBarButtonItem
 
-        guard let chooseLocation = datasource?.getChooseLocation(), let region = DummyData.regions.first(where: { $0.name == chooseLocation.region }) else { return }
+        guard let chooseLocation = datasource?.getChooseLocation(),
+            let region = DummyData.regions.first(where: { $0.name == chooseLocation.region }) else { return }
         self.chooseLocation = chooseLocation
-        self.view.subviews.forEach { (subview) in
+        view.subviews.forEach { subview in
             guard let provinceButton = subview as? UIButton else { return }
             setupButton(provinceButton, title: region.provinces[subview.tag].name)
         }
@@ -68,12 +69,10 @@ final class ProvinceViewController: BaseViewController {
         }
     }
 
-    @IBAction func provinceButtonTouchUpInside(_ sender: UIButton) {
-        guard let province = sender.titleLabel?.text else {
-            return
-        }
+    @IBAction private func provinceButtonTouchUpInside(_ sender: UIButton) {
+        guard let province = sender.titleLabel?.text else { return }
         chooseLocation?.province = province
-        view.subviews.forEach { (subview) in
+        view.subviews.forEach { subview in
             guard let button = subview as? UIButton else { return }
             if button.tag != sender.tag {
                 button.backgroundColor = .white
@@ -87,7 +86,7 @@ final class ProvinceViewController: BaseViewController {
 }
 
 extension ProvinceViewController: DistrictViewControllerDatasource {
-    func getChooseLocation() -> ChooseLocation? {
+    func getLocation() -> Location? {
         return chooseLocation
     }
 }
