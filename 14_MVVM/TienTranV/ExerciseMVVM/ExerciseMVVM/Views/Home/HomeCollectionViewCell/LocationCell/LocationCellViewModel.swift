@@ -15,14 +15,21 @@ final class LocationCellViewModel {
     var address: String
     var rating: String
     var distance: String
-    var favorites: Bool
+    var isFavorites: Bool = false
+    var favoritesImage: String {
+        if isFavorites {
+            return "ic-heart-fill"
+        } else {
+            return "ic-heart"
+        }
+    }
 
-    init(nameLocation: String, locationImageName: String, address: String, rating: String = "8/10", distance: String = "3km", favorites: Bool = false) {
+    init(nameLocation: String, locationImageName: String, address: String, rating: String = "8/10", distance: String = "3km", favorites: Bool) {
         self.locationImageName = locationImageName
         self.nameLocation = nameLocation
         self.address = address
         self.rating = rating
         self.distance = distance
-        self.favorites = favorites
+        self.isFavorites = favorites
     }
 }

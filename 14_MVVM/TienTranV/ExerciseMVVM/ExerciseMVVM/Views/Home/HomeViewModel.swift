@@ -10,11 +10,19 @@ import Foundation
 
 final class HomeViewModel {
 
-    private var datas: [[Location]] = [DummyData.slidesImage, DummyData.locations]
+    private var datas: [[Location]] = []
+    typealias Completion = (Bool, String) -> Void
+
+    func fetchData(completion: Completion) {
+        datas.append(Location.DummyData.slidesImage)
+        datas.append(Location.DummyData.locations)
+        completion(true, "")
+    }
 
     func getNumberOfSection() -> Int {
         return datas.count
     }
+
     func getNumberOfItems(_ section: Int) -> Int {
         switch section {
         case 0:
@@ -23,42 +31,21 @@ final class HomeViewModel {
             return datas[section].count
         }
     }
-    
+
     func getLocations(with indexPath: IndexPath) -> [Location] {
         return datas[indexPath.section]
     }
-    
+
     func getLocation(with indexPath: IndexPath) -> Location {
         return datas[indexPath.section][indexPath.row]
     }
-}
 
-extension HomeViewModel {
-    struct DummyData {
-        static var slidesImage: [Location] = {
-            let slides = [Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong")]
-            return slides
-        }()
-
-        static var locations: [Location] = {
-            let locations = [Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"), Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hoahong"),
-                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
-                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee")]
-            return locations
-        }()
+    func changeFavorites(with indexPath: IndexPath, completion: Completion) {
+        if indexPath.row >= datas[indexPath.section].count {
+            completion(false, "Over of range")
+        } else {
+            datas[indexPath.section][indexPath.row].favorites = !datas[indexPath.section][indexPath.row].favorites
+            completion(true, "")
+        }
     }
 }

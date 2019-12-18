@@ -10,14 +10,14 @@ import UIKit
 
 final class HomeViewController: BaseViewController {
 
-    enum Status {
+    enum Layout {
         case row
         case grid
 
         var itemSize: CGSize {
             switch self {
-            case .row: return CGSize(width: UIScreen.main.bounds.width - 20, height: 150)
-            case .grid: return CGSize(width: UIScreen.main.bounds.width / 2 - 15, height: 150)
+            case .row: return CGSize(width: UIScreen.main.bounds.width - 20, height: 120)
+            case .grid: return CGSize(width: UIScreen.main.bounds.width / 2 - 15, height: 170)
             }
         }
 
@@ -39,22 +39,27 @@ final class HomeViewController: BaseViewController {
     private var baseSlideImageCell = "BaseSlideImageCell"
     private var datas: [[Location]] = []
     var viewModle = HomeViewModel()
-    private var status = Status.row
+    private var layout = Layout.row
 
     // MARK: - Override funcs
     override func setupUI() {
         super.setupUI()
-        turnOnStandardMode()
         configNavigationBar()
         configCollectionView()
     }
 
-    // MARK: -  Private funcs
-    func configNavigationBar() {
-        title = "Home"
+    override func setupData() {
+        super.setupData()
+        fetchData()
     }
 
-    func configCollectionView() {
+    // MARK: -  Private funcs
+    private func configNavigationBar() {
+        title = "Home"
+        turnOnStandardMode()
+    }
+
+    private func configCollectionView() {
         collectionView.register(UINib(nibName: gridLocationCell, bundle: .main), forCellWithReuseIdentifier: gridLocationCell)
         collectionView.register(UINib(nibName: rowLocationCell, bundle: .main), forCellWithReuseIdentifier: rowLocationCell)
         collectionView.register(UINib(nibName: baseSlideImageCell, bundle: .main), forCellWithReuseIdentifier: baseSlideImageCell)
@@ -62,19 +67,29 @@ final class HomeViewController: BaseViewController {
         collectionView.delegate = self
     }
 
-    private func changeFlowLayout(status: Status) {
-        self.status = status
+    private func changeFlowLayout(layout: Layout) {
+        self.layout = layout
         collectionView.reloadData()
     }
 
+    private func fetchData() {
+        viewModle.fetchData { (done, msg) in
+            if done {
+                collectionView.reloadData()
+            } else {
+                print("No load data: \(msg)")
+            }
+        }
+    }
+
     @objc private func turnOnStandardMode() {
-        changeFlowLayout(status: .row)
+        changeFlowLayout(layout: .row)
         let standardButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-squared-menu"), style: .plain, target: self, action: #selector(turnOnSmallMode))
         navigationItem.rightBarButtonItem = standardButton
     }
 
     @objc private func turnOnSmallMode() {
-        changeFlowLayout(status: .grid)
+        changeFlowLayout(layout: .grid)
         let smallButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-menu"), style: .plain, target: self, action: #selector(turnOnStandardMode))
         navigationItem.rightBarButtonItem = smallButton
     }
@@ -100,16 +115,18 @@ extension HomeViewController: UICollectionViewDataSource {
 
         default:
             let location = viewModle.getLocation(with: indexPath)
-            let clocationCellViewModel = LocationCellViewModel(nameLocation: location.name, locationImageName: location.imageName, address: location.address)
+            let clocationCellViewModel = LocationCellViewModel(nameLocation: location.name, locationImageName: location.imageName, address: location.address, favorites: location.favorites)
 
-            switch status {
+            switch layout {
             case .row:
                 guard let locationCell2 = collectionView.dequeueReusableCell(withReuseIdentifier: rowLocationCell, for: indexPath) as? LocationCell else { return UICollectionViewCell() }
                 locationCell2.viewModel = clocationCellViewModel
+                locationCell2.delegate = self
                 return locationCell2
             case .grid:
                 guard let locationCell = collectionView.dequeueReusableCell(withReuseIdentifier: gridLocationCell, for: indexPath) as? LocationCell else { return UICollectionViewCell() }
                 locationCell.viewModel = clocationCellViewModel
+                locationCell.delegate = self
                 return locationCell
             }
         }
@@ -120,18 +137,34 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
-            return status.sectionOneSize
+            return layout.sectionOneSize
         default:
-            switch status {
+            switch layout {
             case .grid:
-                return status.itemSize
+                return layout.itemSize
             case .row:
-                return status.itemSize
+                return layout.itemSize
             }
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return status.sectionInset
+        return layout.sectionInset
+    }
+}
+
+extension HomeViewController: LocationCellDelegate {
+    func viewCell(viewCell: LocationCell, needPerformAction action: LocationCell.Action) {
+        switch action {
+        case .changeFavorites:
+            guard let index = collectionView.indexPath(for: viewCell) else { return }
+            viewModle.changeFavorites(with: index) { (done, msg) in
+                if done {
+                    collectionView.reloadItems(at: [index])
+                } else {
+                    print("Error: \(msg)")
+                }
+            }
+        }
     }
 }
