@@ -25,3 +25,33 @@ final class Location {
         self.favorites = favorites
     }
 }
+
+extension Location {
+    struct DummyData {
+        static var slidesImage: [Location] = {
+            let slides = [Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "hinglands-coffee")]
+            return slides
+        }()
+
+        static var locations: [Location] = {
+            let locations = [Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"), Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Lu Lu", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee"),
+                Location(name: "Coffe Cóc", address: "Hoà Xuân, Đà Nẵng", imageName: "house-coffee")]
+            return locations
+        }()
+    }
+}
