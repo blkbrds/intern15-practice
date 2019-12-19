@@ -11,28 +11,63 @@ import MVVM
 
 final class HomeViewModel: ViewModel {
     
-    func getPlaces(by keyword: String) -> [String] {
-        return [""]
+    var offset: Int = 0
+    var places: [GooglePlace] = []
+    var currentIndex: Int = 0
+    
+    // MARK: - Load data from API
+    func loadPlaceData(completed: @escaping (Bool, String) -> Void) {
+        offset = 0
+        ApiManager.Places.getGooglePlace() { (result) in
+            switch result {
+            case .failure(let error):
+                completed(false, error.localizedDescription)
+            case .success(let places):
+                self.places = places.places
+                completed(true, "")
+            }
+        }
     }
     
+    func loadMore(completed: @escaping (Bool, String) -> Void) {
+        offset += 20
+        ApiManager.Places.getGooglePlace(limit: 20, offSet: self.offset) { (result) in
+            switch result {
+            case .failure(let error):
+                completed(false, error.localizedDescription)
+            case .success(let additionPlaces):
+                self.places.append(contentsOf: additionPlaces.places)
+                completed(true, "")
+            }
+        }
+    }
+}
+
+extension HomeViewModel {
+    
     func getNumberOfPlaces() -> Int {
-        Place.places.count
+        return places.count
     }
     
     func changeFavorite(at index: Int, completion: (Bool, String) -> ()) {
-        if index > Place.places.count - 1 {
+        if index > places.count - 1 {
             completion(false, "Khong the like duoc")
         } else {
-            Place.places[index].favorite = !Place.places[index].favorite
+            places[index].favorite = !places[index].favorite
             completion(true, "")
         }
     }
     
     func getDetailViewModel(indexPath: IndexPath) -> DetailViewModel {
-        return DetailViewModel(place: Place.places[indexPath.row])
+        currentIndex = indexPath.row
+        return DetailViewModel(googlePlace: places[indexPath.row])
     }
     
     func getHomeCellViewModel(indexPath: IndexPath) -> HomeCellViewModel {
-        return HomeCellViewModel(place: Place.places[indexPath.row])
+        return HomeCellViewModel(googlePlace: places[indexPath.row])
+    }
+    
+    func removePlace(at indexPath: IndexPath) {
+        places.remove(at: indexPath.row)
     }
 }

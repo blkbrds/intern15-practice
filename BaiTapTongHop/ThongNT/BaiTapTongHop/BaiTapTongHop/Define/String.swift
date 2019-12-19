@@ -19,5 +19,6 @@ extension App {
 }
 
 extension App.Home {
-    static var alertMessage: String { return "Bạn có muốn xoá không?".localized() }
+    static var alertMessage: String { return "Bạn có muốn xoá không?".localized()}
+    static var alertTitle: String { return "Thông Báo".localized()}
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

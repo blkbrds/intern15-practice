@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol HomeCellDelegate: class {
     func cell(cell: HomeCell, needsPerform action: HomeCell.Action)
@@ -21,29 +22,30 @@ final class HomeCell: TableCell {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var distanceLabel: UILabel!
-    
+
     enum Action {
         case addFavorite
     }
-    
+
     weak var delegate: HomeCellDelegate?
     var viewModel: HomeCellViewModel? {
         didSet {
             setupUI()
         }
     }
-    
+
     private func setupUI() {
         selectionStyle = .none
         guard let viewModel = viewModel else { return }
         titleLabel.text = viewModel.title
         addressLabel.text = viewModel.address
         ratingLabel.text = "\(viewModel.rating)"
-        distanceLabel.text = viewModel.distance
-        favoriteButton.isSelected = viewModel.favorite
+        distanceLabel.text = "\(viewModel.distance) m"
+        thumbnailImageView.setImageWithPath(urlString: viewModel.iconString)
+        favoriteButton.isSelected = viewModel.isFavorite
         favoriteButton.setImage(UIImage(named: viewModel.favoriteImage), for: .selected)
     }
-    
+
     @IBAction private func favortieButtonTouchUpInside(_ sender: Any) {
         delegate?.cell(cell: self, needsPerform: .addFavorite)
     }

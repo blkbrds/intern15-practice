@@ -14,20 +14,22 @@
 		B229187E2397C40A001EA5A8 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B229187C2397C40A001EA5A8 /* HomeCell.xib */; };
 		B229187F2397C40A001EA5A8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B229187D2397C40A001EA5A8 /* HomeCell.swift */; };
 		B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2295D0E238F5F7A001846AF /* DetailViewModel.swift */; };
-		B22C703023979F0E00328798 /* GoogleAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C702F23979F0E00328798 /* GoogleAPIManager.swift */; };
-		B231F4DD2395067900098F67 /* PracticeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231F4DC2395067900098F67 /* PracticeAPI.swift */; };
+		B22C703023979F0E00328798 /* Api.Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C702F23979F0E00328798 /* Api.Places.swift */; };
+		B22E1B7A23A8B9CC003C35A4 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E1B7923A8B9CC003C35A4 /* APIRequest.swift */; };
+		B22EE13623A9C8F7007DD4CD /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22EE13523A9C8F7007DD4CD /* UIImageViewExt.swift */; };
+		B236E83A23A72F0F0046A95D /* API+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B236E83923A72F0F0046A95D /* API+Data.swift */; };
+		B238146623A0DBDB0010EB0A /* Api.Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238146523A0DBDB0010EB0A /* Api.Downloader.swift */; };
 		B2381B11238D0D3F0053EA77 /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2381B0F238D0D3F0053EA77 /* HomeCollectionCell.swift */; };
 		B2381B12238D0D3F0053EA77 /* HomeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2381B10238D0D3F0053EA77 /* HomeCollectionCell.xib */; };
+		B2408F342398A7DA00A74B5C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2408F332398A7DA00A74B5C /* GooglePlace.swift */; };
 		B241AE0C238B823600844F41 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE0A238B823600844F41 /* FavoritesViewController.swift */; };
 		B241AE0D238B823600844F41 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B241AE0B238B823600844F41 /* FavoritesViewController.xib */; };
 		B241AE10238B825100844F41 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE0E238B825100844F41 /* ProfileViewController.swift */; };
 		B241AE11238B825100844F41 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B241AE0F238B825100844F41 /* ProfileViewController.xib */; };
 		B241AE35238B8CC600844F41 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE14238B8CC500844F41 /* Session.swift */; };
-		B241AE36238B8CC600844F41 /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE18238B8CC500844F41 /* RequestSerializer.swift */; };
 		B241AE37238B8CC600844F41 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE19238B8CC500844F41 /* Error.swift */; };
-		B241AE38238B8CC600844F41 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1A238B8CC500844F41 /* ApiManager.swift */; };
-		B241AE39238B8CC600844F41 /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1B238B8CC500844F41 /* ResponseSerializer.swift */; };
-		B241AE3A238B8CC600844F41 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1C238B8CC500844F41 /* Api.swift */; };
+		B241AE38238B8CC600844F41 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1A238B8CC500844F41 /* APIManager.swift */; };
+		B241AE3A238B8CC600844F41 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1C238B8CC500844F41 /* API.swift */; };
 		B241AE3B238B8CC600844F41 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1E238B8CC500844F41 /* String.swift */; };
 		B241AE3C238B8CC600844F41 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1F238B8CC500844F41 /* Errors.swift */; };
 		B241AE3D238B8CC600844F41 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE20238B8CC500844F41 /* App.swift */; };
@@ -69,20 +71,22 @@
 		B229187C2397C40A001EA5A8 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		B229187D2397C40A001EA5A8 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		B2295D0E238F5F7A001846AF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		B22C702F23979F0E00328798 /* GoogleAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIManager.swift; sourceTree = "<group>"; };
-		B231F4DC2395067900098F67 /* PracticeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeAPI.swift; sourceTree = "<group>"; };
+		B22C702F23979F0E00328798 /* Api.Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Places.swift; sourceTree = "<group>"; };
+		B22E1B7923A8B9CC003C35A4 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		B22EE13523A9C8F7007DD4CD /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
+		B236E83923A72F0F0046A95D /* API+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Data.swift"; sourceTree = "<group>"; };
+		B238146523A0DBDB0010EB0A /* Api.Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Downloader.swift; sourceTree = "<group>"; };
 		B2381B0F238D0D3F0053EA77 /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
 		B2381B10238D0D3F0053EA77 /* HomeCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionCell.xib; sourceTree = "<group>"; };
+		B2408F332398A7DA00A74B5C /* GooglePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		B241AE0A238B823600844F41 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		B241AE0B238B823600844F41 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		B241AE0E238B825100844F41 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B241AE0F238B825100844F41 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B241AE14238B8CC500844F41 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		B241AE18238B8CC500844F41 /* RequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSerializer.swift; sourceTree = "<group>"; };
 		B241AE19238B8CC500844F41 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		B241AE1A238B8CC500844F41 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		B241AE1B238B8CC500844F41 /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
-		B241AE1C238B8CC500844F41 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		B241AE1A238B8CC500844F41 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		B241AE1C238B8CC500844F41 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B241AE1E238B8CC500844F41 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B241AE1F238B8CC500844F41 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		B241AE20238B8CC500844F41 /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -170,15 +174,6 @@
 			path = DetailVC;
 			sourceTree = "<group>";
 		};
-		B22C702E23979EF400328798 /* Google */ = {
-			isa = PBXGroup;
-			children = (
-				B231F4DC2395067900098F67 /* PracticeAPI.swift */,
-				B22C702F23979F0E00328798 /* GoogleAPIManager.swift */,
-			);
-			path = Google;
-			sourceTree = "<group>";
-		};
 		B241AE09238B822000844F41 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				B241AE59238BD0B900844F41 /* Place.swift */,
+				B2408F332398A7DA00A74B5C /* GooglePlace.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -219,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				B241AE17238B8CC500844F41 /* Core */,
+				B238146523A0DBDB0010EB0A /* Api.Downloader.swift */,
+				B22C702F23979F0E00328798 /* Api.Places.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -226,12 +224,11 @@
 		B241AE17238B8CC500844F41 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B241AE18238B8CC500844F41 /* RequestSerializer.swift */,
+				B241AE1C238B8CC500844F41 /* API.swift */,
+				B22E1B7923A8B9CC003C35A4 /* APIRequest.swift */,
+				B236E83923A72F0F0046A95D /* API+Data.swift */,
+				B241AE1A238B8CC500844F41 /* APIManager.swift */,
 				B241AE19238B8CC500844F41 /* Error.swift */,
-				B241AE1A238B8CC500844F41 /* ApiManager.swift */,
-				B241AE1B238B8CC500844F41 /* ResponseSerializer.swift */,
-				B241AE1C238B8CC500844F41 /* Api.swift */,
-				B22C702E23979EF400328798 /* Google */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -296,6 +293,7 @@
 				B241AE32238B8CC600844F41 /* UIViewControllerExt.swift */,
 				B241AE33238B8CC600844F41 /* CollectionExt.swift */,
 				B241AE34238B8CC600844F41 /* NSErrorExt.swift */,
+				B22EE13523A9C8F7007DD4CD /* UIImageViewExt.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -359,8 +357,8 @@
 		B2732CFA23879CE600E1CDCE /* HomeTabbar */ = {
 			isa = PBXGroup;
 			children = (
-				B22B46A4238BE4AF00342D5D /* DetailVC */,
 				B22B46A3238BE49E00342D5D /* HomeVC */,
+				B22B46A4238BE4AF00342D5D /* DetailVC */,
 			);
 			path = HomeTabbar;
 			sourceTree = "<group>";
@@ -515,26 +513,28 @@
 				B241AE57238BCF9500844F41 /* DetailViewController.swift in Sources */,
 				B241AE5A238BD0B900844F41 /* Place.swift in Sources */,
 				B241AE3C238B8CC600844F41 /* Errors.swift in Sources */,
-				B241AE38238B8CC600844F41 /* ApiManager.swift in Sources */,
+				B241AE38238B8CC600844F41 /* APIManager.swift in Sources */,
 				B2732CF323879CAB00E1CDCE /* BaseTabbarController.swift in Sources */,
 				B241AE3D238B8CC600844F41 /* App.swift in Sources */,
-				B241AE36238B8CC600844F41 /* RequestSerializer.swift in Sources */,
+				B238146623A0DBDB0010EB0A /* Api.Downloader.swift in Sources */,
 				B2732CB62387993B00E1CDCE /* AppDelegate.swift in Sources */,
 				B241AE43238B8CC600844F41 /* ScrollView.swift in Sources */,
 				B228016D2390B9E400EA6143 /* DetailTableViewCell.swift in Sources */,
 				B241AE5C238BD48D00844F41 /* HomeViewModel.swift in Sources */,
 				B241AE3E238B8CC600844F41 /* CollectionCell.swift in Sources */,
+				B2408F342398A7DA00A74B5C /* GooglePlace.swift in Sources */,
 				B241AE44238B8CC600844F41 /* TableView.swift in Sources */,
-				B241AE39238B8CC600844F41 /* ResponseSerializer.swift in Sources */,
+				B22E1B7A23A8B9CC003C35A4 /* APIRequest.swift in Sources */,
 				B241AE47238B8CC600844F41 /* Button.swift in Sources */,
 				B2381B11238D0D3F0053EA77 /* HomeCollectionCell.swift in Sources */,
-				B231F4DD2395067900098F67 /* PracticeAPI.swift in Sources */,
 				B241AE45238B8CC600844F41 /* TableCell.swift in Sources */,
+				B236E83A23A72F0F0046A95D /* API+Data.swift in Sources */,
 				B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */,
 				B241AE10238B825100844F41 /* ProfileViewController.swift in Sources */,
+				B22EE13623A9C8F7007DD4CD /* UIImageViewExt.swift in Sources */,
 				B2732CB82387993B00E1CDCE /* SceneDelegate.swift in Sources */,
 				B241AE3B238B8CC600844F41 /* String.swift in Sources */,
-				B241AE3A238B8CC600844F41 /* Api.swift in Sources */,
+				B241AE3A238B8CC600844F41 /* API.swift in Sources */,
 				B229187F2397C40A001EA5A8 /* HomeCell.swift in Sources */,
 				B241AE4A238B8CC600844F41 /* CollectionExt.swift in Sources */,
 				B241AE49238B8CC600844F41 /* UIViewControllerExt.swift in Sources */,
@@ -544,7 +544,7 @@
 				B241AE40238B8CC600844F41 /* Label.swift in Sources */,
 				B241AE42238B8CC600844F41 /* CollectionView.swift in Sources */,
 				B241AE35238B8CC600844F41 /* Session.swift in Sources */,
-				B22C703023979F0E00328798 /* GoogleAPIManager.swift in Sources */,
+				B22C703023979F0E00328798 /* Api.Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

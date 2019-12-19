@@ -2,12 +2,18 @@ PODS:
   - Alamofire (4.8.2)
   - IQKeyboardManagerSwift (6.0.5)
   - MVVM-Swift (1.1.0)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
   - ObjectMapper (3.3.0)
   - Realm (4.1.1):
     - Realm/Headers (= 4.1.1)
   - Realm/Headers (4.1.1)
   - RealmSwift (4.1.1):
     - Realm (= 4.1.1)
+  - SDWebImage (5.4.0):
+    - SDWebImage/Core (= 5.4.0)
+  - SDWebImage/Core (5.4.0)
   - SVProgressHUD (2.2.5)
   - SwifterSwift (5.1.0):
     - SwifterSwift/AppKit (= 5.1.0)
@@ -37,9 +43,11 @@ DEPENDENCIES:
   - Alamofire (= 4.8.2)
   - IQKeyboardManagerSwift (~> 6.0.4)
   - MVVM-Swift (= 1.1.0)
+  - NVActivityIndicatorView
   - ObjectMapper (= 3.3.0)
   - RealmSwift
-  - SVProgressHUD (= 2.2.5)
+  - SDWebImage
+  - SVProgressHUD
   - SwifterSwift (~> 5.0)
   - SwiftLint (= 0.27.0)
   - SwiftUtils (= 4.2)
@@ -49,9 +57,11 @@ SPEC REPOS:
     - Alamofire
     - IQKeyboardManagerSwift
     - MVVM-Swift
+    - NVActivityIndicatorView
     - ObjectMapper
     - Realm
     - RealmSwift
+    - SDWebImage
     - SVProgressHUD
     - SwifterSwift
     - SwiftLint
@@ -61,14 +71,16 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   IQKeyboardManagerSwift: c14eca30f6001457d6ddf25e313f23fb6578c41c
   MVVM-Swift: 54749cc12bb30af41632f30a2c576a18bf9e4bc8
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Realm: 25f0a8244cbb1c2271c922963ea8666fc2d8104d
   RealmSwift: 9e2657b33764f80e4a4dffd6d440e24715782052
+  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftUtils: de77bcd1df216c9be6ec7011777302c60a2018a6
 
-PODFILE CHECKSUM: ffae236ce5864b26b05591aca8595e45369e6b80
+PODFILE CHECKSUM: 22b98a7aef755bfc8739729abf6cd72a1cf00c54
 
 COCOAPODS: 1.8.4

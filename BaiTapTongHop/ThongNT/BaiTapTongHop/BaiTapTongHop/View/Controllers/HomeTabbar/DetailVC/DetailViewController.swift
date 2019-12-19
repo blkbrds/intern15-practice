@@ -9,17 +9,26 @@
 import UIKit
 import MapKit
 
+protocol DetailViewControllerDelegate: class {
+    func changeFavorite(view: DetailViewController, needsPerform action: DetailViewController.Action)
+}
+
 final class DetailViewController: ViewController {
 
     //MARK: - IBOulet
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var tableView: UITableView!
+    
+    enum Action {
+        case changeFavorite(index: Int)
+    }
 
     //MARK: - Private Properties
     private let cellIdentifier: String = "DetailTableViewCell"
     private let myLocation = CLLocation(latitude: 16.059142, longitude: 108.201540)
     private let regionRadius: CLLocationDistance = 1000
 
+    weak var delegate: DetailViewControllerDelegate?
     var viewModel = DetailViewModel()
 
     //MARK: - Override Functions
@@ -33,10 +42,6 @@ final class DetailViewController: ViewController {
         super.setupUI()
         title = "Detail"
         configTableView()
-        let imageName = viewModel.place.favorite ? "icon_heart_fill.png" : "icon_heart.png"
-        
-        let favoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: imageName).withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItem = favoriteButton
     }
 
     //MARK: - Private Functions

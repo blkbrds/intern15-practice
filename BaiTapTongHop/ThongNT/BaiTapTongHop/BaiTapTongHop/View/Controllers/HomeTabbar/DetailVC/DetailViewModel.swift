@@ -9,10 +9,13 @@
 import Foundation
 
 final class DetailViewModel {
-    var place = Place()
+    
+    var googlePlace = GooglePlace()
+    var indexOfItem: Int = 0
+    
     init() {}
     
-    init(place: Place) {
-        self.place = place
+    init(googlePlace: GooglePlace) {
+        self.googlePlace = googlePlace
     }
 }

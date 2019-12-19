@@ -13,23 +13,25 @@ final class HomeCellViewModel: ViewModel {
 
     let title: String
     let address: String
-    let rating: String
-    let distance: String
-    let favorite: Bool
-    let thumbnailImage: String
+    var rating: Double
+    let distance: Int
+    var isFavorite: Bool = false
+    var thumbnailImage: UIImage?
+    var iconString: String
     var favoriteImage: String {
-        if favorite {
+        if isFavorite {
             return "icon_heart_fill"
         }
         return "icon_heart"
     }
 
-    init(place: Place) {
-        title = place.title
-        address = place.address
-        rating = place.rating
-        distance = place.distance
-        favorite = place.favorite
-        thumbnailImage = ""
+    init(googlePlace: GooglePlace) {
+        title = googlePlace.name
+        address = googlePlace.address
+        rating = googlePlace.rating
+        distance = googlePlace.distance
+        isFavorite = googlePlace.favorite
+        thumbnailImage = googlePlace.thumbnailImage
+        iconString = googlePlace.iconString
     }
 }
