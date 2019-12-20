@@ -1,5 +1,12 @@
 PODS:
   - Alamofire (4.8.2)
+  - GoogleMaps (3.7.0):
+    - GoogleMaps/Maps (= 3.7.0)
+  - GoogleMaps/Base (3.7.0)
+  - GoogleMaps/Maps (3.7.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.7.0):
+    - GoogleMaps/Base (= 3.7.0)
   - IQKeyboardManagerSwift (6.0.5)
   - MVVM-Swift (1.1.0)
   - NVActivityIndicatorView (4.8.0):
@@ -41,6 +48,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.8.2)
+  - GoogleMaps
+  - GooglePlaces
   - IQKeyboardManagerSwift (~> 6.0.4)
   - MVVM-Swift (= 1.1.0)
   - NVActivityIndicatorView
@@ -55,6 +64,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GoogleMaps
+    - GooglePlaces
     - IQKeyboardManagerSwift
     - MVVM-Swift
     - NVActivityIndicatorView
@@ -69,6 +80,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  GoogleMaps: 55da829c68aa931f3ae982b9e341cc2f3d89c587
+  GooglePlaces: a62077320f9d64239245af63aa1aa136393ebeb6
   IQKeyboardManagerSwift: c14eca30f6001457d6ddf25e313f23fb6578c41c
   MVVM-Swift: 54749cc12bb30af41632f30a2c576a18bf9e4bc8
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
@@ -81,6 +94,6 @@ SPEC CHECKSUMS:
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   SwiftUtils: de77bcd1df216c9be6ec7011777302c60a2018a6
 
-PODFILE CHECKSUM: 22b98a7aef755bfc8739729abf6cd72a1cf00c54
+PODFILE CHECKSUM: 32b7eea9f82be5f83daee94ff520835700e84475
 
 COCOAPODS: 1.8.4

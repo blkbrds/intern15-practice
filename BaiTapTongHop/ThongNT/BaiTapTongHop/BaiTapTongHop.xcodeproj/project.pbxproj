@@ -16,6 +16,10 @@
 		B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2295D0E238F5F7A001846AF /* DetailViewModel.swift */; };
 		B22C703023979F0E00328798 /* Api.Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C702F23979F0E00328798 /* Api.Places.swift */; };
 		B22E1B7A23A8B9CC003C35A4 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E1B7923A8B9CC003C35A4 /* APIRequest.swift */; };
+		B22EBFB323AC8F8B0025D007 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22EBFB123AC8F8B0025D007 /* PlacesViewController.swift */; };
+		B22EBFB423AC8F8B0025D007 /* PlacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22EBFB223AC8F8B0025D007 /* PlacesViewController.xib */; };
+		B22EBFB623ACB9EB0025D007 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22EBFB523ACB9EB0025D007 /* Marker.swift */; };
+		B22EBFB823ACBB380025D007 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22EBFB723ACBB380025D007 /* MapViewModel.swift */; };
 		B22EE13623A9C8F7007DD4CD /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22EE13523A9C8F7007DD4CD /* UIImageViewExt.swift */; };
 		B236E83A23A72F0F0046A95D /* API+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B236E83923A72F0F0046A95D /* API+Data.swift */; };
 		B238146623A0DBDB0010EB0A /* Api.Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238146523A0DBDB0010EB0A /* Api.Downloader.swift */; };
@@ -73,6 +77,10 @@
 		B2295D0E238F5F7A001846AF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B22C702F23979F0E00328798 /* Api.Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Places.swift; sourceTree = "<group>"; };
 		B22E1B7923A8B9CC003C35A4 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		B22EBFB123AC8F8B0025D007 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		B22EBFB223AC8F8B0025D007 /* PlacesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesViewController.xib; sourceTree = "<group>"; };
+		B22EBFB523ACB9EB0025D007 /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		B22EBFB723ACBB380025D007 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		B22EE13523A9C8F7007DD4CD /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		B236E83923A72F0F0046A95D /* API+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Data.swift"; sourceTree = "<group>"; };
 		B238146523A0DBDB0010EB0A /* Api.Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Downloader.swift; sourceTree = "<group>"; };
@@ -207,6 +215,7 @@
 			children = (
 				B241AE59238BD0B900844F41 /* Place.swift */,
 				B2408F332398A7DA00A74B5C /* GooglePlace.swift */,
+				B22EBFB523ACB9EB0025D007 /* Marker.swift */,
 			);
 			path = Schema;
 			sourceTree = "<group>";
@@ -368,6 +377,9 @@
 			children = (
 				B2732CFC23879D3700E1CDCE /* MapViewController.swift */,
 				B2732CFD23879D3700E1CDCE /* MapViewController.xib */,
+				B22EBFB123AC8F8B0025D007 /* PlacesViewController.swift */,
+				B22EBFB223AC8F8B0025D007 /* PlacesViewController.xib */,
+				B22EBFB723ACBB380025D007 /* MapViewModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -393,6 +405,7 @@
 				B2732CAF2387993B00E1CDCE /* Frameworks */,
 				B2732CB02387993B00E1CDCE /* Resources */,
 				69DA5E673DFC9B2F7B358B38 /* [CP] Embed Pods Frameworks */,
+				520AC3B90A2D7AA89CDCEE7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -443,6 +456,7 @@
 			files = (
 				B2732CBF2387993D00E1CDCE /* Assets.xcassets in Resources */,
 				B229187E2397C40A001EA5A8 /* HomeCell.xib in Resources */,
+				B22EBFB423AC8F8B0025D007 /* PlacesViewController.xib in Resources */,
 				B228016E2390B9E400EA6143 /* DetailTableViewCell.xib in Resources */,
 				B2732CFF23879D3700E1CDCE /* MapViewController.xib in Resources */,
 				B241AE58238BCF9500844F41 /* DetailViewController.xib in Resources */,
@@ -456,6 +470,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		520AC3B90A2D7AA89CDCEE7C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		69DA5E673DFC9B2F7B358B38 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -513,6 +544,7 @@
 				B241AE57238BCF9500844F41 /* DetailViewController.swift in Sources */,
 				B241AE5A238BD0B900844F41 /* Place.swift in Sources */,
 				B241AE3C238B8CC600844F41 /* Errors.swift in Sources */,
+				B22EBFB823ACBB380025D007 /* MapViewModel.swift in Sources */,
 				B241AE38238B8CC600844F41 /* APIManager.swift in Sources */,
 				B2732CF323879CAB00E1CDCE /* BaseTabbarController.swift in Sources */,
 				B241AE3D238B8CC600844F41 /* App.swift in Sources */,
@@ -538,6 +570,7 @@
 				B229187F2397C40A001EA5A8 /* HomeCell.swift in Sources */,
 				B241AE4A238B8CC600844F41 /* CollectionExt.swift in Sources */,
 				B241AE49238B8CC600844F41 /* UIViewControllerExt.swift in Sources */,
+				B22EBFB323AC8F8B0025D007 /* PlacesViewController.swift in Sources */,
 				B241AE3F238B8CC600844F41 /* CollectionViewHeaderView.swift in Sources */,
 				B22801712390BC9A00EA6143 /* DetailCellViewModel.swift in Sources */,
 				B241AE41238B8CC600844F41 /* ViewController.swift in Sources */,
@@ -545,6 +578,7 @@
 				B241AE42238B8CC600844F41 /* CollectionView.swift in Sources */,
 				B241AE35238B8CC600844F41 /* Session.swift in Sources */,
 				B22C703023979F0E00328798 /* Api.Places.swift in Sources */,
+				B22EBFB623ACB9EB0025D007 /* Marker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
