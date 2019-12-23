@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol DetailViewControllerDelegate: class {
-    func changeFavorite(view: DetailViewController, needsPerform action: DetailViewController.Action)
+    func detailViewController(view: DetailViewController, needsPerform action: DetailViewController.Action)
 }
 
 final class DetailViewController: ViewController {

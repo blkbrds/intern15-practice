@@ -19,7 +19,7 @@ final class HomeViewController: ViewController {
     private var searchPlaces: [Place] = []
     private var status: Layout = .row
     private var refreshControl = UIRefreshControl()
-    private var activityIndicator = UIActivityIndicatorView()
+    private var activityIndicator = NVActivityIndicatorView(frame: .zero)
 
     var temp = ApiManager.Places()
     var viewModel = HomeViewModel()
@@ -43,9 +43,22 @@ final class HomeViewController: ViewController {
         setupTableView()
         setupCollectionView()
         setupRefreshControl()
-        setupData()
     }
-
+    
+    // MARK: - Setup Data
+    override func setupData() {
+        activityIndicator.startAnimating()
+        // Load data from API
+        viewModel.loadPlaceData { (done, errorString) in
+            self.activityIndicator.stopAnimating()
+            if done {
+                self.updateUI(action: .reloadData)
+            } else {
+                self.alert(title: App.Home.alertTitle, msg: errorString, buttons: ["OK"], preferButton: "OK", handler: nil)
+            }
+        }
+    }
+    
     //MARK: - Private Functions
     private func updateUI(action: Action, indexPath: IndexPath? = nil) {
         switch action {
@@ -60,26 +73,6 @@ final class HomeViewController: ViewController {
         case .reloadData:
             collectionView.reloadData()
             tableView.reloadData()
-        }
-    }
-
-    private func setupData() {
-        // Setup Indicator
-        let frameOfIndicator = CGRect(x: UIScreen.main.bounds.width / 2 - 25, y: UIScreen.main.bounds.height / 2 - 25,
-            width: 50, height: 50)
-        let activity = NVActivityIndicatorView(frame: frameOfIndicator, type: .lineScalePulseOut, color: .red, padding: 0)
-        view.addSubview(activity)
-        activity.startAnimating()
-
-        // Load data from API
-        viewModel.loadPlaceData { (done, errorString) in
-            activity.stopAnimating()
-            if done {
-                self.activityIndicator.stopAnimating()
-                self.updateUI(action: .reloadData)
-            } else {
-                self.alert(title: App.Home.alertTitle, msg: errorString, buttons: ["OK"], preferButton: "OK", handler: nil)
-            }
         }
     }
 
@@ -115,6 +108,14 @@ extension HomeViewController {
     }
 
     private func setupRefreshControl() {
+        // Setup Indicator
+        let frameOfIndicator = CGRect(x: UIScreen.main.bounds.width / 2 - 25, y: UIScreen.main.bounds.height / 2 - 25,
+            width: 50, height: 50)
+        activityIndicator.frame = frameOfIndicator
+        activityIndicator.type = .lineScalePulseOut
+        activityIndicator.color = .red
+        view.addSubview(activityIndicator)
+        
         // Setup refresh control
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
@@ -206,7 +207,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: - Extension DetailViewControllerDelegate
 extension HomeViewController: DetailViewControllerDelegate {
-    func changeFavorite(view: DetailViewController, needsPerform action: DetailViewController.Action) {
+    func detailViewController(view: DetailViewController, needsPerform action: DetailViewController.Action) {
         switch action {
         case .changeFavorite(let index):
             viewModel.changeFavorite(at: index) { (done, error) in
