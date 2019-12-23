@@ -1,22 +1,45 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
-    var datePicker: DatePickerView? = nil
-    var textField: TextField? = nil
+    var myDatePickerView: DatePickerView? = nil
+    
+    @IBOutlet var textField: UITextField!
+    
+    
+    @IBAction func textFieldDidTouch(_ sender: Any) {
+        showWithAnimation()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker?.delegate = self as? DatePickerViewDelegate
-        setUpUI()
+        
+        myDatePickerView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)![0] as? DatePickerView
+        myDatePickerView!.delegate = self as DatePickerViewDelegate
+        myDatePickerView!.frame = CGRect(x: 0, y: 400, width: 400, height: 100)
+        view.addSubview(myDatePickerView!)
+        textField = UITextField(frame: CGRect(x: 100, y: 50, width: 100, height: 30))
+        view.addSubview(textField)
     }
     
-    func setUpUI() {
-        textField = Bundle.main.loadNibNamed("TextField", owner: self, options: nil)?[0] as? TextField
-        datePicker?.frame = CGRect(x: 100, y: 50, width: 70, height: 20)
-        view.addSubview(textField!)
-        datePicker = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?[0] as? DatePickerView
-        datePicker?.frame = CGRect(x: 0, y: 300, width: self.view.frame.size.width, height: 300)
-        view.addSubview(datePicker!)
+    func showWithAnimation() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.myDatePickerView!.datePickerView.alpha = 1
+        }) { (done) in
+            if done {
+                self.myDatePickerView!.datePickerView.isHidden = false
+            }
+        }
+        view.endEditing(false)
     }
 }
+
+extension HomeViewController: DatePickerViewDelegate {
+    func datePickViewDidChoose() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        let strDate = dateFormatter.string(from: (myDatePickerView?.datePickerView.date)!)
+        textField.text = strDate
+    }
+}
+
