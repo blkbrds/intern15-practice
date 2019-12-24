@@ -7,46 +7,129 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
+import CoreLocation
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    typealias Action = (String?, (() -> Void)?)
+
+    static let shared: SceneDelegate = {
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { fatalError("Can not find SceneDelegate") }
+        return sceneDelegate
+    }()
 
     var window: UIWindow?
+    lazy var locationManager = CLLocationManager()
+    let mapsViewController = MapsViewController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+
         window = UIWindow(windowScene: windowScene)
-        let viewController = MapsViewController()
-        let navi = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = navi
         window?.makeKeyAndVisible()
+
+        let navigationController = UINavigationController(rootViewController: mapsViewController)
+        window?.rootViewController = navigationController
     }
 
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
-    }
+    func sceneDidDisconnect(_ scene: UIScene) { }
 
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-    }
+    func sceneDidBecomeActive(_ scene: UIScene) { }
 
-    func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
-    }
+    func sceneWillResignActive(_ scene: UIScene) { }
 
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
-    }
+    func sceneWillEnterForeground(_ scene: UIScene) { }
 
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+    func sceneDidEnterBackground(_ scene: UIScene) { }
+
+    func showAlert(title: String, message: String, actions: [Action]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for action in actions {
+            if let handler = action.1 {
+                let alertAction = UIAlertAction(title: action.0, style: .default, handler: { (_) in
+                    handler()
+                })
+                alert.addAction(alertAction)
+            } else {
+                let alertAction = UIAlertAction(title: action.0, style: .default, handler: nil)
+                alert.addAction(alertAction)
+            }
+        }
+        window?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
 
+// MARK: - Location manager
+extension SceneDelegate {
+    func configLocationService() {
+        locationManager.delegate = self
+        let status = CLLocationManager.authorizationStatus()
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse, .authorizedAlways:
+            enableLocationServices()
+            startStandardLocationService()
+        case .denied:
+            let title = "Request location service"
+            let message = "Please go to setting > Privacy > Location service to turn on location service for \"Google Maps EX\""
+
+            let action: Action = ("OK", nil)
+            showAlert(title: title, message: message, actions: [action])
+        case .restricted:
+            break
+            @unknown default:
+            fatalError("authorization status error")
+        }
+    }
+
+    func enableLocationServices() {
+        CLLocationManager.locationServicesEnabled()
+    }
+
+    // Standard location service
+    func startStandardLocationService() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.distanceFilter = 50
+        locationManager.startUpdatingLocation()
+    }
+
+    func stopStandardLocationService() {
+        locationManager.stopUpdatingLocation()
+    }
+
+    // Significant change location service
+
+    func startSignificantChangeLocationService() {
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+
+    func stopSignificantChangeLocationService() {
+        locationManager.stopMonitoringSignificantLocationChanges()
+    }
+}
+
+extension SceneDelegate: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .restricted, .denied:
+            stopStandardLocationService()
+        case .authorizedAlways, .authorizedWhenInUse:
+            enableLocationServices()
+            startStandardLocationService()
+        case .notDetermined:
+            break
+            @unknown default:
+            fatalError("authorization status error")
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let lastLocation = locations.last else { return }
+        print("timestampe \(lastLocation.timestamp)")
+        print("lat \(lastLocation.coordinate.latitude)")
+        print("long \(lastLocation.coordinate.longitude)")
+    }
+}
