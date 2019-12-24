@@ -12,6 +12,11 @@ final class ProfileViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+    }
+    
+    override func setupUI() {
+        super.setupUI()
+        title = "Profile"
     }
 }

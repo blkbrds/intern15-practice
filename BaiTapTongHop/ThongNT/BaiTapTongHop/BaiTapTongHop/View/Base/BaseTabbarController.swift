@@ -13,6 +13,7 @@ class BaseTabbarController: UITabBarController {
     static weak var shared: BaseTabbarController?
 
     private var homeNavigationController = UINavigationController(rootViewController: HomeViewController())
+    
     private var mapNavigationController = UINavigationController(rootViewController: MapViewController())
 
     enum Screen: Int {
