@@ -8,15 +8,21 @@
 
 import Foundation
 import MVVM
+import GoogleMaps
 
 final class MapViewModel: ViewModel {
-    var markers: [Marker] = [Marker(title: "Nhà", snippet: "Đây là nhà", lat: 16.345345 , long: 142.23423),
-                             Marker(title: "Nhà", snippet: "Đây là nhà", lat: 16.345345 , long: 141.23423),
-                             Marker(title: "Nhà", snippet: "Đây là nhà", lat: 16.345345 , long: 143.23423),
-                             Marker(title: "Nhà", snippet: "Đây là nhà", lat: 16.345345 , long: 145.23423),
-                             Marker(title: "Nhà", snippet: "Đây là nhà", lat: 16.345345 , long: 144.23423)]
     
-    func getMarker() -> Marker {
-        return Marker()
+    // MARK: - Properties
+    var places: [GooglePlace] = []
+    var markers: [GMSMarker] = []
+    
+    func createMakers() {
+        for place in places {
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: place.position.lat, longitude: place.position.long))
+            marker.title = place.name
+            marker.snippet = place.address
+            marker.appearAnimation = .pop
+            markers.append(marker)
+        }
     }
 }

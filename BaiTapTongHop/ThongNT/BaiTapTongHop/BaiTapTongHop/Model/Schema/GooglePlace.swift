@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 final class GooglePlace {
     var idPlace: String = ""
@@ -19,6 +20,7 @@ final class GooglePlace {
     var thumbnailImage: UIImage?
     var categories: [[String: Any]] = [[:]]
     var iconString: String = ""
+    var position = Position()
 
     init() { }
 
@@ -29,6 +31,8 @@ final class GooglePlace {
         distance = dict["distance"] as? Int ?? 0
         rating = dict["rating"] as? Double ?? 0
         categories = dict["categories"] as? [[String: Any]] ?? [[:]]
+        position.lat = dict["lat"] as? CLLocationDegrees ?? 16.0
+        position.long = dict["long"] as? CLLocationDegrees ?? 108.0
         converData()
     }
 

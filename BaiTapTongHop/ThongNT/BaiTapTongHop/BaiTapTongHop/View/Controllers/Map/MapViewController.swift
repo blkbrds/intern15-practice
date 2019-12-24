@@ -10,117 +10,102 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+protocol MapViewControllerDataSource: class {
+    func getPlaces() -> [GooglePlace]
+}
+
 final class MapViewController: ViewController {
 
-    //MARK: - Properties
+    // MARK: - Properties
+    private let defaultLocation = CLLocation(latitude: 16.080447, longitude: 108.238280)
     private var locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
-    private var mapView: GMSMapView!
     private var placesClient: GMSPlacesClient!
-    private var zoomLevel: Float = 17.0
-    private var likelyPlaces: [GMSPlace] = []
-    private let defaultLocation = CLLocation(latitude: 16.080447, longitude: 108.238280)
-
+    private var mapView: GMSMapView!
+    private var zoomLevel: Float = 14.0
+    private var path: GMSPolyline!
+    
+    weak var dataSource: MapViewControllerDataSource?
     var selectedPlace: GMSPlace?
     var viewModel = MapViewModel()
-    var markers: [GMSMarker] = []
 
-    @IBAction func unwindToMain(segue: UIStoryboardSegue) {
-        // Clear the map.
-        mapView.clear()
-
-        // Add a marker to the map.
-        if selectedPlace != nil {
-            let marker = GMSMarker(position: (self.selectedPlace?.coordinate)!)
-            marker.title = selectedPlace?.name
-            marker.snippet = selectedPlace?.formattedAddress
-            marker.map = mapView
-        }
-        listLikelyPlaces()
+    // MARK: - Setup UI
+    override func setupUI() {
+        super.setupUI()
+        setupNavigation()
+        setupMap()
     }
 
+    // MARK: - Setup Data
+    override func setupData() {
+        super.setupData()
+        getData()
+        getMarkers()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        addMarkerIntoMap()
+    }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
+// MARK: - Setup Data
+extension MapViewController {
+    
+    private func getData() {
+        guard let places = dataSource?.getPlaces() else { return }
+        viewModel.places = places
+    }
+    
+    private func getMarkers() {
+        viewModel.createMakers()
+    }
+}
 
-        // Initialize the location manager.
-        locationManager = CLLocationManager()
+// MARK: - Setup UI
+extension MapViewController {
+
+    private func setupNavigation() {
+        title = "Map"
+        let homeButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(goToHome))
+        navigationItem.leftBarButtonItem = homeButton
+    }
+
+    private func setupMap() {
+        // Initialize the location manager
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-        locationManager.distanceFilter = 50
+        locationManager.distanceFilter = 100
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
 
         placesClient = GMSPlacesClient.shared()
 
-        // Create a map.
-        let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
-            longitude: defaultLocation.coordinate.longitude,
-            zoom: zoomLevel)
+        // Create a map
+        let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude, longitude: defaultLocation.coordinate.longitude, zoom: zoomLevel)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.settings.myLocationButton = true
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
-        addMarker()
         view = mapView
-        mapView.isHidden = true
-    }
-
-    // Populate the array with the list of likely places.
-    func listLikelyPlaces() {
-        // Clean up from previous sessions.
-        likelyPlaces.removeAll()
-
-        placesClient.currentPlace(callback: { (placeLikelihoods, error) -> Void in
-            if let error = error {
-                print("Current Place error: \(error.localizedDescription)")
-                return
-            }
-
-            // Get likely places and add to the list.
-            if let likelihoodList = placeLikelihoods {
-                for likelihood in likelihoodList.likelihoods {
-                    let place = likelihood.place
-                    self.likelyPlaces.append(place)
-                }
-            }
-        })
-    }
-
-    // Prepare the segue.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToSelect" {
-            if let nextViewController = segue.destination as? PlacesViewController {
-                nextViewController.likelyPlaces = likelyPlaces
-            }
-        }
-    }
-
-    override func setupUI() {
-        super.setupUI()
-        title = "Map"
-    }
-
-    private func addMarker() {
-        for index in 0..<viewModel.markers.count {
-            markers.append(createMarker(with: viewModel.markers[index]))
-        }
     }
     
-    private func createMarker(with mark: Marker) -> GMSMarker {
-        // Add the marker
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(mark.position.lat), longitude: CLLocationDegrees(mark.position.long))
-        marker.title = mark.title
-        marker.snippet = mark.snippet
-        marker.appearAnimation = .pop
-        marker.map = mapView
-        return marker
+    private func addMarkerIntoMap() {
+        viewModel.markers.forEach { $0.map = mapView }
     }
 }
 
+extension MapViewController {
+    
+    @objc private func goToHome() {
+        tabBarController?.selectedIndex = 0
+    }
+}
+
+// MARK: - CLLocation Manager Delegate
 extension MapViewController: CLLocationManagerDelegate {
+
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!

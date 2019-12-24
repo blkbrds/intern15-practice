@@ -59,7 +59,7 @@ final class HomeViewController: ViewController {
         }
     }
     
-    //MARK: - Private Functions
+    //MARK: - Functions
     private func updateUI(action: Action, indexPath: IndexPath? = nil) {
         switch action {
         case .like:
@@ -96,6 +96,13 @@ final class HomeViewController: ViewController {
             }
         }
     }
+    
+    @objc private func goToMap() {
+        guard let naviController = tabBarController?.viewControllers?[1] as? UINavigationController else { return }
+        let vc = naviController.topViewController as? MapViewController
+        vc?.dataSource = self
+        tabBarController?.selectedIndex = 1
+    }
 }
 
 // MARK: - Setup UI
@@ -105,6 +112,9 @@ extension HomeViewController {
         title = "Home"
         let changeLayoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "naviBar_icon_collection_icon.png"), style: .plain, target: self, action: #selector(switchLayout))
         navigationItem.rightBarButtonItem = changeLayoutButton
+        
+        let mapButton = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(goToMap))
+        navigationItem.leftBarButtonItem = mapButton
     }
 
     private func setupRefreshControl() {
@@ -285,6 +295,13 @@ extension HomeViewController: HomeCollectionCellDelegate {
         let vc = DetailViewController()
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: - MapViewController DataSource
+extension HomeViewController: MapViewControllerDataSource {
+    func getPlaces() -> [GooglePlace] {
+        return viewModel.places
     }
 }
 

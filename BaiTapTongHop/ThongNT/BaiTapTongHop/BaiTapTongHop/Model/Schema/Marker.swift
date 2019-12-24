@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GoogleMaps
 
 final class Marker {
     var title: String = ""
@@ -16,7 +17,7 @@ final class Marker {
     
     init() { }
     
-    init(title: String = "Place", snippet: String = "This is a beautiful place", iconString: String = "", lat: Float, long: Float) {
+    init(title: String = "Place", snippet: String = "This is a beautiful place", iconString: String = "", lat: CLLocationDegrees , long: CLLocationDegrees) {
         self.title = title
         self.snippet = snippet
         self.iconString = iconString
@@ -26,6 +27,6 @@ final class Marker {
 }
 
 struct Position {
-    var lat: Float = 0
-    var long: Float = 0
+    var lat: CLLocationDegrees = 0
+    var long: CLLocationDegrees = 0
 }

@@ -66,6 +66,8 @@ extension ApiManager.Places {
                                     let location = venue["location"] as? [String: Any]
                                     dict["address"] = location?["formattedAddress"] as? [String]
                                     dict["distance"] = location?["distance"] as? Int
+                                    dict["lat"] = location?["lat"] as? Double
+                                    dict["long"] = location?["lng"] as? Double
                                     let googlePlace = GooglePlace(from: dict)
                                     places.append(googlePlace)
                                 }

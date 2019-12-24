@@ -11,6 +11,7 @@ import MVVM
 
 final class HomeViewModel: ViewModel {
     
+    // MARK: - Properties
     var offset: Int = 0
     var places: [GooglePlace] = []
     var currentIndex: Int = 0
