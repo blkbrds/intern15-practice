@@ -39,10 +39,10 @@ final class HomeCollectionCell: UICollectionViewCell {
         guard let viewModel = viewModel else { return }
         titleLabel.text = viewModel.title
         addressLabel.text = viewModel.address
-        ratingLabel.text = "\(viewModel.rating)"
-        distanceLabel.text = "\(viewModel.distance) m"
+        ratingLabel.text = viewModel.rating
+        distanceLabel.text = viewModel.distance
         thumbnailImageView.setImageWithPath(urlString: viewModel.iconString)
-        favoriteButton.setImage(UIImage(named: viewModel.favoriteImage), for: .normal)
+        favoriteButton.setImage(viewModel.favoriteImage, for: .normal)
     }
 
     @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {

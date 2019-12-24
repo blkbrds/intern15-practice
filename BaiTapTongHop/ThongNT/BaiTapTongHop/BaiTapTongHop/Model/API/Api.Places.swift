@@ -12,12 +12,23 @@ import UIKit
 extension ApiManager.Places {
 
     struct QueryString {
-        static func placeURL(lat: String, long: String, limit: String, offSet: String) -> String {
-            return "https://api.foursquare.com/v2/venues/explore?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524&ll=\(lat),\(long)&limit=\(limit)&offset=\(offSet)"
+        
+        struct placesDetail {
+            var lat: String
+            var long: String
+            var limit: String
+            var offSet: String
+            var url: String {
+                return ApiManager.Path.baseURL + "venues/explore?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524&ll=\(lat),\(long)&limit=\(limit)&offset=\(offSet)"
+            }
         }
-
-        static func imagePlaceURL(idPlace: String, sizeOfImage: String) -> String {
-            return "https://api.foursquare.com/v2/venues/\(idPlace)/\(sizeOfImage)/photos?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524"
+        
+        struct placeImages {
+            var idPlace: String
+            var sizeOfImage: String
+            var url: String {
+                return ApiManager.Path.baseURL + "venues/\(idPlace)/\(sizeOfImage)/photos?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524"
+            }
         }
     }
 
@@ -32,7 +43,7 @@ extension ApiManager.Places {
     typealias Completion<T> = (Result<T, Error>) -> Void
 
     static func getGooglePlace(limit: Int = 20, offSet: Int = 0, completion: @escaping Completion<GoogleApiResult>) {
-        API.shared().request(urlString: QueryString.placeURL(lat: "16.070531", long: "108.224599", limit: "\(limit)", offSet: "\(offSet)")) { result in
+        API.shared().request(urlString: QueryString.placesDetail(lat: "16.070531", long: "108.224599", limit: "\(limit)", offSet: "\(offSet)").url) { (result) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))

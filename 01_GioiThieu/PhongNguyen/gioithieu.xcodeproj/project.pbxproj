@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		319058DD23ACA99C00E25E12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319058DC23ACA99C00E25E12 /* AppDelegate.swift */; };
+		319058DF23ACA99C00E25E12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319058DE23ACA99C00E25E12 /* SceneDelegate.swift */; };
+		319058E323ACA99C00E25E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319058E223ACA99C00E25E12 /* Assets.xcassets */; };
+		319058E623ACA99C00E25E12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 319058E523ACA99C00E25E12 /* Preview Assets.xcassets */; };
+		3190590F23ACAA7D00E25E12 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3190590D23ACAA7D00E25E12 /* MyViewController.swift */; };
+		3190591023ACAA7D00E25E12 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3190590E23ACAA7D00E25E12 /* MyViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		319058F023ACA99C00E25E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319058D123ACA99C00E25E12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 319058D823ACA99C00E25E12;
+			remoteInfo = gioithieu;
+		};
+		319058FB23ACA99C00E25E12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 319058D123ACA99C00E25E12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 319058D823ACA99C00E25E12;
+			remoteInfo = gioithieu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		319058D923ACA99C00E25E12 /* gioithieu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gioithieu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		319058DC23ACA99C00E25E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		319058DE23ACA99C00E25E12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		319058E223ACA99C00E25E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		319058E523ACA99C00E25E12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		319058EA23ACA99C00E25E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		319058EF23ACA99C00E25E12 /* gioithieuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gioithieuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		319058FA23ACA99C00E25E12 /* gioithieuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gioithieuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3190590D23ACAA7D00E25E12 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		3190590E23ACAA7D00E25E12 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		319058D623ACA99C00E25E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319058EC23ACA99C00E25E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319058F723ACA99C00E25E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		319058D023ACA99C00E25E12 = {
+			isa = PBXGroup;
+			children = (
+				319058DB23ACA99C00E25E12 /* gioithieu */,
+				319058DA23ACA99C00E25E12 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		319058DA23ACA99C00E25E12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				319058D923ACA99C00E25E12 /* gioithieu.app */,
+				319058EF23ACA99C00E25E12 /* gioithieuTests.xctest */,
+				319058FA23ACA99C00E25E12 /* gioithieuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		319058DB23ACA99C00E25E12 /* gioithieu */ = {
+			isa = PBXGroup;
+			children = (
+				3190590C23ACAA6900E25E12 /* Home */,
+				319058DC23ACA99C00E25E12 /* AppDelegate.swift */,
+				319058DE23ACA99C00E25E12 /* SceneDelegate.swift */,
+				319058E223ACA99C00E25E12 /* Assets.xcassets */,
+				319058EA23ACA99C00E25E12 /* Info.plist */,
+				319058E423ACA99C00E25E12 /* Preview Content */,
+			);
+			path = gioithieu;
+			sourceTree = "<group>";
+		};
+		319058E423ACA99C00E25E12 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				319058E523ACA99C00E25E12 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3190590C23ACAA6900E25E12 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3190590D23ACAA7D00E25E12 /* MyViewController.swift */,
+				3190590E23ACAA7D00E25E12 /* MyViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		319058D823ACA99C00E25E12 /* gioithieu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3190590323ACA99C00E25E12 /* Build configuration list for PBXNativeTarget "gioithieu" */;
+			buildPhases = (
+				319058D523ACA99C00E25E12 /* Sources */,
+				319058D623ACA99C00E25E12 /* Frameworks */,
+				319058D723ACA99C00E25E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gioithieu;
+			productName = gioithieu;
+			productReference = 319058D923ACA99C00E25E12 /* gioithieu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		319058EE23ACA99C00E25E12 /* gioithieuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3190590623ACA99C00E25E12 /* Build configuration list for PBXNativeTarget "gioithieuTests" */;
+			buildPhases = (
+				319058EB23ACA99C00E25E12 /* Sources */,
+				319058EC23ACA99C00E25E12 /* Frameworks */,
+				319058ED23ACA99C00E25E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				319058F123ACA99C00E25E12 /* PBXTargetDependency */,
+			);
+			name = gioithieuTests;
+			productName = gioithieuTests;
+			productReference = 319058EF23ACA99C00E25E12 /* gioithieuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		319058F923ACA99C00E25E12 /* gioithieuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3190590923ACA99C00E25E12 /* Build configuration list for PBXNativeTarget "gioithieuUITests" */;
+			buildPhases = (
+				319058F623ACA99C00E25E12 /* Sources */,
+				319058F723ACA99C00E25E12 /* Frameworks */,
+				319058F823ACA99C00E25E12 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				319058FC23ACA99C00E25E12 /* PBXTargetDependency */,
+			);
+			name = gioithieuUITests;
+			productName = gioithieuUITests;
+			productReference = 319058FA23ACA99C00E25E12 /* gioithieuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		319058D123ACA99C00E25E12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = PCI0006;
+				TargetAttributes = {
+					319058D823ACA99C00E25E12 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					319058EE23ACA99C00E25E12 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 319058D823ACA99C00E25E12;
+					};
+					319058F923ACA99C00E25E12 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 319058D823ACA99C00E25E12;
+					};
+				};
+			};
+			buildConfigurationList = 319058D423ACA99C00E25E12 /* Build configuration list for PBXProject "gioithieu" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 319058D023ACA99C00E25E12;
+			productRefGroup = 319058DA23ACA99C00E25E12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				319058D823ACA99C00E25E12 /* gioithieu */,
+				319058EE23ACA99C00E25E12 /* gioithieuTests */,
+				319058F923ACA99C00E25E12 /* gioithieuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		319058D723ACA99C00E25E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319058E623ACA99C00E25E12 /* Preview Assets.xcassets in Resources */,
+				3190591023ACAA7D00E25E12 /* MyViewController.xib in Resources */,
+				319058E323ACA99C00E25E12 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319058ED23ACA99C00E25E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319058F823ACA99C00E25E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		319058D523ACA99C00E25E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				319058DD23ACA99C00E25E12 /* AppDelegate.swift in Sources */,
+				3190590F23ACAA7D00E25E12 /* MyViewController.swift in Sources */,
+				319058DF23ACA99C00E25E12 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319058EB23ACA99C00E25E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		319058F623ACA99C00E25E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		319058F123ACA99C00E25E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 319058D823ACA99C00E25E12 /* gioithieu */;
+			targetProxy = 319058F023ACA99C00E25E12 /* PBXContainerItemProxy */;
+		};
+		319058FC23ACA99C00E25E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 319058D823ACA99C00E25E12 /* gioithieu */;
+			targetProxy = 319058FB23ACA99C00E25E12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3190590123ACA99C00E25E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3190590223ACA99C00E25E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3190590423ACA99C00E25E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"gioithieu/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = gioithieu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bt1.gioithieu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3190590523ACA99C00E25E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"gioithieu/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = gioithieu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bt1.gioithieu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3190590723ACA99C00E25E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gioithieuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bt1.gioithieuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gioithieu.app/gioithieu";
+			};
+			name = Debug;
+		};
+		3190590823ACA99C00E25E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gioithieuTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bt1.gioithieuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gioithieu.app/gioithieu";
+			};
+			name = Release;
+		};
+		3190590A23ACA99C00E25E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gioithieuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bt1.gioithieuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gioithieu;
+			};
+			name = Debug;
+		};
+		3190590B23ACA99C00E25E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = gioithieuUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bt1.gioithieuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = gioithieu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		319058D423ACA99C00E25E12 /* Build configuration list for PBXProject "gioithieu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3190590123ACA99C00E25E12 /* Debug */,
+				3190590223ACA99C00E25E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3190590323ACA99C00E25E12 /* Build configuration list for PBXNativeTarget "gioithieu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3190590423ACA99C00E25E12 /* Debug */,
+				3190590523ACA99C00E25E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3190590623ACA99C00E25E12 /* Build configuration list for PBXNativeTarget "gioithieuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3190590723ACA99C00E25E12 /* Debug */,
+				3190590823ACA99C00E25E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3190590923ACA99C00E25E12 /* Build configuration list for PBXNativeTarget "gioithieuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3190590A23ACA99C00E25E12 /* Debug */,
+				3190590B23ACA99C00E25E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 319058D123ACA99C00E25E12 /* Project object */;
+}

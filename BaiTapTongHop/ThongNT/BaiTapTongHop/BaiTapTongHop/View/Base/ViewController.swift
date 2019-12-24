@@ -21,7 +21,10 @@ class ViewController: UIViewController, MVVM.View {
         view.accessibilityIdentifier = String(describing: type(of: self))
         view.removeMultiTouch()
         setupUI()
+        setupData()
     }
     
     func setupUI() { }
+    
+    func setupData() { }
 }

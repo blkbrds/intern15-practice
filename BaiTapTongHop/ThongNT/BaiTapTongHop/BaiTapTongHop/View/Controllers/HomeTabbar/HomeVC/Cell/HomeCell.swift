@@ -39,11 +39,11 @@ final class HomeCell: TableCell {
         guard let viewModel = viewModel else { return }
         titleLabel.text = viewModel.title
         addressLabel.text = viewModel.address
-        ratingLabel.text = "\(viewModel.rating)"
-        distanceLabel.text = "\(viewModel.distance) m"
+        ratingLabel.text = viewModel.rating
+        distanceLabel.text = viewModel.distance
         thumbnailImageView.setImageWithPath(urlString: viewModel.iconString)
         favoriteButton.isSelected = viewModel.isFavorite
-        favoriteButton.setImage(UIImage(named: viewModel.favoriteImage), for: .selected)
+        favoriteButton.setImage(viewModel.favoriteImage, for: .selected)
     }
 
     @IBAction private func favortieButtonTouchUpInside(_ sender: Any) {

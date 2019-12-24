@@ -36,10 +36,10 @@ extension APIResult {
 struct ApiManager {
 
     struct Path {
-        static let baseURL = "https://api.foursquare.com/v2/venues/explore?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524&ll=16.070531,108.224599&limit=10&offset=0"
+        static let baseURL = "https://api.foursquare.com/v2/"
         static let getImageURL = "https://irs0.4sqi.net/img/general/500x300/1242105_kaulHppyI2YfjLjFCr0OEUMRlat3hlaUxmHO3ENmXxo.jpg"
     }
-
+    
     struct Places {}
 
     struct Downloader {}
