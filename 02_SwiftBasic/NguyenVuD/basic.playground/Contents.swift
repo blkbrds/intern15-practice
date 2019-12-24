@@ -1,16 +1,20 @@
 import Foundation
 
-func tinhDienTichVaTheTichHinhCau(bankinh: Float) -> (dientich: Float, thetich: Float) {
-    let pi: Float = 3.14
-    let dientich = 4 * pi * bankinh * bankinh
-    let thetich = 4 / 3 * pi * bankinh * bankinh * bankinh
-    return (dientich, thetich)
+func tinhDienTichHinhCau(bankinh: Float) -> (dientich: Float) {
+    let dientich = 4 * .pi * bankinh * bankinh
+    return (dientich)
 }
-//print(tinhDienTichVaTheTichHinhCau(bankinh: 3))
+//print(tinhDienTichHinhCau(bankinh: 3))
 
-func tinhPhuongTrinhBac2(a: Float, b:Float, c:Float) -> (x1: Float, x2: Float) {
-    var x1: Float!
-    var x2: Float!
+func tinhTheTichHinhCau(bankinh: Float) -> (thetich: Float) {
+    let thetich = 4 / 3 * .pi * bankinh * bankinh * bankinh
+    return (thetich)
+}
+//print(tinhTheTichHinhCau(bankinh: 3))
+
+func tinhPhuongTrinhBac2(a: Float, b:Float, c:Float) {
+    var x1: Float = 0
+    var x2: Float = 0
     if a == 0 {
         if b == 0 {
             if c == 0 {
@@ -20,7 +24,7 @@ func tinhPhuongTrinhBac2(a: Float, b:Float, c:Float) -> (x1: Float, x2: Float) {
             }
         } else {
             x1 = -c / b
-            x2 = 0.0
+            print("Phương trình có nghiệm x = \(x1)")
         }
     } else {
         let delta = b * b - 4 * a * c
@@ -29,18 +33,18 @@ func tinhPhuongTrinhBac2(a: Float, b:Float, c:Float) -> (x1: Float, x2: Float) {
         }
         if delta == 0 {
             x1 = -b / (2 * a)
-            x2 = -b / (2 * a)
+            print("Phương trình có nghiệm kép x1 = x2 = \(x1)")
         }
         if delta > 0 {
             x1 = ( -b + sqrt(delta)) / ( 2 * a )
             x2 = ( -b - sqrt(delta)) / ( 2 * a )
+            print("Phương trình có 2 nghiệm x1 = \(x1), x2 = \(x2)")
         }
     }
-    return (x1, x2)
 }
-//print(tinhPhuongTrinhBac2(a: 0,b: 3,c: 1))
+//print(tinhPhuongTrinhBac2(a: 1,b: 5,c: 3))
 
-func tinhHePhuongTrinhBac1(a1: Float, b1: Float, c1:Float, a2: Float, b2: Float, c2:Float) -> (x: Float, y: Float) {
+func tinhHePhuongTrinhBac1(a1: Float, b1: Float, c1:Float, a2: Float, b2: Float, c2:Float){
     let d: Float = a1 * b2 - a2 * b1
     let dX: Float = c1 * b2 - c2 * b1
     let dY: Float = a1 * c2 - a2 * c1
@@ -55,8 +59,8 @@ func tinhHePhuongTrinhBac1(a1: Float, b1: Float, c1:Float, a2: Float, b2: Float,
     } else {
         x = dX / d;
         y = dY / d;
+        print("Phương trình có nghiệm x = \(x), y = \(y)")
     }
-    return(x,y)
 }
 //print(tinhHePhuongTrinhBac1(a1: 2.0, b1: 3.0, c1: 5.0, a2: 4.0, b2: 6.0, c2: 10.0))
 
@@ -187,14 +191,14 @@ func soChuoiCon(chuoiMe: String, chuoiCon: String) -> Int {
 }
 //print(soChuoiCon(chuoiMe: "abababbbbababbabbbbab", chuoiCon: "bba"))
 
-func DaoMang(mangBanDau: [Int]) -> [Int] {
+func daoMang(mangBanDau: [Int]) -> [Int] {
     var mangA: [Int] = mangBanDau
     mangA.shuffle()
     return mangA
 }
 //print(daoMang(mangBanDau: [1,2,3,4,5,6,7,8,9]))
 
-func thayThePhanTuCuaMang(inputArray: [Int], elemToReplace: Int, substitutionElem: Int) -> [Int] {
+func bearrayReplace(inputArray: [Int], elemToReplace: Int, substitutionElem: Int) -> [Int] {
     var mangA: [Int] = inputArray
     for i in 0...inputArray.count - 1 {
         if (inputArray[i] == elemToReplace){
@@ -204,4 +208,4 @@ func thayThePhanTuCuaMang(inputArray: [Int], elemToReplace: Int, substitutionEle
     }
     return mangA
 }
-print(thayThePhanTuCuaMang(inputArray: [1,2,2,1,1,2,3,4,1,2,1], elemToReplace: 1, substitutionElem: 3))
+//print(bearrayReplace(inputArray: [1,2,2,1,1,2,3,4,1,2,1], elemToReplace: 1, substitutionElem: 3))
