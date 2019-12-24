@@ -25,6 +25,15 @@ final class MapViewController: ViewController {
     private var zoomLevel: Float = 14.0
     private var path: GMSPolyline!
     
+    
+    var originLatitude: Double = 0
+    var originLongtitude: Double = 0
+    var destinationLatitude: Double = 0
+    var destinationLongtitude: Double = 0
+    var travelMode = TravelModes.driving
+    let directionService = DirectionService()
+
+    
     weak var dataSource: MapViewControllerDataSource?
     var selectedPlace: GMSPlace?
     var viewModel = MapViewModel()
@@ -88,6 +97,7 @@ extension MapViewController {
         mapView.settings.myLocationButton = true
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
+        mapView.delegate = self
         view = mapView
     }
     
@@ -98,8 +108,65 @@ extension MapViewController {
 
 extension MapViewController {
     
+    private func direction() {
+        self.mapView.clear()
+        let origin: String = "\(currentLocation?.coordinate.latitude),\(currentLocation?.coordinate.longitude)"
+        let destination: String = "\(destinationLatitude),\(destinationLongtitude)"
+        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongtitude))
+        marker.map = self.mapView
+        self.directionService.getDirections(origin: origin,
+            destination: destination,
+            travelMode: travelMode) { [weak self] (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self?.drawRoute()
+                    if let totalDistance = self?.directionService.totalDistance,
+                        let totalDuration = self?.directionService.totalDuration {
+//                        self?.detailDirection.text = totalDistance + ". " + totalDuration
+//                        self?.detailDirection.isHidden = false
+                    }
+                }
+            } else {
+                print("error direction")
+            }
+        }
+    }
+
+    private func drawRoute() {
+        for step in self.directionService.selectSteps {
+            if step.polyline.points != "" {
+                let path = GMSPath(fromEncodedPath: step.polyline.points)
+                let routePolyline = GMSPolyline(path: path)
+                routePolyline.strokeColor = UIColor.red
+                routePolyline.strokeWidth = 3.0
+                routePolyline.map = mapView
+            } else {
+                return
+            }
+        }
+    }
+    
+    private func afterDirection() {
+        self.directionService.totalDistanceInMeters = 0
+        self.directionService.totalDurationInSeconds = 0
+        self.directionService.selectLegs.removeAll()
+        self.directionService.selectSteps.removeAll()
+    }
+    
     @objc private func goToHome() {
         tabBarController?.selectedIndex = 0
+    }
+}
+
+// MARK: - GMS MapView Delegate
+extension MapViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        // tap on annotation
+        print("Click on annotation")
+        self.destinationLatitude = marker.position.latitude
+        self.destinationLongtitude = marker.position.longitude
+        direction()
+        afterDirection()
     }
 }
 
@@ -109,7 +176,8 @@ extension MapViewController: CLLocationManagerDelegate {
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
-        print("Location: \(location)")
+        currentLocation = location
+        print("---Location: \(location)")
 
         let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
         if mapView.isHidden {

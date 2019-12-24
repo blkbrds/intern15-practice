@@ -40,6 +40,10 @@ struct ApiManager {
         static let getImageURL = "https://irs0.4sqi.net/img/general/500x300/1242105_kaulHppyI2YfjLjFCr0OEUMRlat3hlaUxmHO3ENmXxo.jpg"
     }
     
+    struct Key {
+        static let API = "AIzaSyAZGlweYtcWgzVKTUt5nz961P0ipsCtO3c"
+    }
+    
     struct Places {}
 
     struct Downloader {}
