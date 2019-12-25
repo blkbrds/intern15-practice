@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D09089F2442E00D1D92B55D1 /* Pods_ExampleGoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6581F71887477F766069E81 /* Pods_ExampleGoogleMaps.framework */; };
+		F092678523B34B17005A20D7 /* DetailMarkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092678323B34B17005A20D7 /* DetailMarkerViewController.swift */; };
+		F092678623B34B17005A20D7 /* DetailMarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F092678423B34B17005A20D7 /* DetailMarkerViewController.xib */; };
+		F092678923B359D0005A20D7 /* CustomMarkerInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092678823B359D0005A20D7 /* CustomMarkerInfoWindow.swift */; };
+		F092678B23B359EE005A20D7 /* CustomMarkerInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F092678A23B359EE005A20D7 /* CustomMarkerInfoWindow.xib */; };
 		FF0054EC23B2651F009FE1C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0054EB23B2651F009FE1C0 /* AppDelegate.swift */; };
 		FF0054EE23B2651F009FE1C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0054ED23B2651F009FE1C0 /* SceneDelegate.swift */; };
 		FF0054F523B26525009FE1C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0054F423B26525009FE1C0 /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 		AA468EFB1453250FE1F6EDA8 /* Pods-ExampleGoogleMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleGoogleMaps.release.xcconfig"; path = "Target Support Files/Pods-ExampleGoogleMaps/Pods-ExampleGoogleMaps.release.xcconfig"; sourceTree = "<group>"; };
 		B20696443F0652F4654B5890 /* Pods-ExampleGoogleMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleGoogleMaps.debug.xcconfig"; path = "Target Support Files/Pods-ExampleGoogleMaps/Pods-ExampleGoogleMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		C6581F71887477F766069E81 /* Pods_ExampleGoogleMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleGoogleMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F092678323B34B17005A20D7 /* DetailMarkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMarkerViewController.swift; sourceTree = "<group>"; };
+		F092678423B34B17005A20D7 /* DetailMarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMarkerViewController.xib; sourceTree = "<group>"; };
+		F092678823B359D0005A20D7 /* CustomMarkerInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerInfoWindow.swift; sourceTree = "<group>"; };
+		F092678A23B359EE005A20D7 /* CustomMarkerInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMarkerInfoWindow.xib; sourceTree = "<group>"; };
 		FF0054E823B2651F009FE1C0 /* ExampleGoogleMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleGoogleMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0054EB23B2651F009FE1C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF0054ED23B2651F009FE1C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +67,24 @@
 				C6581F71887477F766069E81 /* Pods_ExampleGoogleMaps.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F092677C23B34A7D005A20D7 /* DetailMarker */ = {
+			isa = PBXGroup;
+			children = (
+				F092678323B34B17005A20D7 /* DetailMarkerViewController.swift */,
+				F092678423B34B17005A20D7 /* DetailMarkerViewController.xib */,
+			);
+			path = DetailMarker;
+			sourceTree = "<group>";
+		};
+		F092678723B359A6005A20D7 /* CustomMarKerInforWindow */ = {
+			isa = PBXGroup;
+			children = (
+				F092678823B359D0005A20D7 /* CustomMarkerInfoWindow.swift */,
+				F092678A23B359EE005A20D7 /* CustomMarkerInfoWindow.xib */,
+			);
+			path = CustomMarKerInforWindow;
 			sourceTree = "<group>";
 		};
 		FF0054DF23B2651F009FE1C0 = {
@@ -111,6 +137,8 @@
 		FF00550123B2656D009FE1C0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F092678723B359A6005A20D7 /* CustomMarKerInforWindow */,
+				F092677C23B34A7D005A20D7 /* DetailMarker */,
 				FF00550223B26588009FE1C0 /* MapsViewController.swift */,
 				FF00550323B26588009FE1C0 /* MapsViewController.xib */,
 				FF00550823B265B3009FE1C0 /* Base */,
@@ -189,6 +217,8 @@
 				FF0054F823B26525009FE1C0 /* LaunchScreen.storyboard in Resources */,
 				FF00550523B26588009FE1C0 /* MapsViewController.xib in Resources */,
 				FF0054F523B26525009FE1C0 /* Assets.xcassets in Resources */,
+				F092678B23B359EE005A20D7 /* CustomMarkerInfoWindow.xib in Resources */,
+				F092678623B34B17005A20D7 /* DetailMarkerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F092678523B34B17005A20D7 /* DetailMarkerViewController.swift in Sources */,
 				FF00550423B26588009FE1C0 /* MapsViewController.swift in Sources */,
+				F092678923B359D0005A20D7 /* CustomMarkerInfoWindow.swift in Sources */,
 				FF00550723B265AF009FE1C0 /* BaseViewController.swift in Sources */,
 				FF0054EC23B2651F009FE1C0 /* AppDelegate.swift in Sources */,
 				FF0054EE23B2651F009FE1C0 /* SceneDelegate.swift in Sources */,

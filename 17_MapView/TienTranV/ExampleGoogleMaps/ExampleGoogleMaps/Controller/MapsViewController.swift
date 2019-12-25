@@ -33,6 +33,7 @@ final class MapsViewController: BaseViewController {
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
         self.mapView = mapView
+        self.mapView.delegate = self
         view.addSubview(mapView)
     }
 
@@ -42,10 +43,10 @@ final class MapsViewController: BaseViewController {
     }
 
     private func addMarkersIntToMapView (location: CLLocation) {
+
         let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
         marker.title = "AT Company"
         marker.snippet = "KCN An Đồn"
-        marker.icon = #imageLiteral(resourceName: "ic-destination")
         marker.appearAnimation = .pop
         marker.map = mapView
     }
@@ -97,6 +98,17 @@ extension MapsViewController: CLLocationManagerDelegate {
         polyline.strokeWidth = 10.0
         polyline.geodesic = true
         polyline.map = mapView
+    }
+}
 
+extension MapsViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        guard let inforWindow = Bundle.main.loadNibNamed("CustomMarkerInfoWindow", owner: self, options: nil)?.first as? CustomMarkerInfoWindow else { return UIView() }
+        inforWindow.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
+        inforWindow.backgroundColor = .white
+        inforWindow.clipsToBounds = true
+        inforWindow.layer.cornerRadius = 10
+        inforWindow.configUI(title: "AT Company", snippet: "KCN An Đồn")
+        return inforWindow
     }
 }
