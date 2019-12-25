@@ -21,7 +21,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }()
 
     var window: UIWindow?
-    lazy var locationManager = CLLocationManager()
+//    lazy var locationManager = CLLocationManager()
+    var locationManager: CLLocationManager?
     let mapsViewController = MapsViewController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -64,6 +65,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - Location manager
 extension SceneDelegate {
     func configLocationService() {
+        guard let locationManager = locationManager else { return }
         locationManager.delegate = self
         let status = CLLocationManager.authorizationStatus()
         switch status {
@@ -91,23 +93,22 @@ extension SceneDelegate {
 
     // Standard location service
     func startStandardLocationService() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.distanceFilter = 50
-        locationManager.startUpdatingLocation()
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.distanceFilter = 50
+        locationManager?.startUpdatingLocation()
     }
 
     func stopStandardLocationService() {
-        locationManager.stopUpdatingLocation()
+        locationManager?.stopUpdatingLocation()
     }
 
     // Significant change location service
-
     func startSignificantChangeLocationService() {
-        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager?.startMonitoringSignificantLocationChanges()
     }
 
     func stopSignificantChangeLocationService() {
-        locationManager.stopMonitoringSignificantLocationChanges()
+        locationManager?.stopMonitoringSignificantLocationChanges()
     }
 }
 
@@ -124,12 +125,5 @@ extension SceneDelegate: CLLocationManagerDelegate {
             @unknown default:
             fatalError("authorization status error")
         }
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let lastLocation = locations.last else { return }
-        print("timestampe \(lastLocation.timestamp)")
-        print("lat \(lastLocation.coordinate.latitude)")
-        print("long \(lastLocation.coordinate.longitude)")
     }
 }
