@@ -15,6 +15,7 @@ final class HomeViewModel: ViewModel {
     var offset: Int = 0
     var places: [GooglePlace] = []
     var currentIndex: Int = 0
+    var imageDict: [String: [String]] = [:]
     
     // MARK: - Load data from API
     func loadPlaceData(completed: @escaping (Bool, String) -> Void) {
@@ -38,7 +39,20 @@ final class HomeViewModel: ViewModel {
                 completed(false, error.localizedDescription)
             case .success(let additionPlaces):
                 self.places.append(contentsOf: additionPlaces.places)
-                completed(true, "")
+                completed(true, "")            }
+        }
+    }
+    
+    func loadPlaceImageURLs(completed: @escaping (Bool, String) -> Void) {
+        for place in places {
+            ApiManager.Places.getPlaceImages(idPlace: place.idPlace) { (result) in
+                switch result {
+                case .failure(let error):
+                    completed(false, error.localizedDescription)
+                case .success(let imageStrings):
+                    self.imageDict["\(place.idPlace)"] = imageStrings.imageStrings
+                    completed(true, "")
+                }
             }
         }
     }
@@ -70,5 +84,24 @@ extension HomeViewModel {
     
     func removePlace(at indexPath: IndexPath) {
         places.remove(at: indexPath.row)
+    }
+    
+    func getImageURLs(with idPlace: String) -> [String] {
+        for place in places {
+            if place.idPlace == idPlace {
+                if let imageStrings = imageDict["\(idPlace)"] {
+                    return imageStrings
+                }
+            }
+        }
+        return [""]
+    }
+    
+    func getPlaceID(with index: Int) -> String {
+        return places[index].idPlace
+    }
+    
+    func getPlaces() -> [GooglePlace] {
+        return places
     }
 }

@@ -17,8 +17,8 @@ enum TravelModes: String {
 }
 
 final class DirectionService: NSObject, CLLocationManagerDelegate {
-    
-    let baseURLDirections = "https://maps.googleapis.com/maps/api/directions/json?"
+
+    // MARK: - Properties
     var direction: DirectionOverview?
     var selectLegs = [Leg]()
     var selectSteps = [Step]()
@@ -26,24 +26,22 @@ final class DirectionService: NSObject, CLLocationManagerDelegate {
     var destinationCoordinate: CLLocationCoordinate2D?
     var totalDistanceInMeters = 0
     var totalDistance: String {
-        return "TotalDistance" + "\(totalDistanceInMeters/1000) Km"
+        return "TotalDistance" + "\(totalDistanceInMeters / 1000) Km"
     }
     var totalDurationInSeconds = 0
     var totalDuration: String {
-        return "TotalDuration" + "\(totalDurationInSeconds/86400) days, " +
-            "\((totalDurationInSeconds/3600)%24) hours, " +
-            "\((totalDurationInSeconds/60)%60) mins, " +
-        "\(totalDurationInSeconds%60) secs"
+        return "TotalDuration" + "\(totalDurationInSeconds / 86400) days, " +
+            "\((totalDurationInSeconds / 3600) % 24) hours, " +
+            "\((totalDurationInSeconds / 60) % 60) mins, " +
+            "\(totalDurationInSeconds % 60) secs"
     }
-    
-    
-    override init(){
+
+
+    override init() {
         super.init()
     }
-    
-    func getDirections(origin: String?,
-                       destination: String?, travelMode: TravelModes,
-                       getDirectionStatus: @escaping ((_ success: Bool) -> Void)) {
+
+    func getDirections(origin: String?, destination: String?, travelMode: TravelModes, getDirectionStatus: @escaping ((_ success: Bool) -> Void)) {
         guard let originAddress = origin else {
             getDirectionStatus(false)
             return
@@ -52,10 +50,8 @@ final class DirectionService: NSObject, CLLocationManagerDelegate {
             getDirectionStatus(false)
             return
         }
-        var directionsURLString = baseURLDirections + "origin=" +
-            originAddress + "&destination=" + destinationAddress
-        directionsURLString += "&mode=" + travelMode.rawValue + "&key=" + ApiManager.Key.API
-        self.parseJsonGoogleMap(directionsURLString: directionsURLString)
+
+        self.parseJsonGoogleMap(directionsURLString: ApiManager.Direction.QuerryString.direction(originAddress: originAddress, destinationAddress: destinationAddress, travelMode: travelMode).url)
         { (success) in
             if success {
                 print("parse ok")
@@ -65,38 +61,36 @@ final class DirectionService: NSObject, CLLocationManagerDelegate {
             }
         }
     }
-    
-    func parseJsonGoogleMap(directionsURLString: String,
-                            completion: @escaping ((_ success: Bool) -> Void)) {
+
+    func parseJsonGoogleMap(directionsURLString: String, completion: @escaping ((_ success: Bool) -> Void)) {
         if let directionsURL = URL(string: directionsURLString) {
-            DispatchQueue.global(qos: .userInitiated).async {
-                guard let jsonString = try? String(contentsOf: directionsURL),
-                    let direction = DirectionOverview(JSONString: jsonString),
-                    direction.status != "" else {
-                        completion(false)
-                        return
-                }
-                self.direction = direction
-                var success = false
-                if direction.status == "OK" {
-                    if !direction.routes.isEmpty {
-                        if direction.routes[0].overviewPolyline.points != "",
-                            !direction.routes[0].legs.isEmpty,
-                            !direction.routes[0].legs[0].steps.isEmpty {
-                            self.selectLegs = direction.routes[0].legs
-                            let result = self.calculateTotalDistanceAndDuration()
-                            success = result
-                        }
+            guard let jsonString = try? String(contentsOf: directionsURL),
+                let direction = DirectionOverview(JSONString: jsonString),
+                direction.status != "" else {
+                    completion(false)
+                    return
+            }
+            print("------\(jsonString)")
+            self.direction = direction
+            var success = false
+            if direction.status == "OK" {
+                if !direction.routes.isEmpty {
+                    if direction.routes[0].overviewPolyline.points != "",
+                        !direction.routes[0].legs.isEmpty,
+                        !direction.routes[0].legs[0].steps.isEmpty {
+                        self.selectLegs = direction.routes[0].legs
+                        let result = self.calculateTotalDistanceAndDuration()
+                        success = result
                     }
                 }
-                completion(success)
             }
+            completion(success)
         } else {
             completion(false)
             return
         }
     }
-    
+
     func calculateTotalDistanceAndDuration() -> Bool {
         var status = false
         for leg in self.selectLegs {
@@ -112,5 +106,4 @@ final class DirectionService: NSObject, CLLocationManagerDelegate {
         status = true
         return status
     }
-    
 }

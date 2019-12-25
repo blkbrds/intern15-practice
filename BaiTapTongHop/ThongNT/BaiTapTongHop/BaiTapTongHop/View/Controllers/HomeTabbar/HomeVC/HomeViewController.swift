@@ -44,9 +44,10 @@ final class HomeViewController: ViewController {
         setupCollectionView()
         setupRefreshControl()
     }
-    
+
     // MARK: - Setup Data
     override func setupData() {
+        
         activityIndicator.startAnimating()
         // Load data from API
         viewModel.loadPlaceData { (done, errorString) in
@@ -58,7 +59,7 @@ final class HomeViewController: ViewController {
             }
         }
     }
-    
+
     //MARK: - Functions
     private func updateUI(action: Action, indexPath: IndexPath? = nil) {
         switch action {
@@ -96,7 +97,7 @@ final class HomeViewController: ViewController {
             }
         }
     }
-    
+
     @objc private func goToMap() {
         guard let naviController = tabBarController?.viewControllers?[1] as? UINavigationController else { return }
         let vc = naviController.topViewController as? MapViewController
@@ -112,7 +113,7 @@ extension HomeViewController {
         title = "Home"
         let changeLayoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "naviBar_icon_collection_icon.png"), style: .plain, target: self, action: #selector(switchLayout))
         navigationItem.rightBarButtonItem = changeLayoutButton
-        
+
         let mapButton = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(goToMap))
         navigationItem.leftBarButtonItem = mapButton
     }
@@ -125,7 +126,7 @@ extension HomeViewController {
         activityIndicator.type = .lineScalePulseOut
         activityIndicator.color = .red
         view.addSubview(activityIndicator)
-        
+
         // Setup refresh control
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
@@ -209,14 +210,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
         vc.delegate = self
+        vc.dataSource = self
         vc.viewModel.indexOfItem = viewModel.currentIndex
         vc.viewModel = viewModel.getDetailViewModel(indexPath: indexPath)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-//MARK: - Extension DetailViewControllerDelegate
-extension HomeViewController: DetailViewControllerDelegate {
+//MARK: - Extension DetailViewController Delegate, DataSource
+extension HomeViewController: DetailViewControllerDelegate, DetailViewControllerDataSource {
+
+    func getImageURLs() -> [String] {
+        return viewModel.getImageURLs(with: viewModel.getPlaceID(with: viewModel.currentIndex))
+    }
+
     func detailViewController(view: DetailViewController, needsPerform action: DetailViewController.Action) {
         switch action {
         case .changeFavorite(let index):
@@ -294,6 +301,7 @@ extension HomeViewController: HomeCollectionCellDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailViewController()
         vc.delegate = self
+        vc.dataSource = self
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -301,7 +309,7 @@ extension HomeViewController: HomeCollectionCellDelegate {
 // MARK: - MapViewController DataSource
 extension HomeViewController: MapViewControllerDataSource {
     func getPlaces() -> [GooglePlace] {
-        return viewModel.places
+        return viewModel.getPlaces()
     }
 }
 

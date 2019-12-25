@@ -17,7 +17,7 @@ final class HomeCell: TableCell {
 
     //MARK: - IBOulet
     @IBOutlet private weak var favoriteButton: UIButton!
-    @IBOutlet private weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!

@@ -17,6 +17,12 @@
 		0F915A6B23B2B85100310514 /* Leg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F915A6A23B2B85100310514 /* Leg.swift */; };
 		0F915A6D23B2B88800310514 /* GoogleMapValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F915A6C23B2B88800310514 /* GoogleMapValue.swift */; };
 		0F915A6F23B2B8AE00310514 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F915A6E23B2B8AE00310514 /* Step.swift */; };
+		0F915A7123B2D5BC00310514 /* Api.Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F915A7023B2D5BC00310514 /* Api.Direction.swift */; };
+		0F915A7623B3237700310514 /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F915A7423B3237700310514 /* SlideTableViewCell.swift */; };
+		0F915A7723B3237700310514 /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F915A7523B3237700310514 /* SlideTableViewCell.xib */; };
+		0FFF935923B36481001E9316 /* SlideImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFF935823B36481001E9316 /* SlideImageCellViewModel.swift */; };
+		0FFF935C23B3725E001E9316 /* SlideImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFF935A23B3725E001E9316 /* SlideImageCollectionViewCell.swift */; };
+		0FFF935D23B3725E001E9316 /* SlideImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFF935B23B3725E001E9316 /* SlideImageCollectionViewCell.xib */; };
 		8FEAAA7DE53DA48A3729F3CE /* Pods_BaiTapTongHop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6655B635F14A057DC97B144 /* Pods_BaiTapTongHop.framework */; };
 		B228016D2390B9E400EA6143 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228016B2390B9E400EA6143 /* DetailTableViewCell.swift */; };
 		B228016E2390B9E400EA6143 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B228016C2390B9E400EA6143 /* DetailTableViewCell.xib */; };
@@ -86,6 +92,12 @@
 		0F915A6A23B2B85100310514 /* Leg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leg.swift; sourceTree = "<group>"; };
 		0F915A6C23B2B88800310514 /* GoogleMapValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapValue.swift; sourceTree = "<group>"; };
 		0F915A6E23B2B8AE00310514 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		0F915A7023B2D5BC00310514 /* Api.Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Direction.swift; sourceTree = "<group>"; };
+		0F915A7423B3237700310514 /* SlideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTableViewCell.swift; sourceTree = "<group>"; };
+		0F915A7523B3237700310514 /* SlideTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
+		0FFF935823B36481001E9316 /* SlideImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideImageCellViewModel.swift; sourceTree = "<group>"; };
+		0FFF935A23B3725E001E9316 /* SlideImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		0FFF935B23B3725E001E9316 /* SlideImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		A42295CBE3C6F0F8443EE1E7 /* Pods-BaiTapTongHop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapTongHop.release.xcconfig"; path = "Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop.release.xcconfig"; sourceTree = "<group>"; };
 		B228016B2390B9E400EA6143 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		B228016C2390B9E400EA6143 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -189,6 +201,11 @@
 				B228016B2390B9E400EA6143 /* DetailTableViewCell.swift */,
 				B228016C2390B9E400EA6143 /* DetailTableViewCell.xib */,
 				B22801702390BC9A00EA6143 /* DetailCellViewModel.swift */,
+				0F915A7423B3237700310514 /* SlideTableViewCell.swift */,
+				0F915A7523B3237700310514 /* SlideTableViewCell.xib */,
+				0FFF935823B36481001E9316 /* SlideImageCellViewModel.swift */,
+				0FFF935A23B3725E001E9316 /* SlideImageCollectionViewCell.swift */,
+				0FFF935B23B3725E001E9316 /* SlideImageCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -260,6 +277,7 @@
 				B241AE17238B8CC500844F41 /* Core */,
 				B238146523A0DBDB0010EB0A /* Api.Downloader.swift */,
 				B22C702F23979F0E00328798 /* Api.Places.swift */,
+				0F915A7023B2D5BC00310514 /* Api.Direction.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -489,7 +507,9 @@
 				B2732CBF2387993D00E1CDCE /* Assets.xcassets in Resources */,
 				B229187E2397C40A001EA5A8 /* HomeCell.xib in Resources */,
 				B228016E2390B9E400EA6143 /* DetailTableViewCell.xib in Resources */,
+				0F915A7723B3237700310514 /* SlideTableViewCell.xib in Resources */,
 				B2732CFF23879D3700E1CDCE /* MapViewController.xib in Resources */,
+				0FFF935D23B3725E001E9316 /* SlideImageCollectionViewCell.xib in Resources */,
 				B241AE58238BCF9500844F41 /* DetailViewController.xib in Resources */,
 				B2381B12238D0D3F0053EA77 /* HomeCollectionCell.xib in Resources */,
 				B241AE0D238B823600844F41 /* FavoritesViewController.xib in Resources */,
@@ -587,6 +607,7 @@
 				0F915A6723B2B73C00310514 /* Bounds.swift in Sources */,
 				B228016D2390B9E400EA6143 /* DetailTableViewCell.swift in Sources */,
 				0F915A6F23B2B8AE00310514 /* Step.swift in Sources */,
+				0F915A7123B2D5BC00310514 /* Api.Direction.swift in Sources */,
 				0F915A5823B2B1DA00310514 /* DirectionService.swift in Sources */,
 				B241AE5C238BD48D00844F41 /* HomeViewModel.swift in Sources */,
 				B241AE3E238B8CC600844F41 /* CollectionCell.swift in Sources */,
@@ -600,6 +621,7 @@
 				B236E83A23A72F0F0046A95D /* API+Data.swift in Sources */,
 				B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */,
 				B241AE10238B825100844F41 /* ProfileViewController.swift in Sources */,
+				0F915A7623B3237700310514 /* SlideTableViewCell.swift in Sources */,
 				B22EE13623A9C8F7007DD4CD /* UIImageViewExt.swift in Sources */,
 				B2732CB82387993B00E1CDCE /* SceneDelegate.swift in Sources */,
 				B241AE3B238B8CC600844F41 /* String.swift in Sources */,
@@ -616,6 +638,8 @@
 				B241AE35238B8CC600844F41 /* Session.swift in Sources */,
 				B22C703023979F0E00328798 /* Api.Places.swift in Sources */,
 				0F915A6523B2B72100310514 /* Polyline.swift in Sources */,
+				0FFF935923B36481001E9316 /* SlideImageCellViewModel.swift in Sources */,
+				0FFF935C23B3725E001E9316 /* SlideImageCollectionViewCell.swift in Sources */,
 				0F915A6D23B2B88800310514 /* GoogleMapValue.swift in Sources */,
 				0F915A5A23B2B64300310514 /* DirectionOverview.swift in Sources */,
 				B22EBFB623ACB9EB0025D007 /* Marker.swift in Sources */,

@@ -21,6 +21,7 @@ final class GooglePlace {
     var categories: [[String: Any]] = [[:]]
     var iconString: String = ""
     var position = Position()
+    var images: [UIImage]?
 
     init() { }
 

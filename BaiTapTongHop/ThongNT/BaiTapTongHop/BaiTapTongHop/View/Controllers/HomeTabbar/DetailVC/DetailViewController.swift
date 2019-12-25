@@ -13,64 +13,98 @@ protocol DetailViewControllerDelegate: class {
     func detailViewController(view: DetailViewController, needsPerform action: DetailViewController.Action)
 }
 
+protocol DetailViewControllerDataSource: class {
+    func getImageURLs() -> [String]
+}
+
 final class DetailViewController: ViewController {
 
-    //MARK: - IBOulet
-    @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var tableView: UITableView!
-    
+
+    private let commentCell: String = "DetailTableViewCell"
+    private let slideCell: String = "SlideTableViewCell"
+
     enum Action {
         case changeFavorite(index: Int)
     }
 
-    //MARK: - Private Properties
+    //MARK: - Properties
     private let cellIdentifier: String = "DetailTableViewCell"
-    private let myLocation = CLLocation(latitude: 16.059142, longitude: 108.201540)
-    private let regionRadius: CLLocationDistance = 1000
 
+    weak var dataSource: DetailViewControllerDataSource?
     weak var delegate: DetailViewControllerDelegate?
     var viewModel = DetailViewModel()
 
-    //MARK: - Override Functions
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-        centerMapOnLocation(location: myLocation)
-    }
-
+    // MARK: - Setup
     override func setupUI() {
         super.setupUI()
-        title = "Detail"
         configTableView()
     }
-
-    //MARK: - Private Functions
-    private func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
+    
+    override func setupData() {
+        loadImageURLs()
     }
 
     private func configTableView() {
+        title = "Detail"
         tableView.register(UINib(nibName: cellIdentifier, bundle: .main), forCellReuseIdentifier: cellIdentifier)
+        tableView.register(UINib(nibName: slideCell, bundle: .main), forCellReuseIdentifier: slideCell)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func loadImageURLs() {
+        viewModel.loadImageURLs { (done, array) in
+            if !done {
+                return
+            }
+            self.viewModel.setImageURLs(with: array)
+            self.tableView.reloadData()
+        }
     }
 }
 
 //MARK: - Extention TableView
 extension DetailViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 6
+        default:
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        return cell
+        switch indexPath.section {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: slideCell, for: indexPath) as? SlideTableViewCell else { return UITableViewCell()}
+            cell.imageURLs = viewModel.getImageURLs()
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell()}
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
 }
 
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        switch indexPath.section {
+        case 0:
+            return UIScreen.main.bounds.height / 3
+        case 1:
+            return UIScreen.main.bounds.height / 9
+        default:
+            return 100
+        }
     }
 }
