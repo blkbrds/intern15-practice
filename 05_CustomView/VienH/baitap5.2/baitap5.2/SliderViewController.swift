@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SliderViewController: UIViewController {
+final class SliderViewController: UIViewController {
 
     @IBOutlet weak var valueTextfield: UITextField!
     @IBOutlet weak var labelController: UILabel!
@@ -22,7 +22,6 @@ class SliderViewController: UIViewController {
 
     private func setupUI() {
         valueTextfield.text = "0 %"
-
         if let triangle = triangle {
             let frame = CGRect(x: view.bounds.width / 2 - 50, y: 200, width: 100, height: 400)
             triangle.frame = frame
@@ -34,7 +33,7 @@ class SliderViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
