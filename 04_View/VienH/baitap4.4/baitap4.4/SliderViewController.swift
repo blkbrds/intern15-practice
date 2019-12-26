@@ -9,13 +9,12 @@
 import UIKit
 
 class SliderViewController: UIViewController {
-    
+
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var boardCoLorLabel: UILabel!
     @IBOutlet weak var inForCoLorLabel: UILabel!
-    
     var redColor: CGFloat = 100 {
         didSet {
             changeVaLueCoLor()
@@ -26,14 +25,11 @@ class SliderViewController: UIViewController {
             changeVaLueCoLor()
         }
     }
-    
     var blueColor: CGFloat = 100 {
         didSet {
             changeVaLueCoLor()
         }
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -47,20 +43,20 @@ class SliderViewController: UIViewController {
         blueSlider.value = Float(blueColor)
         changeVaLueCoLor()
     }
-    
-    @IBAction func changeVaLueCoLor(_ sender:Any) {
+
+    @IBAction func changeVaLueCoLor(_ sender: Any) {
         redColor = CGFloat(redSlider.value)
     }
     @IBAction func changeGreenVaLueCoLor(_ sender: Any) {
         greenColor = CGFloat(greenSlider.value)
     }
-    @IBAction func changeBlueVaLueCoLor(_ sender:Any) {
+    @IBAction func changeBlueVaLueCoLor(_ sender: Any) {
         blueColor = CGFloat(blueSlider.value)
     }
-    
+
     func changeVaLueCoLor() {
-        self.boardCoLorLabel.backgroundColor = UIColor(displayP3Red: redColor/255, green: greenColor/255, blue: blueColor/255, alpha: 1)
-        self.inForCoLorLabel.text = "CoLor( R: \(Int(redColor)), G: \(Int(greenColor)), B: \(Int(blueColor)))"
+        boardCoLorLabel.backgroundColor = UIColor(displayP3Red: redColor / 255, green: greenColor / 255, blue: blueColor / 255, alpha: 1)
+        inForCoLorLabel.text = "CoLor( R: \(Int(redColor)), G: \(Int(greenColor)), B: \(Int(blueColor)))"
     }
 }
 

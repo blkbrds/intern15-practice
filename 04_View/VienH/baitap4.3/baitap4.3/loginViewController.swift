@@ -10,8 +10,8 @@ import UIKit
 
 class loginViewController: UIViewController {
     let userName: String = "admin"
-    let passWorld: String = "admin123"
-    
+    let password: String = "admin123"
+
     enum Error: String {
         case khongNhap = "Ban chua nhap gi ca"
         case nhapSai = "Ban da nhap sai"
@@ -23,56 +23,56 @@ class loginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userTextField: UITextField!
-    
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            userTextField.delegate = self
-            userTextField.tag = 0
-            passwordTextField.delegate = self
-            passwordTextField.tag = 1
-        }
 
-        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            view.endEditing(true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userTextField.delegate = self
+        userTextField.tag = 0
+        passwordTextField.delegate = self
+        passwordTextField.tag = 1
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
+    func login () {
+        switch (userTextField.text, passwordTextField.text) {
+        case ("", ""):
+            commentLabel.text = Error.khongNhap.rawValue
+        case (userName, password):
+            commentLabel.text = "Chúc mừng bạn đã đăng nhập thành công"
+        case ("", _), (_, ""):
+            commentLabel.text = Error.thieu.rawValue
+        default:
+            commentLabel.text = Error.nhapSai.rawValue
         }
-        
-        func login () {
-            switch (userTextField.text, passwordTextField.text) {
-            case ("", ""):
-                commentLabel.text = Error.khongNhap.rawValue
-            case (userName, passWorld):
-                commentLabel.text = "Chúc mừng bạn đã đăng nhập thành công"
-            case ("", _), (_, ""):
-                commentLabel.text = Error.thieu.rawValue
-            default:
-                commentLabel.text = Error.nhapSai.rawValue
-            }
-            view.endEditing(true)
-        }
-        
-        @IBAction func tapLoginButton(_ sender: Any) {
+        view.endEditing(true)
+    }
+
+    @IBAction func tapLoginButton(_ sender: Any) {
+        login()
+    }
+
+    @IBAction func tapClearButton(_ sender: Any) {
+        userTextField.text = ""
+        passwordTextField.text = ""
+    }
+}
+
+extension loginViewController: UITextFieldDelegate {
+    //ban phim di xuong
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 0 {
+            passwordTextField.becomeFirstResponder() }
+        if textField.tag == 1 {
             login()
         }
-
-        @IBAction func tapClearButton(_ sender: Any) {
-            userTextField.text = ""
-            passwordTextField.text = ""
-        }
     }
-
-    extension loginViewController: UITextFieldDelegate {
-        //ban phim di xuong
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
-        }
-
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            if textField.tag == 0 {
-                passwordTextField.becomeFirstResponder() }
-            if textField.tag == 1 {
-                login()
-            }
-        }
-    }
+}
 

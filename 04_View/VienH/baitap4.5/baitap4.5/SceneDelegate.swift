@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
               let window = UIWindow(windowScene: windowScene)
         //        let navigation = UINavigationController(rootViewController: Ex05ViewController())
-              window.rootViewController = TouchMoveSilerViewController()
+              window.rootViewController = TouchMoveSliderViewController()
               self.window = window
               window.makeKeyAndVisible()
         guard let _ = (scene as? UIWindowScene) else { return }

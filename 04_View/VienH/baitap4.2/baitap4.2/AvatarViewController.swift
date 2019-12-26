@@ -2,8 +2,8 @@ import UIKit
 
 class AvatarViewController: UIViewController {
 
-    let names: [String] = ["Hoang Vien", "Hanh NGuyen", "Thong MyLove", "Phuoc", "Tien Tran", "Bien", "Duy XT", "Tien Boss", "123123", "234234", "123411", "345567"]
-    let images: [String] = ["download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg",
+    let names: [String] = ["Hoang Vien", "Hanh Nguyen", "Thong MyLove", "Phuoc", "Tien Tran", "Bien", "Duy XT", "Tien Boss", "123123", "234234", "123411", "345567"]
+    let imagesName: [String] = ["download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg",
         "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg"]
     let spacing: CGFloat = 10
     var heightAvatarView = 160
@@ -17,7 +17,7 @@ class AvatarViewController: UIViewController {
                 cot = 0
                 dong += 1
             }
-            creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong), image: images[i], name: names[i])
+            creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong), image: imagesName[i], name: names[i])
             cot += 1
         }
     }
@@ -51,6 +51,7 @@ class AvatarViewController: UIViewController {
         userName.textColor = .blue
         avatarView.addSubview(userName)
     }
+
     @objc func handleBtn(_ sender: UITapGestureRecognizer) {
         guard let name = sender.name else { return }
         print("", name)

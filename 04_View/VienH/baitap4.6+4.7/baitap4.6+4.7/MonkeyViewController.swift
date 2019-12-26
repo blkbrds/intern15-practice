@@ -9,10 +9,10 @@
 import UIKit
 
 class MonkeyViewController: UIViewController {
-    
+
     @IBOutlet weak var monkeyImageView: UIImageView!
     @IBOutlet weak var monkeyLabel: UILabel!
-    
+
     var scaleSize: CGSize = CGSize.zero
 
     override func viewDidLoad() {
@@ -48,7 +48,7 @@ class MonkeyViewController: UIViewController {
             })
         }
     }
-@objc func handleTap(sender: UITapGestureRecognizer) {
+    @objc func handleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
             self.monkeyLabel.text = "Tôi là khỉ"
             self.monkeyLabel.alpha = 1
