@@ -1,29 +1,27 @@
 import UIKit
 import Foundation
 //Ham tinh dien tich va the tich hinh cau
-func hinhcau(bk: Float)->(dt: Float,tt: Float){
+func tinhDienTichTheTichHinhCau(bk: Float)->(dt: Float,tt: Float){
     let pi: Float=3.14
     let dt = 4 * pi * bk * bk
     let tt = 4/3 * pi * bk * bk * bk
     return (dt,tt)
 }
-print("dien tich la: \((hinhcau(bk: 5)).dt)")
-print("the tich la: \((hinhcau(bk: 5)).tt)")
+print("dien tich la: \((tinhDienTichTheTichHinhCau(bk: 5)).dt)")
+print("the tich la: \((tinhDienTichTheTichHinhCau(bk: 5)).tt)")
 
 
 
 
-enum Nghiem {
-    case phuongtrinhco1nghiem(x: Float)
-     case phuongtrinhvonghiem
-    case phuongtrinhcohainghiem(x: Float , y: Float)
-     case phuongtrinhvosonghiem
-    case hephuongtrinhvonghiem
-    case hephuongtrinhvosonghiem
-    case hephuongtrinhco1nghem(x: Float,y: Float)
-}
+
 
 //Ham giai phuong trinh bac 2
+enum Nghiem {
+    case phuongtrinhco1nghiem(x: Float)
+    case phuongtrinhvonghiem
+    case phuongtrinhcohainghiem(x: Float , y: Float)
+    case phuongtrinhvosonghiem
+}
 func tinhPhuongTrinhBac2(a:Float,b:Float,c:Float)-> Nghiem {
     let delta : Float = Float(b * b - 4 * a * c)
     if a == 0 {
@@ -51,7 +49,12 @@ tinhPhuongTrinhBac2(a: 5, b: 0, c: 0)
 
 
 //Ham giai he phuong trinh 2 an
-func giaiHePhuongTrinh2an(a1: Float,b1: Float,c1: Float,a2: Float, b2: Float,c2: Float)-> Nghiem{
+enum NghiemHe {
+    case hephuongtrinhvonghiem
+    case hephuongtrinhvosonghiem
+    case hephuongtrinhco1nghem(x: Float,y: Float)
+}
+func giaiHePhuongTrinh2an(a1: Float,b1: Float,c1: Float,a2: Float, b2: Float,c2: Float)-> NghiemHe{
     
     let D: Float = a1 * b2 - a2 * b1
     let Dx: Float = c1 * b2 - c2 * b1
@@ -59,9 +62,9 @@ func giaiHePhuongTrinh2an(a1: Float,b1: Float,c1: Float,a2: Float, b2: Float,c2:
     
     if D == 0 {
         if Dx == Dy {
-        return Nghiem.hephuongtrinhvosonghiem
+        return NghiemHe.hephuongtrinhvosonghiem
         }   else {
-            return Nghiem.hephuongtrinhvonghiem
+            return NghiemHe.hephuongtrinhvonghiem
         }
 }
     else {
