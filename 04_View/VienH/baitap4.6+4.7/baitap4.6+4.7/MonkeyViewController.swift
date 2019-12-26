@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MonkeyViewController: UIViewController {
+final class MonkeyViewController: UIViewController {
 
     @IBOutlet weak var monkeyImageView: UIImageView!
     @IBOutlet weak var monkeyLabel: UILabel!
@@ -48,6 +48,7 @@ class MonkeyViewController: UIViewController {
             })
         }
     }
+    
     @objc func handleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
             self.monkeyLabel.text = "Tôi là khỉ"

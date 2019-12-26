@@ -1,6 +1,6 @@
 import UIKit
 
-class AvatarViewController: UIViewController {
+final class AvatarViewController: UIViewController {
 
     let names: [String] = ["Hoang Vien", "Nguyen Hong Hanh", "Nguyen Thong", "Tran Duy", "Tran Tien", "123123", "456456", "Tran Bien", "789789"]
     let imagesName: [String] = ["download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg", "download.jpeg"]

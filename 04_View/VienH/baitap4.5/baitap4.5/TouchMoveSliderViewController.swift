@@ -1,6 +1,6 @@
 import UIKit
 
-class TouchMoveSliderViewController: UIViewController {
+final class TouchMoveSliderViewController: UIViewController {
 
     @IBOutlet weak var thumbSliderLabel: UILabel!
     @IBOutlet weak var sliderBarView: UIView!
@@ -25,7 +25,6 @@ class TouchMoveSliderViewController: UIViewController {
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 27
         view.layer.borderColor = UIColor.green.cgColor
-
     }
 
     func setupThumbSliderLabel() {

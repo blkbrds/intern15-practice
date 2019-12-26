@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SliderViewController: UIViewController {
+final class SliderViewController: UIViewController {
 
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
@@ -34,6 +34,7 @@ class SliderViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+
     func setupUI() {
         changeValueColor()
         boardColorLabel.clipsToBounds = true
@@ -47,9 +48,11 @@ class SliderViewController: UIViewController {
     @IBAction func changeValueColor(_ sender: Any) {
         redColor = CGFloat(redSlider.value)
     }
+
     @IBAction func changeGreenValueColor(_ sender: Any) {
         greenColor = CGFloat(greenSlider.value)
     }
+
     @IBAction func changeBlueValueColor(_ sender: Any) {
         blueColor = CGFloat(blueSlider.value)
     }

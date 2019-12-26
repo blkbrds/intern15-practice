@@ -8,7 +8,7 @@
 
 import UIKit
 
-class loginViewController: UIViewController {
+final class loginViewController: UIViewController {
     let userName: String = "admin"
     let password: String = "admin123"
 
