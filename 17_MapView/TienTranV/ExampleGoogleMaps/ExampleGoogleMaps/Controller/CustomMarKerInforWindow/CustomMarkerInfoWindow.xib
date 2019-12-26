@@ -25,14 +25,14 @@
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cf-pJ-8f4">
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cf-pJ-8f4">
                     <rect key="frame" x="145" y="10" width="50" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="3Cf-pJ-8f4" secondAttribute="height" multiplier="1:1" id="yDk-f0-rI9"/>
                     </constraints>
                     <state key="normal" image="info.circle.fill" catalog="system"/>
                     <connections>
-                        <action selector="detailTouchUpInSide:" destination="iN0-l3-epB" eventType="touchUpInside" id="m1c-Pg-4Qb"/>
+                        <action selector="detailButtonTouchUpInSide:" destination="iN0-l3-epB" eventType="touchUpInside" id="m1c-Pg-4Qb"/>
                     </connections>
                 </button>
             </subviews>

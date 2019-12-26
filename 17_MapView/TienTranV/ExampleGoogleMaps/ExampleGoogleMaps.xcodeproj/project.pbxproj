@@ -12,6 +12,8 @@
 		F092678623B34B17005A20D7 /* DetailMarkerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F092678423B34B17005A20D7 /* DetailMarkerViewController.xib */; };
 		F092678923B359D0005A20D7 /* CustomMarkerInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F092678823B359D0005A20D7 /* CustomMarkerInfoWindow.swift */; };
 		F092678B23B359EE005A20D7 /* CustomMarkerInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F092678A23B359EE005A20D7 /* CustomMarkerInfoWindow.xib */; };
+		F0AC55C523B4AF17005AAF4E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC55C423B4AF17005AAF4E /* Extension.swift */; };
+		F0F26D3323B45D980097CC64 /* API+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F26D3223B45D980097CC64 /* API+Data.swift */; };
 		FF0054EC23B2651F009FE1C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0054EB23B2651F009FE1C0 /* AppDelegate.swift */; };
 		FF0054EE23B2651F009FE1C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0054ED23B2651F009FE1C0 /* SceneDelegate.swift */; };
 		FF0054F523B26525009FE1C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0054F423B26525009FE1C0 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		F092678423B34B17005A20D7 /* DetailMarkerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMarkerViewController.xib; sourceTree = "<group>"; };
 		F092678823B359D0005A20D7 /* CustomMarkerInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerInfoWindow.swift; sourceTree = "<group>"; };
 		F092678A23B359EE005A20D7 /* CustomMarkerInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomMarkerInfoWindow.xib; sourceTree = "<group>"; };
+		F0AC55C423B4AF17005AAF4E /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F0F26D3223B45D980097CC64 /* API+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Data.swift"; sourceTree = "<group>"; };
 		FF0054E823B2651F009FE1C0 /* ExampleGoogleMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleGoogleMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0054EB23B2651F009FE1C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF0054ED23B2651F009FE1C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,22 @@
 			path = CustomMarKerInforWindow;
 			sourceTree = "<group>";
 		};
+		F0E02D0723B4549E008BBAC1 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				F0AC55C423B4AF17005AAF4E /* Extension.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		F0F26D3123B45D830097CC64 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F0F26D3223B45D980097CC64 /* API+Data.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		FF0054DF23B2651F009FE1C0 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +128,7 @@
 		FF0054EA23B2651F009FE1C0 /* ExampleGoogleMaps */ = {
 			isa = PBXGroup;
 			children = (
+				F0F26D3123B45D830097CC64 /* API */,
 				FF00550123B2656D009FE1C0 /* Controller */,
 				FF0054FF23B26545009FE1C0 /* AppDelegate */,
 				FF00550023B2655B009FE1C0 /* Resource */,
@@ -137,6 +158,7 @@
 		FF00550123B2656D009FE1C0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F0E02D0723B4549E008BBAC1 /* Extention */,
 				F092678723B359A6005A20D7 /* CustomMarKerInforWindow */,
 				F092677C23B34A7D005A20D7 /* DetailMarker */,
 				FF00550223B26588009FE1C0 /* MapsViewController.swift */,
@@ -166,6 +188,7 @@
 				FF0054E523B2651F009FE1C0 /* Frameworks */,
 				FF0054E623B2651F009FE1C0 /* Resources */,
 				1CCE9CDAF963A514E4399C34 /* [CP] Copy Pods Resources */,
+				8D6AD6A303A669F5F87EEA3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -264,6 +287,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8D6AD6A303A669F5F87EEA3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExampleGoogleMaps/Pods-ExampleGoogleMaps-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExampleGoogleMaps/Pods-ExampleGoogleMaps-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExampleGoogleMaps/Pods-ExampleGoogleMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -273,10 +313,12 @@
 			files = (
 				F092678523B34B17005A20D7 /* DetailMarkerViewController.swift in Sources */,
 				FF00550423B26588009FE1C0 /* MapsViewController.swift in Sources */,
+				F0F26D3323B45D980097CC64 /* API+Data.swift in Sources */,
 				F092678923B359D0005A20D7 /* CustomMarkerInfoWindow.swift in Sources */,
 				FF00550723B265AF009FE1C0 /* BaseViewController.swift in Sources */,
 				FF0054EC23B2651F009FE1C0 /* AppDelegate.swift in Sources */,
 				FF0054EE23B2651F009FE1C0 /* SceneDelegate.swift in Sources */,
+				F0AC55C523B4AF17005AAF4E /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

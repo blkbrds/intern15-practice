@@ -16,7 +16,6 @@ let googleApiKey = "AIzaSyC-b5FJ-E5kQh3Gk0EO8DWxj5lCVgwOG8o"
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
         GMSServices.provideAPIKey(googleApiKey)
         GMSPlacesClient.provideAPIKey(googleApiKey)
         return true

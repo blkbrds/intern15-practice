@@ -15,7 +15,7 @@ protocol DetailMarkerViewControllerDelegate: class {
 final class DetailMarkerViewController: BaseViewController {
 
     enum Action {
-        case updateMarker(title: String?, snippet: String?)
+        case updateMarker(title: String, snippet: String)
     }
 
     @IBOutlet private weak var titleTextField: UITextField!
@@ -24,14 +24,31 @@ final class DetailMarkerViewController: BaseViewController {
     var snippetLabel: String?
     var titleLable: String?
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configUI()
+    }
+
+    override func setupUI() {
+        super.setupUI()
+        configNavigation()
+    }
+
     func configUI() {
         guard let snippetLabel = snippetLabel, let titleLable = titleLable else { return }
         titleTextField.text = titleLable
         snippetTextField.text = snippetLabel
     }
 
-    override func popViewController() {
-        super.popViewController()
-        delegate?.viewController(viewController: self, needPerfrom: .updateMarker(title: titleTextField.text, snippet: snippetTextField.text))
+    private func configNavigation() {
+        let backBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backToViewController))
+        navigationItem.backBarButtonItem = backBarButtonItem
+    }
+
+    @objc private func backToViewController() {
+        print("aaaa")
+        guard let titleTex = titleTextField.text, let snippetText = snippetTextField.text else { return }
+        delegate?.viewController(viewController: self, needPerfrom: .updateMarker(title: titleTex, snippet: snippetText))
+        popViewController()
     }
 }

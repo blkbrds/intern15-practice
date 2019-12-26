@@ -18,22 +18,21 @@ final class CustomMarkerInfoWindow: UIView {
         case pushToDetail
     }
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var snippetLabel: UILabel!
+    typealias GetDataInfor = () -> (titleText: String, snippetText: String)
+
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var snippetLabel: UILabel!
 
     weak var delegate: CustomMarkerInfoWindowDelegate?
-
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-//        Bundle.main.loadNibNamed("CustomMarkerInfoWindow", owner: self, options: nil)
+    
+    func configUI(getDataInfor: GetDataInfor) {
+        let data = getDataInfor()
+        titleLabel.text = data.titleText
+        snippetLabel.text = data.snippetText
     }
 
-    func configUI(title: String, snippet: String) {
-        titleLabel.text = title
-        snippetLabel.text = snippet
-    }
-
-    @IBAction func detailTouchUpInSide(_ sender: Any) {
+    @IBAction private func detailButtonTouchUpInSide(_ sender: Any) {
+        print("detailButtonTouchUpInSide")
         delegate?.customView(customView: self, needPerform: .pushToDetail)
     }
 }
