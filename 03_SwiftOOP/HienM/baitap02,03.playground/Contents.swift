@@ -50,6 +50,4 @@ class TamGiac: DaGiac {
 		let dienTich = sqrt (p * (p - a) * (p - b) * (p - c))
 		return dienTich
 	}
-	func ungDung(array: [TamGiac]) {
-	}
 }

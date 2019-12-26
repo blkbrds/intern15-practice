@@ -6,7 +6,7 @@ class TamGiac {
 		self.mangTamGiac = mangTamGiac
 	}
 
-	func Pitago(tamgiac: [Double]) -> Bool {
+	func pitago(tamgiac: [Double]) -> Bool {
 		let a = mangTamGiac[0]
 		let b = mangTamGiac[1]
 		let c = mangTamGiac[2]
@@ -17,9 +17,8 @@ class TamGiac {
 			return false
 		}
 	}
-
-	func tamGiacPytago(in tamgiacs: [TamGiac]) {
-		for tamgiac in tamgiacs where Pitago(tamgiac: mangTamGiac) {
+	func kiemTraTamGiacPytago(in tamgiacs: [TamGiac]) {
+		for tamgiac in tamgiacs where pitago(tamgiac: mangTamGiac) {
 			print(tamgiac.mangTamGiac)
 		}
 	}
