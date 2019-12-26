@@ -1,6 +1,6 @@
 import UIKit
 
-class A {
+final class A {
     static func tinhTong(n: Int) {
         var s = 0
         for i in 1...n {

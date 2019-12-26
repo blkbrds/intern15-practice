@@ -7,6 +7,7 @@ class PhanSo {
         self.tu = tu
         self.mau = mau
     }
+
     func cong(voi a: PhanSo) -> PhanSo {
         let tu = self.tu * a.mau + self.mau * a.tu
         let mau = self.mau * a.mau
@@ -35,6 +36,7 @@ class PhanSo {
         print("\(tu)/\(mau)")
     }
 }
+
 var phanSo = PhanSo(tu: 1, mau: 2)
 let cong = phanSo.cong(voi: PhanSo(tu: 2, mau: 1))
 print("Cong hai phan so la: ")

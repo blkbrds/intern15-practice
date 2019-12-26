@@ -1,49 +1,87 @@
 import UIKit
-//baitap01
+//baitap02
 
 class DaGiac {
-    let soCanh: Int
-    var giaTriCuaCanh: [Int]
-    init?(soCanh: Int, giaTriCuaCanh: [Int]) {
-        guard soCanh > 0 else { return nil }
+    var soCanh: Int
+    var mangKichThuocCanh: [Int]
+    init(soCanh: Int, mangKichThuocCanh: [Int]) {
         self.soCanh = soCanh
-        guard giaTriCuaCanh.count >= soCanh else { return nil }
-        self.giaTriCuaCanh = Array(giaTriCuaCanh[0..<soCanh])
+        self.mangKichThuocCanh = mangKichThuocCanh
     }
-    func inCacCanh() {
-        self.giaTriCuaCanh.forEach { print($0) }
+
+    func tinhChuVi() -> Int {
+        var chuVi = 0
+        for i in 0..<soCanh {
+            chuVi += mangKichThuocCanh[i]
+        }
+        return chuVi
     }
-    func chuVi() -> Int {
-        return self.giaTriCuaCanh.reduce(0) { $0 + $1 }
+
+    func kichThuocMoiCanh() -> [String: Int] {
+        var giaTriCacCanh = [String: Int]()
+        for i in 0..<soCanh {
+            giaTriCacCanh["Canh thu \(i + 1)"] = mangKichThuocCanh[i]
+        }
+        return giaTriCacCanh
     }
 }
+
+var daGiac = DaGiac(soCanh: 5, mangKichThuocCanh: [3, 6, 7, 20, 200])
+print("Chu vi da giac = \(daGiac.tinhChuVi())")
+print(daGiac.kichThuocMoiCanh())
+
 //baitap03
 class TamGiac: DaGiac {
-    init?(giaTriCuaCanh: [Int]) {
-        guard giaTriCuaCanh.count == 3 else { return nil }
-        super.init(soCanh: 3, giaTriCuaCanh: giaTriCuaCanh)
+    var a: Int
+    var b: Int
+    var c: Int
+    init(mangKichThuocCanh: [Int]) {
+        a = mangKichThuocCanh[0]
+        b = mangKichThuocCanh[1]
+        c = mangKichThuocCanh[2]
+        super.init(soCanh: 3, mangKichThuocCanh: mangKichThuocCanh)
     }
-    override func chuVi() -> Int {
-        super.chuVi()
+
+    override func tinhChuVi() -> Int {
+        super.tinhChuVi()
+        return a + b + c
     }
-    func dienTich() -> Double {
-        let p = Double(chuVi()) / 2
-        return sqrt(p * (p - Double(giaTriCuaCanh[0])) * (p - Double(giaTriCuaCanh[1])) * (p - Double(giaTriCuaCanh[2])))
+
+    func tinhDienTich() -> Double {
+        let p = tinhChuVi() / 2
+        let sBinhPhuong = p * (p - a) * (p - b) * (p - c)
+        return sqrt(Double(sBinhPhuong))
     }
 }
+
+var tamGiac = TamGiac(mangKichThuocCanh: [3, 4, 5])
+print("Chu vi cua tam giac = \(tamGiac.tinhChuVi())")
+print("Dien tich cua tam giac = \(tamGiac.tinhDienTich())")
+
 //baiTap04
-func ktTamGiacPytago(tamgiac: TamGiac) -> Bool {
-    if tamgiac.giaTriCuaCanh[0] * tamgiac.giaTriCuaCanh[0] + tamgiac.giaTriCuaCanh[1] * tamgiac.giaTriCuaCanh[1] == tamgiac.giaTriCuaCanh[2] * tamgiac.giaTriCuaCanh[2] ||
-        tamgiac.giaTriCuaCanh[0] * tamgiac.giaTriCuaCanh[0] + tamgiac.giaTriCuaCanh[2] * tamgiac.giaTriCuaCanh[2] == tamgiac.giaTriCuaCanh[1] * tamgiac.giaTriCuaCanh[1] ||
-        tamgiac.giaTriCuaCanh[2] * tamgiac.giaTriCuaCanh[2] + tamgiac.giaTriCuaCanh[1] * tamgiac.giaTriCuaCanh[1] == tamgiac.giaTriCuaCanh[0] * tamgiac.giaTriCuaCanh[0] {
-        return true
+final class GamePitago {
+    var n: Int
+    var mangTamGiac: [(Int, Int, Int)]
+    init(n: Int, mangTamGiac: [(Int, Int, Int)]) {
+        self.n = n
+        self.mangTamGiac = mangTamGiac
     }
-    return false
-}
-func tamGiacPytago(in tamgiacs: [TamGiac]) {
-    for tamgiac in tamgiacs where ktTamGiacPytago(tamgiac: tamgiac) {
-        print(tamgiac.giaTriCuaCanh)
+
+    func kiemTraPitago(tamGiac: (Int, Int, Int)) -> Bool {
+        let a = Double(tamGiac.0)
+        let b = Double(tamGiac.1)
+        let c = Double(tamGiac.2)
+        return pow(a, 2) + pow(b, 2) == pow(c, 2) ? true : (pow(a, 2) + pow(c, 2) == pow(b, 2) ? true : (pow(c, 2) + pow(b, 2) == pow(a, 2) ? true : false))
+    }
+
+    func mangTamGiacPitago() -> [(Int, Int, Int)] {
+        var mangTamGiacPitago = [(Int, Int, Int)]()
+        for i in 0..<mangTamGiac.count where kiemTraPitago(tamGiac: mangTamGiac[i]) {
+            mangTamGiacPitago.append(mangTamGiac[i])
+        }
+        return mangTamGiacPitago
     }
 }
-let dagiac = DaGiac(soCanh: 3, giaTriCuaCanh: [1, 2, 3, 4])
-dagiac?.chuVi()
+
+var newGame = GamePitago(n: 3, mangTamGiac: [(3, 4, 5), (1, 2, 3), (5, 12, 13)])
+print("Mang tam giac Pitago la: \(newGame.mangTamGiacPitago())")

@@ -1,52 +1,49 @@
 import UIKit
 
-// 3.5_3.9 Tao class ngan xep stack thuc hien kiem tra rong, day, them 1 phan tu, xoa 1 phan tu, so lon nhat, so nho nhat
-class CSTack {
+final class CStack {
+
     // MARK: - Properties
-    var arr: [Int] = []
-    let numberElements: Int
+    var array: [Int] = []
+    let numberOfElements: Int
 
     // MARK: - Init
-    init(numberElements: Int) {
-        self.numberElements = numberElements
+    init(numberOfElements: Int) {
+        self.numberOfElements = numberOfElements
     }
 
     // MARK: - Public func
     func isStackFull() -> Bool {
-        return arr.count >= numberElements
+        return array.count >= numberOfElements
     }
 
     func isStackEmpty() -> Bool {
-        return arr.isEmpty
+        return array.isEmpty
     }
 
     func push(element: Int) {
         guard !isStackFull() else { return }
-        arr.append(element)
+        array.append(element)
     }
 
     func pop() {
         guard !isStackEmpty() else { return }
-        arr.removeLast()
+        array.removeLast()
     }
 
     func printStack() {
-        print(arr)
+        print(array)
     }
 
     func getMaxValue() -> Int {
-        guard let max = arr.max() else { return 0 }
+        guard let max = array.max() else { return 0 }
         return max
     }
 
     func getMinValue() -> Int {
-        guard let min = arr.min() else { return 0 }
+        guard let min = array.min() else { return 0 }
         return min
     }
 }
-
-// Bai Tap 3.6
-import UIKit
 
 class HinhVe {
     var ten: String
@@ -56,7 +53,7 @@ class HinhVe {
     }
 
     func dienTich() -> Float {
-        0
+        return 0
     }
 
     func chuVi() -> Float {
@@ -70,8 +67,7 @@ class HinhVe {
 
 class HaiChieu: HinhVe { }
 
-class HinhTron: HaiChieu {
-
+final class HinhTron: HaiChieu {
     private var banKinhR: Float = 0
 
     init(banKinh: Float, ten: String) {
@@ -80,30 +76,36 @@ class HinhTron: HaiChieu {
     }
 
     override func dienTich() -> Float {
+        super.dienTich()
         return .pi * banKinhR * banKinhR
     }
 
     override func chuVi() -> Float {
+        super.chuVi()
         return .pi * 2 * banKinhR
     }
 }
 
-class HinhVuong: HaiChieu {
+final class HinhVuong: HaiChieu {
     private var Canh: Float = 0
 
     init(Canh: Float, ten: String) {
         super.init(ten: ten)
         self.Canh = Canh
     }
+
     override func chuVi() -> Float {
+        super.chuVi()
         return Canh * 4
     }
+
     override func dienTich() -> Float {
-        Canh * Canh
+        super.dienTich()
+        return Canh * Canh
     }
 }
 
-class TamGiac: HaiChieu {
+final class TamGiac: HaiChieu {
     private var chieuDai: Float = 0
     var chieuRong: Float = 0
     var chieuCao: Float = 0
@@ -114,25 +116,30 @@ class TamGiac: HaiChieu {
         self.chieuDai = chieuDai
         self.chieuRong = chieuRong
     }
+
     override func chuVi() -> Float {
+        super.chuVi()
         return chieuDai + chieuRong + chieuCao
     }
+
     override func dienTich() -> Float {
+        super.dienTich()
         return chieuDai * chieuDai * sqrt(3) / 4
     }
 }
-var a: TamGiac = TamGiac (chieuDai: 1, chieuRong: 2, chieuCao: 3, ten: "hinh tam giac")
+
+var a: TamGiac = TamGiac(chieuDai: 1, chieuRong: 2, chieuCao: 3, ten: "hinh tam giac")
 a.ten
 a.chuVi()
 a.dienTich()
 
-var z: HinhVuong = HinhVuong (Canh: 4, ten: "HinhVuong")
-z.ten
-z.chuVi()
-z.dienTich()
+var b: HinhVuong = HinhVuong(Canh: 4, ten: "HinhVuong")
+b.ten
+b.chuVi()
+b.dienTich()
 
-var x: HinhTron = HinhTron(banKinh: 10, ten: "HinhTron")
-x.ten
-x.chuVi()
-x.dienTich()
+var c: HinhTron = HinhTron(banKinh: 10, ten: "HinhTron")
+c.ten
+c.chuVi()
+c.dienTich()
 
