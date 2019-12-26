@@ -23,6 +23,7 @@ final class MapsViewController: BaseViewController {
     // initialize and keep a marker and a custom infowindow
     private var tappedMarker: GMSMarker?
     private var inforWindow = CustomMarkerInfoWindow()
+    private var placesClient: GMSPlacesClient!
 
     private let a = CLLocation(latitude: 16.0810513, longitude: 108.2331371)
     private let b = CLLocation(latitude: 16.0715256, longitude: 108.2324076)
@@ -34,6 +35,7 @@ final class MapsViewController: BaseViewController {
         configMapView()
         configNavigation()
         showMarKer()
+        placesClient = GMSPlacesClient.shared()
     }
 
     private func configMapView() {
@@ -49,6 +51,24 @@ final class MapsViewController: BaseViewController {
         guard let currentLocation = currentLocation else { return }
         let camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: zoomLevel)
         mapView.camera = camera
+    }
+
+    private func getCurrenPlace() {
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))!
+        placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: fields) { (placeLikelihoodList: Array<GMSPlaceLikelihood>?, error: Error?) in
+            if let error = error {
+                print("An error occurred: \(error.localizedDescription)")
+                return
+            }
+
+            if let placeLikelihoodList = placeLikelihoodList {
+                for likelihood in placeLikelihoodList {
+                    let place = likelihood.place
+                    print("Current Place name \(String(describing: place.name)) at likelihood \(likelihood.likelihood)")
+                    print("Current PlaceID \(String(describing: place.placeID))")
+                }
+            }
+        }
     }
 
     private func configLocationServices() {
@@ -82,6 +102,7 @@ final class MapsViewController: BaseViewController {
         print("Start")
         SceneDelegate.shared.startStandardLocationService()
         configCurrentLocation()
+        getCurrenPlace()
     }
 
     @objc private func stopStandardLocationService() {
@@ -154,6 +175,7 @@ extension MapsViewController: GMSMapViewDelegate {
             inforWindow = inforWindowTmp
         }
         inforWindow.delegate = self
+        // get data to configUI!!!!! ?
         inforWindow.configUI { return ("AT Company", "KCN An Don") }
         inforWindow.center = mapView.projection.point(for: location).subtractPoint(subY: 80)
         view.addSubview(inforWindow)
