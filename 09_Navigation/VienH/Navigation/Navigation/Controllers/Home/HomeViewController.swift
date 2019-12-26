@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
         exercises.append("Ex1")
         exercises.append("Ex2")
         exercises.append("Ex3")
-            }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -52,7 +52,6 @@ extension HomeViewController: UITableViewDelegate {
         default:
             let viewcontroller = FirstViewController()
             navigationController?.pushViewController(viewcontroller, animated: true)
-
         }
     }
 }

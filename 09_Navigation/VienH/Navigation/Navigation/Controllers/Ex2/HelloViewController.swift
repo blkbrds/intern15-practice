@@ -8,31 +8,30 @@
 
 import UIKit
 
-class HelloViewController: UIViewController {
-    
+final class HelloViewController: UIViewController {
+
     var username = ""
     @IBOutlet weak var userNameLabel: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
-        
         userNameLabel.text = "Hello, \(username)!"
         configNavigationBar()
     }
-    
+
     private func configNavigationBar() {
         let rightButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(pushToViewController))
         navigationItem.rightBarButtonItem = rightButton
     }
-    
+
     @objc private func pushToViewController() {
         let vc = EditViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     @IBAction func pushToPreviousButton() {
         navigationController?.popViewController(animated: true)
-        
+
     }
 }

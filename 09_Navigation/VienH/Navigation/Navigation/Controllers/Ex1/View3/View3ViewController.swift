@@ -8,28 +8,26 @@
 
 import UIKit
 
-class View3ViewController: UIViewController {
+final class View3ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "View 3"
     }
+
     @IBAction func pushToNextButton() {
         let vc = View4ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     @IBAction func pushToPreviousButton() {
         navigationController?.popViewController(animated: true)
     }
-    
-   
-         
+
     @IBAction func pushToRootButton(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
-        
-}
-    
+    }
+
     @IBAction func pushToPreviousView1Button() {
         guard let navi = navigationController else { return }
         for vc in navi.viewControllers {

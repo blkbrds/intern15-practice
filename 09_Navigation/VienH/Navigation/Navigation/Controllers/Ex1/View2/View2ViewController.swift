@@ -8,23 +8,22 @@
 
 import UIKit
 
-class View2ViewController: UIViewController {
+final class View2ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "View 2"
-        
     }
-    
+
     @IBAction func pushToNextButton() {
         let vc = View3ViewController()
         navigationController?.pushViewController(vc, animated: true)
-        }
-    
-    @IBAction func pushToPreviousButton() {
-    navigationController?.popViewController(animated: true)
     }
-    
+
+    @IBAction func pushToPreviousButton() {
+        navigationController?.popViewController(animated: true)
+    }
+
     @IBAction func pushToRootButton() {
         navigationController?.popToRootViewController(animated: true)
     }

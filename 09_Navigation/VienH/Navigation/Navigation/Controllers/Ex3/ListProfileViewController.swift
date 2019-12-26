@@ -1,9 +1,9 @@
 import UIKit
 
-class ListProfileViewController: UIViewController {
+final class ListProfileViewController: UIViewController {
 
     let names: [String] = ["Hoang Vien", "Hanh Nguyen", "Thong MyLove", "Phuoc", "Tien Tran", "Bien", "Duy XT", "Tien Boss", "123123", "234234", "123411", "345567"]
-    let images: [String] = ["download", "download", "download (3)", "download (4)", "download (5)", "download (6)",
+    let imagesName: [String] = ["download", "download", "download (3)", "download (4)", "download (5)", "download (6)",
         "download (7)", "download (8)", "images (1)", "images (2)", "images (3)", "images"]
     let spacing: CGFloat = 10
     var heightAvatarView = 160
@@ -17,11 +17,10 @@ class ListProfileViewController: UIViewController {
                 cot = 0
                 dong += 1
             }
-            creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong), image: images[i], name: names[i])
+            creatAvatarView(x: 20 + (((UIScreen.main.bounds.width - 40) - 2 * spacing) / 3 + spacing) * CGFloat(cot), y: 70 + (160 + spacing) * CGFloat(dong), image: imagesName[i], name: names[i])
             cot += 1
         }
     }
-    
 
     func creatAvatarView(x: CGFloat = 20, y: CGFloat = 70, image: String = "Defaultdownload.jpeg", name: String = "User name") {
         let width = ((UIScreen.main.bounds.width - 40) - 2 * spacing) / 3
@@ -39,10 +38,10 @@ class ListProfileViewController: UIViewController {
         userAvatar.frame = CGRect(x: 0, y: 0, width: avatarView.bounds.width, height: avatarView.bounds.height * 0.8)
         userAvatar.contentMode = .scaleToFill
         userAvatar.isUserInteractionEnabled = true
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBtn))
         tapGesture.name = "\(name),\(image)"
-            
+
         userAvatar.addGestureRecognizer(tapGesture)
         avatarView.addSubview(userAvatar)
         let userName = UILabel(frame: CGRect(x: 0, y: userAvatar.bounds.height, width: avatarView.bounds.width, height: avatarView.bounds.height * 0.2))
@@ -54,16 +53,14 @@ class ListProfileViewController: UIViewController {
         userName.textColor = .blue
         avatarView.addSubview(userName)
     }
+
     @objc func handleBtn(_ sender: UITapGestureRecognizer) {
         guard let string = sender.name else { return }
-        
         let s = string.split(separator: ",")
-
         let vc = ProfileViewController()
         vc.name = String(describing: s[0])
         vc.image = String(describing: s[1])
-        
-        navigationController?.pushViewController(vc, animated: true )
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

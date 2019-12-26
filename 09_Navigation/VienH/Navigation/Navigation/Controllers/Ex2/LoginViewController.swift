@@ -7,17 +7,17 @@
 //
 
 import UIKit
- 
+
 final class LoginViewController: UIViewController {
 
     @IBOutlet private weak var passwordTextfield: UITextField!
     @IBOutlet private weak var userNameTextfield: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         userNameTextfield.text = ""

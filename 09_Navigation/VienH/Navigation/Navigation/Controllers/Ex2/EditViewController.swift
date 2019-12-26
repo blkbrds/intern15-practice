@@ -8,21 +8,21 @@
 
 import UIKit
 
-class EditViewController: UIViewController {
+final class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Edit"
         configNavigationBar()
-
     }
+
     private func configNavigationBar() {
-            let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(pushToViewController))
-            navigationItem.rightBarButtonItem = rightButton
-        }
-        
-        @objc private func pushToViewController() {
-            let vc = HelloViewController()
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(pushToViewController))
+        navigationItem.rightBarButtonItem = rightButton
+    }
+
+    @objc private func pushToViewController() {
+        let vc = HelloViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
