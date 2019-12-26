@@ -11,19 +11,13 @@ print("dien tich la: \((hinhcau(bk: 5)).dt)")
 print("the tich la: \((hinhcau(bk: 5)).tt)")
 
 
-
-
+//Ham giai phuong trinh bac 2
 enum Nghiem {
     case phuongtrinhco1nghiem(x: Float)
-     case phuongtrinhvonghiem
+    case phuongtrinhvonghiem
     case phuongtrinhcohainghiem(x: Float , y: Float)
-     case phuongtrinhvosonghiem
-    case hephuongtrinhvonghiem
-    case hephuongtrinhvosonghiem
-    case hephuongtrinhco1nghem(x: Float,y: Float)
+    case phuongtrinhvosonghiem
 }
-
-//Ham giai phuong trinh bac 2
 func tinhPhuongTrinhBac2(a:Float,b:Float,c:Float)-> Nghiem {
     let delta : Float = Float(b * b - 4 * a * c)
     if a == 0 {
@@ -50,8 +44,14 @@ func tinhPhuongTrinhBac2(a:Float,b:Float,c:Float)-> Nghiem {
 tinhPhuongTrinhBac2(a: 5, b: 0, c: 0)
 
 
+
 //Ham giai he phuong trinh 2 an
-func giaiHePhuongTrinh2an(a1: Float,b1: Float,c1: Float,a2: Float, b2: Float,c2: Float)-> Nghiem{
+enum nghiemHePhuongTrinh {
+    case hephuongtrinhvonghiem
+    case hephuongtrinhvosonghiem
+    case hephuongtrinhco1nghem(x: Float,y: Float)
+}
+func giaiHePhuongTrinh2an(a1: Float,b1: Float,c1: Float,a2: Float, b2: Float,c2: Float)-> nghiemHePhuongTrinh{
     
     let D: Float = a1 * b2 - a2 * b1
     let Dx: Float = c1 * b2 - c2 * b1
@@ -59,13 +59,13 @@ func giaiHePhuongTrinh2an(a1: Float,b1: Float,c1: Float,a2: Float, b2: Float,c2:
     
     if D == 0 {
         if Dx == Dy {
-        return Nghiem.hephuongtrinhvosonghiem
+        return nghiemHePhuongTrinh.hephuongtrinhvosonghiem
         }   else {
-            return Nghiem.hephuongtrinhvonghiem
+            return nghiemHePhuongTrinh.hephuongtrinhvonghiem
         }
 }
     else {
-        return Nghiem.hephuongtrinhco1nghem(x: Dx / D, y: Dy / D)
+        return nghiemHePhuongTrinh.hephuongtrinhco1nghem(x: Dx / D, y: Dy / D)
     }
 }
 
@@ -98,7 +98,7 @@ func tinhTongFibbo(so: Int)->(Int){
     return tong1
 }
 print(tinhTongFibbo(so: 90))
-
+//Ham in ra day fibo
 func inFibo(so: Int) {
     var fibo: [Int] = []
     fibo = Array(repeating: 0, count: 100)
