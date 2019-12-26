@@ -12,14 +12,14 @@ class SliderViewController: UIViewController {
 
     @IBOutlet weak var valueTextfield: UITextField!
     @IBOutlet weak var labelController: UILabel!
-    
+
     private let triangle = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)?[0] as? SliderView
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
-    
+
     private func setupUI() {
         valueTextfield.text = "0 %"
 
@@ -34,6 +34,7 @@ class SliderViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
