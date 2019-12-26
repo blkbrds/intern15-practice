@@ -13,21 +13,21 @@ class SliderViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var boardCoLorLabel: UILabel!
-    @IBOutlet weak var inForCoLorLabel: UILabel!
+    @IBOutlet weak var boardColorLabel: UILabel!
+    @IBOutlet weak var inForColorLabel: UILabel!
     var redColor: CGFloat = 100 {
         didSet {
-            changeVaLueCoLor()
+            changeValueColor()
         }
     }
     var greenColor: CGFloat = 100 {
         didSet {
-            changeVaLueCoLor()
+            changeValueColor()
         }
     }
     var blueColor: CGFloat = 100 {
         didSet {
-            changeVaLueCoLor()
+            changeValueColor()
         }
     }
     override func viewDidLoad() {
@@ -35,28 +35,28 @@ class SliderViewController: UIViewController {
         setupUI()
     }
     func setupUI() {
-        changeVaLueCoLor()
-        boardCoLorLabel.clipsToBounds = true
-        boardCoLorLabel.layer.cornerRadius = 20
+        changeValueColor()
+        boardColorLabel.clipsToBounds = true
+        boardColorLabel.layer.cornerRadius = 20
         redSlider.value = Float(greenColor)
         greenSlider.value = Float(greenColor)
         blueSlider.value = Float(blueColor)
-        changeVaLueCoLor()
+        changeValueColor()
     }
 
-    @IBAction func changeVaLueCoLor(_ sender: Any) {
+    @IBAction func changeValueColor(_ sender: Any) {
         redColor = CGFloat(redSlider.value)
     }
-    @IBAction func changeGreenVaLueCoLor(_ sender: Any) {
+    @IBAction func changeGreenValueColor(_ sender: Any) {
         greenColor = CGFloat(greenSlider.value)
     }
-    @IBAction func changeBlueVaLueCoLor(_ sender: Any) {
+    @IBAction func changeBlueValueColor(_ sender: Any) {
         blueColor = CGFloat(blueSlider.value)
     }
 
-    func changeVaLueCoLor() {
-        boardCoLorLabel.backgroundColor = UIColor(displayP3Red: redColor / 255, green: greenColor / 255, blue: blueColor / 255, alpha: 1)
-        inForCoLorLabel.text = "CoLor( R: \(Int(redColor)), G: \(Int(greenColor)), B: \(Int(blueColor)))"
+    func changeValueColor() {
+        boardColorLabel.backgroundColor = UIColor(displayP3Red: redColor / 255, green: greenColor / 255, blue: blueColor / 255, alpha: 1)
+        inForColorLabel.text = "CoLor( R: \(Int(redColor)), G: \(Int(greenColor)), B: \(Int(blueColor)))"
     }
 }
 
