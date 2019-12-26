@@ -10,13 +10,13 @@ import UIKit
 
 final class HelloViewController: UIViewController {
 
-    var username = ""
+    var userName = ""
     @IBOutlet weak var userNameLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
-        userNameLabel.text = "Hello, \(username)!"
+        userNameLabel.text = "Hello, \(userName)!"
         configNavigationBar()
     }
 
@@ -32,6 +32,5 @@ final class HelloViewController: UIViewController {
 
     @IBAction func pushToPreviousButton() {
         navigationController?.popViewController(animated: true)
-
     }
 }

@@ -48,7 +48,6 @@ extension HomeViewController: UITableViewDelegate {
         case 1:
             let viewcontroller = LoginViewController()
             navigationController?.pushViewController(viewcontroller, animated: true)
-
         default:
             let viewcontroller = FirstViewController()
             navigationController?.pushViewController(viewcontroller, animated: true)

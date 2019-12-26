@@ -12,7 +12,7 @@ final class User {
     var userName: String
     var password: String
     var avatarImageName: String
-    
+
     init(userName: String, password: String, avatarImageName: String = "") {
         self.userName = userName
         self.avatarImageName = avatarImageName
