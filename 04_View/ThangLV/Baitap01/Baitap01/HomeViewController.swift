@@ -15,29 +15,26 @@ class HomeViewController: UIViewController {
 
         // Add user avatar
         let frame: CGRect = CGRect(x: 50, y: 100, width: 100, height: 100)
-        let userAvatar = UIImageView(image: UIImage(named: "No Avatar.jpg"))
-        userAvatar.frame = frame
-        userAvatar.contentMode = .scaleToFill
-        view.addSubview(userAvatar)
+        let userAvatarImageView = UIImageView(image: UIImage(named: "No Avatar.jpg"))
+        userAvatarImageView.frame = frame
+        userAvatarImageView.contentMode = .scaleToFill
+        view.addSubview(userAvatarImageView)
         
         //Add user name
-        let userName = UILabel(frame: CGRect(x: 50, y: 200, width: 100, height: 50))
-        userName.text = "User name"
-        userName.backgroundColor = .lightGray
-        userName.textColor = .blue
-        view.addSubview(userName)
+        let userNameLabel = UILabel(frame: CGRect(x: 50, y: 200, width: 100, height: 50))
+        userNameLabel.text = "User name"
+        userNameLabel.backgroundColor = .lightGray
+        userNameLabel.textColor = .blue
+        view.addSubview(userNameLabel)
         
         //Add button
         let button = UIButton(frame: CGRect(x: 50, y: 100, width: 100, height: 250))
         button.backgroundColor = .clear
-        button.addTarget(self, action: #selector(buttonDidClick), for: .touchUpInside)
+        button.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
         view.addSubview(button)
-        
-        
-    }
+}
      
-    @objc func buttonDidClick() {
+    @objc func clickButton() {
         print("Button is clicked!")
     }
-
 }

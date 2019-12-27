@@ -10,15 +10,13 @@ import UIKit
 
 class NewMonkeyViewController: UIViewController {
 
-
     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet private weak var newMonkeyImageView: UIImageView!
 
     var singleTapOnImageView = UITapGestureRecognizer()
     var doubleTapOnImageView = UITapGestureRecognizer()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    private func handleTappingImageView() {
         notificationLabel.isHidden = true
         singleTapOnImageView = UITapGestureRecognizer(target: self, action: #selector(singleTapOnImageViewHandler))
         singleTapOnImageView.numberOfTapsRequired = 1
@@ -28,24 +26,10 @@ class NewMonkeyViewController: UIViewController {
         newMonkeyImageView.addGestureRecognizer(doubleTapOnImageView)
         singleTapOnImageView.require(toFail: doubleTapOnImageView)
     }
-
-    @objc func singleTapOnImageViewHandler() {
-        notificationLabel.isHidden = false
-        notificationLabel.text = "Tôi là khỉ"
-        viewDidAppear(true)
-    }
-
-    @objc func doubleTapOnImageViewHandler() {
-        notificationLabel.isHidden = false
-        notificationLabel.text = "Khỉ là tôi :)))"
-        viewDidAppear(true)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    
+    private func displayViewWithAnimation() {
         notificationLabel.center.x = view.center.x
         notificationLabel.center.x -= view.bounds.width
-
         UIView.animate(withDuration: 0.5, animations: {
             self.notificationLabel.center.x += self.view.bounds.width
             self.view.layoutIfNeeded()
@@ -55,5 +39,22 @@ class NewMonkeyViewController: UIViewController {
                 self.view.layoutIfNeeded()
             })
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        handleTappingImageView()
+    }
+
+    @objc func singleTapOnImageViewHandler() {
+        notificationLabel.isHidden = false
+        notificationLabel.text = "Tôi là khỉ"
+        displayViewWithAnimation()
+    }
+
+    @objc func doubleTapOnImageViewHandler() {
+        notificationLabel.isHidden = false
+        notificationLabel.text = "Khỉ là tôi :)))"
+        displayViewWithAnimation()
     }
 }

@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SliderViewController" customModule="Baitap04" customModuleProvider="target">
             <connections>
-                <outlet property="blueSliderChangeColor" destination="8yR-Nq-G4g" id="Nd8-Mi-2kw"/>
-                <outlet property="greenSliderChangeColor" destination="8GR-yn-qzz" id="wiR-Qv-1uH"/>
-                <outlet property="infoColorLabel" destination="C26-bg-MMY" id="KA6-Eu-MAb"/>
-                <outlet property="redSliderChangeColor" destination="AD0-l7-3IY" id="34C-9Z-dJ2"/>
+                <outlet property="blueColorSlider" destination="8yR-Nq-G4g" id="nD1-HW-IUK"/>
+                <outlet property="colorInfoLabel" destination="C26-bg-MMY" id="cbq-oY-oiw"/>
+                <outlet property="colorView" destination="hx4-EQ-zaF" id="rrQ-Vq-j3Y"/>
+                <outlet property="greenColorSlider" destination="8GR-yn-qzz" id="KeV-MG-JUK"/>
+                <outlet property="redColorSlider" destination="AD0-l7-3IY" id="JWk-fY-Hhx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="viewNeedToChangeColor" destination="hx4-EQ-zaF" id="Gaq-H1-ct6"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -34,21 +32,21 @@
                     <rect key="frame" x="53" y="411" width="275" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
-                        <action selector="redSlider:" destination="-1" eventType="valueChanged" id="JaL-Wt-bFf"/>
+                        <action selector="dragRedSlider:" destination="-1" eventType="valueChanged" id="6sl-qO-fTy"/>
                     </connections>
                 </slider>
                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="127.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="8GR-yn-qzz">
                     <rect key="frame" x="53" y="455" width="275" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
-                        <action selector="greenSlider:" destination="-1" eventType="valueChanged" id="KIo-aa-zrW"/>
+                        <action selector="dragGreenSlider:" destination="-1" eventType="valueChanged" id="s7s-yg-jNd"/>
                     </connections>
                 </slider>
                 <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="127.5" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="8yR-Nq-G4g">
                     <rect key="frame" x="53" y="500" width="275" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
-                        <action selector="blueSlider:" destination="-1" eventType="valueChanged" id="xbw-Sq-bS3"/>
+                        <action selector="dragBlueSlider:" destination="-1" eventType="valueChanged" id="PQo-Cm-h28"/>
                     </connections>
                 </slider>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C26-bg-MMY">

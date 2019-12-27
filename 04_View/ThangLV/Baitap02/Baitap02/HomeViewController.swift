@@ -39,28 +39,28 @@ class HomeViewController: UIViewController {
     func createUser(x: Double, y: Double, index: Int) {
         //Add user avatar
         let frame: CGRect = CGRect(x: x, y: y, width: 100, height: 100)
-        let userAvatar: UIImageView = UIImageView(image: UIImage(named: "No Avatar.png"))
-        userAvatar.frame = frame
-        userAvatar.contentMode = .scaleToFill
-        view.addSubview(userAvatar)
+        let userAvatarImageView: UIImageView = UIImageView(image: UIImage(named: "No Avatar.png"))
+        userAvatarImageView.frame = frame
+        userAvatarImageView.contentMode = .scaleToFill
+        view.addSubview(userAvatarImageView)
 
         //Add user name
-        let userName: UILabel = UILabel(frame: CGRect(x: x, y: 100 + y, width: 100, height: 50))
-        userName.text = userNames[index]
-        userName.backgroundColor = .lightGray
-        userName.textColor = .blue
-        userName.textAlignment = .center
-        view.addSubview(userName)
+        let userNameLabel: UILabel = UILabel(frame: CGRect(x: x, y: 100 + y, width: 100, height: 50))
+        userNameLabel.text = userNames[index]
+        userNameLabel.backgroundColor = .lightGray
+        userNameLabel.textColor = .blue
+        userNameLabel.textAlignment = .center
+        view.addSubview(userNameLabel)
         
         //Add button
         let button = UIButton(frame: CGRect(x: x, y: y, width: 100, height: 250))
         button.backgroundColor = .clear
         button.tag = index
-        button.addTarget(self, action: #selector(buttonDidClick(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(clickButton(_:)), for: .touchUpInside)
         view.addSubview(button)
     }
     
-    @objc func buttonDidClick(_ sender: UIButton) {
+    @objc func clickButton(_ sender: UIButton) {
         print(userNames[sender.tag])
     }
 }

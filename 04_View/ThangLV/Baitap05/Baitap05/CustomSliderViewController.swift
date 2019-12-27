@@ -9,18 +9,21 @@
 import UIKit
 
 final class CustomSliderViewController: UIViewController {
+    
     @IBOutlet weak var thumbLabel: UILabel!
-    @IBOutlet weak var sliderDragView: UISlider!{
+    @IBOutlet weak var draggingSlider: UISlider!{
         didSet{
-            sliderDragView.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+            draggingSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
         }
     }
     
-    @IBAction func sliderDragHandler(_ sender: UISlider) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func handleDraggingSlider(_ sender: UISlider) {
         let currentValue = Int(sender.value)
         thumbLabel.text = "\(currentValue)"
-    }
-    override func viewDidLoad() {
     }
 }
 

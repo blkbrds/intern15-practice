@@ -28,7 +28,7 @@ final class HomeViewController: UIViewController {
         passWordTextField.text = ""
     }
 
-    @IBAction func loginTouchUpInside(_ sender: Any) {
+    @IBAction func touchUpInsideLoginButton(_ sender: Any) {
         login()
     }
 
@@ -66,7 +66,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        self.textFieldShouldReturn(userNameTextField)
     }
 
 }

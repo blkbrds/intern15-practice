@@ -18,37 +18,33 @@ struct Color {
 }
 
 final class SliderViewController: UIViewController {
-
-    
-    @IBOutlet weak var infoColorLabel: UILabel!
-    @IBOutlet weak var viewNeedToChangeColor: UIView!
-    @IBOutlet weak var redSliderChangeColor: UISlider!
-    @IBOutlet weak var greenSliderChangeColor: UISlider!
-    @IBOutlet weak var blueSliderChangeColor: UISlider!
+    @IBOutlet weak var colorInfoLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var redColorSlider: UISlider!
+    @IBOutlet weak var greenColorSlider: UISlider!
+    @IBOutlet weak var blueColorSlider: UISlider!
     
     var color = Color()
     
-    
-    @IBAction func redSlider(_ sender: Any) {
-        color.red = CGFloat(redSliderChangeColor.value)
-        viewNeedToChangeColor.backgroundColor = color.synthetic
-        infoColorLabel.text = "Color ( R : \(redSliderChangeColor.value), G : \(greenSliderChangeColor.value) , B : \(blueSliderChangeColor.value) )"
-    }
-    
-    
-    @IBAction func greenSlider(_ sender: Any) {
-        color.green = CGFloat(greenSliderChangeColor.value)
-        viewNeedToChangeColor.backgroundColor = color.synthetic
-        infoColorLabel.text = "Color ( R : \(redSliderChangeColor.value), G : \(greenSliderChangeColor.value) , B : \(blueSliderChangeColor.value) )"
-    }
-    
-    
-    @IBAction func blueSlider(_ sender: Any) {
-        color.blue = CGFloat(blueSliderChangeColor.value)
-        viewNeedToChangeColor.backgroundColor = color.synthetic
-        infoColorLabel.text = "Color ( R : \(redSliderChangeColor.value), G : \(greenSliderChangeColor.value) , B : \(blueSliderChangeColor.value) )"
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func dragRedSlider(_ sender: Any) {
+        color.red = CGFloat(redColorSlider.value)
+        colorView.backgroundColor = color.synthetic
+        colorInfoLabel.text = "Color(R : \(redColorSlider.value), G : \(greenColorSlider.value) , B : \(blueColorSlider.value) )"
+    }
+    
+    @IBAction func dragGreenSlider(_ sender: Any) {
+        color.green = CGFloat(greenColorSlider.value)
+        colorView.backgroundColor = color.synthetic
+        colorInfoLabel.text = "Color(R : \(redColorSlider.value), G : \(greenColorSlider.value) , B : \(blueColorSlider.value) )"
+    }
+    
+    @IBAction func dragBlueSlider(_ sender: Any) {
+        color.blue = CGFloat(blueColorSlider.value)
+        colorView.backgroundColor = color.synthetic
+        colorInfoLabel.text = "Color( R : \(redColorSlider.value), G : \(greenColorSlider.value) , B : \(blueColorSlider.value) )"
     }
 }
