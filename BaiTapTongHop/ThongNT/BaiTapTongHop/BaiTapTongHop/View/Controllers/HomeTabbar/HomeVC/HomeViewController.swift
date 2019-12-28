@@ -97,13 +97,6 @@ final class HomeViewController: ViewController {
             }
         }
     }
-
-    @objc private func goToMap() {
-        guard let naviController = tabBarController?.viewControllers?[1] as? UINavigationController else { return }
-        let vc = naviController.topViewController as? MapViewController
-        vc?.dataSource = self
-        tabBarController?.selectedIndex = 1
-    }
 }
 
 // MARK: - Setup UI
@@ -113,9 +106,6 @@ extension HomeViewController {
         title = "Home"
         let changeLayoutButton = UIBarButtonItem(image: #imageLiteral(resourceName: "naviBar_icon_collection_icon.png"), style: .plain, target: self, action: #selector(switchLayout))
         navigationItem.rightBarButtonItem = changeLayoutButton
-
-        let mapButton = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(goToMap))
-        navigationItem.leftBarButtonItem = mapButton
     }
 
     private func setupRefreshControl() {
@@ -143,9 +133,9 @@ extension HomeViewController {
 
     private func setupTableView() {
         let homeTableViewCellNib = UINib(nibName: Config.homeTableViewCellIdentifier, bundle: Bundle.main)
+        tableView.dataSource = self
         tableView.register(homeTableViewCellNib, forCellReuseIdentifier: Config.homeTableViewCellIdentifier)
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.refreshControl = refreshControl
     }
 }
@@ -179,7 +169,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Config.homeTableViewCellIdentifier, for: indexPath) as? HomeCell else { return TableCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
-        cell.delegate = self
 
         // Load more
         if indexPath.row == viewModel.getNumberOfPlaces() - 2 {
@@ -206,10 +195,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             present(alert, animated: true, completion: nil)
         }
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.delegate = self
         vc.dataSource = self
         vc.viewModel.indexOfItem = viewModel.currentIndex
         vc.viewModel = viewModel.getDetailViewModel(indexPath: indexPath)
@@ -218,44 +206,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 //MARK: - Extension DetailViewController Delegate, DataSource
-extension HomeViewController: DetailViewControllerDelegate, DetailViewControllerDataSource {
-
+extension HomeViewController: DetailViewControllerDataSource {
     func getImageURLs() -> [String] {
         return viewModel.getImageURLs(with: viewModel.getPlaceID(with: viewModel.currentIndex))
-    }
-
-    func detailViewController(view: DetailViewController, needsPerform action: DetailViewController.Action) {
-        switch action {
-        case .changeFavorite(let index):
-            viewModel.changeFavorite(at: index) { (done, error) in
-                if done {
-                    self.updateUI(action: .like)
-                } else {
-                    alert(title: App.Home.alertTitle, msg: error, buttons: ["OK"], preferButton: "", handler: nil)
-                }
-            }
-        }
-    }
-}
-
-//MARK: - Extension HomeCell Delegate
-extension HomeViewController: HomeCellDelegate {
-
-    func cell(cell: HomeCell, needsPerform action: HomeCell.Action) {
-        switch action {
-        case .addFavorite:
-            guard let index = tableView.indexPath(for: cell) else {
-                alert(title: App.Home.alertTitle, msg: "Can not add Favortie", buttons: ["OK"], preferButton: "", handler: nil)
-                return
-            }
-            viewModel.changeFavorite(at: index.row) { (done, error) in
-                if done {
-                    self.updateUI(action: .like, indexPath: index)
-                } else {
-                    alert(title: App.Home.alertTitle, msg: error, buttons: ["OK"], preferButton: "", handler: nil)
-                }
-            }
-        }
     }
 }
 
@@ -269,7 +222,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Config.homeCollectionViewCellIdentifier, for: indexPath) as? HomeCollectionCell else { return CollectionCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
-        cell.delegate = self
         return cell
     }
 
@@ -279,28 +231,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 //MARK: - Extension HomeCollectionCell Delegate
-extension HomeViewController: HomeCollectionCellDelegate {
-
-    func cell(cell: HomeCollectionCell, needsPerform action: HomeCollectionCell.Action) {
-        switch action {
-        case .addFavorite:
-            guard let index = collectionView.indexPath(for: cell) else {
-                alert(title: App.Home.alertTitle, msg: "Can not add Favortie", buttons: ["OK"], preferButton: "", handler: nil)
-                return
-            }
-            viewModel.changeFavorite(at: index.row) { (done, error) in
-                if done {
-                    self.updateUI(action: .like, indexPath: index)
-                } else {
-                    alert(title: App.Home.alertTitle, msg: error, buttons: ["OK"], preferButton: "", handler: nil)
-                }
-            }
-        }
-    }
+extension HomeViewController {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.delegate = self
         vc.dataSource = self
         navigationController?.pushViewController(vc, animated: true)
     }

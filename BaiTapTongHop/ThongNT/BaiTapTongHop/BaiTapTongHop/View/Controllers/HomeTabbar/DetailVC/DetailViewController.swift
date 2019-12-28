@@ -9,10 +9,6 @@
 import UIKit
 import MapKit
 
-protocol DetailViewControllerDelegate: class {
-    func detailViewController(view: DetailViewController, needsPerform action: DetailViewController.Action)
-}
-
 protocol DetailViewControllerDataSource: class {
     func getImageURLs() -> [String]
 }
@@ -32,7 +28,6 @@ final class DetailViewController: ViewController {
     private let cellIdentifier: String = "DetailTableViewCell"
 
     weak var dataSource: DetailViewControllerDataSource?
-    weak var delegate: DetailViewControllerDelegate?
     var viewModel = DetailViewModel()
 
     // MARK: - Setup
@@ -40,7 +35,7 @@ final class DetailViewController: ViewController {
         super.setupUI()
         configTableView()
     }
-    
+
     override func setupData() {
         loadImageURLs()
     }
@@ -51,8 +46,19 @@ final class DetailViewController: ViewController {
         tableView.register(UINib(nibName: slideCell, bundle: .main), forCellReuseIdentifier: slideCell)
         tableView.delegate = self
         tableView.dataSource = self
+
+        switch tabBarController?.selectedIndex {
+        case 0:
+            let addFavoriteButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addToFavorite))
+            navigationItem.rightBarButtonItem = addFavoriteButton
+        case 2:
+            let removeButton = UIBarButtonItem(title: "Remove", style: .done, target: self, action: #selector(removeFromFavorite))
+            navigationItem.rightBarButtonItem = removeButton
+        default:
+            break
+        }
     }
-    
+
     private func loadImageURLs() {
         viewModel.loadImageURLs { (done, array) in
             if !done {
@@ -61,6 +67,37 @@ final class DetailViewController: ViewController {
             self.viewModel.setImageURLs(with: array)
             self.tableView.reloadData()
         }
+    }
+
+    @objc private func addToFavorite() {
+        viewModel.addPlaceToRealm { (done, error) in
+            if done {
+                self.alert(msg: "Added to Favorite", handler: nil)
+            } else {
+                self.alert(msg: error, handler: nil)
+            }
+        }
+    }
+
+    @objc private func removeFromFavorite() {
+        let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.viewModel.removePlaceFromRealm { (done, error) in
+                if done {
+                    self.alert(msg: "Removed") { (action) in
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else {
+                    self.alert(msg: error) { (action) in
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: App.Home.alertTitle, message: App.Home.alertMessage, preferredStyle: .alert)
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -84,11 +121,11 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: slideCell, for: indexPath) as? SlideTableViewCell else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: slideCell, for: indexPath) as? SlideTableViewCell else { return UITableViewCell() }
             cell.imageURLs = viewModel.getImageURLs()
             return cell
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
             return cell
         default:
             return UITableViewCell()

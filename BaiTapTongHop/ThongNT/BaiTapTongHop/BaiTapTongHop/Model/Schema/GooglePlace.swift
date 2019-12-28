@@ -15,7 +15,6 @@ final class GooglePlace {
     var address: String = ""
     var rating: Double = 0
     var distance: Int = 0
-    var favorite: Bool = false
     var formattedAddress: [String] = []
     var thumbnailImage: UIImage?
     var categories: [[String: Any]] = [[:]]
@@ -24,6 +23,15 @@ final class GooglePlace {
     var images: [UIImage]?
 
     init() { }
+    
+    init(idPlace: String, name: String, rating: Double, address: String, distance: Int, iconString: String) {
+        self.idPlace = idPlace
+        self.name = name
+        self.rating = rating
+        self.address = address
+        self.distance = distance
+        self.iconString = iconString
+    }
 
     init(from dict: [String: Any]) {
         idPlace = dict["id"] as? String ?? ""
@@ -39,7 +47,7 @@ final class GooglePlace {
 
     private func converData() {
         formattedAddress.forEach { (item) in
-            address += item
+            address += item + " "
         }
 
         for category in categories {

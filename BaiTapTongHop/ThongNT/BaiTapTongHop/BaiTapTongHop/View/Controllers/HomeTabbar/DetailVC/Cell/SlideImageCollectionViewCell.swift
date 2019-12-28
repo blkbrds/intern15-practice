@@ -8,12 +8,17 @@
 
 import UIKit
 
-class SlideImageCollectionViewCell: UICollectionViewCell {
+final class SlideImageCollectionViewCell: UICollectionViewCell {
 
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var makerImageView: UIImageView!
+
+    var imageString: String? {
+        didSet {
+            updateUI()
+        }
     }
 
+    func updateUI() {
+        makerImageView.setImageWithPath(urlString: imageString)
+    }
 }

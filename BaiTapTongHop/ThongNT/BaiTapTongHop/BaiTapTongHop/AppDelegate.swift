@@ -23,8 +23,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var locationManager = CLLocationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(ApiManager.Key.API)
-        GMSPlacesClient.provideAPIKey(ApiManager.Key.API)
+        GMSServices.provideAPIKey(ApiManager.Key.GoogleAPI)
+        GMSPlacesClient.provideAPIKey(ApiManager.Key.GoogleAPI)
         return true
     }
 

@@ -47,16 +47,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miq-t7-4wR">
-                        <rect key="frame" x="194.5" y="5" width="32.5" height="32.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Miq-t7-4wR" secondAttribute="height" multiplier="1:1" id="WiJ-m1-ZBY"/>
-                        </constraints>
-                        <state key="normal" image="icon_heart"/>
-                        <connections>
-                            <action selector="favoriteButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Xdc-RE-Sii"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,8 +57,6 @@
                 <constraint firstItem="jV2-g2-ope" firstAttribute="top" secondItem="XOC-8z-PJx" secondAttribute="bottom" constant="10" id="HJX-HL-HTi"/>
                 <constraint firstItem="deu-wO-MhD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="L1r-F9-pPK"/>
                 <constraint firstAttribute="trailing" secondItem="jV2-g2-ope" secondAttribute="trailing" constant="10" id="L8w-tw-mcP"/>
-                <constraint firstItem="Miq-t7-4wR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="RNk-5w-esL"/>
-                <constraint firstAttribute="trailing" secondItem="Miq-t7-4wR" secondAttribute="trailing" constant="5" id="Rkp-l2-K0O"/>
                 <constraint firstAttribute="trailing" secondItem="byo-6d-d7B" secondAttribute="trailing" constant="10" id="S4o-Jk-rV7"/>
                 <constraint firstItem="jV2-g2-ope" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="XYH-VX-H3G"/>
                 <constraint firstItem="XOC-8z-PJx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fXe-vT-XLg"/>
@@ -76,7 +64,6 @@
                 <constraint firstItem="XOC-8z-PJx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oYA-Lf-Q3l"/>
                 <constraint firstItem="deu-wO-MhD" firstAttribute="centerY" secondItem="byo-6d-d7B" secondAttribute="centerY" id="pbD-1G-Tbn"/>
                 <constraint firstAttribute="trailing" secondItem="0KW-gM-LnK" secondAttribute="trailing" constant="10" id="pbo-2F-kUE"/>
-                <constraint firstItem="Miq-t7-4wR" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.14" id="w8w-at-C7w"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="232" height="270"/>
@@ -91,7 +78,6 @@
             <connections>
                 <outlet property="addressLabel" destination="0KW-gM-LnK" id="auc-TB-xiZ"/>
                 <outlet property="distanceLabel" destination="byo-6d-d7B" id="gJj-bD-ujx"/>
-                <outlet property="favoriteButton" destination="Miq-t7-4wR" id="tQj-zK-MrP"/>
                 <outlet property="ratingLabel" destination="deu-wO-MhD" id="Rqi-Vf-t7x"/>
                 <outlet property="thumbnailImageView" destination="XOC-8z-PJx" id="LSC-o2-N1s"/>
                 <outlet property="titleLabel" destination="jV2-g2-ope" id="0ql-jm-ibY"/>
@@ -100,7 +86,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="icon_heart" width="25" height="25"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

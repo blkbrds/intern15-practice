@@ -51,6 +51,7 @@ extension ApiManager.Places {
     typealias Completion<T> = (Result<T, Error>) -> Void
 
     static func getGooglePlace(limit: Int = 20, offSet: Int = 0, completion: @escaping Completion<GoogleApiResult>) {
+        #warning("dummy data for current location")
         API.shared().request(urlString: QueryString.placesDetail(lat: "16.081106", long: "108.238530", limit: "\(limit)", offSet: "\(offSet)").url) { (result) in
             switch result {
             case .failure(let error):

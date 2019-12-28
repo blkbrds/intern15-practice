@@ -39,4 +39,26 @@ final class DetailViewModel {
             }
         }
     }
+    
+    func addPlaceToRealm(completed: @escaping (Bool, String) -> Void) {
+        RealmManager.shared.addPlace(place: googlePlace) { (result) in
+            switch result {
+            case .failure:
+                completed(false, "Existed")
+            case .success:
+                completed(true, "Added")
+            }
+        }
+    }
+
+    func removePlaceFromRealm(completed: @escaping (Bool, String) -> Void) {
+        RealmManager.shared.deletaPlace(idPlace: googlePlace.idPlace) { (result) in
+            switch result {
+            case .failure:
+                completed(false, "Cannot remove place")
+            case .success:
+                completed(true, "Removed")
+            }
+        }
+    }
 }

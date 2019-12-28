@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import Alamofire
 
 protocol MapViewControllerDataSource: class {
     func getPlaces() -> [GooglePlace]
@@ -17,56 +18,54 @@ protocol MapViewControllerDataSource: class {
 final class MapViewController: ViewController {
 
     // MARK: - Properties
+    private lazy var infoView = Bundle.main.loadNibNamed("DirectionView", owner: nil, options: nil)?[0] as? DirectionView
     private let defaultLocation = CLLocation(latitude: 16.080447, longitude: 108.238280)
     private var locationManager = CLLocationManager()
-    private var currentLocation: CLLocation?
+    private var currentLocation = CLLocation()
+    private var distinationLocation = CLLocation()
     private var placesClient: GMSPlacesClient!
     private var mapView: GMSMapView!
     private var zoomLevel: Float = 14.0
     private var path: GMSPolyline!
-    
-    
+
     var originLatitude: Double = 0
     var originLongtitude: Double = 0
     var destinationLatitude: Double = 0
     var destinationLongtitude: Double = 0
     var travelMode = TravelModes.driving
-    let directionService = DirectionService()
 
-    
+
     weak var dataSource: MapViewControllerDataSource?
     var selectedPlace: GMSPlace?
     var viewModel = MapViewModel()
 
-    // MARK: - Setup UI
+    // MARK: - Life cycle
     override func setupUI() {
         super.setupUI()
         setupNavigation()
         setupMap()
     }
-
-    // MARK: - Setup Data
-    override func setupData() {
-        super.setupData()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getData()
         getMarkers()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         addMarkerIntoMap()
     }
 }
 
 // MARK: - Setup Data
 extension MapViewController {
-    
+
     private func getData() {
         guard let places = dataSource?.getPlaces() else { return }
         viewModel.places = places
     }
-    
+
     private func getMarkers() {
         viewModel.createMakers()
     }
@@ -77,8 +76,6 @@ extension MapViewController {
 
     private func setupNavigation() {
         title = "Map"
-        let homeButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(goToHome))
-        navigationItem.leftBarButtonItem = homeButton
     }
 
     private func setupMap() {
@@ -98,75 +95,59 @@ extension MapViewController {
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
-        view = mapView
+        mapView.frame = view.bounds
+        view.addSubview(mapView)
     }
-    
+
     private func addMarkerIntoMap() {
         viewModel.markers.forEach { $0.map = mapView }
     }
 }
 
+// MARK: - Conform Direction on Google Map
 extension MapViewController {
-    
-    private func direction() {
-        self.mapView.clear()
-        let origin: String = "\(currentLocation?.coordinate.latitude),\(currentLocation?.coordinate.longitude)"
-        let destination: String = "\(destinationLatitude),\(destinationLongtitude)"
-        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongtitude))
-        marker.map = self.mapView
-        self.directionService.getDirections(origin: origin,
-            destination: destination,
-            travelMode: travelMode) { [weak self] (success) in
-            if success {
-                DispatchQueue.main.async {
-                    self?.drawRoute()
-                    if let totalDistance = self?.directionService.totalDistance,
-                        let totalDuration = self?.directionService.totalDuration {
-//                        self?.detailDirection.text = totalDistance + ". " + totalDuration
-//                        self?.detailDirection.isHidden = false
-                    }
-                }
-            } else {
-                print("error direction")
-            }
-        }
-    }
 
-    private func drawRoute() {
-        for step in self.directionService.selectSteps {
-            if step.polyline.points != "" {
-                let path = GMSPath(fromEncodedPath: step.polyline.points)
-                let routePolyline = GMSPolyline(path: path)
-                routePolyline.strokeColor = UIColor.red
-                routePolyline.strokeWidth = 3.0
-                routePolyline.map = mapView
+    private func prepareForDirection() {
+        self.mapView.clear()
+        let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongtitude))
+        marker.appearAnimation = .pop
+        marker.map = self.mapView
+    }
+    
+    // Draw a path on google map view
+    private func direction() {
+        prepareForDirection()
+        viewModel.getPoints(currentLocation: currentLocation, destinationLocation: distinationLocation, travelMode: travelMode) { (done, stringResult) in
+            if done {
+                // Create a direction path
+                let path = GMSPath.init(fromEncodedPath: stringResult)
+                let polyline = GMSPolyline.init(path: path)
+                polyline.strokeColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+                polyline.strokeWidth = 3
+                polyline.map = self.mapView
             } else {
-                return
+                self.alert(title: App.Home.alertTitle, msg: stringResult, buttons: ["OK"], preferButton: "OK", handler: nil)
             }
         }
-    }
-    
-    private func afterDirection() {
-        self.directionService.totalDistanceInMeters = 0
-        self.directionService.totalDurationInSeconds = 0
-        self.directionService.selectLegs.removeAll()
-        self.directionService.selectSteps.removeAll()
-    }
-    
-    @objc private func goToHome() {
-        tabBarController?.selectedIndex = 0
     }
 }
 
-// MARK: - GMS MapView Delegate
+// MARK: - GMS Google Delegate
 extension MapViewController: GMSMapViewDelegate {
+    
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         // tap on annotation
         print("Click on annotation")
         self.destinationLatitude = marker.position.latitude
         self.destinationLongtitude = marker.position.longitude
+        distinationLocation = CLLocation(latitude: destinationLatitude, longitude: destinationLongtitude)
+        print("---------Directioning-------------")
         direction()
-        afterDirection()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        getMarkers()
+        addMarkerIntoMap()
     }
 }
 

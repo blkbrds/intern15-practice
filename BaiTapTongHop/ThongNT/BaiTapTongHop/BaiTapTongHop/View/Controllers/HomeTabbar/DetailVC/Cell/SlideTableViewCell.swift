@@ -1,10 +1,6 @@
 //
 //  SlideTableViewCell.swift
 //  BaiTapTongHop
-//
-//  Created by PhuocNguyen on 12/25/19.
-//  Copyright © 2019 Asian Tech. All rights reserved.
-//
 
 import UIKit
 
@@ -30,7 +26,7 @@ final class SlideTableViewCell: UITableViewCell {
     }
 
     func setupUI() {
-        collectionView.register(SlideImageCollectionViewCell.self, forCellWithReuseIdentifier: cellRegister)
+        collectionView.register(UINib(nibName: cellRegister, bundle: .main), forCellWithReuseIdentifier: cellRegister)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -48,8 +44,8 @@ extension SlideTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+    }
 }
 
