@@ -137,11 +137,9 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         // tap on annotation
-        print("Click on annotation")
         self.destinationLatitude = marker.position.latitude
         self.destinationLongtitude = marker.position.longitude
         distinationLocation = CLLocation(latitude: destinationLatitude, longitude: destinationLongtitude)
-        print("---------Directioning-------------")
         direction()
     }
     
@@ -158,8 +156,6 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         currentLocation = location
-        print("---Location: \(location)")
-
         let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude, longitude: location.coordinate.longitude, zoom: zoomLevel)
         if mapView.isHidden {
             mapView.isHidden = false

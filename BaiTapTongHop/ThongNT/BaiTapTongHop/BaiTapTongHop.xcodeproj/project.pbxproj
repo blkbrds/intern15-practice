@@ -35,8 +35,6 @@
 		B2408F342398A7DA00A74B5C /* GooglePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2408F332398A7DA00A74B5C /* GooglePlace.swift */; };
 		B241AE0C238B823600844F41 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE0A238B823600844F41 /* FavoritesViewController.swift */; };
 		B241AE0D238B823600844F41 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B241AE0B238B823600844F41 /* FavoritesViewController.xib */; };
-		B241AE10238B825100844F41 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE0E238B825100844F41 /* ProfileViewController.swift */; };
-		B241AE11238B825100844F41 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B241AE0F238B825100844F41 /* ProfileViewController.xib */; };
 		B241AE35238B8CC600844F41 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE14238B8CC500844F41 /* Session.swift */; };
 		B241AE37238B8CC600844F41 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE19238B8CC500844F41 /* Error.swift */; };
 		B241AE38238B8CC600844F41 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241AE1A238B8CC500844F41 /* APIManager.swift */; };
@@ -106,8 +104,6 @@
 		B2408F332398A7DA00A74B5C /* GooglePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlace.swift; sourceTree = "<group>"; };
 		B241AE0A238B823600844F41 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		B241AE0B238B823600844F41 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
-		B241AE0E238B825100844F41 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		B241AE0F238B825100844F41 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		B241AE14238B8CC500844F41 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		B241AE19238B8CC500844F41 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		B241AE1A238B8CC500844F41 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -215,15 +211,6 @@
 				B227D15523B73DA4004F3B65 /* FavoritesViewModel.swift */,
 			);
 			path = Favorites;
-			sourceTree = "<group>";
-		};
-		B241AE12238B825400844F41 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				B241AE0E238B825100844F41 /* ProfileViewController.swift */,
-				B241AE0F238B825100844F41 /* ProfileViewController.xib */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		B241AE13238B8CC500844F41 /* Model */ = {
@@ -385,7 +372,6 @@
 		B2732CEF23879C2A00E1CDCE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B241AE12238B825400844F41 /* Profile */,
 				B241AE09238B822000844F41 /* Favorites */,
 				B2732CFB23879D2500E1CDCE /* Map */,
 				B2732CFA23879CE600E1CDCE /* HomeTabbar */,
@@ -502,7 +488,6 @@
 				B241AE58238BCF9500844F41 /* DetailViewController.xib in Resources */,
 				B2381B12238D0D3F0053EA77 /* HomeCollectionCell.xib in Resources */,
 				B241AE0D238B823600844F41 /* FavoritesViewController.xib in Resources */,
-				B241AE11238B825100844F41 /* ProfileViewController.xib in Resources */,
 				B2732CF923879CE100E1CDCE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,7 +590,6 @@
 				B241AE45238B8CC600844F41 /* TableCell.swift in Sources */,
 				B236E83A23A72F0F0046A95D /* API+Data.swift in Sources */,
 				B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */,
-				B241AE10238B825100844F41 /* ProfileViewController.swift in Sources */,
 				0F915A7623B3237700310514 /* SlideTableViewCell.swift in Sources */,
 				B22EE13623A9C8F7007DD4CD /* UIImageViewExt.swift in Sources */,
 				B2732CB82387993B00E1CDCE /* SceneDelegate.swift in Sources */,

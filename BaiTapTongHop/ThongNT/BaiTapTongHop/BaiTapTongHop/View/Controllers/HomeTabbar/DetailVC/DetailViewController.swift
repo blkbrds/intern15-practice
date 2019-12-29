@@ -49,14 +49,20 @@ final class DetailViewController: ViewController {
 
         switch tabBarController?.selectedIndex {
         case 0:
-            let addFavoriteButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addToFavorite))
-            navigationItem.rightBarButtonItem = addFavoriteButton
+            if checkIsFavorite() {
+                let addFavoriteButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addToFavorite))
+                navigationItem.rightBarButtonItem = addFavoriteButton
+            }
         case 2:
             let removeButton = UIBarButtonItem(title: "Remove", style: .done, target: self, action: #selector(removeFromFavorite))
             navigationItem.rightBarButtonItem = removeButton
         default:
             break
         }
+    }
+
+    private func checkIsFavorite() -> Bool {
+        return RealmManager.shared.checkPK(id: viewModel.getIdPlace())
     }
 
     private func loadImageURLs() {

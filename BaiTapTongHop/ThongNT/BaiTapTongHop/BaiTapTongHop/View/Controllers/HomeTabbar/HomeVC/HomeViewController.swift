@@ -19,6 +19,7 @@ final class HomeViewController: ViewController {
     private var searchPlaces: [Place] = []
     private var status: Layout = .row
     private var refreshControl = UIRefreshControl()
+    private var collectionRefreshControl = UIRefreshControl()
     private var activityIndicator = NVActivityIndicatorView(frame: .zero)
 
     var temp = ApiManager.Places()
@@ -47,11 +48,12 @@ final class HomeViewController: ViewController {
 
     // MARK: - Setup Data
     override func setupData() {
-        
+        tableView.alpha = 0
         activityIndicator.startAnimating()
         // Load data from API
         viewModel.loadPlaceData { (done, errorString) in
             self.activityIndicator.stopAnimating()
+            self.tableView.alpha = 1
             if done {
                 self.updateUI(action: .reloadData)
             } else {
@@ -91,6 +93,7 @@ final class HomeViewController: ViewController {
         viewModel.loadPlaceData { (done, errorString) in
             if done {
                 self.refreshControl.endRefreshing()
+                self.collectionRefreshControl.endRefreshing()
                 self.updateUI(action: .reloadData)
             } else {
                 self.alert(title: App.Home.alertTitle, msg: errorString, buttons: ["OK"], preferButton: "OK", handler: nil)
@@ -117,11 +120,17 @@ extension HomeViewController {
         activityIndicator.color = .red
         view.addSubview(activityIndicator)
 
-        // Setup refresh control
+        // Setup tableview refresh control
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
         refreshControl.tintColor = .systemPink
         refreshControl.alpha = 0.8
+        
+        // Setup collectionView refresh control
+        collectionRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        collectionRefreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
+        collectionRefreshControl.tintColor = .systemPink
+        collectionRefreshControl.alpha = 0.8
     }
 
     private func setupCollectionView() {
@@ -129,6 +138,7 @@ extension HomeViewController {
         collectionView.register(homeCollectionViewCellNib, forCellWithReuseIdentifier: Config.homeCollectionViewCellIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.refreshControl = collectionRefreshControl
     }
 
     private func setupTableView() {
@@ -205,16 +215,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-//MARK: - Extension DetailViewController Delegate, DataSource
+//MARK: - DetailViewController Delegate, DataSource
 extension HomeViewController: DetailViewControllerDataSource {
     func getImageURLs() -> [String] {
         return viewModel.getImageURLs(with: viewModel.getPlaceID(with: viewModel.currentIndex))
     }
 }
 
-//MARK: - Exetension CollectionView datasource, delegate, DelegateFlowLayout
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+//MARK: - CollectionView datasource, delegate, DelegateFlowLayout
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getNumberOfPlaces()
     }
@@ -222,21 +232,24 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Config.homeCollectionViewCellIdentifier, for: indexPath) as? HomeCollectionCell else { return CollectionCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
+        
+        // Load more
+        if indexPath.row == viewModel.getNumberOfPlaces() - 2 {
+            loadMore()
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.dataSource = self
+        vc.viewModel.indexOfItem = viewModel.currentIndex
+        vc.viewModel = viewModel.getDetailViewModel(indexPath: indexPath)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return Config.sizeOfCell
-    }
-}
-
-//MARK: - Extension HomeCollectionCell Delegate
-extension HomeViewController {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailViewController()
-        vc.dataSource = self
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -26,7 +26,6 @@ extension ApiManager.Direction {
     //Rrequesting Alamofire
     static func getDirectionPoints(originLocation: String, destinationLocation: String, travelMode: TravelModes, completion: @escaping Completion<DirectionResult>) {
         let url: String = QuerryString.direction.init(originLocation: originLocation, destinationLocation: destinationLocation, travelMode: travelMode).url
-        print("------URL-------:", url)
         Alamofire.request(url).responseJSON { response in
             guard let data = response.data else {
                 if let error = response.error {

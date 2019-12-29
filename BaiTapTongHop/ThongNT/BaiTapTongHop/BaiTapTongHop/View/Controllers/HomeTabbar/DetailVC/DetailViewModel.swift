@@ -22,11 +22,14 @@ final class DetailViewModel {
     
     func setImageURLs(with imageURLs: [String]) {
         self.imageURLs = imageURLs
-        print(imageURLs)
     }
     
     func getImageURLs() -> [String] {
         return imageURLs
+    }
+    
+    func getIdPlace() -> String {
+        return googlePlace.idPlace
     }
     
     func loadImageURLs(completed: @escaping (Bool, [String]) -> Void) {

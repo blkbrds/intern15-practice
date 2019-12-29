@@ -34,7 +34,8 @@ final class RealmManager {
 // MARK: - Functions
 extension RealmManager {
 
-    private func checkPK(id: String) -> Bool {
+    // return true when it also stored in Realm
+    func checkPK(id: String) -> Bool {
         let favorites = getObjectsFromRealm()
         for place in favorites {
             if place.idPlace == id {
@@ -64,7 +65,6 @@ extension RealmManager {
     func deletaPlace(idPlace: String, completion: @escaping RealmCompletion) {
         do {
             try realm.write {
-                print("------URL", Realm.Configuration.defaultConfiguration.fileURL)
                 if let placeNeedToRemove = realm.object(ofType: Favorites.self, forPrimaryKey: idPlace) {
                     realm.delete(placeNeedToRemove)
                     completion(.success)

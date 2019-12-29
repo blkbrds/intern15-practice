@@ -31,11 +31,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let favoritesNavigationController = UINavigationController(rootViewController: favoritesViewController)
         favoritesNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         
-        // config tab Profile
-        let profileViewController = ProfileViewController()
-        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
-        profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "tabbar_icon_profile_png.png"), selectedImage: #imageLiteral(resourceName: "tabbar_icon_profile_selected_png.png"))
-        
         // config tab bar controller
         let viewControllers = [homeNavigationController, mapNavigationController, favoritesNavigationController]
         let tabBarController = UITabBarController()

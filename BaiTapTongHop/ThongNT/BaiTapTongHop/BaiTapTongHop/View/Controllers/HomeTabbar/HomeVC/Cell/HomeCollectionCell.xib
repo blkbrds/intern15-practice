@@ -10,15 +10,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCollectionCell" customModule="BaiTapTongHop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="232" height="270"/>
+            <rect key="frame" x="0.0" y="0.0" width="232" height="272"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="232" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="232" height="272"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XOC-8z-PJx">
                         <rect key="frame" x="0.0" y="1.5" width="232" height="200"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="XOC-8z-PJx" secondAttribute="height" multiplier="212:185" id="Ucz-Dg-ZXm"/>
                         </constraints>
@@ -30,9 +30,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deu-wO-MhD">
-                        <rect key="frame" x="10" y="187" width="42" height="20.5"/>
+                        <rect key="frame" x="10" y="177" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KW-gM-LnK">
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byo-6d-d7B">
-                        <rect key="frame" x="180" y="187" width="42" height="20.5"/>
+                        <rect key="frame" x="180" y="177" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -60,13 +60,13 @@
                 <constraint firstAttribute="trailing" secondItem="byo-6d-d7B" secondAttribute="trailing" constant="10" id="S4o-Jk-rV7"/>
                 <constraint firstItem="jV2-g2-ope" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="XYH-VX-H3G"/>
                 <constraint firstItem="XOC-8z-PJx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fXe-vT-XLg"/>
-                <constraint firstItem="jV2-g2-ope" firstAttribute="top" secondItem="deu-wO-MhD" secondAttribute="bottom" constant="5" id="gic-gf-2lZ"/>
+                <constraint firstItem="jV2-g2-ope" firstAttribute="top" secondItem="deu-wO-MhD" secondAttribute="bottom" constant="15" id="gic-gf-2lZ"/>
                 <constraint firstItem="XOC-8z-PJx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oYA-Lf-Q3l"/>
                 <constraint firstItem="deu-wO-MhD" firstAttribute="centerY" secondItem="byo-6d-d7B" secondAttribute="centerY" id="pbD-1G-Tbn"/>
                 <constraint firstAttribute="trailing" secondItem="0KW-gM-LnK" secondAttribute="trailing" constant="10" id="pbo-2F-kUE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="232" height="270"/>
+            <size key="customSize" width="232" height="272"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                     <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,7 +82,7 @@
                 <outlet property="thumbnailImageView" destination="XOC-8z-PJx" id="LSC-o2-N1s"/>
                 <outlet property="titleLabel" destination="jV2-g2-ope" id="0ql-jm-ibY"/>
             </connections>
-            <point key="canvasLocation" x="263.768115942029" y="227.00892857142856"/>
+            <point key="canvasLocation" x="263.768115942029" y="227.67857142857142"/>
         </collectionViewCell>
     </objects>
     <resources>

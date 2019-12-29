@@ -34,9 +34,6 @@ final class MapViewModel: ViewModel {
         var locationB: String {
             return String(destinationLocation.coordinate.latitude) + "," + String(destinationLocation.coordinate.longitude)
         }
-        print("------------",locationA)
-        print("------------",locationB)
-    
         ApiManager.Direction.getDirectionPoints(originLocation: locationA, destinationLocation: locationB, travelMode: .driving) { (result) in
             switch result {
             case .failure(let error):
