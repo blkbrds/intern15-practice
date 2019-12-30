@@ -71,7 +71,7 @@ extension RealmManager {
                 }
             }
         } catch {
-            completion(.failure(error: "Cannot remove place from Realm"))
+            completion(.failure(error: error.localizedDescription))
         }
     }
     

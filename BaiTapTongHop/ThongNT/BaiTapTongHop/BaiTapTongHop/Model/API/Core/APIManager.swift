@@ -42,7 +42,8 @@ struct ApiManager {
     }
     
     struct Key {
-        static let GoogleAPI = "AIzaSyAZGlweYtcWgzVKTUt5nz961P0ipsCtO3c"
+        static let GoogleAPI = "AIzaSyDPKyGEBIklG4P4b0ee0W98vEam08zsGvM"
+//        "AIzaSyAZGlweYtcWgzVKTUt5nz961P0ipsCtO3c"
     }
     
     struct Places {}

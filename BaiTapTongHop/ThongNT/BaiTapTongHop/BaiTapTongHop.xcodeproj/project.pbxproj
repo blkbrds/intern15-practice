@@ -21,8 +21,6 @@
 		B229187E2397C40A001EA5A8 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B229187C2397C40A001EA5A8 /* HomeCell.xib */; };
 		B229187F2397C40A001EA5A8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B229187D2397C40A001EA5A8 /* HomeCell.swift */; };
 		B2295D0F238F5F7A001846AF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2295D0E238F5F7A001846AF /* DetailViewModel.swift */; };
-		B22B3ED123B4BDC600A5C935 /* DirectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B3ED023B4BDC600A5C935 /* DirectionView.swift */; };
-		B22B3ED323B4BDDE00A5C935 /* DirectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22B3ED223B4BDDE00A5C935 /* DirectionView.xib */; };
 		B22C703023979F0E00328798 /* Api.Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22C702F23979F0E00328798 /* Api.Places.swift */; };
 		B22E1B7A23A8B9CC003C35A4 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E1B7923A8B9CC003C35A4 /* APIRequest.swift */; };
 		B22EBFB623ACB9EB0025D007 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22EBFB523ACB9EB0025D007 /* Marker.swift */; };
@@ -90,8 +88,6 @@
 		B229187C2397C40A001EA5A8 /* HomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		B229187D2397C40A001EA5A8 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		B2295D0E238F5F7A001846AF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		B22B3ED023B4BDC600A5C935 /* DirectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionView.swift; sourceTree = "<group>"; };
-		B22B3ED223B4BDDE00A5C935 /* DirectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionView.xib; sourceTree = "<group>"; };
 		B22C702F23979F0E00328798 /* Api.Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.Places.swift; sourceTree = "<group>"; };
 		B22E1B7923A8B9CC003C35A4 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B22EBFB523ACB9EB0025D007 /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
@@ -195,8 +191,8 @@
 		B22B46A4238BE4AF00342D5D /* DetailVC */ = {
 			isa = PBXGroup;
 			children = (
-				B241AE55238BCF9500844F41 /* DetailViewController.swift */,
 				B241AE56238BCF9500844F41 /* DetailViewController.xib */,
+				B241AE55238BCF9500844F41 /* DetailViewController.swift */,
 				B2295D0E238F5F7A001846AF /* DetailViewModel.swift */,
 				B228016F2390BC4300EA6143 /* Cell */,
 			);
@@ -394,8 +390,6 @@
 				B2732CFC23879D3700E1CDCE /* MapViewController.swift */,
 				B2732CFD23879D3700E1CDCE /* MapViewController.xib */,
 				B22EBFB723ACBB380025D007 /* MapViewModel.swift */,
-				B22B3ED023B4BDC600A5C935 /* DirectionView.swift */,
-				B22B3ED223B4BDDE00A5C935 /* DirectionView.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -480,7 +474,6 @@
 			files = (
 				B2732CBF2387993D00E1CDCE /* Assets.xcassets in Resources */,
 				B229187E2397C40A001EA5A8 /* HomeCell.xib in Resources */,
-				B22B3ED323B4BDDE00A5C935 /* DirectionView.xib in Resources */,
 				B228016E2390B9E400EA6143 /* DetailTableViewCell.xib in Resources */,
 				0F915A7723B3237700310514 /* SlideTableViewCell.xib in Resources */,
 				B2732CFF23879D3700E1CDCE /* MapViewController.xib in Resources */,
@@ -608,7 +601,6 @@
 				B227D15623B73DA5004F3B65 /* FavoritesViewModel.swift in Sources */,
 				B22C703023979F0E00328798 /* Api.Places.swift in Sources */,
 				0FFF935923B36481001E9316 /* SlideImageCellViewModel.swift in Sources */,
-				B22B3ED123B4BDC600A5C935 /* DirectionView.swift in Sources */,
 				0FFF935C23B3725E001E9316 /* SlideImageCollectionViewCell.swift in Sources */,
 				B22EBFB623ACB9EB0025D007 /* Marker.swift in Sources */,
 			);

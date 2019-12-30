@@ -17,6 +17,7 @@ final class MapViewModel: ViewModel {
     var markers: [GMSMarker] = []
 
     func createMarkers() {
+        markers = []
         for place in places {
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: place.position.lat, longitude: place.position.long))
             marker.title = place.name

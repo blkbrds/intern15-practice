@@ -117,11 +117,9 @@ extension FavoritesViewController {
             guard let self = self else { return }
             switch changes {
             case .initial:
-//                self.tableView.reloadData()
                 self.updateUI()
             case .update:
                 self.viewModel.getFavoritedPlace(isRefresh: true) {
-//                    self.tableView.reloadData()
                     self.updateUI()
                 }
             case .error(let error):

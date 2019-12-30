@@ -17,11 +17,10 @@ protocol MapViewControllerDataSource: class {
 final class MapViewController: ViewController {
 
     // MARK: - Properties
-    private lazy var infoView = Bundle.main.loadNibNamed("DirectionView", owner: nil, options: nil)?[0] as? DirectionView
     private let defaultLocation = CLLocation(latitude: 16.080447, longitude: 108.238280)
     private var locationManager = CLLocationManager()
     private var currentLocation = CLLocation()
-    private var distinationLocation = CLLocation()
+    private var destinationLocation = CLLocation()
     private var placesClient: GMSPlacesClient!
     private var mapView: GMSMapView!
     private var zoomLevel: Float = 14.5
@@ -43,18 +42,16 @@ final class MapViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        mapView.clear()
         getData()
         if let idPlace = UserDefaults.standard.value(forKey: "placeSelected") {
             guard let idPlace = idPlace as? String else { return }
             directionWithPlaceSelected(with: idPlace)
+            UserDefaults.standard.set(nil, forKey: "placeSelected")
         } else {
             getMarkers()
+            addMarkerIntoMap()
         }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        addMarkerIntoMap()
     }
 }
 
@@ -74,7 +71,7 @@ extension MapViewController {
         let place = viewModel.getPlaceSelected(with: idPlace)
         destinationLatitude = place.position.lat
         destinationLongtitude = place.position.long
-        prepareForDirection()
+        destinationLocation = CLLocation(latitude: destinationLatitude, longitude: destinationLongtitude)
         direction()
     }
 }
@@ -119,13 +116,13 @@ extension MapViewController {
         self.mapView.clear()
         let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: destinationLatitude, longitude: destinationLongtitude))
         marker.appearAnimation = .pop
-        marker.map = self.mapView
+        marker.map = mapView
     }
     
     // Draw a path on google map view
     private func direction() {
         prepareForDirection()
-        viewModel.getPoints(currentLocation: currentLocation, destinationLocation: distinationLocation, travelMode: travelMode) { (done, stringResult) in
+        viewModel.getPoints(currentLocation: currentLocation, destinationLocation: destinationLocation, travelMode: travelMode) { (done, stringResult) in
             if done {
                 // Create a direction path
                 let path = GMSPath.init(fromEncodedPath: stringResult)
@@ -147,11 +144,12 @@ extension MapViewController: GMSMapViewDelegate {
         // tap on annotation
         self.destinationLatitude = marker.position.latitude
         self.destinationLongtitude = marker.position.longitude
-        distinationLocation = CLLocation(latitude: destinationLatitude, longitude: destinationLongtitude)
+        destinationLocation = CLLocation(latitude: destinationLatitude, longitude: destinationLongtitude)
         direction()
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        mapView.clear()
         getMarkers()
         addMarkerIntoMap()
     }
