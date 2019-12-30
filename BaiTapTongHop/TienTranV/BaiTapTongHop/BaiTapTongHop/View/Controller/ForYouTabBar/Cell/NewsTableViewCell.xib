@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="155" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="BaiTapTongHop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6f-fD-hG8">
+                        <rect key="frame" x="15" y="10" width="345" height="140"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cnn-logo-white-on-red" translatesAutoresizingMaskIntoConstraints="NO" id="7sX-an-bRa">
+                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7sX-an-bRa" secondAttribute="height" id="eCd-AP-AyL"/>
+                                    <constraint firstAttribute="height" constant="25" id="qEq-zb-O5N"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABC News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9r-Lh-AHA">
+                                <rect key="frame" x="35" y="4" width="68" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The 100 Days of Swift is a free collection of videos, tutorials, tests, and more to help you learn Swift faster" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMF-MC-O7H">
+                                <rect key="frame" x="0.0" y="35" width="230" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oto" translatesAutoresizingMaskIntoConstraints="NO" id="IaM-Dr-Y26">
+                                <rect key="frame" x="235" y="5" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IaM-Dr-Y26" secondAttribute="height" id="s9M-LW-Ntw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 days ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPQ-g3-wrb">
+                                <rect key="frame" x="0.0" y="120" width="71" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="kMN-i7-yyy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sPQ-g3-wrb" firstAttribute="leading" secondItem="a6f-fD-hG8" secondAttribute="leading" id="5OF-lx-CJR"/>
+                            <constraint firstItem="7sX-an-bRa" firstAttribute="leading" secondItem="a6f-fD-hG8" secondAttribute="leading" id="9jK-gj-cb0"/>
+                            <constraint firstItem="IaM-Dr-Y26" firstAttribute="leading" secondItem="FMF-MC-O7H" secondAttribute="trailing" constant="5" id="Ge9-c2-8iC"/>
+                            <constraint firstItem="X9r-Lh-AHA" firstAttribute="centerY" secondItem="7sX-an-bRa" secondAttribute="centerY" id="HfN-fu-d5Y"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IaM-Dr-Y26" secondAttribute="bottom" id="ORR-pq-s6b"/>
+                            <constraint firstItem="FMF-MC-O7H" firstAttribute="top" secondItem="7sX-an-bRa" secondAttribute="bottom" constant="10" id="W9x-RH-6hO"/>
+                            <constraint firstItem="7sX-an-bRa" firstAttribute="top" secondItem="a6f-fD-hG8" secondAttribute="top" id="ZCP-cJ-lMt"/>
+                            <constraint firstItem="FMF-MC-O7H" firstAttribute="width" secondItem="a6f-fD-hG8" secondAttribute="width" multiplier="2/3" id="csn-Al-6F5"/>
+                            <constraint firstItem="X9r-Lh-AHA" firstAttribute="leading" secondItem="7sX-an-bRa" secondAttribute="trailing" constant="10" id="iKX-LC-bPB"/>
+                            <constraint firstItem="FMF-MC-O7H" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="IaM-Dr-Y26" secondAttribute="bottom" id="kGt-b7-wrv"/>
+                            <constraint firstAttribute="bottom" secondItem="sPQ-g3-wrb" secondAttribute="bottom" id="nCn-8b-oUd"/>
+                            <constraint firstItem="FMF-MC-O7H" firstAttribute="leading" secondItem="7sX-an-bRa" secondAttribute="leading" id="oCc-ih-qjT"/>
+                            <constraint firstAttribute="trailing" secondItem="IaM-Dr-Y26" secondAttribute="trailing" id="yl3-Q9-0wI"/>
+                            <constraint firstItem="IaM-Dr-Y26" firstAttribute="top" secondItem="a6f-fD-hG8" secondAttribute="top" constant="5" id="yzq-il-7qX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="a6f-fD-hG8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="OCz-3N-n2g"/>
+                    <constraint firstItem="a6f-fD-hG8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Wjp-ul-Ib4"/>
+                    <constraint firstAttribute="bottom" secondItem="a6f-fD-hG8" secondAttribute="bottom" constant="10" id="bOF-il-4r2"/>
+                    <constraint firstAttribute="trailing" secondItem="a6f-fD-hG8" secondAttribute="trailing" constant="15" id="c1n-mm-PPQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="iconSourceImageView" destination="7sX-an-bRa" id="JtA-cM-txJ"/>
+                <outlet property="nameSourceLabel" destination="X9r-Lh-AHA" id="Pbz-ua-U8U"/>
+                <outlet property="newsImageView" destination="IaM-Dr-Y26" id="OEo-2u-Xz3"/>
+                <outlet property="newsTitleLabel" destination="FMF-MC-O7H" id="nED-IS-80R"/>
+                <outlet property="publishedLabel" destination="sPQ-g3-wrb" id="yNS-lm-W7g"/>
+            </connections>
+            <point key="canvasLocation" x="309" y="485"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cnn-logo-white-on-red" width="1400" height="932"/>
+        <image name="oto" width="1320" height="742"/>
+    </resources>
+</document>
