@@ -32,6 +32,10 @@ final class DetailViewModel {
         return googlePlace.idPlace
     }
     
+    func getPlace() -> GooglePlace {
+        return googlePlace
+    }
+    
     func loadImageURLs(completed: @escaping (Bool, [String]) -> Void) {
         ApiManager.Places.getPlaceImages(idPlace: googlePlace.idPlace) { (result) in
             switch result {

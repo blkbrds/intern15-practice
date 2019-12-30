@@ -16,7 +16,7 @@ final class MapViewModel: ViewModel {
     var places: [GooglePlace] = []
     var markers: [GMSMarker] = []
 
-    func createMakers() {
+    func createMarkers() {
         for place in places {
             let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: place.position.lat, longitude: place.position.long))
             marker.title = place.name
@@ -24,6 +24,15 @@ final class MapViewModel: ViewModel {
             marker.appearAnimation = .pop
             markers.append(marker)
         }
+    }
+    
+    func getPlaceSelected(with idPlace: String) -> GooglePlace {
+        for place in places {
+            if place.idPlace == idPlace {
+                return place
+            }
+        }
+        return GooglePlace()
     }
 
     func getPoints(currentLocation: CLLocation , destinationLocation: CLLocation, travelMode: TravelModes, completed: @escaping (Bool, String) -> Void) {

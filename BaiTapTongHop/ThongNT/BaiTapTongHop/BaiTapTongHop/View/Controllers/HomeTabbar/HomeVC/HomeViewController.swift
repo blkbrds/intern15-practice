@@ -22,7 +22,6 @@ final class HomeViewController: ViewController {
     private var collectionRefreshControl = UIRefreshControl()
     private var activityIndicator = NVActivityIndicatorView(frame: .zero)
 
-    var temp = ApiManager.Places()
     var viewModel = HomeViewModel()
     var homeImage: UIImage?
 
@@ -143,9 +142,10 @@ extension HomeViewController {
 
     private func setupTableView() {
         let homeTableViewCellNib = UINib(nibName: Config.homeTableViewCellIdentifier, bundle: Bundle.main)
-        tableView.dataSource = self
         tableView.register(homeTableViewCellNib, forCellReuseIdentifier: Config.homeTableViewCellIdentifier)
         tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
     }
 }

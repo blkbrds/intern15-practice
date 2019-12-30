@@ -74,6 +74,16 @@ extension RealmManager {
             completion(.failure(error: "Cannot remove place from Realm"))
         }
     }
+    
+    func deleteAll(completion: @escaping RealmCompletion) {
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            completion(.failure(error: "Cannot remove all favorited places"))
+        }
+    }
 
     func getObjectsFromRealm() -> [Favorites] {
         var objects: [Favorites] = []

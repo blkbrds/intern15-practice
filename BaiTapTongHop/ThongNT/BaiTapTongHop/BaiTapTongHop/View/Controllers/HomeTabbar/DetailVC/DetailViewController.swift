@@ -21,12 +21,11 @@ final class DetailViewController: ViewController {
     private let slideCell: String = "SlideTableViewCell"
 
     enum Action {
-        case changeFavorite(index: Int)
+        case sendIdPlace(idPlace: String)
     }
 
     //MARK: - Properties
     private let cellIdentifier: String = "DetailTableViewCell"
-
     weak var dataSource: DetailViewControllerDataSource?
     var viewModel = DetailViewModel()
 
@@ -49,13 +48,19 @@ final class DetailViewController: ViewController {
 
         switch tabBarController?.selectedIndex {
         case 0:
+            let addFavoriteButton = UIBarButtonItem()
+            let mapButton = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-map-50.png"), style: .plain, target: self, action: #selector(moveToMap))
             if checkIsFavorite() {
-                let addFavoriteButton = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addToFavorite))
-                navigationItem.rightBarButtonItem = addFavoriteButton
+                addFavoriteButton.image = #imageLiteral(resourceName: "icons8-add-to-favorites-50 (1).png")
+                addFavoriteButton.style = .plain
+                addFavoriteButton.target = self
+                addFavoriteButton.action = #selector(addToFavorite)
             }
+            navigationItem.rightBarButtonItems = [addFavoriteButton, mapButton]
         case 2:
-            let removeButton = UIBarButtonItem(title: "Remove", style: .done, target: self, action: #selector(removeFromFavorite))
-            navigationItem.rightBarButtonItem = removeButton
+            let mapButton = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-map-50.png"), style: .plain, target: self, action: #selector(moveToMap))
+            let removeButton = UIBarButtonItem(title: "Remove", style: .plain, target: self, action: #selector(removeFromFavorite))
+            navigationItem.rightBarButtonItems = [removeButton, mapButton]
         default:
             break
         }
@@ -73,6 +78,11 @@ final class DetailViewController: ViewController {
             self.viewModel.setImageURLs(with: array)
             self.tableView.reloadData()
         }
+    }
+    
+    @objc private func moveToMap() {
+        UserDefaults.standard.set(viewModel.getIdPlace(), forKey: "placeSelected")
+        tabBarController?.selectedIndex = 1
     }
 
     @objc private func addToFavorite() {
@@ -149,5 +159,11 @@ extension DetailViewController: UITableViewDelegate {
         default:
             return 100
         }
+    }
+}
+
+extension DetailViewController: MapViewControllerDataSource {
+    func getPlaces() -> [GooglePlace] {
+        return [viewModel.getPlace()]
     }
 }

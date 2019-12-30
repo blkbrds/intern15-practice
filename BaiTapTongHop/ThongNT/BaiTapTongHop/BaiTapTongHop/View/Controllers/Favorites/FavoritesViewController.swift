@@ -20,6 +20,7 @@ final class FavoritesViewController: ViewController {
 
     var viewModel = FavoritesViewModel()
 
+    // MARK: - Life Cycle
     override func setupUI() {
         super.setupUI()
         title = "Favorites"
@@ -41,7 +42,6 @@ final class FavoritesViewController: ViewController {
 extension FavoritesViewController {
 
     private func setupTableView() {
-
         // Setup refresh control
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching")
@@ -51,11 +51,28 @@ extension FavoritesViewController {
         tableView.register(UINib(nibName: cellRegister, bundle: .main), forCellReuseIdentifier: cellRegister)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
+    }
+    
+    private func updateUI() {
+        if viewModel.getNumberOfFavoritedPlace() == 0 {
+            tableView.alpha = 0
+        } else {
+            tableView.alpha = 1
+        }
+        
+        if viewModel.getNumberOfFavoritedPlace() != 0 {
+            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "icons8-remove-50.png"), style: .plain, target: self, action: #selector(removeAll))
+            navigationItem.rightBarButtonItem = removeAllButton
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
+        tableView.reloadData()
     }
 }
 
-// MARK: - Setup data conform
+// MARK: - Setup data
 extension FavoritesViewController {
 
     @objc private func fetchData() {
@@ -65,13 +82,29 @@ extension FavoritesViewController {
             this.tableView.reloadData()
         }
     }
-    
+
     @objc private func refresh() {
         viewModel.getFavoritedPlace(isRefresh: true) { [weak self] in
             guard let this = self else { return }
             this.refreshControl.endRefreshing()
             this.tableView.reloadData()
         }
+    }
+
+    @objc private func removeAll() {
+        let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.viewModel.removeAll { (done, error) in
+                if !done {
+                    self.alert(msg: error, handler: nil)
+                }
+                self.tableView.alpha = 0
+            }
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: App.Home.alertTitle, message: "Do you want to delete all?", preferredStyle: .alert)
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -84,10 +117,12 @@ extension FavoritesViewController {
             guard let self = self else { return }
             switch changes {
             case .initial:
-                self.tableView.reloadData()
+//                self.tableView.reloadData()
+                self.updateUI()
             case .update:
                 self.viewModel.getFavoritedPlace(isRefresh: true) {
-                    self.tableView.reloadData()
+//                    self.tableView.reloadData()
+                    self.updateUI()
                 }
             case .error(let error):
                 self.alert(msg: error.localizedDescription, handler: nil)
@@ -119,7 +154,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
-                self.viewModel.removePlace(indexPath: indexPath) { (_, _) in } 
+                self.viewModel.removePlace(indexPath: indexPath) { (_, _) in }
             }
             let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             let alert = UIAlertController(title: App.Home.alertTitle, message: App.Home.alertMessage, preferredStyle: .alert)

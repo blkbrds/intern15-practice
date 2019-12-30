@@ -9,7 +9,6 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-import Alamofire
 
 protocol MapViewControllerDataSource: class {
     func getPlaces() -> [GooglePlace]
@@ -25,17 +24,13 @@ final class MapViewController: ViewController {
     private var distinationLocation = CLLocation()
     private var placesClient: GMSPlacesClient!
     private var mapView: GMSMapView!
-    private var zoomLevel: Float = 14.0
+    private var zoomLevel: Float = 14.5
     private var path: GMSPolyline!
 
-    var originLatitude: Double = 0
-    var originLongtitude: Double = 0
+    weak var dataSource: MapViewControllerDataSource?
     var destinationLatitude: Double = 0
     var destinationLongtitude: Double = 0
     var travelMode = TravelModes.driving
-
-
-    weak var dataSource: MapViewControllerDataSource?
     var selectedPlace: GMSPlace?
     var viewModel = MapViewModel()
 
@@ -49,7 +44,12 @@ final class MapViewController: ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getData()
-        getMarkers()
+        if let idPlace = UserDefaults.standard.value(forKey: "placeSelected") {
+            guard let idPlace = idPlace as? String else { return }
+            directionWithPlaceSelected(with: idPlace)
+        } else {
+            getMarkers()
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -67,11 +67,19 @@ extension MapViewController {
     }
 
     private func getMarkers() {
-        viewModel.createMakers()
+        viewModel.createMarkers()
+    }
+    
+    private func directionWithPlaceSelected(with idPlace: String) {
+        let place = viewModel.getPlaceSelected(with: idPlace)
+        destinationLatitude = place.position.lat
+        destinationLongtitude = place.position.long
+        prepareForDirection()
+        direction()
     }
 }
 
-// MARK: - Setup UI
+// MARK: - Setup Map
 extension MapViewController {
 
     private func setupNavigation() {
