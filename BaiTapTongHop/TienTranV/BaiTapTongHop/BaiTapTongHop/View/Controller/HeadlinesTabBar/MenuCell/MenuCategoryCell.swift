@@ -14,10 +14,12 @@ final class MenuCategoryCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-      
+        contentView.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    func configUI(category: String) {
+
+    func configUI(category: String, isEnable: Bool) {
+        print(isEnable)
+        backgroundColor = isEnable ? .blue : .white
         categoryLabel.text = category
     }
 }
