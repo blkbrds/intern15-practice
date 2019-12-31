@@ -9,8 +9,8 @@
 import UIKit
 
 final class loginViewController: UIViewController {
-    let userName: String = "admin"
-    let password: String = "admin123"
+    private let userName: String = "admin"
+    private let password: String = "admin123"
 
     enum Error: String {
         case khongNhap = "Ban chua nhap gi ca"
@@ -18,14 +18,15 @@ final class loginViewController: UIViewController {
         case thieu = "Ban nhap thieu roi"
     }
 
-    @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet private weak var commentLabel: UILabel!
+    @IBOutlet private weak var clearButton: UIButton!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var userTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         userTextField.delegate = self
         userTextField.tag = 0
         passwordTextField.delegate = self
@@ -61,7 +62,7 @@ final class loginViewController: UIViewController {
 }
 
 extension loginViewController: UITextFieldDelegate {
-    //ban phim di xuong
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

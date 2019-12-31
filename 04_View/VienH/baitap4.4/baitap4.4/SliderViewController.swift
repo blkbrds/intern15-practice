@@ -10,11 +10,12 @@ import UIKit
 
 final class SliderViewController: UIViewController {
 
-    @IBOutlet weak var blueSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var boardColorLabel: UILabel!
-    @IBOutlet weak var inForColorLabel: UILabel!
+    @IBOutlet private weak var blueSlider: UISlider!
+    @IBOutlet private weak var greenSlider: UISlider!
+    @IBOutlet private weak var redSlider: UISlider!
+    @IBOutlet private weak var boardColorLabel: UILabel!
+    @IBOutlet private weak var inForColorLabel: UILabel!
+
     var redColor: CGFloat = 100 {
         didSet {
             changeValueColor()
@@ -30,6 +31,7 @@ final class SliderViewController: UIViewController {
             changeValueColor()
         }
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

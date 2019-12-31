@@ -10,15 +10,15 @@ import UIKit
 
 final class MonkeyViewController: UIViewController {
 
-    @IBOutlet weak var monkeyImageView: UIImageView!
-    @IBOutlet weak var monkeyLabel: UILabel!
+    @IBOutlet private weak var monkeyImageView: UIImageView!
+    @IBOutlet private weak var monkeyLabel: UILabel!
 
     var scaleSize: CGSize = CGSize.zero
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scaleSize = monkeyImageView.frame.size
 
+        scaleSize = monkeyImageView.frame.size
         let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(MonkeyViewController.handleRotate(sender:)))
         monkeyImageView.addGestureRecognizer(rotateGestureRecognizer)
 
@@ -35,10 +35,9 @@ final class MonkeyViewController: UIViewController {
         let doubleTapGestureRecognizer = UITapGestureRecognizer (target: self, action: #selector(MonkeyViewController.handleDoubleTap(sender:)))
         doubleTapGestureRecognizer.numberOfTapsRequired = 2
         monkeyImageView.addGestureRecognizer(doubleTapGestureRecognizer)
-
     }
 
-    @objc func handleDoubleTap(sender: UITapGestureRecognizer) {
+    @objc private func handleDoubleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
             self.monkeyLabel.text = "Khỉ là tôi"
             self.monkeyLabel.alpha = 1
@@ -48,8 +47,8 @@ final class MonkeyViewController: UIViewController {
             })
         }
     }
-    
-    @objc func handleTap(sender: UITapGestureRecognizer) {
+
+    @objc private func handleTap(sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5, animations: {
             self.monkeyLabel.text = "Tôi là khỉ"
             self.monkeyLabel.alpha = 1
@@ -60,21 +59,21 @@ final class MonkeyViewController: UIViewController {
         }
     }
 
-    @objc func handleRotate(sender: UIRotationGestureRecognizer) {
+    @objc private func handleRotate(sender: UIRotationGestureRecognizer) {
         if let view = sender.view {
             view.transform = view.transform.rotated(by: sender.rotation)
             sender.rotation = 0
         }
     }
 
-    @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
+    @objc private func handleLongPress(sender: UILongPressGestureRecognizer) {
         UIView.animate(withDuration: 0.5) {
             self.monkeyImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.monkeyImageView.transform = CGAffineTransform(rotationAngle: 0)
         }
     }
 
-    @objc func handlePinch(sender: UIPinchGestureRecognizer) {
+    @objc private func handlePinch(sender: UIPinchGestureRecognizer) {
         if let view = sender.view {
             if sender.scale <= 2 && sender.scale >= 0.5 {
                 view.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)

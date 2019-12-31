@@ -2,9 +2,9 @@ import UIKit
 
 final class TouchMoveSliderViewController: UIViewController {
 
-    @IBOutlet weak var thumbSliderLabel: UILabel!
-    @IBOutlet weak var sliderBarView: UIView!
-    @IBOutlet weak var colorView: UIView!
+    @IBOutlet private weak var thumbSliderLabel: UILabel!
+    @IBOutlet private weak var sliderBarView: UIView!
+    @IBOutlet private weak var colorView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,7 @@ final class TouchMoveSliderViewController: UIViewController {
         setupThumbSliderLabel()
         setupViewSlider(view: colorView)
         setupViewSlider(view: sliderBarView)
+
         if view.tag == 1 {
             print(11111)
             view.frame = CGRect(x: 0, y: 0, width: self.sliderBarView.frame.width, height: sliderBarView.frame.midY)
