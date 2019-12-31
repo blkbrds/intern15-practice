@@ -5,6 +5,13 @@
 import Foundation
 import Alamofire
 
+enum TravelModes: String {
+    case driving = "driving"
+    case walking = "walking"
+    case bicycling = "Bicycling"
+    case transit = "transit"
+}
+
 extension ApiManager.Direction {
     
     struct DirectionResult {

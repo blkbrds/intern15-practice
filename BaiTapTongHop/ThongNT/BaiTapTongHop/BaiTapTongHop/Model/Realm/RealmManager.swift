@@ -58,7 +58,7 @@ extension RealmManager {
                 }
             }
         } catch {
-            completion(.failure(error: "Cannot add place to Realm"))
+            completion(.failure(error: error.localizedDescription))
         }
     }
 

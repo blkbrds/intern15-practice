@@ -16,7 +16,7 @@ protocol HomeCellDelegate: class {
 final class HomeCell: TableCell {
 
     //MARK: - IBOulet
-    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!

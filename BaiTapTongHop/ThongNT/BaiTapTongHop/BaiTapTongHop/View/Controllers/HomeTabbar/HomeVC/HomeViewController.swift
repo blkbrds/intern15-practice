@@ -16,11 +16,13 @@ final class HomeViewController: ViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
 
     //MARK: - Properties
-    private var searchPlaces: [Place] = []
     private var status: Layout = .row
+    private var isLoadMore: Bool = true
     private var refreshControl = UIRefreshControl()
     private var collectionRefreshControl = UIRefreshControl()
     private var activityIndicator = NVActivityIndicatorView(frame: .zero)
+
+    private var temp: Int = 0
 
     var viewModel = HomeViewModel()
     var homeImage: UIImage?
@@ -83,9 +85,12 @@ final class HomeViewController: ViewController {
             if done {
                 self.updateUI(action: .reloadData)
             } else {
-                self.alert(title: App.Home.alertTitle, msg: message, buttons: ["OK"], preferButton: "OK", handler: nil)
+                if message != "" {
+                    self.alert(title: App.Home.alertTitle, msg: message, buttons: ["OK"], preferButton: "OK", handler: nil)
+                }
             }
         }
+        self.isLoadMore = !self.isLoadMore
     }
 
     @objc private func pullToRefresh() {
@@ -124,7 +129,7 @@ extension HomeViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
         refreshControl.tintColor = .systemPink
         refreshControl.alpha = 0.8
-        
+
         // Setup collectionView refresh control
         collectionRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         collectionRefreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
@@ -181,7 +186,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
 
         // Load more
-        if indexPath.row == viewModel.getNumberOfPlaces() - 2 {
+        if indexPath.row == viewModel.getNumberOfPlaces() - 2, isLoadMore {
+            isLoadMore = !isLoadMore
             loadMore()
         }
         return cell
@@ -205,7 +211,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             present(alert, animated: true, completion: nil)
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
         vc.dataSource = self
@@ -224,7 +230,7 @@ extension HomeViewController: DetailViewControllerDataSource {
 
 //MARK: - CollectionView datasource, delegate, DelegateFlowLayout
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getNumberOfPlaces()
     }
@@ -232,14 +238,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Config.homeCollectionViewCellIdentifier, for: indexPath) as? HomeCollectionCell else { return CollectionCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
-        
+
         // Load more
         if indexPath.row == viewModel.getNumberOfPlaces() - 2 {
             loadMore()
         }
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailViewController()
         vc.dataSource = self

@@ -9,6 +9,11 @@
 import UIKit
 import GoogleMaps
 
+struct Position {
+    var lat: CLLocationDegrees = 0
+    var long: CLLocationDegrees = 0
+}
+
 final class GooglePlace {
     var idPlace: String = ""
     var name: String = ""

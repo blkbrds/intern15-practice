@@ -144,7 +144,6 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.dataSource = self
         vc.viewModel = viewModel.getDetailViewModel(indexPath: indexPath)
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -160,13 +159,5 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(cancelButton)
             present(alert, animated: true, completion: nil)
         }
-    }
-}
-
-// MARK: - DetailViewController Datasource, Delegate
-extension FavoritesViewController: DetailViewControllerDataSource {
-
-    func getImageURLs() -> [String] {
-        return [""]
     }
 }

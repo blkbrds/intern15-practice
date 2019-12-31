@@ -40,8 +40,13 @@ final class HomeViewModel: ViewModel {
             case .failure(let error):
                 completed(false, error.localizedDescription)
             case .success(let additionPlaces):
-                self.places.append(contentsOf: additionPlaces.places)
-                completed(true, "") }
+                if additionPlaces.places.isEmpty {
+                    completed(false, "")
+                } else {
+                    self.places.append(contentsOf: additionPlaces.places)
+                    completed(true, "")
+                }
+            }
         }
     }
 
@@ -96,31 +101,5 @@ extension HomeViewModel {
 
     func getPlaces() -> [GooglePlace] {
         return places
-    }
-}
-
-// MARK: - Realm
-extension HomeViewModel {
-
-    func addPlaceToRealm(place: GooglePlace) {
-        RealmManager.shared.addPlace(place: place) { (result) in
-            switch result {
-            case .failure:
-                print("-------------------failurueeeeeeeeeee-----------")
-            case .success:
-                print("-------------------successsssssssss-----------")
-            }
-        }
-    }
-
-    func removePlaceFromRealm(id: String) {
-        RealmManager.shared.deletaPlace(idPlace: id) { (result) in
-            switch result {
-            case .failure:
-                print("-------------------failurueeeeeeeeeee-----------")
-            case .success:
-                print("-------------------successsssssssss-----------")
-            }
-        }
     }
 }
