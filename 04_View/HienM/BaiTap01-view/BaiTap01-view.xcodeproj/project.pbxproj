@@ -13,6 +13,14 @@
 		FD88AD2823B457B500F17423 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD88AD2623B457B500F17423 /* LaunchScreen.storyboard */; };
 		FD88AD3223B458B100F17423 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88AD3023B458B100F17423 /* MyViewController.swift */; };
 		FD88AD3323B458B100F17423 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD88AD3123B458B100F17423 /* MyViewController.xib */; };
+		FD88AD3723B5B41100F17423 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88AD3523B5B41100F17423 /* PasswordViewController.swift */; };
+		FD88AD3823B5B41100F17423 /* PasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD88AD3623B5B41100F17423 /* PasswordViewController.xib */; };
+		FD88AD3C23B994ED00F17423 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88AD3A23B994ED00F17423 /* ColorViewController.swift */; };
+		FD88AD3D23B994ED00F17423 /* ColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD88AD3B23B994ED00F17423 /* ColorViewController.xib */; };
+		FD88AD4C23B9F39500F17423 /* CustomSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88AD4A23B9F39500F17423 /* CustomSliderViewController.swift */; };
+		FD88AD4D23B9F39500F17423 /* CustomSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD88AD4B23B9F39500F17423 /* CustomSliderViewController.xib */; };
+		FD88AD5023BA539100F17423 /* MonkeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88AD4E23BA539100F17423 /* MonkeyViewController.swift */; };
+		FD88AD5123BA539100F17423 /* MonkeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD88AD4F23BA539100F17423 /* MonkeyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		FD88AD2923B457B500F17423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD88AD3023B458B100F17423 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FD88AD3123B458B100F17423 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		FD88AD3523B5B41100F17423 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		FD88AD3623B5B41100F17423 /* PasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordViewController.xib; sourceTree = "<group>"; };
+		FD88AD3A23B994ED00F17423 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		FD88AD3B23B994ED00F17423 /* ColorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorViewController.xib; sourceTree = "<group>"; };
+		FD88AD4A23B9F39500F17423 /* CustomSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderViewController.swift; sourceTree = "<group>"; };
+		FD88AD4B23B9F39500F17423 /* CustomSliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSliderViewController.xib; sourceTree = "<group>"; };
+		FD88AD4E23BA539100F17423 /* MonkeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyViewController.swift; sourceTree = "<group>"; };
+		FD88AD4F23BA539100F17423 /* MonkeyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonkeyViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				FD88AD1A23B457B400F17423 /* BaiTap01-view */,
-				FD88AD1923B457B400F17423 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,28 +66,70 @@
 				FD88AD1823B457B400F17423 /* BaiTap01-view.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FD88AD1A23B457B400F17423 /* BaiTap01-view */ = {
 			isa = PBXGroup;
 			children = (
-				FD88AD2F23B4581800F17423 /* cview */,
+				FD88AD4523B9B5B200F17423 /* baitap6-momkey */,
+				FD88AD3E23B9B1BB00F17423 /* baitap5 -Customslider */,
+				FD88AD3923B991EC00F17423 /* baitap4 - BackgroundColor  */,
+				FD88AD3423B5B22400F17423 /* baitap3 - account&password */,
+				FD88AD2F23B4581800F17423 /* baitap01,02 */,
 				FD88AD1B23B457B400F17423 /* AppDelegate.swift */,
 				FD88AD1D23B457B400F17423 /* SceneDelegate.swift */,
 				FD88AD2423B457B500F17423 /* Assets.xcassets */,
 				FD88AD2623B457B500F17423 /* LaunchScreen.storyboard */,
+				FD88AD1923B457B400F17423 /* Products */,
 				FD88AD2923B457B500F17423 /* Info.plist */,
 			);
 			path = "BaiTap01-view";
 			sourceTree = "<group>";
 		};
-		FD88AD2F23B4581800F17423 /* cview */ = {
+		FD88AD2F23B4581800F17423 /* baitap01,02 */ = {
 			isa = PBXGroup;
 			children = (
 				FD88AD3023B458B100F17423 /* MyViewController.swift */,
 				FD88AD3123B458B100F17423 /* MyViewController.xib */,
 			);
-			path = cview;
+			path = "baitap01,02";
+			sourceTree = "<group>";
+		};
+		FD88AD3423B5B22400F17423 /* baitap3 - account&password */ = {
+			isa = PBXGroup;
+			children = (
+				FD88AD3523B5B41100F17423 /* PasswordViewController.swift */,
+				FD88AD3623B5B41100F17423 /* PasswordViewController.xib */,
+			);
+			path = "baitap3 - account&password";
+			sourceTree = "<group>";
+		};
+		FD88AD3923B991EC00F17423 /* baitap4 - BackgroundColor  */ = {
+			isa = PBXGroup;
+			children = (
+				FD88AD3A23B994ED00F17423 /* ColorViewController.swift */,
+				FD88AD3B23B994ED00F17423 /* ColorViewController.xib */,
+			);
+			path = "baitap4 - BackgroundColor ";
+			sourceTree = "<group>";
+		};
+		FD88AD3E23B9B1BB00F17423 /* baitap5 -Customslider */ = {
+			isa = PBXGroup;
+			children = (
+				FD88AD4A23B9F39500F17423 /* CustomSliderViewController.swift */,
+				FD88AD4B23B9F39500F17423 /* CustomSliderViewController.xib */,
+			);
+			path = "baitap5 -Customslider";
+			sourceTree = "<group>";
+		};
+		FD88AD4523B9B5B200F17423 /* baitap6-momkey */ = {
+			isa = PBXGroup;
+			children = (
+				FD88AD4E23BA539100F17423 /* MonkeyViewController.swift */,
+				FD88AD4F23BA539100F17423 /* MonkeyViewController.xib */,
+			);
+			path = "baitap6-momkey";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD88AD2823B457B500F17423 /* LaunchScreen.storyboard in Resources */,
+				FD88AD3823B5B41100F17423 /* PasswordViewController.xib in Resources */,
+				FD88AD4D23B9F39500F17423 /* CustomSliderViewController.xib in Resources */,
+				FD88AD5123BA539100F17423 /* MonkeyViewController.xib in Resources */,
 				FD88AD2523B457B500F17423 /* Assets.xcassets in Resources */,
+				FD88AD3D23B994ED00F17423 /* ColorViewController.xib in Resources */,
 				FD88AD3323B458B100F17423 /* MyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,7 +208,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD88AD1C23B457B400F17423 /* AppDelegate.swift in Sources */,
+				FD88AD5023BA539100F17423 /* MonkeyViewController.swift in Sources */,
+				FD88AD3723B5B41100F17423 /* PasswordViewController.swift in Sources */,
 				FD88AD3223B458B100F17423 /* MyViewController.swift in Sources */,
+				FD88AD3C23B994ED00F17423 /* ColorViewController.swift in Sources */,
+				FD88AD4C23B9F39500F17423 /* CustomSliderViewController.swift in Sources */,
 				FD88AD1E23B457B400F17423 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

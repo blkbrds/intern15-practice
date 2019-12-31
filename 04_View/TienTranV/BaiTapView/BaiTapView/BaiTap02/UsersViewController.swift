@@ -10,8 +10,8 @@ import UIKit
 
 final class UsersViewController: UIViewController {
 
-    private let names: [String] = ["CSS", "IOS", "Android", "Kotlin", "Java", "NodeJS", "Amazon", "MongoDB", "Swift"]
-    private let images: [String] = ["girl-1", "girl-2", "girl-3", "girl-4", "girl-5", "girl-6", "girl-7", "girl-8", "girl-9"]
+		private let names: [String] = ["CSS", "IOS", "Android", "Kotlin", "Java", "NodeJS", "Amazon", "MongoDB", "Swift"]
+		private let images: [String] = ["girl-1", "girl-2", "girl-3", "girl-4", "girl-5", "girl-6", "girl-7", "girl-8", "girl-9"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,8 +70,8 @@ final class UsersViewController: UIViewController {
         return userView
     }
 
-    @objc private func buttonDidClick(_ sender: UITapGestureRecognizer) {
-        let userName = sender.name
-        print("Name User is \(userName ?? "no name")")
-    }
+		@objc private func buttonDidClick(_ sender: UITapGestureRecognizer) {
+			let userName = sender.name
+			print("Name User is \(userName ?? "no name")")
+		}
 }
