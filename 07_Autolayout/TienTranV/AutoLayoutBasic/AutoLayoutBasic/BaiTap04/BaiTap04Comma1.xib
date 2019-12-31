@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BaiTapAutoLayoutBasicView" customModule="AutoLayoutBasic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="630" height="535"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBs-4n-2v4">
+                    <rect key="frame" x="50" y="196" width="143.5" height="143"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KBs-4n-2v4" secondAttribute="height" multiplier="1:1" id="qVh-F2-YCx"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKQ-jH-S7F">
+                    <rect key="frame" x="436.5" y="196" width="143.5" height="143"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="UKQ-jH-S7F" secondAttribute="height" multiplier="1:1" id="jNK-RZ-BNr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="md2-f3-Y6R">
+                    <rect key="frame" x="243.5" y="196" width="143" height="143"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="md2-f3-Y6R" secondAttribute="height" multiplier="1:1" id="1p0-rq-xJZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="md2-f3-Y6R" firstAttribute="width" secondItem="KBs-4n-2v4" secondAttribute="width" id="5VP-N2-ca1"/>
+                <constraint firstItem="md2-f3-Y6R" firstAttribute="leading" secondItem="KBs-4n-2v4" secondAttribute="trailing" constant="50" id="7ls-Tf-Jxe"/>
+                <constraint firstAttribute="trailing" secondItem="UKQ-jH-S7F" secondAttribute="trailing" constant="50" id="FG4-PW-obh"/>
+                <constraint firstItem="UKQ-jH-S7F" firstAttribute="leading" secondItem="md2-f3-Y6R" secondAttribute="trailing" constant="50" id="GsK-Ku-Vsg"/>
+                <constraint firstItem="md2-f3-Y6R" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KFO-AF-vqV"/>
+                <constraint firstItem="UKQ-jH-S7F" firstAttribute="width" secondItem="md2-f3-Y6R" secondAttribute="width" id="Sdi-7W-hPL"/>
+                <constraint firstItem="KBs-4n-2v4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="TDM-Tl-fZx"/>
+                <constraint firstItem="UKQ-jH-S7F" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="W3b-8f-AU8"/>
+                <constraint firstItem="KBs-4n-2v4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="oQr-d0-Ke7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-93" y="47"/>
+        </view>
+    </objects>
+</document>
