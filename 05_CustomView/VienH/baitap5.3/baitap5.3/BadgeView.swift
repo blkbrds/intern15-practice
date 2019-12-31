@@ -23,7 +23,6 @@ extension UIButton {
 
     func addLocationToButton(location: Location, value: String) {
 
-        //MARK : - Badge Label config
         let BadgeViewController = UILabel()
         BadgeViewController.numberOfLines = 0
         BadgeViewController.frame.size = CGSize(width: 50, height: 50)

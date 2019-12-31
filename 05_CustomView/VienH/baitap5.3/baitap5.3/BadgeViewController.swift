@@ -10,11 +10,13 @@ import UIKit
 
 final class BadgeViewController: UIViewController {
 
-    @IBOutlet weak var photoButton: UIButton!
-    @IBOutlet weak var friendButton: UIButton!
-    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet private weak var photoButton: UIButton!
+    @IBOutlet private weak var friendButton: UIButton!
+    @IBOutlet private weak var emailButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         emailButton.layer.cornerRadius = 5
         emailButton.addLocationToButton(location: .topLeft, value: "5")
         friendButton.layer.cornerRadius = 5

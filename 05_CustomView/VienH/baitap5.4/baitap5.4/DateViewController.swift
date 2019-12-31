@@ -9,14 +9,18 @@ import UIKit
 
 final class DateViewController: UIViewController {
 
-    @IBOutlet weak var showDateTextfield: UITextField!
+    @IBOutlet private weak var showDateTextfield: UITextField!
+
     private var dateView = Bundle.main.loadNibNamed("DateView", owner: self, options: nil)?.first as? DateView
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         showDateTextfield.delegate = self
         showDateTextfield.layer.borderColor = UIColor.black.cgColor
         showDateTextfield.layer.borderWidth = 0.5
         showDateTextfield.layer.cornerRadius = 5
+
         if let dateView = dateView {
             let frame = CGRect(x: 0, y: view.frame.maxY - dateView.frame.height, width: view.frame.width, height: dateView.frame.height)
             dateView.frame = frame

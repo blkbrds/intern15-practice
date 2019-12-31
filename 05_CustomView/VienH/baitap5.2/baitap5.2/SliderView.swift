@@ -17,11 +17,11 @@ final class SliderView: UIView {
         case sendValue(percent: Float)
     }
 
-    @IBOutlet weak var valueLabel: UILabel!
-    @IBOutlet weak var colorView: UIView!
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet private weak var valueLabel: UILabel!
+    @IBOutlet private weak var colorView: UIView!
+    @IBOutlet private weak var backgroundView: UIView!
 
-    weak var delegate: MySliderViewDelegate?
+    private weak var delegate: MySliderViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()

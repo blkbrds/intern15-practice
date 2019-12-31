@@ -10,7 +10,7 @@ import UIKit
 
 struct User {
     let name: String
-    let image: String
+    let imageName: String
 }
 
 final class AvatarViewController: UIViewController {
@@ -21,6 +21,7 @@ final class AvatarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         var index: Int = 1
         for _ in 0...10 {
             for _ in 0...2 {
@@ -45,6 +46,7 @@ final class AvatarViewController: UIViewController {
 }
 
 extension AvatarViewController: MyAvatarViewDelegate {
+
     func myAvatarView(myAvatarView: MyAvatarView, didSelect name: String) {
         print("select user \(name)")
     }

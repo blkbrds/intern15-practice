@@ -10,8 +10,8 @@ import UIKit
 
 final class SliderViewController: UIViewController {
 
-    @IBOutlet weak var valueTextfield: UITextField!
-    @IBOutlet weak var labelController: UILabel!
+    @IBOutlet private weak var valueTextfield: UITextField!
+    @IBOutlet private weak var labelController: UILabel!
 
     private let triangle = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)?[0] as? SliderView
 

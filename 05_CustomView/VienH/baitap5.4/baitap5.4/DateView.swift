@@ -13,24 +13,22 @@ protocol DatePickerViewDelegate {
 
 final class DateView: UIView {
 
-    @IBOutlet weak var datePickerView: UIDatePicker!
-    @IBOutlet weak var contentView: UIView!
+    var delegate: DatePickerViewDelegate?
+
+    @IBOutlet private weak var datePickerView: UIDatePicker!
+    @IBOutlet private weak var contentView: UIView!
 
     enum Action {
         case show
         case hide
         case done
         case cancel
-
     }
-    var delegate: DatePickerViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView?.alpha = 0
     }
 
-    //MARK: - public functions
     func show() {
         UIView.animate(withDuration: 0.5) {
             self.contentView?.alpha = 1
@@ -38,27 +36,24 @@ final class DateView: UIView {
     }
 
     func hide() {
-
         if !contentView.isHidden {
             UIView.animate(withDuration: 0.5) {
                 self.contentView?.alpha = 0
             }
             contentView?.isUserInteractionEnabled = true
+            contentView?.alpha = 0
         }
     }
 
-    // MARK: - Action
-    @IBAction func doneAction(_ sender: Any) {
+    @IBAction private func doneAction(_ sender: Any) {
         hide()
-
         if let delegate = self.delegate {
             delegate.datePickerView(view: self, needPerform: .cancel, selectedDate: datePickerView.date)
         }
     }
 
-    @IBAction func cannelAction(_ sender: Any) {
+    @IBAction private func cannelAction(_ sender: Any) {
         hide()
-
         if let delegate = self.delegate {
             delegate.datePickerView(view: self, needPerform: .done, selectedDate: nil)
         }
