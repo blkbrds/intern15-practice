@@ -53,7 +53,7 @@ final class BaseTabBarController: UITabBarController {
 //        viewControllers?.append(followingScreen)
 //        viewControllers?.append(settingScreen)
 
-        setViewControllers([homeScreen, headlinesScreen, followingScreen, settingScreen], animated: true)
+        setViewControllers([headlinesScreen, homeScreen, followingScreen, settingScreen], animated: true)
     }
 
     private func configUI() {
