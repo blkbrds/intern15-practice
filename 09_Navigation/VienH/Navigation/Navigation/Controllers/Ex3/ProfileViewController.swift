@@ -10,8 +10,8 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var profileTextfield: UITextField!
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet private weak var profileTextfield: UITextField!
+    @IBOutlet private weak var profileImageView: UIImageView!
 
     var name: String?
     var image: String?

@@ -24,7 +24,7 @@ final class LoginViewController: UIViewController {
         passwordTextfield.text = ""
     }
 
-    @IBAction func loginButton(_ sender: Any) {
+    @IBAction private func loginButton(_ sender: Any) {
         if userNameTextfield.text == "ios15" && passwordTextfield.text == "123" {
             let vc = HelloViewController()
             navigationController?.pushViewController(vc, animated: true)

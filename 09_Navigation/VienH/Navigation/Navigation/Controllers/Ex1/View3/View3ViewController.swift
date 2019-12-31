@@ -15,20 +15,20 @@ final class View3ViewController: UIViewController {
         title = "View 3"
     }
 
-    @IBAction func pushToNextButton() {
+    @IBAction private func pushToNextButton() {
         let vc = View4ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction func pushToPreviousButton() {
+    @IBAction private func pushToPreviousButton() {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func pushToRootButton(_ sender: Any) {
+    @IBAction private func pushToRootButton(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 
-    @IBAction func pushToPreviousView1Button() {
+    @IBAction private func pushToPreviousView1Button() {
         guard let navi = navigationController else { return }
         for vc in navi.viewControllers {
             if let vc = vc as? View1ViewController {

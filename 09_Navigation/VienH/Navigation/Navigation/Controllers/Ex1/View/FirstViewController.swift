@@ -15,7 +15,6 @@ final class FirstViewController: UIViewController {
         title = "View"
     }
 
-    // MARK: config
     func setupUI() {
     }
 
@@ -24,19 +23,19 @@ final class FirstViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction func changeBackgroundNavigation() {
+    @IBAction private func changeBackgroundNavigation() {
         let image = UIImage(named: "Anh-Anime-1")
         navigationController?.navigationBar.setBackgroundImage(image?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), resizingMode: .stretch), for: .default)
     }
 
-    @IBAction func changeTintcolorNavigation() {
+    @IBAction private func changeTintcolorNavigation() {
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.systemBlue
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
     }
 
-    @IBAction func addSearchBarNavigation() {
+    @IBAction private func addSearchBarNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = false
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
@@ -45,14 +44,14 @@ final class FirstViewController: UIViewController {
         searchController.searchBar.tintColor = .white
     }
 
-    @IBAction func addGroupBarButtonNavigation() {
+    @IBAction private func addGroupBarButtonNavigation() {
         let button1 = UIBarButtonItem(title: "A", style: .plain, target: self, action: nil)
         let button2 = UIBarButtonItem(title: "B", style: .plain, target: self, action: nil)
         let button3 = UIBarButtonItem(title: "C", style: .plain, target: self, action: nil)
         navigationItem.leftBarButtonItems = [button1, button2, button3]
     }
 
-    @IBAction func changeBarButtonItemNavigation() {
+    @IBAction private func changeBarButtonItemNavigation() {
         let button = UIBarButtonItem(image: UIImage(named: "ic_question"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = button
     }

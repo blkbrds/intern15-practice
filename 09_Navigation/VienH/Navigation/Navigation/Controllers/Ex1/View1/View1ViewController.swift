@@ -29,23 +29,23 @@ final class View1ViewController: UIViewController {
 
     }
 
-    @objc func search() {
+    @objc private func search() {
         print("go to search")
     }
 
-    @objc func setting() {
+    @objc private func setting() {
         print("go to setting")
     }
 
-    @objc func rightCustomView() {
+    @objc private func rightCustomView() {
     }
 
-    @IBAction func pushToNextButton() {
+    @IBAction private func pushToNextButton() {
         let vc = View2ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction func pushToRootButton() {
+    @IBAction private func pushToRootButton() {
         navigationController?.popToRootViewController(animated: true)
     }
 }
