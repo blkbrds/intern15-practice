@@ -36,7 +36,7 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let newsCell = tableView.dequeueReusableCell(withIdentifier: newsTableViewCell, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
-        #warning("Config NewsCell!!!")
+//        #warning("Config NewsCell!!!")
         newsCell.selectionStyle = .none
         return newsCell
     }
@@ -50,7 +50,7 @@ extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newsDetail = NewsDetailViewController()
-        #warning("Config: send link show news")
+//        #warning("Config: send link show news")
         pushViewController(viewcontroller: newsDetail)
     }
 }

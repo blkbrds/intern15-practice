@@ -10,18 +10,43 @@ import UIKit
 
 final class HeadlinesViewController: BaseViewController {
 
-
+    // MARK: - IBOutlet
     @IBOutlet weak var menuCategoryCollectionView: UICollectionView!
-    
+
+    // MARK: - Properties
     private var selectedIndex = 0
     private let menuCategoryCell = "MenuCategoryCell"
-    private let menuCategory = ["U.S", "World", "Business", "Technology", "General", "Health", "Science", "Sports", "Entertainment"]
+    private let menuCategory = ["U.S", "World", "Business", "Technology", "Health", "Science", "Sports", "Entertainment"]
 
+    private var pageController: UIPageViewController!
+    private var viewControllers = [BaseHomeChildViewController]()
+
+    // MARK: - config
     override func setupUI() {
         super.setupUI()
         title = "Headlines"
 
         configMenuCategoryCollectionView()
+        configPageViewController()
+    }
+
+    private func configPageViewController() {
+        pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        pageController.dataSource = self
+        pageController.delegate = self
+
+        let widthScreen = UIScreen.main.bounds.width
+        print(widthScreen)
+        pageController.view.frame = CGRect(x: 0, y: 100, width: 450, height: 800)
+        //CGRect(x: 0, y: 100, width: 450, height: 800) UIScreen.main.bounds
+        addChild(pageController)
+        view.addSubview(pageController.view)
+
+        let initFirstBaseHomeChildVC = viewControllerAtIndex(index: 0)
+        viewControllers.append(initFirstBaseHomeChildVC)
+
+        pageController.setViewControllers(viewControllers, direction: .forward, animated: false)
+        pageController.didMove(toParent: self)
     }
 
     private func configMenuCategoryCollectionView() {
@@ -29,33 +54,77 @@ final class HeadlinesViewController: BaseViewController {
         menuCategoryCollectionView.dataSource = self
         menuCategoryCollectionView.delegate = self
 
+        // auto resize item
         if let flowLayout = menuCategoryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
     }
+
+    private func viewControllerAtIndex(index: Int) -> BaseHomeChildViewController {
+        print(index)
+        #warning("goi api get data")
+        let childViewController = BaseHomeChildViewController()
+        childViewController.index = index
+        childViewController.updateUI(text: menuCategory[index])
+        print(menuCategory[index])
+        return childViewController
+    }
+
+    private func scrollToItem(to selectedIndex: Int) {
+        menuCategoryCollectionView.scrollToItem(at: IndexPath(row: selectedIndex, section: 0), at: .centeredHorizontally, animated: true)
+
+        for i in 0..<menuCategory.count {
+            if let cell = menuCategoryCollectionView.cellForItem(at: IndexPath(item: i, section: 0)) as? MenuCategoryCell {
+                cell.configUI(isEnable: i == selectedIndex)
+            }
+        }
+    }
 }
 
-extension HeadlinesViewController: UICollectionViewDataSource {
+// MARK: - PageViewController DataSource
+extension HeadlinesViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let viewController = viewController as? BaseHomeChildViewController,
+            let index = viewController.index else { return nil }
+        guard index == 0 else { return viewControllerAtIndex(index: index - 1) }
+        return nil
+    }
+
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let viewController = viewController as? BaseHomeChildViewController,
+            var index = viewController.index else { return nil }
+        index += 1
+        guard index == menuCategory.count else { return viewControllerAtIndex(index: index) }
+        return nil
+    }
+
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return menuCategory.count
+    }
+
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+}
+
+// MARK: - CollectionView DataSource, Delegate
+extension HeadlinesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+
+    // DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        menuCategory.count
+        return menuCategory.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let menuCell = menuCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: menuCategoryCell, for: indexPath) as? MenuCategoryCell else { return UICollectionViewCell() }
-        menuCell.configUI(category: menuCategory[indexPath.row], isEnable: indexPath.row == selectedIndex)
+        menuCell.configUI(category: menuCategory[indexPath.row], isEnable: selectedIndex == indexPath.row)
         return menuCell
     }
-}
 
-extension HeadlinesViewController: UICollectionViewDelegate {
+    // Delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-//        collectionView.reloadData()
-        for i in 0..<menuCategory.count where menuCategory[i] != menuCategory[indexPath.row] {
-            if let cell = collectionView.cellForItem(at: IndexPath(item: i, section: 0)) as? MenuCategoryCell {
-                cell.configUI(category: menuCategory[i], isEnable: i == selectedIndex)
-            }
-        }
+        scrollToItem(to: selectedIndex)
     }
 }

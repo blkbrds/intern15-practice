@@ -34,6 +34,8 @@
 		F0C4067123B9DAF00078FA35 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C4066F23B9DAF00078FA35 /* NewsDetailViewController.xib */; };
 		F0CAF53E23BB04F60068A724 /* MenuCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CAF53C23BB04F60068A724 /* MenuCategoryCell.swift */; };
 		F0CAF53F23BB04F60068A724 /* MenuCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0CAF53D23BB04F60068A724 /* MenuCategoryCell.xib */; };
+		FFD099F623BCEEB600C359BE /* BaseHomeChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD099F423BCEEB600C359BE /* BaseHomeChildViewController.swift */; };
+		FFD099F723BCEEB600C359BE /* BaseHomeChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD099F523BCEEB600C359BE /* BaseHomeChildViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		F0C4066F23B9DAF00078FA35 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		F0CAF53C23BB04F60068A724 /* MenuCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoryCell.swift; sourceTree = "<group>"; };
 		F0CAF53D23BB04F60068A724 /* MenuCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCategoryCell.xib; sourceTree = "<group>"; };
+		FFD099F423BCEEB600C359BE /* BaseHomeChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHomeChildViewController.swift; sourceTree = "<group>"; };
+		FFD099F523BCEEB600C359BE /* BaseHomeChildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseHomeChildViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +102,11 @@
 		F0C4061D23B993780078FA35 /* BaiTapTongHop */ = {
 			isa = PBXGroup;
 			children = (
+				F0C4063223B993990078FA35 /* AppDelegate */,
 				F0C4063823B993EF0078FA35 /* Define */,
 				F0C4063623B993E20078FA35 /* Library */,
 				F0C4063523B993D80078FA35 /* Model */,
 				F0C4063423B993CF0078FA35 /* View */,
-				F0C4063223B993990078FA35 /* AppDelegate */,
 				F0C4063323B993A80078FA35 /* Resource */,
 				F0C4062C23B9937B0078FA35 /* Info.plist */,
 			);
@@ -139,10 +143,7 @@
 		F0C4063523B993D80078FA35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F0C4064D23B998950078FA35 /* Networking */,
-				F0C4064C23B998850078FA35 /* DataManager */,
 				F0C4064023B994930078FA35 /* APIManager */,
-				F0C4063F23B994820078FA35 /* Objects */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,13 +172,6 @@
 				F0C4063D23B994630078FA35 /* String.swift */,
 			);
 			path = Define;
-			sourceTree = "<group>";
-		};
-		F0C4063F23B994820078FA35 /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Objects;
 			sourceTree = "<group>";
 		};
 		F0C4064023B994930078FA35 /* APIManager */ = {
@@ -219,20 +213,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		F0C4064C23B998850078FA35 /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
-		F0C4064D23B998950078FA35 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		F0C4065223B99B360078FA35 /* ForYouTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +226,7 @@
 		F0C4065323B99B3B0078FA35 /* HeadlinesTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				FFD099DE23BCE79D00C359BE /* BaseHomeChild */,
 				F0CAF53B23BB04CE0068A724 /* MenuCell */,
 				F0C4065B23B99C240078FA35 /* HeadlinesViewController.swift */,
 				F0C4065C23B99C260078FA35 /* HeadlinesViewController.xib */,
@@ -296,6 +277,23 @@
 				F0CAF53D23BB04F60068A724 /* MenuCategoryCell.xib */,
 			);
 			path = MenuCell;
+			sourceTree = "<group>";
+		};
+		FFD099DE23BCE79D00C359BE /* BaseHomeChild */ = {
+			isa = PBXGroup;
+			children = (
+				FFD099E323BCE7CD00C359BE /* NewsCell */,
+				FFD099F423BCEEB600C359BE /* BaseHomeChildViewController.swift */,
+				FFD099F523BCEEB600C359BE /* BaseHomeChildViewController.xib */,
+			);
+			path = BaseHomeChild;
+			sourceTree = "<group>";
+		};
+		FFD099E323BCE7CD00C359BE /* NewsCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewsCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +359,7 @@
 				F0C4062B23B9937B0078FA35 /* LaunchScreen.storyboard in Resources */,
 				F0CAF53F23BB04F60068A724 /* MenuCategoryCell.xib in Resources */,
 				F0C4066B23B99FCC0078FA35 /* NewsTableViewCell.xib in Resources */,
+				FFD099F723BCEEB600C359BE /* BaseHomeChildViewController.xib in Resources */,
 				F0C4067123B9DAF00078FA35 /* NewsDetailViewController.xib in Resources */,
 				F0C4062823B9937B0078FA35 /* Assets.xcassets in Resources */,
 				F0C4066223B99C3C0078FA35 /* FollowingViewController.xib in Resources */,
@@ -376,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C4066D23B9A26F0078FA35 /* BaseTabBarController.swift in Sources */,
+				FFD099F623BCEEB600C359BE /* BaseHomeChildViewController.swift in Sources */,
 				F0C4067023B9DAF00078FA35 /* NewsDetailViewController.swift in Sources */,
 				F0C4063C23B9945A0078FA35 /* Errors.swift in Sources */,
 				F0C4063A23B994500078FA35 /* App.swift in Sources */,
