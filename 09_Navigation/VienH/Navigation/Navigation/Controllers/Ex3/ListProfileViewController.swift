@@ -63,7 +63,7 @@ final class ListProfileViewController: UIViewController {
         let s = string.split(separator: ",")
         let vc = ProfileViewController()
         vc.name = String(describing: s[0])
-        vc.image = String(describing: s[1])
+        vc.imagesName = String(describing: s[1])
         navigationController?.pushViewController(vc, animated: true)
     }
 }

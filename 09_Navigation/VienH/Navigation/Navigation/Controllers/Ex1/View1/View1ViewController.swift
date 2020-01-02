@@ -15,10 +15,10 @@ final class View1ViewController: UIViewController {
         title = "View 1"
 
         let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 40))
-        searchButton.addTarget(self, action: #selector(search), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         searchButton.setImage(UIImage(named: "icons8-search-50"), for: .normal)
         let settingButton = UIButton(frame: CGRect(x: 50, y: 0, width: 50, height: 44))
-        settingButton.addTarget(self, action: #selector(setting), for: .touchUpInside)
+        settingButton.addTarget(self, action: #selector(settingButtonTapped), for: .touchUpInside)
         settingButton.setImage(UIImage(named: "icons8-gear-50"), for: .normal)
         let rightCustomView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
         rightCustomView.bounds = rightCustomView.bounds.offsetBy(dx: -20, dy: 0)
@@ -26,14 +26,13 @@ final class View1ViewController: UIViewController {
         rightCustomView.addSubview(settingButton)
         let rightBarButton = UIBarButtonItem(customView: rightCustomView)
         navigationItem.rightBarButtonItem = rightBarButton
-
     }
 
-    @objc private func search() {
+    @objc private func searchButtonTapped() {
         print("go to search")
     }
 
-    @objc private func setting() {
+    @objc private func settingButtonTapped() {
         print("go to setting")
     }
 

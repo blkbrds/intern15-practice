@@ -32,7 +32,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Gradient Navigation"/>
                     <connections>
-                        <action selector="changeBackgroundNavigation" destination="-1" eventType="touchUpInside" id="9Df-qt-2IY"/>
+                        <action selector="addSearchBarNavigation" destination="-1" eventType="touchUpInside" id="4rN-N8-DFQ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfQ-Vf-am9" userLabel="New Feed Navigation">
@@ -44,24 +44,6 @@
                         <action selector="changeTintcolorNavigation" destination="-1" eventType="touchUpInside" id="mhh-22-QJn"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZi-bH-1bb">
-                    <rect key="frame" x="0.0" y="359" width="179" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <state key="normal" title="Search Navigtion"/>
-                    <connections>
-                        <action selector="addSearchBarNavigation" destination="-1" eventType="touchUpInside" id="9XI-HP-xXl"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g5-pt-yei">
-                    <rect key="frame" x="118" y="446" width="179" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="Bar button navigation"/>
-                    <connections>
-                        <action selector="changeBarButtonItemNavigation" destination="-1" eventType="touchUpInside" id="W6X-T5-qrc"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUA-A9-Dhs">
                     <rect key="frame" x="235" y="359" width="179" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,6 +51,15 @@
                     <state key="normal" title="Group navigation"/>
                     <connections>
                         <action selector="addGroupBarButtonNavigation" destination="-1" eventType="touchUpInside" id="K6f-pP-l2d"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g5-pt-yei">
+                    <rect key="frame" x="0.0" y="358" width="179" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Bar button navigation"/>
+                    <connections>
+                        <action selector="changeBarButtonItemNavigation" destination="-1" eventType="touchUpInside" id="W6X-T5-qrc"/>
                     </connections>
                 </button>
             </subviews>

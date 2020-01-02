@@ -15,23 +15,14 @@ final class FirstViewController: UIViewController {
         title = "View"
     }
 
-    func setupUI() {
-    }
-
     @IBAction private func pushToNextButton() {
         let vc = View1ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction private func changeBackgroundNavigation() {
-        let image = UIImage(named: "Anh-Anime-1")
-        navigationController?.navigationBar.setBackgroundImage(image?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), resizingMode: .stretch), for: .default)
-    }
-
     @IBAction private func changeTintcolorNavigation() {
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.systemBlue
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+        navigationController?.navigationBar.barTintColor = UIColor.systemBlue; navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)]
     }
 

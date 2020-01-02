@@ -45,7 +45,7 @@ final class View4ViewController: UIViewController {
         }
     }
 
-    @IBAction private func pushToTootButton(_ sender: Any) {
+    @IBAction private func popToRootButton(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 }

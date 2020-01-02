@@ -14,7 +14,7 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var profileImageView: UIImageView!
 
     var name: String?
-    var image: String?
+    var imagesName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ final class ProfileViewController: UIViewController {
     }
 
     private func setupUI() {
-        guard let name = name, let image = image else { return }
+        guard let name = name, let image = imagesName else { return }
         profileImageView.image = UIImage(named: image)
         profileTextfield.text = name
     }
