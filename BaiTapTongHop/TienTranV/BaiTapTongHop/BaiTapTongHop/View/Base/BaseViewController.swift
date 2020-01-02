@@ -25,9 +25,7 @@ class BaseViewController: UIViewController {
     // MARK : setup Data & UI
     func setupData() { }
 
-    func setupUI() {
-        view.backgroundColor = .white
-    }
+    func setupUI() { }
 
     func pushViewController(viewcontroller: UIViewController) {
         navigationController?.pushViewController(viewcontroller, animated: true)
