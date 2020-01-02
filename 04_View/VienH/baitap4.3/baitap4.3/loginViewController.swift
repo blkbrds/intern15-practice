@@ -51,11 +51,11 @@ final class loginViewController: UIViewController {
         view.endEditing(true)
     }
 
-    @IBAction func tapLoginButton(_ sender: Any) {
+    @IBAction private func tapLoginButton(_ sender: Any) {
         login()
     }
 
-    @IBAction func tapClearButton(_ sender: Any) {
+    @IBAction private func tapClearButton(_ sender: Any) {
         userTextField.text = ""
         passwordTextField.text = ""
     }
@@ -70,7 +70,8 @@ extension loginViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 0 {
-            passwordTextField.becomeFirstResponder() }
+            passwordTextField.becomeFirstResponder()
+        }
         if textField.tag == 1 {
             login()
         }

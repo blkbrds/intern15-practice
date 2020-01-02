@@ -19,13 +19,13 @@ final class AvatarViewController: UIViewController {
                 x = 0
                 y += 1
             }
-            creatAvatarView(x: 20 + ((UIScreen.main.bounds.width - 40 - 2 * space) / 3 + space) * CGFloat(x), y: 70 + (160 + space) *
+            createAvatarView(x: 20 + ((UIScreen.main.bounds.width - 40 - 2 * space) / 3 + space) * CGFloat(x), y: 70 + (160 + space) *
                     CGFloat(y), image: imagesName[i], name: names[i])
             x += 1
         }
     }
 
-    func creatAvatarView(x: CGFloat = 20, y: CGFloat = 70, image: String = "Defaultdownload.jpeg", name: String = "user name") {
+    func createAvatarView(x: CGFloat = 20, y: CGFloat = 70, image: String = "Defaultdownload.jpeg", name: String = "user name") {
         let width = ((UIScreen.main.bounds.width - 40) - 2 * space) / 3
         let height: CGFloat = 160
         let avatarView = UIView(frame: CGRect(x: x, y: y, width: width, height: height))

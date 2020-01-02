@@ -16,17 +16,17 @@ final class SliderViewController: UIViewController {
     @IBOutlet private weak var boardColorLabel: UILabel!
     @IBOutlet private weak var inForColorLabel: UILabel!
 
-    var redColor: CGFloat = 100 {
+    var redPoint: CGFloat = 100 {
         didSet {
             changeValueColor()
         }
     }
-    var greenColor: CGFloat = 100 {
+    var greenPoint: CGFloat = 100 {
         didSet {
             changeValueColor()
         }
     }
-    var blueColor: CGFloat = 100 {
+    var bluePoint: CGFloat = 100 {
         didSet {
             changeValueColor()
         }
@@ -41,27 +41,27 @@ final class SliderViewController: UIViewController {
         changeValueColor()
         boardColorLabel.clipsToBounds = true
         boardColorLabel.layer.cornerRadius = 20
-        redSlider.value = Float(greenColor)
-        greenSlider.value = Float(greenColor)
-        blueSlider.value = Float(blueColor)
+        redSlider.value = Float(redPoint)
+        greenSlider.value = Float(greenPoint)
+        blueSlider.value = Float(bluePoint)
         changeValueColor()
     }
 
     @IBAction func changeValueColor(_ sender: Any) {
-        redColor = CGFloat(redSlider.value)
+        redPoint = CGFloat(redSlider.value)
     }
 
     @IBAction func changeGreenValueColor(_ sender: Any) {
-        greenColor = CGFloat(greenSlider.value)
+        greenPoint = CGFloat(greenSlider.value)
     }
 
     @IBAction func changeBlueValueColor(_ sender: Any) {
-        blueColor = CGFloat(blueSlider.value)
+        bluePoint = CGFloat(blueSlider.value)
     }
 
     func changeValueColor() {
-        boardColorLabel.backgroundColor = UIColor(displayP3Red: redColor / 255, green: greenColor / 255, blue: blueColor / 255, alpha: 1)
-        inForColorLabel.text = "CoLor( R: \(Int(redColor)), G: \(Int(greenColor)), B: \(Int(blueColor)))"
+        boardColorLabel.backgroundColor = UIColor(displayP3Red: redPoint / 255, green: greenPoint / 255, blue: bluePoint / 255, alpha: 1)
+        inForColorLabel.text = "CoLor( R: \(Int(redPoint)), G: \(Int(greenPoint)), B: \(Int(bluePoint)))"
     }
 }
 
