@@ -13,9 +13,9 @@ final class loginViewController: UIViewController {
     private let password: String = "admin123"
 
     enum Error: String {
-        case khongNhap = "Ban chua nhap gi ca"
-        case nhapSai = "Ban da nhap sai"
-        case thieu = "Ban nhap thieu roi"
+        case khongNhap = "Hay nhap tai khoan"
+        case nhapSai = "Da nhap sai"
+        case thieu = "Nhap thieu"
     }
 
     @IBOutlet private weak var commentLabel: UILabel!
