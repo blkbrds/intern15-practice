@@ -25,15 +25,14 @@ final class AvatarViewController: UIViewController {
         }
     }
 
-    func creatAvatarView(x: CGFloat = 20, y: CGFloat = 70, image: String =
-            "Defaultdownload.jpeg", name: String = "user name") {
+    func creatAvatarView(x: CGFloat = 20, y: CGFloat = 70, image: String = "Defaultdownload.jpeg", name: String = "user name") {
         let width = ((UIScreen.main.bounds.width - 40) - 2 * space) / 3
         let height: CGFloat = 160
         let avatarView = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
         avatarView.layer.borderWidth = 2
         avatarView.layer.borderColor = UIColor.black.cgColor
         view.addSubview(avatarView)
-        
+
         let userAvatar = UIImageView()
         if let img = UIImage(named: image) {
             userAvatar.image = img
@@ -58,7 +57,7 @@ final class AvatarViewController: UIViewController {
         userName.textColor = .blue
     }
 
-    @objc func handleBtn(_ sender: UIGestureRecognizer) {
+    @objc private func handleBtn(_ sender: UIGestureRecognizer) {
         guard let name = sender.name else { return }
         print("Click here ", name)
     }

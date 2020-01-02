@@ -44,7 +44,7 @@ final class AvatarViewController: UIViewController {
         userAvatar.contentMode = .scaleToFill
         userAvatar.isUserInteractionEnabled = true
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBtn))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleButton))
         tapGesture.name = name
         userAvatar.addGestureRecognizer(tapGesture)
         avatarView.addSubview(userAvatar)
@@ -59,7 +59,7 @@ final class AvatarViewController: UIViewController {
         avatarView.addSubview(userName)
     }
 
-    @objc func handleBtn(_ sender: UITapGestureRecognizer) {
+    @objc private func handleButton(_ sender: UITapGestureRecognizer) {
         guard let name = sender.name else { return }
         print("", name)
     }
