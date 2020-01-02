@@ -27,8 +27,8 @@ final class BaseTabBarController: UITabBarController {
 
     static weak var shared: BaseTabBarController?
 
-    private var homeScreen = UINavigationController(rootViewController: HomeViewController())
-    private var headlinesScreen = UINavigationController(rootViewController: HeadlinesViewController())
+    private var homeScreen = UINavigationController(rootViewController: TestHomeViewController())
+    private var headlinesScreen = UINavigationController(rootViewController: HomeViewController())
     private var followingScreen = UINavigationController(rootViewController: FollowingViewController())
     private var settingScreen = UINavigationController(rootViewController: SettingViewController())
 

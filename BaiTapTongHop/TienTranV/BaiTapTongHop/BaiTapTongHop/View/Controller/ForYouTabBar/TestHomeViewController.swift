@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HomeViewController: BaseViewController {
+final class TestHomeViewController: BaseViewController {
 
     // MARK: - IBOutlet
     @IBOutlet private weak var tableView: UITableView!
@@ -28,7 +28,7 @@ final class HomeViewController: BaseViewController {
 }
 
 // MARK: TableView Datasource
-extension HomeViewController: UITableViewDataSource {
+extension TestHomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -43,7 +43,7 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 // MARK: TableView Delegate
-extension HomeViewController: UITableViewDelegate {
+extension TestHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
     }

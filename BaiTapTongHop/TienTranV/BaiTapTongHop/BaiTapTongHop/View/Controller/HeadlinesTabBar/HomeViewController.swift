@@ -1,5 +1,5 @@
 //
-//  HeadlinesViewController.swift
+//  HomeViewController.swift
 //  BaiTapTongHop
 //
 //  Created by PCI0002 on 12/30/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HeadlinesViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
 
     // MARK: - IBOutlet
     @IBOutlet private weak var menuCategoryCollectionView: UICollectionView!
@@ -102,7 +102,7 @@ final class HeadlinesViewController: BaseViewController {
 }
 
 // MARK: - PageViewController DataSource
-extension HeadlinesViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension HomeViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewController = viewController as? BaseHomeChildViewController else { return nil }
         let index: Int = viewController.view.tag
@@ -140,7 +140,7 @@ extension HeadlinesViewController: UIPageViewControllerDataSource, UIPageViewCon
 }
 
 // MARK: - CollectionView DataSource, Delegate
-extension HeadlinesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     // DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
