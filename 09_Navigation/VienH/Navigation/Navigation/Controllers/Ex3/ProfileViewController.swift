@@ -34,8 +34,8 @@ final class ProfileViewController: UIViewController {
 
     private func setupNavi() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popToView))
-
     }
+
     @objc private func popToView() {
         navigationController?.popViewController(animated: true)
     }
