@@ -122,14 +122,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             showError(titleError: "Không để trống username, password")
             return
         }
-        guard userTextField.text != "" else {
-            showError(titleError: "Không để trống username")
-            return
-        }
-        guard passwordTextField.text != "" else {
-            showError(titleError: "Không để trống password")
-            return
-        }
         if let username = userTextField.text, let password = passwordTextField.text, username == "Admin", password == "Admin123" {
             hindddenError()
         }else {
