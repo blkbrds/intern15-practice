@@ -16,12 +16,14 @@ final class HomeViewController: ViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
 
     //MARK: - Properties
-    private var searchPlaces: [Place] = []
     private var status: Layout = .row
+    private var isLoadMore: Bool = true
     private var refreshControl = UIRefreshControl()
+    private var collectionRefreshControl = UIRefreshControl()
     private var activityIndicator = NVActivityIndicatorView(frame: .zero)
 
-    var temp = ApiManager.Places()
+    private var temp: Int = 0
+
     var viewModel = HomeViewModel()
     var homeImage: UIImage?
 
@@ -44,13 +46,15 @@ final class HomeViewController: ViewController {
         setupCollectionView()
         setupRefreshControl()
     }
-    
+
     // MARK: - Setup Data
     override func setupData() {
+        tableView.alpha = 0
         activityIndicator.startAnimating()
         // Load data from API
         viewModel.loadPlaceData { (done, errorString) in
             self.activityIndicator.stopAnimating()
+            self.tableView.alpha = 1
             if done {
                 self.updateUI(action: .reloadData)
             } else {
@@ -58,8 +62,8 @@ final class HomeViewController: ViewController {
             }
         }
     }
-    
-    //MARK: - Private Functions
+
+    //MARK: - Functions
     private func updateUI(action: Action, indexPath: IndexPath? = nil) {
         switch action {
         case .like:
@@ -81,15 +85,19 @@ final class HomeViewController: ViewController {
             if done {
                 self.updateUI(action: .reloadData)
             } else {
-                self.alert(title: App.Home.alertTitle, msg: message, buttons: ["OK"], preferButton: "OK", handler: nil)
+                if message != "" {
+                    self.alert(title: App.Home.alertTitle, msg: message, buttons: ["OK"], preferButton: "OK", handler: nil)
+                }
             }
         }
+        self.isLoadMore = !self.isLoadMore
     }
 
     @objc private func pullToRefresh() {
         viewModel.loadPlaceData { (done, errorString) in
             if done {
                 self.refreshControl.endRefreshing()
+                self.collectionRefreshControl.endRefreshing()
                 self.updateUI(action: .reloadData)
             } else {
                 self.alert(title: App.Home.alertTitle, msg: errorString, buttons: ["OK"], preferButton: "OK", handler: nil)
@@ -115,12 +123,18 @@ extension HomeViewController {
         activityIndicator.type = .lineScalePulseOut
         activityIndicator.color = .red
         view.addSubview(activityIndicator)
-        
-        // Setup refresh control
+
+        // Setup tableview refresh control
         refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
         refreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
         refreshControl.tintColor = .systemPink
         refreshControl.alpha = 0.8
+
+        // Setup collectionView refresh control
+        collectionRefreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        collectionRefreshControl.attributedTitle = NSAttributedString(string: "Fetching Places")
+        collectionRefreshControl.tintColor = .systemPink
+        collectionRefreshControl.alpha = 0.8
     }
 
     private func setupCollectionView() {
@@ -128,6 +142,7 @@ extension HomeViewController {
         collectionView.register(homeCollectionViewCellNib, forCellWithReuseIdentifier: Config.homeCollectionViewCellIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.refreshControl = collectionRefreshControl
     }
 
     private func setupTableView() {
@@ -135,6 +150,7 @@ extension HomeViewController {
         tableView.register(homeTableViewCellNib, forCellReuseIdentifier: Config.homeTableViewCellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
     }
 }
@@ -168,10 +184,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Config.homeTableViewCellIdentifier, for: indexPath) as? HomeCell else { return TableCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
-        cell.delegate = self
 
         // Load more
-        if indexPath.row == viewModel.getNumberOfPlaces() - 2 {
+        if indexPath.row == viewModel.getNumberOfPlaces() - 2, isLoadMore {
+            isLoadMore = !isLoadMore
             loadMore()
         }
         return cell
@@ -198,52 +214,22 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.delegate = self
+        vc.dataSource = self
         vc.viewModel.indexOfItem = viewModel.currentIndex
         vc.viewModel = viewModel.getDetailViewModel(indexPath: indexPath)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-//MARK: - Extension DetailViewControllerDelegate
-extension HomeViewController: DetailViewControllerDelegate {
-    func detailViewController(view: DetailViewController, needsPerform action: DetailViewController.Action) {
-        switch action {
-        case .changeFavorite(let index):
-            viewModel.changeFavorite(at: index) { (done, error) in
-                if done {
-                    self.updateUI(action: .like)
-                } else {
-                    alert(title: App.Home.alertTitle, msg: error, buttons: ["OK"], preferButton: "", handler: nil)
-                }
-            }
-        }
+//MARK: - DetailViewController Delegate, DataSource
+extension HomeViewController: DetailViewControllerDataSource {
+    func getImageURLs() -> [String] {
+        return viewModel.getImageURLs(with: viewModel.getPlaceID(with: viewModel.currentIndex))
     }
 }
 
-//MARK: - Extension HomeCell Delegate
-extension HomeViewController: HomeCellDelegate {
-
-    func cell(cell: HomeCell, needsPerform action: HomeCell.Action) {
-        switch action {
-        case .addFavorite:
-            guard let index = tableView.indexPath(for: cell) else {
-                alert(title: App.Home.alertTitle, msg: "Can not add Favortie", buttons: ["OK"], preferButton: "", handler: nil)
-                return
-            }
-            viewModel.changeFavorite(at: index.row) { (done, error) in
-                if done {
-                    self.updateUI(action: .like, indexPath: index)
-                } else {
-                    alert(title: App.Home.alertTitle, msg: error, buttons: ["OK"], preferButton: "", handler: nil)
-                }
-            }
-        }
-    }
-}
-
-//MARK: - Exetension CollectionView datasource, delegate, DelegateFlowLayout
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//MARK: - CollectionView datasource, delegate, DelegateFlowLayout
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getNumberOfPlaces()
@@ -252,8 +238,20 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Config.homeCollectionViewCellIdentifier, for: indexPath) as? HomeCollectionCell else { return CollectionCell() }
         cell.viewModel = viewModel.getHomeCellViewModel(indexPath: indexPath)
-        cell.delegate = self
+
+        // Load more
+        if indexPath.row == viewModel.getNumberOfPlaces() - 2 {
+            loadMore()
+        }
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.dataSource = self
+        vc.viewModel.indexOfItem = viewModel.currentIndex
+        vc.viewModel = viewModel.getDetailViewModel(indexPath: indexPath)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -261,30 +259,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-//MARK: - Extension HomeCollectionCell Delegate
-extension HomeViewController: HomeCollectionCellDelegate {
-
-    func cell(cell: HomeCollectionCell, needsPerform action: HomeCollectionCell.Action) {
-        switch action {
-        case .addFavorite:
-            guard let index = collectionView.indexPath(for: cell) else {
-                alert(title: App.Home.alertTitle, msg: "Can not add Favortie", buttons: ["OK"], preferButton: "", handler: nil)
-                return
-            }
-            viewModel.changeFavorite(at: index.row) { (done, error) in
-                if done {
-                    self.updateUI(action: .like, indexPath: index)
-                } else {
-                    alert(title: App.Home.alertTitle, msg: error, buttons: ["OK"], preferButton: "", handler: nil)
-                }
-            }
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailViewController()
-        vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)
+// MARK: - MapViewController DataSource
+extension HomeViewController: MapViewControllerDataSource {
+    func getPlaces() -> [GooglePlace] {
+        return viewModel.getPlaces()
     }
 }
 

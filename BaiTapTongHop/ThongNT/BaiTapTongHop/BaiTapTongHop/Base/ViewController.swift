@@ -24,7 +24,7 @@ class ViewController: UIViewController, MVVM.View {
         setupData()
     }
     
-    func setupUI() { }
+    func setupUI() {}
     
-    func setupData() { }
+    func setupData() {}
 }
