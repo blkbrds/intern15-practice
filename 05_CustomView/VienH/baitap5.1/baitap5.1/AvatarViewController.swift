@@ -25,7 +25,7 @@ final class AvatarViewController: UIViewController {
         var index: Int = 1
         for _ in 0...10 {
             for _ in 0...2 {
-                createUser(x: x, y: y, index: index)
+                createAvatar(x: x, y: y, index: index)
                 x += 130
                 index += 1
             }
@@ -34,7 +34,7 @@ final class AvatarViewController: UIViewController {
         }
     }
 
-    func createUser(x: Int, y: Int, index: Int) {
+    func createAvatar(x: Int, y: Int, index: Int) {
         let frame = CGRect(x: 30 + x, y: 50 + y, width: 100, height: 130)
         let userView = MyAvatarView()
         userView.frame = frame

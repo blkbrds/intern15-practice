@@ -19,23 +19,23 @@ final class DateView: UIView {
     @IBOutlet private weak var contentView: UIView!
 
     enum Action {
-        case show
-        case hide
-        case done
-        case cancel
+        case showPickerView
+        case hidePickerView
+        case donePickerView
+        case cancelPickerView
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    func show() {
+    func showPickerView() {
         UIView.animate(withDuration: 0.5) {
             self.contentView?.alpha = 1
         }
     }
 
-    func hide() {
+    func hidePickerView() {
         if !contentView.isHidden {
             UIView.animate(withDuration: 0.5) {
                 self.contentView?.alpha = 0
@@ -45,17 +45,17 @@ final class DateView: UIView {
         }
     }
 
-    @IBAction private func doneAction(_ sender: Any) {
-        hide()
+    @IBAction private func doneButtonAction(_ sender: Any) {
+        hidePickerView()
         if let delegate = self.delegate {
-            delegate.datePickerView(view: self, needPerform: .cancel, selectedDate: datePickerView.date)
+            delegate.datePickerView(view: self, needPerform: .cancelPickerView, selectedDate: datePickerView.date)
         }
     }
 
-    @IBAction private func cannelAction(_ sender: Any) {
-        hide()
+    @IBAction private func datePickerChanged(_ sender: Any) {
+        hidePickerView()
         if let delegate = self.delegate {
-            delegate.datePickerView(view: self, needPerform: .done, selectedDate: nil)
+            delegate.datePickerView(view: self, needPerform: .donePickerView, selectedDate: nil)
         }
     }
 }

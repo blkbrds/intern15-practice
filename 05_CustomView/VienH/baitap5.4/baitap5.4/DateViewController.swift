@@ -38,12 +38,12 @@ extension DateViewController: UITextFieldDelegate {
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         view.endEditing(true)
-        dateView?.show()
+        dateView?.showPickerView()
         return true
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        dateView?.hide()
+        dateView?.hidePickerView()
     }
 }
 

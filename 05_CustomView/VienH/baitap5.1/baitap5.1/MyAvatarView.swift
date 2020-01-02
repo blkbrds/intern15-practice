@@ -5,9 +5,7 @@
 //  Created by user on 11/18/19.
 //  Copyright © 2019 VienH. All rights reserved.
 //
-
 import UIKit
-
 protocol MyAvatarViewDelegate: class {
     func myAvatarView(myAvatarView: MyAvatarView, didSelect name: String)
 }
@@ -15,10 +13,11 @@ protocol MyAvatarViewDelegate: class {
 final class MyAvatarView: UIView {
 
     weak var delegate: MyAvatarViewDelegate?
-    var userAvatarImageView: UIImageView
-    var userNameLabel: UILabel
+    var userAvatarImageView: UIImageView!
+    var userNameLabel: UILabel!
 
     override init(frame: CGRect) {
+        super.init(frame: frame)
 
         let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         userAvatarImageView = UIImageView(image: UIImage(named: "download.jpeg"))
@@ -33,8 +32,6 @@ final class MyAvatarView: UIView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 130))
         button.isUserInteractionEnabled = true
         button.backgroundColor = .clear
-
-        super.init(frame: frame)
         addSubview(userAvatarImageView)
         addSubview(userNameLabel)
         button.addTarget(self, action: #selector(buttonClick), for: .touchUpInside)
