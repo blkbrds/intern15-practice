@@ -10,14 +10,12 @@ import UIKit
 
 protocol MyAvatarViewDelegate: class {
     func myAvatarView(myAvatarView: MyAvatarView, didSelect name: String)
-
 }
 
 final class MyAvatarView: UIView {
 
     weak var delegate: MyAvatarViewDelegate?
-    private var userAvatarImageView: UIImageView
-
+    var userAvatarImageView: UIImageView
     var userNameLabel: UILabel
 
     override init(frame: CGRect) {
@@ -49,7 +47,6 @@ final class MyAvatarView: UIView {
     }
 
     @objc private func buttonClick() {
-
     }
 }
 

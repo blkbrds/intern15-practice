@@ -21,7 +21,7 @@ final class SliderView: UIView {
     @IBOutlet private weak var colorView: UIView!
     @IBOutlet private weak var backgroundView: UIView!
 
-    private weak var delegate: MySliderViewDelegate?
+    weak var delegate: MySliderViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
