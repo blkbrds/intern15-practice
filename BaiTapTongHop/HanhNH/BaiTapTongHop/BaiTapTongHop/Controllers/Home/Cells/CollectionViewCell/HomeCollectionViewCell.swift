@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol HomeCollectionViewCellDelegate : class {
+    func getImageCollection(cell: HomeCollectionViewCell, indexPath: IndexPath?)
+}
 class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var valueLabel: UILabel!
@@ -16,6 +19,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameAddressLabel: UILabel!
     @IBOutlet weak var addressImageView: UIImageView!
 
+    weak var delageteCollection: HomeCollectionViewCellDelegate?
+    var indexPath: IndexPath?
     var viewModelCollection: HomeCellTabelViewModel? {
         //gan du lieu thay doi thi didSet chạy.
         didSet {
@@ -30,11 +35,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
     private func updateCollectionView() {
         //sau khi didSet chạy thì nó sẽ vào đây lây tất cả dữ liệu, việc tiếp theo là đưa lên.
         if let viewModelCollection = viewModelCollection {
-            addressImageView.image = viewModelCollection.thumnailImage
             nameAddressLabel.text = viewModelCollection.name
-            addressLabel.text = viewModelCollection.addres
-            distanceLabel.text = String(viewModelCollection.distance) + " km"
-            valueLabel.text = viewModelCollection.rating
+            valueLabel.text = "\(viewModelCollection.forks)"
+            distanceLabel.text = "\(viewModelCollection.watchers)"
+            addressLabel.text = viewModelCollection.description
+            if let image = viewModelCollection.avatar {
+                addressImageView.image = image
+            } else {
+                addressImageView.image = nil
+                delageteCollection?.getImageCollection(cell: self, indexPath: indexPath)
+            }
         } else {
             print("sai roi")
         }

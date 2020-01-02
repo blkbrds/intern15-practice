@@ -11,17 +11,17 @@ import UIKit
 
 class HomeCellTabelViewModel {
     
-    var distance: Float
-    var thumnailImage: UIImage
-    var addres: String
-    var rating: String
+    var watchers: Int
+    var avatar: UIImage?
+    var forks: Int
     var name: String
+    var description: String
     
-    init(address: Address) {
-        self.distance = address.distance
-        self.thumnailImage = address.thumnailImage
-        self.rating = address.rating
-        self.name = address.nameImage
-        self.addres = address.address
+    init(repo: Repo) {
+        self.watchers = repo.watchers_count
+        self.avatar = repo.avatar
+        self.forks = repo.forksCount
+        self.name = repo.name
+        self.description = repo.description
     }
 }

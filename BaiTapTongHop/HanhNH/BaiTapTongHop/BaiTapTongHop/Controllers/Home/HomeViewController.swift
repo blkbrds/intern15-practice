@@ -14,11 +14,15 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
 
     var viewModel = HomeViewModel()
+    let refreshTabelView = UIRefreshControl()
+    let refreshCollecionView = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configData()
         configUI()
+        configData()
+        refreshTabView()
+        refreshCollection()
     }
 
     func updateUI() {
@@ -26,10 +30,12 @@ final class HomeViewController: BaseViewController {
             tableView.isHidden = false
             collectionView.isHidden = true
             tableView.reloadData()
+            refreshTabelView.endRefreshing()
         } else {
             tableView.isHidden = true
             collectionView.isHidden = false
             collectionView.reloadData()
+            refreshCollecionView.endRefreshing()
         }
     }
 
@@ -41,7 +47,7 @@ final class HomeViewController: BaseViewController {
 
     func configData() {
         //load Data
-        viewModel.loadData { (done) in
+        viewModel.loadAPI() { (done, arg) in
             if done {
                 self.updateUI()
             } else {
@@ -53,7 +59,6 @@ final class HomeViewController: BaseViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        viewModel.loadImagesSlide()
     }
 
     override func setUpNaVi() {
@@ -123,6 +128,62 @@ final class HomeViewController: BaseViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+
+    func loadAPI() {
+        viewModel.loadAPI() { (done, arg) in
+            if done {
+                self.updateUI()
+            } else {
+                print("Error,\(arg) ")
+            }
+        }
+    }
+
+    func loadMore() {
+        viewModel.loadMore() { (done, arg) in
+            if done {
+                self.updateUI()
+            } else {
+                print("Error, \(arg)")
+            }
+        }
+    }
+
+    func refreshTabView() {
+        refreshTabelView.tintColor = .black
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        refreshTabelView.attributedTitle = NSAttributedString(string: "Refreshing Data...", attributes: attributes)
+        refreshTabelView.addTarget(self, action: #selector(refresPullUpTabelView), for: .valueChanged)
+        tableView.refreshControl = refreshTabelView
+    }
+
+    @objc func refresPullUpTabelView() {
+        viewModel.loadAPI() { (done, arg) in
+            if done {
+                self.updateUI()
+            } else {
+                print("Error, \(arg)")
+            }
+        }
+    }
+
+    func refreshCollection() {
+        refreshCollecionView.tintColor = .black
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        refreshCollecionView.attributedTitle = NSAttributedString(string: "Refreshing Data...", attributes: attributes)
+        refreshCollecionView.addTarget(self, action: #selector(refresPullUpCollection), for: .valueChanged)
+        collectionView.refreshControl = refreshCollecionView
+    }
+
+    @objc func refresPullUpCollection() {
+        viewModel.loadAPI() { (done, arg) in
+            if done {
+                self.updateUI()
+            } else {
+                print("Error, \(arg)")
+            }
+        }
+    }
 }
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -134,7 +195,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             //slides
             return 1
         } else if section == 1 {
-            return viewModel.address.count
+            return viewModel.repos.count
         }
         return 0
     }
@@ -144,7 +205,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.section == 0 {
             return 150
         } else if indexPath.section == 1 {
-            return 100
+            return UITableView.automaticDimension
         }
         return 0
     }
@@ -159,6 +220,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.section == 1 {
             //cells
             let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+            //tra du lieu ve cho Cell indexPath và delagate
+            cell.indexPath = indexPath
+            cell.delagete = self
             //gan vieModelCell = viewModel
             cell.viewModelCell = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
@@ -168,6 +232,30 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(DetailViewController(), animated: true)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if offsetY >= contentHeight - scrollView.frame.size.height && contentHeight > 0 {
+            print("last")
+            loadMore()
+        } else {
+            print("asdasdasd")
+        }
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            let offsetY = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+            if offsetY >= contentHeight - scrollView.frame.size.height && contentHeight > 0 {
+                print("last")
+                loadMore()
+            } else {
+                print("asdasdasd")
+            }
+        }
     }
 }
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -180,7 +268,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             //slider Header
             return 1
         } else if section == 1 {
-            return viewModel.address.count
+            return viewModel.repos.count
         }
         return 0
     }
@@ -194,6 +282,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
             //gan cho viewModelCollectionCell  = viewModel
+            cell.indexPath = indexPath
+            cell.delageteCollection = self
             cell.viewModelCollection = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
@@ -242,5 +332,25 @@ extension HomeViewController: SliderCollectionCellDataSource {
 
     func imageSlideCollection(in indexPath: IndexPath) -> String {
         return viewModel.imageSlide(in: indexPath.row).imageName
+    }
+}
+
+extension HomeViewController: HomeTableViewCellDelagete {
+    func getImage(cell: HomeTableViewCell, indexPath: IndexPath?) {
+        if let indexPath = indexPath {
+            viewModel.downlodaImage(indexPath: indexPath) { (image) in
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+            }
+        }
+    }
+}
+
+extension HomeViewController: HomeCollectionViewCellDelegate {
+    func getImageCollection(cell: HomeCollectionViewCell, indexPath: IndexPath?) {
+        if let indexPath = indexPath {
+            viewModel.downlodaImage(indexPath: indexPath) { (imgae) in
+                self.collectionView.reloadItems(at: [indexPath])
+            }
+        }
     }
 }

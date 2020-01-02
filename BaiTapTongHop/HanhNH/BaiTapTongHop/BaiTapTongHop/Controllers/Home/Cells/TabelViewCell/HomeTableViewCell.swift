@@ -8,14 +8,20 @@
 
 import UIKit
 
+protocol HomeTableViewCellDelagete: class {
+    func getImage(cell: HomeTableViewCell, indexPath: IndexPath?)
+}
+
 final class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var distanceLabel: UILabel!
-    @IBOutlet private weak var valueLabel: UILabel!
-    @IBOutlet private weak var addressLabel: UILabel!
-    @IBOutlet private weak var nameImageView: UILabel!
-    @IBOutlet private weak var addressImageView: UIImageView!
-
+    @IBOutlet private weak var watchersLabel: UILabel!
+    @IBOutlet private weak var forksLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    
+    weak var delagete: HomeTableViewCellDelagete?
+    var indexPath: IndexPath?
     var viewModelCell: HomeCellTabelViewModel? {
         didSet {
             updateTabViewCell()
@@ -32,11 +38,16 @@ final class HomeTableViewCell: UITableViewCell {
 
     private func updateTabViewCell() {
         if let viewModelCell = viewModelCell {
-            addressImageView.image = viewModelCell.thumnailImage
-            distanceLabel.text = String(viewModelCell.distance) + " km"
-            nameImageView.text = viewModelCell.name
-            valueLabel.text = viewModelCell.rating
-            addressLabel.text = viewModelCell.addres
+            nameLabel.text = viewModelCell.name
+            watchersLabel.text = "\(viewModelCell.watchers)"
+            forksLabel.text = "\(viewModelCell.forks)"
+            descriptionLabel.text = viewModelCell.description
+            if let image = viewModelCell.avatar {
+                avatarImageView.image = image
+            } else {
+                avatarImageView.image = nil
+                delagete?.getImage(cell: self, indexPath: indexPath)
+            }
         } else {
             print("nil")
         }

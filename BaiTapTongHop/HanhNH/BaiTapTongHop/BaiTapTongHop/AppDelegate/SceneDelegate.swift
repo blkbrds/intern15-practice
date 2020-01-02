@@ -57,7 +57,7 @@ extension SceneDelegate {
         //show TabBar
         let tabbarController = BaseTabBarController()
         tabbarController.viewControllers = [homeNavi, mapNavi, favoriteNavi, profileNavi]
-        tabbarController.tabBar.tintColor = .cyan
+        tabbarController.tabBar.tintColor = .black
         self.window?.rootViewController = tabbarController
     }
 }
