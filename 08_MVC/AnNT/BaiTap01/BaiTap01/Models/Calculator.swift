@@ -18,6 +18,8 @@ final class Calculator {
   var result: Int = 0
   
   static let share = Calculator()
+  
+  private init(){}
 
   func calculator() {
     guard !numbers.isEmpty, !calculators.isEmpty else { return }
