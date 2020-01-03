@@ -14,7 +14,7 @@ final class Calculator {
     var result = numbers[0]
     for i in 1..<numbers.count {
       let number = numbers[i]
-      let calculator = calculators[i-1]
+      let calculator = calculators[i - 1]
       switch calculator {
       case .add:
         result += number
@@ -23,7 +23,7 @@ final class Calculator {
       case .mul:
         result *= number
       case .div:
-        result /= number
+        result = number == 0 ? 0 : result / number
       }
     }
     Result.result = result
