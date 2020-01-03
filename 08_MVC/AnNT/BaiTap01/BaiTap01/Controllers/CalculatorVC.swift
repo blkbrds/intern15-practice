@@ -31,31 +31,31 @@ class CalculatorVC: UIViewController {
     let title = sender.titleLabel?.text ?? ""
     if text.hasSuffix("+") || text.hasSuffix("-") || text.hasSuffix("x") || text.hasSuffix("/") {
       titleResult.removeLast()
-      Result.calculators.removeLast()
+      Calculator.share.calculators.removeLast()
     }
     let calculatorStr = title
     titleResult += calculatorStr
     resultLabel.text = titleResult
-    Result.addNumber(numberStr: numberString)
-    Result.addCalculator(calculatorStr: calculatorStr)
+    Calculator.share.addNumber(numberStr: numberString)
+    Calculator.share.addCalculator(calculatorStr: calculatorStr)
     numberString = ""
   }
 
   @IBAction func acButton(_ sender: UIButton) {
     resultLabel.text = "0"
     titleResult = ""
-    Result.numbers = []
-    Result.calculators = []
-    Result.result = 0
+    Calculator.share.numbers = []
+    Calculator.share.calculators = []
+    Calculator.share.result = 0
   }
   
   @IBAction func handleResult(_ sender: Any) {
-    Result.addNumber(numberStr: numberString)
-    Calculator.calcolator(numbers: Result.numbers, calculators: Result.calculators)
-    resultLabel.text = "\(titleResult) = \(Result.result)"
+    Calculator.share.addNumber(numberStr: numberString)
+    Calculator.share.calculator()
+    resultLabel.text = "\(titleResult) = \(Calculator.share.result)"
     numberString = ""
-    print(Result.numbers)
-    print(Result.calculators)
-    print(Result.result)
+    print(Calculator.share.numbers)
+    print(Calculator.share.calculators)
+    print(Calculator.share.result)
   }
 }

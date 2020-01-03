@@ -8,8 +8,18 @@
 
 import Foundation
 
+enum CalculatorEnum {
+  case add, sub, mul, div
+}
+
 final class Calculator {
-  static func calcolator(numbers: [Int], calculators: [CalculatorEnum]) {
+  var numbers: [Int] = []
+  var calculators: [CalculatorEnum] = []
+  var result: Int = 0
+  
+  static let share = Calculator()
+
+  func calculator() {
     guard !numbers.isEmpty, !calculators.isEmpty else { return }
     var result = numbers[0]
     for i in 1..<numbers.count {
@@ -26,6 +36,26 @@ final class Calculator {
         result = number == 0 ? 0 : result / number
       }
     }
-    Result.result = result
+    self.result = result
+  }
+
+  func addNumber(numberStr: String) {
+    guard let number = Int(numberStr) else { return }
+    self.numbers.append(number)
+  }
+
+  func addCalculator(calculatorStr: String) {
+    switch calculatorStr {
+    case "+":
+      self.calculators.append(.add)
+    case "-":
+      self.calculators.append(.sub)
+    case "x":
+      self.calculators.append(.mul)
+    case "/":
+      self.calculators.append(.div)
+    default:
+      return
+    }
   }
 }
