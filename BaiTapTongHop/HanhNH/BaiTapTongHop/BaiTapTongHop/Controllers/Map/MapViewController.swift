@@ -8,4 +8,12 @@
 
 import UIKit
 
-final class MapViewController: UIViewController { }
+final class MapViewController: BaseViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func setUpNaVi() {
+        title = "Map"
+    }
+}
