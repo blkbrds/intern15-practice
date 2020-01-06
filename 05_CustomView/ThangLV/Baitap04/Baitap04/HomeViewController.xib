@@ -25,7 +25,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="textFieldDidTouch:" destination="-1" eventType="touchDown" id="15c-Y0-pa8"/>
+                        <action selector="tapOnTextField:" destination="-1" eventType="editingDidBegin" id="BS5-AA-wwN"/>
+                        <outlet property="delegate" destination="-1" id="rPh-hO-AG6"/>
                     </connections>
                 </textField>
             </subviews>

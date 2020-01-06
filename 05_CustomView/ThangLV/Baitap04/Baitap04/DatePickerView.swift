@@ -8,7 +8,7 @@ protocol DatePickerViewDelegate: class {
 class DatePickerView: UIView {
     
     weak var delegate: DatePickerViewDelegate?
-    @IBOutlet weak var datePickerView: UIDatePicker!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBAction func buttonDidClick(_ sender: Any) {
         delegate?.datePickViewDidChoose()
@@ -18,8 +18,8 @@ class DatePickerView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        datePickerView.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
-        addSubview(datePickerView)
+        datePicker.frame = CGRect(x: 0, y: 0, width: 100, height: 50)
+        addSubview(datePicker)
     }
     
     required init?(coder: NSCoder) {
@@ -28,10 +28,10 @@ class DatePickerView: UIView {
     
     func hideWithAnimation() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.datePickerView.alpha = 0
+            self.datePicker.alpha = 0
         }) { (done) in
             if done {
-                self.datePickerView.isHidden = true
+                self.datePicker.isHidden = true
             }
         }
     }

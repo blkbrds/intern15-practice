@@ -9,12 +9,12 @@
 import UIKit
 
 protocol MyAvatarDelegate: class {
-    func buttonDidClick(view: MyAvatar, userName: String)
+    func showUserName(view: MyAvatar, userName: String)
 }
 
 class MyAvatar: UIView {
 
-    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet var userNameLabel: UILabel!
 
     @IBOutlet weak var button: UIButton!
@@ -25,23 +25,18 @@ class MyAvatar: UIView {
         super.init(frame: frame)
 
         let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        userImage.frame = frame
-        userImage.contentMode = .scaleToFill
-        addSubview(userImage)
+        userImageView.frame = frame
+        userImageView.contentMode = .scaleToFill
+        addSubview(userImageView)
 
         userNameLabel = UILabel(frame: CGRect(x: 0, y: 100, width: 100, height: 20))
-    }
-
+    }   
     required init?(coder: NSCoder) {
         super .init(coder: coder)
     }
 
-    @IBAction func buttonTouchUpInside(_ sender: Any) {
-        butonClicked()
-    }
-
-    @objc func butonClicked() {
-        delegate?.buttonDidClick(view: self, userName: userNameLabel.text!)
+    @IBAction func touchUpInsideAvatarButton(_ sender: Any) {
+        delegate?.showUserName(view: self, userName: userNameLabel.text!)
     }
 }
 

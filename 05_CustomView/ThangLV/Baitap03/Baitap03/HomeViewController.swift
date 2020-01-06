@@ -20,31 +20,34 @@ class HomeViewController: UIViewController {
     }
     
     func setUpUI() {
-        emailButton = Bundle.main.loadNibNamed("BadgeNumberButton", owner: self, options: nil)![0] as? BadgeNumberButton
-        emailButton.frame = CGRect(x: 150, y: 100, width: 50, height: 50)
-        emailButton.backgroundColor = .green
-        view.addSubview(emailButton)
-        emailButton.labelView.text = "0"
-        if(emailButton.labelView.text == "0") {
-            emailButton.labelView.isHidden = true
+        if let emailButton = Bundle.main.loadNibNamed("BadgeNumberButton", owner: self, options: nil)?[0] as? BadgeNumberButton {
+            emailButton.frame = CGRect(x: 150, y: 100, width: 50, height: 50)
+            emailButton.backgroundColor = .green
+            view.addSubview(emailButton)
+            emailButton.quantityLabel.text = "0"
+            if emailButton.quantityLabel.text == "0" {
+                emailButton.quantityLabel.isHidden = true
+            }
         }
         
-        friendsButton = Bundle.main.loadNibNamed("BadgeNumberButton", owner: self, options: nil)![0] as? BadgeNumberButton
-        friendsButton.frame = CGRect(x: 150, y: 250, width: 50, height: 50)
-        friendsButton.backgroundColor = .yellow
-        view.addSubview(friendsButton)
-        friendsButton.labelView.text = "9"
-        if(friendsButton.labelView.text == "0") {
-            friendsButton.labelView.isHidden = true
+        if let friendsButton = Bundle.main.loadNibNamed("BadgeNumberButton", owner: self, options: nil)?[0] as? BadgeNumberButton {
+            friendsButton.frame = CGRect(x: 150, y: 250, width: 50, height: 50)
+            friendsButton.backgroundColor = .yellow
+            view.addSubview(friendsButton)
+            friendsButton.quantityLabel.text = "9"
+            if friendsButton.quantityLabel.text == "0" {
+                friendsButton.quantityLabel.isHidden = true
+            }
         }
         
-        photosButton = Bundle.main.loadNibNamed("BadgeNumberButton", owner: self, options: nil)![0] as? BadgeNumberButton
-        photosButton.frame = CGRect(x: 150, y: 400, width: 50, height: 50)
-        photosButton.backgroundColor = .purple
-        view.addSubview(photosButton)
-        photosButton.labelView.text = "10"
-        if(photosButton.labelView.text == "0") {
-            photosButton.labelView.isHidden = true
+        if let photosButton = Bundle.main.loadNibNamed("BadgeNumberButton", owner: self, options: nil)?[0] as? BadgeNumberButton {
+            photosButton.frame = CGRect(x: 150, y: 400, width: 50, height: 50)
+            photosButton.backgroundColor = .purple
+            view.addSubview(photosButton)
+            photosButton.quantityLabel.text = "10"
+            if photosButton.quantityLabel.text == "0" {
+                photosButton.quantityLabel.isHidden = true
+            }
         }
     }
 
