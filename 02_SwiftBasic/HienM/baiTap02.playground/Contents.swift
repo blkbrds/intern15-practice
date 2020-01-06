@@ -3,14 +3,14 @@ import UIKit
 enum KetQua {
 	case haiNghiem(x1: Float, x2: Float)
 	case motNghiem(x: Float)
-	case vSNghiem
+	case voSoNghiem
 	case voNgiem
 }
 func phuongTrinhBac2 (a: Float, b: Float, c: Float) -> KetQua {
 	if a == 0 {
 		if b == 0 {
 			if c == 0 {
-				return .vSNghiem
+				return .voSoNghiem
 			} else {
 				return .voNgiem
 			}
@@ -36,6 +36,6 @@ case .haiNghiem(_, _):
 	print("phuong trinh co 2 nghiem \(tinhThu)")
 case .motNghiem(_):
 	print("phuong trinh co 1 nghiem \(tinhThu)")
-case .vSNghiem:
+case .voSoNghiem:
 	print("phuong trinh co vo so nghiem ")
 }
