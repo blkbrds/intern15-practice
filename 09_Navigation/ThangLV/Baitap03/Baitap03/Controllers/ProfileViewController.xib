@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Baitap03" customModuleProvider="target">
+            <connections>
+                <outlet property="userAvatarImageView" destination="oBx-k0-kAk" id="kc1-Ia-CWy"/>
+                <outlet property="userNameTextField" destination="dwv-xq-Mcg" id="Qw0-5q-a23"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Landscape" translatesAutoresizingMaskIntoConstraints="NO" id="oBx-k0-kAk">
+                    <rect key="frame" x="103.5" y="110" width="207" height="220"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwv-xq-Mcg">
+                    <rect key="frame" x="194.5" y="340" width="25" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oBx-k0-kAk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:2" id="F1m-HT-aXq"/>
+                <constraint firstItem="oBx-k0-kAk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:2" id="NeB-e8-FlC"/>
+                <constraint firstItem="oBx-k0-kAk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ddr-YT-epR"/>
+                <constraint firstItem="dwv-xq-Mcg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mH9-ZI-suX"/>
+                <constraint firstItem="oBx-k0-kAk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p1n-1H-pbA"/>
+                <constraint firstItem="dwv-xq-Mcg" firstAttribute="top" secondItem="oBx-k0-kAk" secondAttribute="bottom" constant="10" id="wd9-Sx-uAK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="44.196428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Landscape" width="135" height="90"/>
+    </resources>
+</document>
