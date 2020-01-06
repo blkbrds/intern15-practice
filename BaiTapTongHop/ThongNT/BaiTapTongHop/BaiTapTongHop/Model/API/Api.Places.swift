@@ -12,7 +12,7 @@ import UIKit
 extension ApiManager.Places {
 
     struct QueryString {
-        
+
         struct placesDetail {
             var lat: String
             var long: String
@@ -22,12 +22,20 @@ extension ApiManager.Places {
                 return ApiManager.Path.baseURL + "venues/explore?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524&ll=\(lat),\(long)&limit=\(limit)&offset=\(offSet)"
             }
         }
-        
-        struct placeImages {
+
+        struct placeImage {
             var idPlace: String
             var sizeOfImage: String
             var url: String {
                 return ApiManager.Path.baseURL + "venues/\(idPlace)/\(sizeOfImage)/photos?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524"
+            }
+        }
+
+        struct PlaceImages {
+            var idPlace: String
+            //4d4361d01928a35daba1ad70
+            var url: String {
+                return ApiManager.Path.baseURL + "venues/\(idPlace)/photos?oauth_token=3IHPZFJ0LWOKCHTHQMWAOZMX40VQV0S3PMZKNUMYZGHUP4WJ&v=20160524"
             }
         }
     }
@@ -36,14 +44,15 @@ extension ApiManager.Places {
         var places: [GooglePlace]
     }
 
-    struct ImageResult {
-        var imagePlace: UIImage?
+    struct ImagesResult {
+        var imageStrings: [String]
     }
 
     typealias Completion<T> = (Result<T, Error>) -> Void
 
     static func getGooglePlace(limit: Int = 20, offSet: Int = 0, completion: @escaping Completion<GoogleApiResult>) {
-        API.shared().request(urlString: QueryString.placesDetail(lat: "16.070531", long: "108.224599", limit: "\(limit)", offSet: "\(offSet)").url) { (result) in
+        #warning("dummy data for current location")
+        API.shared().request(urlString: QueryString.placesDetail(lat: "16.081075", long: "108.238572", limit: "\(limit)", offSet: "\(offSet)").url) { (result) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
@@ -66,6 +75,8 @@ extension ApiManager.Places {
                                     let location = venue["location"] as? [String: Any]
                                     dict["address"] = location?["formattedAddress"] as? [String]
                                     dict["distance"] = location?["distance"] as? Int
+                                    dict["lat"] = location?["lat"] as? Double
+                                    dict["long"] = location?["lng"] as? Double
                                     let googlePlace = GooglePlace(from: dict)
                                     places.append(googlePlace)
                                 }
@@ -78,8 +89,51 @@ extension ApiManager.Places {
         }
     }
 
+    static func getPlaceImages(idPlace: String = "4d4361d01928a35daba1ad70", completion: @escaping Completion<ImagesResult>) {
+        API.shared().request(urlString: QueryString.PlaceImages(idPlace: idPlace).url) { (result) in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let data):
+                var arrayImageString: [String] = []
+                if let data = data {
+                    let json = data.convertToJSON(from: data)
+                    let placeResponse = PlaceResponse(notifications: json["notifications"] as? [String: Any],
+                        response: json["response"] as? [String: Any])
+                    guard let photos = placeResponse.response?["photos"] as? [String: Any] else { return }
+                    if let items = photos["items"] as? [[String: Any]] {
+                        for item in items {
+                            guard let prefix: String = item["prefix"] as? String,
+                                let suffix: String = item["suffix"] as? String,
+                                let width: Int = item["width"] as? Int,
+                                let height: Int = item["height"] as? Int else { return }
+                            let imageString = PlaceImage(prefix: prefix, suffix: suffix, width: width, height: height)
+                            if arrayImageString.count <= 10 {
+                                arrayImageString.append(imageString.url)
+                            }
+                        }
+                    }
+                }
+                completion(.success(ImagesResult(imageStrings: arrayImageString)))
+            }
+        }
+    }
+}
+
+extension ApiManager.Places {
+    
     struct PlaceResponse {
         let notifications: [String: Any]?
         let response: [String: Any]?
+    }
+    
+    struct PlaceImage {
+        var prefix: String
+        var suffix: String
+        var width: Int
+        var height: Int
+        var url: String {
+            return prefix + "\(width)" + "x" + "\(height)" + suffix
+        }
     }
 }
