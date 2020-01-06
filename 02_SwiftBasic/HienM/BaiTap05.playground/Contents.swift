@@ -1,8 +1,8 @@
 import UIKit
 
-func chuoiMeCon(chuoiMe : String ,chuoiCon : String) ->Int {
-	let arrayA : [Character] = Array(chuoiMe)
-	let arrayB : [Character] = Array(chuoiCon)
+func chuoiMeCon(chuoiMe: String, chuoiCon: String) -> Int {
+	let arrayA: [Character] = Array(chuoiMe)
+	let arrayB: [Character] = Array(chuoiCon)
 	var tong = 0
 	for i in 0...arrayA.count - arrayB.count {
 		if [Character](arrayA[i..<i + arrayB.count]) == arrayB {
