@@ -27,12 +27,13 @@ class HomeViewController: UIViewController {
 
   private func getData() {
     users = BundleManager.shared.getUsers()
+    searchUsers = users
   }
 }
 
 extension HomeViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    print(searchUsers)
+    searchUsers = []
     if searchText == "" {
       searchUsers = users
     }else {
@@ -45,20 +46,13 @@ extension HomeViewController: UISearchBarDelegate {
 
 extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return searchUsers.isEmpty ? users.count: searchUsers.count
+    return searchUsers.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
-    let user = searchUsers.isEmpty ? users[indexPath.row]: searchUsers[indexPath.row]
+    let user = searchUsers[indexPath.row]
     cell.textLabel?.text = user.name
     return cell
-  }
-}
-
-extension HomeViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
-    print(indexPath.row)
   }
 }
