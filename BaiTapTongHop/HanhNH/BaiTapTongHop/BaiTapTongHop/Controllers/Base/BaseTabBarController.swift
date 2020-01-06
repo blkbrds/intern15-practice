@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+final class BaseTabBarController: UITabBarController {
 
     enum TabbarType: Int {
         case home
@@ -42,17 +42,18 @@ class BaseTabBarController: UITabBarController {
             }
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configTabBar()
-    }
+    
     
     private var homeNavi = UINavigationController(rootViewController: HomeViewController())
     private var mapNaVi = UINavigationController(rootViewController: MapViewController())
     private var favoriteNaVi = UINavigationController(rootViewController: FavoriteViewController())
     private var profileNaVi = UINavigationController(rootViewController: ProfileViewController())
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configTabBar()
+    }
+    
     func configTabBar() {
         homeNavi.tabBarItem = getTabbarItem(for: .home)
         mapNaVi.tabBarItem = getTabbarItem(for: .map)
