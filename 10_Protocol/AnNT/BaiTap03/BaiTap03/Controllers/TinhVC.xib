@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TinhVC" customModule="BaiTap03" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="tinhButton" destination="pkm-E6-id3" collectionClass="NSMutableArray" id="lud-NX-feD"/>
+                <outletCollection property="tinhButton" destination="69t-aQ-qyX" collectionClass="NSMutableArray" id="uV8-eb-57z"/>
+                <outletCollection property="tinhButton" destination="FMH-G9-beZ" collectionClass="NSMutableArray" id="ejk-Qr-wo3"/>
+                <outletCollection property="tinhButton" destination="ciS-uH-8Jw" collectionClass="NSMutableArray" id="SEK-aa-ft0"/>
+                <outletCollection property="tinhButton" destination="DJA-rG-W26" collectionClass="NSMutableArray" id="PAZ-WJ-VWe"/>
+                <outletCollection property="tinhButton" destination="Sam-4c-B0r" collectionClass="NSMutableArray" id="ECu-TW-lWs"/>
+                <outletCollection property="tinhButton" destination="3uC-YP-ylb" collectionClass="NSMutableArray" id="64O-SB-Pr3"/>
+                <outletCollection property="tinhButton" destination="AG0-aD-aOV" collectionClass="NSMutableArray" id="WM0-hO-0wR"/>
+                <outletCollection property="tinhButton" destination="d4x-he-SIc" collectionClass="NSMutableArray" id="Y1X-Yf-PJ5"/>
+                <outletCollection property="tinhButton" destination="BJJ-34-Wba" collectionClass="NSMutableArray" id="Xe6-Xg-n9G"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dpy-MQ-iu6">
+                    <rect key="frame" x="30" y="104" width="354" height="688"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkm-E6-id3">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 1"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="d7R-JS-PFl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69t-aQ-qyX">
+                            <rect key="frame" x="0.0" y="71" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 2"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="rk8-vh-djl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMH-G9-beZ">
+                            <rect key="frame" x="0.0" y="141.5" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 3"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="jU1-Tm-nfz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciS-uH-8Jw">
+                            <rect key="frame" x="0.0" y="212.5" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 4"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="oaC-La-Q3B"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJA-rG-W26">
+                            <rect key="frame" x="0.0" y="283" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 5"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="Umf-tG-EMb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sam-4c-B0r">
+                            <rect key="frame" x="0.0" y="354" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 6"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="eHm-1X-MQ5"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uC-YP-ylb">
+                            <rect key="frame" x="0.0" y="425" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 7"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="0Ta-Lo-qax"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AG0-aD-aOV">
+                            <rect key="frame" x="0.0" y="495.5" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 8"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="4fV-nm-cuh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4x-he-SIc">
+                            <rect key="frame" x="0.0" y="566.5" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 9"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="kre-Gk-qDf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJJ-34-Wba">
+                            <rect key="frame" x="0.0" y="637" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Tỉnh 10"/>
+                            <connections>
+                                <action selector="tinhButton:" destination="-1" eventType="touchUpInside" id="ehs-Nn-YdG"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dpy-MQ-iu6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Vxo-Qy-8EJ"/>
+                <constraint firstItem="dpy-MQ-iu6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ahf-7Z-JLf"/>
+                <constraint firstItem="dpy-MQ-iu6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cau-sC-OsS"/>
+                <constraint firstItem="dpy-MQ-iu6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="o8t-Gy-WLy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="142"/>
+        </view>
+    </objects>
+</document>
