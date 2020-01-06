@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
   }
 
   override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     setupUI()
   }
 
@@ -37,7 +38,6 @@ class HomeViewController: UIViewController {
     for index in 1...40 {
       let userView = UserView(frame: CGRect(x: xCurrent, y: yCurrent, width: widthUserView, height: heightUserView))
       userView.delegate = self
-      //userView.setupLayout(userImage: UIImage.init(systemName: "")!, username: "An Nguyen \(index)")
       userView.userImageView.backgroundColor = .red
       userView.usernameLabel.text = "\(names[index - 1]) \(index)"
       userView.index = index - 1

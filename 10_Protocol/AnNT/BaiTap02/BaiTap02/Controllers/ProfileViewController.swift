@@ -26,9 +26,6 @@ class ProfileViewController: UIViewController {
     setupUI()
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-  }
-
   private func setupUI() {
     title = "Profile"
     navigationItem.rightBarButtonItem =  UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(handleDone))
