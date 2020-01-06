@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeCellTabelViewModel {
+final class HomeCellTabelViewModel {
     
     var watchers: Int
     var avatar: UIImage?

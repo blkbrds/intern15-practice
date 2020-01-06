@@ -11,7 +11,7 @@ import UIKit
 protocol HomeCollectionViewCellDelegate : class {
     func getImageCollection(cell: HomeCollectionViewCell, indexPath: IndexPath?)
 }
-class HomeCollectionViewCell: UICollectionViewCell {
+final class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!

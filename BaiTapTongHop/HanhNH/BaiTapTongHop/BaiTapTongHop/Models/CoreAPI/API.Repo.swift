@@ -33,8 +33,12 @@ extension APIManager.Repo {
                 case .success(let data):
                     if let data = data {
                         let json = data.toJSON()
-                        let total_count = json["total_count"] as! Int
-                        let items = json["items"] as! [JSON]
+                        guard let total_count = json["total_count"] as? Int else {
+                            return
+                        }
+                        guard let items = json["items"] as? [JSON] else {
+                            return
+                        }
                         var repos: [Repo] = []
                         for item in items {
                             let repo = Repo(json: item)
