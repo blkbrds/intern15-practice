@@ -3,9 +3,10 @@ import UIKit
 class CircleDraw: UIView {
 
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
         let circlePath = UIBezierPath(ovalIn: CGRect(x: 100, y: 200, width: 150, height: 150))
         var segments: [CAShapeLayer] = []
-        let segmentAngle: CGFloat = (360 / 3) / 360
+        let segmentAngle: CGFloat = 360 / 3 / 360
 
         for i in 0...2 {
             let circleLayer = CAShapeLayer()

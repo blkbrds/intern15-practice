@@ -8,6 +8,6 @@ class HomeViewController: UIViewController {
         let secondView = CircleDraw()
         firstView.backgroundColor = .white
         secondView.backgroundColor = .white
-        self.view = secondView
+        view = secondView
     }
 }
