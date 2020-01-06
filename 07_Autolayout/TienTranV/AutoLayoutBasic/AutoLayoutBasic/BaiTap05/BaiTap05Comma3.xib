@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BaiTapAutoLayoutBasicView" customModule="AutoLayoutBasic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="447" height="395"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-P6-qfs">
+                    <rect key="frame" x="93.5" y="172.5" width="260" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-YC-VUL">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="iRe-YC-VUL" secondAttribute="height" multiplier="1:1" id="XZr-fG-UMl"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2b-Ds-Fkq">
+                            <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Y2b-Ds-Fkq" secondAttribute="height" multiplier="1:1" id="z93-vv-D6P"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hup-XR-HlX">
+                            <rect key="frame" x="140" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ6-20-CPY">
+                            <rect key="frame" x="210" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="HJ6-20-CPY" firstAttribute="top" secondItem="LDb-P6-qfs" secondAttribute="top" id="4SR-iF-pOj"/>
+                        <constraint firstAttribute="bottom" secondItem="Y2b-Ds-Fkq" secondAttribute="bottom" id="FV7-XJ-K0H"/>
+                        <constraint firstItem="Y2b-Ds-Fkq" firstAttribute="leading" secondItem="iRe-YC-VUL" secondAttribute="trailing" constant="20" id="GQL-2R-Xe2"/>
+                        <constraint firstItem="hup-XR-HlX" firstAttribute="leading" secondItem="Y2b-Ds-Fkq" secondAttribute="trailing" constant="20" id="JjU-O6-0eh"/>
+                        <constraint firstItem="hup-XR-HlX" firstAttribute="width" secondItem="Y2b-Ds-Fkq" secondAttribute="width" id="KEL-Qp-fBE"/>
+                        <constraint firstItem="hup-XR-HlX" firstAttribute="top" secondItem="LDb-P6-qfs" secondAttribute="top" id="T1g-4S-YoV"/>
+                        <constraint firstAttribute="trailing" secondItem="HJ6-20-CPY" secondAttribute="trailing" id="UYT-sP-h0P"/>
+                        <constraint firstAttribute="bottom" secondItem="HJ6-20-CPY" secondAttribute="bottom" id="VM6-9I-URu"/>
+                        <constraint firstAttribute="width" constant="260" id="ZqR-Uf-yk1"/>
+                        <constraint firstItem="iRe-YC-VUL" firstAttribute="top" secondItem="LDb-P6-qfs" secondAttribute="top" id="azY-NE-CC9"/>
+                        <constraint firstAttribute="bottom" secondItem="hup-XR-HlX" secondAttribute="bottom" id="nU6-l9-4xX"/>
+                        <constraint firstItem="iRe-YC-VUL" firstAttribute="leading" secondItem="LDb-P6-qfs" secondAttribute="leading" id="oJy-Wh-Cq3"/>
+                        <constraint firstItem="HJ6-20-CPY" firstAttribute="leading" secondItem="hup-XR-HlX" secondAttribute="trailing" constant="20" id="oXL-J5-gL5"/>
+                        <constraint firstAttribute="height" constant="50" id="qA5-eR-ZgT"/>
+                        <constraint firstItem="iRe-YC-VUL" firstAttribute="height" secondItem="LDb-P6-qfs" secondAttribute="height" id="r5V-2c-vQY"/>
+                        <constraint firstAttribute="bottom" secondItem="iRe-YC-VUL" secondAttribute="bottom" id="zqz-2X-5dJ"/>
+                        <constraint firstItem="Y2b-Ds-Fkq" firstAttribute="top" secondItem="LDb-P6-qfs" secondAttribute="top" id="zwm-DC-dKG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LDb-P6-qfs" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="98T-KT-hll"/>
+                <constraint firstItem="LDb-P6-qfs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sSs-Wh-jDj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="66" y="-118"/>
+        </view>
+    </objects>
+</document>

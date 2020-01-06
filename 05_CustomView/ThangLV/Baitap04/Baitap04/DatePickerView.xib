@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatePickerView" customModule="Baitap04" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="htS-EA-gmD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="416"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csa-r5-Oja">
+                    <rect key="frame" x="0.0" y="0.0" width="37" height="30"/>
+                    <color key="backgroundColor" red="0.2156862745" green="0.50196078430000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" red="1" green="0.62199373769999999" blue="0.38717728330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonDidClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="yfz-c5-Wqw"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="csa-r5-Oja" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OIL-XP-SFB"/>
+                <constraint firstItem="csa-r5-Oja" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bWS-Wk-tEW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="htS-EA-gmD" secondAttribute="bottom" id="eY5-ZO-CbU"/>
+                <constraint firstItem="htS-EA-gmD" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="et5-ae-xa2"/>
+                <constraint firstItem="htS-EA-gmD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="la2-IY-LjY"/>
+                <constraint firstItem="htS-EA-gmD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mbl-vZ-mSr"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="datePicker" destination="htS-EA-gmD" id="6KA-TE-6R0"/>
+            </connections>
+            <point key="canvasLocation" x="146.40000000000001" y="42.278860569715143"/>
+        </view>
+    </objects>
+</document>
