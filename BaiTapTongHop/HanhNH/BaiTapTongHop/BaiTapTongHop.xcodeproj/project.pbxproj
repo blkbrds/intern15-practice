@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BBCE62DB39A3E48E07BBC43 /* Pods_BaiTapTongHop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21D48C2858ED516E77C7555 /* Pods_BaiTapTongHop.framework */; };
 		8A014DAF23C2F2330044993D /* SliderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A014DAD23C2F2330044993D /* SliderCollectionCell.swift */; };
 		8A014DB023C2F2330044993D /* SliderCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A014DAE23C2F2330044993D /* SliderCollectionCell.xib */; };
 		8A014DB323C2F2570044993D /* SliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A014DB123C2F2570044993D /* SliderCollectionViewCell.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70AC6E0174A9B99E43B83DC7 /* Pods-BaiTapTongHop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapTongHop.release.xcconfig"; path = "Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop.release.xcconfig"; sourceTree = "<group>"; };
 		8A014DAD23C2F2330044993D /* SliderCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionCell.swift; sourceTree = "<group>"; };
 		8A014DAE23C2F2330044993D /* SliderCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCollectionCell.xib; sourceTree = "<group>"; };
 		8A014DB123C2F2570044993D /* SliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,8 @@
 		8AA98CC623C2EDFB0061A3A9 /* SliderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewModel.swift; sourceTree = "<group>"; };
 		8AA98CD123C2EF520061A3A9 /* SliderScrollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderScrollCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA98CD223C2EF520061A3A9 /* SliderScrollCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderScrollCollectionViewCell.xib; sourceTree = "<group>"; };
+		9800895950759502CFDCBF16 /* Pods-BaiTapTongHop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapTongHop.debug.xcconfig"; path = "Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop.debug.xcconfig"; sourceTree = "<group>"; };
+		C21D48C2858ED516E77C7555 /* Pods_BaiTapTongHop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaiTapTongHop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +123,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BBCE62DB39A3E48E07BBC43 /* Pods_BaiTapTongHop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A62142FD15F34527ABD6C72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9800895950759502CFDCBF16 /* Pods-BaiTapTongHop.debug.xcconfig */,
+				70AC6E0174A9B99E43B83DC7 /* Pods-BaiTapTongHop.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5465714E08278F854BAFDA94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C21D48C2858ED516E77C7555 /* Pods_BaiTapTongHop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8A014DB523C2F2C30044993D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +227,8 @@
 			children = (
 				8AA98C3923C2DDEF0061A3A9 /* BaiTapTongHop */,
 				8AA98C3823C2DDEF0061A3A9 /* Products */,
+				2A62142FD15F34527ABD6C72 /* Pods */,
+				5465714E08278F854BAFDA94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -438,6 +463,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AA98C4B23C2DDF10061A3A9 /* Build configuration list for PBXNativeTarget "BaiTapTongHop" */;
 			buildPhases = (
+				BEA394EAC019A2DF0643C3FA /* [CP] Check Pods Manifest.lock */,
 				8AA98C3323C2DDEF0061A3A9 /* Sources */,
 				8AA98C3423C2DDEF0061A3A9 /* Frameworks */,
 				8AA98C3523C2DDEF0061A3A9 /* Resources */,
@@ -509,6 +535,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BEA394EAC019A2DF0643C3FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaiTapTongHop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8AA98C3323C2DDEF0061A3A9 /* Sources */ = {
@@ -671,6 +722,7 @@
 		};
 		8AA98C4C23C2DDF10061A3A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9800895950759502CFDCBF16 /* Pods-BaiTapTongHop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -688,6 +740,7 @@
 		};
 		8AA98C4D23C2DDF10061A3A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70AC6E0174A9B99E43B83DC7 /* Pods-BaiTapTongHop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

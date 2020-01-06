@@ -8,11 +8,4 @@
 
 import UIKit
 
-class SliderDetailCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-}
+final class SliderDetailCollectionViewCell: UICollectionViewCell {}
