@@ -3,6 +3,9 @@ import UIKit
 final class MyViewController: UIViewController {
 
 	private let names: [String] = ["cho", "meo", "vit", "ga", "heo", "bo", "ran", "coc", "cao"]
+	private let nameLabel: UILabel = UILabel()
+	private let button: UIButton = UIButton()
+	let avatarImage: UIImageView = UIImageView()
 
 	func createMyView(frame: CGRect, index: Int) -> UIView {
 		let avatarView: UIView = UIView()
@@ -10,7 +13,6 @@ final class MyViewController: UIViewController {
 		avatarView.frame = frame
 
 		// create Image
-		let avatarImage: UIImageView = UIImageView()
 		avatarImage.image = #imageLiteral(resourceName: "icons8-user-male-150 09-09-50-753")
 		avatarImage.contentMode = .scaleToFill
 		avatarImage.frame = CGRect(x: 0, y: 0, width: avatarView.frame.width, height:
@@ -18,7 +20,6 @@ final class MyViewController: UIViewController {
 		avatarView.addSubview(avatarImage)
 
 		//create button
-		let button: UIButton = UIButton()
 		button.frame = avatarView.frame
 		let actionButton = UITapGestureRecognizer(target: self, action: #selector(buttonDidClick(_:)))
 		actionButton.name = names[index]
@@ -27,12 +28,11 @@ final class MyViewController: UIViewController {
 		avatarView.addSubview(button)
 
 		//create label
-		let labelView: UILabel = UILabel()
-		labelView.text = names[index]
-		labelView.font = UIFont(name: labelView.font.fontName, size: 20)
-		labelView.frame = CGRect(x: 0, y: avatarImage.frame.height + 10, width: avatarImage.frame.width, height: avatarView.frame.height - avatarImage.frame.height - 10)
-		labelView.textAlignment = .center
-		avatarView.addSubview(labelView)
+		nameLabel.text = names[index]
+		nameLabel.font = UIFont(name: nameLabel.font.fontName, size: 20)
+		nameLabel.frame = CGRect(x: 0, y: avatarImage.frame.height + 10, width: avatarImage.frame.width, height: avatarView.frame.height - avatarImage.frame.height - 10)
+		nameLabel.textAlignment = .center
+		avatarView.addSubview(nameLabel)
 		view.addSubview(avatarView)
 		return avatarView
 	}

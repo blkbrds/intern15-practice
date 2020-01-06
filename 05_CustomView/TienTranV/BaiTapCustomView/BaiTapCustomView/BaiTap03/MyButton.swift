@@ -43,7 +43,7 @@ final class MyButton: UIButton {
             case .centerLeft:
                 return CGPoint(x: frame.minX, y: frame.midY)
             case .centerRight:
-                return CGPoint(x: frame.maxX, y: frame.midY)
+				return CGPoint(x: frame.maxX, y: frame.midY)
             }
         }
     }

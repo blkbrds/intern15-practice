@@ -6,7 +6,7 @@ final class PasswordViewController: UIViewController {
 	@IBOutlet private weak var passwordTextField: UITextField!
 	@IBOutlet private weak var inforLabel: UILabel!
 	@IBOutlet private weak var password: UILabel!
-	@IBOutlet private weak var Name: UILabel!
+	@IBOutlet private weak var nameLabel: UILabel!
 
 	let userName1: String = "alibama"
 	let userPassword1: String = "abcd1234"
