@@ -4,7 +4,7 @@ enum Operator {
     case add
     case substract
     case multiple
-    case devide
+    case divide
     case none
 }
 
@@ -34,7 +34,7 @@ final class OperatorManager {
             return result - operand
         case .multiple:
             return result * operand
-        case .devide:
+        case .divide:
             return (operand != 0) ? result / operand : nil
         case .none:
             return operand

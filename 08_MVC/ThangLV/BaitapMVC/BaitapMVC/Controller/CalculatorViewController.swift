@@ -1,6 +1,6 @@
 import UIKit
 
-final   class CalculatorViewController: UIViewController {
+final class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -18,7 +18,6 @@ final   class CalculatorViewController: UIViewController {
         if result < limitedNumber {
             resultLabel.text = String(result).toInteger()
         }
-        
     }
     
     @IBAction func handleInputNumberButtonTouchUpInside(_ sender: UIButton) {
@@ -28,7 +27,6 @@ final   class CalculatorViewController: UIViewController {
             resultLabel.text = String(number.inputNumber).toInteger()
             isCalculated = true
         }
-        
     }
     
     
@@ -46,7 +44,7 @@ final   class CalculatorViewController: UIViewController {
         case 12:
             OperatorManager.shared().operator = .multiple
         case 13:
-            OperatorManager.shared().operator = .devide
+            OperatorManager.shared().operator = .divide
         default:
             break
         }
