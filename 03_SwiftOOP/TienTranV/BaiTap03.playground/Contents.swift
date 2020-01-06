@@ -53,3 +53,4 @@ var tamGiac = TamGiac(mangKichThuocCanh: [3, 4, 5])
 
 print("Chu vi cua tam giac = \(tamGiac.tinhChuVi())")
 print("Dien tich cua tam giac = \(tamGiac.tinhDienTich())")
+print("\(tamGiac.kichThuocMoiCanh())")

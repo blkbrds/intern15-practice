@@ -8,4 +8,4 @@
 
 import Foundation
 
-struct App { }
+struct App {}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="38" id="KGk-i7-Jjw" customClass="GardentCell" customModule="ExerciseTableView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="352" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetable" translatesAutoresizingMaskIntoConstraints="NO" id="VoP-Ro-DLb">
+                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="VoP-Ro-DLb" secondAttribute="height" multiplier="1:1" id="4gl-R9-EYq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx9-vd-yPa">
+                        <rect key="frame" x="100" y="22.5" width="36.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="Knc-s3-dtK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sub title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fl4-sD-Y2f">
+                        <rect key="frame" x="100" y="52.5" width="123" height="17"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-po-qFd">
+                        <rect key="frame" x="277" y="35" width="65" height="30"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="24j-fY-Rna"/>
+                            <constraint firstAttribute="height" constant="30" id="y4C-qh-cfO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                        <state key="normal" title="Tap me">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nkN-eC-1uv"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2ge-po-qFd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2hD-g1-VIL"/>
+                    <constraint firstItem="fl4-sD-Y2f" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.35" id="4Ao-Ec-7rf"/>
+                    <constraint firstAttribute="trailing" secondItem="2ge-po-qFd" secondAttribute="trailing" constant="10" id="5zo-kT-Db2"/>
+                    <constraint firstItem="Jx9-vd-yPa" firstAttribute="leading" secondItem="VoP-Ro-DLb" secondAttribute="trailing" constant="10" id="Dbi-3U-N6v"/>
+                    <constraint firstItem="VoP-Ro-DLb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="MUh-nR-cOC"/>
+                    <constraint firstItem="fl4-sD-Y2f" firstAttribute="top" secondItem="Jx9-vd-yPa" secondAttribute="bottom" constant="5" id="V7f-4k-RLI"/>
+                    <constraint firstItem="VoP-Ro-DLb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="f68-nP-AOw"/>
+                    <constraint firstItem="fl4-sD-Y2f" firstAttribute="leading" secondItem="Jx9-vd-yPa" secondAttribute="leading" id="m8n-IJ-u26"/>
+                    <constraint firstAttribute="bottom" secondItem="VoP-Ro-DLb" secondAttribute="bottom" constant="10" id="wrk-DK-q2B"/>
+                    <constraint firstItem="Jx9-vd-yPa" firstAttribute="centerY" secondItem="VoP-Ro-DLb" secondAttribute="centerY" constant="-15" id="wt5-wO-rT0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="gardenImageView" destination="VoP-Ro-DLb" id="7fC-Sf-EHs"/>
+                <outlet property="subTitleLabel" destination="fl4-sD-Y2f" id="0DY-oj-9cW"/>
+                <outlet property="titleLabel" destination="Jx9-vd-yPa" id="hMa-i0-u9b"/>
+            </connections>
+            <point key="canvasLocation" x="-55.072463768115945" y="-137.94642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="vegetable" width="852" height="480"/>
+    </resources>
+</document>

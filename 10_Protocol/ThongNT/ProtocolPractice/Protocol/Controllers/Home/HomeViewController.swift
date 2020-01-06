@@ -55,19 +55,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            let vc = Ex1ViewController()
+            let vc = Ex2ViewController()
             vc.exercise = self.exercises[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
-            let vc = Ex2ViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
-        case 2:
             let vc = Ex3ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 3:
+        case 2:
             let vc = Ex4ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
-        case 4:
+        case 3:
             let vc = Ex5ViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
@@ -82,11 +79,3 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-
-
-
-
-
-
-
