@@ -45,15 +45,7 @@ class HomeTableViewController: UITableViewController {
   }
 
   // MARK: - Table view delegate
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //tableView.deselectRow(at: indexPath, animated: true)
-    tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-    let indexs = tableView.indexPathsForSelectedRows
-    for index in indexs! {
-      print(index.row)
-    }
-  }
-
+  
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-class DataUser {
+class BundleManager {
 
-  static let shared: DataUser = DataUser()
+  static let shared: BundleManager = BundleManager()
 
   private init() { }
 

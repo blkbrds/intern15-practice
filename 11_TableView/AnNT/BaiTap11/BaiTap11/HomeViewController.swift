@@ -37,7 +37,7 @@ extension HomeViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! MyTableViewCell
-    cell.texttLabel.text = texts[indexPath.row]
+    cell.messageLabel.text = texts[indexPath.row]
     return cell
   }
 }

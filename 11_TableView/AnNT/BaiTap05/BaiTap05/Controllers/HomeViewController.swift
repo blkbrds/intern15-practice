@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
   }
 
   private func getData() {
-    users = DataUser.shared.getUsers()
+    users = BundleManager.shared.getUsers()
   }
 }
 
