@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CViewController" customModule="BaiTap01" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BP-LD-nPz">
+                    <rect key="frame" x="107" y="313" width="200" height="70"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="heZ-ER-Hae"/>
+                        <constraint firstAttribute="height" constant="70" id="rmY-hw-pYS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="nextToViewTouchUpInside:" destination="-1" eventType="touchUpInside" id="x77-hh-wdy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IA-3r-lt7">
+                    <rect key="frame" x="107" y="533" width="200" height="70"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="CAI-D2-UQc"/>
+                        <constraint firstAttribute="height" constant="70" id="ulX-hb-QeT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="Root">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="popToRootViewTouchUpInside:" destination="-1" eventType="touchUpInside" id="wRK-JI-bDA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3r-aw-Xxv">
+                    <rect key="frame" x="107" y="423" width="200" height="70"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="7H9-Ia-lgp"/>
+                        <constraint firstAttribute="height" constant="70" id="v53-va-Nyf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="Pre">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="preToViewTouchUpInside:" destination="-1" eventType="touchUpInside" id="oTg-pB-YVh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8IA-3r-lt7" firstAttribute="top" secondItem="g3r-aw-Xxv" secondAttribute="bottom" constant="40" id="27X-sH-K30"/>
+                <constraint firstItem="g3r-aw-Xxv" firstAttribute="centerX" secondItem="8BP-LD-nPz" secondAttribute="centerX" id="3Si-bQ-u2n"/>
+                <constraint firstItem="8IA-3r-lt7" firstAttribute="height" secondItem="g3r-aw-Xxv" secondAttribute="height" id="Cpg-Pv-zEl"/>
+                <constraint firstItem="g3r-aw-Xxv" firstAttribute="top" secondItem="8BP-LD-nPz" secondAttribute="bottom" constant="40" id="IlO-b3-48Z"/>
+                <constraint firstItem="8BP-LD-nPz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="Si8-dg-wgz"/>
+                <constraint firstItem="8BP-LD-nPz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YIY-hn-gjS"/>
+                <constraint firstItem="8IA-3r-lt7" firstAttribute="centerX" secondItem="g3r-aw-Xxv" secondAttribute="centerX" id="hQw-ax-Hw8"/>
+                <constraint firstItem="8IA-3r-lt7" firstAttribute="width" secondItem="g3r-aw-Xxv" secondAttribute="width" id="nAo-y6-sAa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="143"/>
+        </view>
+    </objects>
+</document>
