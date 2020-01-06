@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HuyenVC" customModule="BaiTap03" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="huyenButton" destination="skH-KW-e6s" collectionClass="NSMutableArray" id="11D-0h-ak9"/>
+                <outletCollection property="huyenButton" destination="8ix-8Y-gmX" collectionClass="NSMutableArray" id="OCJ-UK-fVA"/>
+                <outletCollection property="huyenButton" destination="vHL-99-vVT" collectionClass="NSMutableArray" id="BjK-ZU-BFn"/>
+                <outletCollection property="huyenButton" destination="hDU-Wr-8j6" collectionClass="NSMutableArray" id="FOI-bQ-msB"/>
+                <outletCollection property="huyenButton" destination="uxy-aq-9Zv" collectionClass="NSMutableArray" id="yDb-yX-0CK"/>
+                <outletCollection property="huyenButton" destination="FrL-db-AlO" collectionClass="NSMutableArray" id="2cK-FO-Baw"/>
+                <outletCollection property="huyenButton" destination="RkH-4w-FJM" collectionClass="NSMutableArray" id="aI6-NO-SKX"/>
+                <outletCollection property="huyenButton" destination="apY-o7-bif" collectionClass="NSMutableArray" id="HqV-7e-lDu"/>
+                <outletCollection property="huyenButton" destination="83q-wE-50p" collectionClass="NSMutableArray" id="avk-kQ-Cdf"/>
+                <outletCollection property="huyenButton" destination="BgO-aO-1LC" collectionClass="NSMutableArray" id="OKb-j1-NF5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mns-a8-rBj">
+                    <rect key="frame" x="30" y="104" width="354" height="688"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skH-KW-e6s">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 1"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="l6A-MR-zZL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ix-8Y-gmX">
+                            <rect key="frame" x="0.0" y="71" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 2"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="3jF-Bh-mxr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHL-99-vVT">
+                            <rect key="frame" x="0.0" y="141.5" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 3"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="ZVN-Wx-E6w"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDU-Wr-8j6">
+                            <rect key="frame" x="0.0" y="212.5" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 4"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="GTH-gl-bcu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxy-aq-9Zv">
+                            <rect key="frame" x="0.0" y="283" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 5"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="Xv0-OJ-afO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-db-AlO">
+                            <rect key="frame" x="0.0" y="354" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 6"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="85i-9a-xuE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkH-4w-FJM">
+                            <rect key="frame" x="0.0" y="425" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 7"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="FDM-hj-OZ6"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apY-o7-bif">
+                            <rect key="frame" x="0.0" y="495.5" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 8"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="eDT-UL-eG8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83q-wE-50p">
+                            <rect key="frame" x="0.0" y="566.5" width="354" height="50.5"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 9"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="FcE-tb-Cjg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgO-aO-1LC">
+                            <rect key="frame" x="0.0" y="637" width="354" height="51"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Huyện 10"/>
+                            <connections>
+                                <action selector="huyenButton:" destination="-1" eventType="touchUpInside" id="yab-1x-XUm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="mns-a8-rBj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="Grv-U3-PFv"/>
+                <constraint firstItem="mns-a8-rBj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="R0P-Db-srP"/>
+                <constraint firstItem="mns-a8-rBj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="i8f-zX-Hlz"/>
+                <constraint firstItem="mns-a8-rBj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lJU-Bs-4iy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="141" y="137"/>
+        </view>
+    </objects>
+</document>
