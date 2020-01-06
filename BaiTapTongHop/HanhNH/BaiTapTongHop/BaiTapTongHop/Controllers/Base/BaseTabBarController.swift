@@ -54,7 +54,7 @@ final class BaseTabBarController: UITabBarController {
         configTabBar()
     }
     
-    func configTabBar() {
+   private func configTabBar() {
         homeNavi.tabBarItem = getTabbarItem(for: .home)
         mapNaVi.tabBarItem = getTabbarItem(for: .map)
         favoriteNaVi.tabBarItem = getTabbarItem(for: .favorite)
@@ -64,7 +64,7 @@ final class BaseTabBarController: UITabBarController {
         tabBar.tintColor = .black
     }
     
-    func getTabbarItem(for tabbarType: TabbarType) -> UITabBarItem {
+   private func getTabbarItem(for tabbarType: TabbarType) -> UITabBarItem {
         UITabBarItem(title: tabbarType.title, image: #imageLiteral(resourceName: tabbarType.imageName), tag: tabbarType.rawValue)
     }
 }
