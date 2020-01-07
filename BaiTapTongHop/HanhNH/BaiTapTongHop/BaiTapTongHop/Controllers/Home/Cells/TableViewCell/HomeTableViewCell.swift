@@ -9,17 +9,20 @@
 import UIKit
 
 protocol HomeTableViewCellDelagete: class {
-    func getImage(cell: HomeTableViewCell, indexPath: IndexPath?)
+    func getImage(cell: HomeTableViewCell, needPerform action: HomeTableViewCell.Action)
 }
 
 final class HomeTableViewCell: UITableViewCell {
-    
+
     @IBOutlet private weak var watchersLabel: UILabel!
     @IBOutlet private weak var forksLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var avatarImageView: UIImageView!
 
+    enum Action {
+        case getImageCollection(indexPath: IndexPath?)
+    }
     weak var delagate: HomeTableViewCellDelagete?
     var indexPath: IndexPath?
     var viewModel: HomeCellTableViewModel? {
@@ -46,7 +49,7 @@ final class HomeTableViewCell: UITableViewCell {
                 avatarImageView.image = image
             } else {
                 avatarImageView.image = nil
-                delagate?.getImage(cell: self, indexPath: indexPath)
+                delagate?.getImage(cell: self, needPerform: Action.getImageCollection(indexPath: indexPath))
             }
         } else {
             viewModel = nil

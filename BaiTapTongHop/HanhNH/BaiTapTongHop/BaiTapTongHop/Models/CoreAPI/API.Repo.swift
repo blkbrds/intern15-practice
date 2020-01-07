@@ -7,25 +7,19 @@
 //
 
 import Foundation
-extension APIManager.Repo {
-    struct QureryString {
-        func hotRepo(page: Int) -> String {
-            return APIManager.Path.firstDommin
-                + APIManager.Path.basePath
-                + APIManager.Path.path
-                + "page=\(page)"
-                + APIManager.Path.hotPath
-        }
-    }
+
+struct RepoResults {
+    var repos: [Repo]
+    var total_count: Int
+}
+
+extension APIManager.Repository {
     
-    struct RepoResults {
-        var repos: [Repo]
-        var total_count: Int
-    }
-    
-    static func getRepo(page: Int = 1, completion: @escaping APICompletion<RepoResults>) {
-        let urlString = QureryString().hotRepo(page: page)
-        API.shared().request(urlString: urlString) { (result) in
+    func search(params: [String: String], completion: @escaping APICompletion<RepoResults>) {
+        var url = Router.Repository.path
+        let queries = params.map { return $0.key + "=" + $0.value }
+        url = url + "?" + queries.joined(separator: "&")
+        API.shared().request(urlString: url) { (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
@@ -48,7 +42,7 @@ extension APIManager.Repo {
 
                         completion(.success(repoResults))
                     } else {
-                        completion(.failure(.error("Not Data................")))
+                        completion(.failure(.error(Strings.notData)))
                     }
                 }
             }

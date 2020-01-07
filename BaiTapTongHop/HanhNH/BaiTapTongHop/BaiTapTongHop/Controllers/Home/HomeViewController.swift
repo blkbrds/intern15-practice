@@ -20,7 +20,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-        configData()
+        configData(isRefresh: true)
     }
 
     func updateUI() {
@@ -56,9 +56,9 @@ final class HomeViewController: BaseViewController {
         collectionView.refreshControl = collectionRefreshControl
     }
 
-    func configData() {
-        // MARK: -  load Data
-        viewModel.loadAPI() { [weak self] (done, arg) in
+    private func configData(isRefresh: Bool) {
+        viewModel.page = isRefresh ? 1 : viewModel.page + 1
+        viewModel.loadAPI() { [weak self] (done, errorMessage) in
             guard let this = self else { return }
             if done {
                 this.updateUI()
@@ -129,57 +129,13 @@ final class HomeViewController: BaseViewController {
         collectionView.delegate = self
     }
 
-    // MARK: - API
-    func loadAPI() {
-        viewModel.loadAPI() { [weak self] (done, errorMessage) in
-            guard let this = self else { return }
-            if done {
-                this.updateUI()
-            } else {
-                let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                this.present(alert, animated: true, completion: nil)
-            }
-        }
-    }
-
-    func loadMore() {
-        viewModel.loadMore() { [weak self] (done, errorMessage) in
-            guard let this = self else { return }
-            if done {
-                this.updateUI()
-            } else {
-                let alert = UIAlertController(title: Strings.error, message: Strings.notLoadMore, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                this.present(alert, animated: true, completion: nil)
-            }
-        }
-    }
     // MARK: - Action
     @objc func tableViewDidScrollToTop() {
-        viewModel.loadAPI() { [weak self] (done, errorMessage) in
-            guard let this = self else { return }
-            if done {
-                this.updateUI()
-            } else {
-                let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                this.present(alert, animated: true, completion: nil)
-            }
-        }
+        configData(isRefresh: true)
     }
 
     @objc func collectionViewDidScrollToTop() {
-        viewModel.loadAPI() { [weak self] (done, errorMessage) in
-            guard let this = self else { return }
-            if done {
-                this.updateUI()
-            } else {
-                let alert = UIAlertController(title: Strings.error, message: Strings.notRefresh, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                this.present(alert, animated: true, completion: nil)
-            }
-        }
+        configData(isRefresh: true)
     }
 }
 
@@ -237,7 +193,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         if offsetY >= contentHeight - scrollView.frame.size.height {
-            loadMore()
+            configData(isRefresh: false)
         }
     }
 
@@ -246,7 +202,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             let offsetY = scrollView.contentOffset.y
             let contentHeight = scrollView.contentSize.height
             if offsetY >= contentHeight - scrollView.frame.size.height {
-                loadMore()
+                configData(isRefresh: false)
             }
         }
     }
@@ -333,10 +289,16 @@ extension HomeViewController: SliderCollectionCellDataSource {
 }
 
 extension HomeViewController: HomeTableViewCellDelagete {
-    func getImage(cell: HomeTableViewCell, indexPath: IndexPath?) {
-        if let indexPath = indexPath {
-            viewModel.downloadImage(indexPath: indexPath) { (image) in
-                self.tableView.reloadRows(at: [indexPath], with: .none)
+    func getImage(cell: HomeTableViewCell, needPerform action: HomeTableViewCell.Action) {
+        switch action {
+        case .getImageCollection(let indexPath):
+            if let indexPath = indexPath {
+                viewModel.downloadImage(indexPath: indexPath) { (image) in
+                    //co mot cell khong ton tai
+                    if self.tableView.indexPathsForVisibleRows?.contains(indexPath) == true {
+                        self.tableView.reloadRows(at: [indexPath], with: .none)
+                    }
+                }
             }
         }
     }
@@ -348,7 +310,9 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
         case .getImageCollection(let indexPath):
             if let indexPath = indexPath {
                 viewModel.downloadImage(indexPath: indexPath) { (image) in
-                    self.collectionView.reloadItems(at: [indexPath])
+                    if self.collectionView.indexPathsForSelectedItems?.contains(indexPath) == true {
+                        self.collectionView.reloadItems(at: [indexPath])
+                   }
                 }
             }
         }

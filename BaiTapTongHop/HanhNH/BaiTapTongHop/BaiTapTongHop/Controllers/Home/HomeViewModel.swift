@@ -48,40 +48,24 @@ final class HomeViewModel {
     }
     
     func loadAPI(completion: @escaping Completion) {
-        self.page = 1
-        APIManager.Repo.getRepo(page: page) { [weak self] (result) in
+        let params: [String: String] = ["q": "topic:swift",
+                                        "page": String(page),
+                                        "per_page": "10"]
+        APIManager.Repository().search(params: params)  { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success(let data):
-                this.repos = data.repos
+                if this.page == 1 {
+                    this.repos = data.repos
+                } else {
+                    this.repos.append(contentsOf: data.repos)
+                }
                 this.canLoadMore = data.total_count > this.repos.count
                 completion(true, "")
             case .failure(let error):
                 completion(false, error.localizedDescription)
             }
 
-        }
-    }
-    
-    func loadMore(completion: @escaping Completion) {
-        if isLoading {
-            return
-        }
-        isLoading = true
-        if canLoadMore {
-            page += 1
-        }
-        APIManager.Repo.getRepo(page: page) { [weak self] (result) in
-            guard let this = self else { return }
-            this.isLoading = false
-            switch result {
-            case .failure(let error):
-                completion(false, error.localizedDescription)
-            case .success(let data):
-                this.repos.append(contentsOf: data.repos)
-                this.canLoadMore = data.total_count > this.repos.count
-                completion(true, "")
-            }
         }
     }
 
