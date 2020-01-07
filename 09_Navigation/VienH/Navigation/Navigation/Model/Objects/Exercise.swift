@@ -9,7 +9,6 @@
 import Foundation
 
 final class Exercise {
-
     var name: String
     var description: String
 

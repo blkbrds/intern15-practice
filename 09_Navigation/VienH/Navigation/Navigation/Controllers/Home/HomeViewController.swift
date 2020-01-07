@@ -10,7 +10,6 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    // MARK: - Properties
     @IBOutlet private weak var tableView: UITableView!
 
     var exercises: [String] = []
