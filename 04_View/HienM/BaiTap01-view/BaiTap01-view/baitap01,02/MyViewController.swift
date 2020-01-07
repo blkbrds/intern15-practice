@@ -57,8 +57,7 @@ final class MyViewController: UIViewController {
 			if marginHorizontal + widthOfView > widthScreen - marginHorizontal {
 				marginTop += hightOfView + 40
 				marginHorizontal = spacing
-			}
-			else {
+			} else {
 				marginHorizontal += widthOfView + spacing
 			}
 		}

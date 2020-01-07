@@ -5,7 +5,7 @@ final class PasswordViewController: UIViewController {
 	@IBOutlet private weak var nameTextField: UITextField!
 	@IBOutlet private weak var passwordTextField: UITextField!
 	@IBOutlet private weak var inforLabel: UILabel!
-	@IBOutlet private weak var password: UILabel!
+	@IBOutlet private weak var passwordLabel: UILabel!
 	@IBOutlet private weak var nameLabel: UILabel!
 
 	let userName1: String = "alibama"
@@ -50,8 +50,7 @@ final class PasswordViewController: UIViewController {
 			let useraccount: (String, String) = (account, password)
 			if useraccount == (userName1, userPassword1) {
 				inforLabel.isHidden = true
-			}
-			else {
+			} else {
 				inforLabel.isHidden = false
 				inforLabel.text = exception(stringData: useraccount)
 			}

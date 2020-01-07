@@ -2,14 +2,14 @@ import UIKit
 
 final class ColorViewController: UIViewController {
 
-	@IBOutlet private weak var sliderRed: UISlider!
-	@IBOutlet private weak var sliderBlue: UISlider!
-	@IBOutlet private weak var sliderGreen: UISlider!
-	@IBOutlet private weak var valueCurrentRed: UILabel!
-	@IBOutlet private weak var valueCurrentGreen: UILabel!
-	@IBOutlet private weak var valueCurrentBlue: UILabel!
+	@IBOutlet private weak var redSlider: UISlider!
+	@IBOutlet private weak var blueSlider: UISlider!
+	@IBOutlet private weak var greenSlider: UISlider!
+	@IBOutlet private weak var valueCurrentRedLabel: UILabel!
+	@IBOutlet private weak var valueCurrentGreenLabel: UILabel!
+	@IBOutlet private weak var valueCurrentBlueLabel: UILabel!
 	@IBOutlet private weak var ColorView: UIView!
-	@IBOutlet private weak var inforColor: UILabel!
+	@IBOutlet private weak var inforColorLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,11 +17,11 @@ final class ColorViewController: UIViewController {
 	}
 
 	@IBAction private func sliderValueChanged() {
-		let valueRed = CGFloat(sliderRed.value)
-		let valueBlue = CGFloat(sliderBlue.value)
-		let valueGreen = CGFloat(sliderGreen.value)
+		let valueRed = CGFloat(redSlider.value)
+		let valueBlue = CGFloat(blueSlider.value)
+		let valueGreen = CGFloat(greenSlider.value)
 
-		inforColor.text = "Color: Red :\(Int(valueRed)) , Blue : \(Int(valueBlue)) , Green : \(Int(valueGreen))"
+		inforColorLabel.text = "Color: Red :\(Int(valueRed)) , Blue : \(Int(valueBlue)) , Green : \(Int(valueGreen))"
 		ColorView.backgroundColor = UIColor(displayP3Red: valueRed / 255, green: valueGreen / 255, blue: valueBlue / 255, alpha: 1)
 	}
 }

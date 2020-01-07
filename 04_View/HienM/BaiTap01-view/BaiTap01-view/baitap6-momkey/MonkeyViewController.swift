@@ -2,13 +2,13 @@ import UIKit
 
 final class MonkeyViewController: UIViewController {
 
-	@IBOutlet private weak var monkeyImage: UIImageView!
-	@IBOutlet private weak var messageMonkey: UILabel!
+	@IBOutlet private weak var monkeyView: UIImageView!
+	@IBOutlet private weak var messageMonkeyLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpView()
-		messageMonkey.isHidden = true
+		messageMonkeyLabel.isHidden = true
 	}
 
 	func setUpView () {
@@ -20,12 +20,12 @@ final class MonkeyViewController: UIViewController {
 		let oneTapGesture = UITapGestureRecognizer(target: self, action: #selector(oneTapGesture(recognizer:)))
 		let twoTapGesture = UITapGestureRecognizer(target: self, action: #selector(twoTapGesture(recognizer:)))
 
-		monkeyImage.addGestureRecognizer(pinchGesture)
-		monkeyImage.addGestureRecognizer(panGesture)
-		monkeyImage.addGestureRecognizer(rotationGesture)
-		monkeyImage.addGestureRecognizer(longpressGesture)
-		monkeyImage.addGestureRecognizer(oneTapGesture)
-		monkeyImage.addGestureRecognizer(twoTapGesture)
+		monkeyView.addGestureRecognizer(pinchGesture)
+		monkeyView.addGestureRecognizer(panGesture)
+		monkeyView.addGestureRecognizer(rotationGesture)
+		monkeyView.addGestureRecognizer(longpressGesture)
+		monkeyView.addGestureRecognizer(oneTapGesture)
+		monkeyView.addGestureRecognizer(twoTapGesture)
 	}
 
 	@IBAction private func handlePan(recognizer: UIPanGestureRecognizer) {
@@ -61,12 +61,12 @@ final class MonkeyViewController: UIViewController {
 
 	@IBAction private func oneTapGesture (recognizer: UITapGestureRecognizer) {
 		if recognizer.view != nil {
-			messageMonkey.isHidden = false
-			messageMonkey.alpha = 1
-			messageMonkey.text = "Tôi là khỉ"
+			messageMonkeyLabel.isHidden = false
+			messageMonkeyLabel.alpha = 1
+			messageMonkeyLabel.text = "Tôi là khỉ"
 			Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
 				UIView.animate(withDuration: 0) {
-					self.messageMonkey.alpha = 1
+					self.messageMonkeyLabel.alpha = 1
 				}
 			}
 		}
@@ -74,12 +74,12 @@ final class MonkeyViewController: UIViewController {
 
 	@IBAction private func twoTapGesture (recognizer: UITapGestureRecognizer) {
 		if recognizer.view != nil {
-			messageMonkey.isHidden = false
-			messageMonkey.alpha = 1
-			messageMonkey.text = "Khi la toi"
+			messageMonkeyLabel.isHidden = false
+			messageMonkeyLabel.alpha = 1
+			messageMonkeyLabel.text = "Khi la toi"
 			Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
 				UIView.animate(withDuration: 0) {
-					self.messageMonkey.alpha = 0
+					self.messageMonkeyLabel.alpha = 0
 				}
 			}
 		}
