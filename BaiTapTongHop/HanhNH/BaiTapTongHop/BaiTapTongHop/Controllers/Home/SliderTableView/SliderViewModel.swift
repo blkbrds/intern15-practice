@@ -11,7 +11,7 @@ final class SliderViewModel {
     private var images: [ImageSlider] = []
 
     private func loadData(completion: (Bool) -> ()) {
-        images = ImageSlider.getGetDummyDatas()
+        images = ImageSlider.getDummyDatas()
         completion(true)
     }
 }

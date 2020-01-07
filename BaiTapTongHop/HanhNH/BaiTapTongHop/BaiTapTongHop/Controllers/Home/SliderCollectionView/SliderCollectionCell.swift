@@ -13,6 +13,7 @@ protocol SliderCollectionCellDataSource: class {
     func numberRowImage(in section: Int) -> Int
     func imageSlideCollection(in indexPath: IndexPath) -> String
 }
+
 final class SliderCollectionCell: UICollectionViewCell {
 
     @IBOutlet private weak var retireButton: UIButton!
@@ -24,36 +25,37 @@ final class SliderCollectionCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-//        configData()
         configCollection()
     }
 
-    @IBAction private func nextTouchUpInside(_ sender: Any) {
+    @IBAction private func nextButtonTouchUpInside(_ sender: Any) {
         guard index < (dataSource?.numberRowImage(in: index))! - 1 else { return }
         index += 1
         UIView.animate(withDuration: 0.1, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
             self.retireButton.isEnabled = true
-        }) { (done) in
-            if self.index == 0 {
-                self.nextButton.setImage(UIImage(named: "next"), for: .normal)
-                self.nextButton.isEnabled = false
+        }) { [weak self] (done) in
+            guard let this = self else { return }
+            if this.index == 0 {
+                this.nextButton.setImage(UIImage(named: "next"), for: .normal)
+                this.nextButton.isEnabled = false
             }
         }
     }
 
-    @IBAction private func retireTouchUpInside(_ sender: Any) {
+    @IBAction private func retireButtonTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
         UIView.animate(withDuration: 0.1, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true
-        }) { (done) in
-            if self.index == ((self.dataSource?.numberRowImage(in: self.index))!) - 1 {
-                self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
-                self.retireButton.isEnabled = false
+        }) { [weak self] (done) in
+            guard let this = self else { return }
+            if this.index == ((this.dataSource?.numberRowImage(in: this.index))!) - 1 {
+                this.retireButton.setImage(UIImage(named: "retire"), for: .normal)
+                this.retireButton.isEnabled = false
             }
         }
     }

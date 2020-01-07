@@ -28,11 +28,13 @@ final class HomeViewController: BaseViewController {
             tableView.isHidden = false
             collectionView.isHidden = true
             tableView.reloadData()
+            collectionView.reloadData()
             tableRefreshControl.endRefreshing()
         } else {
             tableView.isHidden = true
             collectionView.isHidden = false
             collectionView.reloadData()
+            tableView.reloadData()
             collectionRefreshControl.endRefreshing()
         }
     }
@@ -40,22 +42,29 @@ final class HomeViewController: BaseViewController {
     func configUI() {
         configTableView()
         configCollectionView()
-        refreshTabView()
-        refreshCollection()
+        // MARK: - Refresh control for tableView view
+        tableRefreshControl.tintColor = .black
+        let tableViewAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        tableRefreshControl.attributedTitle = NSAttributedString(string: Strings.refesh, attributes: tableViewAttributes)
+        tableRefreshControl.addTarget(self, action: #selector(tableViewDidScrollToTop), for: .valueChanged)
+        tableView.refreshControl = tableRefreshControl
+        // MARK: - Refresh control for collection view
+        collectionRefreshControl.tintColor = .black
+        let collectionAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        collectionRefreshControl.attributedTitle = NSAttributedString(string: Strings.refesh, attributes: collectionAttributes)
+        collectionRefreshControl.addTarget(self, action: #selector(collectionViewDidScrollToTop), for: .valueChanged)
+        collectionView.refreshControl = collectionRefreshControl
     }
 
     func configData() {
-        // -MARK: load Data
+        // MARK: -  load Data
         viewModel.loadAPI() { [weak self] (done, arg) in
             guard let this = self else { return }
             if done {
                 this.updateUI()
             } else {
-                //show alertview --> bao' loi~
                 let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                // add an action (button)
                 alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
                 this.present(alert, animated: true, completion: nil)
             }
         }
@@ -69,21 +78,16 @@ final class HomeViewController: BaseViewController {
     }
 
     @objc func showTableView() {
-        //change barbutton
         let collectionViewButton = UIBarButtonItem(image: UIImage(named: "collectionMenu"), style: .plain, target: self, action: #selector(showCollectionView))
         navigationItem.rightBarButtonItem = collectionViewButton
         collectionViewButton.tintColor = .black
-        //change isShow
         viewModel.changeDisplay { [weak self] (done) in
-            guard let this  = self else  { return }
+            guard let this = self else { return }
             if done {
                 this.updateUI()
             } else {
-                //show alertview --> bao' loi~
                 let alert = UIAlertController(title: Strings.error, message: "Khong Lay Duoc Data", preferredStyle: UIAlertController.Style.alert)
-                // add an action (button)
                 alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
                 this.present(alert, animated: true, completion: nil)
             }
         }
@@ -99,11 +103,8 @@ final class HomeViewController: BaseViewController {
             if done {
                 this.updateUI()
             } else {
-                //show alertview --> bao' loi~
                 let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                // add an action (button)
                 alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
                 this.present(alert, animated: true, completion: nil)
             }
         }
@@ -111,20 +112,17 @@ final class HomeViewController: BaseViewController {
     }
 
     func configTableView() {
-        //cell
-        let nib = UINib(nibName: CellIdentifier.homeTableViewCell.rawValue, bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: CellIdentifier.homeTableViewCell.rawValue)
-        //header
-        let nib2 = UINib(nibName: CellIdentifier.sliderTableViewCell.rawValue, bundle: Bundle.main)
-        tableView.register(nib2, forCellReuseIdentifier: CellIdentifier.sliderTableViewCell.rawValue)
-        //delegate & datasource
+        let nibTableViewCell = UINib(nibName: CellIdentifier.homeTableViewCell.rawValue, bundle: Bundle.main)
+        tableView.register(nibTableViewCell, forCellReuseIdentifier: CellIdentifier.homeTableViewCell.rawValue)
+        let nibSliderTableViewCell = UINib(nibName: CellIdentifier.sliderTableViewCell.rawValue, bundle: Bundle.main)
+        tableView.register(nibSliderTableViewCell, forCellReuseIdentifier: CellIdentifier.sliderTableViewCell.rawValue)
         tableView.delegate = self
         tableView.dataSource = self
     }
 
     func configCollectionView() {
-        let nib = UINib(nibName: CellIdentifier.homeCollectionViewCell.rawValue, bundle: Bundle.main)
-        collectionView.register(nib, forCellWithReuseIdentifier: CellIdentifier.homeCollectionViewCell.rawValue)
+        let nibCollectionCell = UINib(nibName: CellIdentifier.homeCollectionViewCell.rawValue, bundle: Bundle.main)
+        collectionView.register(nibCollectionCell, forCellWithReuseIdentifier: CellIdentifier.homeCollectionViewCell.rawValue)
         let nib2 = UINib(nibName: CellIdentifier.sliderCollectionCell.rawValue, bundle: Bundle.main)
         collectionView.register(nib2, forCellWithReuseIdentifier: CellIdentifier.sliderCollectionCell.rawValue)
         collectionView.dataSource = self
@@ -138,11 +136,8 @@ final class HomeViewController: BaseViewController {
             if done {
                 this.updateUI()
             } else {
-                // Show alert
                 let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                // add an action (button)
                 alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
                 this.present(alert, animated: true, completion: nil)
             }
         }
@@ -150,67 +145,47 @@ final class HomeViewController: BaseViewController {
 
     func loadMore() {
         viewModel.loadMore() { [weak self] (done, errorMessage) in
-            guard let this  = self else { return }
+            guard let this = self else { return }
             if done {
                 this.updateUI()
             } else {
-                 // Show alert
                 let alert = UIAlertController(title: Strings.error, message: Strings.notLoadMore, preferredStyle: UIAlertController.Style.alert)
-                // add an action (button)
                 alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
                 this.present(alert, animated: true, completion: nil)
             }
         }
     }
-
-    func refreshTabView() {
-        tableRefreshControl.tintColor = .black
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        tableRefreshControl.attributedTitle = NSAttributedString(string: Strings.refesh, attributes: attributes)
-        tableRefreshControl.addTarget(self, action: #selector(refresPullUpTabelView), for: .valueChanged)
-        tableView.refreshControl = tableRefreshControl
-    }
-
     // MARK: - Action
-    @objc func refresPullUpTabelView() {
+    @objc func tableViewDidScrollToTop() {
         viewModel.loadAPI() { [weak self] (done, errorMessage) in
             guard let this = self else { return }
             if done {
                 this.updateUI()
             } else {
-                // Show alert
                 let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                // add an action (button)
                 alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
                 this.present(alert, animated: true, completion: nil)
             }
         }
     }
 
-    func refreshCollection() {
-        collectionRefreshControl.tintColor = .black
-        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        collectionRefreshControl.attributedTitle = NSAttributedString(string: Strings.refesh, attributes: attributes)
-        collectionRefreshControl.addTarget(self, action: #selector(refreshPullUpCollection), for: .valueChanged)
-        collectionView.refreshControl = collectionRefreshControl
-    }
-
-    @objc func refreshPullUpCollection() {
+    @objc func collectionViewDidScrollToTop() {
         viewModel.loadAPI() { [weak self] (done, errorMessage) in
             guard let this = self else { return }
             if done {
                 this.updateUI()
             } else {
-                // Show alert
                 let alert = UIAlertController(title: Strings.error, message: Strings.notRefresh, preferredStyle: UIAlertController.Style.alert)
-                // add an action (button)
                 alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                // show the alert
                 this.present(alert, animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension HomeViewController {
+    struct Config {
+        static let defaultRowHeight: CGFloat = 150
     }
 }
 
@@ -228,31 +203,26 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //section dau tien vs section thu 2 la 0 vs 1
         if indexPath.section == 0 {
-            return 150
+            return Config.defaultRowHeight
         }
         return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            //slider
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.sliderTableViewCell.rawValue, for: indexPath) as? SliderTableViewCell else {
                 return UITableViewCell()
             }
-            cell.dataSoucre = self
+            cell.dataSource = self
             return cell
 
         } else if indexPath.section == 1 {
-            //cells
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.homeTableViewCell.rawValue, for: indexPath) as? HomeTableViewCell else {
                 return UITableViewCell()
             }
-            //tra du lieu ve cho Cell indexPath và delagate
             cell.indexPath = indexPath
             cell.delagate = self
-            //gan vieModelCell = viewModel
             cell.viewModel = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
@@ -282,10 +252,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-// Tách ra 2 extension
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // xet frame size cho 2 section
         if indexPath.section == 0 {
             let width = collectionView.frame.width - 10
             return CGSize(width: width, height: 150)
@@ -293,7 +261,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             let width = collectionView.frame.width - 20
             return CGSize(width: width / 3, height: 250)
         }
-        return CGSize(width: 0, height: 0)
+        return CGSize.zero
     }
 }
 
@@ -304,7 +272,6 @@ extension HomeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            //slider Header
             return 1
         } else if section == 1 {
             return viewModel.repos.count
@@ -313,7 +280,6 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 2 section
         if indexPath.section == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.sliderCollectionCell.rawValue, for: indexPath) as? SliderCollectionCell else {
                 return UICollectionViewCell()
@@ -325,12 +291,13 @@ extension HomeViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell.indexPath = indexPath
-            cell.delageteCollection = self
+            cell.delegateCollection = self
             cell.viewModel = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
         return UICollectionViewCell()
     }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         navigationController?.pushViewController(DetailViewController(), animated: true)
     }
@@ -367,7 +334,6 @@ extension HomeViewController: SliderCollectionCellDataSource {
 extension HomeViewController: HomeTableViewCellDelagete {
     func getImage(cell: HomeTableViewCell, indexPath: IndexPath?) {
         if let indexPath = indexPath {
-            // downlodaImage
             viewModel.downloadImage(indexPath: indexPath) { (image) in
                 self.tableView.reloadRows(at: [indexPath], with: .none)
             }
@@ -376,10 +342,13 @@ extension HomeViewController: HomeTableViewCellDelagete {
 }
 
 extension HomeViewController: HomeCollectionViewCellDelegate {
-    func getImageCollection(cell: HomeCollectionViewCell, indexPath: IndexPath?) {
-        if let indexPath = indexPath {
-            viewModel.downloadImage(indexPath: indexPath) { (imgae) in
-                self.collectionView.reloadItems(at: [indexPath])
+    func cell(cell: HomeCollectionViewCell, needPerform action: HomeCollectionViewCell.Action) {
+        switch action {
+        case .getImageCollection(let indexPath):
+            if let indexPath = indexPath {
+                viewModel.downloadImage(indexPath: indexPath) { (image) in
+                    self.collectionView.reloadItems(at: [indexPath])
+                }
             }
         }
     }

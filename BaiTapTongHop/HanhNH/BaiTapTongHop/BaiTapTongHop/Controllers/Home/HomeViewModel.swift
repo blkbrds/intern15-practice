@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
+
 final class HomeViewModel {
     typealias Completion = (Bool, String) -> Void
-    //poperties
     var repos: [Repo] = []
     var images: [ImageSlider] = []
     var isShowTableView: Bool = true
@@ -20,20 +20,17 @@ final class HomeViewModel {
     var isLoading = false
 
     func loadImagesSlide() {
-        images = ImageSlider.getGetDummyDatas()
+        images = ImageSlider.getDummyDatas()
     }
-    //actions
     func changeDisplay(completion: (Bool) -> ()) {
-        //data
         isShowTableView = !isShowTableView
-        //call back
         completion(true)
     }
-    //lay IndexPath
+    
     func getHomeCellModel(atIndexPath indexPath: IndexPath) -> HomeCellTableViewModel? {
         return HomeCellTableViewModel(repo: repos[indexPath.row])
     }
-    //image slider
+
     func numberImageSlide() -> Int {
         return repos.count
     }
@@ -52,12 +49,12 @@ final class HomeViewModel {
     
     func loadAPI(completion: @escaping Completion) {
         self.page = 1
-        APIManager.Repo.getRepo(page: page) { (result) in
+        APIManager.Repo.getRepo(page: page) { [weak self] (result) in
+            guard let this = self else { return }
             switch result {
             case .success(let data):
-                self.repos = data.repos
-                print(data.repos)
-                self.canLoadMore = data.total_count > self.repos.count
+                this.repos = data.repos
+                this.canLoadMore = data.total_count > this.repos.count
                 completion(true, "")
             case .failure(let error):
                 completion(false, error.localizedDescription)
@@ -74,14 +71,15 @@ final class HomeViewModel {
         if canLoadMore {
             page += 1
         }
-        APIManager.Repo.getRepo(page: page) { (result) in
-            self.isLoading = false
+        APIManager.Repo.getRepo(page: page) { [weak self] (result) in
+            guard let this = self else { return }
+            this.isLoading = false
             switch result {
             case .failure(let error):
                 completion(false, error.localizedDescription)
             case .success(let data):
-                self.repos.append(contentsOf: data.repos)
-                self.canLoadMore = data.total_count > self.repos.count
+                this.repos.append(contentsOf: data.repos)
+                this.canLoadMore = data.total_count > this.repos.count
                 completion(true, "")
             }
         }

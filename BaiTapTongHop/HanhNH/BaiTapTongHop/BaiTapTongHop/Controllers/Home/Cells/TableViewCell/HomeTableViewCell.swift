@@ -13,11 +13,12 @@ protocol HomeTableViewCellDelagete: class {
 }
 
 final class HomeTableViewCell: UITableViewCell {
+    
     @IBOutlet private weak var watchersLabel: UILabel!
     @IBOutlet private weak var forksLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var avatarImageView: UIImageView!
 
     weak var delagate: HomeTableViewCellDelagete?
     var indexPath: IndexPath?
@@ -38,10 +39,10 @@ final class HomeTableViewCell: UITableViewCell {
     private func updateTabViewCell() {
         if let viewModel = viewModel {
             nameLabel.text = viewModel.name
-            watchersLabel.text = "\(viewModel.watchers)"
-            forksLabel.text = "\(viewModel.forks)"
+            watchersLabel.text = "\(viewModel.numberOfWatchers)"
+            forksLabel.text = "\(viewModel.numberOfForks)"
             descriptionLabel.text = viewModel.description
-            if let image = viewModel.avatar {
+            if let image = viewModel.avatarImage {
                 avatarImageView.image = image
             } else {
                 avatarImageView.image = nil

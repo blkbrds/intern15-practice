@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 class HomeCellTableViewModel {
-    var watchers: Int
-    var avatar: UIImage?
-    var forks: Int
+    var numberOfWatchers: Int
+    var avatarImage: UIImage?
+    var numberOfForks: Int
     var name: String
     var description: String
 
     init(repo: Repo) {
-        self.watchers = repo.watchersCount
-        self.avatar = repo.avatarImage
-        self.forks = repo.forksCount
+        self.numberOfWatchers = repo.watchersCount
+        self.avatarImage = repo.avatarImage
+        self.numberOfForks = repo.forksCount
         self.name = repo.nameApp
         self.description = repo.description
     }

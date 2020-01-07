@@ -16,7 +16,7 @@ final class ImageSlider {
     }
 }
 extension ImageSlider {
-    static func getGetDummyDatas() -> [ImageSlider] {
+    static func getDummyDatas() -> [ImageSlider] {
         var images: [ImageSlider] = []
         for i in 1...6 {
             let image = ImageSlider(imageName: "\(i % 10)")

@@ -9,8 +9,9 @@
 import UIKit
 
 protocol HomeCollectionViewCellDelegate : class {
-    func getImageCollection(cell: HomeCollectionViewCell, indexPath: IndexPath?)
+    func cell(cell: HomeCollectionViewCell, needPerform action: HomeCollectionViewCell.Action)
 }
+
 final class HomeCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak private var valueLabel: UILabel!
@@ -18,32 +19,30 @@ final class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var addressLabel: UILabel!
     @IBOutlet weak private var nameAddressLabel: UILabel!
     @IBOutlet weak private var addressImageView: UIImageView!
-
-    weak var delageteCollection: HomeCollectionViewCellDelegate?
+    
+    enum Action {
+        case getImageCollection(indexPath: IndexPath?)
+    }
+    
+    weak var delegateCollection: HomeCollectionViewCellDelegate?
     var indexPath: IndexPath?
     var viewModel: HomeCellTableViewModel? {
-        //gan du lieu thay doi thi didSet chạy.
         didSet {
             updateCollectionView()
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     private func updateCollectionView() {
-        //sau khi didSet chạy thì nó sẽ vào đây lây tất cả dữ liệu, việc tiếp theo là đưa lên.
         if let viewModel = viewModel {
             nameAddressLabel.text = viewModel.name
-            valueLabel.text = "\(viewModel.forks)"
-            distanceLabel.text = "\(viewModel.watchers)"
+            valueLabel.text = "\(viewModel.numberOfForks)"
+            distanceLabel.text = "\(viewModel.numberOfWatchers)"
             addressLabel.text = viewModel.description
-            if let image = viewModel.avatar {
+            if let image = viewModel.avatarImage {
                 addressImageView.image = image
             } else {
                 addressImageView.image = nil
-                delageteCollection?.getImageCollection(cell: self, indexPath: indexPath)
+                delegateCollection?.cell(cell: self, needPerform: Action.getImageCollection(indexPath: indexPath))
             }
         } else {
             viewModel = nil

@@ -22,7 +22,7 @@ final class SliderTableViewCell: UITableViewCell {
 
     var sliderViewModel = SliderViewModel()
     private var index: Int = 0
-    weak var dataSoucre: SliderTableViewDataSoucre?
+    weak var dataSource: SliderTableViewDataSoucre?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,7 +37,7 @@ final class SliderTableViewCell: UITableViewCell {
             self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true
         }) { done in
-            if self.index == (self.dataSoucre?.numberRow(in: self.index))! - 1 {
+            if self.index == (self.dataSource?.numberRow(in: self.index))! - 1 {
                 self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
                 self.retireButton.isEnabled = false
             }
@@ -45,7 +45,7 @@ final class SliderTableViewCell: UITableViewCell {
     }
 
     @IBAction private func nextTouchUpInside(_ sender: Any) {
-        guard index < (dataSoucre?.numberRow(in: index))! - 1 else { return }
+        guard index < (dataSource?.numberRow(in: index))! - 1 else { return }
         index += 1
         UIView.animate(withDuration: 0.1, animations: {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
@@ -69,16 +69,16 @@ final class SliderTableViewCell: UITableViewCell {
 }
 extension SliderTableViewCell: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return dataSoucre?.numberOfSection() ?? 0
+        return dataSource?.numberOfSection() ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSoucre?.numberRow(in: section) ?? 0
+        return dataSource?.numberRow(in: section) ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.sliderCollectionViewCell.rawValue, for: indexPath) as? SliderCollectionViewCell  else  { return UICollectionViewCell() }
-        let imageSlider = dataSoucre?.imageSlide(in: indexPath) ?? nil
+        let imageSlider = dataSource?.imageSlide(in: indexPath) ?? nil
         cell.updateSliderView(image: imageSlider)
         return cell
     }
