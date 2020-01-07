@@ -8,35 +8,36 @@
 
 import UIKit
 
-class EViewController: UIViewController {
+final class EViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "View Controller E"
     }
     
-    
-    @IBAction func handleCButtonTouchUpInside(_ sender: Any) {
-        for viewController in navigationController!.viewControllers {
+    @IBAction private func handleCButtonTouchUpInside(_ sender: Any) {
+        guard let viewControllers = navigationController?.viewControllers else { return }
+        for viewController in viewControllers {
             if viewController is CViewController {
                 navigationController?.popToViewController(viewController, animated: true)
             }
         }
     }
     
-    @IBAction func handleBButtonTouchUpInside(_ sender: Any) {
-        for viewController in navigationController!.viewControllers {
+    @IBAction private func handleBButtonTouchUpInside(_ sender: Any) {
+        guard let viewControllers = navigationController?.viewControllers else { return }
+        for viewController in viewControllers {
             if viewController is BViewController {
                 navigationController?.popToViewController(viewController, animated: true)
             }
         }
     }
     
-    @IBAction func handleDButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func handleDButtonTouchUpInside(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func handleRootButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func handleRootButtonTouchUpInside(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 }

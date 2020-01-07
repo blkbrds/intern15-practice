@@ -1,23 +1,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
+
+    @IBOutlet private weak var scrollView: UIScrollView!
+
     let userNames: [String] = ["User 1", "User 2", "User 3", "User 4", "User 5", "User 6", "User 7", "User 8", "User 9", "User 10", "User 11", "User 12", "User 13", "User 14", "User 15", "User 16", "User 17", "User 18", "User 19", "User 20", "User 21", "User 22", "User 23", "User 24", "User 25", "User 26", "User 27", "User 28", "User 29", "User 30", "User 31", "User 32", "User 33"]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         title = "Home"
-        setUpUI()
+        setupUI()
     }
-    
-    private func setUpUI() {
+
+    private func setupUI() {
         var x: Int = 4
         var y: Int = 50
         var index: Int = 0
@@ -40,9 +35,12 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: AvatarViewDelegate {
-    func tapOnUserNameImage(name: String) {
-        let profileViewController = ProfileViewController()
-        profileViewController.name = name
-        navigationController?.pushViewController(profileViewController, animated: true)
+    func view(view: AvatarView, needPerform action: AvatarView.Action) {
+        switch action {
+        case .tapOnUserNameImage(let name):
+            let profileViewController = ProfileViewController()
+            profileViewController.name = name
+            navigationController?.pushViewController(profileViewController, animated: true)
+        }
     }
 }

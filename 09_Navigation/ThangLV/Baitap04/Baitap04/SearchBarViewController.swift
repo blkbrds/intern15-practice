@@ -22,7 +22,5 @@ class SearchBarViewController: UIViewController {
         navigationItem.rightBarButtonItem = cancelButton
     }
     
-    @objc func touchUpInsideCancelButton() {
-        
-    }
+    @objc func touchUpInsideCancelButton() { }
 }

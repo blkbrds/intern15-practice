@@ -1,6 +1,6 @@
 import Foundation
 
-enum Key: String {
+enum UserDefaultKeys: String {
     case userName = "username"
     case password = "password"
 }
@@ -18,7 +18,7 @@ final class DataManagement {
         guard let array = NSArray(contentsOfFile: getFileDocumentPath(fileName: fileName, type: type)) else { return [] }
         var users: [User] = []
         for item in array {
-            guard let dict = item as? Dictionary<String, String>, let password = dict[Key.password.rawValue], let userName = dict[Key.userName.rawValue]  else { continue }
+            guard let dict = item as? Dictionary<String, String>, let password = dict[UserDefaultKeys.password.rawValue], let userName = dict[UserDefaultKeys.userName.rawValue]  else { continue }
             let user = User(userName: userName, password: password)
             users.append(user)
         }

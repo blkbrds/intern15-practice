@@ -1,42 +1,56 @@
 import UIKit
 
 protocol LoginViewControllerDelegate: class {
-    func showGrettingForUser(name: String)
+    func viewController(viewController: LoginViewController, needPerform action: LoginViewController.Action)
+}
+
+struct FileName {
+   static let users: String = "Users"
+}
+
+struct UserKeys {
+    static let userNameKey: String = "userName"
+    static let passwordKey: String = "password"
 }
 
 class LoginViewController: BaseViewController {
     
-    @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var passWordTextField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
+    enum Action {
+        case showGrettingForUser(name: String)
+    }
     
+    @IBOutlet private weak var userNameTextField: UITextField!
+    @IBOutlet private weak var passWordTextField: UITextField!
+    @IBOutlet private weak var errorLabel: UILabel!
+
     private var users: [User] = []
-    var delegate: LoginViewControllerDelegate?
-    
+    weak var delegate: LoginViewControllerDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpData()
+        setupData()
         title = "Login"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(touchUpInsideDoneButton))
         userNameTextField.becomeFirstResponder()
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
     }
-    
-    override func setUpData() {
-        users = DataManagement.shared.getUsers(fileName: "Users", type: "plist")
+
+    override func setupData() {
+        users = DataManagement.shared.getUsers(fileName: FileName.users, type: "plist")
     }
-    
+
     @objc func touchUpInsideDoneButton() {
-        delegate?.showGrettingForUser(name: userNameTextField.text ?? "")
+        let loginViewController = LoginViewController()
+        delegate?.viewController(viewController: loginViewController, needPerform: LoginViewController.Action.showGrettingForUser(name: userNameTextField.text ?? ""))
         login()
     }
-    
+
     private func login() {
         if let userName = userNameTextField.text, let password = passWordTextField.text {
             let user = User(userName: userName, password: password)
             for object in users where object.password == user.password && object.userName == user.userName {
-                UserDefaults.standard.set(object.userName, forKey: "userName")
-                UserDefaults.standard.set(object.password, forKey: "password")
+                UserDefaults.standard.set(object.userName, forKey: UserKeys.userNameKey)
+                UserDefaults.standard.set(object.password, forKey: UserKeys.passwordKey)
                 errorLabel.isHidden = true
                 let homeViewController = HomeViewController()
                 homeViewController.name = userNameTextField.text
@@ -46,10 +60,9 @@ class LoginViewController: BaseViewController {
             errorLabel.isHidden = false
             errorLabel.textColor = .red
             errorLabel.text = "Login error!"
-            print("Login error!")
         }
     }
-    
+
     @IBAction func handleClearButtonTouchUpInside(_ sender: Any) {
         userNameTextField.text = ""
         passWordTextField.text = ""
@@ -58,9 +71,9 @@ class LoginViewController: BaseViewController {
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
     }
 
     @objc func dismissKeyboard() {
@@ -69,9 +82,11 @@ extension UIViewController {
 }
 
 extension LoginViewController: HomeViewcontrollerDelegate {
-    func removeDataOfTextField() {
-        self.passWordTextField.text = ""
-        self.userNameTextField.text = ""
+    func viewController(viewController: HomeViewController, needPerform action: HomeViewController.Action) {
+        switch action {
+        case .removeDataOfTextField:
+            passWordTextField.text?.removeAll()
+            userNameTextField.text?.removeAll()
+        }
     }
 }
-

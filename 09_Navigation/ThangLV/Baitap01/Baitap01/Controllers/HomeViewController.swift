@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -8,10 +8,8 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .cyan
     }
     
-    
-    @IBAction func handleNextButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func handleNextButtonTouchUpInside(_ sender: Any) {
         let bViewController = BViewController()
         navigationController?.pushViewController(bViewController, animated: true)
     }
-    
 }

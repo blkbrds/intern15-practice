@@ -6,7 +6,6 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func setUpData() {}
-    func setUpUI() {}
-    
+    func setupData() { }
+    func setupUI() { }
 }

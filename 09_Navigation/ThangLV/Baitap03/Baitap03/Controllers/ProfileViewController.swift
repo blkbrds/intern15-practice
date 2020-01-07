@@ -4,8 +4,8 @@ class ProfileViewController: UIViewController {
     
     var name: String!
 
-    @IBOutlet weak var userAvatarImageView: UIImageView!
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet private weak var userAvatarImageView: UIImageView!
+    @IBOutlet private weak var userNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,22 +8,19 @@
 
 import UIKit
 
-class BViewController: UIViewController {
+final class BViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "View Controller B"
     }
     
-    
-    @IBAction func handleNextButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func handleNextButtonTouchUpInside(_ sender: Any) {
         let cViewController = CViewController()
         navigationController?.pushViewController(cViewController, animated: true)
     }
     
-    
-    @IBAction func handlePrevButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func handlePrevButtonTouchUpInside(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
 }

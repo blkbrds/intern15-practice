@@ -1,23 +1,18 @@
-//
-//  EditViewController.swift
-//  Baitap02
-//
-//  Created by PCI0008 on 1/3/20.
-//  Copyright © 2020 PCI0008. All rights reserved.
-//
-
 import UIKit
 
 protocol EditViewControllerDelegate: class {
-    func updateDataToHomePage(name: String)
+    func viewController(viewController: EditViewController, needPerform action: EditViewController.Action)
 }
 
 class EditViewController: UIViewController {
     
+    enum Action {
+       case updateDataToHomePage(name: String)
+    }
     
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet private weak var userNameTextField: UITextField!
     
-    var delegate: EditViewControllerDelegate?
+    weak var delegate: EditViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +27,8 @@ class EditViewController: UIViewController {
     
     @objc func touchUpInsideDoneButton() {
         navigationController?.popViewController(animated: true)
-        delegate?.updateDataToHomePage(name: userNameTextField.text!)
+        guard let userName = userNameTextField.text else { return }
+        let editViewController = EditViewController()
+        delegate?.viewController(viewController: editViewController, needPerform: EditViewController.Action.updateDataToHomePage(name: userName))
     }
 }

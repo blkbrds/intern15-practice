@@ -1,27 +1,30 @@
 import UIKit
 
 protocol AvatarViewDelegate: class {
-    func tapOnUserNameImage(name: String)
+    func view(view: AvatarView, needPerform action: AvatarView.Action)
 }
 
 class AvatarView: UIView {
     
-    @IBOutlet var userNameImageView: UIImageView!
-    @IBOutlet var userNameLabel: UILabel!
+    enum Action {
+        case tapOnUserNameImage(name: String)
+    }
     
-    var delegate: AvatarViewDelegate?
+    @IBOutlet weak var userNameImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    weak var delegate: AvatarViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    
     @IBAction func tapOnAvatarView(_ sender: Any) {
-        delegate?.tapOnUserNameImage(name: userNameLabel.text!)
+        let myAvatarView = AvatarView()
+        guard let userName = userNameLabel.text else { return }
+        delegate?.view(view: myAvatarView, needPerform: AvatarView.Action.tapOnUserNameImage(name: userName))
     }
-    
 }

@@ -5,11 +5,11 @@ class GradientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Gradient NavigationBar"
-        setUpUI()
+        setupUI()
     }
     
-    private func setUpUI() {
-        if let navigationBar = self.navigationController?.navigationBar {
+    private func setupUI() {
+        if let navigationBar = navigationController?.navigationBar {
             let gradient = CAGradientLayer()
             var bounds = navigationBar.bounds
             bounds.size.height += UIApplication.shared.statusBarFrame.size.height
@@ -23,6 +23,7 @@ class GradientViewController: UIViewController {
             }
         }
     }
+    
     private func getImageFrom(gradientLayer: CAGradientLayer) -> UIImage? {
         var gradientImage: UIImage?
         UIGraphicsBeginImageContext(gradientLayer.frame.size)
