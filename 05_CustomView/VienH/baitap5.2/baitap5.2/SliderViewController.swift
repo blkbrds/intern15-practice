@@ -13,7 +13,7 @@ final class SliderViewController: UIViewController {
     @IBOutlet private weak var valueTextfield: UITextField!
     @IBOutlet private weak var labelController: UILabel!
 
-    let triangle = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)?[0] as? SliderView
+    let polygons = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)?[0] as? SliderView
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +22,11 @@ final class SliderViewController: UIViewController {
 
     private func setupUI() {
         valueTextfield.text = "0 %"
-        if let triangle = triangle {
+        if let polygons = polygons {
             let frame = CGRect(x: view.bounds.width / 2 - 50, y: 200, width: 100, height: 400)
-            triangle.frame = frame
-            triangle.delegate = self
-            view.addSubview(triangle)
+            polygons.frame = frame
+            polygons.delegate = self
+            view.addSubview(polygons)
         }
     }
 
