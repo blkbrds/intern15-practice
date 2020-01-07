@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HomeCollectionViewCellDelegate : class {
+protocol HomeCollectionViewCellDelegate: class {
     func cell(cell: HomeCollectionViewCell, needPerform action: HomeCollectionViewCell.Action)
 }
 

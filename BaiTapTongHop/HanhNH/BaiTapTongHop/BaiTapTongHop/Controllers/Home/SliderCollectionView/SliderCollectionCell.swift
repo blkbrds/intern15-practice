@@ -25,7 +25,7 @@ final class SliderCollectionCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        configCollection()
+        configCollectionView()
     }
 
     @IBAction private func nextButtonTouchUpInside(_ sender: Any) {
@@ -60,7 +60,7 @@ final class SliderCollectionCell: UICollectionViewCell {
         }
     }
 
-    private func configCollection() {
+    private func configCollectionView() {
         let nib = UINib(nibName: CellIdentifier.sliderCollectionViewCell.rawValue, bundle: Bundle.main)
         collectionView.register(nib, forCellWithReuseIdentifier: CellIdentifier.sliderCollectionViewCell.rawValue)
         collectionView.dataSource = self

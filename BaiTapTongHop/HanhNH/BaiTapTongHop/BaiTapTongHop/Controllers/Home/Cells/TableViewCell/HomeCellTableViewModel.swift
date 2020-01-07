@@ -8,7 +8,9 @@
 
 import Foundation
 import UIKit
+
 class HomeCellTableViewModel {
+    
     var numberOfWatchers: Int
     var avatarImage: UIImage?
     var numberOfForks: Int

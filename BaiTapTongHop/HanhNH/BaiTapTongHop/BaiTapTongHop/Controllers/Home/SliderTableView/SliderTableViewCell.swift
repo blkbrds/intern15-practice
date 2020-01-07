@@ -36,10 +36,11 @@ final class SliderTableViewCell: UITableViewCell {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.nextButton.setImage(UIImage(named: "next"), for: .normal)
             self.nextButton.isEnabled = true
-        }) { done in
-            if self.index == (self.dataSource?.numberRow(in: self.index))! - 1 {
-                self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
-                self.retireButton.isEnabled = false
+        }) { [weak self] done in
+            guard let this = self else { return }
+            if this.index == (this.dataSource?.numberRow(in: this.index))! - 1 {
+                this.retireButton.setImage(UIImage(named: "retire"), for: .normal)
+                this.retireButton.isEnabled = false
             }
         }
     }
@@ -51,10 +52,11 @@ final class SliderTableViewCell: UITableViewCell {
             self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
             self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
             self.retireButton.isEnabled = true
-        }) { done in
-            if self.index == 0 {
-                self.nextButton.setImage(UIImage(named: "next"), for: .normal)
-                self.nextButton.isEnabled = false
+        }) { [weak self] done in
+            guard let this = self else { return }
+            if this.index == 0 {
+                this.nextButton.setImage(UIImage(named: "next"), for: .normal)
+                this.nextButton.isEnabled = false
             }
         }
     }
