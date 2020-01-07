@@ -8,4 +8,47 @@
 
 import UIKit
 
-final class HomeTableViewCell: UITableViewCell { }
+protocol HomeTableViewCellDelagete: class {
+    func getImage(cell: HomeTableViewCell, indexPath: IndexPath?)
+}
+
+final class HomeTableViewCell: UITableViewCell {
+    @IBOutlet private weak var watchersLabel: UILabel!
+    @IBOutlet private weak var forksLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+
+    weak var delagate: HomeTableViewCellDelagete?
+    var indexPath: IndexPath?
+    var viewModel: HomeCellTableViewModel? {
+        didSet {
+            updateTabViewCell()
+        }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+
+    private func updateTabViewCell() {
+        if let viewModel = viewModel {
+            nameLabel.text = viewModel.name
+            watchersLabel.text = "\(viewModel.watchers)"
+            forksLabel.text = "\(viewModel.forks)"
+            descriptionLabel.text = viewModel.description
+            if let image = viewModel.avatar {
+                avatarImageView.image = image
+            } else {
+                avatarImageView.image = nil
+                delagate?.getImage(cell: self, indexPath: indexPath)
+            }
+        } else {
+            viewModel = nil
+        }
+    }
+}

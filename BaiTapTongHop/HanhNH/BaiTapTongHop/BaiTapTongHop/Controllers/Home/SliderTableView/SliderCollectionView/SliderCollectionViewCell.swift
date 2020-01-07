@@ -8,4 +8,15 @@
 
 import UIKit
 
-final class SliderCollectionViewCell: UICollectionViewCell { }
+final class SliderCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak private var imageCollection: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func updateSliderView(image: String?) {
+        imageCollection.image = UIImage(named: image!)
+    }
+}

@@ -13,7 +13,7 @@ final class MapViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func setUpNaVi() {
+    override func setupNavigation() {
         title = "Map"
     }
 }

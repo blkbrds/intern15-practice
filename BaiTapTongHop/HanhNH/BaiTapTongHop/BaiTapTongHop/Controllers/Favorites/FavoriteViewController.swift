@@ -13,7 +13,7 @@ final class FavoriteViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func setUpNaVi() {
+    override func setupNavigation() {
         title = "Favorite"
     }
 }
