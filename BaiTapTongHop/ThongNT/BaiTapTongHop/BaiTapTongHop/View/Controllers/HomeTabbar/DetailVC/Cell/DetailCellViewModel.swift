@@ -9,13 +9,19 @@
 import Foundation
 
 final class DetailCellViewModel {
-    let avatar: String
-    let username: String
-    let description: String
+    
+    var avatar: String = ""
+    var username: String = ""
+    var description: String = ""
+    var imageURLs: [String] = []
     
     init(avatar: String, username: String, description: String) {
         self.avatar = avatar
         self.username = username
         self.description = description
+    }
+    
+    init(imageURLs: [String]) {
+        self.imageURLs = imageURLs
     }
 }

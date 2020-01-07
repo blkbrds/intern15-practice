@@ -30,7 +30,6 @@ final class HomeCellViewModel: ViewModel {
         address = googlePlace.address
         rating = String(googlePlace.rating)
         distance = "\(googlePlace.distance) m"
-        isFavorite = googlePlace.favorite
         thumbnailImage = googlePlace.thumbnailImage
         iconString = googlePlace.iconString
     }

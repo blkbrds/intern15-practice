@@ -16,7 +16,6 @@ protocol HomeCellDelegate: class {
 final class HomeCell: TableCell {
 
     //MARK: - IBOulet
-    @IBOutlet private weak var favoriteButton: UIButton!
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
@@ -42,8 +41,6 @@ final class HomeCell: TableCell {
         ratingLabel.text = viewModel.rating
         distanceLabel.text = viewModel.distance
         thumbnailImageView.setImageWithPath(urlString: viewModel.iconString)
-        favoriteButton.isSelected = viewModel.isFavorite
-        favoriteButton.setImage(viewModel.favoriteImage, for: .selected)
     }
 
     @IBAction private func favortieButtonTouchUpInside(_ sender: Any) {
