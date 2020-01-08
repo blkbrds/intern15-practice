@@ -36,7 +36,6 @@ final class DetailViewController: BaseViewController {
     }
 
     override func setupNavigation() {
-        title = "Nha Cua Hanh"
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-navi-favorites"), style: .plain, target: self, action: #selector(showFavorites))
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
@@ -47,18 +46,14 @@ final class DetailViewController: BaseViewController {
     }
 
     func cofigTableView () {
-        let nibDetailTableView = UINib(nibName: CellIdentifier.detailTableViewCell.rawValue, bundle: Bundle.main)
-        detailTableView.register(nibDetailTableView, forCellReuseIdentifier: CellIdentifier.detailTableViewCell.rawValue)
-        let nibSliderDetailTableView = UINib(nibName: CellIdentifier.sliderDetailTableViewCell.rawValue, bundle: Bundle.main)
-        detailTableView.register(nibSliderDetailTableView, forCellReuseIdentifier: CellIdentifier.sliderDetailTableViewCell.rawValue)
-        let nibCommentTableView = UINib(nibName: CellIdentifier.commentTableViewCell.rawValue, bundle: Bundle.main)
-        detailTableView.register(nibCommentTableView, forCellReuseIdentifier: CellIdentifier.commentTableViewCell.rawValue)
-        let nibMapTableView = UINib(nibName: CellIdentifier.mapTableViewCell.rawValue, bundle: Bundle.main)
-        detailTableView.register(nibMapTableView, forCellReuseIdentifier: CellIdentifier.mapTableViewCell.rawValue)
+        
+        detailTableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
+        detailTableView.register(name: CellIdentifier.sliderDetailTableViewCell.rawValue)
+        detailTableView.register(name: CellIdentifier.commentTableViewCell.rawValue)
+        detailTableView.register(name: CellIdentifier.mapTableViewCell.rawValue)
         detailTableView.dataSource = self
         detailTableView.delegate = self
     }
-
 }
 
 extension DetailViewController {

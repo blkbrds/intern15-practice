@@ -15,5 +15,5 @@ final class SliderDetailViewModel {
     func loadData(completion: (Bool) -> ()) {
         images = ImageSlider.getDummyDatas()
         completion(true)
-    }
+    }    
 }

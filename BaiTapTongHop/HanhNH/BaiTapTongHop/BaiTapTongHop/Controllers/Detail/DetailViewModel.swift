@@ -12,6 +12,7 @@ import UIKit
 final class DetailViewModel {
     
     var comment: [Comment] = []
+    var images: [ImageSlider] = []
 
     func loadData(completion: (Bool) -> ()) {
         comment = Comment.getDummyDatas()

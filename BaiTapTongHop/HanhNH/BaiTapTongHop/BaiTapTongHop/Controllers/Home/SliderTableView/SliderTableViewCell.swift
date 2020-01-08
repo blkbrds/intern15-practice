@@ -63,8 +63,7 @@ final class SliderTableViewCell: UITableViewCell {
 
     private func configCollectionView() {
         //config Header Collecion
-        let nib = UINib(nibName: CellIdentifier.sliderCollectionViewCell.rawValue, bundle: Bundle.main)
-        collectionView.register(nib, forCellWithReuseIdentifier: CellIdentifier.sliderCollectionViewCell.rawValue)
+        collectionView.register(name: CellIdentifier.sliderCollectionViewCell.rawValue)
         collectionView.dataSource = self
         collectionView.delegate = self
     }

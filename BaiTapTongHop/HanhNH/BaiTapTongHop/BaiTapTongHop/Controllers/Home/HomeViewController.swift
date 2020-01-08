@@ -112,19 +112,16 @@ final class HomeViewController: BaseViewController {
     }
 
     func configTableView() {
-        let nibTableViewCell = UINib(nibName: CellIdentifier.homeTableViewCell.rawValue, bundle: Bundle.main)
-        tableView.register(nibTableViewCell, forCellReuseIdentifier: CellIdentifier.homeTableViewCell.rawValue)
-        let nibSliderTableViewCell = UINib(nibName: CellIdentifier.sliderTableViewCell.rawValue, bundle: Bundle.main)
-        tableView.register(nibSliderTableViewCell, forCellReuseIdentifier: CellIdentifier.sliderTableViewCell.rawValue)
+
+        tableView.register(name: CellIdentifier.homeTableViewCell.rawValue)
+        tableView.register(name: CellIdentifier.sliderTableViewCell.rawValue)
         tableView.delegate = self
         tableView.dataSource = self
     }
 
     func configCollectionView() {
-        let nibCollectionCell = UINib(nibName: CellIdentifier.homeCollectionViewCell.rawValue, bundle: Bundle.main)
-        collectionView.register(nibCollectionCell, forCellWithReuseIdentifier: CellIdentifier.homeCollectionViewCell.rawValue)
-        let nib2 = UINib(nibName: CellIdentifier.sliderCollectionCell.rawValue, bundle: Bundle.main)
-        collectionView.register(nib2, forCellWithReuseIdentifier: CellIdentifier.sliderCollectionCell.rawValue)
+        collectionView.register(name: CellIdentifier.homeCollectionViewCell.rawValue)
+        collectionView.register(name: CellIdentifier.sliderCollectionCell.rawValue)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
