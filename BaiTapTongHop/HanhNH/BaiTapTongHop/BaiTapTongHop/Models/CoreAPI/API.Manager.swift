@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+final class Router {
+    static let domain: String = "https://api.github.com/"
+    struct Repository {
+        static let path: String = domain + "search/repositories"
+    }
+}
+
+final class APIManager {
+
+    struct Repository { }
+}

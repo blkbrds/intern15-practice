@@ -13,7 +13,7 @@ final class ProfileViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func setUpNaVi() {
+    override func setupNavigation() {
         title = "Profile"
     }
 }

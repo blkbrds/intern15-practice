@@ -13,7 +13,7 @@ final class DetailViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func setUpNaVi() {
+    override func setupNavigation() {
         title = "Detail"
     }
 }
