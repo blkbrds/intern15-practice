@@ -1,5 +1,5 @@
 //
-//  API.Repo.swift
+//  API.Repository.swift
 //  BaiTapTongHop
 //
 //  Created by ANH NGUYỄN on 1/6/20.
@@ -9,7 +9,7 @@
 import Foundation
 
 struct RepoResults {
-    var repos: [Repo]
+    var repos: [Repository]
     var total_count: Int
 }
 
@@ -33,9 +33,9 @@ extension APIManager.Repository {
                         guard let items = json["items"] as? [JSON] else {
                             return
                         }
-                        var repos: [Repo] = []
+                        var repos: [Repository] = []
                         for item in items {
-                            let repo = Repo(json: item)
+                            let repo = Repository(json: item)
                             repos.append(repo)
                         }
                         let repoResults = RepoResults(repos: repos, total_count: total_count)

@@ -44,9 +44,6 @@ final class HomeCollectionViewCell: UICollectionViewCell {
                 addressImageView.image = nil
                 delegateCollection?.cell(cell: self, needPerform: Action.getImageCollection(indexPath: indexPath))
             }
-        } else {
-            viewModel = nil
-        }
+        } 
     }
 }
-

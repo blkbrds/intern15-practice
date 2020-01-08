@@ -48,6 +48,7 @@ final class HomeViewController: BaseViewController {
         tableRefreshControl.attributedTitle = NSAttributedString(string: Strings.refesh, attributes: tableViewAttributes)
         tableRefreshControl.addTarget(self, action: #selector(tableViewDidScrollToTop), for: .valueChanged)
         tableView.refreshControl = tableRefreshControl
+        collectionView.refreshControl = collectionRefreshControl
         // MARK: - Refresh control for collection view
         collectionRefreshControl.tintColor = .black
         let collectionAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
@@ -57,15 +58,17 @@ final class HomeViewController: BaseViewController {
     }
 
     private func configData(isRefresh: Bool) {
-        viewModel.page = isRefresh ? 1 : viewModel.page + 1
+        if isRefresh == true {
+            viewModel.page = 1
+        } else {
+            viewModel.page = viewModel.page + 1
+        }
         viewModel.loadAPI() { [weak self] (done, errorMessage) in
             guard let this = self else { return }
             if done {
                 this.updateUI()
             } else {
-                let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                this.present(alert, animated: true, completion: nil)
+                this.alert(title: Strings.error, message: Strings.notData)
             }
         }
     }
@@ -86,9 +89,7 @@ final class HomeViewController: BaseViewController {
             if done {
                 this.updateUI()
             } else {
-                let alert = UIAlertController(title: Strings.error, message: "Khong Lay Duoc Data", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                this.present(alert, animated: true, completion: nil)
+                this.alert(title: Strings.error, message: Strings.notData)
             }
         }
     }
@@ -103,9 +104,7 @@ final class HomeViewController: BaseViewController {
             if done {
                 this.updateUI()
             } else {
-                let alert = UIAlertController(title: Strings.error, message: Strings.notData, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: Strings.ok, style: UIAlertAction.Style.default, handler: nil))
-                this.present(alert, animated: true, completion: nil)
+                this.alert(title: Strings.error, message: Strings.notData)
             }
         }
 
@@ -209,7 +208,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             let width = collectionView.frame.width - 10
@@ -310,9 +309,9 @@ extension HomeViewController: HomeCollectionViewCellDelegate {
         case .getImageCollection(let indexPath):
             if let indexPath = indexPath {
                 viewModel.downloadImage(indexPath: indexPath) { (image) in
-                    if self.collectionView.indexPathsForSelectedItems?.contains(indexPath) == true {
+                    if self.collectionView.indexPathsForVisibleItems.contains(indexPath) == true {
                         self.collectionView.reloadItems(at: [indexPath])
-                   }
+                    }
                 }
             }
         }

@@ -11,7 +11,7 @@ import UIKit
 
 final class HomeViewModel {
     typealias Completion = (Bool, String) -> Void
-    var repos: [Repo] = []
+    var repos: [Repository] = []
     var images: [ImageSlider] = []
     var isShowTableView: Bool = true
     var page: Int = 1

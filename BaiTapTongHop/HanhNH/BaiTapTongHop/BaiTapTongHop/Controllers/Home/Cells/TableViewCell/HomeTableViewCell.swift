@@ -51,8 +51,6 @@ final class HomeTableViewCell: UITableViewCell {
                 avatarImageView.image = nil
                 delagate?.getImage(cell: self, needPerform: Action.getImageCollection(indexPath: indexPath))
             }
-        } else {
-            viewModel = nil
-        }
+        } 
     }
 }

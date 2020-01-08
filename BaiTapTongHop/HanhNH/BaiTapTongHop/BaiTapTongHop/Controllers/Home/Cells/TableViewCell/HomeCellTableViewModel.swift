@@ -17,7 +17,7 @@ class HomeCellTableViewModel {
     var name: String
     var description: String
 
-    init(repo: Repo) {
+    init(repo: Repository) {
         self.numberOfWatchers = repo.watchersCount
         self.avatarImage = repo.avatarImage
         self.numberOfForks = repo.forksCount

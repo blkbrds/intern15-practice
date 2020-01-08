@@ -1,5 +1,5 @@
 //
-//  Repo.swift
+//  Repository.swift
 //  BaiTapTongHop
 //
 //  Created by ANH NGUYỄN on 1/6/20.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Repo {
+class Repository {
     var avatarUrl: String
     var nameApp: String
     var createdAt: String
