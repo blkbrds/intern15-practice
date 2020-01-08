@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import UIKit
+
+final class DetailViewModel {
+    
+    var comment: [Comment] = []
+
+    func loadData(completion: (Bool) -> ()) {
+        comment = Comment.getDummyDatas()
+        completion(true)
+    }
+}

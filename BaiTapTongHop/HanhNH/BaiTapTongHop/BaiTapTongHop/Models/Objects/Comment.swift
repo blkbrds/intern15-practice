@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-final class Comment {
-    private var avatarImage: UIImage
-    private var name: String
-    private var content: String
-    private var createds: Date
+class Comment {
+    var avatarImage: UIImage
+    var name: String
+    var content: String
+    var createds: Date
 
     init(avatar: UIImage, name: String, status: String, created: Date) {
         self.avatarImage = avatar

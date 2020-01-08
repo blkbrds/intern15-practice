@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+final class SliderDetailViewModel {
+
+    var images: [ImageSlider] = []
+
+    func loadData(completion: (Bool) -> ()) {
+        images = ImageSlider.getDummyDatas()
+        completion(true)
+    }
+}
