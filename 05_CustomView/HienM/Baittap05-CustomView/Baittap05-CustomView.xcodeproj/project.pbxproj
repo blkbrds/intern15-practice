@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD092C4123C4D5E00067B185 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD092C3F23C4D5E00067B185 /* DatePickerViewController.swift */; };
+		FD092C4223C4D5E00067B185 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD092C4023C4D5E00067B185 /* DatePickerViewController.xib */; };
+		FD092C4423C4D6100067B185 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD092C4323C4D6100067B185 /* DatePickerView.swift */; };
+		FD092C4623C4D62D0067B185 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD092C4523C4D62D0067B185 /* DatePickerView.xib */; };
+		FDE82F5123BEE48A002DFEDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE82F5023BEE48A002DFEDA /* AppDelegate.swift */; };
+		FDE82F5323BEE48A002DFEDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE82F5223BEE48A002DFEDA /* SceneDelegate.swift */; };
+		FDE82F5A23BEE48B002DFEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE82F5923BEE48B002DFEDA /* Assets.xcassets */; };
+		FDE82F6723BEE4DC002DFEDA /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE82F6523BEE4DC002DFEDA /* AvatarViewController.swift */; };
+		FDE82F6823BEE4DC002DFEDA /* AvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE82F6623BEE4DC002DFEDA /* AvatarViewController.xib */; };
+		FDE82F6A23BEE544002DFEDA /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE82F6923BEE544002DFEDA /* SwiftUIView.swift */; };
+		FDFDB76123BF454A00D5A247 /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDB75F23BF454A00D5A247 /* CustomButtonViewController.swift */; };
+		FDFDB76223BF454A00D5A247 /* CustomButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFDB76023BF454A00D5A247 /* CustomButtonViewController.xib */; };
+		FDFDB76623BF48B200D5A247 /* ButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDB76523BF48B200D5A247 /* ButtonUIView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FD092C3F23C4D5E00067B185 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		FD092C4023C4D5E00067B185 /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		FD092C4323C4D6100067B185 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		FD092C4523C4D62D0067B185 /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		FDE82F4D23BEE48A002DFEDA /* Baittap05-CustomView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Baittap05-CustomView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE82F5023BEE48A002DFEDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDE82F5223BEE48A002DFEDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FDE82F5923BEE48B002DFEDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDE82F5E23BEE48B002DFEDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDE82F6523BEE4DC002DFEDA /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		FDE82F6623BEE4DC002DFEDA /* AvatarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarViewController.xib; sourceTree = "<group>"; };
+		FDE82F6923BEE544002DFEDA /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		FDFDB75F23BF454A00D5A247 /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
+		FDFDB76023BF454A00D5A247 /* CustomButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButtonViewController.xib; sourceTree = "<group>"; };
+		FDFDB76523BF48B200D5A247 /* ButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUIView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDE82F4A23BEE48A002DFEDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD092C3E23C4D4FA0067B185 /* Datepicker - 04 */ = {
+			isa = PBXGroup;
+			children = (
+				FD092C3F23C4D5E00067B185 /* DatePickerViewController.swift */,
+				FD092C4023C4D5E00067B185 /* DatePickerViewController.xib */,
+				FD092C4323C4D6100067B185 /* DatePickerView.swift */,
+				FD092C4523C4D62D0067B185 /* DatePickerView.xib */,
+			);
+			path = "Datepicker - 04";
+			sourceTree = "<group>";
+		};
+		FDE82F4423BEE48A002DFEDA = {
+			isa = PBXGroup;
+			children = (
+				FDE82F4F23BEE48A002DFEDA /* Baittap05-CustomView */,
+				FDE82F4E23BEE48A002DFEDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDE82F4E23BEE48A002DFEDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDE82F4D23BEE48A002DFEDA /* Baittap05-CustomView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDE82F4F23BEE48A002DFEDA /* Baittap05-CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				FD092C3E23C4D4FA0067B185 /* Datepicker - 04 */,
+				FDFDB75E23BF442A00D5A247 /* Baitap03 */,
+				FDE82F6423BEE4C1002DFEDA /* Baitap01 */,
+				FDE82F5023BEE48A002DFEDA /* AppDelegate.swift */,
+				FDE82F5223BEE48A002DFEDA /* SceneDelegate.swift */,
+				FDE82F5923BEE48B002DFEDA /* Assets.xcassets */,
+				FDE82F5E23BEE48B002DFEDA /* Info.plist */,
+			);
+			path = "Baittap05-CustomView";
+			sourceTree = "<group>";
+		};
+		FDE82F6423BEE4C1002DFEDA /* Baitap01 */ = {
+			isa = PBXGroup;
+			children = (
+				FDE82F6523BEE4DC002DFEDA /* AvatarViewController.swift */,
+				FDE82F6623BEE4DC002DFEDA /* AvatarViewController.xib */,
+				FDE82F6923BEE544002DFEDA /* SwiftUIView.swift */,
+			);
+			path = Baitap01;
+			sourceTree = "<group>";
+		};
+		FDFDB75E23BF442A00D5A247 /* Baitap03 */ = {
+			isa = PBXGroup;
+			children = (
+				FDFDB75F23BF454A00D5A247 /* CustomButtonViewController.swift */,
+				FDFDB76023BF454A00D5A247 /* CustomButtonViewController.xib */,
+				FDFDB76523BF48B200D5A247 /* ButtonUIView.swift */,
+			);
+			path = Baitap03;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDE82F4C23BEE48A002DFEDA /* Baittap05-CustomView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE82F6123BEE48B002DFEDA /* Build configuration list for PBXNativeTarget "Baittap05-CustomView" */;
+			buildPhases = (
+				FDE82F4923BEE48A002DFEDA /* Sources */,
+				FDE82F4A23BEE48A002DFEDA /* Frameworks */,
+				FDE82F4B23BEE48A002DFEDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Baittap05-CustomView";
+			productName = "Baittap05-CustomView";
+			productReference = FDE82F4D23BEE48A002DFEDA /* Baittap05-CustomView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDE82F4523BEE48A002DFEDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = NgocHien;
+				TargetAttributes = {
+					FDE82F4C23BEE48A002DFEDA = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = FDE82F4823BEE48A002DFEDA /* Build configuration list for PBXProject "Baittap05-CustomView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDE82F4423BEE48A002DFEDA;
+			productRefGroup = FDE82F4E23BEE48A002DFEDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDE82F4C23BEE48A002DFEDA /* Baittap05-CustomView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDE82F4B23BEE48A002DFEDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD092C4223C4D5E00067B185 /* DatePickerViewController.xib in Resources */,
+				FDFDB76223BF454A00D5A247 /* CustomButtonViewController.xib in Resources */,
+				FDE82F6823BEE4DC002DFEDA /* AvatarViewController.xib in Resources */,
+				FD092C4623C4D62D0067B185 /* DatePickerView.xib in Resources */,
+				FDE82F5A23BEE48B002DFEDA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDE82F4923BEE48A002DFEDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDFDB76623BF48B200D5A247 /* ButtonUIView.swift in Sources */,
+				FDE82F5123BEE48A002DFEDA /* AppDelegate.swift in Sources */,
+				FD092C4123C4D5E00067B185 /* DatePickerViewController.swift in Sources */,
+				FDE82F5323BEE48A002DFEDA /* SceneDelegate.swift in Sources */,
+				FDFDB76123BF454A00D5A247 /* CustomButtonViewController.swift in Sources */,
+				FDE82F6A23BEE544002DFEDA /* SwiftUIView.swift in Sources */,
+				FD092C4423C4D6100067B185 /* DatePickerView.swift in Sources */,
+				FDE82F6723BEE4DC002DFEDA /* AvatarViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FDE82F5F23BEE48B002DFEDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDE82F6023BEE48B002DFEDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDE82F6223BEE48B002DFEDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TVBU6KWA;
+				INFOPLIST_FILE = "Baittap05-CustomView/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NgocHien.Baittap05-CustomView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDE82F6323BEE48B002DFEDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TVBU6KWA;
+				INFOPLIST_FILE = "Baittap05-CustomView/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NgocHien.Baittap05-CustomView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDE82F4823BEE48A002DFEDA /* Build configuration list for PBXProject "Baittap05-CustomView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE82F5F23BEE48B002DFEDA /* Debug */,
+				FDE82F6023BEE48B002DFEDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDE82F6123BEE48B002DFEDA /* Build configuration list for PBXNativeTarget "Baittap05-CustomView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE82F6223BEE48B002DFEDA /* Debug */,
+				FDE82F6323BEE48B002DFEDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDE82F4523BEE48A002DFEDA /* Project object */;
+}
