@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 final class HomeViewModel {
-    typealias Completion = (Bool, String) -> Void
+    
     var repos: [Repository] = []
     var images: [ImageSlider] = []
     var isShowTableView: Bool = true
@@ -61,9 +61,9 @@ final class HomeViewModel {
                     this.repos.append(contentsOf: data.repos)
                 }
                 this.canLoadMore = data.total_count > this.repos.count
-                completion(true, "")
+                completion(.success(nil))
             case .failure(let error):
-                completion(false, error.localizedDescription)
+                completion(.failure(error))
             }
 
         }

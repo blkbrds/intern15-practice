@@ -9,6 +9,7 @@
 import Foundation
 
 typealias APICompletion<T> = (Result<T, APIError>) -> Void
+typealias Completion = (APIResult) -> Void
 
 enum APIError: Error {
     case error(String)

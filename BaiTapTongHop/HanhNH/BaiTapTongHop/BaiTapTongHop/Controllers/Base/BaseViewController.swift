@@ -20,7 +20,7 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController {
 
-    func alert(title: String, message: String) {
+    func alert(title: String, message: String = "") {
         let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: Strings.ok, style: .default, handler: nil))
         present(alertVC, animated: true, completion: nil)

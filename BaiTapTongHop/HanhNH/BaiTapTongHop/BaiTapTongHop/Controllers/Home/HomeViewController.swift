@@ -63,12 +63,13 @@ final class HomeViewController: BaseViewController {
         } else {
             viewModel.page = viewModel.page + 1
         }
-        viewModel.loadAPI() { [weak self] (done, errorMessage) in
+        viewModel.loadAPI() { [weak self] (result) in
             guard let this = self else { return }
-            if done {
+            switch result {
+            case .success:
                 this.updateUI()
-            } else {
-                this.alert(title: Strings.error, message: Strings.notData)
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
             }
         }
     }
