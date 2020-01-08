@@ -25,13 +25,12 @@ final class SliderDetailTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         updateUI()
-//        configData()
     }
 
     private func updateUI() {
         configSilder()
     }
-    // [WIP]: khong loadData o day
+    
     private func configSilder() {
         collectionView.register(name: CellIdentifier.sliderDetailCollectionViewCell.rawValue)
         collectionView.dataSource = self

@@ -46,7 +46,6 @@ final class DetailViewController: BaseViewController {
     }
 
     func cofigTableView () {
-        
         detailTableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
         detailTableView.register(name: CellIdentifier.sliderDetailTableViewCell.rawValue)
         detailTableView.register(name: CellIdentifier.commentTableViewCell.rawValue)

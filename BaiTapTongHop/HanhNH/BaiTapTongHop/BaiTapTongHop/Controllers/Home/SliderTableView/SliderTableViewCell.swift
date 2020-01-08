@@ -62,7 +62,6 @@ final class SliderTableViewCell: UITableViewCell {
     }
 
     private func configCollectionView() {
-        //config Header Collecion
         collectionView.register(name: CellIdentifier.sliderCollectionViewCell.rawValue)
         collectionView.dataSource = self
         collectionView.delegate = self

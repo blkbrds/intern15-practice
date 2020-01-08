@@ -112,7 +112,6 @@ final class HomeViewController: BaseViewController {
     }
 
     func configTableView() {
-
         tableView.register(name: CellIdentifier.homeTableViewCell.rawValue)
         tableView.register(name: CellIdentifier.sliderTableViewCell.rawValue)
         tableView.delegate = self
