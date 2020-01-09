@@ -1,5 +1,5 @@
 //
-//  SliderDetailTableViewCell.swift
+//  AlbumImageCell.swift
 //  BaiTapTongHop
 //
 //  Created by ANH NGUYỄN on 1/6/20.
@@ -12,28 +12,28 @@ protocol SliderDetailTableViewCellDataSource: class {
     
     func imageSlideCollection(in indexPath: IndexPath) -> String
 }
-final class SliderDetailTableViewCell: UITableViewCell {
+
+final class AlbumImageCell: UITableViewCell {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var viewModel = SilderDetailViewModel()
+    var viewModel = AlbumImageViewModel() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     weak var dataSource: SliderDetailTableViewCellDataSource?
     private var index: Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewModel.getDummyDatasImageSlider()
-        updateUI()
-    }
-
-    private func updateUI() {
-        configSilder()
+        configCollectionView()
     }
     
-    private func configSilder() {
-        collectionView.register(name: CellIdentifier.sliderDetailCollectionViewCell.rawValue)
+    private func configCollectionView() {
+        collectionView.register(name: CellIdentifier.imageCollectionCell.rawValue)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -46,40 +46,37 @@ final class SliderDetailTableViewCell: UITableViewCell {
     }
 
     @IBAction func nextTouchUpInside(_ sender: Any) {
-        guard index < viewModel.images.count - 1 else { return }
+        guard index < viewModel.numberOfItem() - 1 else { return }
         index += 1
         collectionView.scrollToItem(at: IndexPath(item: index, section: 0),
                                     at: .right, animated: true)
     }
 }
 
-extension SliderDetailTableViewCell {
-    struct ConfigSlider {
-        static let numberOfSections: Int = 1
-        static let paddingHorizontal: Float = 9
-        static let heightCcreen: Float = 120
-    }
-}
+extension AlbumImageCell: UICollectionViewDataSource {
 
-extension SliderDetailTableViewCell: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return ConfigSlider.numberOfSections
-    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.images.count
+        return viewModel.numberOfItem()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.sliderDetailCollectionViewCell.rawValue, for: indexPath) as? SliderDetailCollectionViewCell else { return UICollectionViewCell() }
-        cell.viewModel = viewModel.getSliderDetailCollectionViewModel(atIndexPath: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.imageCollectionCell.rawValue, for: indexPath) as? ImageCollectionCell else { return UICollectionViewCell() }
+        cell.viewModel = viewModel.viewModelForItem(at: indexPath)
         return cell
     }
 }
 
-extension SliderDetailTableViewCell: UICollectionViewDelegateFlowLayout {
+extension AlbumImageCell: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = Float(collectionView.frame.width) - ConfigSlider.paddingHorizontal
         return CGSize(width: Int(screenWidth), height: Int(ConfigSlider.heightCcreen))
+    }
+}
+
+extension AlbumImageCell {
+    struct ConfigSlider {
+        static let paddingHorizontal: Float = 9
+        static let heightCcreen: Float = 120
     }
 }

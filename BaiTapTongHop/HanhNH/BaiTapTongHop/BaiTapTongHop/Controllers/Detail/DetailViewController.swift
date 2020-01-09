@@ -17,24 +17,13 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        configData()
+        viewModel.loadData()
     }
 
     func updateUI() {
         cofigTableView()
     }
-
-    private func configData() {
-        viewModel.loadData { [weak self] (done) in
-            guard let this = self else { return }
-            if done {
-                this.updateUI()
-            } else {
-                this.alert(title: Strings.error)
-            }
-        }
-    }
-
+    
     override func setupNavigation() {
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-navi-favorites"), style: .plain, target: self, action: #selector(showFavorites))
         navigationItem.rightBarButtonItem = tableViewButton
@@ -46,68 +35,45 @@ final class DetailViewController: BaseViewController {
     }
 
     func cofigTableView () {
-        tableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
-        tableView.register(name: CellIdentifier.sliderDetailTableViewCell.rawValue)
-        tableView.register(name: CellIdentifier.commentTableViewCell.rawValue)
+        tableView.register(name: CellIdentifier.commentViewCell.rawValue)
+        tableView.register(name: CellIdentifier.albumImageCell.rawValue)
+        tableView.register(name: CellIdentifier.descriptionCell.rawValue)
         tableView.register(name: CellIdentifier.mapTableViewCell.rawValue)
         tableView.dataSource = self
         tableView.delegate = self
     }
 }
 
-extension DetailViewController {
-    struct Config {
-        static let defaultRowHeight: CGFloat = 150
-        static let section: Int = 1
-        static let numberOfSections: Int = 4
-    }
-}
-
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Config.numberOfSections
+        return viewModel.numberOfSection()
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return Config.section
-        case 1:
-            return Config.section
-        case 2:
-            return Config.section
-        default:
-            return viewModel.comment.count
-        }
+        return viewModel.numberOfItem(section: section)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return Config.defaultRowHeight
-        case 1:
-            return UITableView.automaticDimension
-        case 2:
-            return Config.defaultRowHeight
-        default:
-            return UITableView.automaticDimension
-        }
+        return viewModel.heightForRowAt(indexPath: indexPath)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.sliderDetailTableViewCell.rawValue, for: indexPath) as? SliderDetailTableViewCell else { return UITableViewCell() }
+        guard let type = DetailViewModel.SectionType(rawValue: indexPath.section) else { return UITableViewCell() }
+        switch type {
+        case .albums:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.albumImageCell.rawValue, for: indexPath) as? AlbumImageCell else { return UITableViewCell() }
+            cell.viewModel = viewModel.makeAlbumViewModel(at: indexPath)
             return cell
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.commentTableViewCell.rawValue, for: indexPath) as? CommentTableViewCell else { return UITableViewCell() }
+        case .description:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.descriptionCell.rawValue, for: indexPath) as? DescriptionCell else { return UITableViewCell() }
+            cell.viewModel = viewModel.makeDescription(at: indexPath)
             return cell
-        case 2:
+        case .map:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.mapTableViewCell.rawValue, for: indexPath) as? MapTableViewCell else { return UITableViewCell() }
             return cell
         default:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailTableViewCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
-            let item = viewModel.comment[indexPath.row]
-            cell.updateDetail(image: item.avatarImage , status: item.content, name: item.name, day: item.createds)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.commentViewCell.rawValue, for: indexPath) as? CommentViewCell else { return UITableViewCell() }
+            cell.viewModel = viewModel.makeCommentViewModel(at: indexPath)
             return cell
         }
     }

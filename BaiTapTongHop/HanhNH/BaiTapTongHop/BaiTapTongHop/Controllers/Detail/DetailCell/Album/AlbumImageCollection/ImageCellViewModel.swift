@@ -1,5 +1,5 @@
 //
-//  SliderDetailCollectionViewModel.swift
+//  ImageCellViewModel.swift
 //  BaiTapTongHop
 //
 //  Created by ANH NGUYỄN on 1/9/20.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class SilderDetailCollectionViewCellViewModel {
+final class ImageCellViewModel {
     
     var imageName: String
 
