@@ -24,9 +24,7 @@ class HomeViewController: UIViewController {
         loadNib()
         let layout = PinterestLayout()
         myCollectionView.collectionViewLayout = layout
-        if let layout = myCollectionView?.collectionViewLayout as? PinterestLayout {
-            layout.delegate = self
-        }
+        layout.delegate = self
     }
 
     private func loadNib() {

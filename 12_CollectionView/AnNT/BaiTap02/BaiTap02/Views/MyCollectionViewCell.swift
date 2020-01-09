@@ -10,7 +10,7 @@ import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var foodImageView: UIImageView!
+    @IBOutlet weak  var foodImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
