@@ -16,7 +16,7 @@ class MyCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
 
-    func setupData(imageName: String) {
+    func updateUI(imageName: String) {
         if let image = UIImage(named: imageName) {
             foodImageView.image = image
         }
