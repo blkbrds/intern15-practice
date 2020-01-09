@@ -10,7 +10,7 @@ import UIKit
 
 final class DetailViewController: BaseViewController {
 
-    @IBOutlet private weak var detailTableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     var viewModel = DetailViewModel()
 
@@ -46,12 +46,12 @@ final class DetailViewController: BaseViewController {
     }
 
     func cofigTableView () {
-        detailTableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
-        detailTableView.register(name: CellIdentifier.sliderDetailTableViewCell.rawValue)
-        detailTableView.register(name: CellIdentifier.commentTableViewCell.rawValue)
-        detailTableView.register(name: CellIdentifier.mapTableViewCell.rawValue)
-        detailTableView.dataSource = self
-        detailTableView.delegate = self
+        tableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
+        tableView.register(name: CellIdentifier.sliderDetailTableViewCell.rawValue)
+        tableView.register(name: CellIdentifier.commentTableViewCell.rawValue)
+        tableView.register(name: CellIdentifier.mapTableViewCell.rawValue)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -96,16 +96,16 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            guard let cell = detailTableView.dequeueReusableCell(withIdentifier: CellIdentifier.sliderDetailTableViewCell.rawValue, for: indexPath) as? SliderDetailTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.sliderDetailTableViewCell.rawValue, for: indexPath) as? SliderDetailTableViewCell else { return UITableViewCell() }
             return cell
         case 1:
-            guard let cell = detailTableView.dequeueReusableCell(withIdentifier: CellIdentifier.commentTableViewCell.rawValue, for: indexPath) as? CommentTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.commentTableViewCell.rawValue, for: indexPath) as? CommentTableViewCell else { return UITableViewCell() }
             return cell
         case 2:
-            guard let cell = detailTableView.dequeueReusableCell(withIdentifier: CellIdentifier.mapTableViewCell.rawValue, for: indexPath) as? MapTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.mapTableViewCell.rawValue, for: indexPath) as? MapTableViewCell else { return UITableViewCell() }
             return cell
         default:
-            guard let cell = detailTableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailTableViewCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailTableViewCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
             let item = viewModel.comment[indexPath.row]
             cell.updateDetail(image: item.avatarImage , status: item.content, name: item.name, day: item.createds)
             return cell

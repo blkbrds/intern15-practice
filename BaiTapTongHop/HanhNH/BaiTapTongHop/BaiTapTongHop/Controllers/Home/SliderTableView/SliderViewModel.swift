@@ -7,8 +7,9 @@
 //
 
 import Foundation
+
 final class SliderViewModel {
-    private var images: [ImageSlider] = []
+    private var images: [String] = []
 
     private func loadData(completion: (Bool) -> ()) {
         images = ImageSlider.getDummyDatas()

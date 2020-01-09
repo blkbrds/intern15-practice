@@ -16,11 +16,10 @@ final class ImageSlider {
     }
 }
 extension ImageSlider {
-    static func getDummyDatas() -> [ImageSlider] {
-        var images: [ImageSlider] = []
+    static func getDummyDatas() -> [String] {
+        var images: [String] = []
         for i in 1...6 {
-            let image = ImageSlider(imageName: "\(i % 10)")
-            images.append(image)
+            images.append(String(i))
         }
         return images
     }

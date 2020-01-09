@@ -19,9 +19,6 @@ final class HomeViewModel {
     var totalCount = 0
     var isLoading = false
 
-    func loadImagesSlide() {
-        images = ImageSlider.getDummyDatas()
-    }
     func changeDisplay(completion: (Bool) -> ()) {
         isShowTableView = !isShowTableView
         completion(true)

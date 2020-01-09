@@ -14,16 +14,17 @@ protocol SliderDetailTableViewCellDataSource: class {
 }
 final class SliderDetailTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var retireButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var viewModel = SliderDetailViewModel()
+    var viewModel = SilderDetailViewModel()
     weak var dataSource: SliderDetailTableViewCellDataSource?
     private var index: Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        viewModel.getDummyDatasImageSlider()
         updateUI()
     }
 
@@ -51,10 +52,12 @@ final class SliderDetailTableViewCell: UITableViewCell {
                                     at: .right, animated: true)
     }
 }
+
 extension SliderDetailTableViewCell {
     struct ConfigSlider {
         static let numberOfSections: Int = 1
         static let paddingHorizontal: Float = 9
+        static let heightCcreen: Float = 120
     }
 }
 
@@ -69,7 +72,7 @@ extension SliderDetailTableViewCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.sliderDetailCollectionViewCell.rawValue, for: indexPath) as? SliderDetailCollectionViewCell else { return UICollectionViewCell() }
-        cell.updateCollection(image: viewModel.images[indexPath.row].imageName)
+        cell.viewModel = viewModel.getSliderDetailCollectionViewModel(atIndexPath: indexPath)
         return cell
     }
 }
@@ -77,6 +80,6 @@ extension SliderDetailTableViewCell: UICollectionViewDataSource {
 extension SliderDetailTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = Float(collectionView.frame.width) - ConfigSlider.paddingHorizontal
-        return CGSize(width: Int(screenWidth), height: 120)
+        return CGSize(width: Int(screenWidth), height: Int(ConfigSlider.heightCcreen))
     }
 }

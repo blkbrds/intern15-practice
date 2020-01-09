@@ -7,15 +7,21 @@
 //
 
 import UIKit
-protocol SliderDeatilDelegate: class {
-    func cell(indexPath: IndexPath)
-}
+
 final class SliderDetailCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var imageCollectionView: UIImageView!
-
-    func updateCollection(image: String?) {
-        imageCollectionView.image = UIImage(named: image!)
+    
+    var viewModel: SilderDetailCollectionViewCellViewModel? {
+        didSet {
+            updateCollection()
+        }
+    }
+    
+    func updateCollection() {
+        if let viewModel = viewModel {
+            imageCollectionView.image = UIImage(named: viewModel.imageName)
+        }
     }
 }
