@@ -40,9 +40,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCVCelll", for: indexPath) as! MyCollectionViewCell
-        if let image = UIImage(named: images[indexPath.row]) {
-            cell.foodImageView.image = image
-        }
+        let imageName = images[indexPath.row]
+        cell.setupData(imageName: imageName)
         return cell
     }
 }

@@ -10,9 +10,15 @@ import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak  var foodImageView: UIImageView!
-    
+    @IBOutlet private weak var foodImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+
+    func setupData(imageName: String) {
+        if let image = UIImage(named: imageName) {
+            foodImageView.image = image
+        }
     }
 }
