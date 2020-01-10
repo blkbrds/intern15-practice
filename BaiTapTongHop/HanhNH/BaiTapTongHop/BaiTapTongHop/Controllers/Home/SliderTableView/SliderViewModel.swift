@@ -12,7 +12,6 @@ final class SliderViewModel {
     private var images: [String] = []
 
     private func loadData(completion: (Bool) -> ()) {
-//        images = DummyData.getDummyDatas()
         completion(true)
     }
 }
