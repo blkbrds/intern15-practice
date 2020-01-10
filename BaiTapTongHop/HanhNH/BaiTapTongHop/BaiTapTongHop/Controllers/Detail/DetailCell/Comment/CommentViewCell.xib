@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -65,8 +64,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="avatarImageView" destination="cp2-EK-DwD" id="50C-P0-vSU"/>
                 <outlet property="daysAgoLabel" destination="lmi-wi-li4" id="B6H-du-0l0"/>
-                <outlet property="imageComment" destination="cp2-EK-DwD" id="50C-P0-vSU"/>
                 <outlet property="nameImageLabel" destination="27n-j3-llP" id="mRv-B0-AEA"/>
                 <outlet property="statusLabel" destination="s65-3G-6C1" id="o32-xf-ma4"/>
             </connections>

@@ -25,12 +25,12 @@ extension CommentViewModel {
     }
     
     var avatar: String {
-        return comment.user.avatarPath
+        return comment.user.avatarName
     }
     
     var created: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
-        return formatter.string(from: comment.createds)
+        return formatter.string(from: comment.createdDates)
     }
 }

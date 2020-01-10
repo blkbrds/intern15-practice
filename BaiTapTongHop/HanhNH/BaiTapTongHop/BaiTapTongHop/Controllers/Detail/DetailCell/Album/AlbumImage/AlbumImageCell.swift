@@ -10,9 +10,9 @@ import UIKit
 
 final class AlbumImageCell: UITableViewCell {
     
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var backButton: UIButton!
+    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     var viewModel = AlbumImageViewModel() {
         didSet {
@@ -32,15 +32,15 @@ final class AlbumImageCell: UITableViewCell {
         collectionView.delegate = self
     }
 
-    @IBAction func backTouchUpInside(_ sender: Any) {
+    @IBAction private func backTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
         collectionView.scrollToItem(at: IndexPath(item: index, section: 0),
                                     at: .left, animated: true)
     }
 
-    @IBAction func nextTouchUpInside(_ sender: Any) {
-        guard index < viewModel.numberOfItem() - 1 else { return }
+    @IBAction private func nextTouchUpInside(_ sender: Any) {
+        guard index < viewModel.numberOfItems() - 1 else { return }
         index += 1
         collectionView.scrollToItem(at: IndexPath(item: index, section: 0),
                                     at: .right, animated: true)
@@ -50,7 +50,7 @@ final class AlbumImageCell: UITableViewCell {
 extension AlbumImageCell: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItem()
+        return viewModel.numberOfItems()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,13 +64,13 @@ extension AlbumImageCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = Float(collectionView.frame.width) - ConfigSlider.paddingHorizontal
-        return CGSize(width: Int(screenWidth), height: Int(ConfigSlider.heightCcreen))
+        return CGSize(width: Int(screenWidth), height: Int(ConfigSlider.screenHeight))
     }
 }
 
 extension AlbumImageCell {
     struct ConfigSlider {
         static let paddingHorizontal: Float = 0
-        static let heightCcreen: Float = 320
+        static let screenHeight: Float = 320
     }
 }

@@ -11,8 +11,8 @@ import Foundation
 struct User {
     var id: String = ""
     var name: String = ""
-    var avatarPath: String = ""
-    var coverImages: [String] = []
+    var avatarName: String = ""
+    var coverImageNames: [String] = []
     var description: String = ""
     var comments: [Comment] = []
 }

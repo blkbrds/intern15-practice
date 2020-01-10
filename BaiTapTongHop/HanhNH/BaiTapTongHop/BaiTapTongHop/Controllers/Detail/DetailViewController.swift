@@ -20,7 +20,7 @@ final class DetailViewController: BaseViewController {
     }
 
     func updateUI() {
-        cofigTableView()
+        configTableView()
     }
     
     override func setupNavigation() {
@@ -29,11 +29,11 @@ final class DetailViewController: BaseViewController {
         tableViewButton.tintColor = .black
     }
 
-    @objc func showFavorites() {
+    @objc private func showFavorites() {
         navigationController?.pushViewController(FavoriteViewController(), animated: true)
     }
 
-    func cofigTableView () {
+    func configTableView () {
         tableView.register(name: CellIdentifier.commentViewCell.rawValue)
         tableView.register(name: CellIdentifier.albumImageCell.rawValue)
         tableView.register(name: CellIdentifier.descriptionCell.rawValue)
@@ -45,15 +45,15 @@ final class DetailViewController: BaseViewController {
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSection()
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfItem(section: section)
+        return viewModel.numberOfItems(section: section)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return viewModel.heightForRowAt(indexPath: indexPath)
+        return viewModel.heightForRowAt(at: indexPath)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -268,7 +268,7 @@ extension HomeViewController: SliderTableViewDataSoucre {
     }
 
     func imageSlide(in indexPath: IndexPath) -> String {
-        return viewModel.imageSlide(in: indexPath.row)
+        return viewModel.imageNameForSlide(in: indexPath.row)
     }
 }
 
@@ -282,7 +282,7 @@ extension HomeViewController: SliderCollectionCellDataSource {
     }
 
     func imageSlideCollection(in indexPath: IndexPath) -> String {
-        return viewModel.imageSlide(in: indexPath.row)
+        return viewModel.imageNameForSlide(in: indexPath.row)
     }
 }
 

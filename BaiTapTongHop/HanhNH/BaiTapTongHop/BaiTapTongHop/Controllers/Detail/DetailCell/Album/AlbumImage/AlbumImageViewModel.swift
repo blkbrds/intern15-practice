@@ -19,7 +19,7 @@ final class AlbumImageViewModel {
 
 extension AlbumImageViewModel {
     
-    func numberOfItem() -> Int {
+    func numberOfItems() -> Int {
         return images.count
     }
     

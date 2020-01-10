@@ -12,7 +12,7 @@ import UIKit
 final class HomeViewModel {
     
     var repos: [Repository] = []
-    var images: [String] = []
+    var imageNames: [String] = []
     var isShowTableView: Bool = true
     var page: Int = 1
     var canLoadMore: Bool = false
@@ -40,8 +40,8 @@ final class HomeViewModel {
         return 2
     }
 
-    func imageSlide(in index: Int) -> String {
-        return images[index]
+    func imageNameForSlide(in index: Int) -> String {
+        return imageNames[index]
     }
     
     func loadAPI(completion: @escaping Completion) {

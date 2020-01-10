@@ -12,6 +12,6 @@ import UIKit
 struct Comment {
     
     var content: String
-    var createds: Date
+    var createdDates: Date
     var user: User
 }
