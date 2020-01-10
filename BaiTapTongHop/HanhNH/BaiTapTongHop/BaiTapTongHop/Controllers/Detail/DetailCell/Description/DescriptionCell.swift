@@ -14,11 +14,11 @@ final class DescriptionCell: UITableViewCell {
     
     var viewModel: DescriptionViewModel? {
         didSet {
-            
+            updateDescription()
         }
     }
     
-    func updateDescription() {
+    private func updateDescription() {
         descriptionLabel.text = viewModel?.description
     }
 }

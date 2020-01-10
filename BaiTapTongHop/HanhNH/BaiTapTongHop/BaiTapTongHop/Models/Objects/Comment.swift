@@ -9,16 +9,9 @@
 import Foundation
 import UIKit
 
-class Comment {
-    var avatarImage: UIImage
-    var name: String
+struct Comment {
+    
     var content: String
     var createds: Date
-
-    init(avatar: UIImage, name: String, status: String, created: Date) {
-        self.avatarImage = avatar
-        self.name = name
-        self.content = status
-        self.createds = created
-    }
+    var user: User
 }

@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol SliderDetailTableViewCellDataSource: class {
-    
-    func imageSlideCollection(in indexPath: IndexPath) -> String
-}
-
 final class AlbumImageCell: UITableViewCell {
     
     @IBOutlet weak var backButton: UIButton!
@@ -24,7 +19,6 @@ final class AlbumImageCell: UITableViewCell {
             collectionView.reloadData()
         }
     }
-    weak var dataSource: SliderDetailTableViewCellDataSource?
     private var index: Int = 0
 
     override func awakeFromNib() {
@@ -76,7 +70,7 @@ extension AlbumImageCell: UICollectionViewDelegateFlowLayout {
 
 extension AlbumImageCell {
     struct ConfigSlider {
-        static let paddingHorizontal: Float = 9
-        static let heightCcreen: Float = 120
+        static let paddingHorizontal: Float = 0
+        static let heightCcreen: Float = 320
     }
 }

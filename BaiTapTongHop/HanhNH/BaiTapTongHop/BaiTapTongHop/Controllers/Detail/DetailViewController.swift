@@ -17,7 +17,6 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        viewModel.loadData()
     }
 
     func updateUI() {
@@ -76,5 +75,9 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             cell.viewModel = viewModel.makeCommentViewModel(at: indexPath)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

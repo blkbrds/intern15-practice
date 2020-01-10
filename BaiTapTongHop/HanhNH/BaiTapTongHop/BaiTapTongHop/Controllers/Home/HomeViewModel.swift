@@ -12,7 +12,7 @@ import UIKit
 final class HomeViewModel {
     
     var repos: [Repository] = []
-    var images: [ImageSlider] = []
+    var images: [String] = []
     var isShowTableView: Bool = true
     var page: Int = 1
     var canLoadMore: Bool = false
@@ -40,7 +40,7 @@ final class HomeViewModel {
         return 2
     }
 
-    func imageSlide(in index: Int) -> ImageSlider {
+    func imageSlide(in index: Int) -> String {
         return images[index]
     }
     
@@ -67,7 +67,7 @@ final class HomeViewModel {
     }
 
     func downloadImage(indexPath: IndexPath, completion: @escaping (UIImage?) -> Void) {
-        let item = repos[indexPath.row]
+        var item = repos[indexPath.row]
         if item.avatarImage != nil {
             completion(item.avatarImage)
         } else {

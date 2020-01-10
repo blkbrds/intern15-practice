@@ -9,17 +9,28 @@
 import Foundation
 import UIKit
 
-final class CommentViewModel {
+struct CommentViewModel {
     
-    var image: UIImage
-    var status: String
-    var name: String
-    var day: Date
+    var comment: Comment
+}
+
+extension CommentViewModel {
+
+    var userName: String {
+        return comment.user.name
+    }
     
-    init(image: UIImage, status: String, name: String, day: Date) {
-        self.image = image
-        self.status = status
-        self.name = name
-        self.day = Date()
+    var contentComment: String {
+        return comment.content
+    }
+    
+    var avatar: String {
+        return comment.user.avatarPath
+    }
+    
+    var created: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        return formatter.string(from: comment.createds)
     }
 }

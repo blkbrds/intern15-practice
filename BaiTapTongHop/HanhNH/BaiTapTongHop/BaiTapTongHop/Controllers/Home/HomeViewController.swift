@@ -183,6 +183,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(DetailViewController(), animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -202,6 +203,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -266,7 +268,7 @@ extension HomeViewController: SliderTableViewDataSoucre {
     }
 
     func imageSlide(in indexPath: IndexPath) -> String {
-        return viewModel.imageSlide(in: indexPath.row).imageName
+        return viewModel.imageSlide(in: indexPath.row)
     }
 }
 
@@ -280,7 +282,7 @@ extension HomeViewController: SliderCollectionCellDataSource {
     }
 
     func imageSlideCollection(in indexPath: IndexPath) -> String {
-        return viewModel.imageSlide(in: indexPath.row).imageName
+        return viewModel.imageSlide(in: indexPath.row)
     }
 }
 
