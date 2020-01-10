@@ -10,20 +10,20 @@ import Foundation
 
 final class AlbumImageViewModel {
 
-    private let images: [String]
+    private let imageNames: [String]
     
     init(images: [String] = []) {
-        self.images = images
+        self.imageNames = images
     }
 }
 
 extension AlbumImageViewModel {
     
     func numberOfItems() -> Int {
-        return images.count
+        return imageNames.count
     }
     
     func viewModelForItem(at indexPath: IndexPath) -> ImageCellViewModel {
-        return ImageCellViewModel(image: images[indexPath.row])
+        return ImageCellViewModel(imageName: imageNames[indexPath.row])
     }
 }

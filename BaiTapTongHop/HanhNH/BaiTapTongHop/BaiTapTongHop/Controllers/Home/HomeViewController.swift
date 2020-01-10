@@ -203,7 +203,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

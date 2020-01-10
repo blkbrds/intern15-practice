@@ -13,7 +13,7 @@ final class ImageCellViewModel {
     
     var imageName: String
 
-    init(image: String) {
-        self.imageName = image
+    init(imageName: String) {
+        self.imageName = imageName
     }
 }

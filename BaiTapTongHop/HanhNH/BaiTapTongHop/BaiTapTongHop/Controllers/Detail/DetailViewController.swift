@@ -22,7 +22,7 @@ final class DetailViewController: BaseViewController {
     func updateUI() {
         configTableView()
     }
-    
+
     override func setupNavigation() {
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-navi-favorites"), style: .plain, target: self, action: #selector(showFavorites))
         navigationItem.rightBarButtonItem = tableViewButton
@@ -43,11 +43,17 @@ final class DetailViewController: BaseViewController {
     }
 }
 
-extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension DetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfItems(section: section)
     }
@@ -75,9 +81,5 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             cell.viewModel = viewModel.makeCommentViewModel(at: indexPath)
             return cell
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
