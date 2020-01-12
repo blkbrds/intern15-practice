@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReadNewViewController" customModule="AutoLayout" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-Do-co1">
+                    <rect key="frame" x="50" y="50" width="314" height="346"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nXG-Pf-YNg">
+                    <rect key="frame" x="40" y="426" width="334" height="370"/>
+                    <color key="backgroundColor" red="0.81557618562318368" green="0.96130555868148804" blue="0.92376789213361876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwy-by-iS9">
+                    <rect key="frame" x="50" y="816" width="72" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.97556512520000005" blue="0.32477789130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" title="Like">
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTk-5K-7Tv">
+                    <rect key="frame" x="171" y="816" width="72" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.97556512520000005" blue="0.32477789130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" title="Comment"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na2-I0-hGu">
+                    <rect key="frame" x="292" y="816" width="72" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.97556512520000005" blue="0.32477789130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" title="Share"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-WP-4v2">
+                    <rect key="frame" x="372" y="108" width="22" height="174"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.4288301858815512" blue="0.97679055690357619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFE-ZX-VnW">
+                    <rect key="frame" x="20" y="108" width="22" height="174"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.33739096441900873" blue="0.97725798050078916" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.73305019639877889" green="1" blue="0.98544906485376638" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="JTk-5K-7Tv" firstAttribute="leading" secondItem="qwy-by-iS9" secondAttribute="trailing" constant="49" id="2rs-y6-1Ti"/>
+                <constraint firstAttribute="bottom" secondItem="dSt-Do-co1" secondAttribute="bottom" constant="500" id="FhX-Il-KoJ"/>
+                <constraint firstItem="qwy-by-iS9" firstAttribute="top" secondItem="nXG-Pf-YNg" secondAttribute="bottom" constant="20" id="HA6-5W-FJh"/>
+                <constraint firstAttribute="trailing" secondItem="JTk-5K-7Tv" secondAttribute="trailing" constant="171" id="If1-Vi-KQm"/>
+                <constraint firstAttribute="bottom" secondItem="JTk-5K-7Tv" secondAttribute="bottom" constant="50" id="J5R-JI-pbO"/>
+                <constraint firstItem="nXG-Pf-YNg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="Kjy-VU-r2p"/>
+                <constraint firstItem="JTk-5K-7Tv" firstAttribute="top" secondItem="nXG-Pf-YNg" secondAttribute="bottom" constant="20" id="Mrm-iR-nIM"/>
+                <constraint firstItem="nXG-Pf-YNg" firstAttribute="top" secondItem="dSt-Do-co1" secondAttribute="bottom" constant="30" id="N0K-lS-1C9"/>
+                <constraint firstItem="Na2-I0-hGu" firstAttribute="top" secondItem="nXG-Pf-YNg" secondAttribute="bottom" constant="20" id="QBI-ZP-1hL"/>
+                <constraint firstItem="JTk-5K-7Tv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="171" id="RMY-O4-hlr"/>
+                <constraint firstItem="dSt-Do-co1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="Seb-8t-r4Y"/>
+                <constraint firstAttribute="trailing" secondItem="Na2-I0-hGu" secondAttribute="trailing" constant="50" id="TOA-i9-QMe"/>
+                <constraint firstItem="Na2-I0-hGu" firstAttribute="leading" secondItem="JTk-5K-7Tv" secondAttribute="trailing" constant="49" id="VvY-A8-sjs"/>
+                <constraint firstAttribute="trailing" secondItem="dSt-Do-co1" secondAttribute="trailing" constant="50" id="lNy-qp-iHY"/>
+                <constraint firstAttribute="bottom" secondItem="Na2-I0-hGu" secondAttribute="bottom" constant="50" id="o9i-Jg-pM1"/>
+                <constraint firstAttribute="bottom" secondItem="qwy-by-iS9" secondAttribute="bottom" constant="50" id="oIG-JI-rcR"/>
+                <constraint firstItem="dSt-Do-co1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="tgV-AG-Kll"/>
+                <constraint firstItem="qwy-by-iS9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="vE5-i5-k1Y"/>
+                <constraint firstAttribute="trailing" secondItem="nXG-Pf-YNg" secondAttribute="trailing" constant="40" id="zCB-ue-Cwh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="140.625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="64" height="52"/>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="64" height="52"/>
+    </resources>
+</document>
