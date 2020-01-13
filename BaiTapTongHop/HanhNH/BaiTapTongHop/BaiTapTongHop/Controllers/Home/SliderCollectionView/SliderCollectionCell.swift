@@ -31,38 +31,19 @@ final class SliderCollectionCell: UICollectionViewCell {
     @IBAction private func nextButtonTouchUpInside(_ sender: Any) {
         guard index < (dataSource?.numberRowImage(in: index))! - 1 else { return }
         index += 1
-        UIView.animate(withDuration: 0.1, animations: {
-            self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
-            self.retireButton.setImage(UIImage(named: "retire"), for: .normal)
-            self.retireButton.isEnabled = true
-        }) { [weak self] (done) in
-            guard let this = self else { return }
-            if this.index == 0 {
-                this.nextButton.setImage(UIImage(named: "next"), for: .normal)
-                this.nextButton.isEnabled = false
-            }
-        }
+        collectionView.scrollToItem(at: IndexPath(item: index, section: 0),
+                                    at: .right, animated: true)
     }
 
-    @IBAction private func retireButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func backButtonTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
-        UIView.animate(withDuration: 0.1, animations: {
-            self.collectionView.contentOffset = CGPoint(x: CGFloat(self.index) * 1 * self.frame.width, y: 0)
-            self.nextButton.setImage(UIImage(named: "next"), for: .normal)
-            self.nextButton.isEnabled = true
-        }) { [weak self] (done) in
-            guard let this = self else { return }
-            if this.index == ((this.dataSource?.numberRowImage(in: this.index))!) - 1 {
-                this.retireButton.setImage(UIImage(named: "retire"), for: .normal)
-                this.retireButton.isEnabled = false
-            }
-        }
+        collectionView.scrollToItem(at: IndexPath(item: index, section: 0),
+                                    at: .left, animated: true)
     }
 
     private func configCollectionView() {
-        let nib = UINib(nibName: CellIdentifier.sliderCollectionViewCell.rawValue, bundle: Bundle.main)
-        collectionView.register(nib, forCellWithReuseIdentifier: CellIdentifier.sliderCollectionViewCell.rawValue)
+        collectionView.register(name: CellIdentifier.sliderCollectionViewCell.rawValue)
         collectionView.dataSource = self
         collectionView.delegate = self
     }

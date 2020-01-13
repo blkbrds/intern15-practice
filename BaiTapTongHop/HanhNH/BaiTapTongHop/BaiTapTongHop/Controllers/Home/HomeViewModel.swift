@@ -12,16 +12,13 @@ import UIKit
 final class HomeViewModel {
     
     var repos: [Repository] = []
-    var images: [ImageSlider] = []
+    var imageNames: [String] = []
     var isShowTableView: Bool = true
     var page: Int = 1
     var canLoadMore: Bool = false
     var totalCount = 0
     var isLoading = false
 
-    func loadImagesSlide() {
-        images = ImageSlider.getDummyDatas()
-    }
     func changeDisplay(completion: (Bool) -> ()) {
         isShowTableView = !isShowTableView
         completion(true)
@@ -43,8 +40,8 @@ final class HomeViewModel {
         return 2
     }
 
-    func imageSlide(in index: Int) -> ImageSlider {
-        return images[index]
+    func imageNameForSlide(in index: Int) -> String {
+        return imageNames[index]
     }
     
     func loadAPI(completion: @escaping Completion) {
@@ -70,7 +67,7 @@ final class HomeViewModel {
     }
 
     func downloadImage(indexPath: IndexPath, completion: @escaping (UIImage?) -> Void) {
-        let item = repos[indexPath.row]
+        var item = repos[indexPath.row]
         if item.avatarImage != nil {
             completion(item.avatarImage)
         } else {

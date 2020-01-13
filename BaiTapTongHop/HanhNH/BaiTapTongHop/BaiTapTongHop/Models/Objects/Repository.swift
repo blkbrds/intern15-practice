@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Repository {
+final class Repository {
     var avatarUrl: String
     var nameApp: String
     var createdAt: String

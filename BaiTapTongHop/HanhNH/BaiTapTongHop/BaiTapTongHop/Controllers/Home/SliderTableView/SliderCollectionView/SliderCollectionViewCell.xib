@@ -20,12 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vdb-kq-Koc">
-                                <rect key="frame" x="10" y="0.0" width="280" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Vdb-kq-Koc" secondAttribute="trailing" constant="10" id="QoX-JU-lwn"/>
-                            <constraint firstItem="Vdb-kq-Koc" firstAttribute="leading" secondItem="MaT-ck-ZZd" secondAttribute="leading" constant="10" id="XWD-69-zpG"/>
+                            <constraint firstAttribute="trailing" secondItem="Vdb-kq-Koc" secondAttribute="trailing" id="QoX-JU-lwn"/>
+                            <constraint firstItem="Vdb-kq-Koc" firstAttribute="leading" secondItem="MaT-ck-ZZd" secondAttribute="leading" id="XWD-69-zpG"/>
                             <constraint firstAttribute="bottom" secondItem="Vdb-kq-Koc" secondAttribute="bottom" id="ZtZ-s8-U96"/>
                             <constraint firstItem="Vdb-kq-Koc" firstAttribute="centerY" secondItem="MaT-ck-ZZd" secondAttribute="centerY" id="bGE-wd-TSl"/>
                             <constraint firstItem="Vdb-kq-Koc" firstAttribute="top" secondItem="MaT-ck-ZZd" secondAttribute="top" id="e90-td-m6L"/>
@@ -45,7 +45,7 @@
             <connections>
                 <outlet property="imageCollection" destination="Vdb-kq-Koc" id="G5D-fP-abK"/>
             </connections>
-            <point key="canvasLocation" x="133" y="84"/>
+            <point key="canvasLocation" x="-120" y="78"/>
         </collectionViewCell>
     </objects>
 </document>
