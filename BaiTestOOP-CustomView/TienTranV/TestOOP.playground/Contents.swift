@@ -103,10 +103,18 @@ final class QLCB {
     }
 
     func timKiemTheoTen(ten: String) {
-        for (i, canBo) in danhSachCanBo.enumerated() {
+        for canBo in danhSachCanBo {
             if canBo.hoTen == ten {
-                print("Thong tin can bo can tim la: ")
-                canBo.inThongTin()
+                print("\n--------------Thong tin can bo can tim la: ")
+                if canBo is NhanVien {
+                    (canBo as! NhanVien).inThongTin()
+                } else if canBo is KySu {
+                    (canBo as! KySu).inThongTin()
+                } else if canBo is CongNhan {
+                    (canBo as! CongNhan).inThongTin()
+                } else {
+                    canBo.inThongTin()
+                }
                 break
             }
         }
@@ -120,7 +128,6 @@ quanLy.themCanBo()
 quanLy.themCongNhan()
 quanLy.themKySu()
 quanLy.themNhanVien()
-quanLy.timKiemTheoTen(ten: "Tran Van Tien")
 quanLy.hienThiDanhSachCanBo()
-
+quanLy.timKiemTheoTen(ten: "Tran Van Tien")
 
