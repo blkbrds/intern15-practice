@@ -22,7 +22,6 @@ final class CommentViewCell: UITableViewCell {
     }
 
     override func awakeFromNib() {
-        // xu ly
         super.awakeFromNib()
         avatarImageView.layer.borderWidth = 1.0
         avatarImageView.layer.masksToBounds = false

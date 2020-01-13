@@ -31,6 +31,6 @@ extension CommentViewModel {
     var created: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
-        return formatter.string(from: comment.createdDates)
+        return formatter.string(from: comment.createdDate)
     }
 }

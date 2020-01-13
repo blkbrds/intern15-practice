@@ -23,10 +23,10 @@ struct DummyData {
     
     static var comments: [Comment] {
         var comments: [Comment] = []
-        comments.append(Comment(content: "Aasdasd", createdDates: Date(), user: userLong))
-        comments.append(Comment(content: "Aasdasd", createdDates: Date(), user: userLong))
-        comments.append(Comment(content: "Aasdasd", createdDates: Date(), user: userLong))
-        comments.append(Comment(content: "Aasdasd", createdDates: Date(), user: userNam))
+        comments.append(Comment(content: "Aasdasd", createdDate: Date(), user: userLong))
+        comments.append(Comment(content: "Aasdasd", createdDate: Date(), user: userLong))
+        comments.append(Comment(content: "Aasdasd", createdDate: Date(), user: userLong))
+        comments.append(Comment(content: "Aasdasd", createdDate: Date(), user: userNam))
         return comments
     }
 } 

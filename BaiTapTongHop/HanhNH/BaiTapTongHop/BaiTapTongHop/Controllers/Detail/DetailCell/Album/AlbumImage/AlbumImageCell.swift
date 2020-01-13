@@ -32,14 +32,14 @@ final class AlbumImageCell: UITableViewCell {
         collectionView.delegate = self
     }
 
-    @IBAction private func backTouchUpInside(_ sender: Any) {
+    @IBAction private func backButtonTouchUpInside(_ sender: Any) {
         guard index > 0 else { return }
         index -= 1
         collectionView.scrollToItem(at: IndexPath(item: index, section: 0),
                                     at: .left, animated: true)
     }
 
-    @IBAction private func nextTouchUpInside(_ sender: Any) {
+    @IBAction private func nextButtonTouchUpInside(_ sender: Any) {
         guard index < viewModel.numberOfItems() - 1 else { return }
         index += 1
         collectionView.scrollToItem(at: IndexPath(item: index, section: 0),

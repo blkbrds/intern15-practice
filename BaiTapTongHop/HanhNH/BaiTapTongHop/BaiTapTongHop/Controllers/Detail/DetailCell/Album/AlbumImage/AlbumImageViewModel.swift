@@ -12,8 +12,8 @@ final class AlbumImageViewModel {
 
     private let imageNames: [String]
     
-    init(images: [String] = []) {
-        self.imageNames = images
+    init(imageNames: [String] = []) {
+        self.imageNames = imageNames
     }
 }
 
