@@ -17,6 +17,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addCustomView()
+        title = "Introduction"
         configButton(button: unFavoriteButton)
         configButton(button: favoriteButton)
     }
@@ -25,9 +26,11 @@ final class ViewController: UIViewController {
         guard let customInforUser = Bundle.main.loadNibNamed("InforUser", owner: self, options: nil)?.first as? InforUser else { return }
         customInforUser.frame = inforView.bounds
         customInforUser.delegate = self
+        inforView.clipsToBounds = true
+        inforView.layer.cornerRadius = 10
         inforView.addSubview(customInforUser)
     }
-    
+
     private func configButton(button: UIButton) {
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
@@ -38,7 +41,7 @@ extension ViewController: InforUserDelegate {
     func customView(_ customview: InforUser, needPerfom action: InforUser.Action) {
         switch action {
         case .closeView:
-            inforView.isHidden = true
+            self.inforView.isHidden = true
         }
     }
 }

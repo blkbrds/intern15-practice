@@ -19,7 +19,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
 
         let viewController = ViewController()
-        window?.rootViewController = viewController
+        let navi = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navi
     }
 }
 
