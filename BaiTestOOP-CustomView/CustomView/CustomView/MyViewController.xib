@@ -16,9 +16,42 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="khn-YU-ROu">
+                    <rect key="frame" x="80" y="646" width="254" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsT-iS-z3o">
+                            <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
+                            <color key="backgroundColor" red="0.96848052740000001" green="0.796298375" blue="0.44095484629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Favorite"/>
+                            <connections>
+                                <action selector="favoriteAction:" destination="-1" eventType="touchUpInside" id="kOf-a8-zoV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RB4-Hr-fLZ">
+                            <rect key="frame" x="147" y="0.0" width="107" height="50"/>
+                            <color key="backgroundColor" red="0.96848052740000001" green="0.796298375" blue="0.44095484629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Unfavorite"/>
+                            <connections>
+                                <action selector="actionButton:" destination="-1" eventType="touchUpInside" id="oTI-3X-e4s"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="VnS-tI-av0"/>
+                        <constraint firstAttribute="width" constant="254" id="wyl-fC-GWT"/>
+                    </constraints>
+                </stackView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="khn-YU-ROu" secondAttribute="bottom" constant="200" id="68P-w3-ouY"/>
+                <constraint firstItem="khn-YU-ROu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="9gA-ob-GNQ"/>
+                <constraint firstItem="khn-YU-ROu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Aaf-f1-Hma"/>
+                <constraint firstAttribute="trailing" secondItem="khn-YU-ROu" secondAttribute="trailing" constant="80" id="g5O-uH-Ovd"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="102"/>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
         </view>
     </objects>
 </document>
