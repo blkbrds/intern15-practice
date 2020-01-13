@@ -25,7 +25,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuU-Iw-YkQ">
-                    <rect key="frame" x="20" y="621.5" width="177" height="42"/>
+                    <rect key="frame" x="40" y="621.5" width="157" height="42"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <state key="normal" title="Un-Favorite">
@@ -33,7 +33,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-f4-rVT">
-                    <rect key="frame" x="217" y="621.5" width="177" height="42"/>
+                    <rect key="frame" x="217" y="621.5" width="157" height="42"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <state key="normal" title="Favorite">
@@ -48,9 +48,9 @@
                 <constraint firstItem="eaL-f4-rVT" firstAttribute="leading" secondItem="KuU-Iw-YkQ" secondAttribute="trailing" constant="20" id="Ig3-F7-uhn"/>
                 <constraint firstItem="eaL-f4-rVT" firstAttribute="width" secondItem="KuU-Iw-YkQ" secondAttribute="width" id="Kad-ev-RCZ"/>
                 <constraint firstItem="4dh-5c-zww" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Rsr-8z-Bfl"/>
-                <constraint firstItem="KuU-Iw-YkQ" firstAttribute="leading" secondItem="4dh-5c-zww" secondAttribute="leading" id="UhG-7D-jfk"/>
+                <constraint firstItem="KuU-Iw-YkQ" firstAttribute="leading" secondItem="4dh-5c-zww" secondAttribute="leading" constant="20" id="UhG-7D-jfk"/>
                 <constraint firstItem="eaL-f4-rVT" firstAttribute="centerY" secondItem="KuU-Iw-YkQ" secondAttribute="centerY" id="VS1-7Z-ZZ3"/>
-                <constraint firstItem="eaL-f4-rVT" firstAttribute="trailing" secondItem="4dh-5c-zww" secondAttribute="trailing" id="ixF-KT-PbH"/>
+                <constraint firstItem="eaL-f4-rVT" firstAttribute="trailing" secondItem="4dh-5c-zww" secondAttribute="trailing" constant="-20" id="ixF-KT-PbH"/>
                 <constraint firstItem="4dh-5c-zww" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lYv-To-dxG"/>
                 <constraint firstItem="KuU-Iw-YkQ" firstAttribute="top" secondItem="4dh-5c-zww" secondAttribute="bottom" constant="20" id="zl1-dR-jtV"/>
             </constraints>

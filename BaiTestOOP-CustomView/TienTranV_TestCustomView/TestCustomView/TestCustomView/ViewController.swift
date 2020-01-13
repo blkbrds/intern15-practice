@@ -30,7 +30,7 @@ final class ViewController: UIViewController {
     
     private func configButton(button: UIButton) {
         button.clipsToBounds = true
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 10
     }
 }
 
