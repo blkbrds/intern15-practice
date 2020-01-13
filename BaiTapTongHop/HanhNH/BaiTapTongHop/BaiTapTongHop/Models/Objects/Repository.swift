@@ -8,15 +8,17 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class Repository {
-    var avatarUrl: String
-    var nameApp: String
-    var createdAt: String
-    var watchersCount: Int
-    var avatarImage: UIImage?
-    var forksCount: Int
-    var description: String
+    
+    @objc dynamic var avatarUrl: String
+    @objc dynamic var nameApp: String
+    @objc dynamic var createdAt: String
+    @objc dynamic var watchersCount: Int
+    @objc dynamic var avatarImage: UIImage?
+    @objc dynamic var forksCount: Int
+    @objc dynamic var description: String
 
     init(json: JSON) {
         self.createdAt = json["created_at"] as! String

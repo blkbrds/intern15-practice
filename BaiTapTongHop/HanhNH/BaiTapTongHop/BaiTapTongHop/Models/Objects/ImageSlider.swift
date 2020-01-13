@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class ImageSlider {
-    var imageName: String
+    @objc dynamic var imageName: String
 
     init(imageName: String) {
         self.imageName = imageName

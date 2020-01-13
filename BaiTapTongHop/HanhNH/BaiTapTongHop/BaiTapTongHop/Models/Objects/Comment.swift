@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 final class Comment {
-    private var avatarImage: UIImage
-    private var name: String
-    private var content: String
-    private var createds: Date
+    @objc dynamic private var avatarImage: UIImage
+    @objc dynamic private var name: String
+    @objc dynamic private var content: String
+    @objc dynamic private var createds: Date
 
     init(avatar: UIImage, name: String, status: String, created: Date) {
         self.avatarImage = avatar
