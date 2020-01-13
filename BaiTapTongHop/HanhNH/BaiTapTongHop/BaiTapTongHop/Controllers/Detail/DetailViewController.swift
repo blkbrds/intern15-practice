@@ -19,7 +19,7 @@ final class DetailViewController: BaseViewController {
         updateUI()
     }
 
-    func updateUI() {
+    private func updateUI() {
         configTableView()
     }
 
@@ -33,7 +33,7 @@ final class DetailViewController: BaseViewController {
         navigationController?.pushViewController(FavoriteViewController(), animated: true)
     }
 
-    func configTableView () {
+    private func configTableView () {
         tableView.register(name: CellIdentifier.commentViewCell.rawValue)
         tableView.register(name: CellIdentifier.albumImageCell.rawValue)
         tableView.register(name: CellIdentifier.descriptionCell.rawValue)

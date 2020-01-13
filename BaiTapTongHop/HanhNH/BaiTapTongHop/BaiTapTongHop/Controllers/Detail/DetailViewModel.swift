@@ -11,7 +11,7 @@ import UIKit
 
 final class DetailViewModel {
 
-    let user: User
+    private let user: User
     
     init() {
         user = DummyData.userVinh

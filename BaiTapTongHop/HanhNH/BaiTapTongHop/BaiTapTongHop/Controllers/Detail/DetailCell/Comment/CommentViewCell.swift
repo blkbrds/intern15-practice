@@ -31,11 +31,11 @@ final class CommentViewCell: UITableViewCell {
         avatarImageView.clipsToBounds = true
     }
 
-    func updateDetail() {
+    private func updateDetail() {
         guard let viewModel = viewModel else { return }
         nameImageLabel.text = viewModel.userName
         statusLabel.text = viewModel.contentComment
-        avatarImageView.image = UIImage(named: viewModel.avatar)
+        avatarImageView.image = UIImage(named: viewModel.avatarName)
         daysAgoLabel.text = viewModel.created
     }
 }

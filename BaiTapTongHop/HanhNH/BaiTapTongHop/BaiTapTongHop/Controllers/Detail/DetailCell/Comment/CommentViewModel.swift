@@ -24,7 +24,7 @@ extension CommentViewModel {
         return comment.content
     }
     
-    var avatar: String {
+    var avatarName: String {
         return comment.user.avatarName
     }
     

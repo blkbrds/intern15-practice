@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-struct Comment {
-    
+struct Comment  {
     var content: String
     var createdDates: Date
     var user: User
