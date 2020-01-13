@@ -14,9 +14,9 @@ class NhanVienCongTy {
 
 class KySu: NhanVienCongTy {
 	var chuyenNganh: String
-	init(tenNhanVien: String, tuoiNhanVien: Int, gioiTinh: String, diaChi: String, chuyenNganh : String) {
+	init(tenNhanVien: String, tuoiNhanVien: Int, gioiTinh: String, diaChi: String, chuyenNganh: String) {
 		self.chuyenNganh = chuyenNganh
-		super.init(tenNhanVien: tenNhanVien, tuoiNhanVien: tuoiNhanVien, gioiTinh: gioiTinh, diaChi: diaChi			)
+		super.init(tenNhanVien: tenNhanVien, tuoiNhanVien: tuoiNhanVien, gioiTinh: gioiTinh, diaChi: diaChi)
 	}
 }
 
@@ -36,19 +36,39 @@ class NhanVien: NhanVienCongTy {
 	}
 }
 
-class QuanLyNhanSu  {
-	func themCongnhan () -> CongNhan {
-		let congNhan1 = CongNhan(tenNhanVien: "Hien", tuoiNhanVien: 31, gioiTinh: "nam", diaChi: "vu", capBac: 3)
-		return congNhan1
-	}
-	func themKySu() -> KySu {
-		let kySu1 = KySu(tenNhanVien: "Hie", tuoiNhanVien: 31, gioiTinh: "nu", diaChi: "gd", chuyenNganh: "xay dung")
-		return kySu1
-	}
-	func themNhanVien() -> NhanVien {
-		let nhanVien1 = NhanVien(tenNhanVien: "lan", tuoiNhanVien: 12, gioiTinh: "nam", diaChi: "bc", congViec: "lao cong")
-		return nhanVien1
+class QuanLyNhanSu {
+	var danhSachNhanVien: [NhanVien] = []
+	var danhSachKySu: [KySu] = []
+	var danhSachCongNhan: [CongNhan] = []
+	init(congNhan: [CongNhan], kySu: [KySu], nhanVien: [NhanVien]) {
+		self.danhSachKySu = kySu
+		self.danhSachCongNhan = congNhan
+		self.danhSachNhanVien = nhanVien
 	}
 
+	func themCongnhan (congNhan: CongNhan) {
+		danhSachCongNhan.append(congNhan)
+	}
+
+	func themKySu(kySu: KySu) {
+		danhSachKySu.append(kySu)
+	}
+
+	func themNhanVien(nhanVien: NhanVien) {
+		danhSachNhanVien.append(nhanVien)
+	}
+
+	func timKiem (Ten: String) -> Bool {
+		for i in danhSachNhanVien {
+			if i.tenNhanVien == Ten {
+				return true
+			}
+		}
+		return false
+	}
+	func Show () {
+		for i in danhSachNhanVien {
+			print(" \(danhSachNhanVien[i])")
+		}
+	}
 }
-
