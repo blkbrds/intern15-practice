@@ -15,16 +15,16 @@ final class View2ViewController: UIViewController {
         title = "View 2"
     }
 
-    @IBAction private func pushToNextButton() {
+    @IBAction private func pushToNextScreen() {
         let vc = View3ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction private func pushToPreviousButton() {
+    @IBAction private func popToPreviousScreen() {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction private func pushToRootButton() {
+    @IBAction private func popToHome() {
         navigationController?.popToRootViewController(animated: true)
     }
 }

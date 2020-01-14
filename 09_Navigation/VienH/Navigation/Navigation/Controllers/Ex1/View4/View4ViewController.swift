@@ -15,7 +15,7 @@ final class View4ViewController: UIViewController {
         title = "View 4"
     }
 
-    @IBAction private func pushToPreviousView1Button(_ sender: Any) {
+    @IBAction private func popToPreviousFirstScreen(_ sender: Any) {
         guard let navi = navigationController else { return }
         for vc in navi.viewControllers {
             if let vc = vc as? View1ViewController {
@@ -25,7 +25,7 @@ final class View4ViewController: UIViewController {
         }
     }
 
-    @IBAction private func pushToPreviousView2Button(_ sender: Any) {
+    @IBAction private func popToPreviousSecondScreen(_ sender: Any) {
         guard let navi = navigationController else { return }
         for vc in navi.viewControllers {
             if let vc = vc as? View2ViewController {
@@ -35,7 +35,7 @@ final class View4ViewController: UIViewController {
         }
     }
 
-    @IBAction private func pushToPreviousView3Button(_ sender: Any) {
+    @IBAction private func popToPreviousThirdScreen(_ sender: Any) {
         guard let navi = navigationController else { return }
         for vc in navi.viewControllers {
             if let vc = vc as? View3ViewController {
@@ -45,7 +45,7 @@ final class View4ViewController: UIViewController {
         }
     }
 
-    @IBAction private func popToRootButton(_ sender: Any) {
+    @IBAction private func popToHome(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 }

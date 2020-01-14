@@ -15,7 +15,7 @@ final class FirstViewController: UIViewController {
         title = "View"
     }
 
-    @IBAction private func pushToNextButton() {
+    @IBAction private func pushToNextScreen() {
         let vc = View1ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }

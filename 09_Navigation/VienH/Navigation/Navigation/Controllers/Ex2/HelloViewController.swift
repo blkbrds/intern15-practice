@@ -23,16 +23,16 @@ final class HelloViewController: UIViewController {
     }
 
     private func configNavigationBar() {
-        let rightButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(pushToViewController))
+        let rightButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(popToHome))
         navigationItem.rightBarButtonItem = rightButton
     }
 
-    @objc private func pushToViewController() {
+    @objc private func popToHome() {
         let vc = EditViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction private func pushToPreviousButton() {
+    @IBAction private func popToPreviousScreen() {
         navigationController?.popViewController(animated: true)
     }
 }

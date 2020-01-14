@@ -17,11 +17,11 @@ final class EditViewController: UIViewController {
     }
 
     private func configNavigationBar() {
-        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(pushToViewController))
+        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(popToHome))
         navigationItem.rightBarButtonItem = rightButton
     }
 
-    @objc private func pushToViewController() {
+    @objc private func popToHome() {
         let vc = HelloViewController()
         navigationController?.pushViewController(vc, animated: true)
     }

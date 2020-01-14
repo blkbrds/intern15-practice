@@ -42,7 +42,7 @@ final class ListProfileViewController: UIViewController {
         userAvatar.contentMode = .scaleToFill
         userAvatar.isUserInteractionEnabled = true
 
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBtn))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleBtnTapped))
         tapGesture.name = "\(name),\(image)"
         userAvatar.addGestureRecognizer(tapGesture)
         avatarView.addSubview(userAvatar)
@@ -57,7 +57,7 @@ final class ListProfileViewController: UIViewController {
         avatarView.addSubview(userName)
     }
 
-    @objc private func handleBtn(_ sender: UITapGestureRecognizer) {
+    @objc private func handleBtnTapped(_ sender: UITapGestureRecognizer) {
         guard let string = sender.name else { return }
 
         let s = string.split(separator: ",")

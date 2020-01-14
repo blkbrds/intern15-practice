@@ -36,15 +36,12 @@ final class View1ViewController: UIViewController {
         print("go to setting")
     }
 
-    @objc private func rightCustomView() {
-    }
-
-    @IBAction private func pushToNextButton() {
+    @IBAction private func pushToNextScreen() {
         let vc = View2ViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction private func pushToRootButton() {
+    @IBAction private func popToHome() {
         navigationController?.popToRootViewController(animated: true)
     }
 }
