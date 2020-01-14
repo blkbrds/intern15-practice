@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct User {
-    var id: String = ""
-    var name: String = ""
-    var avatarName: String = ""
-    var coverImageNames: [String] = []
-    var description: String = ""
-    var comments: [Comment] = []
+final class User: Object {
+    @objc dynamic var id: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var avatarName: String = ""
+    var coverImageNames: List<String>?
+    @objc dynamic var descriptionName: String = ""
+    var comments = List<Comment>()
 }

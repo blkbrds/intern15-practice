@@ -38,7 +38,7 @@ extension DetailViewModel {
         guard let sectionType = SectionType(rawValue: indexPath.section) else { return .zero }
         switch sectionType {
         case .albums, .map:
-            return Config.heightForRowAt
+            return Config.heightForRow
         case .comments, .description:
             return UITableView.automaticDimension
         }
@@ -58,7 +58,7 @@ extension DetailViewModel {
     }
 
     func makeAlbumViewModel(at indexPath: IndexPath) -> AlbumImageViewModel {
-        return AlbumImageViewModel(imageNames: user.coverImageNames)
+        return AlbumImageViewModel(imageNames: Array(user.coverImageNames!))
     }
 }
 
@@ -72,7 +72,7 @@ extension DetailViewModel {
     }
     
     struct Config {
-        static let heightForRowAt: CGFloat = 160
+        static let heightForRow: CGFloat = 160
         static let numberOfItems: Int = 1
     }
 }

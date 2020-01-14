@@ -17,7 +17,7 @@ struct CommentViewModel {
 extension CommentViewModel {
 
     var userName: String {
-        return comment.user.name
+        return comment.user!.name
     }
     
     var contentComment: String {
@@ -25,7 +25,7 @@ extension CommentViewModel {
     }
     
     var avatarName: String {
-        return comment.user.avatarName
+        return comment.user!.avatarName
     }
     
     var created: String {

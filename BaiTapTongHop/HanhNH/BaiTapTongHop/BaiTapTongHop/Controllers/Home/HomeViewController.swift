@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class HomeViewController: BaseViewController {
 
@@ -63,15 +64,22 @@ final class HomeViewController: BaseViewController {
         } else {
             viewModel.page = viewModel.page + 1
         }
-        viewModel.loadAPI() { [weak self] (result) in
-            guard let this = self else { return }
-            switch result {
-            case .success:
-                this.updateUI()
-            case .failure(let error):
-                this.alert(title: error.localizedDescription)
-            }
-        }
+//        viewModel.loadAPI() { [weak self] (result) in
+//            guard let this = self else { return }
+//            switch result {
+//            case .success:
+//                this.updateUI()
+//            case .failure(let error):
+//                this.alert(title: error.localizedDescription)
+//            }
+//        }
+//        viewModel.loadAPI() { (done) in
+//            if done {
+//                self.updateUI()
+//            } else {
+//                print("sai")
+//            }
+//        }
     }
 
     override func setupNavigation() {

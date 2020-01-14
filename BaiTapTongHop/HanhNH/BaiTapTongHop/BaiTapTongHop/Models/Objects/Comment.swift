@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import RealmSwift
 
-struct Comment  {
-    var content: String
-    var createdDate: Date
-    var user: User
+final class Comment: Object {
+    @objc dynamic var content: String = ""
+    @objc dynamic var createdDate: Date = Date()
+    @objc dynamic var user: User?
 }
