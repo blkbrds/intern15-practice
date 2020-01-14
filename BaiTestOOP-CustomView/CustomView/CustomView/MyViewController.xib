@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController" customModule="CustomView" customModuleProvider="target">
             <connections>
+                <outlet property="favoriteButton" destination="RB4-Hr-fLZ" id="Y7U-Jc-qfy"/>
+                <outlet property="unfavoriteButton" destination="ZsT-iS-z3o" id="ASU-Ed-iKA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,20 +19,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="khn-YU-ROu">
-                    <rect key="frame" x="80" y="646" width="254" height="50"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="khn-YU-ROu">
+                    <rect key="frame" x="50" y="656" width="314" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsT-iS-z3o">
-                            <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
-                            <color key="backgroundColor" red="0.96848052740000001" green="0.796298375" blue="0.44095484629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Favorite"/>
                             <connections>
                                 <action selector="favoriteAction:" destination="-1" eventType="touchUpInside" id="kOf-a8-zoV"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RB4-Hr-fLZ">
-                            <rect key="frame" x="147" y="0.0" width="107" height="50"/>
-                            <color key="backgroundColor" red="0.96848052740000001" green="0.796298375" blue="0.44095484629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <rect key="frame" x="192" y="0.0" width="122" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <state key="normal" title="Unfavorite"/>
                             <connections>
                                 <action selector="actionButton:" destination="-1" eventType="touchUpInside" id="oTI-3X-e4s"/>
@@ -38,17 +42,15 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="VnS-tI-av0"/>
-                        <constraint firstAttribute="width" constant="254" id="wyl-fC-GWT"/>
+                        <constraint firstAttribute="height" constant="40" id="VnS-tI-av0"/>
                     </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="khn-YU-ROu" secondAttribute="bottom" constant="200" id="68P-w3-ouY"/>
-                <constraint firstItem="khn-YU-ROu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="9gA-ob-GNQ"/>
+                <constraint firstItem="khn-YU-ROu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="9gA-ob-GNQ"/>
                 <constraint firstItem="khn-YU-ROu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Aaf-f1-Hma"/>
-                <constraint firstAttribute="trailing" secondItem="khn-YU-ROu" secondAttribute="trailing" constant="80" id="g5O-uH-Ovd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
