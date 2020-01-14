@@ -19,7 +19,7 @@ class DatePickerView: UIView {
 		super.init(coder: coder)
 	}
 
-	@IBAction func doneButton(_ sender: Any) {
+	@IBAction func touchUpInside(_ sender: Any) {
 		UIView.animate(withDuration: 0.5, delay: 0, animations: {
 			self.datePicker.alpha = 1
 		}) { (done) in
@@ -30,7 +30,7 @@ class DatePickerView: UIView {
 		delegate.datePickerDeligate(seleteDate: datePicker.date)
 	}
 
-	@IBAction func cancelButton(_ sender: Any) {
+	@IBAction func touchUpOutside(_ sender: Any) {
 		UIView.animate(withDuration: 0.5, delay: 0, animations: {
 			self.datePicker.alpha = 1
 		}) { (done) in

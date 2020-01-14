@@ -41,9 +41,9 @@ final class MyAvatarView: UIView {
 		nameLabel.addGestureRecognizer(tapGestureRecognizer)
 	}
 
-	func updateUI(imageName: String = "", name: String) {
+	func updateUI(imageName: String = "", getUserName: String) {
 		avatarImageView.image = UIImage(named: imageName)
-		nameLabel.text = name
+		nameLabel.text = getUserName
 	}
 
 	@objc private func tapGesture(sender: UITapGestureRecognizer) {
