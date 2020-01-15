@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  AutoLayout
-//
-//  Created by Ngoc Hien on 1/9/20.
-//  Copyright © 2020 NgocHien. All rights reserved.
-//
 
 import UIKit
 
@@ -15,7 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = CalculatorViewController()
+        window.rootViewController = ExtraExampeViewController()
         self.window = window
         window.makeKeyAndVisible()
     }

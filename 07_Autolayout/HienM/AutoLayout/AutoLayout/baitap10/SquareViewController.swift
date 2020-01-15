@@ -1,22 +1,22 @@
 import UIKit
 
 class SquareViewController: UIViewController {
-	@IBOutlet weak var blueButton: UIButton!
-	@IBOutlet weak var pinkButton: UIButton!
-	@IBOutlet weak var brownButton: UIButton!
-	@IBOutlet weak var greenButton: UIButton!
-	@IBOutlet weak var orangesButton: UIButton!
+	@IBOutlet var squareButton: [UIButton]!
+	@IBOutlet var widthWidthConstraintButtons: [NSLayoutConstraint]!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 	}
-	let CGsizeBig = CGSize(width: 160, height: 160)
-	let CGsizeSmall = CGSize(width: 80, height: 80)
-
-	@IBAction func actionPinkButton(_ sender: UIButton) {
+	@IBAction func squareButton(_ sender: UIButton) {
+		let widthList = widthWidthConstraintButtons.map({ $0.constant })
+		let max = widthList.max() ?? 0.0
+		print(max)
+		widthWidthConstraintButtons.forEach({
+			$0.constant = 80
+		})
+		widthWidthConstraintButtons[sender.tag].constant = 160
 		UIView.animate(withDuration: 1) {
-			
+			self.view.layoutIfNeeded()
 		}
 	}
-
 }

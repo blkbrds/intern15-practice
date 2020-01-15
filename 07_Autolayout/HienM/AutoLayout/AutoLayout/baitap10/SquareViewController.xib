@@ -4,17 +4,23 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SquareViewController" customModule="AutoLayout" customModuleProvider="target">
             <connections>
-                <outlet property="blueButton" destination="wfu-LS-XXt" id="Vhs-9L-eVz"/>
-                <outlet property="brownButton" destination="alt-nb-vIu" id="qrI-Df-Mpa"/>
-                <outlet property="greenButton" destination="IgD-ZU-uzR" id="1bg-br-kJh"/>
-                <outlet property="orangesButton" destination="cqQ-AG-wYy" id="HHk-mF-1eH"/>
-                <outlet property="pinkButton" destination="6NB-Qh-Dq6" id="M8G-DH-uRA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="squareButton" destination="wfu-LS-XXt" collectionClass="NSMutableArray" id="PdJ-sN-mcf"/>
+                <outletCollection property="squareButton" destination="alt-nb-vIu" collectionClass="NSMutableArray" id="V2c-qb-7GZ"/>
+                <outletCollection property="squareButton" destination="6NB-Qh-Dq6" collectionClass="NSMutableArray" id="naB-Aa-E3F"/>
+                <outletCollection property="squareButton" destination="cqQ-AG-wYy" collectionClass="NSMutableArray" id="4T7-wI-Z3E"/>
+                <outletCollection property="squareButton" destination="IgD-ZU-uzR" collectionClass="NSMutableArray" id="ZAR-wf-HQw"/>
+                <outletCollection property="widthWidthConstraintButtons" destination="Tnj-uz-Ulj" collectionClass="NSMutableArray" id="bTj-eW-1HY"/>
+                <outletCollection property="widthWidthConstraintButtons" destination="uIG-8I-uOu" collectionClass="NSMutableArray" id="L9S-hX-gdx"/>
+                <outletCollection property="widthWidthConstraintButtons" destination="vS7-UJ-zr9" collectionClass="NSMutableArray" id="Nic-XH-pGj"/>
+                <outletCollection property="widthWidthConstraintButtons" destination="SJz-KI-UUJ" collectionClass="NSMutableArray" id="KSe-PO-hYl"/>
+                <outletCollection property="widthWidthConstraintButtons" destination="93l-rJ-mMn" collectionClass="NSMutableArray" id="pip-TQ-Fcx"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,89 +28,91 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Afa-HJ-Hho">
-                    <rect key="frame" x="177" y="44" width="60" height="808"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hzZ-Qc-3AN">
+                    <rect key="frame" x="0.0" y="44" width="414" height="808"/>
                     <subviews>
-                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4b-bh-P0n">
-                            <rect key="frame" x="15" y="0.0" width="30" height="0.0"/>
-                            <color key="backgroundColor" red="0.73305019640000002" green="1" blue="0.98544906489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmK-Gh-Lky">
+                            <rect key="frame" x="167" y="0.0" width="80" height="0.0"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" id="3Mk-wS-y9H"/>
+                                <constraint firstAttribute="height" id="boz-Ug-82u"/>
                             </constraints>
-                        </button>
-                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-LS-XXt">
-                            <rect key="frame" x="0.0" y="104.5" width="60" height="60"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfu-LS-XXt">
+                            <rect key="frame" x="127" y="54.5" width="160" height="160"/>
                             <color key="backgroundColor" red="0.73305019640000002" green="1" blue="0.98544906489999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="wfu-LS-XXt" secondAttribute="height" multiplier="1:1" id="kV7-RY-1Jk"/>
+                                <constraint firstAttribute="width" constant="160" id="Tnj-uz-Ulj"/>
+                                <constraint firstAttribute="width" secondItem="wfu-LS-XXt" secondAttribute="height" multiplier="1:1" id="zOv-Qf-Pf1"/>
                             </constraints>
                             <connections>
-                                <action selector="actionPinkButton:" destination="-1" eventType="touchUpInside" id="eEF-m2-QLI"/>
+                                <action selector="squareButton:" destination="-1" eventType="touchUpInside" id="HSZ-m6-C7H"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NB-Qh-Dq6">
-                            <rect key="frame" x="15" y="269.5" width="30" height="30"/>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alt-nb-vIu">
+                            <rect key="frame" x="167" y="269.5" width="80" height="80"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="uIG-8I-uOu"/>
+                                <constraint firstAttribute="width" secondItem="alt-nb-vIu" secondAttribute="height" multiplier="1:1" id="z7C-j0-Ibg"/>
+                            </constraints>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="squareButton:" destination="-1" eventType="touchUpInside" id="Vvt-91-PfE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NB-Qh-Dq6">
+                            <rect key="frame" x="167" y="404" width="80" height="80"/>
                             <color key="backgroundColor" red="1" green="0.33739096439999999" blue="0.97725798050000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="6NB-Qh-Dq6" secondAttribute="height" multiplier="1:1" id="913-p9-GlQ"/>
+                                <constraint firstAttribute="width" secondItem="6NB-Qh-Dq6" secondAttribute="height" multiplier="1:1" id="sGh-BY-FGV"/>
+                                <constraint firstAttribute="width" constant="80" id="vS7-UJ-zr9"/>
                             </constraints>
                             <connections>
-                                <action selector="actionPinkButton:" destination="-1" eventType="touchUpInside" id="Yg9-aj-Gjd"/>
+                                <action selector="squareButton:" destination="-1" eventType="touchUpInside" id="L6d-OZ-uQA"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-AG-wYy">
-                            <rect key="frame" x="15" y="404" width="30" height="30"/>
-                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqQ-AG-wYy">
+                            <rect key="frame" x="167" y="538.5" width="80" height="80"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="cqQ-AG-wYy" secondAttribute="height" multiplier="1:1" id="gPd-n6-Maj"/>
+                                <constraint firstAttribute="width" constant="80" id="SJz-KI-UUJ"/>
+                                <constraint firstAttribute="width" secondItem="cqQ-AG-wYy" secondAttribute="height" multiplier="1:1" id="wXL-dx-FOq"/>
                             </constraints>
                             <connections>
-                                <action selector="actionPinkButton:" destination="-1" eventType="touchUpInside" id="y8U-D0-pB6"/>
+                                <action selector="squareButton:" destination="-1" eventType="touchUpInside" id="mBH-4W-Ivy"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgD-ZU-uzR">
-                            <rect key="frame" x="15" y="538.5" width="30" height="30"/>
-                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgD-ZU-uzR">
+                            <rect key="frame" x="167" y="673.5" width="80" height="80"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="IgD-ZU-uzR" secondAttribute="height" multiplier="1:1" id="kxE-Mm-eQl"/>
+                                <constraint firstAttribute="width" constant="80" id="93l-rJ-mMn"/>
+                                <constraint firstAttribute="width" secondItem="IgD-ZU-uzR" secondAttribute="height" multiplier="1:1" id="x0N-yv-fRf"/>
                             </constraints>
                             <connections>
-                                <action selector="actionPinkButton:" destination="-1" eventType="touchUpInside" id="5yk-Rj-cMD"/>
+                                <action selector="squareButton:" destination="-1" eventType="touchUpInside" id="rgz-mb-sOp"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alt-nb-vIu">
-                            <rect key="frame" x="15" y="673.5" width="30" height="30"/>
-                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Km-Lw-OkL">
+                            <rect key="frame" x="167" y="808" width="80" height="0.0"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="alt-nb-vIu" secondAttribute="height" multiplier="1:1" id="j1e-oa-dME"/>
+                                <constraint firstAttribute="height" id="T4f-63-1s5"/>
                             </constraints>
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <connections>
-                                <action selector="actionPinkButton:" destination="-1" eventType="touchUpInside" id="E0w-Bb-FEf"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-kh-z0r">
-                            <rect key="frame" x="15" y="808" width="30" height="0.0"/>
-                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" id="EkT-D2-cis"/>
-                            </constraints>
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                        </button>
+                        </view>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="wfu-LS-XXt" firstAttribute="height" secondItem="6NB-Qh-Dq6" secondAttribute="height" multiplier="2" id="qS0-ke-zog"/>
-                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Afa-HJ-Hho" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="6k6-xL-bUB"/>
-                <constraint firstItem="Afa-HJ-Hho" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Hd-7P-ToM"/>
-                <constraint firstItem="Afa-HJ-Hho" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZMy-Iy-wec"/>
+                <constraint firstItem="hzZ-Qc-3AN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="EeX-uc-SWF"/>
+                <constraint firstItem="hzZ-Qc-3AN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fgY-RJ-XUv"/>
+                <constraint firstItem="hzZ-Qc-3AN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="r5y-zm-wL0"/>
+                <constraint firstItem="hzZ-Qc-3AN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zY8-3G-Qia"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="106"/>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </view>
     </objects>
 </document>
