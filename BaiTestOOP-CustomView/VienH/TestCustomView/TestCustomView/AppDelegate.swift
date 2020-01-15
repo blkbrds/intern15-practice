@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  testcustom
+//  TestCustomView
 //
-//  Created by user on 1/13/20.
+//  Created by user on 1/15/20.
 //  Copyright © 2020 VienH. All rights reserved.
 //
 
