@@ -10,11 +10,43 @@ import Foundation
 import UIKit
 
 final class DetailViewModel {
-
-    private let user: User
     
-    init() {
-        user = DummyData.userVinh
+    var user: User
+    
+    init(user: User = User()) {
+        self.user = user
+    }
+    
+//    func saveRealm(completion: Completion) {
+//        Repository.saveRepository(repo: repo) { (result) in
+//            switch result {
+//            case .success:
+//                completion(.success(nil))
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
+//        }
+//    }
+    func saveLikedUser(completion: Completion) {
+        User.saveUser(user: user) { (result) in
+            switch result {
+            case .success:
+                completion(.success(nil))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func deleteLikedUser(completion: Completion) {
+        User.delete(user: user) { (result) in
+            switch result {
+            case .success:
+                completion(.success(nil))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }
 
@@ -54,11 +86,11 @@ extension DetailViewModel {
     }
 
     func makeDescription(at indexPath: IndexPath) -> DescriptionViewModel {
-        return DescriptionViewModel(description: user.description)
+        return DescriptionViewModel(description: user.descriptionName)
     }
 
     func makeAlbumViewModel(at indexPath: IndexPath) -> AlbumImageViewModel {
-        return AlbumImageViewModel(imageNames: Array(user.coverImageNames!))
+        return AlbumImageViewModel(imageNames: Array(user.coverImageNames))
     }
 }
 
@@ -70,7 +102,7 @@ extension DetailViewModel {
         case map
         case comments
     }
-    
+
     struct Config {
         static let heightForRow: CGFloat = 160
         static let numberOfItems: Int = 1

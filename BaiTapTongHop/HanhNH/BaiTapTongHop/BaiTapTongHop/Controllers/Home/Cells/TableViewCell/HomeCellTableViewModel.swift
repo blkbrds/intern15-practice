@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeCellTableViewModel {
+final class HomeCellTableViewModel {
 
     var numberOfWatchers: Int
     var avatarImage: UIImage?
@@ -17,13 +17,13 @@ class HomeCellTableViewModel {
     var name: String
     var descriptionName: String
 
-    init(repo: Repository) {
-        self.numberOfWatchers = repo.watchersCount
-        self.numberOfForks = repo.forksCount
-        self.name = repo.nameApp
-        self.descriptionName = repo.descriptionName
-        if let repo = repo.avatarImage {
-            self.avatarImage = UIImage(data: repo)
+    init(user: User) {
+        self.numberOfWatchers = user.numberOfWatchers
+        self.numberOfForks = user.numberOfForks
+        self.name = user.name
+        self.descriptionName = user.descriptionName
+        if let repo = user.avatarName {
+            self.avatarImage = UIImage(named: repo)
         }
     }
 }

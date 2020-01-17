@@ -12,8 +12,49 @@ import RealmSwift
 final class User: Object {
     @objc dynamic var id: String = ""
     @objc dynamic var name: String = ""
-    @objc dynamic var avatarName: String = ""
-    var coverImageNames: List<String>?
+    @objc dynamic var avatarName: String?
+    var coverImageNames = List<String>()
     @objc dynamic var descriptionName: String = ""
     var comments = List<Comment>()
+    @objc var numberOfWatchers: Int = 0
+    @objc var numberOfForks: Int = 0
+
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+
+    static func saveUser(user: User, completion: APICompletion<Bool>) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.create(User.self, value: user, update: .all)
+                completion(.success(true))
+            }
+        } catch {
+            completion(.failure(APIError.errorRealm))
+        }
+    }
+
+    static func delete(user: User, completion: APICompletion<Bool>) {
+        do {
+            let realm = try Realm()
+            let object = realm.objects(User.self).filter("id = %@", user.id)
+            try realm.write {
+                realm.delete(object)
+                completion(.success(true))
+            }
+        } catch {
+            completion(.failure(APIError.errorRealm))
+        }
+    }
+
+    static func pickUsers(users: [User], completion: APICompletion<Results<User>>) {
+        do {
+            let realm = try Realm()
+            let object = realm.objects(User.self)
+            completion(.success(object))
+        } catch {
+            completion(.failure(APIError.errorRealm))
+        }
+    }
 }

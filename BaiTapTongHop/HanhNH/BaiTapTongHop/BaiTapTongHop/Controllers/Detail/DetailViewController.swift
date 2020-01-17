@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class DetailViewController: BaseViewController {
 
@@ -17,6 +18,7 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL)
     }
 
     private func updateUI() {
@@ -24,13 +26,40 @@ final class DetailViewController: BaseViewController {
     }
 
     override func setupNavigation() {
-        let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-navi-favorites"), style: .plain, target: self, action: #selector(showFavorites))
+        title = "\(viewModel.user.name)"
+        let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(showFavorites))
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
     }
 
+    @objc private func showUnFavorites() {
+//        if viewModel.likeFavorites {
+        viewModel.deleteLikedUser { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: this, action: #selector(showFavorites))
+                navigationItem.rightBarButtonItem = tableViewButton
+                tableViewButton.tintColor = .black
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
+    }
+
     @objc private func showFavorites() {
-        navigationController?.pushViewController(FavoriteViewController(), animated: true)
+//        if viewModel.likeFavorites {
+        viewModel.saveLikedUser { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-favorite"), style: .plain, target: this, action: #selector(showUnFavorites))
+                this.navigationItem.rightBarButtonItem = tableViewButton
+                tableViewButton.tintColor = .black
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
     }
 
     private func configTableView () {

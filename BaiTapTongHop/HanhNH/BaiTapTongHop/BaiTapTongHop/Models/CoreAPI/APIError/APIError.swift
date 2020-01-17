@@ -14,6 +14,7 @@ typealias Completion = (APIResult) -> Void
 enum APIError: Error {
     case error(String)
     case errorURL
+    case errorRealm
 
     var localizedDescription: String {
         switch self {
@@ -21,6 +22,8 @@ enum APIError: Error {
             return string
         case .errorURL:
             return "URL String is error."
+        case .errorRealm:
+            return "Not Realm"
         }
     }
 }

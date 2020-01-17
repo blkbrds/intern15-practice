@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         setupNavigation()
     }
-
+    
     func setupNavigation() { }
 }
 

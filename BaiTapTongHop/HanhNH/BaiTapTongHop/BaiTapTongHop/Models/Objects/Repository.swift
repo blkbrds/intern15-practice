@@ -30,8 +30,20 @@ import RealmSwift
         self.avatarUrl = owner["avatar_url"] as! String
 
     }
-    
-    required init() {
+
+    required init() { }
+
+    static func saveRepository(repo: Repository, completion: APICompletion<Bool>) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(repo)
+                completion(.success(true))
+            }
+        } catch(let error) {
+            print(error.localizedDescription)
+            completion(.failure(APIError.errorRealm))
+        }
     }
 }
 

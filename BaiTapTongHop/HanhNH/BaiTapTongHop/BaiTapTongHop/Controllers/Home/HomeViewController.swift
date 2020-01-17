@@ -58,12 +58,12 @@ final class HomeViewController: BaseViewController {
         collectionView.refreshControl = collectionRefreshControl
     }
 
-    private func configData(isRefresh: Bool) {
-        if isRefresh == true {
-            viewModel.page = 1
-        } else {
-            viewModel.page = viewModel.page + 1
-        }
+//    private func configData(isRefresh: Bool) {
+//        if isRefresh == true {
+//            viewModel.page = 1
+//        } else {
+//            viewModel.page = viewModel.page + 1
+//        }
 //        viewModel.loadAPI() { [weak self] (result) in
 //            guard let this = self else { return }
 //            switch result {
@@ -73,13 +73,15 @@ final class HomeViewController: BaseViewController {
 //                this.alert(title: error.localizedDescription)
 //            }
 //        }
-//        viewModel.loadAPI() { (done) in
-//            if done {
-//                self.updateUI()
-//            } else {
-//                print("sai")
-//            }
-//        }
+//    }
+    private func configData(isRefresh: Bool) {
+        viewModel.loadDummyData { (done) in
+            if done {
+                self.updateUI()
+            } else {
+                self.alert(title: Strings.notData)
+            }
+        }
     }
 
     override func setupNavigation() {
@@ -135,11 +137,11 @@ final class HomeViewController: BaseViewController {
 
     // MARK: - Action
     @objc func tableViewDidScrollToTop() {
-        configData(isRefresh: true)
+//        configData(isRefresh: true)
     }
 
     @objc func collectionViewDidScrollToTop() {
-        configData(isRefresh: true)
+//        configData(isRefresh: true)
     }
 }
 
@@ -159,7 +161,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if section == 0 {
             return 1
         }
-        return viewModel.repos.count
+        return viewModel.users.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -182,7 +184,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             cell.indexPath = indexPath
-            cell.delagate = self
+//            cell.delagate = self
             cell.viewModel = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
@@ -190,7 +192,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailViewController(), animated: true)
+        let vc = DetailViewController()
+        vc.viewModel = viewModel.getUser(at: indexPath)
+        navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -198,7 +202,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         if offsetY >= contentHeight - scrollView.frame.size.height {
-            configData(isRefresh: false)
+//            configData(isRefresh: false)
         }
     }
 
@@ -207,7 +211,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             let offsetY = scrollView.contentOffset.y
             let contentHeight = scrollView.contentSize.height
             if offsetY >= contentHeight - scrollView.frame.size.height {
-                configData(isRefresh: false)
+//                configData(isRefresh: false)
             }
         }
     }
@@ -236,7 +240,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if section == 0 {
             return 1
         } else if section == 1 {
-            return viewModel.repos.count
+            return viewModel.users.count
         }
         return 0
     }
@@ -253,7 +257,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell.indexPath = indexPath
-            cell.delegateCollection = self
+//            cell.delegateCollection = self
             cell.viewModel = viewModel.getHomeCellModel(atIndexPath: indexPath)
             return cell
         }
@@ -293,33 +297,33 @@ extension HomeViewController: SliderCollectionCellDataSource {
     }
 }
 
-extension HomeViewController: HomeTableViewCellDelagete {
-    func getImage(cell: HomeTableViewCell, needPerform action: HomeTableViewCell.Action) {
-        switch action {
-        case .getImageCollection(let indexPath):
-            if let indexPath = indexPath {
-                viewModel.downloadImage(indexPath: indexPath) { (image) in
-                    //co mot cell khong ton tai
-                    if self.tableView.indexPathsForVisibleRows?.contains(indexPath) == true {
-                        self.tableView.reloadRows(at: [indexPath], with: .none)
-                    }
-                }
-            }
-        }
-    }
-}
+//extension HomeViewController: HomeTableViewCellDelagete {
+//    func getImage(cell: HomeTableViewCell, needPerform action: HomeTableViewCell.Action) {
+//        switch action {
+//        case .getImageCollection(let indexPath):
+//            if let indexPath = indexPath {
+//                viewModel.downloadImage(indexPath: indexPath) { (image) in
+//                    //co mot cell khong ton tai
+//                    if self.tableView.indexPathsForVisibleRows?.contains(indexPath) == true {
+//                        self.tableView.reloadRows(at: [indexPath], with: .none)
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 
-extension HomeViewController: HomeCollectionViewCellDelegate {
-    func cell(cell: HomeCollectionViewCell, needPerform action: HomeCollectionViewCell.Action) {
-        switch action {
-        case .getImageCollection(let indexPath):
-            if let indexPath = indexPath {
-                viewModel.downloadImage(indexPath: indexPath) { (image) in
-                    if self.collectionView.indexPathsForVisibleItems.contains(indexPath) == true {
-                        self.collectionView.reloadItems(at: [indexPath])
-                    }
-                }
-            }
-        }
-    }
-}
+//extension HomeViewController: HomeCollectionViewCellDelegate {
+//    func cell(cell: HomeCollectionViewCell, needPerform action: HomeCollectionViewCell.Action) {
+//        switch action {
+//        case .getImageCollection(let indexPath):
+//            if let indexPath = indexPath {
+//                viewModel.downloadImage(indexPath: indexPath) { (image) in
+//                    if self.collectionView.indexPathsForVisibleItems.contains(indexPath) == true {
+//                        self.collectionView.reloadItems(at: [indexPath])
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
