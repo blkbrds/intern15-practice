@@ -48,11 +48,25 @@ final class User: Object {
         }
     }
 
-    static func pickUsers(users: [User], completion: APICompletion<Results<User>>) {
+    static func pickUsers(completion: APICompletion<Results<User>>) {
         do {
             let realm = try Realm()
             let object = realm.objects(User.self)
             completion(.success(object))
+        } catch {
+            completion(.failure(APIError.errorRealm))
+        }
+    }
+
+    static func checkLikedUser(user: User, completion: APICompletion<Bool>) {
+        do {
+            let realm = try Realm()
+            let object = realm.objects(User.self).filter("id = %@", user.id)
+            if object.first != nil {
+                completion(.success(true))
+            } else {
+                completion(.success(false))
+            }
         } catch {
             completion(.failure(APIError.errorRealm))
         }

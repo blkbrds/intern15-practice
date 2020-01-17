@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 
 final class DetailViewModel {
-    
+
     var user: User
-    
+    var isLiked = false
+
     init(user: User = User()) {
         self.user = user
     }
-    
+
 //    func saveRealm(completion: Completion) {
 //        Repository.saveRepository(repo: repo) { (result) in
 //            switch result {
@@ -37,13 +38,25 @@ final class DetailViewModel {
             }
         }
     }
-    
+
     func deleteLikedUser(completion: Completion) {
         User.delete(user: user) { (result) in
             switch result {
             case .success:
                 completion(.success(nil))
             case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
+    func checkLikedUser(completion: Completion) {
+        User.checkLikedUser(user: user) { (result) in
+            switch result {
+            case .success(let isLiked):
+                self.isLiked = isLiked
+                completion(.success(nil))
+            case.failure(let error):
                 completion(.failure(error))
             }
         }

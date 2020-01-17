@@ -22,7 +22,7 @@ final class FavoriteViewMoel {
     }
     
     func loadDataForForFavorite(completion: APICompletion<[User]>) {
-        User.pickUsers(users: users) { (result) in
+        User.pickUsers() { (result) in
             switch result {
             case .success(let users):
                 let usersData = Array(users)

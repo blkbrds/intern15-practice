@@ -27,18 +27,32 @@ final class DetailViewController: BaseViewController {
 
     override func setupNavigation() {
         title = "\(viewModel.user.name)"
-        let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(showFavorites))
-        navigationItem.rightBarButtonItem = tableViewButton
-        tableViewButton.tintColor = .black
+        viewModel.checkLikedUser { [weak self] (result) in
+            switch result {
+            case .success:
+                var image: UIImage?
+                if viewModel.isLiked {
+                    image = UIImage(named: "ic-favorite")
+                } else {
+                    image = UIImage(named: "ic-unfavorite")
+                }
+                let tableViewButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(buttonFavorites))
+                navigationItem.rightBarButtonItem = tableViewButton
+                tableViewButton.tintColor = .black
+            case .failure(let error):
+                self?.alert(title: error.localizedDescription)
+            }
+        }
     }
 
-    @objc private func showUnFavorites() {
-//        if viewModel.likeFavorites {
+    func setUpNaVi(bool: Bool) { }
+
+    @objc private func buttonUnFavorites() {
         viewModel.deleteLikedUser { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:
-                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: this, action: #selector(showFavorites))
+                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: this, action: #selector(buttonFavorites))
                 navigationItem.rightBarButtonItem = tableViewButton
                 tableViewButton.tintColor = .black
             case .failure(let error):
@@ -47,13 +61,12 @@ final class DetailViewController: BaseViewController {
         }
     }
 
-    @objc private func showFavorites() {
-//        if viewModel.likeFavorites {
+    @objc private func buttonFavorites() {
         viewModel.saveLikedUser { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:
-                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-favorite"), style: .plain, target: this, action: #selector(showUnFavorites))
+                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-favorite"), style: .plain, target: this, action: #selector(buttonUnFavorites))
                 this.navigationItem.rightBarButtonItem = tableViewButton
                 tableViewButton.tintColor = .black
             case .failure(let error):
