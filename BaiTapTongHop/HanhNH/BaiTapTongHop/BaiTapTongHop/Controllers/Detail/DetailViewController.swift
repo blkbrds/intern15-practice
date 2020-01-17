@@ -18,7 +18,6 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL)
     }
 
     private func updateUI() {
