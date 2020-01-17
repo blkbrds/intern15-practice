@@ -54,7 +54,7 @@ extension FavoriteViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.homeTableViewCell.rawValue, for: indexPath) as! HomeTableViewCell
-        cell.viewModel = viewModel.ViewModelForFavorite(at: indexPath)
+        cell.viewModel = viewModel.viewModelForItems(at: indexPath)
         return cell
     }
 }

@@ -18,16 +18,6 @@ final class DetailViewModel {
         self.user = user
     }
 
-//    func saveRealm(completion: Completion) {
-//        Repository.saveRepository(repo: repo) { (result) in
-//            switch result {
-//            case .success:
-//                completion(.success(nil))
-//            case .failure(let error):
-//                completion(.failure(error))
-//            }
-//        }
-//    }
     func saveLikedUser(completion: Completion) {
         User.saveUser(user: user) { (result) in
             switch result {

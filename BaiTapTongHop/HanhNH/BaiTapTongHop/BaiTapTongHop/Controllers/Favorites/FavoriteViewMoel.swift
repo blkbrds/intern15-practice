@@ -34,7 +34,7 @@ final class FavoriteViewMoel {
         }
     }
     
-    func ViewModelForFavorite(at indexPath: IndexPath) -> HomeCellTableViewModel {
+    func viewModelForItems(at indexPath: IndexPath) -> HomeCellTableViewModel {
         return HomeCellTableViewModel(user: users[indexPath.row])
     }
 }
