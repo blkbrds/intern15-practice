@@ -48,7 +48,7 @@ final class User: Object {
         }
     }
 
-    static func pickUsers(completion: APICompletion<Results<User>>) {
+    static func getAllOnRealm(completion: APICompletion<Results<User>>) {
         do {
             let realm = try Realm()
             let object = realm.objects(User.self)
@@ -57,7 +57,7 @@ final class User: Object {
             completion(.failure(APIError.errorRealm))
         }
     }
-
+    
     static func checkLikedUser(user: User, completion: APICompletion<Bool>) {
         do {
             let realm = try Realm()

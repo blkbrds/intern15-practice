@@ -22,7 +22,7 @@ final class FavoriteViewMoel {
     }
     
     func loadDataForForFavorite(completion: APICompletion<[User]>) {
-        User.pickUsers() { (result) in
+        User.getAllOnRealm() { (result) in
             switch result {
             case .success(let users):
                 let usersData = Array(users)

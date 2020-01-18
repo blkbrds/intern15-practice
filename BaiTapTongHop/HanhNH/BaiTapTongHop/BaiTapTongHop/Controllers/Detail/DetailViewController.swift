@@ -18,6 +18,9 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        viewModel.checkUserLided {
+            self.updateStatusFavoriteButton(isLike: self.viewModel.isLiked)
+        }
     }
 
     private func updateUI() {
@@ -26,50 +29,41 @@ final class DetailViewController: BaseViewController {
 
     override func setupNavigation() {
         title = "\(viewModel.user.name)"
-        viewModel.checkLikedUser { [weak self] (result) in
-            switch result {
-            case .success:
-                var image: UIImage?
-                if viewModel.isLiked {
-                    image = UIImage(named: "ic-favorite")
-                } else {
-                    image = UIImage(named: "ic-unfavorite")
+        let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
+        navigationItem.rightBarButtonItem = tableViewButton
+        tableViewButton.tintColor = .black
+    }
+    
+    func updateStatusFavoriteButton(isLike: Bool) {
+        if isLike {
+            navigationItem.rightBarButtonItem?.image = UIImage(named: "ic-favorite")
+        } else {
+            navigationItem.rightBarButtonItem?.image = UIImage(named: "ic-unfavorite")
+        }
+    }
+
+    @objc private func handleFavoriteButton() {
+        viewModel.checkUserLided {
+            if viewModel.isLiked {
+                viewModel.deleteLikedUser { [weak self] (result) in
+                    guard let this = self else { return }
+                    switch result {
+                    case .success:
+                        this.updateStatusFavoriteButton(isLike: false)
+                    case .failure(let error):
+                        this.alert(title: error.localizedDescription)
+                    }
                 }
-                let tableViewButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(buttonFavorites))
-                navigationItem.rightBarButtonItem = tableViewButton
-                tableViewButton.tintColor = .black
-            case .failure(let error):
-                self?.alert(title: error.localizedDescription)
-            }
-        }
-    }
-
-    func setUpNaVi(bool: Bool) { }
-
-    @objc private func buttonUnFavorites() {
-        viewModel.deleteLikedUser { [weak self] (result) in
-            guard let this = self else { return }
-            switch result {
-            case .success:
-                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: this, action: #selector(buttonFavorites))
-                navigationItem.rightBarButtonItem = tableViewButton
-                tableViewButton.tintColor = .black
-            case .failure(let error):
-                this.alert(title: error.localizedDescription)
-            }
-        }
-    }
-
-    @objc private func buttonFavorites() {
-        viewModel.saveLikedUser { [weak self] (result) in
-            guard let this = self else { return }
-            switch result {
-            case .success:
-                let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-favorite"), style: .plain, target: this, action: #selector(buttonUnFavorites))
-                this.navigationItem.rightBarButtonItem = tableViewButton
-                tableViewButton.tintColor = .black
-            case .failure(let error):
-                this.alert(title: error.localizedDescription)
+            } else {
+                viewModel.saveLikedUser { [weak self] (result) in
+                    guard let this = self else { return }
+                    switch result {
+                    case .success:
+                        this.updateStatusFavoriteButton(isLike: true)
+                    case .failure(let error):
+                        this.alert(title: error.localizedDescription)
+                    }
+                }
             }
         }
     }

@@ -17,7 +17,21 @@ final class DetailViewModel {
     init(user: User = User()) {
         self.user = user
     }
-
+    
+    func checkUserLided(completion: () -> Void) {
+        User.getAllOnRealm { (reslut) in
+            switch reslut {
+            case .success(let userData):
+                let userDatas = Array(userData)
+                let isContain = userDatas.contains { $0.id == user.id }
+                self.isLiked = isContain
+                completion()
+            case .failure:
+                completion()
+            }
+        }
+    }
+    
     func saveLikedUser(completion: Completion) {
         User.saveUser(user: user) { (result) in
             switch result {
@@ -52,7 +66,6 @@ final class DetailViewModel {
         }
     }
 }
-
 extension DetailViewModel {
 
     func numberOfSections() -> Int {
