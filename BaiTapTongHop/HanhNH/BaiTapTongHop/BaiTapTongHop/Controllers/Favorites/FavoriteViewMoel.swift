@@ -8,14 +8,25 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+
+protocol FavoriteViewModelDelegate: class {
+    func viewModel(_viewModel: FavoriteViewMoel, needperfomAction action: FavoriteViewMoel.Action)
+}
 
 final class FavoriteViewMoel {
     
     typealias complecion = (Bool, String) -> Void
     private var users: [User]
+    private var notificationToken: NotificationToken?
+    var delegate: FavoriteViewModelDelegate?
 
     init(users: [User] = [User()]) {
         self.users = users
+    }
+    
+    enum Action {
+        case reloadData
     }
     
     func numberOfRows(in section: Int) -> Int {
@@ -43,6 +54,13 @@ final class FavoriteViewMoel {
             case .failure(let error):
                 completion(.failure(error))
             }
+        }
+    }
+    
+    func setupObserve() {
+        let realm = try! Realm()
+        notificationToken = realm.objects(User.self).observe { action in
+            self.delegate?.viewModel(_viewModel: self, needperfomAction: .reloadData)
         }
     }
     

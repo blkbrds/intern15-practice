@@ -16,13 +16,10 @@ final class FavoriteViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fetchData()
-        configTableView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         fetchData()
+        viewModel.delegate = self
+        viewModel.setupObserve()
+        configTableView()
     }
 
     override func setupNavigation() {
@@ -108,5 +105,11 @@ extension FavoriteViewController: UITableViewDelegate {
             alert.addAction(cancelButton)
             present(alert, animated: true, completion: nil)
         }
+    }
+}
+
+extension FavoriteViewController: FavoriteViewModelDelegate {
+    func viewModel(_viewModel _: FavoriteViewMoel, needperfomAction action: FavoriteViewMoel.Action) {
+        fetchData()
     }
 }

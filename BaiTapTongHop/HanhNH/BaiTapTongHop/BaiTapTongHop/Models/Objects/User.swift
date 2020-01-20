@@ -96,4 +96,18 @@ final class User: Object {
             complection(.failure(APIError.errorRealm))
         }
     }
+    
+    static func setupObserve(compection: APICompletion<Bool>) {
+        do {
+            let realm = try Realm()
+            let observe = realm.objects(User.self).observe { (change) in
+                
+            }
+            try realm.write {
+                
+            }
+        } catch {
+            
+        }
+    }
 }
