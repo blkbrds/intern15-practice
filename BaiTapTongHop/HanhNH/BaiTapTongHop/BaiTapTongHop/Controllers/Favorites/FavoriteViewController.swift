@@ -13,30 +13,57 @@ final class FavoriteViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel = FavoriteViewMoel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+//        fetchData()
         configTableView()
-        fetchData()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        fetchData()
+        fetchData()
     }
 
     override func setupNavigation() {
         title = "Favorite"
+        // TODO: chức năng xoá tất cả favorited chưa cần review.
+//        if viewModel.getNumberOfFavoritedPlace() != 0 {
+//            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-delete"), style: .plain, target: self, action: #selector(removeAll))
+//            navigationItem.rightBarButtonItem = removeAllButton
+//            removeAllButton.tintColor = .black
+//        } else {
+//            navigationItem.rightBarButtonItem = nil
+//        }
+//        tableView.reloadData()
     }
+    // TODO: chức năng xoá tất cả favorited chưa cần review.
+//    @objc func removeAll() {
+//        let alertButton = UIAlertAction(title: "OK", style: .default) { (action) in
+//            self.viewModel.removeAll { (result) in
+//                switch result {
+//                case .failure(let error):
+//                    self.alert(title: error.localizedDescription)
+//                case .success:
+//                    self.alert(title: Strings.removeAllSuccess)
+//                }
+//            }
+//        }
+//        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        let alert = UIAlertController(title: Strings.ok, message: Strings.removeAll, preferredStyle: .alert)
+//        alert.addAction(alertButton)
+//        alert.addAction(cancelButton)
+//        present(alert, animated: true, completion: nil)
+//    }
 
     private func configTableView() {
         tableView.register(name: CellIdentifier.homeTableViewCell.rawValue)
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+
     private func fetchData() {
-        viewModel.loadDataForForFavorite { (reslut) in
+        viewModel.loadDataForFavorite { (reslut) in
             switch reslut {
             case .success(_):
                 tableView.reloadData()
@@ -63,8 +90,24 @@ extension FavoriteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alertButton = UIAlertAction(title: "OK", style: .default) { (action) in
+                self.viewModel.partialRemoval(at: indexPath) { (reslut) in
+                    switch reslut {
+                    case .success:
+                        self.alert(title: Strings.removeAProgramSuccess)
+                    case .failure(let error):
+                        self.alert(title: error.localizedDescription)
+                    }
+                }
+            }
+            let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let alert = UIAlertController(title: Strings.ok, message: Strings.removeAProgram, preferredStyle: .alert)
+            alert.addAction(alertButton)
+            alert.addAction(cancelButton)
+            present(alert, animated: true, completion: nil)
+        }
+    }
 }
-
-
-
-

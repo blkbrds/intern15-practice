@@ -21,6 +21,8 @@ final class DetailViewController: BaseViewController {
         viewModel.checkUserLided {
             self.updateStatusFavoriteButton(isLike: self.viewModel.isLiked)
         }
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL
+)
     }
 
     private func updateUI() {
