@@ -16,7 +16,7 @@ protocol DetailViewModelDelegate {
 
 final class DetailViewModel {
 
-    var user: User
+    var user: User?
     var isLiked = false
     var notification: NotificationToken?
     var delegate: DetailViewModelDelegate?
@@ -25,11 +25,12 @@ final class DetailViewModel {
         case reloadData
     }
 
-    init(user: User = User()) {
+    init(user: User? = nil) {
         self.user = user
     }
     
     func isFavoriteUser(completion: () -> Void) {
+        guard let user = user else { return }
         RealmManager.shared.isFavoriteUser(id: user.id) { (reslut) in
             switch reslut {
             case .success(let isLiked):
@@ -43,6 +44,7 @@ final class DetailViewModel {
     
     
     func saveLikedUser(completion: Completion) {
+        guard let user = user else { return }
         RealmManager.shared.saveUser(user: user) { (result) in
             switch result {
             case .success:
@@ -61,6 +63,7 @@ final class DetailViewModel {
     }
 
     func deleteLikedUser(completion: Completion) {
+        guard let user = user else { return }
         RealmManager.shared.delete(user: user) { (result) in
             switch result {
             case .success:
@@ -78,6 +81,7 @@ extension DetailViewModel {
     }
 
     func numberOfItems(section: Int) -> Int {
+        guard let user = user else { return 0 }
         guard let sectionType = SectionType(rawValue: section) else { return 0 }
         switch sectionType {
         case .albums, .description, .map:
@@ -97,7 +101,8 @@ extension DetailViewModel {
         }
     }
 
-    func makeCommentViewModel(at indexPath: IndexPath) -> CommentViewModel {
+    func makeCommentViewModel(at indexPath: IndexPath) -> CommentViewModel? {
+        guard let user = user else { return nil }
         let item = user.comments[indexPath.row]
         return CommentViewModel(comment: item)
     }
@@ -106,11 +111,13 @@ extension DetailViewModel {
         return MapViewModel()
     }
 
-    func makeDescription(at indexPath: IndexPath) -> DescriptionViewModel {
+    func makeDescription(at indexPath: IndexPath) -> DescriptionViewModel? {
+        guard let user = user else { return nil }
         return DescriptionViewModel(description: user.descriptionName)
     }
 
-    func makeAlbumViewModel(at indexPath: IndexPath) -> AlbumImageViewModel {
+    func makeAlbumViewModel(at indexPath: IndexPath) -> AlbumImageViewModel? {
+        guard let user = user else { return nil }
         return AlbumImageViewModel(imageNames: Array(user.coverImageNames))
     }
 }

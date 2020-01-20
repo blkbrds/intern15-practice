@@ -19,10 +19,6 @@ final class DetailViewController: BaseViewController {
         super.viewDidLoad()
         updateUI()
         setupData()
-//        viewModel.delegate = self
-//        viewModel.setupObserve()
-        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL
-        )
     }
 
     private func setupData() {
@@ -36,7 +32,7 @@ final class DetailViewController: BaseViewController {
     }
 
     override func setupNavigation() {
-        title = "\(viewModel.user.name)"
+        title = "\(viewModel.user?.name)"
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
@@ -109,8 +105,9 @@ extension DetailViewController: UITableViewDataSource {
         guard let type = DetailViewModel.SectionType(rawValue: indexPath.section) else { return UITableViewCell() }
         switch type {
         case .albums:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.albumImageCell.rawValue, for: indexPath) as? AlbumImageCell else { return UITableViewCell() }
-            cell.viewModel = viewModel.makeAlbumViewModel(at: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.albumImageCell.rawValue, for: indexPath) as? AlbumImageCell,
+            let vm = viewModel.makeAlbumViewModel(at: indexPath) else { return UITableViewCell() }
+            cell.viewModel = vm
             return cell
         case .description:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.descriptionCell.rawValue, for: indexPath) as? DescriptionCell else { return UITableViewCell() }
