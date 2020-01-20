@@ -34,7 +34,7 @@ final class FavoriteViewMoel {
     }
     
     func loadDataForFavorite(completion: APICompletion<[User]>) {
-        User.getAllOnRealm() { (result) in
+        RealmManager.shared.getAllOnRealm() { (result) in
             switch result {
             case .success(let users):
                 let usersData = Array(users)
@@ -47,7 +47,7 @@ final class FavoriteViewMoel {
     }
     
     func partialRemoval(at indexPath: IndexPath, completion: Completion) {
-        User.deletaPlace(id: users[indexPath.row].id) { (result) in
+        RealmManager.shared.deletaPlace(id: users[indexPath.row].id) { (result) in
             switch result {
             case .success:
                 completion(.success(nil))
@@ -65,7 +65,7 @@ final class FavoriteViewMoel {
     }
     
     func removeAll(completion: Completion) {
-        User.deleteAll { (result) in
+        RealmManager.shared.deleteAll { (result) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))

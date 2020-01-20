@@ -18,11 +18,17 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        viewModel.checkUserLiked {
+        setupData()
+//        viewModel.delegate = self
+//        viewModel.setupObserve()
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL
+        )
+    }
+
+    private func setupData() {
+        viewModel.isFavoriteUser {
             self.updateStatusFavoriteButton(isLike: self.viewModel.isLiked)
         }
-        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL
-)
     }
 
     private func updateUI() {
@@ -35,7 +41,7 @@ final class DetailViewController: BaseViewController {
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
     }
-    
+
     func updateStatusFavoriteButton(isLike: Bool) {
         if isLike {
             navigationItem.rightBarButtonItem?.image = UIImage(named: "ic-favorite")
@@ -45,7 +51,7 @@ final class DetailViewController: BaseViewController {
     }
 
     @objc private func handleFavoriteButton() {
-        viewModel.checkUserLiked {
+        viewModel.isFavoriteUser {
             if viewModel.isLiked {
                 viewModel.deleteLikedUser { [weak self] (result) in
                     guard let this = self else { return }
@@ -118,5 +124,10 @@ extension DetailViewController: UITableViewDataSource {
             cell.viewModel = viewModel.makeCommentViewModel(at: indexPath)
             return cell
         }
+    }
+}
+extension DetailViewController: DetailViewModelDelegate {
+    func viewModel(_viewModel: DetailViewModel, needperfomAction action: DetailViewModel.Action) {
+        tableView.reloadData()
     }
 }

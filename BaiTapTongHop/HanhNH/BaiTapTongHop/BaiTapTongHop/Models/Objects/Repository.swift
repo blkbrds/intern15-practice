@@ -42,7 +42,7 @@ import RealmSwift
             }
         } catch(let error) {
             print(error.localizedDescription)
-            completion(.failure(APIError.errorRealm))
+            completion(.failure(Errors.realmError))
         }
     }
 }

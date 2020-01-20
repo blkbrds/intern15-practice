@@ -8,23 +8,32 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+
+protocol DetailViewModelDelegate {
+     func viewModel(_viewModel: DetailViewModel, needperfomAction action: DetailViewModel.Action)
+}
 
 final class DetailViewModel {
 
     var user: User
     var isLiked = false
+    var notification: NotificationToken?
+    var delegate: DetailViewModelDelegate?
+    
+    enum Action {
+        case reloadData
+    }
 
     init(user: User = User()) {
         self.user = user
     }
     
-    func checkUserLiked(completion: () -> Void) {
-        User.getAllOnRealm { (reslut) in
+    func isFavoriteUser(completion: () -> Void) {
+        RealmManager.shared.isFavoriteUser(id: user.id) { (reslut) in
             switch reslut {
-            case .success(let userData):
-                let userDatas = Array(userData)
-                let isContain = userDatas.contains { $0.id == user.id }
-                self.isLiked = isContain
+            case .success(let isLiked):
+                self.isLiked = isLiked
                 completion()
             case .failure:
                 completion()
@@ -32,8 +41,9 @@ final class DetailViewModel {
         }
     }
     
+    
     func saveLikedUser(completion: Completion) {
-        User.saveUser(user: user) { (result) in
+        RealmManager.shared.saveUser(user: user) { (result) in
             switch result {
             case .success:
                 completion(.success(nil))
@@ -41,26 +51,21 @@ final class DetailViewModel {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func setupObserve() {
+        let realm = try! Realm()
+        notification = realm.objects(User.self).observe({ (action) in
+            self.delegate?.viewModel(_viewModel: self, needperfomAction: .reloadData)
+        })
     }
 
     func deleteLikedUser(completion: Completion) {
-        User.delete(user: user) { (result) in
+        RealmManager.shared.delete(user: user) { (result) in
             switch result {
             case .success:
                 completion(.success(nil))
             case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-
-    func checkLikedUser(completion: Completion) {
-        User.checkLikedUser(user: user) { (result) in
-            switch result {
-            case .success(let isLiked):
-                self.isLiked = isLiked
-                completion(.success(nil))
-            case.failure(let error):
                 completion(.failure(error))
             }
         }

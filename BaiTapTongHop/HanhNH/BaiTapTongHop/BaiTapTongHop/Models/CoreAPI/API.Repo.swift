@@ -43,7 +43,7 @@ extension APIManager.Repository {
 
                         completion(.success(repoResults))
                     } else {
-                        completion(.failure(.error(Strings.notData)))
+                        completion(.failure(Errors.noDataError))
                     }
                 }
             }
