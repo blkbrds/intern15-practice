@@ -21,7 +21,7 @@ final class FavoriteViewMoel {
     private var notificationToken: NotificationToken?
     var delegate: FavoriteViewModelDelegate?
 
-    init(users: [User] = [User()]) {
+    init(users: [User] = []) {
         self.users = users
     }
     
@@ -33,7 +33,7 @@ final class FavoriteViewMoel {
         return users.count
     }
     
-    func loadDataForFavorite(completion: APICompletion<[User]>) {
+    func loadDataForFavorite(completion: RealmCompletion<[User]>) {
         RealmManager.shared.getAllOnRealm() { (result) in
             switch result {
             case .success(let users):
@@ -46,7 +46,7 @@ final class FavoriteViewMoel {
         }
     }
     
-    func partialRemoval(at indexPath: IndexPath, completion: Completion) {
+    func unfavoriteUser(at indexPath: IndexPath, completion: Completion) {
         RealmManager.shared.deletaPlace(id: users[indexPath.row].id) { (result) in
             switch result {
             case .success:
@@ -64,7 +64,7 @@ final class FavoriteViewMoel {
         }
     }
     
-    func removeAll(completion: Completion) {
+    func removeAllFavoriteUser(completion: Completion) {
         RealmManager.shared.deleteAll { (result) in
             switch result {
             case .failure(let error):

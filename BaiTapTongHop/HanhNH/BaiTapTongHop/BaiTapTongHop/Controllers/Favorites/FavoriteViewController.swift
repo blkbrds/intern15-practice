@@ -25,7 +25,7 @@ final class FavoriteViewController: BaseViewController {
     override func setupNavigation() {
         title = "Favorite"
         if viewModel.getNumberOfFavoritedPlace() != 0 {
-            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-delete"), style: .plain, target: self, action: #selector(removeAll))
+            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-delete"), style: .plain, target: self, action: #selector(removeAllFavoriteUser))
             navigationItem.rightBarButtonItem = removeAllButton
             removeAllButton.tintColor = .black
         } else {
@@ -36,7 +36,7 @@ final class FavoriteViewController: BaseViewController {
     
     @objc func removeAll() {
         let alertButton = UIAlertAction(title: "OK", style: .default) { (action) in
-            self.viewModel.removeAll { (result) in
+            self.viewModel.removeAllFavoriteUser { (result) in
                 switch result {
                 case .failure(let error):
                     self.alert(title: error.localizedDescription)
@@ -90,7 +90,7 @@ extension FavoriteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alertButton = UIAlertAction(title: "OK", style: .default) { (action) in
-                self.viewModel.partialRemoval(at: indexPath) { (reslut) in
+                self.viewModel.unfavoriteUser(at: indexPath) { (reslut) in
                     switch reslut {
                     case .success:
                         self.alert(title: Strings.removeAProgramSuccess)
