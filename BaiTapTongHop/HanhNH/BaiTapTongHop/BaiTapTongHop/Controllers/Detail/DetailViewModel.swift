@@ -18,7 +18,7 @@ final class DetailViewModel {
         self.user = user
     }
     
-    func checkUserLided(completion: () -> Void) {
+    func checkUserLiked(completion: () -> Void) {
         User.getAllOnRealm { (reslut) in
             switch reslut {
             case .success(let userData):

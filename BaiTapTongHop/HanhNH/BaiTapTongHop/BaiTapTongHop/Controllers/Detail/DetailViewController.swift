@@ -18,7 +18,7 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        viewModel.checkUserLided {
+        viewModel.checkUserLiked {
             self.updateStatusFavoriteButton(isLike: self.viewModel.isLiked)
         }
         print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL
@@ -45,7 +45,7 @@ final class DetailViewController: BaseViewController {
     }
 
     @objc private func handleFavoriteButton() {
-        viewModel.checkUserLided {
+        viewModel.checkUserLiked {
             if viewModel.isLiked {
                 viewModel.deleteLikedUser { [weak self] (result) in
                     guard let this = self else { return }
