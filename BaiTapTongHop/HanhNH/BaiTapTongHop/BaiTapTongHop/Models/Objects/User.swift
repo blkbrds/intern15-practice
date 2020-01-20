@@ -85,15 +85,15 @@ final class User: Object {
             completion(.failure(APIError.errorRealm))
         }
     }
-    // TODO: chức năng xoá tất cả favorited chưa cần review.
-//    static func deleteAll(complection: APICompletion<Bool>) {
-//        do {
-//            let realm = try Realm()
-//            try realm.write {
-//                realm.deleteAll()
-//            }
-//        } catch {
-//            complection(.failure(APIError.errorRealm))
-//        }
-//    }
+    
+    static func deleteAll(complection: APICompletion<Bool>) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            complection(.failure(APIError.errorRealm))
+        }
+    }
 }

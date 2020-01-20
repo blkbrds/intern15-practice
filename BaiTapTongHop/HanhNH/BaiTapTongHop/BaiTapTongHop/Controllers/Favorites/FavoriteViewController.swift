@@ -27,34 +27,33 @@ final class FavoriteViewController: BaseViewController {
 
     override func setupNavigation() {
         title = "Favorite"
-        // TODO: chức năng xoá tất cả favorited chưa cần review.
-//        if viewModel.getNumberOfFavoritedPlace() != 0 {
-//            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-delete"), style: .plain, target: self, action: #selector(removeAll))
-//            navigationItem.rightBarButtonItem = removeAllButton
-//            removeAllButton.tintColor = .black
-//        } else {
-//            navigationItem.rightBarButtonItem = nil
-//        }
-//        tableView.reloadData()
+        if viewModel.getNumberOfFavoritedPlace() != 0 {
+            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-delete"), style: .plain, target: self, action: #selector(removeAll))
+            navigationItem.rightBarButtonItem = removeAllButton
+            removeAllButton.tintColor = .black
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
+        tableView.reloadData()
     }
-    // TODO: chức năng xoá tất cả favorited chưa cần review.
-//    @objc func removeAll() {
-//        let alertButton = UIAlertAction(title: "OK", style: .default) { (action) in
-//            self.viewModel.removeAll { (result) in
-//                switch result {
-//                case .failure(let error):
-//                    self.alert(title: error.localizedDescription)
-//                case .success:
-//                    self.alert(title: Strings.removeAllSuccess)
-//                }
-//            }
-//        }
-//        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        let alert = UIAlertController(title: Strings.ok, message: Strings.removeAll, preferredStyle: .alert)
-//        alert.addAction(alertButton)
-//        alert.addAction(cancelButton)
-//        present(alert, animated: true, completion: nil)
-//    }
+    
+    @objc func removeAll() {
+        let alertButton = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.viewModel.removeAll { (result) in
+                switch result {
+                case .failure(let error):
+                    self.alert(title: error.localizedDescription)
+                case .success:
+                    self.alert(title: Strings.removeAllSuccess)
+                }
+            }
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: Strings.ok, message: Strings.removeAll, preferredStyle: .alert)
+        alert.addAction(alertButton)
+        alert.addAction(cancelButton)
+        present(alert, animated: true, completion: nil)
+    }
 
     private func configTableView() {
         tableView.register(name: CellIdentifier.homeTableViewCell.rawValue)

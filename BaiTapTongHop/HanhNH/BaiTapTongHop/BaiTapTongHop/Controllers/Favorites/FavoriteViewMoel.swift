@@ -45,17 +45,17 @@ final class FavoriteViewMoel {
             }
         }
     }
-    // TODO: chức năng xoá tất cả favorited chưa cần review
-//    func removeAll(completion: Completion) {
-//        User.deleteAll { (result) in
-//            switch result {
-//            case .failure(let error):
-//                completion(.failure(error))
-//            case .success:
-//                completion(.success(nil))
-//            }
-//        }
-//    }
+    
+    func removeAll(completion: Completion) {
+        User.deleteAll { (result) in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success:
+                completion(.success(nil))
+            }
+        }
+    }
     
     func viewModelForItems(at indexPath: IndexPath) -> HomeCellTableViewModel {
         return HomeCellTableViewModel(user: users[indexPath.row])
