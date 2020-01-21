@@ -80,16 +80,16 @@ final class RealmManager {
         }
     }
     
-    func deleteAllUser(complection: RealmCompletion<Bool>) {
+    func deleteAllUser(completion: RealmCompletion<Bool>) {
         do {
             let realm = try Realm()
             let object = realm.objects(User.self)
             try realm.write {
                 realm.delete(object)
-                complection(.success(true))
+                completion(.success(true))
             }
         } catch {
-            complection(.failure(Errors.realmError))
+            completion(.failure(Errors.realmError))
         }
     }
 }
