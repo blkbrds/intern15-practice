@@ -45,6 +45,7 @@ final class DetailViewModel {
             switch result {
             case .success:
                 completion(.success(nil))
+                self.isLiked = true
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -53,8 +54,18 @@ final class DetailViewModel {
     
     func setupObserve() {
         let realm = try! Realm()
-        notification = realm.objects(User.self).observe({ (action) in
-            self.delegate?.viewModel(_viewModel: self, needperfomAction: .reloadData)
+        notification = realm.objects(User.self).observe({ [weak self](action) in
+            guard let this = self else { return }
+            switch action {
+            case .update(_, let deletions, _, _):
+                if !deletions.isEmpty {
+                    this.isLiked = false
+                }
+                this.delegate?.viewModel(_viewModel: this, needperfomAction: .reloadData)
+            default:
+                break
+            }
+            
         })
     }
 
@@ -64,6 +75,7 @@ final class DetailViewModel {
             switch result {
             case .success:
                 completion(.success(nil))
+                self.isLiked = false
             case .failure(let error):
                 completion(.failure(error))
             }

@@ -16,10 +16,13 @@ final class FavoriteViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
         viewModel.delegate = self
         viewModel.setupObserve()
         configTableView()
+    }
+    
+    override func setupData() {
+        fetchData()
     }
 
     override func setupNavigation() {
@@ -110,6 +113,9 @@ extension FavoriteViewController: UITableViewDelegate {
 
 extension FavoriteViewController: FavoriteViewModelDelegate {
     func viewModel(_viewModel _: FavoriteViewModel, needperfomAction action: FavoriteViewModel.Action) {
-        fetchData()
+        switch action {
+        case .reloadData:
+            fetchData()
+        }
     }
 }

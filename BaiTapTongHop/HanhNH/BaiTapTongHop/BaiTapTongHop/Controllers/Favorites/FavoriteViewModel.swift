@@ -16,7 +16,6 @@ protocol FavoriteViewModelDelegate: class {
 
 final class FavoriteViewModel {
     
-    typealias complecion = (Bool, String) -> Void
     private var users: [User] = []
     private var notificationToken: NotificationToken?
     var delegate: FavoriteViewModelDelegate?

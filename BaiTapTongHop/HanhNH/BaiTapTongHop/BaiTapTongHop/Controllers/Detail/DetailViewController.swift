@@ -19,16 +19,17 @@ final class DetailViewController: BaseViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.setupObserve()
+        setupUI()
         updateUI()
     }
 
-    override func setupData() {
+    func updateUI() {
         viewModel.isFavoriteUser {
             self.updateStatusFavoriteButton(isLike: self.viewModel.isLiked)
         }
     }
 
-    private func updateUI() {
+    private func setupUI() {
         configTableView()
     }
 
@@ -50,7 +51,6 @@ final class DetailViewController: BaseViewController {
 
     @objc private func handleFavoriteButton() {
             if viewModel.isLiked {
-                print("dang like -> unLike")
                 viewModel.deleteLikedUser { [weak self] (result) in
                     guard let this = self else { return }
                     switch result {
@@ -124,8 +124,12 @@ extension DetailViewController: UITableViewDataSource {
         }
     }
 }
+
 extension DetailViewController: DetailViewModelDelegate {
     func viewModel(_viewModel: DetailViewModel, needperfomAction action: DetailViewModel.Action) {
-        setupData()
+        switch action {
+        case .reloadData:
+            updateStatusFavoriteButton(isLike: viewModel.isLiked)
+        }
     }
 }

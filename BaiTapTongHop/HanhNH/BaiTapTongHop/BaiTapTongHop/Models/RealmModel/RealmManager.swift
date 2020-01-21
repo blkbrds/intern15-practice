@@ -21,7 +21,7 @@ final class RealmManager {
         do {
             let realm = try Realm()
             try realm.write {
-                realm.create(User.self, value: user, update: .all)
+                realm.create(User.self, value: user, update: .error)
                 completion(.success(true))
             }
         } catch {
@@ -83,8 +83,10 @@ final class RealmManager {
     func deleteAllUser(complection: RealmCompletion<Bool>) {
         do {
             let realm = try Realm()
+            let object = realm.objects(User.self)
             try realm.write {
-                realm.deleteAll()
+                realm.delete(object)
+                complection(.success(true))
             }
         } catch {
             complection(.failure(Errors.realmError))
