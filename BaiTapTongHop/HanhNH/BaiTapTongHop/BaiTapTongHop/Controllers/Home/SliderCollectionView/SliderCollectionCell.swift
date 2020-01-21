@@ -43,7 +43,7 @@ final class SliderCollectionCell: UICollectionViewCell {
     }
 
     private func configCollectionView() {
-        collectionView.register(name: CellIdentifier.sliderCollectionViewCell.rawValue)
+        collectionView.register(name: CellIdentifier.sliderScrollCollectionViewCell.rawValue)
         collectionView.dataSource = self
         collectionView.delegate = self
     }

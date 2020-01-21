@@ -37,7 +37,7 @@ final class HomeCollectionViewCell: UICollectionViewCell {
             nameAddressLabel.text = viewModel.name
             valueLabel.text = "\(viewModel.numberOfForks)"
             distanceLabel.text = "\(viewModel.numberOfWatchers)"
-            addressLabel.text = viewModel.description
+            addressLabel.text = viewModel.descriptionName
             if let image = viewModel.avatarImage {
                 addressImageView.image = image
             } else {

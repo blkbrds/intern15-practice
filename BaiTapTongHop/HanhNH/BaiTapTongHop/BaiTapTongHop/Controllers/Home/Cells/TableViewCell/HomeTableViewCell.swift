@@ -44,7 +44,7 @@ final class HomeTableViewCell: UITableViewCell {
             nameLabel.text = viewModel.name
             watchersLabel.text = "\(viewModel.numberOfWatchers)"
             forksLabel.text = "\(viewModel.numberOfForks)"
-            descriptionLabel.text = viewModel.description
+            descriptionLabel.text = viewModel.descriptionName
             if let image = viewModel.avatarImage {
                 avatarImageView.image = image
             } else {

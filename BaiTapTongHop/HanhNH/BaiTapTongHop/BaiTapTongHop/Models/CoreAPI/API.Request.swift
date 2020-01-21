@@ -20,7 +20,7 @@ extension API {
         let dataTask = session.dataTask(with: url) { (data, _, error) in
             DispatchQueue.main.async {
                 if let error = error {
-                    completion(.failure(.error(error.localizedDescription)))
+                    completion(.failure(error))
                 } else {
                     if let data = data {
                         completion(.success(data))
@@ -39,7 +39,7 @@ extension API {
         let dataTask = session.dataTask(with: url) { (data, _, error) in
             DispatchQueue.main.async {
                 if let error = error {
-                    completion(.failure(.error(error.localizedDescription)))
+                    completion(.failure(error))
                 } else {
                     if let data = data {
                         completion(.success(data))
@@ -58,7 +58,7 @@ extension API {
         let dataTask = session.dataTask(with: request) { (data, _, error) in
             DispatchQueue.main.async {
                 if let error = error {
-                    completion(.failure(.error(error.localizedDescription)))
+                    completion(.failure(error))
                 } else {
                     if let data = data {
                         completion(.success(data))
