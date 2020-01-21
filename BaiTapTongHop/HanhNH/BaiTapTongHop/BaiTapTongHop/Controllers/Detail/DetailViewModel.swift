@@ -57,6 +57,7 @@ final class DetailViewModel {
         notification = realm.objects(User.self).observe({ [weak self](action) in
             guard let this = self else { return }
             switch action {
+                // sai vi neu like 3 nguoi xoa vinh o mang hinh detial cua Nam cung mat ???.
             case .update(_, let deletions, _, _):
                 if !deletions.isEmpty {
                     this.isLiked = false

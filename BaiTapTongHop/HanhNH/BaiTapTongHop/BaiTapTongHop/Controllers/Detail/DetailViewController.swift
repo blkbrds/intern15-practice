@@ -13,6 +13,7 @@ final class DetailViewController: BaseViewController {
 
     @IBOutlet private weak var tableView: UITableView!
 
+    // ko gan o day, tao o ngoai gan vao .
     var viewModel = DetailViewModel()
 
     override func viewDidLoad() {

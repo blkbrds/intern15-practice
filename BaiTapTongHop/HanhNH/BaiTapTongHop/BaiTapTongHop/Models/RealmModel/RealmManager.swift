@@ -21,7 +21,7 @@ final class RealmManager {
         do {
             let realm = try Realm()
             try realm.write {
-                realm.create(User.self, value: user, update: .error)
+                realm.create(User.self, value: user, update: .all)
                 completion(.success(true))
             }
         } catch {
