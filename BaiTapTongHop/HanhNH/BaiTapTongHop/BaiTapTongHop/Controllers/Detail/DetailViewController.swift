@@ -17,11 +17,12 @@ final class DetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.setupObserve()
         updateUI()
-        setupData()
     }
 
-    private func setupData() {
+    override func setupData() {
         viewModel.isFavoriteUser {
             self.updateStatusFavoriteButton(isLike: self.viewModel.isLiked)
         }
@@ -32,7 +33,8 @@ final class DetailViewController: BaseViewController {
     }
 
     override func setupNavigation() {
-        title = "\(viewModel.user?.name)"
+        guard let viewModel = viewModel.user?.name else { return }
+        title = "\(viewModel)"
         let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
@@ -47,8 +49,8 @@ final class DetailViewController: BaseViewController {
     }
 
     @objc private func handleFavoriteButton() {
-        viewModel.isFavoriteUser {
             if viewModel.isLiked {
+                print("dang like -> unLike")
                 viewModel.deleteLikedUser { [weak self] (result) in
                     guard let this = self else { return }
                     switch result {
@@ -69,7 +71,6 @@ final class DetailViewController: BaseViewController {
                     }
                 }
             }
-        }
     }
 
     private func configTableView () {
@@ -125,6 +126,6 @@ extension DetailViewController: UITableViewDataSource {
 }
 extension DetailViewController: DetailViewModelDelegate {
     func viewModel(_viewModel: DetailViewModel, needperfomAction action: DetailViewModel.Action) {
-        tableView.reloadData()
+        setupData()
     }
 }

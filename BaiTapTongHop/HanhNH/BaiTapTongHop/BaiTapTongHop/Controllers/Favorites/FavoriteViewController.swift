@@ -12,7 +12,7 @@ final class FavoriteViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel = FavoriteViewMoel()
+    var viewModel = FavoriteViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ final class FavoriteViewController: BaseViewController {
     override func setupNavigation() {
         title = "Favorite"
         if viewModel.getNumberOfFavoritedPlace() != 0 {
-            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-delete"), style: .plain, target: self, action: #selector(removeAllFavoriteUser))
+            let removeAllButton = UIBarButtonItem(image: #imageLiteral(resourceName: "ic-delete"), style: .plain, target: self, action: #selector(removeAll))
             navigationItem.rightBarButtonItem = removeAllButton
             removeAllButton.tintColor = .black
         } else {
@@ -109,7 +109,7 @@ extension FavoriteViewController: UITableViewDelegate {
 }
 
 extension FavoriteViewController: FavoriteViewModelDelegate {
-    func viewModel(_viewModel _: FavoriteViewMoel, needperfomAction action: FavoriteViewMoel.Action) {
+    func viewModel(_viewModel _: FavoriteViewModel, needperfomAction action: FavoriteViewModel.Action) {
         fetchData()
     }
 }

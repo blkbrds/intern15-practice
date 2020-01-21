@@ -24,10 +24,6 @@ final class DetailViewModel {
     enum Action {
         case reloadData
     }
-
-    init(user: User? = nil) {
-        self.user = user
-    }
     
     func isFavoriteUser(completion: () -> Void) {
         guard let user = user else { return }

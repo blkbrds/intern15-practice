@@ -80,7 +80,7 @@ final class RealmManager {
         }
     }
     
-    func deleteAll(complection: RealmCompletion<Bool>) {
+    func deleteAllUser(complection: RealmCompletion<Bool>) {
         do {
             let realm = try Realm()
             try realm.write {
