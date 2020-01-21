@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="baitapMVVM" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="Hrs-qa-cD2" id="MJO-x0-9b2"/>
+                <outlet property="passwordTextField" destination="zkV-CW-A54" id="7VU-j9-bZr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hrs-qa-cD2">
+                    <rect key="frame" x="0.0" y="100" width="414" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zkV-CW-A54">
+                    <rect key="frame" x="0.0" y="142" width="414" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySI-EL-tc1">
+                    <rect key="frame" x="147" y="234" width="120" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="Login"/>
+                    <connections>
+                        <action selector="loginButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="1d4-ds-APc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfJ-Gw-AIV">
+                    <rect key="frame" x="153" y="389" width="111" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="ForgotPassword"/>
+                    <connections>
+                        <action selector="forgotPasswordButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="r6p-ri-7hQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1h-Lv-dov">
+                    <rect key="frame" x="181" y="350" width="57" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="Register"/>
+                    <connections>
+                        <action selector="registerButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="L7c-lh-OiE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ySI-EL-tc1" firstAttribute="top" secondItem="zkV-CW-A54" secondAttribute="bottom" constant="58" id="0sG-WT-HaB"/>
+                <constraint firstAttribute="bottom" secondItem="Hrs-qa-cD2" secondAttribute="bottom" constant="762" id="7lt-cI-2Po"/>
+                <constraint firstItem="zkV-CW-A54" firstAttribute="top" secondItem="Hrs-qa-cD2" secondAttribute="bottom" constant="8" id="7rM-HA-Yh7"/>
+                <constraint firstItem="ySI-EL-tc1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="147" id="G3N-LL-CAo"/>
+                <constraint firstItem="Hrs-qa-cD2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hdw-ml-pp1"/>
+                <constraint firstItem="zkV-CW-A54" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MWj-3T-x25"/>
+                <constraint firstItem="zkV-CW-A54" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VEQ-n9-PeB"/>
+                <constraint firstAttribute="bottom" secondItem="ySI-EL-tc1" secondAttribute="bottom" constant="620" id="W4e-u7-POe"/>
+                <constraint firstItem="ySI-EL-tc1" firstAttribute="top" secondItem="zkV-CW-A54" secondAttribute="bottom" constant="58" id="aH9-QS-1gO"/>
+                <constraint firstAttribute="trailing" secondItem="Hrs-qa-cD2" secondAttribute="trailing" id="nFY-fB-mPx"/>
+                <constraint firstAttribute="trailing" secondItem="ySI-EL-tc1" secondAttribute="trailing" constant="147" id="unf-92-DPx"/>
+                <constraint firstItem="Hrs-qa-cD2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="xa7-Lk-iRt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </view>
+    </objects>
+</document>
