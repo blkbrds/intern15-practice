@@ -11,14 +11,20 @@ import UIKit
 final class HomeViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        configData(isRefresh: true)
     }
 
     override func setupNavigation() {
         title = "Home"
+    }
+
+    func updateUI() {
+        tableView.reloadData()
     }
 
     func configTableView() {
@@ -26,20 +32,57 @@ final class HomeViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+
+    private func configData(isRefresh: Bool) {
+        if isRefresh == true {
+            viewModel.page = 1
+        } else {
+            viewModel.page = viewModel.page + 1
+        }
+        viewModel.loadAPI() { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.updateUI()
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
+    }
 }
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfRowsInSection(section: section)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.homeTableViewCell.rawValue, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        cell.indexPath = indexPath
+        cell.delagate = self
+        cell.viewModel = viewModel.getHomeCellModel(atIndexPath: indexPath)
         return cell
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return UITableView.automaticDimension
+    }
+}
+
+extension HomeViewController: HomeTableViewCellDelagete {
+    func getImage(cell: HomeTableViewCell, needPerform action: HomeTableViewCell.Action) {
+        switch action {
+        case .getImageCollection(let indexPath):
+            if let indexPath = indexPath {
+                viewModel.downloadImage(indexPath: indexPath) { [weak self] (image) in
+                    //co mot cell khong ton tai
+                    guard let this = self else { return }
+                    if this.tableView.indexPathsForVisibleRows?.contains(indexPath) == true {
+                        this.tableView.reloadRows(at: [indexPath], with: .none)
+                    }
+                }
+            }
+        }
     }
 }

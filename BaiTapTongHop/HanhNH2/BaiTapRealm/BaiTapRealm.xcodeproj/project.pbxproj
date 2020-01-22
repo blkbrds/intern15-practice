@@ -25,6 +25,16 @@
 		8AE232D823D7E7DC003D5B37 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */; };
 		8AE232DA23D7E80D003D5B37 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232D923D7E80D003D5B37 /* Enumeration.swift */; };
 		8AE232DD23D7E89B003D5B37 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */; };
+		8AE232E123D7EE61003D5B37 /* API.Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232E023D7EE61003D5B37 /* API.Request.swift */; };
+		8AE232E423D7EEA5003D5B37 /* API.Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232E323D7EEA5003D5B37 /* API.Repo.swift */; };
+		8AE232E623D7F0F2003D5B37 /* API.Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232E523D7F0F2003D5B37 /* API.Manager.swift */; };
+		8AE232E923D7F143003D5B37 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232E823D7F143003D5B37 /* APIError.swift */; };
+		8AE232EC23D7F1AC003D5B37 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232EB23D7F1AC003D5B37 /* File.swift */; };
+		8AE232EF23D7F200003D5B37 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232EE23D7F200003D5B37 /* Networking.swift */; };
+		8AE232F223D7F279003D5B37 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232F123D7F279003D5B37 /* Repository.swift */; };
+		8AE232F423D7F30E003D5B37 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232F323D7F30E003D5B37 /* Errors.swift */; };
+		8AE232F823D7F9F3003D5B37 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232F723D7F9F3003D5B37 /* HomeViewModel.swift */; };
+		8AE232FA23D7FB3F003D5B37 /* HomeCellTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232F923D7FB3F003D5B37 /* HomeCellTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +58,16 @@
 		8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		8AE232D923D7E80D003D5B37 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
 		8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
+		8AE232E023D7EE61003D5B37 /* API.Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Request.swift; sourceTree = "<group>"; };
+		8AE232E323D7EEA5003D5B37 /* API.Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Repo.swift; sourceTree = "<group>"; };
+		8AE232E523D7F0F2003D5B37 /* API.Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.Manager.swift; sourceTree = "<group>"; };
+		8AE232E823D7F143003D5B37 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		8AE232EB23D7F1AC003D5B37 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		8AE232EE23D7F200003D5B37 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		8AE232F123D7F279003D5B37 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		8AE232F323D7F30E003D5B37 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		8AE232F723D7F9F3003D5B37 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8AE232F923D7FB3F003D5B37 /* HomeCellTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +100,7 @@
 		8AE2329123D7DAC2003D5B37 /* BaiTapRealm */ = {
 			isa = PBXGroup;
 			children = (
+				8AE232DE23D7EE1D003D5B37 /* Model */,
 				8AE232DB23D7E87A003D5B37 /* Ext */,
 				8AE232CD23D7E1B6003D5B37 /* Resources */,
 				8AE232C523D7E026003D5B37 /* Define */,
@@ -96,6 +117,7 @@
 				8AE232D023D7E717003D5B37 /* HomeCell */,
 				8AE232A723D7DB30003D5B37 /* HomeViewController.swift */,
 				8AE232A823D7DB30003D5B37 /* HomeViewController.xib */,
+				8AE232F723D7F9F3003D5B37 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -162,6 +184,7 @@
 			children = (
 				8AE232C623D7E03B003D5B37 /* Strings.swift */,
 				8AE232D923D7E80D003D5B37 /* Enumeration.swift */,
+				8AE232F323D7F30E003D5B37 /* Errors.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -179,6 +202,7 @@
 			children = (
 				8AE232D523D7E7DC003D5B37 /* HomeTableViewCell.swift */,
 				8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */,
+				8AE232F923D7FB3F003D5B37 /* HomeCellTableViewModel.swift */,
 			);
 			path = HomeCell;
 			sourceTree = "<group>";
@@ -189,6 +213,60 @@
 				8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */,
 			);
 			path = Ext;
+			sourceTree = "<group>";
+		};
+		8AE232DE23D7EE1D003D5B37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232F023D7F24C003D5B37 /* Objects */,
+				8AE232DF23D7EE34003D5B37 /* CoreAPI */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8AE232DF23D7EE34003D5B37 /* CoreAPI */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232ED23D7F1CC003D5B37 /* Networking */,
+				8AE232EA23D7F181003D5B37 /* JSON */,
+				8AE232E723D7F122003D5B37 /* APIError */,
+				8AE232E023D7EE61003D5B37 /* API.Request.swift */,
+				8AE232E323D7EEA5003D5B37 /* API.Repo.swift */,
+				8AE232E523D7F0F2003D5B37 /* API.Manager.swift */,
+			);
+			path = CoreAPI;
+			sourceTree = "<group>";
+		};
+		8AE232E723D7F122003D5B37 /* APIError */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232E823D7F143003D5B37 /* APIError.swift */,
+			);
+			path = APIError;
+			sourceTree = "<group>";
+		};
+		8AE232EA23D7F181003D5B37 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232EB23D7F1AC003D5B37 /* File.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		8AE232ED23D7F1CC003D5B37 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232EE23D7F200003D5B37 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8AE232F023D7F24C003D5B37 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232F123D7F279003D5B37 /* Repository.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,15 +346,25 @@
 				8AE2329323D7DAC2003D5B37 /* AppDelegate.swift in Sources */,
 				8AE232DD23D7E89B003D5B37 /* UITableViewExt.swift in Sources */,
 				8AE2329523D7DAC2003D5B37 /* SceneDelegate.swift in Sources */,
+				8AE232E123D7EE61003D5B37 /* API.Request.swift in Sources */,
 				8AE232CC23D7E0F4003D5B37 /* BaseTabBarController.swift in Sources */,
 				8AE232B423D7DCD2003D5B37 /* MapViewController.swift in Sources */,
 				8AE232BE23D7DD42003D5B37 /* ProfileViewController.swift in Sources */,
+				8AE232EF23D7F200003D5B37 /* Networking.swift in Sources */,
+				8AE232FA23D7FB3F003D5B37 /* HomeCellTableViewModel.swift in Sources */,
 				8AE232B923D7DD0C003D5B37 /* FavoriteViewController.swift in Sources */,
 				8AE232D723D7E7DC003D5B37 /* HomeTableViewCell.swift in Sources */,
 				8AE232C723D7E03B003D5B37 /* Strings.swift in Sources */,
+				8AE232F223D7F279003D5B37 /* Repository.swift in Sources */,
 				8AE232DA23D7E80D003D5B37 /* Enumeration.swift in Sources */,
+				8AE232EC23D7F1AC003D5B37 /* File.swift in Sources */,
+				8AE232E423D7EEA5003D5B37 /* API.Repo.swift in Sources */,
 				8AE232C423D7DFA1003D5B37 /* BaseViewController.swift in Sources */,
+				8AE232F823D7F9F3003D5B37 /* HomeViewModel.swift in Sources */,
+				8AE232F423D7F30E003D5B37 /* Errors.swift in Sources */,
+				8AE232E923D7F143003D5B37 /* APIError.swift in Sources */,
 				8AE232A923D7DB30003D5B37 /* HomeViewController.swift in Sources */,
+				8AE232E623D7F0F2003D5B37 /* API.Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
