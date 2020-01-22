@@ -21,6 +21,10 @@
 		8AE232C423D7DFA1003D5B37 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232C223D7DFA1003D5B37 /* BaseViewController.swift */; };
 		8AE232C723D7E03B003D5B37 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232C623D7E03B003D5B37 /* Strings.swift */; };
 		8AE232CC23D7E0F4003D5B37 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232CB23D7E0F4003D5B37 /* BaseTabBarController.swift */; };
+		8AE232D723D7E7DC003D5B37 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232D523D7E7DC003D5B37 /* HomeTableViewCell.swift */; };
+		8AE232D823D7E7DC003D5B37 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */; };
+		8AE232DA23D7E80D003D5B37 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232D923D7E80D003D5B37 /* Enumeration.swift */; };
+		8AE232DD23D7E89B003D5B37 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		8AE232C323D7DFA1003D5B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = BaiTapRealm/Base.lproj/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		8AE232C623D7E03B003D5B37 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8AE232CB23D7E0F4003D5B37 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		8AE232D523D7E7DC003D5B37 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		8AE232D923D7E80D003D5B37 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
+		8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 		8AE2329123D7DAC2003D5B37 /* BaiTapRealm */ = {
 			isa = PBXGroup;
 			children = (
+				8AE232DB23D7E87A003D5B37 /* Ext */,
 				8AE232CD23D7E1B6003D5B37 /* Resources */,
 				8AE232C523D7E026003D5B37 /* Define */,
 				8AE232AD23D7DBEB003D5B37 /* Controllers */,
@@ -84,6 +93,7 @@
 		8AE232A623D7DB11003D5B37 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8AE232D023D7E717003D5B37 /* HomeCell */,
 				8AE232A723D7DB30003D5B37 /* HomeViewController.swift */,
 				8AE232A823D7DB30003D5B37 /* HomeViewController.xib */,
 			);
@@ -151,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				8AE232C623D7E03B003D5B37 /* Strings.swift */,
+				8AE232D923D7E80D003D5B37 /* Enumeration.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -161,6 +172,23 @@
 				8AE2329B23D7DAC4003D5B37 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8AE232D023D7E717003D5B37 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232D523D7E7DC003D5B37 /* HomeTableViewCell.swift */,
+				8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
+		8AE232DB23D7E87A003D5B37 /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */,
+			);
+			path = Ext;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +253,7 @@
 				8AE232B523D7DCD2003D5B37 /* MapViewController.xib in Resources */,
 				8AE232BA23D7DD0C003D5B37 /* FavoriteViewController.xib in Resources */,
 				8AE232BF23D7DD42003D5B37 /* ProfileViewController.xib in Resources */,
+				8AE232D823D7E7DC003D5B37 /* HomeTableViewCell.xib in Resources */,
 				8AE232AA23D7DB30003D5B37 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,12 +266,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AE2329323D7DAC2003D5B37 /* AppDelegate.swift in Sources */,
+				8AE232DD23D7E89B003D5B37 /* UITableViewExt.swift in Sources */,
 				8AE2329523D7DAC2003D5B37 /* SceneDelegate.swift in Sources */,
 				8AE232CC23D7E0F4003D5B37 /* BaseTabBarController.swift in Sources */,
 				8AE232B423D7DCD2003D5B37 /* MapViewController.swift in Sources */,
 				8AE232BE23D7DD42003D5B37 /* ProfileViewController.swift in Sources */,
 				8AE232B923D7DD0C003D5B37 /* FavoriteViewController.swift in Sources */,
+				8AE232D723D7E7DC003D5B37 /* HomeTableViewCell.swift in Sources */,
 				8AE232C723D7E03B003D5B37 /* Strings.swift in Sources */,
+				8AE232DA23D7E80D003D5B37 /* Enumeration.swift in Sources */,
 				8AE232C423D7DFA1003D5B37 /* BaseViewController.swift in Sources */,
 				8AE232A923D7DB30003D5B37 /* HomeViewController.swift in Sources */,
 			);
