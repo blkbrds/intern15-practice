@@ -20,12 +20,13 @@
 		8AE232BF23D7DD42003D5B37 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE232BD23D7DD42003D5B37 /* ProfileViewController.xib */; };
 		8AE232C423D7DFA1003D5B37 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232C223D7DFA1003D5B37 /* BaseViewController.swift */; };
 		8AE232C723D7E03B003D5B37 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232C623D7E03B003D5B37 /* Strings.swift */; };
-		8AE232CC23D7E0F4003D5B37 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232CB23D7E0F4003D5B37 /* BaseTabBarController.swift */; };
 		8AE232D723D7E7DC003D5B37 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232D523D7E7DC003D5B37 /* HomeTableViewCell.swift */; };
 		8AE232D823D7E7DC003D5B37 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */; };
 		8AE232DA23D7E80D003D5B37 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232D923D7E80D003D5B37 /* Enumeration.swift */; };
 		8AE232DD23D7E89B003D5B37 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */; };
 		8AE232F623D7F61D003D5B37 /* BaseTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232F523D7F61D003D5B37 /* BaseTabBarViewModel.swift */; };
+		8AE232FE23D80377003D5B37 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE232FC23D80377003D5B37 /* LoginViewController.swift */; };
+		8AE232FF23D80377003D5B37 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE232FD23D80377003D5B37 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +45,13 @@
 		8AE232BD23D7DD42003D5B37 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		8AE232C323D7DFA1003D5B37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = BaiTapRealm/Base.lproj/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		8AE232C623D7E03B003D5B37 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		8AE232CB23D7E0F4003D5B37 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8AE232D523D7E7DC003D5B37 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		8AE232D623D7E7DC003D5B37 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		8AE232D923D7E80D003D5B37 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
 		8AE232DC23D7E89B003D5B37 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		8AE232F523D7F61D003D5B37 /* BaseTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewModel.swift; sourceTree = "<group>"; };
+		8AE232FC23D80377003D5B37 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8AE232FD23D80377003D5B37 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				8AE232C223D7DFA1003D5B37 /* BaseViewController.swift */,
-				8AE232CB23D7E0F4003D5B37 /* BaseTabBarController.swift */,
 				8AE232F523D7F61D003D5B37 /* BaseTabBarViewModel.swift */,
 			);
 			path = Base;
@@ -124,6 +125,7 @@
 		8AE232AD23D7DBEB003D5B37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8AE232FB23D8033A003D5B37 /* Login */,
 				8AE232BB23D7DD25003D5B37 /* Profile */,
 				8AE232B623D7DCE6003D5B37 /* Favorite */,
 				8AE232B123D7DCA3003D5B37 /* Map */,
@@ -194,6 +196,15 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
+		8AE232FB23D8033A003D5B37 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8AE232FC23D80377003D5B37 /* LoginViewController.swift */,
+				8AE232FD23D80377003D5B37 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,6 +268,7 @@
 				8AE232BA23D7DD0C003D5B37 /* FavoriteViewController.xib in Resources */,
 				8AE232BF23D7DD42003D5B37 /* ProfileViewController.xib in Resources */,
 				8AE232D823D7E7DC003D5B37 /* HomeTableViewCell.xib in Resources */,
+				8AE232FF23D80377003D5B37 /* LoginViewController.xib in Resources */,
 				8AE232AA23D7DB30003D5B37 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,11 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE232FE23D80377003D5B37 /* LoginViewController.swift in Sources */,
 				8AE2329323D7DAC2003D5B37 /* AppDelegate.swift in Sources */,
 				8AE232F623D7F61D003D5B37 /* BaseTabBarViewModel.swift in Sources */,
 				8AE232DD23D7E89B003D5B37 /* UITableViewExt.swift in Sources */,
 				8AE2329523D7DAC2003D5B37 /* SceneDelegate.swift in Sources */,
-				8AE232CC23D7E0F4003D5B37 /* BaseTabBarController.swift in Sources */,
 				8AE232B423D7DCD2003D5B37 /* MapViewController.swift in Sources */,
 				8AE232BE23D7DD42003D5B37 /* ProfileViewController.swift in Sources */,
 				8AE232B923D7DD0C003D5B37 /* FavoriteViewController.swift in Sources */,
