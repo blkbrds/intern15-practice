@@ -16,6 +16,7 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        configData()
     }
 
     override func setupNavigation() {
@@ -24,7 +25,7 @@ final class HomeViewController: BaseViewController {
         navigationItem.rightBarButtonItem = barButtonItem
         barButtonItem.tintColor = .black
     }
-    
+
     func updateUI() {
         tableView.reloadData()
     }
