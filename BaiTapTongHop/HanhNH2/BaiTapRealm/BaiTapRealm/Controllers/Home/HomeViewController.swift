@@ -71,7 +71,6 @@ extension HomeViewController: HomeTableViewCellDelagete {
         case .getImageCollection(let indexPath):
             if let indexPath = indexPath {
                 viewModel.downloadImage(indexPath: indexPath) { [weak self] (image) in
-                    //co mot cell khong ton tai
                     guard let this = self else { return }
                     if this.tableView.indexPathsForVisibleRows?.contains(indexPath) == true {
                         this.tableView.reloadRows(at: [indexPath], with: .none)

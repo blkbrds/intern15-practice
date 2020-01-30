@@ -9,12 +9,12 @@
 import Foundation
 struct RepoResults {
     var repos: [Repository]
-    var total_count: Int
+    var totalCount: Int
 }
 
 extension APIManager.Repository {
 
-    func search(completion: @escaping APICompletion<RepoResults>) {
+    func search(completion: @escaping APICompletion<RepoResults?>) {
         let url = Router.Repository.path
         API.shared().request(urlString: url) { (result) in
             DispatchQueue.main.async {
@@ -24,20 +24,19 @@ extension APIManager.Repository {
                 case .success(let data):
                     if let data = data {
                         let json = data.toJSON()
-                        guard let total_count = json["total_count"] as? Int else {
-                            return
+                        var result = RepoResults(repos: [], totalCount: 0)
+                        if let totalCount = json["total_count"] as? Int {
+                            result.totalCount = totalCount
                         }
-                        guard let items = json["items"] as? [JSON] else {
-                            return
+                        if let items = json["items"] as? [JSON] {
+                            var repos: [Repository] = []
+                            for item in items {
+                                let repo = Repository(json: item)
+                                repos.append(repo)
+                            }
+                            let repoResults = RepoResults(repos: repos, totalCount: result.totalCount)
+                            completion(.success(repoResults))
                         }
-                        var repos: [Repository] = []
-                        for item in items {
-                            let repo = Repository(json: item)
-                            repos.append(repo)
-                        }
-                        let repoResults = RepoResults(repos: repos, total_count: total_count)
-
-                        completion(.success(repoResults))
                     } else {
                         completion(.failure(Errors.noDataError))
                     }

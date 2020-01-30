@@ -20,13 +20,25 @@ class Repository {
     var descriptionName: String = ""
 
     init(json: JSON) {
-        self.createdAt = json["created_at"] as! String
-        self.watchersCount = json["watchers_count"] as! Int
-        self.descriptionName = json["description"] as! String
-        self.forksCount = json["forks_count"] as! Int
-        let owner = json["owner"] as! JSON
-        self.nameApp = owner["login"] as! String
-        self.avatarUrl = owner["avatar_url"] as! String
-
+        if let json = json["created_at"] as? String {
+            self.createdAt = json
+        }
+        if let watchersCount = json["watchers_count"] as? Int {
+            self.watchersCount = watchersCount
+        }
+        if let descriptionName = json["description"] as? String {
+            self.descriptionName = descriptionName
+        }
+        if let forksCount = json["forks_count"] as? Int {
+            self .forksCount = forksCount
+        }
+        if let owner = json["owner"] as? JSON {
+            if let nameApp = owner["login"] as? String {
+                self.nameApp = nameApp
+            }
+            if let avatarUrl = owner["avatar_url"] as? String {
+                self .avatarUrl = avatarUrl
+            }
+        }
     }
 }

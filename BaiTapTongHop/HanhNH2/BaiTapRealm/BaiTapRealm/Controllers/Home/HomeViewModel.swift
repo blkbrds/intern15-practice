@@ -19,8 +19,9 @@ final class HomeViewModel {
             guard let this = self else { return }
             switch result {
             case .success(let data):
+                guard let data = data else { return }
                 this.repos.append(contentsOf: data.repos)
-                this.canLoadMore = data.total_count > this.repos.count
+                this.canLoadMore = data.totalCount > this.repos.count
                 completion(.success(nil))
             case .failure(let error):
                 completion(.failure(error))
