@@ -22,6 +22,8 @@ final class HomeCellTableViewModel {
         self.numberOfForks = repo.forksCount
         self.name = repo.nameApp
         self.descriptionName = repo.descriptionName
-        self.avatarImage = repo.avatarImage
+        if let repo = repo.avatarImage {
+            self.avatarImage = UIImage(data: repo)
+        }
     }
 }

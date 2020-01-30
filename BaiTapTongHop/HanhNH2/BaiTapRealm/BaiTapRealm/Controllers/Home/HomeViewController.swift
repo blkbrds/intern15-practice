@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class HomeViewController: BaseViewController {
 
@@ -17,13 +18,26 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         configTableView()
         configData()
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL)
     }
 
     override func setupNavigation() {
         title = "Home"
-        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-reset-home"), style: .plain, target: self, action: #selector(configData))
+        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-reset-home"), style: .plain, target: self, action: #selector(resetAPI))
         navigationItem.rightBarButtonItem = barButtonItem
         barButtonItem.tintColor = .black
+    }
+    
+    @objc func resetAPI() {
+        viewModel.reset { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.updateUI()
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
     }
 
     func updateUI() {
@@ -36,12 +50,19 @@ final class HomeViewController: BaseViewController {
         tableView.dataSource = self
     }
 
-    @objc func configData() {
-        viewModel.loadAPI() { [weak self] (result) in
+    func configData() {
+        viewModel.deleteAll { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:
-                this.updateUI()
+                this.viewModel.loadAPI() { (result) in
+                    switch result {
+                    case .success:
+                        this.updateUI()
+                    case .failure(let error):
+                        this.alert(title: error.localizedDescription)
+                    }
+                }
             case .failure(let error):
                 this.alert(title: error.localizedDescription)
             }

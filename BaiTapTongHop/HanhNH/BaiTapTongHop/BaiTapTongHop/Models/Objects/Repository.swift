@@ -28,7 +28,6 @@ import RealmSwift
         let owner = json["owner"] as! JSON
         self.nameApp = owner["login"] as! String
         self.avatarUrl = owner["avatar_url"] as! String
-
     }
 
     required init() { }

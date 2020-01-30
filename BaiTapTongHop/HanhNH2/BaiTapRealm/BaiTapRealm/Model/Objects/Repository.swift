@@ -8,21 +8,28 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-class Repository {
-
-    var avatarUrl: String = ""
-    var nameApp: String = ""
-    var createdAt: String = ""
-    var watchersCount: Int = 0
-    var avatarImage: UIImage?
-    var forksCount: Int = 0
-    var descriptionName: String = ""
+@objcMembers class Repository: Object {
+    
+    dynamic var id = 0
+    dynamic var avatarUrl: String = ""
+    dynamic var nameApp: String = ""
+    dynamic var createdAt: String = ""
+    dynamic var watchersCount: Int = 0
+    var avatarImage: Data?
+    dynamic var forksCount: Int = 0
+    dynamic var descriptionName: String = ""
 
     init(json: JSON) {
         if let json = json["created_at"] as? String {
             self.createdAt = json
         }
+        
+        if let idReprository = json["id"] as? Int {
+            self.id = idReprository
+        }
+        
         if let watchersCount = json["watchers_count"] as? Int {
             self.watchersCount = watchersCount
         }
@@ -41,4 +48,10 @@ class Repository {
             }
         }
     }
+    
+    override static func primaryKey() -> String? {
+      return "id"
+    }
+    
+    required init() { }
 }
