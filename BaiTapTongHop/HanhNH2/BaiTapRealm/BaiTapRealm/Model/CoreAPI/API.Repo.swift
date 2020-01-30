@@ -36,6 +36,8 @@ extension APIManager.Repository {
                             }
                             let repoResults = RepoResults(repos: repos, totalCount: result.totalCount)
                             completion(.success(repoResults))
+                        } else {
+                            completion(.failure(Errors.noDataError))
                         }
                     } else {
                         completion(.failure(Errors.noDataError))
