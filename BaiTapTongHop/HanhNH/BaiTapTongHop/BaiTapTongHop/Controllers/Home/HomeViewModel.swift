@@ -91,7 +91,7 @@ final class HomeViewModel {
 //        return DetailViewModel(repo: repos[indexPath.row])
 //    }
     
-    func getUser(at indexPath: IndexPath) -> DetailViewModel {
+    func  getUser(at indexPath: IndexPath) -> DetailViewModel {
         let viewModel = DetailViewModel()
         viewModel.user = users[indexPath.row]
         return viewModel

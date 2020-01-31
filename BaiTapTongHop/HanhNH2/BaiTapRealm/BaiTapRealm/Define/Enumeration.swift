@@ -9,4 +9,5 @@
 import Foundation
 enum CellIdentifier: String {
     case homeTableViewCell = "HomeTableViewCell"
+    case detailTableViewCell = "DetailTableViewCell"
 }

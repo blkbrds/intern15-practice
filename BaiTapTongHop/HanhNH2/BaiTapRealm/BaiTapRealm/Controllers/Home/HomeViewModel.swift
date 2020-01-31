@@ -91,4 +91,10 @@ final class HomeViewModel {
             completion(.failure(error))
         }
     }
+    
+    func getRepo(at indexPath: IndexPath) -> DetailViewModel {
+        let viewModel = DetailViewModel()
+        viewModel.repo = repos[indexPath.row]
+        return viewModel
+    }
 }

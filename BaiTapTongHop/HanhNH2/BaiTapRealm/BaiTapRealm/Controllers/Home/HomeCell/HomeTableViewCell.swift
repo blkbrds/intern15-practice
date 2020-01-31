@@ -13,6 +13,7 @@ protocol HomeTableViewCellDelagete: class {
 }
 
 final class HomeTableViewCell: UITableViewCell {
+    
     @IBOutlet private weak var watchersLabel: UILabel!
     @IBOutlet private weak var forksLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
