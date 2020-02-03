@@ -12,8 +12,18 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpNaVi()
+        setupData()
+        setupNavigation()
     }
+    func setupData() { }
+    func setupNavigation() { }
+}
 
-    func setUpNaVi() { }
+extension BaseViewController {
+
+    func alert(title: String, message: String = "") {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: Strings.ok, style: .default, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
 }
