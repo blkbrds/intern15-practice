@@ -23,7 +23,7 @@ final class HomeViewModel {
                 guard let data = data else { return }
                 this.repos = data.repos
                 this.canLoadMore = data.totalCount > this.repos.count
-                this.saveAll(completion: completion)
+                this.updateInRealm(completion: completion)
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -54,11 +54,24 @@ final class HomeViewModel {
         return repos.count
     }
     
-    func saveAll(completion: @escaping Completion) {
+    func updateInRealm(completion: @escaping Completion) {
         do {
             let realm = try Realm()
-            try realm.write {
-                realm.add(repos)
+            // Step 1: Read all on realm
+            let objects = realm.objects(Repository.self)
+            // Step 2: Check if repo is exist -> not add into realm
+            if objects.isEmpty {
+                try realm.write {
+                    realm.add(repos)
+                }
+            } else {
+                for object in objects {
+                    if !repos.contains(object) {
+                        try realm.write {
+                            realm.add(object)
+                        }
+                    }
+                }
             }
             completion(.success(nil))
         } catch {
@@ -76,19 +89,6 @@ final class HomeViewModel {
             }
         } catch {
             comletion(.failure(error))
-        }
-    }
-    
-    func deleteAll(completion: @escaping Completion) {
-        do {
-            let realm = try Realm()
-            let object = realm.objects(Repository.self)
-            try realm.write {
-                realm.delete(object)
-                completion(.success(nil))
-            }
-        } catch {
-            completion(.failure(error))
         }
     }
     

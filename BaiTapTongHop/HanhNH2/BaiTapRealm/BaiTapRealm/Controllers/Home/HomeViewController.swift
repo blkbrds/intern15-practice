@@ -51,18 +51,11 @@ final class HomeViewController: BaseViewController {
 
     override func configData() {
         super.configData()
-        viewModel.deleteAll { [weak self] (result) in
+        viewModel.loadAPI() { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:
-                this.viewModel.loadAPI() { (result) in
-                    switch result {
-                    case .success:
-                        this.updateUI()
-                    case .failure(let error):
-                        this.alert(title: error.localizedDescription)
-                    }
-                }
+                this.updateUI()
             case .failure(let error):
                 this.alert(title: error.localizedDescription)
             }
