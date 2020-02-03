@@ -12,9 +12,10 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupNavigation()
     }
-
+    func setupData() { }
     func setupNavigation() { }
 }
 

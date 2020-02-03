@@ -8,13 +8,14 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 final class Address {
-    private var thumnailImage: UIImage
-    private var address: String
-    private var rating: String
-    private var distance: Float
-    private var nameImage: String
+    @objc dynamic private var thumnailImage: UIImage
+    @objc dynamic private var address: String
+    @objc dynamic private var rating: String
+    @objc dynamic private var distance: Float
+    @objc dynamic private var nameImage: String
 
     init(avatar: UIImage, address: String, name: String, distance: Float, value: String) {
         self.thumnailImage = avatar
