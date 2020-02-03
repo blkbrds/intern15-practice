@@ -27,7 +27,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="Done"/>
                             <connections>
-                                <action selector="touchUpInsideDoneButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="XsC-YD-9KT"/>
+                                <action selector="doneButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="bbf-Nv-vaR"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux5-eR-4Wg">
@@ -35,7 +35,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="Cancel"/>
                             <connections>
-                                <action selector="touchUpInsideCancelButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="MSo-ug-PVW"/>
+                                <action selector="cancelButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="8JI-Hk-eaH"/>
                             </connections>
                         </button>
                     </subviews>
@@ -132,7 +132,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="+"/>
                                             <connections>
-                                                <action selector="touchUpInsidePlusButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="SJ0-fp-Lkg"/>
+                                                <action selector="plusButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="FLP-Ij-Ebz"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5r-X0-C9b">
@@ -141,7 +141,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="-"/>
                                             <connections>
-                                                <action selector="touchUpInsideMinusButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vbl-f7-AAf"/>
+                                                <action selector="minusButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="ede-Pj-Gyt"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9db-t7-b2u">
@@ -149,7 +149,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="x"/>
                                             <connections>
-                                                <action selector="touchUpInsideMultiplyButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="FFF-KM-fR5"/>
+                                                <action selector="multiplyButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="YRX-8K-Iur"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqU-4d-jjp">
@@ -157,7 +157,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="/"/>
                                             <connections>
-                                                <action selector="touchUpInsideDivisonButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="hXP-fx-hpo"/>
+                                                <action selector="divisionButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="ahS-Du-yeg"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -180,7 +180,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="%"/>
                                     <connections>
-                                        <action selector="touchUpInsidePercentageButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Lgh-hm-7mw"/>
+                                        <action selector="percentageButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="rWQ-lw-zKx"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnI-JS-Zq0">
@@ -189,7 +189,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="x^y"/>
                                     <connections>
-                                        <action selector="touchUpInsidePowerButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="KWO-r4-yVh"/>
+                                        <action selector="powerButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="M0b-KL-e34"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-Yw-caJ">
@@ -197,7 +197,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <state key="normal" title="Clear"/>
                                     <connections>
-                                        <action selector="touchUpInsideClearButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="vOe-0u-dwQ"/>
+                                        <action selector="clearButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="udm-kB-zkZ"/>
                                     </connections>
                                 </button>
                             </subviews>

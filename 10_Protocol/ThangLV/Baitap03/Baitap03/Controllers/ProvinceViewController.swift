@@ -13,10 +13,10 @@ class ProvinceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Province"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "District", style: .plain, target: self, action: #selector(touchUpInsideDistrictButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "District", style: .plain, target: self, action: #selector(districtButtonTouchUpInside))
     }
     
-    @objc func touchUpInsideDistrictButton() {
+    @objc func districtButtonTouchUpInside() {
         let districtViewController = DistrictViewController()
         navigationController?.pushViewController(districtViewController, animated: true)
     }

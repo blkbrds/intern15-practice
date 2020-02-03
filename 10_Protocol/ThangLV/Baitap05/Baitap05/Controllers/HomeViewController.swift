@@ -10,8 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var xTextField: UITextField!
-    @IBOutlet weak var yTextField: UITextField!
+    @IBOutlet private weak var xTextField: UITextField!
+    @IBOutlet private weak var yTextField: UITextField!
     
     var selectView = SelectView()
     
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         selectView.dataSource = self
     }
     
-    @IBAction private func touchUpInsideShowButton(_ sender: Any) {
+    @IBAction private func showButtonTouchUpInside(_ sender: Any) {
         selectView.delegate = self
         selectView.configData()
         selectView.showViewWithAnimation()

@@ -13,10 +13,10 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Location"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(touchUpInsideEditButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTouchUpInside))
     }
     
-    @objc func touchUpInsideEditButton() {
+    @objc func editButtonTouchUpInside() {
         let regionViewController = RegionViewController()
         navigationController?.pushViewController(regionViewController, animated: true)
     }

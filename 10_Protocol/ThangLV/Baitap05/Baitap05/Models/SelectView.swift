@@ -44,45 +44,45 @@ class SelectView: UIView {
         y = b
     }
 
-    @IBAction private func touchUpInsideCancelButton(_ sender: Any) {
+    @IBAction private func cancelButtonTouchUpInside(_ sender: Any) {
         self.hideViewWithAnimation()
     }
     
-    @IBAction private func touchUpInsideDoneButton(_ sender: Any) {
+    @IBAction private func doneButtonTouchUpInside(_ sender: Any) {
         
     }
     
-    @IBAction func touchUpInsidePlusButton(_ sender: Any) {
+    @IBAction private func plusButtonTouchUpInside(_ sender: Any) {
         guard let x = x, let y = y else { return }
         resultLabel.text = "Result = \(x + y)"
     }
     
-    @IBAction func touchUpInsideMinusButton(_ sender: Any) {
+    @IBAction private func minusButtonTouchUpInside(_ sender: Any) {
         guard let x = x, let y = y else { return }
         resultLabel.text = "Result = \(x - y)"
     }
     
-    @IBAction func touchUpInsideMultiplyButton(_ sender: Any) {
+    @IBAction private func multiplyButtonTouchUpInside(_ sender: Any) {
         guard let x = x, let y = y else { return }
         resultLabel.text = "Result = \(x * y)"
     }
     
-    @IBAction func touchUpInsideDivisonButton(_ sender: Any) {
+    @IBAction private func divisionButtonTouchUpInside(_ sender: Any) {
         guard let x = x, let y = y else { return }
         resultLabel.text = "Result = \(x / y)"
     }
     
-    @IBAction func touchUpInsidePercentageButton(_ sender: Any) {
+    @IBAction private func percentageButtonTouchUpInside(_ sender: Any) {
         guard let x = x, let y = y else { return }
         resultLabel.text = "Result = \(x % y)"
     }
     
-    @IBAction func touchUpInsidePowerButton(_ sender: Any) {
+    @IBAction private func powerButtonTouchUpInside(_ sender: Any) {
         guard let x = x, let y = y else { return }
         resultLabel.text = "Result = \(pow(Double(x), Double(y)))"
     }
     
-    @IBAction func touchUpInsideClearButton(_ sender: Any) {
+    @IBAction private func clearButtonTouchUpInside(_ sender: Any) {
         hideViewWithAnimation()
         delegate?.view(view: self, needPerform: .clearDataOfTextFields)
     }

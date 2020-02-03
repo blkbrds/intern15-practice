@@ -13,10 +13,10 @@ class DistrictViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "District"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(touchUpInsideDoneButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInside))
     }
     
-    @objc func touchUpInsideDoneButton() {
+    @objc func doneButtonTouchUpInside() {
         navigationController?.popToRootViewController(animated: true)   
     }
 }

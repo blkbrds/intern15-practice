@@ -14,23 +14,23 @@ class ProfileViewController: UIViewController {
     var image: UIImage!
     weak var delegate: ProFileViewControllerDelegate?
     
-    @IBOutlet weak var userAvatarImageView: UIImageView!
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet private weak var userAvatarImageView: UIImageView!
+    @IBOutlet private weak var userNameTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(touchUpInsideDoneButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInside))
         updateUI()
     }
     
-    func updateUI() {
+    private func updateUI() {
         userNameTextField.text = name
         userNameTextField.contentMode = .scaleToFill
         userAvatarImageView.image = image
     }
     
-    @objc func touchUpInsideDoneButton() {
+    @objc func doneButtonTouchUpInside() {
         delegate?.viewController(viewController: self, needPerform: ProfileViewController.Action.changeDataToHomePage(updatedUserName: userNameTextField.text ?? ""))
         navigationController?.popViewController(animated: true)
     }

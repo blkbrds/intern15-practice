@@ -23,7 +23,7 @@ final class HomeViewController: UIViewController {
     }
     
     func setupUI() {
-        self.title = "Search"
+        title = "Search"
         provinceTableView.register(UITableViewCell.self, forCellReuseIdentifier: "ChoPhuoc")
         provinceTableView.dataSource = self
         provinceTableView.delegate = self

@@ -1,7 +1,7 @@
 import UIKit
 
 struct Avatar {
-    let userImage: String
+    let userImageName: String
     var userName: String
 }
 
@@ -9,17 +9,44 @@ class HomeViewController: UIViewController {
 
     @IBOutlet private weak var scrollView: UIScrollView!
 
-    var userAvatars: [Avatar] = [Avatar(userImage: "Deer", userName: "Deer 1"), Avatar(userImage: "Dog", userName: "Dog 1"), Avatar(userImage: "Elephant", userName: "Elephant 1"), Avatar(userImage: "Fox", userName: "Fox 1"), Avatar(userImage: "Gibbon", userName: "Gibbon 1"), Avatar(userImage: "Horse", userName: "Horse 1"), Avatar(userImage: "Parrot", userName: "Parrot 1"), Avatar(userImage: "Sheep", userName: "Sheep 1"), Avatar(userImage: "Squirrel", userName: "Squirrel 1"), Avatar(userImage: "Tiger", userName: "Tiger 1"), Avatar(userImage: "Deer", userName: "Deer 2"), Avatar(userImage: "Dog", userName: "Dog 2"), Avatar(userImage: "Elephant", userName: "Elephant 2"), Avatar(userImage: "Fox", userName: "Fox 2"), Avatar(userImage: "Gibbon", userName: "Gibbon 2"), Avatar(userImage: "Horse", userName: "Horse 2"), Avatar(userImage: "Parrot", userName: "Parrot 2"), Avatar(userImage: "Sheep", userName: "Sheep 2"), Avatar(userImage: "Squirrel", userName: "Squirrel 2"), Avatar(userImage: "Tiger", userName: "Tiger 2"), Avatar(userImage: "Deer", userName: "Deer 3"), Avatar(userImage: "Dog", userName: "Dog 3"), Avatar(userImage: "Elephant", userName: "Elephant 3"), Avatar(userImage: "Fox", userName: "Fox 3"), Avatar(userImage: "Gibbon", userName: "Gibbon 3"), Avatar(userImage: "Horse", userName: "Horse 3"), Avatar(userImage: "Parrot", userName: "Parrot 3"), Avatar(userImage: "Sheep", userName: "Sheep 3"), Avatar(userImage: "Squirrel", userName: "Squirrel 3"), Avatar(userImage: "Tiger", userName: "Tiger 3"), Avatar(userImage: "Deer", userName: "Deer 4"), Avatar(userImage: "Dog", userName: "Dog 4"), Avatar(userImage: "Elephant", userName: "Elephant 4")]
+    var userAvatars: [Avatar] = [Avatar(userImageName: "Deer", userName: "Deer 1"),
+                                 Avatar(userImageName: "Dog", userName: "Dog 1"),
+                                 Avatar(userImageName: "Elephant", userName: "Elephant 1"),
+                                 Avatar(userImageName: "Fox", userName: "Fox 1"),
+                                 Avatar(userImageName: "Gibbon", userName: "Gibbon 1"),
+                                 Avatar(userImageName: "Horse", userName: "Horse 1"),
+                                 Avatar(userImageName: "Parrot", userName: "Parrot 1"),
+                                 Avatar(userImageName: "Sheep", userName: "Sheep 1"),
+                                 Avatar(userImageName: "Squirrel", userName: "Squirrel 1"),
+                                 Avatar(userImageName: "Tiger", userName: "Tiger 1"),
+                                 Avatar(userImageName: "Deer", userName: "Deer 2"),
+                                 Avatar(userImageName: "Dog", userName: "Dog 2"),
+                                 Avatar(userImageName: "Elephant", userName: "Elephant 2"),
+                                 Avatar(userImageName: "Fox", userName: "Fox 2"),
+                                 Avatar(userImageName: "Gibbon", userName: "Gibbon 2"),
+                                 Avatar(userImageName: "Horse", userName: "Horse 2"),
+                                 Avatar(userImageName: "Parrot", userName: "Parrot 2"),
+                                 Avatar(userImageName: "Sheep", userName: "Sheep 2"),
+                                 Avatar(userImageName: "Squirrel", userName: "Squirrel 2"),
+                                 Avatar(userImageName: "Tiger", userName: "Tiger 2"),
+                                 Avatar(userImageName: "Deer", userName: "Deer 3"),
+                                 Avatar(userImageName: "Dog", userName: "Dog 3"),
+                                 Avatar(userImageName: "Elephant", userName: "Elephant 3"),
+                                 Avatar(userImageName: "Fox", userName: "Fox 3"),
+                                 Avatar(userImageName: "Gibbon", userName: "Gibbon 3"),
+                                 Avatar(userImageName: "Horse", userName: "Horse 3"),
+                                 Avatar(userImageName: "Parrot", userName: "Parrot 3"),
+                                 Avatar(userImageName: "Sheep", userName: "Sheep 3"),
+                                 Avatar(userImageName: "Squirrel", userName: "Squirrel 3"),
+                                 Avatar(userImageName: "Tiger", userName: "Tiger 3"),
+                                 Avatar(userImageName: "Deer", userName: "Deer 4"),
+                                 Avatar(userImageName: "Dog", userName: "Dog 4"),
+                                 Avatar(userImageName: "Elephant", userName: "Elephant 4")]
     var myAvatarView: AvatarView?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupUI()
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 
     private func setupUI() {
@@ -35,7 +62,7 @@ class HomeViewController: UIViewController {
             myAvatarView.delegate = self
             myAvatarView.tag = index
             myAvatarView.userNameLabel.text = userAvatars[index].userName
-            myAvatarView.userImageView.image = UIImage(named: userAvatars[index].userImage)
+            myAvatarView.userImageView.image = UIImage(named: userAvatars[index].userImageName)
 
             scrollView.addSubview(myAvatarView)
             x += 130 + 8
