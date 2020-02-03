@@ -10,12 +10,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
-    var animals: [String] = []
-    var foods: [String] = []
-    var homeTools: [String] = []
-    var tableViewDatas: [[String]] = [[]]
+    private var animals: [String] = []
+    private var foods: [String] = []
+    private var homeTools: [String] = []
+    private var tableViewDatas: [[String]] = [[]]
+    
+    private let cellIdentifier: String = "UITableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +57,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = tableViewDatas[indexPath.section][indexPath.row]
         return cell
     }

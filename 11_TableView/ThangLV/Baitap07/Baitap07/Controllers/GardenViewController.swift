@@ -10,8 +10,10 @@ import UIKit
 
 class GardenViewController: UIViewController {
     
-    var garden: [[String]] = []
-    var gardenIndex: [String] = []
+    private var garden: [[String]] = []
+    private var gardenIndex: [String] = []
+    
+    private let cellIdentifier: String = "UITableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ class GardenViewController: UIViewController {
     private func configTableView() {
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .grouped)
         view.addSubview(tableView)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.dataSource = self
     }
 }
@@ -46,7 +48,7 @@ extension GardenViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.textLabel?.text = garden[indexPath.section][indexPath.row]
         return cell
     }

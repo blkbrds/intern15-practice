@@ -9,10 +9,10 @@
 import UIKit
 
 protocol CustomCellDelegate: class {
-    func tableviewCell(tableViewCell: CustomCell, needPerform action: CustomCell.Action)
+    func cell(cell: CustomCell, needPerform action: CustomCell.Action)
 }
 
-class CustomCell: UITableViewCell {
+final class CustomCell: UITableViewCell {
     
     enum Action {
         case showUserName(name: String)
@@ -23,19 +23,8 @@ class CustomCell: UITableViewCell {
     @IBOutlet private weak var subtitleLabel: UILabel!
     
     weak var delegate: CustomCellDelegate?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
     @IBAction private func touchUpInsideTapMeButton(_ sender: Any) {
-        delegate?.tableviewCell(tableViewCell: self, needPerform: CustomCell.Action.showUserName(name: userNameLabel.text ?? ""))
+        delegate?.cell(cell: self, needPerform: CustomCell.Action.showUserName(name: userNameLabel.text ?? ""))
     }
 }

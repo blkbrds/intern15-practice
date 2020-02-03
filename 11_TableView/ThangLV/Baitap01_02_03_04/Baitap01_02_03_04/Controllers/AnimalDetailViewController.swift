@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AnimalDetailViewController: UIViewController {
+final class AnimalDetailViewController: UIViewController {
 
-    @IBOutlet weak var animalNameLabel: UILabel!
+    @IBOutlet private weak var animalNameLabel: UILabel!
     
     var animalName: String?
     
@@ -19,7 +19,7 @@ class AnimalDetailViewController: UIViewController {
         setupData()
     }
     
-    func setupData() {
+    private func setupData() {
         animalNameLabel.text = animalName
     }
 }

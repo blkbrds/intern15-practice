@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     private var titleIndex: [String] = ["A", "H"]
     private let titles: [String] = ["Gia súc", "Đồ vật"]
     
+    private let customCell: String = "CustomCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -35,7 +37,7 @@ class HomeViewController: UIViewController {
     }
     
     private func configTableView() {
-        tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "UITableViewCell")
+        tableView.register(UINib(nibName: customCell, bundle: nil), forCellReuseIdentifier: customCell)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 30
         tableView.dataSource = self
@@ -53,7 +55,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath) as! CustomCell
+        let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: customCell, for: indexPath) as! CustomCell
         cell.userNameLabel?.text = tableViewData[indexPath.section][indexPath.row]
         cell.userNameLabel.textColor = .purple
         cell.delegate = self
@@ -70,7 +72,7 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: CustomCellDelegate {
-    func tableviewCell(tableViewCell: CustomCell, needPerform action: CustomCell.Action) {
+    func cell(cell: CustomCell, needPerform action: CustomCell.Action) {
         switch action {
         case .showUserName(let name):
             print(name)
