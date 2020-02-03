@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -16,25 +16,61 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configTableView()
-        setupNavigation()
+        updateUI()
     }
 
-    func setupNavigation() {
+    func updateUI() {
+        configFavoriteButton()
+        tableView.reloadData()
+    }
+
+    override func setupNavigation() {
         title = "Detail"
-        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
-        navigationItem.rightBarButtonItem = barButtonItem
-        barButtonItem.tintColor = .black
     }
 
     @objc func handleFavoriteButton() {
-
+        viewModel.isFavorite { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.updateUI()
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
     }
 
-    func configTableView() {
+    func configFavoriteButton() {
+        guard let repo = viewModel.repo else { return }
+        if repo.isFavorite {
+            let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-favorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
+            navigationItem.rightBarButtonItem = barButtonItem
+            barButtonItem.tintColor = .black
+        } else {
+            let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
+            navigationItem.rightBarButtonItem = barButtonItem
+            barButtonItem.tintColor = .black
+        }
+    }
+
+    override func configUI() {
+        super.configUI()
         tableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
         tableView.dataSource = self
         tableView.delegate = self
+    }
+
+    override func configData() {
+        super.configData()
+        viewModel.loadFavoriteStatus { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.configFavoriteButton()
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -45,7 +81,7 @@ extension DetailViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailTableViewCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
-        cell.viewModel = viewModel.makeCommentViewModel(at: indexPath)
+        cell.viewModel = viewModel.viewModelForCell(at: indexPath)
         return cell
     }
 }

@@ -16,8 +16,6 @@ final class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configTableView()
-        configData()
         print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL)
     }
 
@@ -44,13 +42,15 @@ final class HomeViewController: BaseViewController {
         tableView.reloadData()
     }
 
-    func configTableView() {
+    override func configUI() {
+        super.configUI()
         tableView.register(name: CellIdentifier.homeTableViewCell.rawValue)
         tableView.delegate = self
         tableView.dataSource = self
     }
 
-    func configData() {
+    override func configData() {
+        super.configData()
         viewModel.deleteAll { [weak self] (result) in
             guard let this = self else { return }
             switch result {

@@ -12,7 +12,8 @@ import RealmSwift
 
 @objcMembers class Repository: Object {
     
-    dynamic var id = 0
+    dynamic var isFavorite: Bool = false
+    dynamic var id: Int = 0
     dynamic var avatarUrl: String = ""
     dynamic var nameApp: String = ""
     dynamic var createdAt: String = ""
