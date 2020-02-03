@@ -42,15 +42,15 @@ final class DetailViewController: BaseViewController {
 
     func configFavoriteButton() {
         guard let repo = viewModel.repo else { return }
+        var image: UIImage?
         if repo.isFavorite {
-            let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-favorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
-            navigationItem.rightBarButtonItem = barButtonItem
-            barButtonItem.tintColor = .black
+            image = UIImage(named: "ic-favorite")
         } else {
-            let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
-            navigationItem.rightBarButtonItem = barButtonItem
-            barButtonItem.tintColor = .black
+            image = UIImage(named: "ic-unfavorite")
         }
+        let barButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleFavoriteButton))
+        navigationItem.rightBarButtonItem = barButtonItem
+        barButtonItem.tintColor = .black
     }
 
     override func configUI() {

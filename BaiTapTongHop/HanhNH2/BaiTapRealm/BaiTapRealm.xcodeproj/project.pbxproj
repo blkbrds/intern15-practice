@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0BEB492664A94FB77641B6F2 /* Pods_BaiTapRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3397E0A769DBD2D7014F1F6 /* Pods_BaiTapRealm.framework */; };
+		8A2472AC23E7FC4400D29461 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2472AA23E7FC4400D29461 /* FavoriteCell.swift */; };
+		8A2472AD23E7FC4400D29461 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2472AB23E7FC4400D29461 /* FavoriteCell.xib */; };
+		8A2472AF23E7FF1300D29461 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2472AE23E7FF1300D29461 /* FavoriteViewModel.swift */; };
+		8A2472B123E7FF5300D29461 /* FavoriteCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2472B023E7FF5300D29461 /* FavoriteCellViewModel.swift */; };
 		8A996AAF23E2D9AB000E4C37 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A996AAD23E2D9AB000E4C37 /* DetailViewController.swift */; };
 		8A996AB023E2D9AB000E4C37 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A996AAE23E2D9AB000E4C37 /* DetailViewController.xib */; };
 		8A996AB423E2DBBA000E4C37 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A996AB223E2DBBA000E4C37 /* DetailTableViewCell.swift */; };
@@ -44,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		643E4C71F330C9BE91CB9C93 /* Pods-BaiTapRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapRealm.release.xcconfig"; path = "Target Support Files/Pods-BaiTapRealm/Pods-BaiTapRealm.release.xcconfig"; sourceTree = "<group>"; };
+		8A2472AA23E7FC4400D29461 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		8A2472AB23E7FC4400D29461 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
+		8A2472AE23E7FF1300D29461 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		8A2472B023E7FF5300D29461 /* FavoriteCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellViewModel.swift; sourceTree = "<group>"; };
 		8A996AAD23E2D9AB000E4C37 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8A996AAE23E2D9AB000E4C37 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		8A996AB223E2DBBA000E4C37 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +102,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A2472A923E7FBFE00D29461 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				8A2472AA23E7FC4400D29461 /* FavoriteCell.swift */,
+				8A2472AB23E7FC4400D29461 /* FavoriteCell.xib */,
+				8A2472B023E7FF5300D29461 /* FavoriteCellViewModel.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		8A996AAC23E2D985000E4C37 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +218,10 @@
 		8AE232B623D7DCE6003D5B37 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				8A2472A923E7FBFE00D29461 /* cell */,
 				8AE232B723D7DD0C003D5B37 /* FavoriteViewController.swift */,
 				8AE232B823D7DD0C003D5B37 /* FavoriteViewController.xib */,
+				8A2472AE23E7FF1300D29461 /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -378,6 +398,7 @@
 				8A996AB023E2D9AB000E4C37 /* DetailViewController.xib in Resources */,
 				8AE232BA23D7DD0C003D5B37 /* FavoriteViewController.xib in Resources */,
 				8AE232BF23D7DD42003D5B37 /* ProfileViewController.xib in Resources */,
+				8A2472AD23E7FC4400D29461 /* FavoriteCell.xib in Resources */,
 				8AE232D823D7E7DC003D5B37 /* HomeTableViewCell.xib in Resources */,
 				8A996AB523E2DBBA000E4C37 /* DetailTableViewCell.xib in Resources */,
 				8AE232AA23D7DB30003D5B37 /* HomeViewController.xib in Resources */,
@@ -435,6 +456,7 @@
 			files = (
 				8AE2329323D7DAC2003D5B37 /* AppDelegate.swift in Sources */,
 				8AE232DD23D7E89B003D5B37 /* UITableViewExt.swift in Sources */,
+				8A2472AC23E7FC4400D29461 /* FavoriteCell.swift in Sources */,
 				8AE2329523D7DAC2003D5B37 /* SceneDelegate.swift in Sources */,
 				8AE232E123D7EE61003D5B37 /* API.Request.swift in Sources */,
 				8AE232B423D7DCD2003D5B37 /* MapViewController.swift in Sources */,
@@ -444,6 +466,8 @@
 				8AE232FA23D7FB3F003D5B37 /* HomeCellTableViewModel.swift in Sources */,
 				8AE232B923D7DD0C003D5B37 /* FavoriteViewController.swift in Sources */,
 				8AE232D723D7E7DC003D5B37 /* HomeTableViewCell.swift in Sources */,
+				8A2472B123E7FF5300D29461 /* FavoriteCellViewModel.swift in Sources */,
+				8A2472AF23E7FF1300D29461 /* FavoriteViewModel.swift in Sources */,
 				8A996AB423E2DBBA000E4C37 /* DetailTableViewCell.swift in Sources */,
 				8AE232C723D7E03B003D5B37 /* Strings.swift in Sources */,
 				8AE232F223D7F279003D5B37 /* Repository.swift in Sources */,
