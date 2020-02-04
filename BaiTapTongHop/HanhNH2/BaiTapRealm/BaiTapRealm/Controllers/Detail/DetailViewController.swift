@@ -17,6 +17,8 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        viewModel.delegate = self
+        viewModel.setupObserer()
     }
 
     func updateUI() {
@@ -89,5 +91,14 @@ extension DetailViewController: UITableViewDataSource {
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+}
+
+extension DetailViewController: DetailViewModelDelegate {
+    func viewModel(_viewModel: DetailViewModel, needperfomAction action: DetailViewModel.Action) {
+        switch action {
+        case .reloadData:
+            updateUI()
+        }
     }
 }

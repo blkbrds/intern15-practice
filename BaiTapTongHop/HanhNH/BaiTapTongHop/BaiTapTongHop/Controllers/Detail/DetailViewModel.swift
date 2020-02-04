@@ -65,7 +65,6 @@ final class DetailViewModel {
             default:
                 break
             }
-            
         })
     }
 
