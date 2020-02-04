@@ -34,9 +34,9 @@ final class DetailViewModel {
             let realm = try Realm()
             try realm.write {
                 repo.isFavorite = !repo.isFavorite
+                realm.create(Repository.self, value: repo, update: .modified)
             }
             completion(.success(nil))
-
         } catch {
             completion(.failure(error))
         }
@@ -48,9 +48,7 @@ final class DetailViewModel {
             let realm = try Realm()
             let object = realm.objects(Repository.self).filter("id = %d", repo.id)
             if let object = object.first {
-                try realm.write {
-                    repo.isFavorite = object.isFavorite
-                }
+                    self.repo = object
             }
             completion(.success(nil))
         } catch {
@@ -68,8 +66,7 @@ final class DetailViewModel {
                 switch change {
                 case .change(let properties):
                     for item in properties {
-                        if item.name == "isFavorite", let newValue = item.newValue as? Bool {
-                            this.repo?.isFavorite = newValue
+                        if item.name == "isFavorite", let _ = item.newValue as? Bool {
                             this.delegate?.viewModel(_viewModel: this, needperfomAction: .reloadData)
                         }
                     }
