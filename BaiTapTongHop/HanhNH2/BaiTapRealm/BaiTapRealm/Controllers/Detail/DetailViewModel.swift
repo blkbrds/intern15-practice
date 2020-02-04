@@ -48,11 +48,27 @@ final class DetailViewModel {
             let realm = try Realm()
             let object = realm.objects(Repository.self).filter("id = %d", repo.id)
             if let object = object.first {
-                    self.repo = object
+                self.repo = object
             }
             completion(.success(nil))
         } catch {
             completion(.failure(error))
+        }
+    }
+
+    func downloadImage(indexPath: IndexPath, completion: @escaping (UIImage?) -> Void) {
+        guard let repo = repo else { return }
+        if let data = repo.avatarImage {
+            completion(UIImage(data: data))
+        } else {
+            API.shared().downloadImage(url: repo.avatarUrl) { (image) in
+                if let image = image {
+                    repo.avatarImage = image.pngData()
+                    completion(image)
+                } else {
+                    completion(nil)
+                }
+            }
         }
     }
 

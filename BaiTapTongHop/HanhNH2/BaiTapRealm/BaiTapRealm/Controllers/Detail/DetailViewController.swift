@@ -80,6 +80,8 @@ extension DetailViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailTableViewCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
+        cell.indexPath = indexPath
+        cell.delagate = self
         cell.viewModel = viewModel?.viewModelForCell(at: indexPath)
         return cell
     }
@@ -96,6 +98,22 @@ extension DetailViewController: DetailViewModelDelegate {
         switch action {
         case .reloadData:
             updateUI()
+        }
+    }
+}
+
+extension DetailViewController: DetailTableViewCellDelagete {
+    func getImage(cell: DetailTableViewCell, needPerform action: DetailTableViewCell.Action) {
+        switch action {
+        case .getImageCollection(let indexPath):
+            if let indexPath = indexPath {
+                viewModel?.downloadImage(indexPath: indexPath, completion: { [weak self] (imgae) in
+                    guard let this = self else { return }
+                    if this.tableView.indexPathsForVisibleRows?.contains(indexPath) == true {
+                        this.tableView.reloadRows(at: [indexPath], with: .none)
+                    }
+                })
+            }
         }
     }
 }
