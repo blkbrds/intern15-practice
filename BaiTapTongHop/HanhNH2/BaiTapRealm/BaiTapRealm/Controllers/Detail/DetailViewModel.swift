@@ -12,13 +12,14 @@ import RealmSwift
 final class DetailViewModel {
     
     var repo: Repository?
+    var notification: NotificationToken?
     
     func viewModelForCell(at indexPath: IndexPath) -> DetailCellViewModel? {
         guard let repo = repo else { return nil}
         return DetailCellViewModel(repo: repo)
     }
     
-    func isFavorite(completion: Completion) {
+    func handleFavoriteRepo(completion: Completion) {
         guard let repo = repo else { return }
         do {
             let realm = try Realm()

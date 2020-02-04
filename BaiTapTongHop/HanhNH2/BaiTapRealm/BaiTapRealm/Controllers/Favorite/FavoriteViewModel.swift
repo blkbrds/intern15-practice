@@ -81,8 +81,9 @@ final class FavoriteViewModel {
                     object.isFavorite = false
                 }
             }
+            completion(.success(nil))
         } catch {
-            
+            completion(.failure(error))
         }
     }
 }

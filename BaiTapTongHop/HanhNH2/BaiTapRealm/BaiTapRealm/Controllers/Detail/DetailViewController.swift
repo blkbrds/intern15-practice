@@ -29,7 +29,7 @@ final class DetailViewController: BaseViewController {
     }
 
     @objc func handleFavoriteButton() {
-        viewModel.isFavorite { [weak self] (result) in
+        viewModel.handleFavoriteRepo { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:

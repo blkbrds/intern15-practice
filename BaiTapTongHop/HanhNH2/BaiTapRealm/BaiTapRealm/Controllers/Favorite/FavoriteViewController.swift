@@ -29,11 +29,14 @@ final class FavoriteViewController: BaseViewController {
         tableView.register(name: CellIdentifier.favoriteCell.rawValue)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
-//        tableView.delegate = self
     }
 
     override func configData() {
         super.configData()
+        loadRepo()
+    }
+
+    func loadRepo() {
         viewModel.loadRepos(completion: { [weak self] (result) in
             guard let this = self else { return }
             switch result {
@@ -80,10 +83,10 @@ extension FavoriteViewController: FavoriteViewModelDelegate {
     func viewModel(_viewModel: FavoriteViewModel, needperfomAction action: FavoriteViewModel.Action) {
         switch action {
         case .reloadData:
-            configData()
+            loadRepo()
         }
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             viewModel.unfavorite(at: indexPath) { [weak self] (result) in
