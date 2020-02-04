@@ -20,20 +20,13 @@ final class FavoriteViewController: BaseViewController {
         viewModel.setupObserver()
     }
 
-    override func setupNavigation() {
-        title = "Favorite"
-        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-delete"), style: .plain, target: self, action: #selector(deleteAll))
-        navigationItem.rightBarButtonItem = barButtonItem
-        barButtonItem.tintColor = .black
-    }
-
     @objc func deleteAll() {
         let alertButton = UIAlertAction(title: Strings.ok, style: .default) { (action) in
             self.viewModel.removeAllFavoriteRepo { [weak self] (result) in
                 guard let this = self else { return }
                 switch result {
                 case .success:
-                    this.loadRepo()
+                    this.fetchData()
                 case .failure:
                     this.alert(title: Errors.cannotDeleteError.localizedDescription)
                 }
@@ -48,6 +41,11 @@ final class FavoriteViewController: BaseViewController {
 
     override func configUI() {
         super.configUI()
+        title = Strings.favorite
+        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-delete"), style: .plain, target: self, action: #selector(deleteAll))
+        navigationItem.rightBarButtonItem = barButtonItem
+        barButtonItem.tintColor = .black
+        
         tableView.register(name: CellIdentifier.favoriteCell.rawValue)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
@@ -55,10 +53,10 @@ final class FavoriteViewController: BaseViewController {
 
     override func configData() {
         super.configData()
-        loadRepo()
+        fetchData()
     }
 
-    func loadRepo() {
+    func fetchData() {
         viewModel.loadRepos(completion: { [weak self] (result) in
             guard let this = self else { return }
             switch result {
@@ -105,7 +103,7 @@ extension FavoriteViewController: FavoriteViewModelDelegate {
     func viewModel(_viewModel: FavoriteViewModel, needperfomAction action: FavoriteViewModel.Action) {
         switch action {
         case .reloadData:
-            loadRepo()
+            fetchData()
         }
     }
 

@@ -13,7 +13,6 @@ import RealmSwift
 final class HomeViewModel {
     
     var repos: [Repository] = []
-    var canLoadMore: Bool = false
 
     func loadAPI(completion: @escaping Completion) {
         APIManager.Repository().search() { [weak self] (result) in
@@ -22,8 +21,7 @@ final class HomeViewModel {
             case .success(let data):
                 guard let data = data else { return }
                 this.repos = data.repos
-                this.canLoadMore = data.totalCount > this.repos.count
-                this.updateInRealm(completion: completion)
+                this.saveToRealm(completion: completion)
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -54,12 +52,10 @@ final class HomeViewModel {
         return repos.count
     }
     
-    func updateInRealm(completion: @escaping Completion) {
+    func saveToRealm(completion: @escaping Completion) {
         do {
             let realm = try Realm()
-            // Step 1: Read all on realm
             let objects = realm.objects(Repository.self)
-            // Step 2: Check if repo is exist -> not add into realm
             if objects.isEmpty {
                 try realm.write {
                     realm.add(repos)

@@ -14,7 +14,7 @@ final class MapViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func setupNavigation() {
-        title = "Map" 
+    override func configUI() {
+        title = Strings.map
     }
 }

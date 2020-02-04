@@ -16,11 +16,7 @@ class BaseViewController: UIViewController {
         configUI()
     }
 
-    func setupNavigation() { }
-
-    func configUI() {
-        setupNavigation()
-    }
+    func configUI() { }
 
     func configData() { }
 }

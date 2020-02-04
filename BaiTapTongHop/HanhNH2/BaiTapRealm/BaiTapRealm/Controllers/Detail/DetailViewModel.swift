@@ -22,7 +22,7 @@ final class DetailViewModel {
     var repo: Repository?
     var notification: NotificationToken?
     weak var delegate: DetailViewModelDelegate?
-    
+
     func viewModelForCell(at indexPath: IndexPath) -> DetailCellViewModel? {
         guard let repo = repo else { return nil }
         return DetailCellViewModel(repo: repo)
@@ -32,12 +32,8 @@ final class DetailViewModel {
         guard let repo = repo else { return }
         do {
             let realm = try Realm()
-            let objects = realm.objects(Repository.self).filter("id = %d", repo.id)
-            if let object = objects.first {
-                try realm.write {
-                    object.isFavorite = !object.isFavorite
-                    repo.isFavorite = object.isFavorite
-                }
+            try realm.write {
+                repo.isFavorite = !repo.isFavorite
             }
             completion(.success(nil))
 
@@ -62,7 +58,7 @@ final class DetailViewModel {
         }
     }
 
-    func setupObserer() {
+    func setupObserver() {
         guard let repo = repo else { return }
         do {
             let realm = try Realm()
@@ -77,12 +73,10 @@ final class DetailViewModel {
                             this.delegate?.viewModel(_viewModel: this, needperfomAction: .reloadData)
                         }
                     }
-                default :
+                default:
                     break
                 }
             })
-        } catch {
-            
-        }
+        } catch { }
     }
 }

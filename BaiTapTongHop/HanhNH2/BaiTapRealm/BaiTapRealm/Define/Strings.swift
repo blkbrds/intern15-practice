@@ -13,4 +13,9 @@ struct Strings {
     static let removeAll: String = "Do you want to delete all your favorite list?"
     static let warning = "WARNING!"
     static let cancel = "Cancel"
+    static let detail = "Detail"
+    static let favorite = "Favorite"
+    static let profile = "Profile"
+    static let map = "Map"
+    static let home = "Home"
 }

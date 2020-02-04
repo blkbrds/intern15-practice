@@ -12,13 +12,13 @@ final class DetailViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel = DetailViewModel()
+    var viewModel: DetailViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        viewModel.delegate = self
-        viewModel.setupObserer()
+        viewModel?.delegate = self
+        viewModel?.setupObserver()
     }
 
     func updateUI() {
@@ -26,12 +26,8 @@ final class DetailViewController: BaseViewController {
         tableView.reloadData()
     }
 
-    override func setupNavigation() {
-        title = "Detail"
-    }
-
     @objc func handleFavoriteButton() {
-        viewModel.handleFavoriteRepo { [weak self] (result) in
+        viewModel?.handleFavoriteRepo { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:
@@ -43,7 +39,7 @@ final class DetailViewController: BaseViewController {
     }
 
     func configFavoriteButton() {
-        guard let repo = viewModel.repo else { return }
+        guard let repo = viewModel?.repo else { return }
         var image: UIImage?
         if repo.isFavorite {
             image = UIImage(named: "ic-favorite")
@@ -57,6 +53,7 @@ final class DetailViewController: BaseViewController {
 
     override func configUI() {
         super.configUI()
+        title = Strings.detail
         tableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
         tableView.dataSource = self
         tableView.delegate = self
@@ -64,7 +61,7 @@ final class DetailViewController: BaseViewController {
 
     override func configData() {
         super.configData()
-        viewModel.loadFavoriteStatus { [weak self] (result) in
+        viewModel?.loadFavoriteStatus { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:
@@ -83,7 +80,7 @@ extension DetailViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailTableViewCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
-        cell.viewModel = viewModel.viewModelForCell(at: indexPath)
+        cell.viewModel = viewModel?.viewModelForCell(at: indexPath)
         return cell
     }
 }

@@ -8,29 +8,29 @@
 
 import UIKit
 
-class DetailTableViewCell: UITableViewCell {
+final class DetailTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var watchersLabel: UILabel!
     @IBOutlet private weak var forksLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var avatarImageView: UIImageView!
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
+
     var viewModel: DetailCellViewModel? {
         didSet {
-            updateComment()
+            updateUI()
         }
     }
     
-    private func updateComment() {
-        guard let viewModel = viewModel else { return }
+    private func updateUI() {
+        if let viewModel = viewModel {
         watchersLabel.text = "\(viewModel.watcherCount)"
         forksLabel.text = "\(viewModel.forksCount)"
         descriptionLabel.text = viewModel.description
         nameLabel.text = viewModel.name
         avatarImageView.image = viewModel.avatar
+        } else  {
+            
+        }
     }
 }

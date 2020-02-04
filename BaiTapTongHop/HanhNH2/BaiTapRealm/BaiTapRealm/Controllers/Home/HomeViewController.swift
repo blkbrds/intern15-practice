@@ -19,13 +19,6 @@ final class HomeViewController: BaseViewController {
         print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteURL)
     }
 
-    override func setupNavigation() {
-        title = "Home"
-        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-reset-home"), style: .plain, target: self, action: #selector(resetAPI))
-        navigationItem.rightBarButtonItem = barButtonItem
-        barButtonItem.tintColor = .black
-    }
-    
     @objc func resetAPI() {
         viewModel.reset { [weak self] (result) in
             guard let this = self else { return }
@@ -44,6 +37,10 @@ final class HomeViewController: BaseViewController {
 
     override func configUI() {
         super.configUI()
+        title = Strings.home
+        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-reset-home"), style: .plain, target: self, action: #selector(resetAPI))
+        navigationItem.rightBarButtonItem = barButtonItem
+        barButtonItem.tintColor = .black
         tableView.register(name: CellIdentifier.homeTableViewCell.rawValue)
         tableView.delegate = self
         tableView.dataSource = self
