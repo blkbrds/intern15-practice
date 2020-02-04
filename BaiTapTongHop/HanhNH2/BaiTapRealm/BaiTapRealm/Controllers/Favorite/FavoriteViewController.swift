@@ -57,7 +57,7 @@ final class FavoriteViewController: BaseViewController {
     }
 
     func fetchData() {
-        viewModel.loadRepos(completion: { [weak self] (result) in
+        viewModel.fetchData(completion: { [weak self] (result) in
             guard let this = self else { return }
             switch result {
             case .success:

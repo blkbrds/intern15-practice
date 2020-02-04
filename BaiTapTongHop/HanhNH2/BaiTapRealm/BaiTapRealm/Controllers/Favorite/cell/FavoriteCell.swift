@@ -27,11 +27,11 @@ final class FavoriteCell: UITableViewCell {
     weak var delegate: FavoriteCellDelegate?
     var viewModel: FavoriteCellViewModel? {
         didSet {
-            updateFavorite()
+            updateUI()
         }
     }
 
-    private func updateFavorite() {
+    private func updateUI() {
        if let viewModel = viewModel {
             nameLabel.text = viewModel.name
         watchersLabel.text = "\(viewModel.watcherCount)"

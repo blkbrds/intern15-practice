@@ -23,7 +23,7 @@ final class FavoriteViewModel {
     var notification: NotificationToken?
     weak var delegate: FavoriteViewModelDelegate?
 
-    func loadRepos(completion: Completion) {
+    func fetchData(completion: Completion) {
         do {
             let realm = try Realm()
             let object = realm.objects(Repository.self).filter("isFavorite == true")
