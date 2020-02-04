@@ -22,6 +22,28 @@ final class FavoriteViewController: BaseViewController {
 
     override func setupNavigation() {
         title = "Favorite"
+        let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-delete"), style: .plain, target: self, action: #selector(deleteAll))
+        navigationItem.rightBarButtonItem = barButtonItem
+        barButtonItem.tintColor = .black
+    }
+
+    @objc func deleteAll() {
+        let alertButton = UIAlertAction(title: Strings.ok, style: .default) { (action) in
+            self.viewModel.removeAllFavoriteRepo { [weak self] (result) in
+                guard let this = self else { return }
+                switch result {
+                case .success:
+                    this.loadRepo()
+                case .failure:
+                    this.alert(title: Errors.cannotDeleteError.localizedDescription)
+                }
+            }
+        }
+        let cancelButton = UIAlertAction(title: Strings.cancel, style: .cancel, handler: nil)
+        let alert = UIAlertController(title: Strings.warning, message: Strings.removeAll, preferredStyle: .alert)
+        alert.addAction(alertButton)
+        alert.addAction(cancelButton)
+        present(alert, animated: true, completion: nil)
     }
 
     override func configUI() {

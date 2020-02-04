@@ -70,7 +70,7 @@ final class RealmManager {
         do {
             let realm = try Realm()
             try realm.write {
-               {
+                if let object = realm.object(ofType: User.self, forPrimaryKey: id) {
                     realm.delete(object)
                     completion(.success(true))
                 }

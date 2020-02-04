@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 protocol FavoriteViewModelDelegate: class {
-     func viewModel(_viewModel: FavoriteViewModel, needperfomAction action: FavoriteViewModel.Action)
+    func viewModel(_viewModel: FavoriteViewModel, needperfomAction action: FavoriteViewModel.Action)
 }
 
 final class FavoriteViewModel {
@@ -18,7 +18,7 @@ final class FavoriteViewModel {
     enum Action {
         case reloadData
     }
-    
+
     var repos: [Repository] = []
     var notification: NotificationToken?
     weak var delegate: FavoriteViewModelDelegate?
@@ -29,23 +29,23 @@ final class FavoriteViewModel {
             let object = realm.objects(Repository.self).filter("isFavorite == true")
             repos = Array(object)
             completion(.success(nil))
-            
+
         } catch {
             completion(.failure(error))
         }
     }
-    
+
     func numberOfRowsInSection(in section: Int) -> Int {
         return repos.count
     }
-    
+
     func viewModelForCell(at indexPath: IndexPath) -> FavoriteCellViewModel {
         return FavoriteCellViewModel(repo: repos[indexPath.row])
     }
-    
+
     func downloadImage(indexPath: IndexPath, completion: @escaping (UIImage?) -> Void) {
         let item = repos[indexPath.row]
-            if let data = item.avatarImage {
+        if let data = item.avatarImage {
             completion(UIImage(data: data))
         } else {
             API.shared().downloadImage(url: item.avatarUrl) { (image) in
@@ -58,7 +58,7 @@ final class FavoriteViewModel {
             }
         }
     }
-    
+
     func setupObserver() {
         let realm = try! Realm()
         notification = realm.objects(Repository.self).observe({ [weak self] (action) in
@@ -69,16 +69,31 @@ final class FavoriteViewModel {
             default:
                 break
             }
-            
+
         })
     }
-    
+
     func unfavorite(at indexPath: IndexPath, completion: Completion) {
         do {
             let realm = try Realm()
             if let object = realm.object(ofType: Repository.self, forPrimaryKey: repos[indexPath.row].id) {
                 try realm.write {
                     object.isFavorite = false
+                }
+            }
+            completion(.success(nil))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+
+    func removeAllFavoriteRepo(completion: Completion) {
+        do {
+            let realm = try Realm()
+            let object = realm.objects(Repository.self).filter("isFavorite == true")
+            for item in object {
+                try realm.write {
+                    item.isFavorite = false
                 }
             }
             completion(.success(nil))

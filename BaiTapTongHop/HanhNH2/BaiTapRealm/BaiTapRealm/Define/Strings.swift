@@ -10,4 +10,7 @@ import Foundation
 struct Strings {
     // Alert
     static let ok: String = "OK"
+    static let removeAll: String = "Do you want to delete all your favorite list?"
+    static let warning = "WARNING!"
+    static let cancel = "Cancel"
 }
