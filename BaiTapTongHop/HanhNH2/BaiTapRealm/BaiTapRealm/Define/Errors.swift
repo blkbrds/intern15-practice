@@ -15,4 +15,8 @@ struct Errors {
     static let noDataError = NSError(domain: "",
                                 code: 404,
                                 userInfo: [NSLocalizedDescriptionKey: "No Data Error"])
+    
+    static let cannotDeleteError = NSError(domain: "",
+                                           code: 404,
+                                           userInfo: [NSLocalizedDescriptionKey: "Can not complete this deletion."])
 }

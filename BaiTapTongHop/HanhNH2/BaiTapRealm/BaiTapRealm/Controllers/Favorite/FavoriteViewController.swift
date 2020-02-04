@@ -83,4 +83,18 @@ extension FavoriteViewController: FavoriteViewModelDelegate {
             configData()
         }
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.unfavorite(at: indexPath) { [weak self] (result) in
+                guard let this = self else { return }
+                switch result {
+                case .success:
+                    this.tableView.reloadData()
+                case .failure:
+                    this.alert(title: Errors.cannotDeleteError.localizedDescription)
+                }
+            }
+        }
+    }
 }

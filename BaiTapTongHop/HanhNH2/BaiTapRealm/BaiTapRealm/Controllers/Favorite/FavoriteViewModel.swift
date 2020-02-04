@@ -72,4 +72,17 @@ final class FavoriteViewModel {
             
         })
     }
+    
+    func unfavorite(at indexPath: IndexPath, completion: Completion) {
+        do {
+            let realm = try Realm()
+            if let object = realm.object(ofType: Repository.self, forPrimaryKey: repos[indexPath.row].id) {
+                try realm.write {
+                    object.isFavorite = false
+                }
+            }
+        } catch {
+            
+        }
+    }
 }
