@@ -18,13 +18,17 @@ final class CustomCell: UITableViewCell {
         case showUserName(name: String)
     }
     
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
     
     weak var delegate: CustomCellDelegate?
-
-    @IBAction private func touchUpInsideTapMeButton(_ sender: Any) {
+    
+    func setupView(text: String) {
+        userNameLabel.text = text
+    }
+    
+    @IBAction private func tapMeButtonTouchUpInside(_ sender: Any) {
         delegate?.cell(cell: self, needPerform: CustomCell.Action.showUserName(name: userNameLabel.text ?? ""))
     }
 }

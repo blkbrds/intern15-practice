@@ -56,8 +56,8 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: customCell, for: indexPath) as! CustomCell
-        cell.userNameLabel?.text = tableViewData[indexPath.section][indexPath.row]
-        cell.userNameLabel.textColor = .purple
+        let text = tableViewData[indexPath.section][indexPath.row]
+        cell.setupView(text: text)
         cell.delegate = self
         return cell
     }
