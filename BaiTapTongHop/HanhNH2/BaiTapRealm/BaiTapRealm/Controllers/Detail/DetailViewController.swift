@@ -16,7 +16,6 @@ final class DetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
         viewModel?.delegate = self
         viewModel?.setupObserver()
     }
@@ -79,7 +78,8 @@ final class DetailViewController: BaseViewController {
 
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.numberOfRowsInSection()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

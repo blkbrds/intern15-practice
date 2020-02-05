@@ -93,4 +93,8 @@ final class DetailViewModel {
             })
         } catch { }
     }
+    
+    func numberOfRowsInSection() -> Int {
+        return 1
+    }
 }
