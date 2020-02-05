@@ -75,16 +75,16 @@ final class HomeViewModel {
         }
     }
     
-    func reset(comletion: @escaping Completion) {
+    func reset(completion: @escaping Completion) {
         do {
             let realm = try Realm()
             let object = realm.objects(Repository.self)
             try realm.write {
                 realm.delete(object)
-                loadAPI(completion: comletion)
+                loadAPI(completion: completion)
             }
         } catch {
-            comletion(.failure(error))
+            completion(.failure(error))
         }
     }
     

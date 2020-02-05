@@ -25,18 +25,6 @@ final class DetailViewController: BaseViewController {
         tableView.reloadData()
     }
 
-    @objc func handleFavoriteButton() {
-        viewModel?.handleFavoriteRepo { [weak self] (result) in
-            guard let this = self else { return }
-            switch result {
-            case .success:
-                this.updateUI()
-            case .failure(let error):
-                this.alert(title: error.localizedDescription)
-            }
-        }
-    }
-
     func configFavoriteButton() {
         guard let repo = viewModel?.repo else { return }
         var image: UIImage?
@@ -48,6 +36,18 @@ final class DetailViewController: BaseViewController {
         let barButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleFavoriteButton))
         navigationItem.rightBarButtonItem = barButtonItem
         barButtonItem.tintColor = .black
+    }
+    
+    @objc func handleFavoriteButton() {
+        viewModel?.handleFavoriteRepo { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.updateUI()
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
     }
 
     override func setupUI() {
@@ -64,29 +64,22 @@ final class DetailViewController: BaseViewController {
     }
     
     func fetchData() {
-        viewModel?.loadFavoriteStatus { [weak self] (result) in
-            guard let this = self else { return }
-            switch result {
-            case .success:
-                this.configFavoriteButton()
-            case .failure(let error):
-                this.alert(title: error.localizedDescription)
-            }
+        viewModel?.loadFavoriteStatus { [weak self] in
+            self?.configFavoriteButton()
         }
     }
 }
 
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let viewModel = viewModel else { return 0 }
-        return viewModel.numberOfRowsInSection()
+        return viewModel?.numberOfRowsInSection() ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailTableViewCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
         cell.indexPath = indexPath
         cell.delagate = self
-        cell.viewModel = viewModel?.viewModelForCell(at: indexPath)
+        cell.viewModel = viewModel?.viewModelForCell()
         return cell
     }
 }

@@ -12,6 +12,7 @@ import RealmSwift
 final class HomeViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     var viewModel = HomeViewModel()
 
     override func viewDidLoad() {

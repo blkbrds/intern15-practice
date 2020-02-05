@@ -69,7 +69,6 @@ final class FavoriteViewModel {
             default:
                 break
             }
-
         })
     }
 

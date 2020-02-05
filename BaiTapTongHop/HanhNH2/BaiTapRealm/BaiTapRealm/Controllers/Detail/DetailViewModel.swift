@@ -23,7 +23,7 @@ final class DetailViewModel {
     var notification: NotificationToken?
     weak var delegate: DetailViewModelDelegate?
 
-    func viewModelForCell(at indexPath: IndexPath) -> DetailCellViewModel? {
+    func viewModelForCell() -> DetailCellViewModel? {
         guard let repo = repo else { return nil }
         return DetailCellViewModel(repo: repo)
     }
@@ -43,18 +43,18 @@ final class DetailViewModel {
         }
     }
 
-    func loadFavoriteStatus(completion: Completion) {
+    func loadFavoriteStatus(completion: () -> (Void)) {
         guard let repo = repo else { return }
         do {
             let realm = try Realm()
-            let object = realm.objects(Repository.self).filter("id = %d", repo.id)
+            let object = realm.objects(Repository.self).filter("id = %d AND isFavorite == true", repo.id)
             if let object = object.first {
                 self.repo = object
+            } else {
+                self.repo?.isFavorite = false
             }
-            completion(.success(nil))
-        } catch {
-            completion(.failure(error))
-        }
+        } catch { }
+        completion()
     }
 
     func downloadImage(indexPath: IndexPath, completion: @escaping (UIImage?) -> Void) {
@@ -83,7 +83,8 @@ final class DetailViewModel {
                 switch change {
                 case .change(let properties):
                     for item in properties {
-                        if item.name == "isFavorite", let _ = item.newValue as? Bool {
+                        if item.name == "isFavorite", let newValue = item.newValue as? Bool {
+                            this.repo?.isFavorite = newValue
                             this.delegate?.viewModel(_viewModel: this, needperfomAction: .reloadData)
                         }
                     }
