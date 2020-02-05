@@ -34,6 +34,7 @@ final class DetailViewModel {
             let realm = try Realm()
             try realm.write {
                 repo.isFavorite = !repo.isFavorite
+                repo.favoriteTime = Date()
                 realm.create(Repository.self, value: repo, update: .modified)
             }
             completion(.success(nil))

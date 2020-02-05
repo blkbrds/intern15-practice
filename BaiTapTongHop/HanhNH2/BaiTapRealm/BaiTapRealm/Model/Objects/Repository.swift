@@ -21,6 +21,7 @@ import RealmSwift
     var avatarImage: Data?
     dynamic var forksCount: Int = 0
     dynamic var descriptionName: String = ""
+    dynamic var favoriteTime: Date = Date()
 
     init(json: JSON) {
         if let json = json["created_at"] as? String {

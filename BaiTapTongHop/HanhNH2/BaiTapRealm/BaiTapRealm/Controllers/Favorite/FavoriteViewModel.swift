@@ -26,7 +26,7 @@ final class FavoriteViewModel {
     func fetchData(completion: Completion) {
         do {
             let realm = try Realm()
-            let object = realm.objects(Repository.self).filter("isFavorite == true")
+            let object = realm.objects(Repository.self).filter("isFavorite == true").sorted(byKeyPath: "favoriteTime", ascending: false)
             repos = Array(object)
             completion(.success(nil))
 
