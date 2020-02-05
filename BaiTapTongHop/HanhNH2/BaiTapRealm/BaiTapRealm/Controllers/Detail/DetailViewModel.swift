@@ -49,9 +49,13 @@ final class DetailViewModel {
             let realm = try Realm()
             let object = realm.objects(Repository.self).filter("id = %d AND isFavorite == true", repo.id)
             if let object = object.first {
-                self.repo = object
+                try realm.write {
+                    self.repo = object
+                }
             } else {
-                self.repo?.isFavorite = false
+                try realm.write {
+                    self.repo?.isFavorite = false
+                }
             }
         } catch { }
         completion()
