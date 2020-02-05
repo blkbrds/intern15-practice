@@ -15,7 +15,7 @@ final class ProfileViewController: BaseViewController {
         
     }
     
-    override func configUI() {
+    override func setupUI() {
         title = Strings.profile
     }
 }

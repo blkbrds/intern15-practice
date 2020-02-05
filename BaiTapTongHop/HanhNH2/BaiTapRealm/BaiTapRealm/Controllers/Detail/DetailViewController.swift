@@ -51,16 +51,20 @@ final class DetailViewController: BaseViewController {
         barButtonItem.tintColor = .black
     }
 
-    override func configUI() {
-        super.configUI()
+    override func setupUI() {
+        super.setupUI()
         title = Strings.detail
         tableView.register(name: CellIdentifier.detailTableViewCell.rawValue)
         tableView.dataSource = self
         tableView.delegate = self
     }
 
-    override func configData() {
-        super.configData()
+    override func setupData() {
+        super.setupData()
+        fetchData()
+    }
+    
+    func fetchData() {
         viewModel?.loadFavoriteStatus { [weak self] (result) in
             guard let this = self else { return }
             switch result {

@@ -44,8 +44,6 @@ final class DetailTableViewCell: UITableViewCell {
                 avatarImageView.image = nil
                 delagate?.getImage(cell: self, needPerform: Action.getImageCollection(indexPath: indexPath))
             }
-        } else {
-
         }
     }
 }

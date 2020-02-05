@@ -40,8 +40,8 @@ final class FavoriteViewController: BaseViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    override func configUI() {
-        super.configUI()
+    override func setupUI() {
+        super.setupUI()
         title = Strings.favorite
         let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-delete"), style: .plain, target: self, action: #selector(deleteAll))
         navigationItem.rightBarButtonItem = barButtonItem
@@ -55,8 +55,8 @@ final class FavoriteViewController: BaseViewController {
         searchBar.delegate = self
     }
 
-    override func configData() {
-        super.configData()
+    override func setupData() {
+        super.setupData()
         fetchData()
     }
 

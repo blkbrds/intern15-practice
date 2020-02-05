@@ -12,13 +12,13 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configData()
-        configUI()
+        setupData()
+        setupUI()
     }
 
-    func configUI() { }
+    func setupUI() { }
 
-    func configData() { }
+    func setupData() { }
 }
 extension BaseViewController {
     func alert(title: String, message: String = "") {

@@ -35,8 +35,8 @@ final class HomeViewController: BaseViewController {
         tableView.reloadData()
     }
 
-    override func configUI() {
-        super.configUI()
+    override func setupUI() {
+        super.setupUI()
         title = Strings.home
         let barButtonItem = UIBarButtonItem(image: UIImage(named: "ic-reset-home"), style: .plain, target: self, action: #selector(refreshData))
         navigationItem.rightBarButtonItem = barButtonItem
@@ -46,8 +46,12 @@ final class HomeViewController: BaseViewController {
         tableView.dataSource = self
     }
 
-    override func configData() {
-        super.configData()
+    override func setupData() {
+        super.setupData()
+        fetchData()
+    }
+    
+    func fetchData() {
         viewModel.loadAPI() { [weak self] (result) in
             guard let this = self else { return }
             switch result {
