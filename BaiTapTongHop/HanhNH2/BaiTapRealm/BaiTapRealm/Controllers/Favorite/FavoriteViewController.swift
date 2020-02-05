@@ -10,6 +10,7 @@ import UIKit
 
 final class FavoriteViewController: BaseViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel = FavoriteViewModel()
@@ -49,6 +50,9 @@ final class FavoriteViewController: BaseViewController {
         tableView.register(name: CellIdentifier.favoriteCell.rawValue)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
+        tableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dissmissKeyboard)))
+        
+        searchBar.delegate = self
     }
 
     override func configData() {
@@ -66,6 +70,10 @@ final class FavoriteViewController: BaseViewController {
                 this.alert(title: error.localizedDescription)
             }
         })
+    }
+    
+    @objc private func dissmissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -121,3 +129,23 @@ extension FavoriteViewController: FavoriteViewModelDelegate {
         }
     }
 }
+
+extension FavoriteViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.search(text: searchText) { [weak self] (result) in
+            guard let this = self else { return }
+            switch result {
+            case .success:
+                this.tableView.reloadData()
+            case .failure(let error):
+                this.alert(title: error.localizedDescription)
+            }
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        fetchData()
+    }
+}
+

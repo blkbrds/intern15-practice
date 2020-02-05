@@ -18,7 +18,7 @@ final class FavoriteViewModel {
     enum Action {
         case reloadData
     }
-
+    
     var repos: [Repository] = []
     var notification: NotificationToken?
     weak var delegate: FavoriteViewModelDelegate?
@@ -96,6 +96,22 @@ final class FavoriteViewModel {
                     item.isFavorite = false
                 }
             }
+            completion(.success(nil))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func search(text: String, completion: Completion) {
+        do {
+            let realm = try Realm()
+            var objects: Results<Repository>
+            if text == "" {
+                objects = realm.objects(Repository.self).filter("isFavorite == true")
+            } else {
+                objects = realm.objects(Repository.self).filter("nameApp CONTAINS[cd] %@ AND isFavorite == true", text)
+            }
+            repos = Array(objects)
             completion(.success(nil))
         } catch {
             completion(.failure(error))
