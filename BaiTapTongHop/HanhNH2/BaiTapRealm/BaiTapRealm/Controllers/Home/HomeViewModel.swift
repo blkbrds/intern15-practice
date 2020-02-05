@@ -61,10 +61,11 @@ final class HomeViewModel {
                     realm.add(repos)
                 }
             } else {
-                for object in objects {
-                    if !repos.contains(object) {
+                let ids = objects.map{ $0.id }
+                for repo in repos {
+                    if !ids.contains(repo.id) {
                         try realm.write {
-                            realm.add(object)
+                            realm.add(repo)
                         }
                     }
                 }

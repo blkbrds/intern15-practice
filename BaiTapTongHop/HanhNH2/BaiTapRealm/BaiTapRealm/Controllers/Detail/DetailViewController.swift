@@ -21,14 +21,13 @@ final class DetailViewController: BaseViewController {
     }
 
     func updateUI() {
-        configFavoriteButton()
+        configFavoriteButton(isFavorite: viewModel?.repo?.isFavorite ?? false)
         tableView.reloadData()
     }
 
-    func configFavoriteButton() {
-        guard let repo = viewModel?.repo else { return }
+    func configFavoriteButton(isFavorite: Bool) {
         var image: UIImage?
-        if repo.isFavorite {
+        if isFavorite {
             image = UIImage(named: "ic-favorite")
         } else {
             image = UIImage(named: "ic-unfavorite")
@@ -64,8 +63,8 @@ final class DetailViewController: BaseViewController {
     }
     
     func fetchData() {
-        viewModel?.loadFavoriteStatus { [weak self] in
-            self?.configFavoriteButton()
+        viewModel?.loadFavoriteStatus { [weak self] (isFavorite) in
+            self?.configFavoriteButton(isFavorite: isFavorite)
         }
     }
 }

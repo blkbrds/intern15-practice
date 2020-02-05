@@ -43,22 +43,19 @@ final class DetailViewModel {
         }
     }
 
-    func loadFavoriteStatus(completion: () -> (Void)) {
+    func loadFavoriteStatus(completion: (Bool) -> (Void)) {
         guard let repo = repo else { return }
         do {
             let realm = try Realm()
             let object = realm.objects(Repository.self).filter("id = %d AND isFavorite == true", repo.id)
-            if let object = object.first {
-                try realm.write {
-                    self.repo = object
-                }
+            if !object.isEmpty {
+                completion(true)
             } else {
-                try realm.write {
-                    self.repo?.isFavorite = false
-                }
+                completion(false)
             }
-        } catch { }
-        completion()
+        } catch {
+            completion(false)
+        }
     }
 
     func downloadImage(indexPath: IndexPath, completion: @escaping (UIImage?) -> Void) {
