@@ -1,48 +1,45 @@
 import UIKit
-
-protocol HomeViewDataSource {
-	func viewController(viewController: HomeViewController ) -> String
+protocol HomeViewControllerDataSource: class {
+	func getHuyen () -> String?
+	func getTinh () -> String?
+	func getMien () -> String?
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
-	var dataSource: HomeViewDataSource?
-	
-	@IBOutlet weak var districtLabel: UILabel!
-	@IBOutlet weak var localLabel: UILabel!
-	@IBOutlet weak var provinceLabel: UILabel!
+	var dataSource: HomeViewControllerDataSource?
+
+	@IBOutlet private weak var districtLabel: UILabel!
+	@IBOutlet private weak var localLabel: UILabel!
+	@IBOutlet private weak var provinceLabel: UILabel!
+
 	override func viewDidLoad() {
-
 		super.viewDidLoad()
-
-		makeBorder()
 		title = "Location"
 
 		let rightButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(pushToViewController))
 		navigationItem.rightBarButtonItem = rightButton
-		
-
-		func configView() {
-				if let dataSource = dataSource {
-					
-					localLabel.text = dataSource.viewController(viewController: self)
-				}
-			}
-		
 	}
-	func makeBorder() {
-		districtLabel.layer.borderColor = UIColor.orange.cgColor
-		districtLabel.layer.borderWidth = 1
-		localLabel.layer.borderColor = UIColor.blue.cgColor
-		localLabel.layer.borderWidth = 1
-		provinceLabel.layer.borderColor = UIColor.green.cgColor
-		provinceLabel.layer.borderWidth = 1
-
+	
+	func configViewController () {
+		guard let huyenText = dataSource?.getHuyen(), let tinhText = dataSource?.getTinh(), let mienText = dataSource?.getMien() else { return }
+		districtLabel.text = huyenText
+		localLabel.text = mienText
+		provinceLabel.text = tinhText
 	}
-	@objc func pushToViewController() {
+	
+	override func setupNavigationBar() {
+		title = "Địa điểm"
+		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(handleEdit))
+	}
+
+	@objc private func pushToViewController() {
 		let vc = LocalViewController()
 		navigationController?.pushViewController(vc, animated: true)
-		
+	}
+
+	@objc private func handleEdit() {
+		let localViewController = LocalViewController()
+		navigationController?.pushViewController(localViewController, animated: true)
 	}
 }
-

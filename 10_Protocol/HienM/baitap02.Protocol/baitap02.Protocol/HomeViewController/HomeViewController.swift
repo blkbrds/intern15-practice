@@ -57,6 +57,7 @@ extension HomeViewController: AvatarViewDeligate {
 		case .nameUser(let nameUser):
 			let profileViewController = ProfileViewController()
 			profileViewController.name = nameUser
+			print(nameUser)
 			profileViewController.view.tag = view.tag
 			profileViewController.delegate = self
 			navigationController?.pushViewController(profileViewController, animated: true)

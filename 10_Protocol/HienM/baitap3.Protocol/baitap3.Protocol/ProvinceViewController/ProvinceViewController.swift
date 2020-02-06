@@ -1,19 +1,15 @@
-//
-//  ProvinceViewController.swift
-//  baitap3.Protocol
-//
-//  Created by Ngoc Hien on 2/4/20.
-//  Copyright © 2020 NgocHien. All rights reserved.
-//
-
 import UIKit
 
-class ProvinceViewController: UIViewController {
+class ProvinceViewController: BaseViewController {
 
 	@IBOutlet var TinhButton: [UIButton]!
+	var diaDiem: DiaDiem = DiaDiem()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+	
+	override func setupNavigationBar() {
 		title = "Province"
 
 		let rightButton = UIBarButtonItem(title: "District", style: .plain, target: self, action: #selector(pushToDistrictViewController))
@@ -24,10 +20,17 @@ class ProvinceViewController: UIViewController {
 	}
 	@objc func pushToDistrictViewController() {
 		let vc = DistrictViewController()
+		vc.diaDiem = diaDiem
 		navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	@objc func backtoViewLocalViewController() {
 		navigationController?.popViewController(animated: true)
+	}
+	
+	@IBAction func getProvinceAction(_ sender: UIButton) {
+		TinhButton.forEach({ $0.backgroundColor = .gray })
+		sender.backgroundColor = .green
+		diaDiem.tinh = sender.titleLabel?.text ?? ""
 	}
 }

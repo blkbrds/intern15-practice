@@ -1,17 +1,25 @@
 import UIKit
+struct DiaDiem {
+  var mien: String = ""
+  var tinh: String = ""
+  var huyen: String = ""
+}
 
+class LocalViewController: BaseViewController {
 
-class LocalViewController: UIViewController {
+	@IBOutlet private var mienButtons: [UIButton]!
 
-	@IBOutlet var mienButtons: [UIButton]!
-
-
-	var name: String?
-
+	var diaDiem : DiaDiem = DiaDiem()
+	
+	enum Action {
+		case NameLocal (nameLocal: String?)
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+	}
+	
+	override func setupNavigationBar() {
 		title = "Local"
 
 		let rightButton = UIBarButtonItem(title: "Province", style: .plain, target: self, action: #selector(pushToProvinceViewController))
@@ -19,33 +27,27 @@ class LocalViewController: UIViewController {
 
 		let backButton = UIBarButtonItem(image: UIImage(named: "back arrow"), style: .plain, target: self, action: #selector(backToHomeViewController))
 		navigationItem.leftBarButtonItem = backButton
-		let homeViewController = HomeViewController()
-		homeViewController.dataSource = self
 
 	}
 
-	@objc func pushToProvinceViewController() {
-		let vc = ProvinceViewController()
-		navigationController?.pushViewController(vc, animated: true)
+	@objc  private func pushToProvinceViewController() {
+		let provinceViewController = ProvinceViewController()
+		provinceViewController.diaDiem = diaDiem
+		navigationController?.pushViewController(provinceViewController, animated: true)
 	}
 
-	@objc func backToHomeViewController() {
-		navigationController?.popViewController(animated: true)
+	@objc private func backToHomeViewController() {
+		guard let navi = navigationController else { return }
+		for vc in navi.viewControllers where vc is HomeViewController {
+			let homeVC = vc as! HomeViewController
+			navi.popToViewController(homeVC, animated: true)
+		}
 	}
 
 	@IBAction func getLocalAction(_ sender: UIButton) {
 		mienButtons.forEach({ $0.backgroundColor = .gray })
-		sender.backgroundColor = .yellow
-		name = sender.titleLabel?.text
-
+		sender.backgroundColor = .blue
+		diaDiem.mien = sender.titleLabel?.text ?? ""
 	}
 }
-extension LocalViewController: HomeViewDataSource {
-	func viewController(viewController: HomeViewController) -> String {
-		guard let nameText = name else { return name ?? ""}
-
-		return nameText
-	}
-}
-
 

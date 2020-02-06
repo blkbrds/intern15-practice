@@ -6,8 +6,8 @@ protocol ProfileViewControllerDelegate: class {
 
 final class ProfileViewController: UIViewController {
 
-	@IBOutlet weak var avatarImage: UIImageView!
-	@IBOutlet weak var userNameTextField: UITextField!
+	@IBOutlet private weak var avatarImage: UIImageView!
+	@IBOutlet private weak var userNameTextField: UITextField!
 
 	weak var delegate: ProfileViewControllerDelegate?
 	var name: String?
@@ -26,7 +26,7 @@ final class ProfileViewController: UIViewController {
 		userNameTextField.text = name
 	}
 
-	@objc func DoneToViewControllerAction() {
+	@objc private func DoneToViewControllerAction() {
 		navigationController?.popViewController(animated: true)
 		guard let name = userNameTextField.text else { return }
 		delegate?.controller(controller: self, needPerformAction: .updateName(nameUserUpdate: name))
