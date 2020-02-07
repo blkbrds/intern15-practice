@@ -1,8 +1,8 @@
 //
 //  ProfileViewController.swift
-//  Baitap03
+//  BaitapHomeScreen
 //
-//  Created by PCI0008 on 1/20/20.
+//  Created by PCI0008 on 2/4/20.
 //  Copyright © 2020 PCI0008. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "PROFILE"
     }
 }
