@@ -8,21 +8,24 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var tableView: UITableView!
+    
+    private let tableCellName: String = "CustomTableViewCell"
+    private let collectionCellName: String = "CollectionCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
     }
     
-    func configTableView() {
-        let cellNib = UINib(nibName: "CustomTableViewCell", bundle: .main)
-        tableView.register(cellNib, forCellReuseIdentifier: "cell")
+    private func configTableView() {
+        let cellNib = UINib(nibName: tableCellName, bundle: .main)
+        tableView.register(cellNib, forCellReuseIdentifier: tableCellName)
         tableView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: collectionCellName)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -39,7 +42,7 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource,
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: tableCellName, for: indexPath)
         return cell
     }
     
@@ -56,7 +59,7 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellName, for: indexPath)
         cell.backgroundColor = .purple
         return cell
     }

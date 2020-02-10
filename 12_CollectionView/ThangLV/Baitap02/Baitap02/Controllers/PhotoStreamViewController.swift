@@ -14,6 +14,8 @@ final class PhotoStreamViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
+    private let cellName: String = "PhotoCollectionViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
@@ -21,7 +23,7 @@ final class PhotoStreamViewController: UIViewController {
 
     private func configCollectionView() {
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "Cell")
+        collectionView.register(UINib(nibName: cellName, bundle: Bundle.main), forCellWithReuseIdentifier: cellName)
         let layout = PinterestLayout()
         layout.delegate = self
         layout.configLayout()
@@ -36,7 +38,7 @@ extension PhotoStreamViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotoCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as? PhotoCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configPhotoImage(image: UIImage(named: images[indexPath.row]))

@@ -8,12 +8,10 @@
 
 import UIKit
 
-class HeaderReusableView: UICollectionReusableView {
+final class HeaderReusableView: UICollectionReusableView {
+    @IBOutlet private weak var sectionLabel: UILabel!
     
-    @IBOutlet weak var sectionLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func configData(section: String) {
+        sectionLabel.text = section
     }
-    
 }

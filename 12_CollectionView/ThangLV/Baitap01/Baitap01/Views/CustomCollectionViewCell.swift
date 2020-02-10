@@ -8,13 +8,16 @@
 
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+final class CustomCollectionViewCell: UICollectionViewCell {
 
-    
-    @IBOutlet weak var numerialOrderLabel: UILabel!
+    @IBOutlet private weak var numerialOrderLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    func configData(number: String) {
+        numerialOrderLabel.text = number
+        numerialOrderLabel.textColor = .white
+    }
 }

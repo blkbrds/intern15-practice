@@ -8,18 +8,21 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    private let cellName = "CustomCollectionViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
         collectionView.dataSource = self
     }
+    
     private func configCollectionView() {
-        let cellNib = UINib(nibName: "CustomCollectionViewCell", bundle: .main)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: "cell")
+        let cellNib = UINib(nibName: cellName, bundle: .main)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
     }
 }
 
@@ -34,11 +37,10 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as! CustomCollectionViewCell
         let number: Int = indexPath.row
         let strNumber: String = String(number)
-        cell.numerialOrderLabel.text = strNumber
-        cell.numerialOrderLabel.textColor = .white
+        cell.configData(number: strNumber)
         return cell
     }
 }

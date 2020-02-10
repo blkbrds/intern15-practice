@@ -8,9 +8,11 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    private let cellName: String = "CustomCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,9 +23,9 @@ class CustomTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configCollectionView() {
-        let cellNib = UINib(nibName: "CustomCollectionViewCell", bundle: .main)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: "cell")
+    private func configCollectionView() {
+        let cellNib = UINib(nibName: cellName, bundle: .main)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -41,8 +43,7 @@ extension CustomTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        //cell.backgroundColor = .green
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
         return cell
     }
     
