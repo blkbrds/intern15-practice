@@ -8,16 +8,16 @@
 
 import UIKit
 
-class CustomCell: UICollectionViewCell {
+final class CustomCell: UICollectionViewCell {
     
     // MARK: - IBOutlet
-    @IBOutlet weak var descriptionImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIButton!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var favoriteImageView: UIImageView!
+    @IBOutlet private weak var descriptionImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var favoriteButton: UIButton!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var ratingLabel: UILabel!
+    @IBOutlet private weak var distanceLabel: UILabel!
+    @IBOutlet private weak var favoriteImageView: UIImageView!
     
     var viewModel = CustomCellViewModel() {
         didSet {
@@ -25,12 +25,14 @@ class CustomCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Override functions
     override func awakeFromNib() {
         super.awakeFromNib()
         configData()
         favoriteImageView.tintColor = .yellow
     }
     
+    // MARK: - Private functions
     private func configData() {
         if let home = viewModel.home, home.isLiked {
             favoriteImageView.image = UIImage.init(systemName: "star.fill")
@@ -40,7 +42,7 @@ class CustomCell: UICollectionViewCell {
     }
     
     //MARK: - IBAction
-    @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         if favoriteButton.isSelected == true {
             favoriteImageView.image = UIImage.init(systemName: "star.fill")
             favoriteButton.isSelected = false

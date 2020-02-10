@@ -9,19 +9,15 @@
 import UIKit
 import MapKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
-    @IBOutlet weak var mainScrollView: UIScrollView!
-    @IBOutlet weak var imageScrollView: UIScrollView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var mainScrollView: UIScrollView!
+    @IBOutlet private weak var imageScrollView: UIScrollView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var mapView: MKMapView!
     
-    @IBOutlet weak var mapView: MKMapView!
-    
-    var detailViewModel = DetailViewModel() {
-        didSet {
-            updateView()
-        }
-    }
+    var detailViewModel = DetailViewModel()
+    private let cellName: String  = "CommentTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +30,8 @@ class DetailViewController: UIViewController {
     }
     
     private func configTableView() {
-        tableView.register(UINib(nibName: "CommentTableViewCell", bundle: nil), forCellReuseIdentifier: "CommentTableViewCell")
+        tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
         tableView.dataSource = self
-        //tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         tableView.reloadData()
@@ -46,9 +41,6 @@ class DetailViewController: UIViewController {
     private func configMainScrollView() {
         mainScrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1000)
     }
-    
-    // update view
-    private func updateView() { }
     
     private func configMapView() {
         addAnnotation()
@@ -81,8 +73,7 @@ class DetailViewController: UIViewController {
         let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(moveToTheNextImage), userInfo: nil, repeats: true)
     }
 
-    @objc func moveToTheNextImage() {
-
+    @objc private func moveToTheNextImage() {
         UIView.animate(withDuration: 30.0, animations: {
             for i in 1...4 {
                 self.imageScrollView.contentOffset = CGPoint(x: CGFloat(i) * self.view.frame.width, y: 0)
@@ -94,7 +85,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+       return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,7 +93,7 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CommentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as! CommentTableViewCell
+        let cell: CommentTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CommentTableViewCell
         return cell
     }
 }

@@ -8,12 +8,12 @@
 
 import Foundation
 
-class HomeViewModel {
+final class HomeViewModel {
     var images: [String] = ["Cho", "Nai", "Soc", "Voi", "Vuon"]
     var home: [Home] = [Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
                         Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
                         Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
-                        Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
+                        Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
                         Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
                         Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
                         Home(image: "a", name: "", address: "", rating: "", distance: "9km", isLiked: true)]

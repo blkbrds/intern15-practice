@@ -34,17 +34,20 @@ final class HomeViewController: UIViewController {
 
     //MARK: IBOutlet
     @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var prevButton: UIButton!
     @IBOutlet private weak var nextButton: UIButton!
     @IBOutlet private weak var pageControl: UIPageControl!
 
     //MARK: Properties
     private var index: Int = 0
-    var numberOfItems = 10
-    var viewModel = HomeViewModel()
-    var status = Status.table
-
+    private var numberOfItems = 10
+    private var viewModel = HomeViewModel()
+    private var status = Status.table
+    let cellNameOfTableType = "CustomCell"
+    let cellNameOfCollectionType = "CollectionViewCell"
+    
+    // MARK: Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "HOME"
@@ -54,7 +57,7 @@ final class HomeViewController: UIViewController {
         changeFlowLayout(status: .collection)
     }
 
-    @objc func viewTypeButtonTouchUpInside() {
+    @objc private func viewTypeButtonTouchUpInside() {
         configNavigationBar()
         if status == .collection {
             changeFlowLayout(status: .table)
@@ -88,8 +91,8 @@ final class HomeViewController: UIViewController {
         flowLayout.scrollDirection = .vertical
         flowLayout.sectionInset = status.sectionInset
         collectionView.setCollectionViewLayout(flowLayout, animated: true)
-        collectionView.register(UINib(nibName: "CustomCell", bundle: nil), forCellWithReuseIdentifier: "CustomCell")
-        collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        collectionView.register(UINib(nibName: cellNameOfTableType, bundle: nil), forCellWithReuseIdentifier: cellNameOfTableType)
+        collectionView.register(UINib(nibName: cellNameOfCollectionType, bundle: nil), forCellWithReuseIdentifier: cellNameOfCollectionType)
         collectionView.isScrollEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -153,11 +156,11 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch status {
         case .collection:
-            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CustomCell
+            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellNameOfCollectionType, for: indexPath) as! CustomCell
             cell.viewModel = viewModel.viewModelForItems(at: indexPath)
             return cell
         case .table:
-            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
+            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellNameOfTableType, for: indexPath) as! CustomCell
             cell.viewModel = viewModel.viewModelForItems(at: indexPath)
             return cell
         }

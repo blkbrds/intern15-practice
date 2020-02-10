@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CustomCellViewModel {
+final class CustomCellViewModel {
     
     var home: Home?
     
