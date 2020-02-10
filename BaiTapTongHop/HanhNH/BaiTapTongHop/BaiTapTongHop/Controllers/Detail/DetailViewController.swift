@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class DetailViewController: BaseViewController {
 
@@ -16,21 +17,60 @@ final class DetailViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.setupObserve()
+        setupUI()
         updateUI()
     }
 
-    private func updateUI() {
+    func updateUI() {
+        viewModel.isFavoriteUser {
+            self.updateStatusFavoriteButton(isLike: self.viewModel.isLiked)
+        }
+    }
+
+    private func setupUI() {
         configTableView()
     }
 
     override func setupNavigation() {
-        let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-navi-favorites"), style: .plain, target: self, action: #selector(showFavorites))
+        guard let viewModel = viewModel.user?.name else { return }
+        title = "\(viewModel)"
+        let tableViewButton = UIBarButtonItem(image: UIImage(named: "ic-unfavorite"), style: .plain, target: self, action: #selector(handleFavoriteButton))
         navigationItem.rightBarButtonItem = tableViewButton
         tableViewButton.tintColor = .black
     }
 
-    @objc private func showFavorites() {
-        navigationController?.pushViewController(FavoriteViewController(), animated: true)
+    func updateStatusFavoriteButton(isLike: Bool) {
+        if isLike {
+            navigationItem.rightBarButtonItem?.image = UIImage(named: "ic-favorite")
+        } else {
+            navigationItem.rightBarButtonItem?.image = UIImage(named: "ic-unfavorite")
+        }
+    }
+
+    @objc private func handleFavoriteButton() {
+            if viewModel.isLiked {
+                viewModel.deleteLikedUser { [weak self] (result) in
+                    guard let this = self else { return }
+                    switch result {
+                    case .success:
+                        this.updateStatusFavoriteButton(isLike: false)
+                    case .failure(let error):
+                        this.alert(title: error.localizedDescription)
+                    }
+                }
+            } else {
+                viewModel.saveLikedUser { [weak self] (result) in
+                    guard let this = self else { return }
+                    switch result {
+                    case .success:
+                        this.updateStatusFavoriteButton(isLike: true)
+                    case .failure(let error):
+                        this.alert(title: error.localizedDescription)
+                    }
+                }
+            }
     }
 
     private func configTableView () {
@@ -66,8 +106,9 @@ extension DetailViewController: UITableViewDataSource {
         guard let type = DetailViewModel.SectionType(rawValue: indexPath.section) else { return UITableViewCell() }
         switch type {
         case .albums:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.albumImageCell.rawValue, for: indexPath) as? AlbumImageCell else { return UITableViewCell() }
-            cell.viewModel = viewModel.makeAlbumViewModel(at: indexPath)
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.albumImageCell.rawValue, for: indexPath) as? AlbumImageCell,
+            let vm = viewModel.makeAlbumViewModel(at: indexPath) else { return UITableViewCell() }
+            cell.viewModel = vm
             return cell
         case .description:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.descriptionCell.rawValue, for: indexPath) as? DescriptionCell else { return UITableViewCell() }
@@ -80,6 +121,15 @@ extension DetailViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.commentViewCell.rawValue, for: indexPath) as? CommentViewCell else { return UITableViewCell() }
             cell.viewModel = viewModel.makeCommentViewModel(at: indexPath)
             return cell
+        }
+    }
+}
+
+extension DetailViewController: DetailViewModelDelegate {
+    func viewModel(_viewModel: DetailViewModel, needperfomAction action: DetailViewModel.Action) {
+        switch action {
+        case .reloadData:
+            updateStatusFavoriteButton(isLike: viewModel.isLiked)
         }
     }
 }

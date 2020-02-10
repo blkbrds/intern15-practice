@@ -19,6 +19,7 @@ extension APIManager.Repository {
         var url = Router.Repository.path
         let queries = params.map { return $0.key + "=" + $0.value }
         url = url + "?" + queries.joined(separator: "&")
+        print(url)
         API.shared().request(urlString: url) { (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -42,7 +43,7 @@ extension APIManager.Repository {
 
                         completion(.success(repoResults))
                     } else {
-                        completion(.failure(.error(Strings.notData)))
+                        completion(.failure(Errors.noDataError))
                     }
                 }
             }
