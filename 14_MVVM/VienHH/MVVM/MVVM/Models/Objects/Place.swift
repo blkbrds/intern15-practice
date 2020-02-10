@@ -29,28 +29,28 @@ final class Place {
 extension Place {
     struct DummyData {
         static var slidesImage: [Place] = {
-            let slides = [Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "hinglands-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "hinglands-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "hinglands-coffee")]
+            let slides = [Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 5"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1"),
+                Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 3"),
+                Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 4"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 5"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 6")]
             return slides
         }()
 
         static var places: [Place] = {
-            let places = [Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"), Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee"),
-                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "house-coffee")]
+            let places = [Place(name: "Coffee House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1"),
+                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 3"),
+                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 4"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 5"), Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 6"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1"),
+                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 3"),
+                Place(name: "Coffe House", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 5"),
+                Place(name: "Hingland Coffee", address: "Liên Chiểu, Đà Nẵng", imageName: "Coffee 1")]
             return places
         }()
     }

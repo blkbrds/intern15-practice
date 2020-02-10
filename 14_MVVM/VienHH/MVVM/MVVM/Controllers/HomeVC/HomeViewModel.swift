@@ -32,17 +32,17 @@ final class HomeViewModel {
         }
     }
 
-    func getLocations(with indexPath: IndexPath) -> [Place] {
+    func getPlace(with indexPath: IndexPath) -> [Place] {
         return datas[indexPath.section]
     }
 
-    func getLocation(with indexPath: IndexPath) -> Place {
+    func getPlaces(with indexPath: IndexPath) -> Place {
         return datas[indexPath.section][indexPath.row]
     }
 
     func changeFavorites(with indexPath: IndexPath, completion: Completion) {
         if indexPath.row >= datas[indexPath.section].count {
-            completion(false, "Over of range")
+            completion(false, "Error")
         } else {
             datas[indexPath.section][indexPath.row].favorites = !datas[indexPath.section][indexPath.row].favorites
             completion(true, "")
