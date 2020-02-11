@@ -13,15 +13,13 @@ class BaseViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         setupData()
+        setupUI()
     }
 
     // MARK: - Custom funcs
     func setupData() { }
-
-    func setupUI() { }
-
+    func setupUI() {}
     func pushViewController(viewcontroller: UIViewController) {
         navigationController?.pushViewController(viewcontroller, animated: true)
     }

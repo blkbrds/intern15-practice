@@ -10,13 +10,13 @@ import UIKit
 
 final class ContactsViewController: BaseViewController {
 
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
     private var contacts: [String] = []
     private var contactsData: [String] = []
-    private let contactCell: String = "contactCell"
+    private let contactsCell: String = "contactsCell"
 
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
@@ -46,10 +46,11 @@ final class ContactsViewController: BaseViewController {
     }
 
     private func configTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: contactCell)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: contactsCell)
         tableView.dataSource = self
         tableView.delegate = self
     }
+
     private func search(keyword: String) {
         contacts = getContacts(keyword: keyword)
         tableView.reloadData()
@@ -90,7 +91,7 @@ final class ContactsViewController: BaseViewController {
     }
 
     @objc private func deleteAllCell() {
-        var message = "Bạn có chắc chắn muốn xoá tất cả"
+        var message = "You sure?"
 
         // Define actions
         let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
@@ -111,21 +112,19 @@ final class ContactsViewController: BaseViewController {
 
         // Add actions
         let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .actionSheet)
-
         actions.forEach { alert.addAction($0) }
         present(alert, animated: true, completion: nil)
-
     }
 }
 
 // MARK: - Extension: UISearchBarDelegate
 extension ContactsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        var currentTex = ""
+        var currentText = ""
         if let searchBarText = searchBar.text {
-            currentTex = searchBarText
+            currentText = searchBarText
         }
-        let keyword = (currentTex as NSString).replacingCharacters(in: range, with: text)
+        let keyword = (currentText as NSString).replacingCharacters(in: range, with: text)
         search(keyword: keyword)
         return true
     }
@@ -156,7 +155,7 @@ extension ContactsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: contactCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: contactsCell, for: indexPath)
         cell.textLabel?.text = contacts[indexPath.row]
         return cell
     }
@@ -166,7 +165,7 @@ extension ContactsViewController: UITableViewDataSource {
 extension ContactsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let contactDetailVC = ContactDetailViewController()
-        contactDetailVC.contactDetail = contacts[indexPath.row]
+        contactDetailVC.contactsDetail = contacts[indexPath.row]
         pushViewController(viewcontroller: contactDetailVC)
     }
 
@@ -175,7 +174,7 @@ extension ContactsViewController: UITableViewDelegate {
         case .insert:
             tableView.beginUpdates()
             tableView.insertRows(at: [IndexPath(row: indexPath.row + 1, section: indexPath.section)], with: .left)
-            contacts.insert("⛹️⛹️⛹️⛹️ ", at: indexPath.row + 1)
+            contacts.insert("🐹🐹🐹🐹", at: indexPath.row + 1)
             contactsData.insert("💓💓💓💓", at: indexPath.row + 1)
             tableView.endUpdates()
         case .delete:

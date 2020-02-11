@@ -10,7 +10,7 @@ import Foundation
 final class DataManagement {
 
     // MARK: - Singleton
-    private static let sharedDataManagement: DataManagement = {
+    static let sharedDataManagement: DataManagement = {
         let dataManagement = DataManagement()
         return dataManagement
     }()

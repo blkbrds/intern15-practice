@@ -11,15 +11,15 @@ import UIKit
 final class ContactDetailViewController: BaseViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var contactDetailLabel: UILabel!
+    @IBOutlet private weak var contactsDetailLabel: UILabel!
 
     // MARK: - Properties
-    var contactDetail: String?
+    var contactsDetail: String?
 
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let contactDetail = contactDetail else { return }
-        contactDetailLabel.text = contactDetail
+        guard let contactDetail = contactsDetail else { return }
+        contactsDetailLabel.text = contactDetail
     }
 }

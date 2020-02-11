@@ -25,7 +25,7 @@ final class GardenViewController: BaseViewController {
     // MARK: - Override funcs
     override func setupUI() {
         super.setupUI()
-        title = "My Gardent"
+        title = Config.titleGardenViewController
         configTableView()
     }
 
@@ -50,7 +50,6 @@ final class GardenViewController: BaseViewController {
                 flowers.append(flower)
             }
         }
-
         gardents.append(flowers)
         gardents.append(animals)
         gardents.append(vegetables)
@@ -101,18 +100,29 @@ extension GardenViewController: UITableViewDataSource {
 // MARK: - Extention: UITableViewDelegate
 extension GardenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return Config.heightForRow
     }
 }
 
 // MARK: - Extention: GardentCellDelegate
 extension GardenViewController: GardentCellDelegate {
-    func cell(customCell: GardentCell, needPerformAction action: GardentCell.Action) {
+    func cell(cell: GardentCell, needPerformAction action: GardentCell.Action) {
         switch action {
-        case .sendTitle(let title):
-            let alert = UIAlertController(title: "TAP ME", message: "Bạn đã click vào \(title)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Dismiss", style: .default))
+        case .send(let title):
+            let alert = UIAlertController(title: "SHOW", message: "Bạn đã click vào \(title)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .default))
             present(alert, animated: true, completion: nil)
         }
+    }
+}
+
+extension GardenViewController {
+    struct Config {
+        static let heightForRow: CGFloat = 100
+        static let clipsToBoundsImage = true
+        static let cornerRadiusImage: CGFloat = 40
+        static let borderWidthImage: CGFloat = 1
+        static let borderColorImage = UIColor.orange.cgColor
+        static let titleGardenViewController = "My Gardent"
     }
 }

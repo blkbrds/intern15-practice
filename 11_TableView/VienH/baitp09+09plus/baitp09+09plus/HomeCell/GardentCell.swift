@@ -9,21 +9,21 @@
 import UIKit
 
 protocol GardentCellDelegate: class {
-    func cell(customCell: GardentCell, needPerformAction action: GardentCell.Action)
+    func cell(cell: GardentCell, needPerformAction action: GardentCell.Action)
 }
 
 final class GardentCell: UITableViewCell {
 
     // MARK: - Actions
     enum Action {
-        case sendTitle(title: String)
+        case send(title: String)
     }
 
-    @IBOutlet weak var gardentImageView: UIImageView!
+    @IBOutlet private weak var gardentImageView: UIImageView!
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
 
-    @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet private weak var subTitleLabel: UILabel!
 
     // MARK: - Closure
     typealias GetGardent = () -> Gardent
@@ -34,18 +34,17 @@ final class GardentCell: UITableViewCell {
     // MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
-    }
-
-    // MARK: - Private funcs
-    private func setupUI() {
-        gardentImageView.clipsToBounds = true
-        gardentImageView.layer.cornerRadius = 40
-        gardentImageView.layer.borderWidth = 1
-        gardentImageView.layer.borderColor = UIColor.orange.cgColor
+        configUI()
     }
 
     // MARK: - Public funcs
+    private func configUI() {
+        gardentImageView.clipsToBounds = GardenViewController.Config.clipsToBoundsImage
+        gardentImageView.layer.cornerRadius = GardenViewController.Config.cornerRadiusImage
+        gardentImageView.layer.borderWidth = GardenViewController.Config.borderWidthImage
+        gardentImageView.layer.borderColor = GardenViewController.Config.borderColorImage
+    }
+
     func updateUI(garden: GetGardent) {
         let gardenVariable = garden()
         gardentImageView.image = UIImage(named: gardenVariable.imageName)
@@ -56,7 +55,7 @@ final class GardentCell: UITableViewCell {
     // MARK: - IBAction
     @IBAction private func buttonTouchUpInside(_ sender: UIButton) {
         if let title = titleLabel.text {
-            delegate?.cell(customCell: self, needPerformAction: .sendTitle(title: title))
+            delegate?.cell(cell: self, needPerformAction: .send(title: title))
         }
     }
 }

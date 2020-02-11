@@ -12,22 +12,26 @@ class HomeViewController: UIViewController {
     var names: [String] = ["name1", "name2", "name3", "name4", "name5"]
 
     //MARK: - IBOutlet
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
+
         // register cell
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
     }
 }
+
 // MARK: - Extension: UITableViewDelegate, UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return names.count
     }
