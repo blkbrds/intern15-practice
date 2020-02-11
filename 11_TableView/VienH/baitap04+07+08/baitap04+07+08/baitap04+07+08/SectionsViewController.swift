@@ -11,7 +11,7 @@ import UIKit
 final class SectionsViewController: BaseViewController {
 
     // MARK - IBOutlet
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
     private var animals: [String] = []
@@ -39,9 +39,7 @@ final class SectionsViewController: BaseViewController {
         gardents.append(flowers)
         gardents.append(vegetables)
         gardentIndexs = ["A", "F", "V"]
-
     }
-
 
     // MARK: - Private funcs
     private func configTableView() {
@@ -65,9 +63,9 @@ extension SectionsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cell, for: indexPath)
         cell.textLabel?.text = gardents[indexPath.section][indexPath.row]
         let nameLablel = UILabel()
-        nameLablel.frame = CGRect(x: 40, y: 25, width: 500, height: 20)
-        nameLablel.text = "Information ..."
-        nameLablel.textColor = .red
+        nameLablel.frame = Config.nameLabel
+        nameLablel.text = Config.titlelabel
+        nameLablel.textColor = Config.colorLabel
         cell.addSubview(nameLablel)
         return cell
     }
@@ -91,4 +89,13 @@ extension SectionsViewController: UITableViewDataSource {
         return index
     }
 }
+
+extension SectionsViewController {
+    struct Config {
+        static let nameLabel = CGRect(x: 40, y: 25, width: 500, height: 20)
+        static let titlelabel = "Information"
+        static let colorLabel = UIColor.red
+    }
+}
+
 

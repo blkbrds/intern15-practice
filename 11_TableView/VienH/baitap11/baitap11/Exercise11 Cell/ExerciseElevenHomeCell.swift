@@ -11,7 +11,7 @@ import UIKit
 final class ExerciseElevenHomeCell: UITableViewCell {
 
     // MARK: - IBOutlet
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet private weak var messageLabel: UILabel!
 
     // MARK: - Closure ~ datasource
     typealias GetMessage = () -> String

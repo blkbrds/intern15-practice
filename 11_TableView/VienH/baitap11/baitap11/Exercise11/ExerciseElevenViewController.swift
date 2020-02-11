@@ -11,7 +11,7 @@ import UIKit
 final class ExerciseElevenViewController: BaseViewController {
 
     // MARK: - IBOutlet
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     // MARK: - Properties
     private var messages: [String] = []
@@ -27,6 +27,7 @@ final class ExerciseElevenViewController: BaseViewController {
         super.setupData()
         messages = ["Hoàng Viên", "Tĩnh tâm sóng lặng từ nay\nVui buồn chợt tắt sống ngày an nhiên\nTrần gian mưa nắng ưu phiền\nThoát mê khai ngộ hương thiền toạ tâm\nGiọt sầu ngọt đắng thăng trầm\nDây oan ngưng kết tuệ tâm sáng ngời\nThong dong vui thoả đất trời\nNhư mây phiêu lãng rong chơi phương ngàn.", "Trích 1", "Sắc tài danh lợi vinh quang\nTâm không vướng bận an khang cuộc đời\nĐời người ngắn lắm ai ơi\nTham chi cho lắm khiến đời long đong", "Trích 2", "Cuộc đời tranh đấu bon chen\nMang chi gánh nặng thấp hèn thế gian."]
     }
+
     // MARK: - Private funcs
     private func configTableView() {
         tableView.register(UINib(nibName: "ExerciseElevenHomeCell", bundle: .main), forCellReuseIdentifier: "cell")
@@ -34,15 +35,18 @@ final class ExerciseElevenViewController: BaseViewController {
         tableView.allowsMultipleSelection = true
         tableView.dataSource = self
     }
+
     private func configNavigationBar() {
         title = "Religion"
         turnOffEditingMode()
     }
+
     @objc private func turnOffEditingMode() {
         tableView?.isEditing = false
         let editButtonBarItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(turnOnEditingMode))
         navigationItem.rightBarButtonItem = editButtonBarItem
     }
+
     @objc private func turnOnEditingMode() {
         tableView?.isEditing = true
         let doneButtonBarItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(turnOffEditingMode))
