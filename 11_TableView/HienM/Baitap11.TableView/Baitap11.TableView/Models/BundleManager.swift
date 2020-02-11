@@ -1,9 +1,9 @@
 
 import Foundation
 class BundleManager {
-	
+
 	private init() { }
-	
+
 	static func share () -> BundleManager {
 		return bundleManager
 	}
@@ -12,12 +12,12 @@ class BundleManager {
 		let bundleManager = BundleManager()
 		return bundleManager
 	}()
-	
-	func getPoems () -> [Poem] {
+
+	func getPoems () -> [ThePoem] {
 		guard let url = Bundle.main.url(forResource: "Poems", withExtension: "plist"),
-		let poems = NSArray(contentsOf: url) as? [String] else {
-			return [Poem]()
+			let poems = NSArray(contentsOf: url) as? [String] else {
+				return [ThePoem]()
 		}
-		return poems.map({ Poem(poemText: $0) })
+		return poems.map({ ThePoem(poemText: $0) })
 	}
 }

@@ -6,11 +6,12 @@ class HomeViewController: UIViewController {
 	@IBOutlet weak var addTextField: UITextField!
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var editButton: UIBarButtonItem!
+
 	var videos: [String] = ["FaceBook", "Instargram", "Tiktok"]
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configTableView()
-
 	}
 
 	func configTableView () {
@@ -31,8 +32,8 @@ class HomeViewController: UIViewController {
 		addTextField.text = ""
 		view.endEditing(true)
 	}
-
 }
+
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return videos.count
@@ -43,9 +44,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.textLabel?.text = videos[indexPath.row]
 		return cell
 	}
+
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 		return true
 	}
+
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			videos.remove(at: indexPath.row)

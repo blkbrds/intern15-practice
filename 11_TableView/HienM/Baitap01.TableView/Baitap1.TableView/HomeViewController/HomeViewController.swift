@@ -1,12 +1,13 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+	
 	var namesCountries: [String] = ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory"]
 
 	@IBOutlet weak var tableView: UITableView!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 	}
 }

@@ -1,9 +1,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-	
+
 	@IBOutlet weak var tableview: UITableView!
-	var users: [Poem] = []
+	var users: [ThePoem] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -11,11 +11,11 @@ class HomeViewController: UIViewController {
 		loadData()
 		configTableView()
 	}
-	
+
 	func loadData () {
 		users = BundleManager.share().getPoems()
 	}
-	
+
 	func configTableView () {
 		let nib = UINib(nibName: "TableViewCell", bundle: .main)
 		tableview.register(nib, forCellReuseIdentifier: "myCell")
@@ -29,7 +29,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 		let numberPoem = users.count
 		return numberPoem
 	}
-	
+
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		print(BundleManager.share().getPoems()[indexPath.row].poemText)
 	}
@@ -39,6 +39,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 			let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
 			return cell
 		}
+
 		let text = BundleManager.share().getPoems()[indexPath.row]
 		cell.poemLabel.text = text.poemText
 		return cell

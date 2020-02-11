@@ -5,6 +5,7 @@ class MyTableViewCell: UITableViewCell {
 	@IBOutlet weak var cellImage: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var subTitleLabel: UILabel!
+	
 	var name : Int?
 	
 	override func awakeFromNib() {

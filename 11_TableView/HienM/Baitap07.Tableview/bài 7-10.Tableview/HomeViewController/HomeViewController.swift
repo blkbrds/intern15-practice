@@ -1,7 +1,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+	
 	@IBOutlet weak var tableview: UITableView!
+	
 	private var names: [[String]] =
 		[
 			["Tí", "Tèo", "Hùng", "Lam", "Thuỷ", "Tuấn", "Trung", "Hạnh"],
@@ -10,19 +12,18 @@ class HomeViewController: UIViewController {
 	var titles: [String] = [" Game", "Lớp", "Than","Cho","Meo"]
 	var gardentIndexs: [String] = ["G", "L","T","C","M"]
 
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableview.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
 	}
-
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return names.count
 	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return names[section].count
 	}

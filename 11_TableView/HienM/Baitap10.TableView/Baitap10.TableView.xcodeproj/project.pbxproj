@@ -10,6 +10,12 @@
 		FD13024023F1070F0060ADCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13023F23F1070F0060ADCF /* AppDelegate.swift */; };
 		FD13024223F1070F0060ADCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD13024123F1070F0060ADCF /* SceneDelegate.swift */; };
 		FD13024923F107110060ADCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD13024823F107110060ADCF /* Assets.xcassets */; };
+		FDE13B6F23F24543004BB8AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13B6D23F24543004BB8AC /* HomeViewController.swift */; };
+		FDE13B7023F24543004BB8AC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE13B6E23F24543004BB8AC /* HomeViewController.xib */; };
+		FDE13B7323F24660004BB8AC /* ContactMagager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13B7223F24660004BB8AC /* ContactMagager.swift */; };
+		FDE13B7523F24670004BB8AC /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13B7423F24670004BB8AC /* Contact.swift */; };
+		FDE13B7923F24C4E004BB8AC /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13B7723F24C4E004BB8AC /* ContactCell.swift */; };
+		FDE13B7A23F24C4E004BB8AC /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE13B7823F24C4E004BB8AC /* ContactCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +24,12 @@
 		FD13024123F1070F0060ADCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD13024823F107110060ADCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD13024D23F107110060ADCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDE13B6D23F24543004BB8AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FDE13B6E23F24543004BB8AC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FDE13B7223F24660004BB8AC /* ContactMagager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMagager.swift; sourceTree = "<group>"; };
+		FDE13B7423F24670004BB8AC /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		FDE13B7723F24C4E004BB8AC /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		FDE13B7823F24C4E004BB8AC /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,9 @@
 		FD13023E23F1070F0060ADCF /* Baitap10.TableView */ = {
 			isa = PBXGroup;
 			children = (
+				FDE13B7623F24C1E004BB8AC /* Views */,
+				FDE13B7123F24637004BB8AC /* ContactManager */,
+				FDE13B6C23F24528004BB8AC /* HomeViewController */,
 				FD13025323F1079A0060ADCF /* Resource */,
 				FD13023F23F1070F0060ADCF /* AppDelegate.swift */,
 				FD13024123F1070F0060ADCF /* SceneDelegate.swift */,
@@ -64,6 +79,33 @@
 				FD13024823F107110060ADCF /* Assets.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		FDE13B6C23F24528004BB8AC /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13B6D23F24543004BB8AC /* HomeViewController.swift */,
+				FDE13B6E23F24543004BB8AC /* HomeViewController.xib */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		FDE13B7123F24637004BB8AC /* ContactManager */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13B7223F24660004BB8AC /* ContactMagager.swift */,
+				FDE13B7423F24670004BB8AC /* Contact.swift */,
+			);
+			path = ContactManager;
+			sourceTree = "<group>";
+		};
+		FDE13B7623F24C1E004BB8AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13B7723F24C4E004BB8AC /* ContactCell.swift */,
+				FDE13B7823F24C4E004BB8AC /* ContactCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +166,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE13B7A23F24C4E004BB8AC /* ContactCell.xib in Resources */,
 				FD13024923F107110060ADCF /* Assets.xcassets in Resources */,
+				FDE13B7023F24543004BB8AC /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE13B7923F24C4E004BB8AC /* ContactCell.swift in Sources */,
 				FD13024023F1070F0060ADCF /* AppDelegate.swift in Sources */,
 				FD13024223F1070F0060ADCF /* SceneDelegate.swift in Sources */,
+				FDE13B7523F24670004BB8AC /* Contact.swift in Sources */,
+				FDE13B6F23F24543004BB8AC /* HomeViewController.swift in Sources */,
+				FDE13B7323F24660004BB8AC /* ContactMagager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

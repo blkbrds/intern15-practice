@@ -1,5 +1,6 @@
 import Foundation
 
-struct Poem {
+struct ThePoem {
+	
 	var poemText : String
 }

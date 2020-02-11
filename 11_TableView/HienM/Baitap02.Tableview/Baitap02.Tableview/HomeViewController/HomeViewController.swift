@@ -50,6 +50,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 		}
 		return cell!
 	}
+
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let vc = NavigationViewController()
 		let user = users[indexPath.row]
