@@ -44,8 +44,8 @@ final class HomeViewController: UIViewController {
     private var numberOfItems = 10
     private var viewModel = HomeViewModel()
     private var status = Status.table
-    let cellNameOfTableType = "CustomCell"
-    let cellNameOfCollectionType = "CollectionViewCell"
+    private let cellNameOfTableType = "CustomCell"
+    private let cellNameOfCollectionType = "CollectionViewCell"
     
     // MARK: Override functions
     override func viewDidLoad() {
