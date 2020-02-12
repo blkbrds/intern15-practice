@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum Team: String {
+    case Animals
+    case Vegetables
+    case Flowers
+}
+
 final class SectionsViewController: BaseViewController {
 
     // MARK - IBOutlet
@@ -29,9 +35,9 @@ final class SectionsViewController: BaseViewController {
 
     override func setupData() {
         super.setupData()
-        guard let animals = DataManagement.shared().getDataFromFile(fileName: "Animals", type: "plist"),
-            let vegetables = DataManagement.shared().getDataFromFile(fileName: "Vegetables", type: "plist"),
-            let flowers = DataManagement.shared().getDataFromFile(fileName: "Flowers", type: "plist") else { return }
+        guard let animals = DataManagement.shared().getDataFromFile(fileName: Team.Animals.rawValue, type: "plist"),
+            let vegetables = DataManagement.shared().getDataFromFile(fileName: Team.Vegetables.rawValue, type: "plist"),
+            let flowers = DataManagement.shared().getDataFromFile(fileName: Team.Flowers.rawValue, type: "plist") else { return }
         self.animals = animals
         self.flowers = flowers
         self.vegetables = vegetables
