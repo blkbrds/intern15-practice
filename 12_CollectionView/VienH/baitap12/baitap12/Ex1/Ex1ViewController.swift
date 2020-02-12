@@ -10,18 +10,17 @@ import UIKit
 
 final class Ex1ViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
+
     private var rows: [Int] = Array(0...99)
-    private let cellIndetifer: String = "HomeCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
-        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: cellIndetifer)
+        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: "HomeCell")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
 }
 
 extension Ex1ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -31,7 +30,7 @@ extension Ex1ViewController: UICollectionViewDataSource, UICollectionViewDelegat
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIndetifer, for: indexPath) as? HomeCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as? HomeCell else { return UICollectionViewCell() }
         cell.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         cell.textLabel.text = String(rows[indexPath.row])
         return cell

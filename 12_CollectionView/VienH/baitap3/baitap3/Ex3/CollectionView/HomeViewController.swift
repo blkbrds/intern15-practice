@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private let homeCellCollectionViewCell: String = "HomeCellCollectionViewCell"
     private let customCollectionViewCellIndentifier: String = "CustomCollectionViewCell"
@@ -35,18 +35,20 @@ final class HomeViewController: UIViewController {
 
         let headerNib = UINib(nibName: teamCellNibIndentifier, bundle: .main)
         collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: teamCellNibIndentifier)
+
         collectionView.dataSource = self
         collectionView.delegate = self
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Team.count
-    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return Team.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -72,14 +74,15 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 306)
+        return CGSize(width: collectionView.bounds.width, height: 300)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 80)
     }
 }
+

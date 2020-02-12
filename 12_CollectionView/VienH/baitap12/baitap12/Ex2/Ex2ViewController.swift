@@ -4,7 +4,7 @@ import UIKit
 
 final class Ex2ViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
 
     private var heightArray: [CGFloat] = []
     private let numberOfItems: Int = 48
@@ -50,3 +50,4 @@ extension Ex2ViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         return cell
     }
 }
+

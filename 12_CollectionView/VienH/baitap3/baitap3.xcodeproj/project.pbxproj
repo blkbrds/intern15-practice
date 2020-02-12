@@ -56,6 +56,7 @@
 			children = (
 				CE9F048F23B21E8E00C679FC /* baitap3 */,
 				CE9F048E23B21E8E00C679FC /* Products */,
+				CE9F049E23B21E9100C679FC /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,11 +71,11 @@
 		CE9F048F23B21E8E00C679FC /* baitap3 */ = {
 			isa = PBXGroup;
 			children = (
+				CEB0C82F23F281D500B4EBD8 /* Objects */,
 				CE9F04A523B21EBF00C679FC /* Ex3 */,
 				CE9F04A423B21EA300C679FC /* Resource */,
 				CE9F049923B21E9100C679FC /* Assets.xcassets */,
 				CE9F049B23B21E9100C679FC /* LaunchScreen.storyboard */,
-				CE9F049E23B21E9100C679FC /* Info.plist */,
 			);
 			path = baitap3;
 			sourceTree = "<group>";
@@ -91,17 +92,48 @@
 		CE9F04A523B21EBF00C679FC /* Ex3 */ = {
 			isa = PBXGroup;
 			children = (
+				CEB0C83223F288B200B4EBD8 /* CustomCell */,
+				CEB0C83123F2889600B4EBD8 /* CollectionCell */,
+				CEB0C83023F2888300B4EBD8 /* CollectionView */,
+			);
+			path = Ex3;
+			sourceTree = "<group>";
+		};
+		CEB0C82F23F281D500B4EBD8 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F04BD23B318A900C679FC /* DogData.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		CEB0C83023F2888300B4EBD8 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
 				CE9F04A623B21F1400C679FC /* HomeViewController.swift */,
 				CE9F04A723B21F1400C679FC /* HomeViewController.xib */,
-				CE9F04BD23B318A900C679FC /* DogData.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		CEB0C83123F2889600B4EBD8 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
 				CE9F04AD23B2FE2300C679FC /* HomeCellCollectionViewCell.swift */,
 				CE9F04AE23B2FE2300C679FC /* HomeCellCollectionViewCell.xib */,
 				CE9F04B523B30A0000C679FC /* TeamHeaderCollectionReusableView.swift */,
 				CE9F04B623B30A0000C679FC /* TeamHeaderCollectionReusableView.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		CEB0C83223F288B200B4EBD8 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
 				CE9F04B923B30B9400C679FC /* CustomCollectionViewCell.swift */,
 				CE9F04BA23B30B9400C679FC /* CustomCollectionViewCell.xib */,
 			);
-			path = Ex3;
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +353,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = /Users/user/Desktop/Intern15Project/12_CollectionView/VienH/baitap3/baitap3/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -338,7 +370,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = /Users/user/Desktop/Intern15Project/12_CollectionView/VienH/baitap3/baitap3/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
