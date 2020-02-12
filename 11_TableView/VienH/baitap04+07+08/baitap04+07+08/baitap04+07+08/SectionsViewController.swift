@@ -19,7 +19,7 @@ final class SectionsViewController: BaseViewController {
     private var flowers: [String] = []
     private var gardents: [[String]] = []
     private var gardentIndexs: [String] = []
-    private let cell = "cell"
+    private let listAnimal = "cell"
 
     // MARK: - Override funcs
     override func setupUI() {
@@ -43,7 +43,7 @@ final class SectionsViewController: BaseViewController {
 
     // MARK: - Private funcs
     private func configTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cell)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: listAnimal)
         tableView.dataSource = self
     }
 }
@@ -60,13 +60,13 @@ extension SectionsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.cell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.listAnimal, for: indexPath)
         cell.textLabel?.text = gardents[indexPath.section][indexPath.row]
-        let nameLablel = UILabel()
-        nameLablel.frame = Config.nameLabel
-        nameLablel.text = Config.titlelabel
-        nameLablel.textColor = Config.colorLabel
-        cell.addSubview(nameLablel)
+        let nameLabel = UILabel()
+        nameLabel.frame = Config.nameLabel
+        nameLabel.text = Config.titlelabel
+        nameLabel.textColor = Config.colorLabel
+        cell.addSubview(nameLabel)
         return cell
     }
 

@@ -8,8 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    var names: [String] = ["name1", "name2", "name3", "name4", "name5"]
+final class HomeViewController: UIViewController {
+    private var names: [String] = ["name1", "name2", "name3", "name4", "name5"]
+    private let contactsCell: String = "cell"
 
     //MARK: - IBOutlet
     @IBOutlet private weak var tableView: UITableView!
@@ -19,14 +20,13 @@ class HomeViewController: UIViewController {
         title = "Home"
 
         // register cell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: contactsCell)
         tableView.dataSource = self
     }
 }
 
-// MARK: - Extension: UITableViewDelegate, UITableViewDataSource
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//MARK: - Extension: UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -37,12 +37,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: contactsCell, for: indexPath)
         cell.textLabel?.text = names[indexPath.row]
         return cell
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected cell: \(names[indexPath.row])")
-    }
 }
+
+
+

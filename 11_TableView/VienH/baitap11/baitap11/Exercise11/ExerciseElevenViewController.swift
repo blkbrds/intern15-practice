@@ -15,6 +15,7 @@ final class ExerciseElevenViewController: BaseViewController {
 
     // MARK: - Properties
     private var messages: [String] = []
+    private let exerciseElementHomeCell: String = "ExerciseElevenHomeCell"
 
     // MARK: - Override funcs
     override func setupUI() {
@@ -30,7 +31,7 @@ final class ExerciseElevenViewController: BaseViewController {
 
     // MARK: - Private funcs
     private func configTableView() {
-        tableView.register(UINib(nibName: "ExerciseElevenHomeCell", bundle: .main), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: exerciseElementHomeCell, bundle: .main), forCellReuseIdentifier: exerciseElementHomeCell)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.allowsMultipleSelection = true
         tableView.dataSource = self
@@ -61,7 +62,7 @@ extension ExerciseElevenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ExerciseElevenHomeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: exerciseElementHomeCell, for: indexPath) as! ExerciseElevenHomeCell
         cell.updateUI { () -> String in
             return messages[indexPath.row]
         }

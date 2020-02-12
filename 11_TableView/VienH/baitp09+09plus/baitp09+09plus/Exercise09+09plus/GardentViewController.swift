@@ -20,7 +20,7 @@ final class GardenViewController: BaseViewController {
     private var gardents: [[Gardent]] = []
     private var gardentIndexs: [String] = []
     private var gardentTitleForHeader: [String] = []
-    private let cell = "GardentCell"
+    private let gardentsCell = "GardentCell"
 
     // MARK: - Override funcs
     override func setupUI() {
@@ -59,7 +59,7 @@ final class GardenViewController: BaseViewController {
 
     // MARK: - Private funcs
     private func configTableView() {
-        tableView.register(UINib(nibName: "GardentCell", bundle: .main), forCellReuseIdentifier: cell)
+        tableView.register(UINib(nibName: gardentsCell, bundle: .main), forCellReuseIdentifier: gardentsCell)
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -72,7 +72,7 @@ extension GardenViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let gardentCell = tableView.dequeueReusableCell(withIdentifier: cell, for: indexPath) as! GardentCell
+        let gardentCell = tableView.dequeueReusableCell(withIdentifier: gardentsCell, for: indexPath) as! GardentCell
         gardentCell.updateUI(garden: { () -> Gardent in
             return self.gardents[indexPath.section][indexPath.row]
         })
