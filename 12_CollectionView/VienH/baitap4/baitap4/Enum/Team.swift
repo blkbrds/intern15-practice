@@ -45,7 +45,7 @@ enum Team: Int {
         case .poodle:
             return [Member(name: "poodle1", avatar: #imageLiteral(resourceName: "poodle2")),
                 Member(name: "poodle2", avatar: #imageLiteral(resourceName: "poodle1")),
-                Member(name: "poodle3", avatar: #imageLiteral(resourceName: "poodle3"))]
+                Member(name: "poodle3", avatar: #imageLiteral(resourceName: "poodle4"))]
         case .alaska:
             return [Member(name: "alaska1", avatar: #imageLiteral(resourceName: "alaska3")),
                 Member(name: "alaska2", avatar: #imageLiteral(resourceName: "alaska2")),

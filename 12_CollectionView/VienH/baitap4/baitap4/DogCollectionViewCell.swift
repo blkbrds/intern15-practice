@@ -10,10 +10,8 @@ import UIKit
 
 class DogCollectionViewCell: UICollectionViewCell {
 
-    typealias Status = DogViewController.Status
-
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,12 +19,12 @@ class DogCollectionViewCell: UICollectionViewCell {
         clipsToBounds = true
         avatarImageView.layer.cornerRadius = 65
         avatarImageView.clipsToBounds = true
+        updateCell(status: Status)
     }
 
     func updateCell(avatar: UIImage, name: String) {
         avatarImageView.image = avatar
         nameLabel.text = name
-        updateCell(status: Status)
     }
 
     func updateCell(status: Status) {

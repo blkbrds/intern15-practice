@@ -50,7 +50,7 @@ enum Status {
 }
 
 final class DogViewController: UIViewController {
-    
+
     var status = Status.standard
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -114,46 +114,62 @@ final class DogViewController: UIViewController {
 }
 
 extension DogViewController: UICollectionViewDataSource {
- 
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Team.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let team = Team(rawValue: section)
-            else {fatalError("Team value is nil") }
+            else { fatalError("Team value is nil") }
         return team.members.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let team = Team(rawValue: indexPath.section)
-            else { fatalError("Member value is nil" ) }
-        
+            else { fatalError("Member value is nil") }
+
         guard indexPath.item < team.members.count
             else { fatalError("Member index is out of bounds") }
-        
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DogCollectionViewCell", for: indexPath) as! DogCollectionViewCell
         cell.updateCell(avatar: team.members[indexPath.item].avatar, name: team.members[indexPath.item].name)
-        
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
+
+    func collectionView(_ colelctionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard Team(rawValue: indexPath.section) != nil
-                else { fatalError("Team value is nil") }
+            guard let team = Team(rawValue: indexPath.section)
+                else { fatalError("Team Value Is Nil") }
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TeamHeaderReusableView", for: indexPath) as! TeamHeaderReusableView
-//            header.updateHeaderView(avatar: team.teamAvatar, name: team.teamName)
+            header.updateHeaderView(avatar: team.teamAvatar, name: team.teamName, status: status)
             return header
-        
+
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "TeamFooterReusableView", for: indexPath) as! TeamFooterReusableView
             return footer
-            
-        default :
+
+        default:
             return UICollectionReusableView()
         }
+    }
+}
+
+extension DogViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewFlowLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 180)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewFlowLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 40)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: 400, height: 80)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: 400, height: 40)
     }
 }

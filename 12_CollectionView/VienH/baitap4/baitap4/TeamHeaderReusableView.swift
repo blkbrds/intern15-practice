@@ -9,13 +9,11 @@
 import UIKit
 
 class TeamHeaderReusableView: UICollectionReusableView {
-    
-    typealias Status = DogViewController.Status
 
-    @IBOutlet weak var teamAvatarImageView: UIImageView!
-    @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet private weak var teamAvatarImageView: UIImageView!
+    @IBOutlet private weak var teamNameLabel: UILabel!
+    @IBOutlet private weak var teamNameLabelLeadingContrain: NSLayoutConstraint!
     
-    @IBOutlet weak var teamNameLabelLeadingContrain: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
         teamAvatarImageView.layer.cornerRadius = 30
