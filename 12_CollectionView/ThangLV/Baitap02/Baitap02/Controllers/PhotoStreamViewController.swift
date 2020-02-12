@@ -10,7 +10,7 @@ import UIKit
 
 final class PhotoStreamViewController: UIViewController {
 
-    private var images: [String] = ["iron", "Thor", "captain", "wolver", "doctor", "hulk" , "xprofessor", "hawkeye", "spider", "starlord", "deadpool", "jean", "storm", "magneto", "gamora", "rocket"]
+    private var imageNames: [String] = ["iron", "Thor", "captain", "wolver", "doctor", "hulk" , "xprofessor", "hawkeye", "spider", "starlord", "deadpool", "jean", "storm", "magneto", "gamora", "rocket"]
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
@@ -23,7 +23,7 @@ final class PhotoStreamViewController: UIViewController {
 
     private func configCollectionView() {
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: cellName, bundle: Bundle.main), forCellWithReuseIdentifier: cellName)
+        collectionView.register(UINib(nibName: cellName, bundle: .main), forCellWithReuseIdentifier: cellName)
         let layout = PinterestLayout()
         layout.delegate = self
         layout.configLayout()
@@ -34,14 +34,14 @@ final class PhotoStreamViewController: UIViewController {
 extension PhotoStreamViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return imageNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as? PhotoCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configPhotoImage(image: UIImage(named: images[indexPath.row]))
+        cell.configPhotoImage(image: UIImage(named: imageNames[indexPath.row]))
         return cell
     }
 }
@@ -49,7 +49,7 @@ extension PhotoStreamViewController: UICollectionViewDataSource {
 extension PhotoStreamViewController: PinterestLayoutDelegate {
     
     func collectionView(_ collectionView: UICollectionView, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        guard let image = UIImage(named: images[indexPath.row]) else { return .zero }
+        guard let image = UIImage(named: imageNames[indexPath.row]) else { return .zero }
         return image.size
     }
 }

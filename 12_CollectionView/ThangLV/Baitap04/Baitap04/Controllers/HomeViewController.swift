@@ -31,7 +31,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 20
@@ -53,7 +53,9 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource,
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+}
+
+extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -63,7 +65,9 @@ extension HomeViewController: UITableViewDataSource, UICollectionViewDataSource,
         cell.backgroundColor = .purple
         return cell
     }
-    
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
     }

@@ -9,7 +9,11 @@
 import UIKit
 
 final class CustomTableViewCell: UITableViewCell {
-
+    
+    struct Config {
+       static let sizeForCell: CGSize = CGSize(width: 70, height: 70)
+    }
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     
     private let cellName: String = "CustomCollectionViewCell"
@@ -18,10 +22,6 @@ final class CustomTableViewCell: UITableViewCell {
         super.awakeFromNib()
         configCollectionView()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     private func configCollectionView() {
         let cellNib = UINib(nibName: cellName, bundle: .main)
@@ -29,10 +29,9 @@ final class CustomTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    
 }
 
-extension CustomTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension CustomTableViewCell: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -46,8 +45,10 @@ extension CustomTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
         return cell
     }
-    
+}
+
+extension CustomTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 70, height: 70)
+        return Config.sizeForCell
     }
 }

@@ -12,10 +12,6 @@ final class CustomCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var numerialOrderLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func configData(number: String) {
         numerialOrderLabel.text = number
         numerialOrderLabel.textColor = .white

@@ -15,13 +15,13 @@ protocol PinterestLayoutDelegate: class {
 final class PinterestLayout: UICollectionViewLayout {
     
     weak var delegate: PinterestLayoutDelegate?
-    private var numberColumns = 2
+    private var numberOfColumns = 2
     private var cellPadding: CGFloat = 5
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
     private var width: CGFloat {
-        guard let cv = collectionView else { return 0 }
-        return cv.bounds.width - CGFloat(numberColumns + 1) * cellPadding
+        guard let collectionView = collectionView else { return 0 }
+        return collectionView.bounds.width - CGFloat(numberOfColumns + 1) * cellPadding
     }
     
     override var collectionViewContentSize: CGSize {
@@ -30,18 +30,18 @@ final class PinterestLayout: UICollectionViewLayout {
     
     func configLayout(cellPadding: CGFloat = 5, numberOfColumns: Int = 2) {
         self.cellPadding = cellPadding
-        self.numberColumns = numberOfColumns
+        self.numberOfColumns = numberOfColumns
     }
     
     override func prepare() {
         super.prepare()
         if cache.isEmpty, let delegate = delegate, let collectionView = collectionView {
-            let columnWidth = width / CGFloat(numberColumns)
+            let columnWidth = width / max(1, CGFloat(numberOfColumns))
             var xOffSets: [CGFloat] = []
-            for column in 0..<numberColumns {
+            for column in 0..<numberOfColumns {
                 xOffSets.append(CGFloat(column) * columnWidth + CGFloat(column + 1) * cellPadding)
             }
-            var yOffSets: [CGFloat] = [CGFloat](repeating: 0, count: numberColumns)
+            var yOffSets: [CGFloat] = [CGFloat](repeating: 0, count: numberOfColumns)
             var column = 0
             for item in 0..<collectionView.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
@@ -54,7 +54,7 @@ final class PinterestLayout: UICollectionViewLayout {
                 cache.append(attributes)
                 contentHeight = max(contentHeight, frame.maxY)
                 yOffSets[column] += cellHeight + cellPadding
-                column = column < (numberColumns - 1) ? column + 1 : 0
+                column = column < (numberOfColumns - 1) ? column + 1 : 0
             }
         }
     }
