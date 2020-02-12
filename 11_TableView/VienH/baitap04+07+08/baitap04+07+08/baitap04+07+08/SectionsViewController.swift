@@ -8,10 +8,21 @@
 
 import UIKit
 
-enum Team: String {
-    case animals = "Animals"
-    case vegetables = "Vegetables"
-    case flowers = "Flowers"
+enum Team: Int {
+    case animals
+    case vegetables
+    case flowers
+
+    var caseValue: String {
+        switch self {
+        case .animals:
+            return "Animals"
+        case .vegetables:
+            return "Vegetables"
+        default:
+            return "Flowers"
+        }
+    }
 }
 
 final class SectionsViewController: BaseViewController {
@@ -35,16 +46,16 @@ final class SectionsViewController: BaseViewController {
 
     override func setupData() {
         super.setupData()
-        guard let animals = DataManagement.shared().getDataFromFile(fileName: Team.animals.rawValue, type: "plist"),
-            let vegetables = DataManagement.shared().getDataFromFile(fileName: Team.vegetables.rawValue, type: "plist"),
-            let flowers = DataManagement.shared().getDataFromFile(fileName: Team.flowers.rawValue, type: "plist") else { return }
+        guard let animals = DataManagement.shared().getDataFromFile(fileName: Team.animals.caseValue, type: "plist"),
+            let vegetables = DataManagement.shared().getDataFromFile(fileName: Team.vegetables.caseValue, type: "plist"),
+            let flowers = DataManagement.shared().getDataFromFile(fileName: Team.flowers.caseValue, type: "plist") else { return }
         self.animals = animals
         self.flowers = flowers
         self.vegetables = vegetables
         gardents.append(animals)
-        gardents.append(flowers)
         gardents.append(vegetables)
-        gardentIndexs = ["A", "F", "V"]
+        gardents.append(flowers)
+        gardentIndexs = ["A", "V", "F"]
     }
 
     // MARK: - Private funcs
@@ -77,13 +88,14 @@ extension SectionsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return Team.animals.rawValue
-        case 1:
-            return Team.vegetables.rawValue
+        guard let title = Team(rawValue: section) else { return "" }
+        switch title {
+        case .animals:
+            return Team.animals.caseValue
+        case .vegetables:
+            return Team.vegetables.caseValue
         default:
-            return Team.flowers.rawValue
+            return Team.flowers.caseValue
         }
     }
 
