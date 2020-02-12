@@ -130,7 +130,7 @@ extension DogViewController: UICollectionViewDataSource {
         guard let team = Team(rawValue: indexPath.section)
             else { fatalError("Member value is nil" ) }
         
-        guard let indexPath.item < team.members.count
+        guard indexPath.item < team.members.count
             else { fatalError("Member index is out of bounds") }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DogCollectionViewCell", for: indexPath) as! DogCollectionViewCell
@@ -143,10 +143,10 @@ extension DogViewController: UICollectionViewDataSource {
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let team = Team(rawValue: indexPath.section)
+            guard Team(rawValue: indexPath.section) != nil
                 else { fatalError("Team value is nil") }
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TeamHeaderReusableView", for: indexPath) as! TeamHeaderReusableView
-            header.updateHeaderView(avatar: team.teamAvatar, name: team.teamName)
+//            header.updateHeaderView(avatar: team.teamAvatar, name: team.teamName)
             return header
         
         case UICollectionView.elementKindSectionFooter:
