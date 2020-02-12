@@ -8,24 +8,24 @@
 
 import UIKit
 
-enum Team: Int {
-    case animals
-    case vegetables
-    case flowers
+final class SectionsViewController: BaseViewController {
 
-    var caseValue: String {
-        switch self {
-        case .animals:
-            return "Animals"
-        case .vegetables:
-            return "Vegetables"
-        default:
-            return "Flowers"
+    enum SectionStyle: Int {
+        case animals = 0
+        case vegetables
+        case flowers
+
+        var stringValue: String {
+            switch self {
+            case .animals:
+                return "Animals"
+            case .vegetables:
+                return "Vegetables"
+            default:
+                return "Flowers"
+            }
         }
     }
-}
-
-final class SectionsViewController: BaseViewController {
 
     // MARK - IBOutlet
     @IBOutlet private weak var tableView: UITableView!
@@ -46,9 +46,9 @@ final class SectionsViewController: BaseViewController {
 
     override func setupData() {
         super.setupData()
-        guard let animals = DataManagement.shared().getDataFromFile(fileName: Team.animals.caseValue, type: "plist"),
-            let vegetables = DataManagement.shared().getDataFromFile(fileName: Team.vegetables.caseValue, type: "plist"),
-            let flowers = DataManagement.shared().getDataFromFile(fileName: Team.flowers.caseValue, type: "plist") else { return }
+        guard let animals = DataManagement.shared().getDataFromFile(fileName: SectionStyle.animals.stringValue, type: "plist"),
+            let vegetables = DataManagement.shared().getDataFromFile(fileName: SectionStyle.vegetables.stringValue, type: "plist"),
+            let flowers = DataManagement.shared().getDataFromFile(fileName: SectionStyle.flowers.stringValue, type: "plist") else { return }
         self.animals = animals
         self.flowers = flowers
         self.vegetables = vegetables
@@ -88,14 +88,14 @@ extension SectionsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let title = Team(rawValue: section) else { return "" }
+        guard let title = SectionStyle(rawValue: section) else { return "" }
         switch title {
         case .animals:
-            return Team.animals.caseValue
+            return SectionStyle.animals.stringValue
         case .vegetables:
-            return Team.vegetables.caseValue
+            return SectionStyle.vegetables.stringValue
         default:
-            return Team.flowers.caseValue
+            return SectionStyle.flowers.stringValue
         }
     }
 
