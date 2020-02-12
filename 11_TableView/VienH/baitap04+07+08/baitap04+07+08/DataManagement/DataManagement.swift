@@ -16,7 +16,7 @@ final class DataManagement {
         return dataManagement
     }()
 
-    class func shared() -> DataManagement {
+    static func shared() -> DataManagement {
         return sharedDataManagement
     }
 

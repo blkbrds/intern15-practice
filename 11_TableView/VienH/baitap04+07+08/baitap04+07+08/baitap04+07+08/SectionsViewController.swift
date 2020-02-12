@@ -9,9 +9,9 @@
 import UIKit
 
 enum Team: String {
-    case Animals
-    case Vegetables
-    case Flowers
+    case animals = "Animals"
+    case vegetables = "Vegetables"
+    case flowers = "Flowers"
 }
 
 final class SectionsViewController: BaseViewController {
@@ -35,9 +35,9 @@ final class SectionsViewController: BaseViewController {
 
     override func setupData() {
         super.setupData()
-        guard let animals = DataManagement.shared().getDataFromFile(fileName: Team.Animals.rawValue, type: "plist"),
-            let vegetables = DataManagement.shared().getDataFromFile(fileName: Team.Vegetables.rawValue, type: "plist"),
-            let flowers = DataManagement.shared().getDataFromFile(fileName: Team.Flowers.rawValue, type: "plist") else { return }
+        guard let animals = DataManagement.shared().getDataFromFile(fileName: Team.animals.rawValue, type: "plist"),
+            let vegetables = DataManagement.shared().getDataFromFile(fileName: Team.vegetables.rawValue, type: "plist"),
+            let flowers = DataManagement.shared().getDataFromFile(fileName: Team.flowers.rawValue, type: "plist") else { return }
         self.animals = animals
         self.flowers = flowers
         self.vegetables = vegetables
@@ -79,11 +79,11 @@ extension SectionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Animals"
+            return Team.animals.rawValue
         case 1:
-            return "Flowers"
+            return Team.vegetables.rawValue
         default:
-            return "Vegetables"
+            return Team.flowers.rawValue
         }
     }
 
