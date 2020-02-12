@@ -14,34 +14,37 @@ protocol PinterestLayoutDelegate: class {
 
 final class PinterestLayout: UICollectionViewLayout {
     
+    struct Config {
+        static var numberOfColumns = 2
+        static var cellPadding: CGFloat = 5
+        static var contentHeight: CGFloat = 0
+    }
+    
     weak var delegate: PinterestLayoutDelegate?
-    private var numberOfColumns = 2
-    private var cellPadding: CGFloat = 5
     private var cache: [UICollectionViewLayoutAttributes] = []
-    private var contentHeight: CGFloat = 0
     private var width: CGFloat {
         guard let collectionView = collectionView else { return 0 }
-        return collectionView.bounds.width - CGFloat(numberOfColumns + 1) * cellPadding
+        return collectionView.bounds.width - CGFloat(Config.numberOfColumns + 1) * Config.cellPadding
     }
     
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: width, height: contentHeight)
+        return CGSize(width: width, height: Config.contentHeight)
     }
     
     func configLayout(cellPadding: CGFloat = 5, numberOfColumns: Int = 2) {
-        self.cellPadding = cellPadding
-        self.numberOfColumns = numberOfColumns
+        Config.cellPadding = cellPadding
+        Config.numberOfColumns = numberOfColumns
     }
     
     override func prepare() {
         super.prepare()
         if cache.isEmpty, let delegate = delegate, let collectionView = collectionView {
-            let columnWidth = width / max(1, CGFloat(numberOfColumns))
+            let columnWidth = width / max(1, CGFloat(Config.numberOfColumns))
             var xOffSets: [CGFloat] = []
-            for column in 0..<numberOfColumns {
-                xOffSets.append(CGFloat(column) * columnWidth + CGFloat(column + 1) * cellPadding)
+            for column in 0..<Config.numberOfColumns {
+                xOffSets.append(CGFloat(column) * columnWidth + CGFloat(column + 1) * Config.cellPadding)
             }
-            var yOffSets: [CGFloat] = [CGFloat](repeating: 0, count: numberOfColumns)
+            var yOffSets: [CGFloat] = [CGFloat](repeating: 0, count: Config.numberOfColumns)
             var column = 0
             for item in 0..<collectionView.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
@@ -52,9 +55,9 @@ final class PinterestLayout: UICollectionViewLayout {
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = frame
                 cache.append(attributes)
-                contentHeight = max(contentHeight, frame.maxY)
-                yOffSets[column] += cellHeight + cellPadding
-                column = column < (numberOfColumns - 1) ? column + 1 : 0
+                Config.contentHeight = max(Config.contentHeight, frame.maxY)
+                yOffSets[column] += cellHeight + Config.cellPadding
+                column = column < (Config.numberOfColumns - 1) ? column + 1 : 0
             }
         }
     }

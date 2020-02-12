@@ -9,12 +9,16 @@
 import UIKit
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
-
+    
+    struct Config {
+        static let photoImageViewCornerRadius: CGFloat = 15
+    }
+    
     @IBOutlet private weak var photoImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        photoImageView.layer.cornerRadius = 15
+        photoImageView.layer.cornerRadius = Config.photoImageViewCornerRadius
     }
     
     func configPhotoImage(image: UIImage?) {

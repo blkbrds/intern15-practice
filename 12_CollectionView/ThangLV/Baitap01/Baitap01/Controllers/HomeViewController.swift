@@ -10,9 +10,15 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    @IBOutlet private weak var collectionView: UICollectionView!
+    struct Identifier {
+        static let customCollectionViewCell: String = "CustomCollectionViewCell"
+    }
     
-    private let cellName = "CustomCollectionViewCell"
+    struct Config {
+        static let numberOfCollectionViewCell: Int = 100
+    }
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +27,19 @@ final class HomeViewController: UIViewController {
     }
     
     private func configCollectionView() {
-        let cellNib = UINib(nibName: cellName, bundle: .main)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
+        let cellNib = UINib(nibName: Identifier.customCollectionViewCell, bundle: .main)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: Identifier.customCollectionViewCell)
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 105
+        return Config.numberOfCollectionViewCell
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as! CustomCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier.customCollectionViewCell, for: indexPath) as! CustomCollectionViewCell
         let number: Int = indexPath.row
         let strNumber: String = String(number)
         cell.configData(number: strNumber)

@@ -11,12 +11,13 @@ import UIKit
 final class CustomTableViewCell: UITableViewCell {
     
     struct Config {
-       static let sizeForCell: CGSize = CGSize(width: 70, height: 70)
+       static let sizeForItem: CGSize = CGSize(width: 70, height: 70)
+       static let numberOfItems: Int = 20
     }
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private let cellName: String = "CustomCollectionViewCell"
+    private let customCollectionViewCell: String = "CustomCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +25,8 @@ final class CustomTableViewCell: UITableViewCell {
     }
     
     private func configCollectionView() {
-        let cellNib = UINib(nibName: cellName, bundle: .main)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
+        let cellNib = UINib(nibName: customCollectionViewCell, bundle: .main)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: customCollectionViewCell)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -33,22 +34,18 @@ final class CustomTableViewCell: UITableViewCell {
 
 extension CustomTableViewCell: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return Config.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCollectionViewCell, for: indexPath)
         return cell
     }
 }
 
 extension CustomTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return Config.sizeForCell
+        return Config.sizeForItem
     }
 }
