@@ -10,11 +10,11 @@ import Foundation
 
 final class DetailViewModel {
     
-    var images: [String] = ["Cho", "Nai", "Soc", "Voi", "Vuon"]
+    var imageNames: [String] = ["Cho", "Nai", "Soc", "Voi", "Vuon"]
     
     init() { }
     
-    init(images: [String]) {
-        self.images = images
+    init(imageNames: [String]) {
+        self.imageNames = imageNames
     }
 }

@@ -10,14 +10,24 @@ import UIKit
 import MapKit
 
 final class DetailViewController: UIViewController {
-
+    
+    struct Config {
+        static let estimatedRowHeightOfTableView: CGFloat = 600
+        static let contentSizeOfMainScrollView = CGSize(width: UIScreen.main.bounds.width, height: 1000)
+        static let coordinateOfAnnotation = CLLocationCoordinate2D(latitude: 16.071763, longitude: 108.223963)
+    }
+    
+    struct Dummy {
+        static let numberOfRowsInSection = 10
+    }
+    
     @IBOutlet private weak var mainScrollView: UIScrollView!
     @IBOutlet private weak var imageScrollView: UIScrollView!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var mapView: MKMapView!
     
     var detailViewModel = DetailViewModel()
-    private let cellName: String  = "CommentTableViewCell"
+    private let commentTableViewCell: String  = "CommentTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +40,16 @@ final class DetailViewController: UIViewController {
     }
     
     private func configTableView() {
-        tableView.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+        tableView.register(UINib(nibName: commentTableViewCell, bundle: nil), forCellReuseIdentifier: commentTableViewCell)
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
+        tableView.estimatedRowHeight = Config.estimatedRowHeightOfTableView
         tableView.reloadData()
     }
     
     // MARK: - Private Functions
     private func configMainScrollView() {
-        mainScrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1000)
+        mainScrollView.contentSize = Config.contentSizeOfMainScrollView
     }
     
     private func configMapView() {
@@ -48,7 +58,7 @@ final class DetailViewController: UIViewController {
     
     private func addAnnotation() {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 16.071763, longitude: 108.223963)
+        annotation.coordinate = Config.coordinateOfAnnotation
         annotation.title = "Danang"
         annotation.subtitle = "A city of Vietnam"
         mapView.addAnnotation(annotation)
@@ -84,16 +94,12 @@ final class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-       return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return Dummy.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CommentTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CommentTableViewCell
+        let cell: CommentTableViewCell = tableView.dequeueReusableCell(withIdentifier: commentTableViewCell, for: indexPath) as! CommentTableViewCell
         return cell
     }
 }

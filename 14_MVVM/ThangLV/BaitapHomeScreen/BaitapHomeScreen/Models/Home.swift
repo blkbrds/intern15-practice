@@ -9,15 +9,15 @@
 import Foundation
 
 final class Home {
-    var image: String
+    var imageName: String
     var name: String
     var address: String
     var rating: String
     var distance: String
     var isLiked: Bool
     
-    init(image: String, name: String, address: String, rating: String, distance: String, isLiked: Bool) {
-        self.image = image
+    init(imageName: String, name: String, address: String, rating: String, distance: String, isLiked: Bool) {
+        self.imageName = imageName
         self.name = name
         self.address = address
         self.rating = rating

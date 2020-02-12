@@ -16,28 +16,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let homeViewController = HomeViewController()
-        let homeNavigationController = UINavigationController(rootViewController: homeViewController)
-        homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage.init(systemName: "house.fill"), tag: 0)
+        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage.init(systemName: "house.fill"), tag: 0)
         
         let mapViewController = MapViewController()
-        let mapNavigationController = UINavigationController(rootViewController: mapViewController)
         mapViewController.tabBarItem = UITabBarItem(title: "Map", image: UIImage.init(systemName: "map"), tag: 1)
         
         let favoriteViewController = FavoriteViewController()
-        let favoriteNavigationController = UINavigationController(rootViewController: favoriteViewController)
         favoriteViewController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage.init(systemName: "star.fill"), tag: 2)
         
         let profileViewController = ProfileViewController()
-        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
         profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "person.circle"), tag: 3)
-        
-        let viewControllers = [homeNavigationController, mapNavigationController, favoriteNavigationController, profileNavigationController]
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = viewControllers
         
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = tabBarController
+        window?.rootViewController = setupTabbar(homeViewController: homeViewController, mapViewController: mapViewController, favoriteViewController: favoriteViewController, profileViewController: profileViewController)
+    }
+    
+    func setupTabbar(homeViewController: HomeViewController, mapViewController: MapViewController, favoriteViewController: FavoriteViewController, profileViewController: ProfileViewController) -> UITabBarController{
+        let viewControllers = [UINavigationController(rootViewController: homeViewController), UINavigationController(rootViewController: mapViewController), UINavigationController(rootViewController: favoriteViewController), UINavigationController(rootViewController: profileViewController)]
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = viewControllers
+        return tabBarController
     }
 }
 

@@ -8,29 +8,37 @@
 
 import UIKit
 
-// MARK: Enum
-enum Status {
-    case table
-    case collection
-    var itemSize: CGSize {
-        switch self {
-        case .table:
-            return CGSize(width: UIScreen.main.bounds.width - 20, height: 110)
-        case .collection:
-            return CGSize(width: UIScreen.main.bounds.width / 2 - 10, height: UIScreen.main.bounds.width / 2 - 10)
-        }
-    }
-    var sectionInset: UIEdgeInsets {
-        switch self {
-        case .table:
-            return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        case .collection:
-            return UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        }
-    }
-}
-
 final class HomeViewController: UIViewController {
+    
+    // MARK: - Struct
+    struct Config {
+        static let itemSizeForTableViewType = CGSize(width: UIScreen.main.bounds.width - 20, height: 110)
+        static let itemSizeForCollectionViewType = CGSize(width: UIScreen.main.bounds.width / 2 - 10, height: UIScreen.main.bounds.width / 2 - 10)
+        static let sectionInsetForTableViewType = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        static let sectionInsetForCollectionViewType = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    }
+    
+    // MARK: - Enum
+    enum Status {
+        case table
+        case collection
+        var itemSize: CGSize {
+            switch self {
+            case .table:
+                return Config.itemSizeForTableViewType
+            case .collection:
+                return Config.itemSizeForCollectionViewType
+            }
+        }
+        var sectionInset: UIEdgeInsets {
+            switch self {
+            case .table:
+                return Config.sectionInsetForTableViewType
+            case .collection:
+                return Config.sectionInsetForCollectionViewType
+            }
+        }
+    }
 
     //MARK: IBOutlet
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -41,12 +49,11 @@ final class HomeViewController: UIViewController {
 
     //MARK: Properties
     private var index: Int = 0
-    private var numberOfItems = 10
     private var viewModel = HomeViewModel()
     private var status = Status.table
-    private let cellNameOfTableType = "CustomCell"
-    private let cellNameOfCollectionType = "CollectionViewCell"
-    
+    private let customCell = "CustomCell"
+    private let collectionViewCell = "CollectionViewCell"
+
     // MARK: Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,8 +98,8 @@ final class HomeViewController: UIViewController {
         flowLayout.scrollDirection = .vertical
         flowLayout.sectionInset = status.sectionInset
         collectionView.setCollectionViewLayout(flowLayout, animated: true)
-        collectionView.register(UINib(nibName: cellNameOfTableType, bundle: nil), forCellWithReuseIdentifier: cellNameOfTableType)
-        collectionView.register(UINib(nibName: cellNameOfCollectionType, bundle: nil), forCellWithReuseIdentifier: cellNameOfCollectionType)
+        collectionView.register(UINib(nibName: customCell, bundle: nil), forCellWithReuseIdentifier: customCell)
+        collectionView.register(UINib(nibName: collectionViewCell, bundle: nil), forCellWithReuseIdentifier: collectionViewCell)
         collectionView.isScrollEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -145,10 +152,6 @@ final class HomeViewController: UIViewController {
 //MARK: Extensions
 extension HomeViewController: UICollectionViewDataSource {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
     }
@@ -156,11 +159,11 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch status {
         case .collection:
-            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellNameOfCollectionType, for: indexPath) as! CustomCell
+            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCell, for: indexPath) as! CustomCell
             cell.viewModel = viewModel.viewModelForItems(at: indexPath)
             return cell
         case .table:
-            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellNameOfTableType, for: indexPath) as! CustomCell
+            let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: customCell, for: indexPath) as! CustomCell
             cell.viewModel = viewModel.viewModelForItems(at: indexPath)
             return cell
         }

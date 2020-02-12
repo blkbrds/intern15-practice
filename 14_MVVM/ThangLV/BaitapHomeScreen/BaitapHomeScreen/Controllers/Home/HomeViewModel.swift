@@ -9,8 +9,8 @@
 import Foundation
 
 final class HomeViewModel {
-    var images: [String] = ["Cho", "Nai", "Soc", "Voi", "Vuon"]
-    var home: [Home] = [Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
+    var imageNames: [String] = ["Cho", "Nai", "Soc", "Voi", "Vuon"]
+    var homes: [Home] = [Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
                         Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
                         Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
                         Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
@@ -19,11 +19,11 @@ final class HomeViewModel {
                         Home(image: "a", name: "", address: "", rating: "", distance: "9km", isLiked: true)]
     
     func numberOfItems() -> Int {
-        return home.count
+        return homes.count
     }
     
     func viewModelForItems(at indexPath: IndexPath) -> CustomCellViewModel {
-        let homeObject = home[indexPath.row]
+        let homeObject = homes[indexPath.row]
         return CustomCellViewModel(home: homeObject)
     }
 }
