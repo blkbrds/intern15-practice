@@ -8,50 +8,49 @@
 
 import UIKit
 
+enum Status {
+    case standard
+    case small
 
-class DogViewController: UIViewController {
-    
-    enum Status {
-        case standard
-        case small
-
-        var itemSize: CGSize {
-            switch self {
-            case .standard:
-                return CGSize(width: 150, height: 180)
-            default:
-                return CGSize(width: 80, height: 80)
-            }
-        }
-
-        var sectionInset: UIEdgeInsets {
-            switch self {
-            case .standard:
-                return UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 40)
-            default:
-                return UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
-            }
-        }
-
-        var headerReferenceSize: CGSize {
-            switch self {
-            case .standard:
-                return CGSize(width: 400, height: 80)
-            default:
-                return CGSize(width: 400, height: 40)
-            }
-        }
-
-        var footerReferceSize: CGSize {
-            switch self {
-            case .standard:
-                return CGSize(width: 400, height: 40)
-            default:
-                return CGSize(width: 400, height: 30)
-            }
+    var itemSize: CGSize {
+        switch self {
+        case .standard:
+            return CGSize(width: 150, height: 180)
+        default:
+            return CGSize(width: 80, height: 80)
         }
     }
 
+    var sectionInset: UIEdgeInsets {
+        switch self {
+        case .standard:
+            return UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 40)
+        default:
+            return UIEdgeInsets(top: 30, left: 10, bottom: 10, right: 10)
+        }
+    }
+
+    var headerReferenceSize: CGSize {
+        switch self {
+        case .standard:
+            return CGSize(width: 400, height: 80)
+        default:
+            return CGSize(width: 400, height: 40)
+        }
+    }
+
+    var footerReferceSize: CGSize {
+        switch self {
+        case .standard:
+            return CGSize(width: 400, height: 40)
+        default:
+            return CGSize(width: 400, height: 30)
+        }
+    }
+}
+
+final class DogViewController: UIViewController {
+    
     var status = Status.standard
 
     @IBOutlet weak var collectionView: UICollectionView!
