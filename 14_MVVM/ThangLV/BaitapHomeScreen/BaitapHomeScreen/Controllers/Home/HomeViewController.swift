@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     }
     
     // MARK: - Enum
-    enum Status {
+    enum ViewTypeStatus {
         case table
         case collection
         var itemSize: CGSize {
@@ -50,7 +50,7 @@ final class HomeViewController: UIViewController {
     //MARK: Properties
     private var index: Int = 0
     private var viewModel = HomeViewModel()
-    private var status = Status.table
+    private var status = ViewTypeStatus.table
     private let customCell = "CustomCell"
     private let collectionViewCell = "CollectionViewCell"
 
@@ -75,20 +75,20 @@ final class HomeViewController: UIViewController {
 
     //MARK: Private functions
     private func setupScrollView() {
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(viewModel.images.count), height: 0.2 * view.frame.width)
-        for i in 0..<viewModel.images.count {
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(viewModel.imageNames.count), height: 0.2 * view.frame.width)
+        for i in 0..<viewModel.imageNames.count {
             createImage(index: i)
         }
         setupPageControl()
     }
 
     private func setupPageControl() {
-        pageControl.numberOfPages = viewModel.images.count
+        pageControl.numberOfPages = viewModel.imageNames.count
     }
 
     private func createImage(index: Int) {
-        let imageView: UIImageView = UIImageView(image: UIImage(named: viewModel.images[index]))
-        let originPoint = CGPoint(x: scrollView.contentSize.width * CGFloat(index) / CGFloat(viewModel.images.count), y: 0)
+        let imageView: UIImageView = UIImageView(image: UIImage(named: viewModel.imageNames[index]))
+        let originPoint = CGPoint(x: scrollView.contentSize.width * CGFloat(index) / CGFloat(viewModel.imageNames.count), y: 0)
         imageView.frame = CGRect(origin: originPoint, size: CGSize(width: view.frame.width, height: view.frame.height / 5))
         scrollView.addSubview(imageView)
     }
@@ -105,7 +105,7 @@ final class HomeViewController: UIViewController {
         collectionView.delegate = self
     }
 
-    private func changeFlowLayout(status: Status) {
+    private func changeFlowLayout(status: ViewTypeStatus) {
         self.status = status
         collectionView.reloadData()
     }
@@ -135,13 +135,13 @@ final class HomeViewController: UIViewController {
     }
 
     @IBAction private func nextButtonTouchUpInside(_ sender: Any) {
-        guard index < viewModel.images.count - 1 else { return }
+        guard index < viewModel.imageNames.count - 1 else { return }
         index += 1
         UIView.animate(withDuration: 0.5, animations: {
             self.scrollView.contentOffset = CGPoint(x: CGFloat(self.index) * self.view.frame.width, y: 0)
             self.prevButton.isEnabled = true
         }) { (done) in
-            if self.index == self.viewModel.images.count - 1 {
+            if self.index == self.viewModel.imageNames.count - 1 {
                 self.nextButton.isEnabled = false
             }
         }
@@ -160,11 +160,11 @@ extension HomeViewController: UICollectionViewDataSource {
         switch status {
         case .collection:
             let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCell, for: indexPath) as! CustomCell
-            cell.viewModel = viewModel.viewModelForItems(at: indexPath)
+            cell.viewModel = viewModel.viewModelForItem(at: indexPath)
             return cell
         case .table:
             let cell: CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: customCell, for: indexPath) as! CustomCell
-            cell.viewModel = viewModel.viewModelForItems(at: indexPath)
+            cell.viewModel = viewModel.viewModelForItem(at: indexPath)
             return cell
         }
     }
@@ -173,7 +173,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
-        detailViewController.detailViewModel = DetailViewModel(images: viewModel.images)
+        detailViewController.detailViewModel = DetailViewModel(imageNames: viewModel.imageNames)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 

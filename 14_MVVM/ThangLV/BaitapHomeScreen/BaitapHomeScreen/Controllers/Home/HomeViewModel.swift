@@ -10,19 +10,19 @@ import Foundation
 
 final class HomeViewModel {
     var imageNames: [String] = ["Cho", "Nai", "Soc", "Voi", "Vuon"]
-    var homes: [Home] = [Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
-                        Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
-                        Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
-                        Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
-                        Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
-                        Home(image: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
-                        Home(image: "a", name: "", address: "", rating: "", distance: "9km", isLiked: true)]
+    var homes: [Home] = [Home(imageName: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
+                         Home(imageName: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
+                         Home(imageName: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
+                         Home(imageName: "a", name: "", address: "", rating: "", distance: "", isLiked: true),
+                         Home(imageName: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
+                         Home(imageName: "a", name: "", address: "", rating: "", distance: "", isLiked: false),
+                         Home(imageName: "a", name: "", address: "", rating: "", distance: "9km", isLiked: true)]
     
     func numberOfItems() -> Int {
         return homes.count
     }
     
-    func viewModelForItems(at indexPath: IndexPath) -> CustomCellViewModel {
+    func viewModelForItem(at indexPath: IndexPath) -> CustomCellViewModel {
         let homeObject = homes[indexPath.row]
         return CustomCellViewModel(home: homeObject)
     }

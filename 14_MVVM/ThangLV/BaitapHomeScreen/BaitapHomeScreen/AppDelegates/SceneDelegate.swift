@@ -15,6 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        window = UIWindow(windowScene: windowScene)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = setupTabbar()
+    }
+    
+    func setupTabbar() -> UITabBarController {
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage.init(systemName: "house.fill"), tag: 0)
         
@@ -27,15 +33,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let profileViewController = ProfileViewController()
         profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "person.circle"), tag: 3)
         
-        window = UIWindow(windowScene: windowScene)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = setupTabbar(homeViewController: homeViewController, mapViewController: mapViewController, favoriteViewController: favoriteViewController, profileViewController: profileViewController)
-    }
-    
-    func setupTabbar(homeViewController: HomeViewController, mapViewController: MapViewController, favoriteViewController: FavoriteViewController, profileViewController: ProfileViewController) -> UITabBarController{
         let viewControllers = [UINavigationController(rootViewController: homeViewController), UINavigationController(rootViewController: mapViewController), UINavigationController(rootViewController: favoriteViewController), UINavigationController(rootViewController: profileViewController)]
+        
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = viewControllers
+        
         return tabBarController
     }
 }

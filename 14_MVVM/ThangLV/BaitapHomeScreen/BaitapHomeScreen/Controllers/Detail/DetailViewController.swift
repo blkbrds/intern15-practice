@@ -38,6 +38,8 @@ final class DetailViewController: UIViewController {
         setupScrollView()
         slideTheImages()
     }
+
+    // MARK: - Private Functions
     
     private func configTableView() {
         tableView.register(UINib(nibName: commentTableViewCell, bundle: nil), forCellReuseIdentifier: commentTableViewCell)
@@ -66,15 +68,15 @@ final class DetailViewController: UIViewController {
     }
     
     private func setupScrollView() {
-        imageScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(detailViewModel.images.count), height: 0.2 * view.frame.width)
-        for i in 0..<detailViewModel.images.count {
+        imageScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(detailViewModel.imageNames.count), height: 0.2 * view.frame.width)
+        for i in 0..<detailViewModel.imageNames.count {
             createImage(index: i)
         }
     }
     
     private func createImage(index: Int) {
-        let imageView: UIImageView = UIImageView(image: UIImage(named: detailViewModel.images[index]))
-        let originPoint = CGPoint(x: imageScrollView.contentSize.width * CGFloat(index) / CGFloat(detailViewModel.images.count), y: 0)
+        let imageView: UIImageView = UIImageView(image: UIImage(named: detailViewModel.imageNames[index]))
+        let originPoint = CGPoint(x: imageScrollView.contentSize.width * CGFloat(index) / CGFloat(detailViewModel.imageNames.count), y: 0)
         imageView.frame = CGRect(origin: originPoint, size: CGSize(width: view.frame.width, height: view.frame.height / 5))
         imageScrollView.addSubview(imageView)
     }
