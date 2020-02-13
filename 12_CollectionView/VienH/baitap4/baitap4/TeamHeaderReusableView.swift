@@ -9,6 +9,8 @@
 import UIKit
 
 class TeamHeaderReusableView: UICollectionReusableView {
+    
+    typealias Status = DogViewController.Status
 
     @IBOutlet private weak var teamAvatarImageView: UIImageView!
     @IBOutlet private weak var teamNameLabel: UILabel!
@@ -30,12 +32,11 @@ class TeamHeaderReusableView: UICollectionReusableView {
         switch status {
         case .standard:
             teamAvatarImageView.isHidden = false
-            teamNameLabelLeadingContrain.constant = 10
+            teamNameLabelLeadingContrain.constant = 80
             
-        default:
+        case .small:
             teamAvatarImageView.isHidden = true
             teamNameLabelLeadingContrain.constant = 10
         }
     }
-    
 }

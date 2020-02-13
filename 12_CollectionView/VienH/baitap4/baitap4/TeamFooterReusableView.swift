@@ -10,9 +10,9 @@ import UIKit
 
 class TeamFooterReusableView: UICollectionReusableView {
 
+    @IBOutlet private weak var buttonTouchUpInside: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
 }

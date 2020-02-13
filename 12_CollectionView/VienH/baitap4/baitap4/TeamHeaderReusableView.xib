@@ -15,6 +15,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9n9-sH-E1u">
                     <rect key="frame" x="10" y="15" width="60" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="seL-I3-w63"/>
                         <constraint firstAttribute="width" constant="60" id="zAO-sn-QBe"/>
@@ -35,6 +36,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
+            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="oyy-kv-UQk" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="41Q-YK-aev"/>
                 <constraint firstItem="9n9-sH-E1u" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="aOJ-HP-d8d"/>
@@ -48,7 +50,7 @@
             <connections>
                 <outlet property="teamAvatarImageView" destination="9n9-sH-E1u" id="dkY-gl-zIt"/>
                 <outlet property="teamNameLabel" destination="oyy-kv-UQk" id="M4r-A2-Ddb"/>
-                <outlet property="teamNameLabelLeadingContrain" destination="lXv-j2-9u1" id="w6g-Gn-MyY"/>
+                <outlet property="teamNameLabelLeadingContrain" destination="lXv-j2-9u1" id="C9c-sM-wDk"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="109.15178571428571"/>
         </collectionReusableView>

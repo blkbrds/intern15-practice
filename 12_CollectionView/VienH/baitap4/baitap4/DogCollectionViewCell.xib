@@ -16,13 +16,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="161" height="179"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EXz-PR-wqI">
-                        <rect key="frame" x="5" y="5" width="151" height="117"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EXz-PR-wqI">
+                        <rect key="frame" x="10" y="10" width="141" height="112"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zk-co-Fn2">
                         <rect key="frame" x="10" y="132" width="141" height="36"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="36" id="WdM-6f-VpO"/>
+                            <constraint firstAttribute="height" constant="36" id="82P-a4-wt3"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -30,14 +30,15 @@
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="EXz-PR-wqI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="2dY-tE-KyX"/>
-                <constraint firstItem="5Zk-co-Fn2" firstAttribute="top" secondItem="EXz-PR-wqI" secondAttribute="bottom" constant="10" id="6jE-al-lzt"/>
-                <constraint firstAttribute="bottom" secondItem="5Zk-co-Fn2" secondAttribute="bottom" constant="11" id="7fr-Bf-uq3"/>
-                <constraint firstItem="5Zk-co-Fn2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="CYO-XC-9V1"/>
-                <constraint firstAttribute="trailing" secondItem="EXz-PR-wqI" secondAttribute="trailing" constant="5" id="GAv-tN-je8"/>
-                <constraint firstItem="EXz-PR-wqI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="NVg-6Z-Jak"/>
-                <constraint firstAttribute="trailing" secondItem="5Zk-co-Fn2" secondAttribute="trailing" constant="10" id="ORf-6f-4gr"/>
+                <constraint firstItem="EXz-PR-wqI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="0wL-Fh-Ho2"/>
+                <constraint firstItem="5Zk-co-Fn2" firstAttribute="top" secondItem="EXz-PR-wqI" secondAttribute="bottom" constant="10" id="9nz-HE-Esf"/>
+                <constraint firstAttribute="trailing" secondItem="EXz-PR-wqI" secondAttribute="trailing" constant="10" id="JuV-aX-yYy"/>
+                <constraint firstItem="EXz-PR-wqI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="XYW-nq-0IZ"/>
+                <constraint firstAttribute="bottom" secondItem="5Zk-co-Fn2" secondAttribute="bottom" constant="11" id="bEg-d2-RRA"/>
+                <constraint firstItem="5Zk-co-Fn2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="hSX-EP-6Fi"/>
+                <constraint firstAttribute="trailing" secondItem="5Zk-co-Fn2" secondAttribute="trailing" constant="10" id="npa-oT-ZhM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="161" height="179"/>

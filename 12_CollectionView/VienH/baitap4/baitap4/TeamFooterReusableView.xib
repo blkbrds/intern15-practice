@@ -15,7 +15,9 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhu-2d-WuN">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <state key="normal" title="Button"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Click To See Detail"/>
                 </button>
             </subviews>
             <constraints>
@@ -25,6 +27,9 @@
                 <constraint firstItem="Zhu-2d-WuN" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="uaT-gm-5pe"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="buttonTouchUpInside" destination="Zhu-2d-WuN" id="D5F-C9-hye"/>
+            </connections>
             <point key="canvasLocation" x="84" y="113"/>
         </collectionReusableView>
     </objects>
