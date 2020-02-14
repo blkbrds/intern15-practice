@@ -2,6 +2,11 @@ import UIKit
 
 final class HomeViewController: BaseViewController {
     
+    //MARK: - Struct
+    struct Dummy {
+        static let heightForTableViewRow: CGFloat = 200
+    }
+    
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView!
     
@@ -34,7 +39,7 @@ final class HomeViewController: BaseViewController {
             if done {
                 self.updateUI()
             } else {
-                print("API erorr: \(msg)")
+                print("API error: \(msg)")
             }
         }
     }
@@ -77,6 +82,6 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return Dummy.heightForTableViewRow
     }
 }
