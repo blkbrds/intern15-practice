@@ -9,7 +9,7 @@
 import UIKit
 
 final class DogCollectionViewCell: UICollectionViewCell {
-    
+
     typealias Status = DogViewController.Status
 
     @IBOutlet private weak var avatarImageView: UIImageView!
@@ -21,13 +21,13 @@ final class DogCollectionViewCell: UICollectionViewCell {
         clipsToBounds = true
         avatarImageView.clipsToBounds = true
     }
-    
+
     func updateCell(avatar: UIImage, name: String, status: Status) {
         avatarImageView.image = avatar
         nameLabel.text = name
         updateCell(status: status)
     }
-    
+
     func updateCell(status: Status) {
         switch status {
         case .standard:

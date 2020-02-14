@@ -13,7 +13,7 @@ struct Member {
     var avatar: UIImage
 }
 
-enum TeamType: Int {
+enum TeamType: String, CaseIterable {
     case pull
     case poodle
     case alaska
@@ -63,7 +63,7 @@ enum TeamType: Int {
         }
     }
     
-    static var count: Int { return TeamType.alaska.rawValue + 1}
+    static var count: Int { return TeamType.alaska.hashValue}
 }
 
 struct Team {
