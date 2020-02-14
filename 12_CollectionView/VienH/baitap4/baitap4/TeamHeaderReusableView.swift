@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamHeaderReusableView: UICollectionReusableView {
+final class TeamHeaderReusableView: UICollectionReusableView {
     
     typealias Status = DogViewController.Status
 

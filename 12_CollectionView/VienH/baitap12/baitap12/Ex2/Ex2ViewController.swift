@@ -4,10 +4,12 @@ import UIKit
 
 final class Ex2ViewController: UIViewController {
 
-    @IBOutlet private weak var collectionView: UICollectionView!
+    struct Dummy {
+        static let numberOfItems: Int = 48
+        static var heightArray: [CGFloat] = []
+    }
 
-    private var heightArray: [CGFloat] = []
-    private let numberOfItems: Int = 48
+    @IBOutlet private weak var collectionView: UICollectionView!
     private let cellIndentifier: String = "UICollectionViewCell"
 
     override func viewDidLoad() {
@@ -16,7 +18,6 @@ final class Ex2ViewController: UIViewController {
         randomHeightForCell()
     }
 
-    //MARK: - Private functions
     private func setupUI() {
         title = "Custom Cell"
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellIndentifier)
@@ -28,20 +29,19 @@ final class Ex2ViewController: UIViewController {
     }
 
     private func randomHeightForCell() {
-        for _ in 0..<numberOfItems {
-            heightArray.append(CGFloat.random(in: 50...200))
+        for _ in 0..<Dummy.numberOfItems {
+            Dummy.heightArray.append(CGFloat.random(in: 50...200))
         }
     }
 }
 
 extension Ex2ViewController: UICollectionViewDelegate, UICollectionViewDataSource, PinterestLayoutDelegate {
-
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return heightArray[indexPath.item]
+        return Dummy.heightArray[indexPath.item]
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfItems
+        return Dummy.numberOfItems
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

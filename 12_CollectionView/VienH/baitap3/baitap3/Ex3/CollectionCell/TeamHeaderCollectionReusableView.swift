@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamHeaderCollectionReusableView: UICollectionReusableView {
+final class TeamHeaderCollectionReusableView: UICollectionReusableView {
 
     @IBOutlet private weak var teamNameLabel: UILabel!
     @IBOutlet private weak var teamImageView: UIImageView!

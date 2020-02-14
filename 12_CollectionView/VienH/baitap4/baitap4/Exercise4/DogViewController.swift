@@ -45,16 +45,14 @@ final class DogViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var collectionView: UICollectionView!
+
+    var status = Status.standard
     let teams: [Team] = [
         Team(type: .alaska),
         Team(type: .poodle),
         Team(type: .pull)
     ]
-
-    @IBOutlet private weak var collectionView: UICollectionView!
-
-    var status = Status.standard
-
     private let dogCollectionVIewCell = "DogCollectionViewCell"
     private let teamHeaderReusableVIew = "TeamHeaderReusableView"
     private let teamFooterReusableView = "TeamFooterReusableView"
@@ -138,11 +136,11 @@ extension DogViewController: UICollectionViewDataSource {
 extension DogViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: 400, height: 80)
+        return status.headerReferenceSize
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: 400, height: 40)
+        return status.footerReferceSize
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

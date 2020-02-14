@@ -10,8 +10,16 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    @IBOutlet private weak var collectionView: UICollectionView!
+    struct Dummy {
+        static var sizeForItem: CGSize {
+            return CGSize(width: UIScreen.main.bounds.width, height: 150)
+        }
+        static var headerReferenceSize: CGSize {
+            return CGSize(width: UIScreen.main.bounds.width, height: 150)
+        }
+    }
 
+    @IBOutlet private weak var collectionView: UICollectionView!
     private let homeCellCollectionViewCell: String = "HomeCellCollectionViewCell"
     private let customCollectionViewCellIndentifier: String = "CustomCollectionViewCell"
     private let teamCellNibIndentifier: String = "TeamHeaderCollectionReusableView"
@@ -32,28 +40,25 @@ final class HomeViewController: UIViewController {
 
         let cellNib = UINib(nibName: customCollectionViewCellIndentifier, bundle: .main)
         collectionView.register(cellNib, forCellWithReuseIdentifier: customCollectionViewCellIndentifier)
-
         let headerNib = UINib(nibName: teamCellNibIndentifier, bundle: .main)
         collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: teamCellNibIndentifier)
-
         collectionView.dataSource = self
         collectionView.delegate = self
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return Config.numberOfItemsInsection
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return Team.count
+        return TeamType.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCollectionViewCellIndentifier, for: indexPath) as? CustomCollectionViewCell,
-            let team = Team(rawValue: indexPath.section) else { return UICollectionViewCell() }
+            let team = TeamType(rawValue: indexPath.count) else { return UICollectionViewCell() }
         cell.teamMembers = team.members
         return cell
     }
@@ -61,7 +66,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let team = Team(rawValue: indexPath.section) else { return UICollectionReusableView() }
+            guard let team = TeamType(rawValue: indexPath.section) else { return UICollectionReusableView() }
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: teamCellNibIndentifier, for: indexPath) as? TeamHeaderCollectionReusableView else { return UICollectionReusableView() }
             header.updateHeaderView(avatar: team.teamAvatar, name: team.teamName)
             return header
@@ -72,17 +77,25 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 300)
+        return Dummy.headerReferenceSize
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return .zero
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 80)
+        return Dummy.sizeForItem
     }
 }
 
+extension HomeViewController {
+    struct Config {
+        static var numberOfItemsInsection: Int = 1
+        static let borderColorImage = UIColor.orange.cgColor
+        static let borderWidthImage: CGFloat = 1
+        static let cornerRadiusImage: CGFloat = 40
+        static let clipsToBoundsImage = true
+    }
+}

@@ -10,10 +10,17 @@ import UIKit
 
 final class CustomCollectionViewCell: UICollectionViewCell {
 
+    struct Dummy {
+        static var sizeForItem: CGSize {
+            return CGSize(width: 150, height: UIScreen.main.bounds.height - 40)
+        }
+        static var sectionInset: UIEdgeInsets {
+            return UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16)
+        }
+    }
+
     @IBOutlet private weak var collectionView: UICollectionView!
-
     private let heroCellIndentifier: String = "HomeCellCollectionViewCell"
-
     var teamMembers: [Member] = []
 
     override func awakeFromNib() {
@@ -45,11 +52,11 @@ extension CustomCollectionViewCell: UICollectionViewDataSource {
 extension CustomCollectionViewCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = collectionView.frame.height - 40
-        return CGSize(width: 150, height: height)
+        return Dummy.sizeForItem
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16)
+        return Dummy.sectionInset
     }
 }
+

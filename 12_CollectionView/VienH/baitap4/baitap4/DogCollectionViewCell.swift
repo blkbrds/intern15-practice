@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DogCollectionViewCell: UICollectionViewCell {
+final class DogCollectionViewCell: UICollectionViewCell {
     
     typealias Status = DogViewController.Status
 

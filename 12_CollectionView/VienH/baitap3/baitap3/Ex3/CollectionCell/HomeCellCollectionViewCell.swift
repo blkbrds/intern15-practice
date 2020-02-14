@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCellCollectionViewCell: UICollectionViewCell {
+final class HomeCellCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -18,13 +18,7 @@ class HomeCellCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
 
-    private func setupUI() {
-        layer.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
-        layer.cornerRadius = 10
-        clipsToBounds = true
-        avatarImageView.clipsToBounds = true
-        avatarImageView.layer.cornerRadius = 65
-    }
+    private func setupUI() {}
 
     func updateCell(avatar: UIImage, name: String) {
         avatarImageView.image = avatar

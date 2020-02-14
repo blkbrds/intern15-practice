@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TeamFooterReusableView: UICollectionReusableView {
+final class TeamFooterReusableView: UICollectionReusableView {
 
     @IBOutlet private weak var buttonTouchUpInside: UIButton!
     
