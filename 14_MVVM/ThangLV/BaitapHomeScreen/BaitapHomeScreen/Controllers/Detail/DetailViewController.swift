@@ -49,7 +49,6 @@ final class DetailViewController: UIViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Private Functions
     private func configMainScrollView() {
         mainScrollView.contentSize = Config.contentSizeOfMainScrollView
     }
