@@ -89,7 +89,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func createRegister() {
         let registerVC = RegisterViewController()
-        let registerNavi = BaseNavigationController(rootViewController: registerVC)
 
         window?.rootViewController = registerVC
     }
