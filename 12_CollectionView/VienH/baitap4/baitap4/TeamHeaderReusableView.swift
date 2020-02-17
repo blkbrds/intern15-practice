@@ -9,11 +9,6 @@
 import UIKit
 
 final class TeamHeaderReusableView: UICollectionReusableView {
-    struct Config {
-        static var constantImageStandard: Int = 80
-        static var constantImageSmall: Int = 10
-        static var cornerRadiusImage = 30
-    }
 
     typealias Status = DogViewController.Status
 
@@ -43,5 +38,13 @@ final class TeamHeaderReusableView: UICollectionReusableView {
             teamAvatarImageView.isHidden = true
             teamNameLabelLeadingContrain.constant = CGFloat(Config.constantImageSmall)
         }
+    }
+}
+
+extension TeamHeaderReusableView {
+    struct Config {
+        static var constantImageStandard = 80
+        static var constantImageSmall = 10
+        static var cornerRadiusImage = 30
     }
 }

@@ -9,10 +9,6 @@
 import UIKit
 
 final class DogCollectionViewCell: UICollectionViewCell {
-    struct Config {
-        static let connerRadiusImageStandard = 65
-        static let connerRadiusImageSmall = 30
-    }
     typealias Status = DogViewController.Status
 
     @IBOutlet private weak var avatarImageView: UIImageView!
@@ -35,5 +31,12 @@ final class DogCollectionViewCell: UICollectionViewCell {
         case .small:
             avatarImageView.layer.cornerRadius = CGFloat(Config.connerRadiusImageSmall)
         }
+    }
+}
+
+extension DogCollectionViewCell {
+    struct Config {
+        static let connerRadiusImageStandard = 65
+        static let connerRadiusImageSmall = 30
     }
 }

@@ -10,10 +10,6 @@ import UIKit
 
 final class Ex1ViewController: UIViewController {
 
-    struct Dummy {
-        static let rows: [Int] = Array(0...99)
-    }
-
     @IBOutlet private weak var collectionView: UICollectionView!
     private var homeCell: String = "HomeCell"
 
@@ -21,12 +17,11 @@ final class Ex1ViewController: UIViewController {
         super.viewDidLoad()
         title = "Home"
         collectionView.register(HomeCell.self, forCellWithReuseIdentifier: homeCell)
-        collectionView.delegate = self
         collectionView.dataSource = self
     }
 }
 
-extension Ex1ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension Ex1ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Dummy.rows.count
     }
@@ -37,4 +32,10 @@ extension Ex1ViewController: UICollectionViewDataSource, UICollectionViewDelegat
         cell.textLabel.text = String(Dummy.rows[indexPath.row])
         return cell
     }
+}
+
+extension Ex1ViewController {
+    struct Dummy {
+           static let rows: [Int] = Array(0...99)
+       }
 }

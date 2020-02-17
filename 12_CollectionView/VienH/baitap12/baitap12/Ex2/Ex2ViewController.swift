@@ -4,11 +4,6 @@ import UIKit
 
 final class Ex2ViewController: UIViewController {
 
-    struct Dummy {
-        static let numberOfItems: Int = 48
-        static var heightArray: [CGFloat] = []
-    }
-
     @IBOutlet private weak var collectionView: UICollectionView!
     private let cellIndentifier: String = "UICollectionViewCell"
 
@@ -35,11 +30,13 @@ final class Ex2ViewController: UIViewController {
     }
 }
 
-extension Ex2ViewController: UICollectionViewDelegate, UICollectionViewDataSource, PinterestLayoutDelegate {
+extension Ex2ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
         return Dummy.heightArray[indexPath.item]
     }
+}
 
+extension Ex2ViewController: UICollectionViewDataSource, PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Dummy.numberOfItems
     }
@@ -51,3 +48,9 @@ extension Ex2ViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 }
 
+extension Ex2ViewController {
+    struct Dummy {
+        static let numberOfItems: Int = 48
+        static var heightArray: [CGFloat] = []
+    }
+}

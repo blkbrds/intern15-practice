@@ -10,41 +10,6 @@ import UIKit
 
 final class DogViewController: UIViewController {
 
-    enum Status {
-        case standard
-        case small
-
-        var itemSize: CGSize {
-            switch self {
-            case .standard:
-                return CGSize(width: UIScreen.main.bounds.width - 20, height: 300)
-            case .small:
-                return CGSize(width: (UIScreen.main.bounds.width - 30) / 2, height: 170)
-            }
-        }
-
-        var sectionInset: UIEdgeInsets {
-            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        }
-
-        var sectionOneSize: CGSize {
-            return CGSize(width: UIScreen.main.bounds.width - 20, height: 220)
-        }
-
-        var headerReferenceSize: CGSize {
-            return CGSize(width: 400, height: 80)
-        }
-
-        var footerReferceSize: CGSize {
-            switch self {
-            case .standard:
-                return CGSize(width: 400, height: 40)
-            case .small:
-                return CGSize(width: 400, height: 30)
-            }
-        }
-    }
-
     @IBOutlet private weak var collectionView: UICollectionView!
 
     var status = Status.standard
@@ -156,6 +121,43 @@ extension DogViewController: UICollectionViewDelegateFlowLayout {
         UIView.animate(withDuration: 0.25) {
             cell.alpha = 1
             cell.transform = .identity
+        }
+    }
+}
+
+extension DogViewController {
+    enum Status {
+        case standard
+        case small
+
+        var itemSize: CGSize {
+            switch self {
+            case .standard:
+                return CGSize(width: UIScreen.main.bounds.width - 20, height: 300)
+            case .small:
+                return CGSize(width: (UIScreen.main.bounds.width - 30) / 2, height: 170)
+            }
+        }
+
+        var sectionInset: UIEdgeInsets {
+            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        }
+
+        var sectionOneSize: CGSize {
+            return CGSize(width: UIScreen.main.bounds.width - 20, height: 220)
+        }
+
+        var headerReferenceSize: CGSize {
+            return CGSize(width: 400, height: 80)
+        }
+
+        var footerReferceSize: CGSize {
+            switch self {
+            case .standard:
+                return CGSize(width: 400, height: 40)
+            case .small:
+                return CGSize(width: 400, height: 30)
+            }
         }
     }
 }

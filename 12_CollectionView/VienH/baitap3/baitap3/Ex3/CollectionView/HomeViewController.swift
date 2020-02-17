@@ -10,27 +10,6 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    struct Dummy {
-        static var sizeForItem: CGSize {
-            return CGSize(width: UIScreen.main.bounds.width, height: 150)
-        }
-        static var headerReferenceSize: CGSize {
-            return CGSize(width: UIScreen.main.bounds.width, height: 150)
-        }
-        static var sectionInSet: UIEdgeInsets {
-            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        }
-        static var numberOfItemsInsection: Int = 1
-        static var borderColorImage = UIColor.orange.cgColor
-        static var cornerRadiusImage: CGFloat = 40
-    }
-
-    struct Identifier {
-        static let homeCellCollectionViewCell: String = "HomeCellCollectionViewCell"
-        static let customCollectionViewCell: String = "CustomCollectionViewCell"
-        static let teamHeaderCollectionReusableView: String = "TeamHeaderCollectionReusableView"
-    }
-
     @IBOutlet private weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -86,7 +65,6 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return Dummy.sectionInSet
     }
@@ -97,5 +75,31 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return Dummy.sizeForItem
+    }
+}
+
+extension HomeViewController {
+    struct Dummy {
+        static var sizeForItem: CGSize {
+            return CGSize(width: UIScreen.main.bounds.width, height: 150)
+        }
+        static var headerReferenceSize: CGSize {
+            return CGSize(width: UIScreen.main.bounds.width, height: 150)
+        }
+        static var sectionInSet: UIEdgeInsets {
+            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        }
+        static var numberOfItemsInsection: Int = 1
+    }
+
+    struct Config {
+        static var borderColorImage = UIColor.orange.cgColor
+        static var cornerRadiusImage: CGFloat = 40
+    }
+
+    struct Identifier {
+        static let homeCellCollectionViewCell: String = "HomeCellCollectionViewCell"
+        static let customCollectionViewCell: String = "CustomCollectionViewCell"
+        static let teamHeaderCollectionReusableView: String = "TeamHeaderCollectionReusableView"
     }
 }

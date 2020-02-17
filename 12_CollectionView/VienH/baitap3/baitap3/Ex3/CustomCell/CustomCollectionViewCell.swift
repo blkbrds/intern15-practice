@@ -10,15 +10,6 @@ import UIKit
 
 final class CustomCollectionViewCell: UICollectionViewCell {
 
-    struct Dummy {
-        static var sizeForItem: CGSize {
-            return CGSize(width: 150, height: UIScreen.main.bounds.height - 40)
-        }
-        static var sectionInset: UIEdgeInsets {
-            return UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 40)
-        }
-    }
-
     @IBOutlet private weak var collectionView: UICollectionView!
     private let heroCellIndentifier: String = "HomeCellCollectionViewCell"
     var teamMembers: [Member] = []
@@ -56,6 +47,17 @@ extension CustomCollectionViewCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return Dummy.sectionInset
+    }
+}
+
+extension CustomCollectionViewCell {
+    struct Dummy {
+        static var sizeForItem: CGSize {
+            return CGSize(width: 150, height: UIScreen.main.bounds.height - 40)
+        }
+        static var sectionInset: UIEdgeInsets {
+            return UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 40)
+        }
     }
 }
 
