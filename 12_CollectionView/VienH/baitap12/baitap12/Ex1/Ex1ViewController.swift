@@ -36,6 +36,6 @@ extension Ex1ViewController: UICollectionViewDataSource {
 
 extension Ex1ViewController {
     struct Dummy {
-           static let rows: [Int] = Array(0...99)
-       }
+        static let rows: [Int] = Array(0...99)
+    }
 }

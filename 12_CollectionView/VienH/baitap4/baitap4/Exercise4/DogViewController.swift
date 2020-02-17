@@ -91,7 +91,6 @@ extension DogViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionFooter:
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: teamFooterReusableView, for: indexPath) as! TeamFooterReusableView
             return footer
-
         default:
             return UICollectionReusableView()
         }
@@ -115,6 +114,7 @@ extension DogViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return status.sectionInset
     }
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.alpha = 0
         cell.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)

@@ -36,7 +36,7 @@ extension Ex2ViewController: UICollectionViewDelegate {
     }
 }
 
-extension Ex2ViewController: UICollectionViewDataSource, PinterestLayoutDelegate {
+extension Ex2ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Dummy.numberOfItems
     }
@@ -48,9 +48,29 @@ extension Ex2ViewController: UICollectionViewDataSource, PinterestLayoutDelegate
     }
 }
 
+extension Ex2ViewController: PinterestLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return Dummy.sectionInset }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let choose = indexPath.item % 3
+        let width = Dummy.widthArray
+        switch choose {
+        case 0:
+            return CGSize(width: width, height: 50)
+        case 1:
+            return CGSize(width: width, height: 50)
+        default:
+            return CGSize(width: width, height: 200)
+        }
+    }
+}
+
 extension Ex2ViewController {
     struct Dummy {
         static let numberOfItems: Int = 48
         static var heightArray: [CGFloat] = []
+        static let sectionInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        static let widthArray = (UIScreen.main.bounds.width - 40) / 3
     }
 }
