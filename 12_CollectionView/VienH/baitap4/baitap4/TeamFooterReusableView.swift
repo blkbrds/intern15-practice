@@ -11,7 +11,7 @@ import UIKit
 final class TeamFooterReusableView: UICollectionReusableView {
 
     @IBOutlet private weak var buttonTouchUpInside: UIButton!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

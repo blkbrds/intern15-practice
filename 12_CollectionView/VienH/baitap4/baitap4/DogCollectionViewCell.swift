@@ -9,7 +9,10 @@
 import UIKit
 
 final class DogCollectionViewCell: UICollectionViewCell {
-
+    struct Config {
+        static let connerRadiusImageStandard = 65
+        static let connerRadiusImageSmall = 30
+    }
     typealias Status = DogViewController.Status
 
     @IBOutlet private weak var avatarImageView: UIImageView!
@@ -17,9 +20,6 @@ final class DogCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 10
-        clipsToBounds = true
-        avatarImageView.clipsToBounds = true
     }
 
     func updateCell(avatar: UIImage, name: String, status: Status) {
@@ -31,9 +31,9 @@ final class DogCollectionViewCell: UICollectionViewCell {
     func updateCell(status: Status) {
         switch status {
         case .standard:
-            avatarImageView.layer.cornerRadius = 65
+            avatarImageView.layer.cornerRadius = CGFloat(Config.connerRadiusImageStandard)
         case .small:
-            avatarImageView.layer.cornerRadius = 30
+            avatarImageView.layer.cornerRadius = CGFloat(Config.connerRadiusImageSmall)
         }
     }
 }

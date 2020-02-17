@@ -14,31 +14,35 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hou-6w-Frz">
-                    <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                    <rect key="frame" x="0.0" y="-5" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="TB3-2f-Sex"/>
+                        <constraint firstAttribute="height" constant="60" id="Wcw-cT-5JB"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2W-OD-MZO">
-                    <rect key="frame" x="90" y="0.0" width="230" height="50"/>
+                    <rect key="frame" x="80" y="-5" width="230" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="JfA-E1-fnN"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="Hou-6w-Frz" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="1h7-UF-fvZ"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="g2W-OD-MZO" secondAttribute="bottom" id="KYJ-nf-5wg"/>
-                <constraint firstItem="g2W-OD-MZO" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="W2P-pN-M1X"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="Hou-6w-Frz" secondAttribute="trailing" constant="240" id="gNO-GS-IuH"/>
-                <constraint firstItem="Hou-6w-Frz" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="otX-ok-vog"/>
-                <constraint firstItem="g2W-OD-MZO" firstAttribute="leading" secondItem="Hou-6w-Frz" secondAttribute="trailing" constant="10" id="rDB-F0-Svr"/>
-                <constraint firstAttribute="bottom" secondItem="Hou-6w-Frz" secondAttribute="bottom" id="uor-zh-zRm"/>
-                <constraint firstAttribute="trailing" secondItem="g2W-OD-MZO" secondAttribute="trailing" id="wS5-Mt-iq7"/>
+                <constraint firstItem="Hou-6w-Frz" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="IMD-2f-PDw"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="g2W-OD-MZO" secondAttribute="trailing" constant="10" id="MeE-5a-5kP"/>
+                <constraint firstItem="Hou-6w-Frz" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="0.10000000000000001" id="dJe-nc-MYu"/>
+                <constraint firstItem="g2W-OD-MZO" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="80" id="jam-Jh-JGA"/>
+                <constraint firstItem="g2W-OD-MZO" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="qBZ-lW-yTK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
                 <outlet property="teamImageView" destination="Hou-6w-Frz" id="9yn-FQ-ZFO"/>
                 <outlet property="teamNameLabel" destination="g2W-OD-MZO" id="2bC-cC-AW0"/>
             </connections>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="17" y="78"/>
         </collectionReusableView>
     </objects>
 </document>

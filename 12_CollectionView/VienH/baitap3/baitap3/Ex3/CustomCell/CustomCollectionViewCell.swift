@@ -15,7 +15,7 @@ final class CustomCollectionViewCell: UICollectionViewCell {
             return CGSize(width: 150, height: UIScreen.main.bounds.height - 40)
         }
         static var sectionInset: UIEdgeInsets {
-            return UIEdgeInsets(top: 20, left: 16, bottom: 20, right: 16)
+            return UIEdgeInsets(top: 20, left: 40, bottom: 20, right: 40)
         }
     }
 
@@ -50,7 +50,6 @@ extension CustomCollectionViewCell: UICollectionViewDataSource {
 }
 
 extension CustomCollectionViewCell: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return Dummy.sizeForItem
     }

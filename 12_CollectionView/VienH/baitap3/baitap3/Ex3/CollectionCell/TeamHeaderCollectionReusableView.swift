@@ -10,6 +10,10 @@ import UIKit
 
 final class TeamHeaderCollectionReusableView: UICollectionReusableView {
 
+    struct Config {
+        static let teamImageViewCornerRadius: CGFloat = 40
+    }
+
     @IBOutlet private weak var teamNameLabel: UILabel!
     @IBOutlet private weak var teamImageView: UIImageView!
 
@@ -19,9 +23,8 @@ final class TeamHeaderCollectionReusableView: UICollectionReusableView {
     }
 
     private func setupUI() {
-        layer.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-        teamNameLabel.clipsToBounds = true
-        teamImageView.layer.cornerRadius = 30
+        layer.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        teamImageView.layer.cornerRadius = Config.teamImageViewCornerRadius
     }
 
     func updateHeaderView(avatar: UIImage, name: String) {

@@ -48,5 +48,5 @@ enum TeamType: Int {
             return [Member(name: "alaska1", avatar: #imageLiteral(resourceName: "alaska1")), Member(name: "alaska2", avatar: #imageLiteral(resourceName: "alaska2")), Member(name: "alaska3", avatar: #imageLiteral(resourceName: "alaska3"))]
         }
     }
-    static var count: Int { return TeamType.alaska.rawValue + 1}
+    static var count: Int { return TeamType.alaska.rawValue + 1 }
 }

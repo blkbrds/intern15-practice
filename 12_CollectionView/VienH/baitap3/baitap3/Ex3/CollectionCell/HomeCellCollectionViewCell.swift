@@ -18,7 +18,7 @@ final class HomeCellCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
 
-    private func setupUI() {}
+    private func setupUI() { }
 
     func updateCell(avatar: UIImage, name: String) {
         avatarImageView.image = avatar

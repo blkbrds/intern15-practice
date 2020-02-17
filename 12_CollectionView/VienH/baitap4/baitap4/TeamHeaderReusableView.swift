@@ -9,34 +9,39 @@
 import UIKit
 
 final class TeamHeaderReusableView: UICollectionReusableView {
-    
+    struct Config {
+        static var constantImageStandard: Int = 80
+        static var constantImageSmall: Int = 10
+        static var cornerRadiusImage = 30
+    }
+
     typealias Status = DogViewController.Status
 
     @IBOutlet private weak var teamAvatarImageView: UIImageView!
     @IBOutlet private weak var teamNameLabel: UILabel!
     @IBOutlet private weak var teamNameLabelLeadingContrain: NSLayoutConstraint!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        teamAvatarImageView.layer.cornerRadius = 30
+        teamAvatarImageView.layer.cornerRadius = CGFloat(Config.cornerRadiusImage)
         teamAvatarImageView.clipsToBounds = true
     }
-    
+
     func updateHeaderView(avatar: UIImage, name: String, status: Status) {
         teamAvatarImageView.image = avatar
         teamNameLabel.text = name
         updateHeaderViews(status: status)
     }
-    
+
     func updateHeaderViews(status: Status) {
         switch status {
         case .standard:
             teamAvatarImageView.isHidden = false
-            teamNameLabelLeadingContrain.constant = 80
-            
+            teamNameLabelLeadingContrain.constant = CGFloat(Config.constantImageStandard)
+
         case .small:
             teamAvatarImageView.isHidden = true
-            teamNameLabelLeadingContrain.constant = 10
+            teamNameLabelLeadingContrain.constant = CGFloat(Config.constantImageSmall)
         }
     }
 }
