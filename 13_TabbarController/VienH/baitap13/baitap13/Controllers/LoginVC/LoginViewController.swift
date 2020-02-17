@@ -10,9 +10,8 @@ import UIKit
 
 final class LoginViewController: BaseViewController {
 
-    @IBOutlet weak var emailTextField: UITextField!
-
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
 
     var viewModel = LoginViewModel()
 
@@ -39,7 +38,7 @@ final class LoginViewController: BaseViewController {
     }
 
     // MARK: - Actions
-    @IBAction func loginButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func loginButtonTouchUpInside(_ sender: Any) {
 
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
@@ -62,12 +61,12 @@ final class LoginViewController: BaseViewController {
         viewModel.login(email: email, password: password, completion: complete)
     }
 
-    @IBAction func registerButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func registerButtonTouchUpInside(_ sender: Any) {
         let vc = RegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction func forgotPasswordButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func forgotPasswordButtonTouchUpInside(_ sender: Any) {
         let vc = ForgotPasswordViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -76,11 +75,9 @@ final class LoginViewController: BaseViewController {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
-
 }
 
 extension LoginViewController: UITextFieldDelegate {
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == self.emailTextField) {
             self.passwordTextField.becomeFirstResponder()
