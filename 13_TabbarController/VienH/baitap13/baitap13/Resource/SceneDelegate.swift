@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
 
-        changeScreen(type: .tabbar)
+        changeScreen(type: .login)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
