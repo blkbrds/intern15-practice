@@ -9,6 +9,6 @@ class HomeViewController: BaseViewController {
 
 	override func setupUI() {
 		super.setupUI()
-		title = "aaaa"
+		title = "Home"
 	}
 }

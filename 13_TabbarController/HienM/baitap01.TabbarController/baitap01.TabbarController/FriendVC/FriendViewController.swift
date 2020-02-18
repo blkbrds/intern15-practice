@@ -8,6 +8,6 @@ class FriendViewController: BaseViewController {
 	
 	override func setupUI() {
 		super.setupUI()
-		title = "Map"
+		title = "Friend"
 	}
 }

@@ -30,7 +30,7 @@ class RegisterViewController: BaseViewController {
 	}
 	
 	@IBAction func doneButtonTapp(_ sender: Any) {
-		let tabBarView = MyTabbarViewController()
-		navigationController?.pushViewController(tabBarView, animated: true)
+		let myTabBar = MyTabbarViewController()
+		SceneDelegate.shared.changtabBarController(myTabBar)
 	}
 }
