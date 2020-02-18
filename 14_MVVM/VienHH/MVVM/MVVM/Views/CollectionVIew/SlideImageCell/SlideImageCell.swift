@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SlideImageCell: UICollectionViewCell {
+final class SlideImageCell: UICollectionViewCell {
 
     @IBOutlet private weak var placeImageView: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

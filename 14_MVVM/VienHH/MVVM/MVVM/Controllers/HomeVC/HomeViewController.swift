@@ -8,27 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
-
-    enum Layout {
-        case row
-        case column
-
-        var itemSize: CGSize {
-            switch self {
-            case .row: return CGSize(width: UIScreen.main.bounds.width - 20, height: 120)
-            case .column: return CGSize(width: UIScreen.main.bounds.width / 2 - 15, height: 170)
-            }
-        }
-
-        var sectionInset: UIEdgeInsets {
-            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        }
-
-        var sectionOneSize: CGSize {
-            return CGSize(width: UIScreen.main.bounds.width - 20, height: 220)
-        }
-    }
+final class HomeViewController: BaseViewController {
 
     //MARK - IBOutlet
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -61,7 +41,6 @@ class HomeViewController: BaseViewController {
     }
 
     private func configCollectionView() {
-        
         collectionView.register(UINib(nibName: columnPlaceCell, bundle: .main), forCellWithReuseIdentifier: columnPlaceCell)
         collectionView.register(UINib(nibName: rowPlaceCell, bundle: .main), forCellWithReuseIdentifier: rowPlaceCell)
         collectionView.register(UINib(nibName: baseSlideImageCell, bundle: .main), forCellWithReuseIdentifier: baseSlideImageCell)
@@ -98,15 +77,18 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
- 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModle.getNumberOfSection()
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModle.getNumberOfItems(section)
     }
-    
+
+    func numberOfSection(in collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModle.getNumberOfSection()
+    }
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.alpha = 0
         cell.transform = CGAffineTransform(scaleX: 0.1, y: 0.2)
@@ -159,7 +141,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             }
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return layout.sectionInset
     }
@@ -179,4 +161,27 @@ extension HomeViewController: PlaceCellDelegate {
             }
         }
     }
+}
+
+extension HomeViewController {
+    enum Layout {
+        case row
+        case column
+
+        var itemSize: CGSize {
+            switch self {
+            case .row: return CGSize(width: UIScreen.main.bounds.width - 20, height: 120)
+            case .column: return CGSize(width: UIScreen.main.bounds.width / 2 - 15, height: 170)
+            }
+        }
+
+        var sectionInset: UIEdgeInsets {
+            return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        }
+
+        var sectionOneSize: CGSize {
+            return CGSize(width: UIScreen.main.bounds.width - 20, height: 220)
+        }
+    }
+
 }

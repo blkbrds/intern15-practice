@@ -17,10 +17,10 @@ final class BaseSlideImageCellViewModel {
     }
 
     func numberOfItems() -> Int {
-         return places.count
-     }
+        return places.count
+    }
 
-     func getImageName(with indexPath: IndexPath) -> String {
-         return places[indexPath.row].imageName
-     }
+    func getImageName(with indexPath: IndexPath) -> String {
+        return places[indexPath.row].imageName
+    }
 }

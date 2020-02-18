@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseTabbarController: UITabBarController {
+final class BaseTabbarController: UITabBarController {
 
     enum ScreenType: Int {
         case home

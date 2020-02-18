@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseSlideImageCell: UICollectionViewCell {
+final class BaseSlideImageCell: UICollectionViewCell {
 
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
@@ -31,7 +31,7 @@ class BaseSlideImageCell: UICollectionViewCell {
 
     private func configUI() {
         configCollectionView()
-         self.bringSubviewToFront(pageControl)
+        self.bringSubviewToFront(pageControl)
     }
 }
 
@@ -62,6 +62,7 @@ extension BaseSlideImageCell: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return .zero
     }
 }
+

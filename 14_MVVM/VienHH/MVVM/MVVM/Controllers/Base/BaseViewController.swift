@@ -20,8 +20,7 @@ class BaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    func setupData() {
-    }
+    func setupData() { }
 
     func setupUI() {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back",
