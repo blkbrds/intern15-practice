@@ -28,6 +28,7 @@ enum TeamType: Int, CaseIterable {
             return "Alaska"
         }
     }
+    
     var teamAvatar: UIImage {
         switch self {
         case .pull:
@@ -48,5 +49,4 @@ enum TeamType: Int, CaseIterable {
             return [Member(name: "alaska1", avatar: #imageLiteral(resourceName: "alaska1")), Member(name: "alaska2", avatar: #imageLiteral(resourceName: "alaska2")), Member(name: "alaska3", avatar: #imageLiteral(resourceName: "alaska3"))]
         }
     }
-    static var count: Int { return TeamType.alaska.rawValue}
 }
