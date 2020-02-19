@@ -12,7 +12,11 @@ class BaseTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = UIColor(red: 95.0/255.0, green: 75.0/255.0, blue: 139.0/255.0, alpha: 1.0)
+        configTabbar()
+    }
+    func configTabbar() {
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for: .selected)
+        UITabBar.appearance().barTintColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {

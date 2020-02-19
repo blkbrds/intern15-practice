@@ -13,7 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     enum TypeScreen {
         case login
         case tabbar
-        case register
     }
 
     var window: UIWindow?
@@ -24,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
 
-        changeScreen(type: .login)
+        changeScreen(type: .tabbar)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -99,8 +98,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             createLogin()
         case .tabbar:
             createTabbar()
-        case.register:
-            createRegister()
         }
     }
 }

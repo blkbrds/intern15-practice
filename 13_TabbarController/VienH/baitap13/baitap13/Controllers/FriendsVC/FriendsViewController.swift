@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FriendsViewController: UIViewController {
+class FriendsViewController: BaseTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
