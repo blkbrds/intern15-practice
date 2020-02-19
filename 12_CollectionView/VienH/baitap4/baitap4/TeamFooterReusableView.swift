@@ -16,3 +16,4 @@ final class TeamFooterReusableView: UICollectionReusableView {
         super.awakeFromNib()
     }
 }
+

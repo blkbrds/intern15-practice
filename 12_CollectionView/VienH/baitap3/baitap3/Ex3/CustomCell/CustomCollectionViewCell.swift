@@ -11,6 +11,7 @@ import UIKit
 final class CustomCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet private weak var collectionView: UICollectionView!
+
     private let heroCellIndentifier: String = "HomeCellCollectionViewCell"
     var teamMembers: [Member] = []
 
