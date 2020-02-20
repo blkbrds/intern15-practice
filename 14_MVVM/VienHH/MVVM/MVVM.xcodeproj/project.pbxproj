@@ -13,9 +13,6 @@
 		CE4E76F623EBC6B900352404 /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4E76F423EBC6B900352404 /* PlaceCell.xib */; };
 		CE4E76FC23EBCCB900352404 /* PlaceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4E76FA23EBCCB900352404 /* PlaceViewCell.xib */; };
 		CE4E770023ED1FE300352404 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E76FF23ED1FE300352404 /* DetailViewModel.swift */; };
-		CE4E770423ED4B1200352404 /* SlideImageReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E770223ED4B1200352404 /* SlideImageReusableView.swift */; };
-		CE4E770523ED4B1200352404 /* SlideImageReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4E770323ED4B1200352404 /* SlideImageReusableView.xib */; };
-		CE4E770723ED4B2700352404 /* SlideImageReusableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E770623ED4B2700352404 /* SlideImageReusableViewModel.swift */; };
 		CE74C59E23D7DEE3001B59B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74C59D23D7DEE3001B59B2 /* AppDelegate.swift */; };
 		CE74C5A023D7DEE3001B59B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74C59F23D7DEE3001B59B2 /* SceneDelegate.swift */; };
 		CE74C5A723D7DEE5001B59B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE74C5A623D7DEE5001B59B2 /* Assets.xcassets */; };
@@ -49,9 +46,6 @@
 		CE4E76F423EBC6B900352404 /* PlaceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 		CE4E76FA23EBCCB900352404 /* PlaceViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceViewCell.xib; sourceTree = "<group>"; };
 		CE4E76FF23ED1FE300352404 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		CE4E770223ED4B1200352404 /* SlideImageReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideImageReusableView.swift; sourceTree = "<group>"; };
-		CE4E770323ED4B1200352404 /* SlideImageReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideImageReusableView.xib; sourceTree = "<group>"; };
-		CE4E770623ED4B2700352404 /* SlideImageReusableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideImageReusableViewModel.swift; sourceTree = "<group>"; };
 		CE74C59A23D7DEE3001B59B2 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE74C59D23D7DEE3001B59B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE74C59F23D7DEE3001B59B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,16 +93,6 @@
 				CE4E76FF23ED1FE300352404 /* DetailViewModel.swift */,
 			);
 			path = DetailVC;
-			sourceTree = "<group>";
-		};
-		CE4E770123ED4A6E00352404 /* SlideImageReusableView */ = {
-			isa = PBXGroup;
-			children = (
-				CE4E770223ED4B1200352404 /* SlideImageReusableView.swift */,
-				CE4E770323ED4B1200352404 /* SlideImageReusableView.xib */,
-				CE4E770623ED4B2700352404 /* SlideImageReusableViewModel.swift */,
-			);
-			path = SlideImageReusableView;
 			sourceTree = "<group>";
 		};
 		CE74C59123D7DEE3001B59B2 = {
@@ -249,7 +233,6 @@
 		CEBF9B6223EA9A69009ABDC8 /* CollectionVIew */ = {
 			isa = PBXGroup;
 			children = (
-				CE4E770123ED4A6E00352404 /* SlideImageReusableView */,
 				CEBF9B6E23EA9C98009ABDC8 /* SlideImageCell */,
 				CEBF9B6323EA9B17009ABDC8 /* BaseSlideImageCell */,
 			);
@@ -344,7 +327,6 @@
 				CEBF9B7623EA9EDC009ABDC8 /* SlideImageCell.xib in Resources */,
 				CE74C5A723D7DEE5001B59B2 /* Assets.xcassets in Resources */,
 				CE4E76FC23EBCCB900352404 /* PlaceViewCell.xib in Resources */,
-				CE4E770523ED4B1200352404 /* SlideImageReusableView.xib in Resources */,
 				CE74C5E023D7EF7D001B59B2 /* FavoritesViewController.xib in Resources */,
 				CE74C5C423D7E01B001B59B2 /* HomeViewController.xib in Resources */,
 			);
@@ -358,8 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE74C5BD23D7DF73001B59B2 /* BaseNavigationController.swift in Sources */,
-				CE4E770723ED4B2700352404 /* SlideImageReusableViewModel.swift in Sources */,
-				CE4E770423ED4B1200352404 /* SlideImageReusableView.swift in Sources */,
 				CE74C5DF23D7EF7D001B59B2 /* FavoritesViewController.swift in Sources */,
 				CE74C5E323D7EFB2001B59B2 /* ProfilesViewController.swift in Sources */,
 				CE74C59E23D7DEE3001B59B2 /* AppDelegate.swift in Sources */,

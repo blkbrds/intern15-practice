@@ -38,8 +38,8 @@ final class BaseSlideImageCell: UICollectionViewCell {
 // MARK: - Extension: UICollectionViewDataSource
 extension BaseSlideImageCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageControl.numberOfPages = viewModel.numberOfItems()
-        return viewModel.numberOfItems()
+        pageControl.numberOfPages = viewModel.numberOfItem()
+        return viewModel.numberOfItem()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

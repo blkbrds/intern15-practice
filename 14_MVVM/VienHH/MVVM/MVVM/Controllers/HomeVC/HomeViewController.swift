@@ -76,17 +76,13 @@ final class HomeViewController: BaseViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModle.getNumberOfSection()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModle.getNumberOfItems(section)
-    }
-
-    func numberOfSection(in collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModle.getNumberOfSection()
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
