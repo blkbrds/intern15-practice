@@ -20,9 +20,6 @@ final class Networking {
         return sharedNetworking
     }
     
-    //MARK: - init
-    private init() {}
-    
     //MARK: - Request
     func request(with urlString: String, completion: @escaping (Data?, APIError?) -> Void) {
         guard let url = URL(string: urlString) else {
@@ -35,7 +32,7 @@ final class Networking {
         config.waitsForConnectivity = true
         
         let session = URLSession(configuration: config)
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { [weak self] (data, _, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(nil, APIError.error(error.localizedDescription))
@@ -60,7 +57,7 @@ final class Networking {
         let config = URLSessionConfiguration.default
         config.waitsForConnectivity = true
         let session = URLSession(configuration: config)
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { [weak self] (data, _, error) in
             DispatchQueue.main.async {
                 if let _ = error {
                     completion(nil)

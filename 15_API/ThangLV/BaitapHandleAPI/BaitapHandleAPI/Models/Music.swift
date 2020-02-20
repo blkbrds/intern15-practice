@@ -32,10 +32,10 @@ final class Music {
     var thumbnailImage: UIImage?
     
     init(json: JSON) {
-        self.id = json["id"] as? String ?? ""
-        self.artistName = json["artistName"] as? String ?? ""
-        self.releaseDate = json["releaseDate"] as? String ?? ""
-        self.name = json["name"] as? String ?? ""
-        self.artworkUrl100 = json["artworkUrl100"] as? String ?? ""
+        id = json["id"] as? String ?? ""
+        artistName = json["artistName"] as? String ?? ""
+        releaseDate = json["releaseDate"] as? String ?? ""
+        name = json["name"] as? String ?? ""
+        artworkUrl100 = json["artworkUrl100"] as? String ?? ""
     }
 }

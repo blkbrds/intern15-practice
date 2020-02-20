@@ -21,6 +21,6 @@ final class CustomCell: UITableViewCell {
     }
     
     func configData2(thumbnailImage: UIImage?) {
-        songImageView.image = thumbnailImage
+        songImageView.image = thumbnailImage ?? UIImage(named: "default_image")
     }
 }
