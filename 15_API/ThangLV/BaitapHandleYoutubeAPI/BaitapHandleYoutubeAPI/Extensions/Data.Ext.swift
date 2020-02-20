@@ -9,7 +9,7 @@
 import Foundation
 
 typealias JSONObject = [String: Any]
-typealias JSONArray = [[String: Any]]
+typealias JSONArray = [JSONObject]
 
 extension Data {
     func toJSON() -> JSONObject {
