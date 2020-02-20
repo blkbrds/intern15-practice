@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
 
-        changeScreen(type: .tabbar)
+        changeScreen(type: .login)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,14 +54,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         messagesNavi.tabBarItem.badgeValue = "99"
         messagesNavi.tabBarItem.badgeColor = .red
 
-
         //Friends
         let friendsVC = FriendsViewController()
         let friendsNavi = UINavigationController(rootViewController: friendsVC)
         friendsNavi.tabBarItem = UITabBarItem(title: "Friends", image: UIImage(named: "icons8-add-user-group-man-man-30"), tag: 2)
         friendsNavi.tabBarItem.badgeValue = "07"
         friendsNavi.tabBarItem.badgeColor = .red
-
 
         //Profile
         let profileVC = ProfilesViewController()
@@ -70,13 +68,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         profileNavi.tabBarItem.badgeValue = "New"
         profileNavi.tabBarItem.badgeColor = .red
 
-
         //tabbar controller
         let tabbarController = UITabBarController()
         tabbarController.viewControllers = [homeNavi, messagesNavi, friendsNavi, profileNavi]
         tabbarController.tabBar.tintColor = .red
 
-        window!.rootViewController = tabbarController
+        window?.rootViewController = tabbarController
     }
 
     private func createLogin() {
@@ -84,12 +81,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let loginNavi = BaseNavigationController(rootViewController: loginVC)
 
         window?.rootViewController = loginNavi
-    }
-
-    private func createRegister() {
-        let registerVC = RegisterViewController()
-
-        window?.rootViewController = registerVC
     }
 
     func changeScreen(type: TypeScreen) {

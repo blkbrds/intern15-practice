@@ -17,19 +17,8 @@ final class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    override func setupUI() {
-        super.setupUI()
-        self.title = "Login"
         updateView()
-    }
-
-    override func setupData() {
+        title = "Login"
     }
 
     func updateView() {
@@ -42,14 +31,15 @@ final class LoginViewController: BaseViewController {
 
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        let complete: LoginViewModel.Completion = { (result) in
+        let completion: LoginViewModel.Completion = { [weak self] result in
+            guard let this = self else { return }
             switch result {
             case .success:
                 print("Đăng nhập thành công")
-                self.updateView()
+                this.updateView()
                 let scene = UIApplication.shared.connectedScenes.first
-                if let sd: SceneDelegate = (scene?.delegate as? SceneDelegate) {
-                    sd.changeScreen(type: .tabbar)
+                if let sceneDelegate: SceneDelegate = (scene?.delegate as? SceneDelegate) {
+                    sceneDelegate.changeScreen(type: .tabbar)
                 }
             case .failure(let isError, let errorMsg):
                 if isError {
@@ -58,17 +48,17 @@ final class LoginViewController: BaseViewController {
                 }
             }
         }
-        viewModel.login(email: email, password: password, completion: complete)
+        viewModel.login(email: email, password: password, completion: completion)
     }
 
     @IBAction private func registerButtonTouchUpInside(_ sender: Any) {
         let vc = RegisterViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction private func forgotPasswordButtonTouchUpInside(_ sender: Any) {
         let vc = ForgotPasswordViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -80,8 +70,8 @@ final class LoginViewController: BaseViewController {
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == self.emailTextField) {
-            self.passwordTextField.becomeFirstResponder()
-        } else if (textField == self.passwordTextField) {
+            passwordTextField.becomeFirstResponder()
+        } else if (textField == passwordTextField) {
             print("Login")
         }
         return true
