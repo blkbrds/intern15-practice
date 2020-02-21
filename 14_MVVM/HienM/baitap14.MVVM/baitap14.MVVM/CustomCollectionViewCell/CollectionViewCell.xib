@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="baitap14_MVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="99" height="77"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="99" height="77"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cong Coffee" translatesAutoresizingMaskIntoConstraints="NO" id="ezU-Wb-gU0">
+                        <rect key="frame" x="0.0" y="0.0" width="99" height="77"/>
+                        <color key="backgroundColor" red="0.39871101749999999" green="0.96699744460000003" blue="0.45650052660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ezU-Wb-gU0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7fC-2i-oOb"/>
+                <constraint firstAttribute="trailing" secondItem="ezU-Wb-gU0" secondAttribute="trailing" id="HkQ-ON-fSg"/>
+                <constraint firstAttribute="bottom" secondItem="ezU-Wb-gU0" secondAttribute="bottom" id="Zhs-dE-mD9"/>
+                <constraint firstItem="ezU-Wb-gU0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gxR-zG-anE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="99" height="77"/>
+            <connections>
+                <outlet property="pictureImage" destination="ezU-Wb-gU0" id="4PZ-J8-CH2"/>
+            </connections>
+            <point key="canvasLocation" x="173.18840579710147" y="121.54017857142857"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Cong Coffee" width="60" height="60"/>
+    </resources>
+</document>

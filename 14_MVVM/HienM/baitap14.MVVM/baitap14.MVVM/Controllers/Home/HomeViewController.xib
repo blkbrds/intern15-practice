@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="baitap14_MVVM" customModuleProvider="target">
             <connections>
+                <outlet property="changeButton" destination="grg-11-Ffi" id="LS2-3W-cYM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,30 +18,46 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSa-5e-ho9">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <color key="backgroundColor" red="1" green="0.97556512520000005" blue="0.32477789130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <navigationBar contentMode="scaleToFill" shadowImage="galaxy5" backIndicatorImage="galaxy5" translatesAutoresizingMaskIntoConstraints="NO" id="hSa-5e-ho9">
+                    <rect key="frame" x="0.0" y="46" width="414" height="44"/>
+                    <color key="backgroundColor" red="0.039713520822698835" green="0.45576221446700504" blue="0.45102854230313466" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <items>
-                        <navigationItem title="HOME" id="vF4-aq-7M8"/>
+                        <navigationItem title="HOME" id="vF4-aq-7M8">
+                            <barButtonItem key="rightBarButtonItem" style="plain" id="mCN-Bq-bTg">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="grg-11-Ffi">
+                                    <rect key="frame" x="334" y="0.0" width="60" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="grib">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="changeScreenTapped:" destination="-1" eventType="touchUpInside" id="JiS-31-yVM"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SCD-dZ-Agu">
-                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPe-g2-3mI">
+                    <rect key="frame" x="66" y="90" width="348" height="772"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="hSa-5e-ho9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="CPf-yf-n8f"/>
-                <constraint firstItem="SCD-dZ-Agu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="I6s-Kn-hlw"/>
-                <constraint firstItem="SCD-dZ-Agu" firstAttribute="top" secondItem="hSa-5e-ho9" secondAttribute="bottom" id="OIQ-Qc-Ruk"/>
+                <constraint firstItem="hSa-5e-ho9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="2" id="CPf-yf-n8f"/>
+                <constraint firstItem="fPe-g2-3mI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Hwe-YA-zCq"/>
+                <constraint firstItem="fPe-g2-3mI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="66" id="Omp-ds-adB"/>
                 <constraint firstItem="hSa-5e-ho9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QpF-pF-hXC"/>
-                <constraint firstAttribute="bottom" secondItem="SCD-dZ-Agu" secondAttribute="bottom" id="mfY-Bh-KzN"/>
-                <constraint firstItem="SCD-dZ-Agu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="otW-lJ-anO"/>
+                <constraint firstItem="fPe-g2-3mI" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ZEs-hT-BLU"/>
+                <constraint firstItem="fPe-g2-3mI" firstAttribute="top" secondItem="hSa-5e-ho9" secondAttribute="bottom" id="lL2-OI-tb1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hSa-5e-ho9" secondAttribute="trailing" id="sDv-35-31z"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="137"/>
+            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
         </view>
     </objects>
+    <resources>
+        <image name="galaxy5" width="2560" height="2560"/>
+        <image name="grib" width="30" height="30"/>
+    </resources>
 </document>
