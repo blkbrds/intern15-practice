@@ -13,7 +13,7 @@ protocol PlaceCellDelegate: class {
 }
 
 final class PlaceCell: UICollectionViewCell {
-
+    
     enum Action {
         case changeFavorites
     }

@@ -16,7 +16,7 @@ final class Place {
     var distance: String
     var favorites: Bool
 
-    init(name: String, address: String, imageName: String, rate: String = "8/10", distance: String = "8km", favorites: Bool = false) {
+    init(name: String, address: String, imageName: String, rate: String = "10/10", distance: String = "10Km", favorites: Bool = false) {
         self.name = name
         self.address = address
         self.imageName = imageName
