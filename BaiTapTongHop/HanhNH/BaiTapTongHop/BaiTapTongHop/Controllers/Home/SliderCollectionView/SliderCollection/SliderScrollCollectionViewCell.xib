@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SliderScrollCollectionViewCell" customModule="BaiTapTongHop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fU-YL-3AL">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="120"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SJo-wP-u5f">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="120"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SJo-wP-u5f" firstAttribute="centerX" secondItem="2fU-YL-3AL" secondAttribute="centerX" id="1op-UD-1md"/>
+                            <constraint firstItem="SJo-wP-u5f" firstAttribute="top" secondItem="2fU-YL-3AL" secondAttribute="top" id="D1a-vY-Nkf"/>
+                            <constraint firstItem="SJo-wP-u5f" firstAttribute="centerY" secondItem="2fU-YL-3AL" secondAttribute="centerY" id="OCi-P5-ZNs"/>
+                            <constraint firstAttribute="bottom" secondItem="SJo-wP-u5f" secondAttribute="bottom" id="Zrk-2m-tjD"/>
+                            <constraint firstAttribute="trailing" secondItem="SJo-wP-u5f" secondAttribute="trailing" constant="10" id="cHN-YN-qjC"/>
+                            <constraint firstItem="SJo-wP-u5f" firstAttribute="leading" secondItem="2fU-YL-3AL" secondAttribute="leading" id="cxI-6t-xVY"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="2fU-YL-3AL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HOl-RA-r1w"/>
+                <constraint firstItem="2fU-YL-3AL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fbc-fZ-WSe"/>
+                <constraint firstAttribute="trailing" secondItem="2fU-YL-3AL" secondAttribute="trailing" id="fni-bR-ePR"/>
+                <constraint firstAttribute="bottom" secondItem="2fU-YL-3AL" secondAttribute="bottom" id="w6c-6Y-bSd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="300" height="149"/>
+            <connections>
+                <outlet property="imageCollectionView" destination="SJo-wP-u5f" id="kgP-ua-p6h"/>
+                <outlet property="scrollView" destination="2fU-YL-3AL" id="9Pq-Om-Zuj"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="61.607142857142854"/>
+        </collectionViewCell>
+    </objects>
+</document>
+

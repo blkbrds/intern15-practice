@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="140" id="KGk-i7-Jjw" customClass="SliderTableViewCell" customModule="BaiTapTongHop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SlD-yI-I2p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Ii-mK-kpa">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5k-kd-E8a">
+                        <rect key="frame" x="285" y="62.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="amf-8u-Dk2"/>
+                            <constraint firstAttribute="height" constant="25" id="hnW-sO-XJG"/>
+                        </constraints>
+                        <state key="normal" image="next"/>
+                        <connections>
+                            <action selector="nextTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="o1N-cT-4Ea"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEN-x2-CSe">
+                        <rect key="frame" x="0.0" y="62.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="mle-HR-NfR"/>
+                            <constraint firstAttribute="height" constant="25" id="rDu-b0-RHD"/>
+                        </constraints>
+                        <state key="normal" image="retire"/>
+                        <connections>
+                            <action selector="retireTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j5L-8K-Mmd"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="SlD-yI-I2p" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0H7-ti-cOh"/>
+                    <constraint firstAttribute="bottom" secondItem="SlD-yI-I2p" secondAttribute="bottom" id="0qM-UJ-CJJ"/>
+                    <constraint firstItem="gEN-x2-CSe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9sQ-Xt-DY1"/>
+                    <constraint firstAttribute="trailing" secondItem="e5k-kd-E8a" secondAttribute="trailing" constant="10" id="Lkf-QP-5ts"/>
+                    <constraint firstAttribute="trailing" secondItem="SlD-yI-I2p" secondAttribute="trailing" id="ZFL-b5-cF2"/>
+                    <constraint firstItem="gEN-x2-CSe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="h7e-fW-hid"/>
+                    <constraint firstItem="SlD-yI-I2p" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jmb-sS-udk"/>
+                    <constraint firstItem="e5k-kd-E8a" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ztf-IP-sQU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="SlD-yI-I2p" id="0Wj-Xt-jr7"/>
+                <outlet property="nextButton" destination="e5k-kd-E8a" id="cik-wD-IY9"/>
+                <outlet property="retireButton" destination="gEN-x2-CSe" id="2J0-hq-4kF"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="59"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="next" width="25" height="25"/>
+        <image name="retire" width="25" height="25"/>
+    </resources>
+</document>
