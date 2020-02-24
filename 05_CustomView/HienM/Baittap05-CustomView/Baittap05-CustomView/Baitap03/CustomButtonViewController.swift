@@ -18,6 +18,5 @@ class CustomButtonViewController: UIViewController {
 		buttom.titleLabel?.text = "Image"
 		buttom.titleLabel?.textColor = .black
 		view.addSubview(buttom)
-		
 	}
 }
