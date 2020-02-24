@@ -19,7 +19,7 @@ final class HomeViewModel {
         completion(true, "")
     }
 
-    func getNumberOfSection() -> Int {
+    func  getNumberOfSection() -> Int {
         return datas.count
     }
 
