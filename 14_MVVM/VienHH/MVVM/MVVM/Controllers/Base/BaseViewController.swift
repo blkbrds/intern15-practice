@@ -16,18 +16,9 @@ class BaseViewController: UIViewController {
         setupUI()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     func setupData() { }
 
-    func setupUI() {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back",
-            style: .plain,
-            target: nil,
-            action: nil)
-    }
+    func setupUI() {}
 
     func pushViewController(viewcontroller: UIViewController) {
         navigationController?.pushViewController(viewcontroller, animated: true)

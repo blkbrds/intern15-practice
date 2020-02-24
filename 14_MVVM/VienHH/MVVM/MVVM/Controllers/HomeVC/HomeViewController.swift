@@ -179,5 +179,4 @@ extension HomeViewController {
             return CGSize(width: UIScreen.main.bounds.width - 20, height: 220)
         }
     }
-
 }

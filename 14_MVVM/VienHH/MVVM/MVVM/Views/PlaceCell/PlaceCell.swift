@@ -13,7 +13,6 @@ protocol PlaceCellDelegate: class {
 }
 
 final class PlaceCell: UICollectionViewCell {
-    
     enum Action {
         case changeFavorites
     }
@@ -24,7 +23,6 @@ final class PlaceCell: UICollectionViewCell {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var namePlaceLabel: UILabel!
     @IBOutlet private weak var placeImageView: UIImageView!
-
     weak var delegate: PlaceCellDelegate?
     var viewModel: PlaceCellViewModel? {
         didSet {
@@ -50,7 +48,7 @@ final class PlaceCell: UICollectionViewCell {
         favoritesButton.setImage(UIImage(named: favoritesImageName), for: .selected)
     }
 
-    @IBAction func favoritesTouchUpInside(_ sender: Any) {
+    @IBAction private func favoritesTouchUpInside(_ sender: Any) {
         guard let viewModel = viewModel else { return }
         print(viewModel.isFavorites)
         delegate?.viewCell(viewCell: self, needPermorAction: .changeFavorites)
