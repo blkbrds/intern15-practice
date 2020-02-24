@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AutoConstraints" customModule="Baitap10" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcv-3A-tEb">
+                    <rect key="frame" x="110" y="10" width="100" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jcv-3A-tEb" secondAttribute="height" multiplier="1:1" id="4F6-vG-yC6"/>
+                        <constraint firstAttribute="height" constant="100" id="ZR6-Fc-XDu"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="p15-iX-Kpj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCV-lu-kQY">
+                    <rect key="frame" x="135" y="155" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ecV-Hc-7H2"/>
+                        <constraint firstAttribute="width" secondItem="qCV-lu-kQY" secondAttribute="height" multiplier="1:1" id="jJw-s3-YcJ"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="96o-W0-EjQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4O-n2-1VA">
+                    <rect key="frame" x="135" y="275" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="P7o-xt-1nF"/>
+                        <constraint firstAttribute="width" secondItem="w4O-n2-1VA" secondAttribute="height" multiplier="1:1" id="fBp-xB-nlK"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="MHj-zn-LNI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxm-nU-Qqi">
+                    <rect key="frame" x="135" y="395" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Xxm-nU-Qqi" secondAttribute="height" multiplier="1:1" id="RzK-rB-LR8"/>
+                        <constraint firstAttribute="height" constant="50" id="o3P-Eq-OcQ"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="nEH-L2-Fz2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="w4O-n2-1VA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6cc-Zh-NG8"/>
+                <constraint firstItem="Xxm-nU-Qqi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FHH-RM-Was"/>
+                <constraint firstItem="qCV-lu-kQY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="3/4" id="LR9-Xa-qcj"/>
+                <constraint firstItem="qCV-lu-kQY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UdZ-fb-64z"/>
+                <constraint firstItem="w4O-n2-1VA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="5/4" id="bci-Zo-FC1"/>
+                <constraint firstItem="jcv-3A-tEb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mTl-iH-PJH"/>
+                <constraint firstItem="Xxm-nU-Qqi" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="7/4" id="pMF-qd-pV8"/>
+                <constraint firstItem="jcv-3A-tEb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1/4" id="uFb-kh-5cc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outletCollection property="heightConstraints" destination="ZR6-Fc-XDu" collectionClass="NSMutableArray" id="SQg-5I-vll"/>
+                <outletCollection property="heightConstraints" destination="ecV-Hc-7H2" collectionClass="NSMutableArray" id="3bA-IH-YPG"/>
+                <outletCollection property="heightConstraints" destination="P7o-xt-1nF" collectionClass="NSMutableArray" id="jis-Wk-ilr"/>
+                <outletCollection property="heightConstraints" destination="o3P-Eq-OcQ" collectionClass="NSMutableArray" id="wgl-Gj-hOh"/>
+            </connections>
+            <point key="canvasLocation" x="-761" y="50"/>
+        </view>
+    </objects>
+</document>
