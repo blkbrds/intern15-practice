@@ -9,11 +9,13 @@ import Foundation
 
 extension App {
 
-    struct String {}
-    struct Home {}
+    /**
+     This file defines all localizable strings which are used in this application.
+     Please localize defined strings in `Resources/Localizable.strings`.
+     */
+
+    struct String { }
 }
 
-extension App.Home {
-    static var alertMessage: String { return "Do you want to delete?".localized()}
-    static var alertTitle: String { return "".localized()}
+extension App.String {
 }

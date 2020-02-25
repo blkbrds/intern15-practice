@@ -23,7 +23,6 @@ extension String {
         hoTenArray[0] = Character(hoTenArray[0].uppercased())
         for i in 1..<hoTenArray.count where hoTenArray[i - 1] == " " {
             hoTenArray[i] = Character(hoTenArray[i].uppercased())
-            
         }
 
         return String(hoTenArray)
