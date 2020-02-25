@@ -18,7 +18,7 @@ final class HomeViewController: BaseViewController {
     private var baseSlideImageCell = "BaseSlideImageCell"
     private var columnPlaceCell = "PlaceViewCell"
     private var datas: [[Place]] = []
-    var viewModle = HomeViewModel()
+    var viewModel = HomeViewModel()
     private var layout = Layout.row
 
     // MARK: - Override funcs
@@ -54,7 +54,7 @@ final class HomeViewController: BaseViewController {
     }
 
     private func fetchData() {
-        viewModle.fetchData { (done, msg) in
+        viewModel.fetchData { (done, msg) in
             if done {
                 collectionView.reloadData()
             } else {
@@ -78,11 +78,11 @@ final class HomeViewController: BaseViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return viewModle.getNumberOfSection()
+        return viewModel.getNumberOfSection()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModle.getNumberOfItems(section)
+        return viewModel.getNumberOfItems(in: section)
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -98,13 +98,13 @@ extension HomeViewController: UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             guard let baseSlideImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: baseSlideImageCell, for: indexPath) as? BaseSlideImageCell else { return UICollectionViewCell() }
-            let places = viewModle.getPlace(with: indexPath)
+            let places = viewModel.getPlace(with: indexPath)
             let baseSlideImageCellViewModel = BaseSlideImageCellViewModel(places: places)
             baseSlideImageCell.viewModel = baseSlideImageCellViewModel
             return baseSlideImageCell
 
         default:
-            let place = viewModle.getPlaces(with: indexPath)
+            let place = viewModel.getPlaces(with: indexPath)
             let cplaceCellViewModel = PlaceCellViewModel(namePlace: place.name, placeImageName: place.imageName, address: place.address, favorites: place.favorites)
 
             switch layout {
@@ -144,11 +144,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController: PlaceCellDelegate {
-    func viewCell(viewCell: PlaceCell, needPermorAction action: PlaceCell.Action) {
+    func cell(cell: PlaceCell, needPermorAction action: PlaceCell.Action) {
         switch action {
         case .changeFavorites:
-            guard let index = collectionView.indexPath(for: viewCell) else { return }
-            viewModle.changeFavorites(with: index) { (done, msg) in
+            guard let index = collectionView.indexPath(for: cell) else { return }
+            viewModel.changeFavorites(with: index) { (done, msg) in
                 if done {
                     collectionView.reloadItems(at: [index])
                 } else {

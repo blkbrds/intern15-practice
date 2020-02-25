@@ -31,15 +31,15 @@ final class BaseSlideImageCell: UICollectionViewCell {
 
     private func configUI() {
         configCollectionView()
-        self.bringSubviewToFront(pageControl)
+        bringSubviewToFront(pageControl)
     }
 }
 
 // MARK: - Extension: UICollectionViewDataSource
 extension BaseSlideImageCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pageControl.numberOfPages = viewModel.numberOfItem()
-        return viewModel.numberOfItem()
+        pageControl.numberOfPages = viewModel.numberOfItems()
+        return viewModel.numberOfItems()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,7 +58,7 @@ extension BaseSlideImageCell: UICollectionViewDataSource {
 // MARK: - Extension: UICollectionViewDelegateFlowLayout
 extension BaseSlideImageCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+        return collectionView.bounds.size
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

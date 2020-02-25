@@ -16,7 +16,7 @@ final class BaseSlideImageCellViewModel {
         self.places = places
     }
 
-    func numberOfItem() -> Int {
+    func numberOfItems() -> Int {
         return places.count
     }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PlaceCellDelegate: class {
-    func viewCell(viewCell: PlaceCell, needPermorAction action: PlaceCell.Action)
+    func cell(cell: PlaceCell, needPermorAction action: PlaceCell.Action)
 }
 
 final class PlaceCell: UICollectionViewCell {
@@ -48,9 +48,9 @@ final class PlaceCell: UICollectionViewCell {
         favoritesButton.setImage(UIImage(named: favoritesImageName), for: .selected)
     }
 
-    @IBAction private func favoritesTouchUpInside(_ sender: Any) {
+    @IBAction private func favoritesButtonTouchUpInside(_ sender: Any) {
         guard let viewModel = viewModel else { return }
         print(viewModel.isFavorites)
-        delegate?.viewCell(viewCell: self, needPermorAction: .changeFavorites)
+        delegate?.cell(cell: self, needPermorAction: .changeFavorites)
     }
 }

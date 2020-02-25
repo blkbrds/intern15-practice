@@ -19,15 +19,13 @@ final class HomeViewModel {
         completion(true, "")
     }
 
-    func  getNumberOfSection() -> Int {
+    func getNumberOfSection() -> Int {
         return datas.count
     }
 
-    func getNumberOfItems(_ section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        default:
+    func getNumberOfItems(in section: Int) -> Int {
+        if section == 0 { return 1 }
+        else {
             return datas[section].count
         }
     }
