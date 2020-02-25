@@ -1,6 +1,6 @@
 import SwiftUI
 
-class FxRectangularView: UIView {
+final class FxRectangularView: UIView {
  
 	override func draw(_ rect: CGRect) {
         let path = createPath()
@@ -9,7 +9,7 @@ class FxRectangularView: UIView {
         path.fill()
     }
     
-    func createPath() -> UIBezierPath {
+    private func createPath() -> UIBezierPath {
 		let path = UIBezierPath(rect: self.bounds)
         return path
     }
