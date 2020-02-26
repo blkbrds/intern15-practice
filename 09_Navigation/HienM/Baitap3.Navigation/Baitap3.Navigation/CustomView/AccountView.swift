@@ -1,12 +1,12 @@
 import SwiftUI
 
-protocol UserViewDeligate: class {
-	func view(view: UIViewController, value: String)
+protocol AccountViewDelegate: class {
+	func AccountView(viewController: UIViewController, value: String)
 }
 
 class AccountView: UIView {
 
-	weak var delegate: UserViewDeligate?
+	weak var delegate: AccountViewDelegate?
 
 	@IBOutlet weak var userImage: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
@@ -20,6 +20,6 @@ class AccountView: UIView {
 
 	}
 	@IBAction func tap (_ sender: Any) {
-		delegate?.view(view: SecondViewController(), value: self.nameLabel.text ?? "")
+		delegate?.AccountView(viewController: SecondViewController(), value: self.nameLabel.text ?? "")
 	}
 }
