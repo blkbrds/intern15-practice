@@ -1,4 +1,3 @@
-
 import UIKit
 
 class BaseViewController: UIViewController {
@@ -15,5 +14,4 @@ class BaseViewController: UIViewController {
 	func setupTabBar() {
 		self.tabBarItem.badgeColor = .blue
 	}
-
 }

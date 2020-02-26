@@ -39,8 +39,4 @@ class LoginViewController: BaseViewController {
 			falseLabel.isHidden = false
 		}
 	}
-
-	@IBAction func findPasswordTapp(_ sender: Any) {
-
-	}
 }
