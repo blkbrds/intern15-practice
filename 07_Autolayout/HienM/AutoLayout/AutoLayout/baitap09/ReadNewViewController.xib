@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,22 +22,22 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="casau" translatesAutoresizingMaskIntoConstraints="NO" id="dSt-Do-co1">
-                    <rect key="frame" x="50" y="50" width="314" height="346"/>
+                    <rect key="frame" x="50" y="50" width="220" height="176"/>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nXG-Pf-YNg">
-                    <rect key="frame" x="40" y="426" width="334" height="370"/>
+                    <rect key="frame" x="40" y="256" width="240" height="124"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    <mutableString key="text">Câu nói “nước mắt cá sấu” ngụ ý người hay biểu lộ cảm xúc giả tạo, xuất phát từ thực tế là loài cá sấu thường chảy nước mắt khi nhử và hạ sát con mồi của mình. Do cá sấu không thể nhai cho nên nó phải xé nhỏ con mồi thành miếng vừa miệng rồi nuốt cả miếng to. Như một sự ngẫu nhiên, tuyến nước mắt của chúng lại nằm ngay gần cổ họng, mà khi chúng nuốt những miếng thức ăn to thì vô tình sẽ tạo sức ép lên tuyến này và làm nước mắt chảy ra.</mutableString>
+                    <string key="text">Câu nói “nước mắt cá sấu” ngụ ý người hay biểu lộ cảm xúc giả tạo, xuất phát từ thực tế là loài cá sấu thường chảy nước mắt khi nhử và hạ sát con mồi của mình. Do cá sấu không thể nhai cho nên nó phải xé nhỏ con mồi thành miếng vừa miệng rồi nuốt cả miếng to. Như một sự ngẫu nhiên, tuyến nước mắt của chúng lại nằm ngay gần cổ họng, mà khi chúng nuốt những miếng thức ăn to thì vô tình sẽ tạo sức ép lên tuyến này và làm nước mắt chảy ra.</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mmo-I1-HbB">
-                    <rect key="frame" x="30" y="816" width="354" height="30"/>
+                    <rect key="frame" x="30" y="400" width="260" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwy-by-iS9">
                             <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
@@ -52,7 +52,7 @@
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTk-5K-7Tv">
-                            <rect key="frame" x="142" y="0.0" width="70" height="30"/>
+                            <rect key="frame" x="95" y="0.0" width="70" height="30"/>
                             <color key="backgroundColor" red="1" green="0.97556512520000005" blue="0.32477789130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="ccl-9R-zNT"/>
@@ -62,7 +62,7 @@
                             <state key="normal" title="Comment"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na2-I0-hGu">
-                            <rect key="frame" x="284" y="0.0" width="70" height="30"/>
+                            <rect key="frame" x="190" y="0.0" width="70" height="30"/>
                             <color key="backgroundColor" red="1" green="0.97556512520000005" blue="0.32477789130000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="lZZ-O0-sAK"/>
@@ -76,17 +76,8 @@
                         <constraint firstAttribute="height" constant="30" id="3XX-pR-eon"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-WP-4v2">
-                    <rect key="frame" x="372" y="108" width="22" height="174"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
-                    <connections>
-                        <action selector="nextImageButton:" destination="-1" eventType="touchUpInside" id="hTV-sP-Uzt"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFE-ZX-VnW">
-                    <rect key="frame" x="20" y="108" width="22" height="174"/>
+                    <rect key="frame" x="20.5" y="94" width="21.5" height="88"/>
                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                     <state key="normal" image="arrowshape.turn.up.left.fill" catalog="system"/>
@@ -94,26 +85,32 @@
                         <action selector="backImageButton:" destination="-1" eventType="touchUpInside" id="60D-P9-rQu"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-WP-4v2">
+                    <rect key="frame" x="278" y="94" width="21.5" height="88"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
+                    <connections>
+                        <action selector="nextImageButton:" destination="-1" eventType="touchUpInside" id="hTV-sP-Uzt"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="CFE-ZX-VnW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="2Da-1w-tvV"/>
-                <constraint firstItem="Weo-WP-4v2" firstAttribute="leading" secondItem="dSt-Do-co1" secondAttribute="trailing" constant="8" id="6wa-6j-9Bv"/>
                 <constraint firstItem="mmo-I1-HbB" firstAttribute="top" secondItem="nXG-Pf-YNg" secondAttribute="bottom" constant="20" id="7bK-N8-jSh"/>
-                <constraint firstAttribute="bottom" secondItem="dSt-Do-co1" secondAttribute="bottom" constant="500" id="FhX-Il-KoJ"/>
                 <constraint firstItem="nXG-Pf-YNg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="Kjy-VU-r2p"/>
-                <constraint firstAttribute="bottom" secondItem="CFE-ZX-VnW" secondAttribute="bottom" constant="614" id="Lv6-Sy-lcB"/>
+                <constraint firstItem="CFE-ZX-VnW" firstAttribute="centerY" secondItem="dSt-Do-co1" secondAttribute="centerY" id="MtM-yL-bnu"/>
                 <constraint firstItem="nXG-Pf-YNg" firstAttribute="top" secondItem="dSt-Do-co1" secondAttribute="bottom" constant="30" id="N0K-lS-1C9"/>
-                <constraint firstItem="CFE-ZX-VnW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="PVr-09-5Em"/>
                 <constraint firstItem="dSt-Do-co1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="Seb-8t-r4Y"/>
+                <constraint firstItem="Weo-WP-4v2" firstAttribute="height" secondItem="dSt-Do-co1" secondAttribute="height" multiplier="1:2" id="VQZ-FL-CZp"/>
                 <constraint firstAttribute="bottom" secondItem="mmo-I1-HbB" secondAttribute="bottom" constant="50" id="VWq-9m-Lde"/>
-                <constraint firstItem="Weo-WP-4v2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="108" id="XRH-l6-vXU"/>
-                <constraint firstAttribute="trailing" secondItem="Weo-WP-4v2" secondAttribute="trailing" constant="20" id="dCG-at-scc"/>
+                <constraint firstItem="Weo-WP-4v2" firstAttribute="centerY" secondItem="dSt-Do-co1" secondAttribute="centerY" id="gfH-gq-a3m"/>
                 <constraint firstAttribute="trailing" secondItem="dSt-Do-co1" secondAttribute="trailing" constant="50" id="lNy-qp-iHY"/>
+                <constraint firstItem="CFE-ZX-VnW" firstAttribute="height" secondItem="dSt-Do-co1" secondAttribute="height" multiplier="1:2" id="lWa-hc-OCw"/>
                 <constraint firstAttribute="trailing" secondItem="mmo-I1-HbB" secondAttribute="trailing" constant="30" id="mPV-oP-CxQ"/>
-                <constraint firstAttribute="bottom" secondItem="Weo-WP-4v2" secondAttribute="bottom" constant="614" id="t4P-rE-Rji"/>
+                <constraint firstItem="Weo-WP-4v2" firstAttribute="leading" secondItem="dSt-Do-co1" secondAttribute="trailing" constant="8" id="okz-f6-rBr"/>
                 <constraint firstItem="dSt-Do-co1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="tgV-AG-Kll"/>
-                <constraint firstItem="dSt-Do-co1" firstAttribute="leading" secondItem="CFE-ZX-VnW" secondAttribute="trailing" constant="8" id="vYQ-aB-Up4"/>
+                <constraint firstItem="dSt-Do-co1" firstAttribute="leading" secondItem="CFE-ZX-VnW" secondAttribute="trailing" constant="8" id="w4l-Js-EWP"/>
                 <constraint firstItem="mmo-I1-HbB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="xx4-OS-EHt"/>
                 <constraint firstAttribute="trailing" secondItem="nXG-Pf-YNg" secondAttribute="trailing" constant="40" id="zCB-ue-Cwh"/>
             </constraints>
