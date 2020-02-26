@@ -12,14 +12,14 @@ class CalculatorViewController: UIViewController {
 		super.viewDidLoad()
 	}
 
-	@IBAction private func digitTouch(_ sender: UIButton) {
+	@IBAction private func digitButtonTouchInside(_ sender: UIButton) {
 		let theNumber = sender.titleLabel?.text ?? ""
 		titleResult += theNumber
 		numberDisplay += theNumber
 		calculatorDisplay.text = titleResult
 	}
 
-	@IBAction private func clearTouch(_ sender: UIButton) {
+	@IBAction private func clearButtonTouchInside(_ sender: UIButton) {
 		Calculator.share.numbers = []
 		Calculator.share.calculators = []
 		Calculator.share.result = 0
@@ -28,7 +28,7 @@ class CalculatorViewController: UIViewController {
 		titleResult = ""
 	}
 
-	@IBAction private func perfomOperation(_ sender: UIButton) {
+	@IBAction private func perfomOperationButtonTouchInside(_ sender: UIButton) {
 		let text = calculatorDisplay.text ?? ""
 		guard text != "0" else { return }
 		let calculation = sender.titleLabel?.text ?? ""
@@ -39,7 +39,7 @@ class CalculatorViewController: UIViewController {
 		numberDisplay = ""
 	}
 
-	@IBAction func handleResult(_ sender: Any) {
+	@IBAction func handleResultButtonTouchInside(_ sender: Any) {
 		Calculator.share.addNumber(numberStr: numberDisplay)
 		Calculator.share.calculator()
 		resultLabel.text = "\(Calculator.share.result)"
