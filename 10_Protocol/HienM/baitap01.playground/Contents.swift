@@ -16,7 +16,7 @@ class Animal {
 	init(name: String) {
 		self.name = name
 	}
-	
+
 	func createName() -> String {
 		return name
 	}

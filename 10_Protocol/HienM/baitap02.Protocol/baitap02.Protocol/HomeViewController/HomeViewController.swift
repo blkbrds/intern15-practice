@@ -1,11 +1,3 @@
-//
-//  HomeViewController.swift
-//  baitap02.Protocol
-//
-//  Created by Ngoc Hien on 2/4/20.
-//  Copyright © 2020 NgocHien. All rights reserved.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -57,7 +49,6 @@ extension HomeViewController: AvatarViewDeligate {
 		case .nameUser(let nameUser):
 			let profileViewController = ProfileViewController()
 			profileViewController.name = nameUser
-			print(nameUser)
 			profileViewController.view.tag = view.tag
 			profileViewController.delegate = self
 			navigationController?.pushViewController(profileViewController, animated: true)

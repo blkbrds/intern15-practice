@@ -18,6 +18,7 @@ class ProvinceViewController: BaseViewController {
 		let backButton = UIBarButtonItem(image: UIImage(named: "back arrow"), style: .plain, target: self, action: #selector(backtoViewLocalViewController))
 		navigationItem.leftBarButtonItem = backButton
 	}
+	
 	@objc func pushToDistrictViewController() {
 		let vc = DistrictViewController()
 		vc.diaDiem = diaDiem
