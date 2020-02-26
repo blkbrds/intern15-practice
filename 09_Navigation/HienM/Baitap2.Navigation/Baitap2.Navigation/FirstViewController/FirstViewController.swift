@@ -1,7 +1,7 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-	
+
 	@IBOutlet weak var userNameTextField: UITextField!
 	@IBOutlet weak var PasswordTextField: UITextField!
 	@IBOutlet weak var notificationLabel: UILabel!
@@ -12,10 +12,10 @@ class FirstViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		title = "Login"
-		
+
 		let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(rightAction))
 		navigationItem.rightBarButtonItem = rightButton
-		
+
 		notificationLabel.isHidden = true
 	}
 
