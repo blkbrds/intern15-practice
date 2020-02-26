@@ -1,11 +1,11 @@
 import UIKit
 
-class Arr{
-    func change(a: [Int],x: Int,y: Int ) -> [Int]{
+class Array {
+    func change(a: [Int], x: Int, y: Int) -> [Int] {
         var n = a
-        
-        for index in 0..<n.count{
-            if n[index] == x{
+
+        for index in 0..<n.count {
+            if n[index] == x {
                 n[index] = y
             }
         }
@@ -14,5 +14,5 @@ class Arr{
     }
 }
 
-let x = Arr()
-x.change(a: [1,2,1,4,1], x: 1, y: 3)
+let x = Array()
+x.change(a: [1, 2, 1, 4, 1], x: 1, y: 3)

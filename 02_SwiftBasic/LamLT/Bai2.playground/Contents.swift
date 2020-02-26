@@ -2,8 +2,8 @@ import UIKit
 
 class QuadraticEquation {
     func solveQuadraticEquation(a: Double, b: Double, c: Double) -> (Double?, Double?) {
-        var x1: Double?,
-            x2: Double?
+        var x1: Double?
+        var x2: Double?
         let delta: Double = pow(b, 2) - 4 * a * c
         if delta < 0 {
             print("No Solution")
@@ -17,7 +17,7 @@ class QuadraticEquation {
             x1 = (-b + sqrt(delta)) / (2 * a)
             x2 = (-b - sqrt(delta)) / (2 * a)
         }
-        return(x1, x2)
+        return (x1, x2)
     }
 }
 
