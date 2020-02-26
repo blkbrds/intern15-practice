@@ -14,8 +14,8 @@ final class ChartViewController: UIViewController {
 	let spacingX: CGFloat = 150
 	var ySpacing = 30
 	var xSpacing = 50
-	let colurmsXName: [String] = ["1000", "500", "300", "100"]
-	let yColur: [String] = ["Tus", "Wed", "Thus", "Fri", "Sat", "Sun", "Fri"]
+	let xColurms: [String] = ["1000", "500", "300", "100"]
+	let yColurms: [String] = ["Tus", "Wed", "Thus", "Fri", "Sat", "Sun", "Fri"]
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -36,7 +36,7 @@ final class ChartViewController: UIViewController {
 
 		for i in 0..<4 {
 			let XColurmLabel: UILabel = UILabel(frame: CGRect(x: 10, y: ySpacing, width: 50, height: 30))
-			XColurmLabel.text = String(colurmsXName[i])
+			XColurmLabel.text = String(xColurms[i])
 			ySpacing += 100
 			view.addSubview(XColurmLabel)
 		}
@@ -54,7 +54,7 @@ final class ChartViewController: UIViewController {
 
 		for i in 0..<7 {
 			let YColurmLabel: UILabel = UILabel(frame: CGRect(x: xSpacing, y: 350, width: 80, height: 50))
-			YColurmLabel.text = String(yColur[i])
+			YColurmLabel.text = String(yColurms[i])
 			xSpacing += 150
 			view.addSubview(YColurmLabel)
 		}
