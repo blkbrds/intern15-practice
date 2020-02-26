@@ -1,6 +1,6 @@
 import UIKit
 
-class SecondCustomViewCell: UICollectionViewCell {
+final class SecondCustomViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

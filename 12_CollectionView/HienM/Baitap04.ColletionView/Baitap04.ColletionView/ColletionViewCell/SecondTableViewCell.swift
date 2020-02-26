@@ -1,27 +1,19 @@
-//
-//  SecondTableViewCell.swift
-//  Baitap04.ColletionView
-//
-//  Created by Ngoc Hien on 2/12/20.
-//  Copyright © 2020 NgocHien. All rights reserved.
-//
-
 import UIKit
 
-class SecondTableViewCell: UITableViewCell {
+final class SecondTableViewCell: UITableViewCell {
 
 	private var indexCell = 0
 	private let marvel: [String] = ["mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6",]
 	private let nameCell: String = "firstCell"
 
-	@IBOutlet weak var sliderCollectionView: UICollectionView!
+	@IBOutlet weak private var sliderCollectionView: UICollectionView!
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		setupIU()
 	}
 
-	func setupIU () {
+	private func setupIU () {
 		let layout = UICollectionViewFlowLayout()
 		layout.minimumInteritemSpacing = 10
 		layout.scrollDirection = .horizontal
@@ -32,7 +24,7 @@ class SecondTableViewCell: UITableViewCell {
 		sliderCollectionView.dataSource = self
 	}
 
-	func loadNib () {
+	private func loadNib () {
 		let nib = UINib(nibName: "FirstCustomViewCell", bundle: .main)
 		sliderCollectionView.register(nib, forCellWithReuseIdentifier: nameCell)
 	}

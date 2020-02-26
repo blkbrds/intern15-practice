@@ -1,7 +1,7 @@
 import UIKit
 
-class HomeViewController: UIViewController {
-	@IBOutlet weak var myCollectionView: UICollectionView!
+final class HomeViewController: UIViewController {
+	@IBOutlet weak private var myCollectionView: UICollectionView!
 
 	private let images = ["pasta0", "pasta1", "pasta2", "pasta3", "pasta4", "pasta5", "pasta6",
 		"pizza0", "pizza1", "pizza2", "pizza3", "pizza4", "pizza5", "pizza6", "pizza1", "pizza2", "pizza3", "pizza4", "pizza5", "pizza6"

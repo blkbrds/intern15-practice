@@ -1,9 +1,8 @@
-
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-	@IBOutlet weak var homeTableView: UITableView!
+	@IBOutlet weak private var homeTableView: UITableView!
 
 	private let nameFirstCell: String = "FirstTableViewCell"
 	private let nameSecomdCell: String = "SecondTableViewCell"
@@ -13,7 +12,7 @@ class HomeViewController: UIViewController {
 		loadFirstNib()
 	}
 
-	func loadFirstNib() {
+	private func loadFirstNib() {
 		let nib1 = UINib(nibName: "FirstTableViewCell", bundle: .main)
 		let nib2 = UINib(nibName: "SecondTableViewCell", bundle: .main)
 		homeTableView.register(nib1, forCellReuseIdentifier: nameFirstCell)
@@ -32,7 +31,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
 		return 1
 	}
 

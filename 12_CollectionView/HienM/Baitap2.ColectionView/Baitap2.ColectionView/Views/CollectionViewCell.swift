@@ -1,9 +1,9 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+final class CollectionViewCell: UICollectionViewCell {
 
-	@IBOutlet weak var foodImageView: UIImageView!
+	@IBOutlet weak private var foodImageView: UIImageView!
 
 	override func awakeFromNib() {
 		super.awakeFromNib()

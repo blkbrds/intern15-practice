@@ -14,14 +14,14 @@ class FirstTableViewCell: UITableViewCell {
 	private let marvel: [String] = ["mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6",]
 	private let nameCell: String = "FirstCustomViewCell"
 
-	@IBOutlet weak var sliderCollectionView: UICollectionView!
+	@IBOutlet weak private var sliderCollectionView: UICollectionView!
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		setupIU()
 	}
 
-	func setupIU () {
+	private func setupIU () {
 		let layout = UICollectionViewFlowLayout()
 		layout.minimumInteritemSpacing = 10
 		layout.scrollDirection = .horizontal
@@ -32,12 +32,12 @@ class FirstTableViewCell: UITableViewCell {
 		sliderCollectionView.dataSource = self
 	}
 
-	func loadNib () {
+	private func loadNib () {
 		let nib = UINib(nibName: "FirstCustomViewCell", bundle: .main)
 		sliderCollectionView.register(nib, forCellWithReuseIdentifier: nameCell)
 	}
 
-	@IBAction func backButtonTapp(_ sender: Any) {
+	@IBAction private func backButtonTapp(_ sender: Any) {
 		indexCell -= 1
 		if indexCell < 0 {
 			indexCell = marvel.count

@@ -1,6 +1,6 @@
 import UIKit
 
-class MyCollectionViewCell: UICollectionViewCell {
+final class MyCollectionViewCell: UICollectionViewCell {
 
 	@IBOutlet weak var avatarTextLabel: UILabel!
 	

@@ -1,13 +1,13 @@
 import UIKit
 
-class HomeViewController: UIViewController {
-	var flowers: [String] = ["flower-1", "flower-2", "flower-3", "flower-4", "flower-5", "flower-6", "flower-7"]
-	var sections: [String] = ["Loại 1", "Loại 2", "Loại 3", "Loại 4", "Loại 5", "Loại 6", "Loại 7"]
+final class HomeViewController: UIViewController {
+	private var flowers: [String] = ["flower-1", "flower-2", "flower-3", "flower-4", "flower-5", "flower-6", "flower-7"]
+	private var sections: [String] = ["Loại 1", "Loại 2", "Loại 3", "Loại 4", "Loại 5", "Loại 6", "Loại 7"]
 
 	private let keyCell: String = "HomeCell"
 	private let keyHeaderCell: String = "myHeader"
 
-	@IBOutlet weak var homeCollectionView: UICollectionView!
+	@IBOutlet weak private var homeCollectionView: UICollectionView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -15,13 +15,13 @@ class HomeViewController: UIViewController {
 		loadHeader()
 	}
 
-	func loadNib() {
+	private func loadNib() {
 		let nib = UINib(nibName: keyCell, bundle: .main)
 		homeCollectionView.register(nib, forCellWithReuseIdentifier: keyCell)
 		homeCollectionView.backgroundColor = #colorLiteral(red: 0.7776146531, green: 0.9668715596, blue: 0.922586143, alpha: 1)
 	}
 
-	func loadHeader() {
+	private func loadHeader() {
 		let headerNib = UINib(nibName: "HeaderView", bundle: .main)
 		homeCollectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: keyHeaderCell)
 		let layout = UICollectionViewFlowLayout()

@@ -9,6 +9,7 @@ final class HomeViewController: UIViewController {
 		super.viewDidLoad()
 		loadNib()
 	}
+	
 	private func loadNib() {
 		let nib = UINib(nibName: "MyCollectionViewCell", bundle: .main)
 		myColletionView.register(nib, forCellWithReuseIdentifier: "myCell")
@@ -38,5 +39,4 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 		cell.avatarTextLabel.text = user
 		return cell
 	}
-
 }
