@@ -1,9 +1,10 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-	@IBOutlet weak var tableview: UITableView!
-	var users: [ThePoem] = []
+	@IBOutlet weak private var tableview: UITableView!
+	private var thePoems: [ThePoem] = []
+	private var tableViewCell: String = "TableViewCell"
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -12,13 +13,13 @@ class HomeViewController: UIViewController {
 		configTableView()
 	}
 
-	func loadData () {
-		users = BundleManager.share().getPoems()
+	private func loadData () {
+		thePoems = BundleManager.share().getPoems()
 	}
 
-	func configTableView () {
-		let nib = UINib(nibName: "TableViewCell", bundle: .main)
-		tableview.register(nib, forCellReuseIdentifier: "myCell")
+	private func configTableView () {
+		let nib = UINib(nibName: tableViewCell, bundle: .main)
+		tableview.register(nib, forCellReuseIdentifier: tableViewCell)
 		tableview.rowHeight = UITableView.automaticDimension
 		tableview.estimatedRowHeight = 44
 	}
@@ -26,7 +27,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let numberPoem = users.count
+		let numberPoem = thePoems.count
 		return numberPoem
 	}
 
@@ -35,8 +36,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? TableViewCell else {
-			let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCell) as? TableViewCell else {
+			let cell = UITableViewCell(style: .default, reuseIdentifier: tableViewCell)
 			return cell
 		}
 

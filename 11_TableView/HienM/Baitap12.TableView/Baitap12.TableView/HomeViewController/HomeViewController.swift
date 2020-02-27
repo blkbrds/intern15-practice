@@ -1,29 +1,27 @@
-
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-	@IBOutlet weak var addTextField: UITextField!
-	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var editButton: UIBarButtonItem!
+	@IBOutlet weak private var addTextField: UITextField!
+	@IBOutlet weak private var tableView: UITableView!
+	@IBOutlet weak private var editButton: UIBarButtonItem!
 
-	var videos: [String] = ["FaceBook", "Instargram", "Tiktok"]
-
+	private var videos: [String] = ["FaceBook", "Instargram", "Tiktok"]
+	private var myCell: String = "cell"
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configTableView()
 	}
 
-	func configTableView () {
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+	private func configTableView () {
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: myCell)
 	}
 
-	@IBAction func editButtonTapped(_ sender: Any) {
-
+	@IBAction private func editButtonTapped(_ sender: Any) {
 		insertVideoNameTitle ()
 	}
 
-	func insertVideoNameTitle () {
+	private func insertVideoNameTitle () {
 		videos.append(addTextField.text!)
 		let indexPath = IndexPath(row: videos.count - 1, section: 0)
 		tableView.beginUpdates()
@@ -40,7 +38,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: myCell, for: indexPath)
 		cell.textLabel?.text = videos[indexPath.row]
 		return cell
 	}
