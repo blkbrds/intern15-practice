@@ -13,8 +13,8 @@ final class HomeViewController: UIViewController {
 	}
 
 	private func loadFirstNib() {
-		let nib1 = UINib(nibName: "FirstTableViewCell", bundle: .main)
-		let nib2 = UINib(nibName: "SecondTableViewCell", bundle: .main)
+		let nib1 = UINib(nibName: nameFirstCell, bundle: .main)
+		let nib2 = UINib(nibName: nameSecomdCell, bundle: .main)
 		homeTableView.register(nib1, forCellReuseIdentifier: nameFirstCell)
 		homeTableView.register(nib2, forCellReuseIdentifier: nameSecomdCell)
 	}

@@ -6,6 +6,7 @@ final class HomeViewController: UIViewController {
 	private let images = ["pasta0", "pasta1", "pasta2", "pasta3", "pasta4", "pasta5", "pasta6",
 		"pizza0", "pizza1", "pizza2", "pizza3", "pizza4", "pizza5", "pizza6", "pizza1", "pizza2", "pizza3", "pizza4", "pizza5", "pizza6"
 	]
+	private let collectionViewCell: String = "CollectionViewCell"
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -21,8 +22,8 @@ final class HomeViewController: UIViewController {
 	}
 
 	private func loadNib() {
-		let nib = UINib(nibName: "CollectionViewCell", bundle: .main)
-		myCollectionView.register(nib, forCellWithReuseIdentifier: "myCVCelll")
+		let nib = UINib(nibName: collectionViewCell, bundle: .main)
+		myCollectionView.register(nib, forCellWithReuseIdentifier: collectionViewCell)
 	}
 }
 
@@ -33,7 +34,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCVCelll", for: indexPath) as! CollectionViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCell, for: indexPath) as! CollectionViewCell
 		return cell
 	}
 }

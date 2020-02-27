@@ -1,18 +1,10 @@
-//
-//  FirstTableViewCell.swift
-//  Baitap04.ColletionView
-//
-//  Created by Ngoc Hien on 2/12/20.
-//  Copyright © 2020 NgocHien. All rights reserved.
-//
-
 import UIKit
 
-class FirstTableViewCell: UITableViewCell {
+final class FirstTableViewCell: UITableViewCell {
 
 	private var indexCell = 0
 	private let marvel: [String] = ["mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6",]
-	private let nameCell: String = "FirstCustomViewCell"
+	private let firstCustomViewCell: String = "FirstCustomViewCell"
 
 	@IBOutlet weak private var sliderCollectionView: UICollectionView!
 
@@ -33,8 +25,8 @@ class FirstTableViewCell: UITableViewCell {
 	}
 
 	private func loadNib () {
-		let nib = UINib(nibName: "FirstCustomViewCell", bundle: .main)
-		sliderCollectionView.register(nib, forCellWithReuseIdentifier: nameCell)
+		let nib = UINib(nibName: firstCustomViewCell, bundle: .main)
+		sliderCollectionView.register(nib, forCellWithReuseIdentifier: firstCustomViewCell)
 	}
 
 	@IBAction private func backButtonTapp(_ sender: Any) {
@@ -45,7 +37,7 @@ class FirstTableViewCell: UITableViewCell {
 		sliderCollectionView.scrollToItem(at: IndexPath(item: indexCell, section: 0), at: .right, animated: true)
 	}
 
-	@IBAction func nextButtonTapp(_ sender: Any) {
+	@IBAction private func nextButtonTapp(_ sender: Any) {
 		indexCell += 1
 		sliderCollectionView.scrollToItem(at: IndexPath(item: indexCell, section: 0), at: .left, animated: true)
 		if indexCell > marvel.count {
@@ -60,8 +52,7 @@ extension FirstTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		//if c
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: nameCell, for: indexPath) as! FirstCustomViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: firstCustomViewCell, for: indexPath) as! FirstCustomViewCell
 		cell.marvelImage.image = UIImage(named: marvel[indexPath.row])
 		return cell
 	}

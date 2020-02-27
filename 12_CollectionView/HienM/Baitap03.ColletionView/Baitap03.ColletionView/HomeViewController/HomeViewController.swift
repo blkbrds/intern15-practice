@@ -4,8 +4,8 @@ final class HomeViewController: UIViewController {
 	private var flowers: [String] = ["flower-1", "flower-2", "flower-3", "flower-4", "flower-5", "flower-6", "flower-7"]
 	private var sections: [String] = ["Loại 1", "Loại 2", "Loại 3", "Loại 4", "Loại 5", "Loại 6", "Loại 7"]
 
-	private let keyCell: String = "HomeCell"
-	private let keyHeaderCell: String = "myHeader"
+	private let homeCell: String = "HomeCell"
+	private let headerCell: String = "HeaderView"
 
 	@IBOutlet weak private var homeCollectionView: UICollectionView!
 
@@ -16,14 +16,14 @@ final class HomeViewController: UIViewController {
 	}
 
 	private func loadNib() {
-		let nib = UINib(nibName: keyCell, bundle: .main)
-		homeCollectionView.register(nib, forCellWithReuseIdentifier: keyCell)
+		let nib = UINib(nibName: homeCell, bundle: .main)
+		homeCollectionView.register(nib, forCellWithReuseIdentifier: homeCell)
 		homeCollectionView.backgroundColor = #colorLiteral(red: 0.7776146531, green: 0.9668715596, blue: 0.922586143, alpha: 1)
 	}
 
 	private func loadHeader() {
-		let headerNib = UINib(nibName: "HeaderView", bundle: .main)
-		homeCollectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: keyHeaderCell)
+		let headerNib = UINib(nibName: headerCell, bundle: .main)
+		homeCollectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCell)
 		let layout = UICollectionViewFlowLayout()
 
 		layout.headerReferenceSize = CGSize(width: 0, height: 40)
@@ -31,7 +31,7 @@ final class HomeViewController: UIViewController {
 	}
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return sections.count
 	}
@@ -41,7 +41,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: keyCell, for: indexPath) as! HomeCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: homeCell, for: indexPath) as! HomeCell
 		cell.flowerImage.image = UIImage(named: flowers[indexPath.row])
 		cell.backgroundColor = #colorLiteral(red: 0.7776146531, green: 0.9668715596, blue: 0.922586143, alpha: 1)
 		return cell
@@ -55,7 +55,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 		switch kind {
 		case UICollectionView.elementKindSectionHeader:
-			let reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: keyHeaderCell, for: indexPath) as! HeaderView
+			let reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerCell, for: indexPath) as! HeaderView
 			reusableview.nameHeaderLabel.text = sections[indexPath.section]
 			reusableview.numberHeaderLabel.text = "\(flowers.count)"
 

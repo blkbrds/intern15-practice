@@ -1,10 +1,11 @@
 import UIKit
 
 final class SecondTableViewCell: UITableViewCell {
-
-	private var indexCell = 0
+	struct Config {
+		static var numberOfItemsInSection: Int = 36
+	}
 	private let marvel: [String] = ["mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6", "mavel 1", "mavel 2", "mavel 3", "mavel 4", "mavel 5", "mavel 6",]
-	private let nameCell: String = "firstCell"
+	private let firstCustomViewCell: String = "FirstCustomViewCell"
 
 	@IBOutlet weak private var sliderCollectionView: UICollectionView!
 
@@ -25,19 +26,19 @@ final class SecondTableViewCell: UITableViewCell {
 	}
 
 	private func loadNib () {
-		let nib = UINib(nibName: "FirstCustomViewCell", bundle: .main)
-		sliderCollectionView.register(nib, forCellWithReuseIdentifier: nameCell)
+		let nib = UINib(nibName: firstCustomViewCell, bundle: .main)
+		sliderCollectionView.register(nib, forCellWithReuseIdentifier: firstCustomViewCell)
 	}
 
 }
 
 extension SecondTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 36
+		return Config.numberOfItemsInSection
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: nameCell, for: indexPath) as! FirstCustomViewCell
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: firstCustomViewCell, for: indexPath) as! FirstCustomViewCell
 		cell.marvelImage.image = UIImage(named: marvel[indexPath.row])
 		return cell
 	}
