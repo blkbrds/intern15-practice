@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,21 +22,21 @@
                         <navigationItem title="Select" id="UaU-Up-hSH">
                             <barButtonItem key="leftBarButtonItem" style="plain" id="l9v-aL-ydq">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PJl-lL-qBz">
-                                    <rect key="frame" x="20" y="7" width="48" height="30"/>
+                                    <rect key="frame" x="16" y="10" width="48" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Cannel"/>
                                     <connections>
-                                        <action selector="cannelAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="juS-qx-Y9h"/>
+                                        <action selector="cannelActionTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="juS-qx-Y9h"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" style="plain" id="qqP-vH-xhS">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g9Y-hu-Mey">
-                                    <rect key="frame" x="278" y="7" width="37" height="30"/>
+                                    <rect key="frame" x="282" y="10" width="37" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Done"/>
                                     <connections>
-                                        <action selector="completeButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="oYu-Vg-xVw"/>
+                                        <action selector="completeButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="oYu-Vg-xVw"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -148,7 +147,7 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="clearButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="1gD-vi-C5m"/>
+                        <action selector="clearButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="1gD-vi-C5m"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vm4-lf-43M">

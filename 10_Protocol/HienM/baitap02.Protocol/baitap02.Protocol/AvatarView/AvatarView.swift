@@ -1,9 +1,9 @@
 import SwiftUI
 protocol AvatarViewDeligate: class {
-	func view(view: AvatarView, needPerformAction action: AvatarView.Action)
+	func avatarView(view: AvatarView, needPerformAction action: AvatarView.Action)
 }
 
-class AvatarView: UIView {
+final class AvatarView: UIView {
 
 	var name: String? {
 		didSet {
@@ -12,8 +12,8 @@ class AvatarView: UIView {
 	}
 	weak var delegate: AvatarViewDeligate?
 
-	@IBOutlet weak var avatarImage: UIImageView!
-	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak private var avatarImage: UIImageView!
+	@IBOutlet weak private var nameLabel: UILabel!
 
 	enum Action {
 		case nameUser (nameUser: String?)
@@ -27,7 +27,9 @@ class AvatarView: UIView {
 		super.init(coder: coder)
 	}
 
-	@IBAction func tap (_ sender: Any) {
-		delegate?.view(view: self, needPerformAction: .nameUser(nameUser: name))
+	@IBAction private func printNameButtonTouchUpInside (_ sender: Any) {
+		if let delegate = delegate {
+			delegate.avatarView(view: self, needPerformAction: .nameUser(nameUser: name))
+		}
 	}
 }

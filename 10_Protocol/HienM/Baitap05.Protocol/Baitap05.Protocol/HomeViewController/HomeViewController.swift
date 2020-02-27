@@ -21,12 +21,12 @@ final class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: CalculateViewDataSource {
-	func getX() -> Int? {
+	func getValueX() -> Int? {
 		guard let x = valueXTextField.text else { return 0 }
 		return Int(x)
 	}
 	
-	func getY() -> Int? {
+	func getValueY() -> Int? {
 		guard let y = valueYTextField.text else { return 0 }
 		return Int(y)
 	}

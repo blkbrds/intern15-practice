@@ -1,13 +1,13 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-	var provinceArray: [String] = ["An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên"]
-	var searchProvince = [String]()
-	var seaching = false
+	private var provinceArray: [String] = ["An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước", "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên"]
+	private var searchProvince = [String]()
+	private var seaching = false
 
-	@IBOutlet weak var searchBar: UISearchBar!
-	@IBOutlet weak var provinceList: UITableView!
+	@IBOutlet weak private var searchBar: UISearchBar!
+	@IBOutlet weak private var provinceList: UITableView!
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}

@@ -1,16 +1,16 @@
 import UIKit
 struct DiaDiem {
-  var mien: String = ""
-  var tinh: String = ""
-  var huyen: String = ""
+	var mien: String = ""
+	var tinh: String = ""
+	var huyen: String = ""
 }
 
-class LocalViewController: BaseViewController {
+final class LocalViewController: BaseViewController {
 
 	@IBOutlet private var mienButtons: [UIButton]!
 
-	var diaDiem : DiaDiem = DiaDiem()
-	
+	var diaDiem: DiaDiem = DiaDiem()
+
 	enum Action {
 		case NameLocal (nameLocal: String?)
 	}
@@ -18,7 +18,7 @@ class LocalViewController: BaseViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
-	
+
 	override func setupNavigationBar() {
 		title = "Local"
 
@@ -30,7 +30,7 @@ class LocalViewController: BaseViewController {
 
 	}
 
-	@objc  private func pushToProvinceViewController() {
+	@objc private func pushToProvinceViewController() {
 		let provinceViewController = ProvinceViewController()
 		provinceViewController.diaDiem = diaDiem
 		navigationController?.pushViewController(provinceViewController, animated: true)
@@ -44,7 +44,7 @@ class LocalViewController: BaseViewController {
 		}
 	}
 
-	@IBAction func getLocalAction(_ sender: UIButton) {
+	@IBAction private func getLocalAction(_ sender: UIButton) {
 		mienButtons.forEach({ $0.backgroundColor = .gray })
 		sender.backgroundColor = .blue
 		diaDiem.mien = sender.titleLabel?.text ?? ""

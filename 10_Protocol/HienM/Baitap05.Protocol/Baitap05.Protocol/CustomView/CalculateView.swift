@@ -1,22 +1,22 @@
 import SwiftUI
 
 protocol CalculateViewDataSource: class {
-	func getX() -> Int?
-	func getY() -> Int?
+	func getValueX() -> Int?
+	func getValueY() -> Int?
 }
 
 protocol CalculateViewDeligate: class {
-	func calculateView(view : CalculateView , needPerformAction action : CalculateView.action )
+	func calculateView(view: CalculateView, needPerformAction action: CalculateView.action)
 }
 
 class CalculateView: UIView {
 
 	weak var dataSource: CalculateViewDataSource?
 	weak var deligate: CalculateViewDeligate?
-	
+
 	enum action {
-		case doneAction(resultText : String?)
-		case clearAction(clearText : String? )
+		case doneAction(resultText: String?)
+		case clearAction(clearText: String?)
 	}
 
 	@IBOutlet weak var xResultLabel: UILabel!
@@ -26,16 +26,16 @@ class CalculateView: UIView {
 	private var x: Int?
 	private var y: Int?
 	private var result: Double?
-	
+
 	func configView() {
-		guard let x = dataSource?.getX(), let y = dataSource?.getY() else { return }
+		guard let x = dataSource?.getValueX(), let y = dataSource?.getValueY() else { return }
 		xResultLabel.text = String(x)
 		yResultLabel.text = String(y)
 	}
 
 	@IBAction private func calculartorAction(_ sender: UIButton) {
-		guard let x = dataSource?.getX(), let y = dataSource?.getY() else { return }
-		
+		guard let x = dataSource?.getValueX(), let y = dataSource?.getValueY() else { return }
+
 		switch sender.tag {
 		case 1:
 			result = Double(x + y)
@@ -50,30 +50,30 @@ class CalculateView: UIView {
 		case 6:
 			result = Double(pow(Double(x), Double(y)))
 		default:
-			clearButton(self)
+			clearButtonTouchUpInside(self)
 		}
-		
+
 		guard let result = result else { return }
 		resultLabel.text = String(result)
 	}
 
-	@IBAction private func clearButton(_ sender: Any) {
+	@IBAction private func clearButtonTouchUpInside(_ sender: Any) {
 		xResultLabel.text = ""
 		yResultLabel.text = ""
-		
+
 		deligate?.calculateView(view: self, needPerformAction: .clearAction(clearText: ""))
 	}
 
-	@IBAction private func cannelAction(_ sender: Any) {
+	@IBAction private func cannelActionTouchUpInside(_ sender: Any) {
 		self.isHidden = true
 	}
-	
-	@IBAction private func completeButton(_ sender: Any) {
+
+	@IBAction private func completeButtonTouchUpInside(_ sender: Any) {
 		self.isHidden = true
-		
+
 		guard let result = result else { return }
 		deligate?.calculateView(view: self, needPerformAction: .doneAction(resultText: String(result)))
-		
+
 	}
 }
 

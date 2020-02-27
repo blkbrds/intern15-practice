@@ -29,6 +29,8 @@ final class ProfileViewController: UIViewController {
 	@objc private func DoneToViewControllerAction() {
 		navigationController?.popViewController(animated: true)
 		guard let name = userNameTextField.text else { return }
-		delegate?.controller(controller: self, needPerformAction: .updateName(nameUserUpdate: name))
+		if let delegate = delegate {
+			delegate.controller(controller: self, needPerformAction: .updateName(nameUserUpdate: name))
+		}
 	}
 }

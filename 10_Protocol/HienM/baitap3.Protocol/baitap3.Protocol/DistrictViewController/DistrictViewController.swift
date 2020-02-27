@@ -26,7 +26,7 @@ class DistrictViewController: BaseViewController {
 		navigationController?.popViewController(animated: true)
 	}
 
-	@IBAction private func getDistrictAction(_ sender: UIButton) {
+	@IBAction private func getDistrictButtonTouchUpInside(_ sender: UIButton) {
 		huyenButton.forEach({ $0.backgroundColor = .gray })
 		sender.backgroundColor = .orange
 		diaDiem.huyen = sender.titleLabel?.text ?? ""
@@ -36,7 +36,7 @@ class DistrictViewController: BaseViewController {
 		huyen = diaDiem.huyen
 		tinh = diaDiem.tinh
 		mien = diaDiem.mien
-		
+
 		guard let navi = navigationController else { return }
 		for vc in navi.viewControllers where vc is HomeViewController {
 			let locationVC = vc as! HomeViewController
@@ -49,17 +49,17 @@ class DistrictViewController: BaseViewController {
 
 extension DistrictViewController: HomeViewControllerDataSource {
 	func getHuyen() -> String? {
-		guard let huyen = huyen else {return ""}
+		guard let huyen = huyen else { return "" }
 		return huyen
 	}
 
 	func getTinh() -> String? {
-		guard let tinh = tinh else {return ""}
+		guard let tinh = tinh else { return "" }
 		return tinh
 	}
 
 	func getMien() -> String? {
-		guard let mien = mien else {return ""}
+		guard let mien = mien else { return "" }
 		return mien
 	}
 }
