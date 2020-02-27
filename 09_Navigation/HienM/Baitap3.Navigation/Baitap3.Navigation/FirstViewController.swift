@@ -41,7 +41,7 @@ final class FirstViewController: UIViewController {
 }
 
 extension FirstViewController: AccountViewDelegate {
-	func AccountView(viewController: UIViewController, value: String) {
+	func accountView(viewController: UIViewController, value: String) {
 		let secondVC = SecondViewController()
 		navigationController?.pushViewController(secondVC, animated: true)
 		secondVC.name = value

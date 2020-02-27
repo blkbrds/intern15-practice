@@ -1,7 +1,7 @@
 import SwiftUI
 
 protocol AccountViewDelegate: class {
-	func AccountView(viewController: UIViewController, value: String)
+	func accountView(viewController: UIViewController, value: String)
 }
 
 class AccountView: UIView {
@@ -19,7 +19,9 @@ class AccountView: UIView {
 		super.init(coder: coder)
 
 	}
-	@IBAction func tap (_ sender: Any) {
-		delegate?.AccountView(viewController: SecondViewController(), value: self.nameLabel.text ?? "")
+	@IBAction func avatarButtonTouchUpInside (_ sender: Any) {
+		if let delegate = delegate {
+			delegate.accountView(viewController: SecondViewController(), value: self.nameLabel.text ?? "")
+		}
 	}
 }
