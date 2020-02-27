@@ -3,7 +3,7 @@ import UIKit
 final class CalculatorViewController: UIViewController {
 
 	@IBOutlet weak private var resultLabel: UILabel!
-	@IBOutlet weak private var calculatorDisplay: UILabel!
+	@IBOutlet weak private var calculatorDisplayLabel: UILabel!
 
 	private var titleResult: String = ""
 	private var numberDisplay: String = ""
@@ -12,7 +12,7 @@ final class CalculatorViewController: UIViewController {
 		guard let theNumber = sender.titleLabel?.text else { return }
 		titleResult += theNumber
 		numberDisplay += theNumber
-		calculatorDisplay.text = titleResult
+		calculatorDisplayLabel.text = titleResult
 	}
 
 	@IBAction private func clearButtonTouchUpInside(_ sender: UIButton) {
@@ -20,16 +20,16 @@ final class CalculatorViewController: UIViewController {
 		Calculator.share.calculators = []
 		Calculator.share.result = 0
 		resultLabel.text = "0"
-		calculatorDisplay.text = ""
+		calculatorDisplayLabel.text = ""
 		titleResult = ""
 	}
 
 	@IBAction private func perfomOperationButtonTouchUpInside(_ sender: UIButton) {
-		guard let text = calculatorDisplay.text else { return }
+		guard let text = calculatorDisplayLabel.text else { return }
 		guard text != "0" else { return }
 		guard let calculation = sender.titleLabel?.text else { return }
 		titleResult += calculation
-		calculatorDisplay.text = titleResult
+		calculatorDisplayLabel.text = titleResult
 		Calculator.share.addNumber(numberStr: numberDisplay)
 		Calculator.share.addCalculator(calculatorStr: calculation)
 		numberDisplay = ""
