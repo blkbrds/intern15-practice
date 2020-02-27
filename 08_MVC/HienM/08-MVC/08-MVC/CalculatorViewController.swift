@@ -1,25 +1,21 @@
 import UIKit
 
-class CalculatorViewController: UIViewController {
-	
-	@IBOutlet weak var resultLabel: UILabel!
-	@IBOutlet weak var calculatorDisplay: UILabel!
+final class CalculatorViewController: UIViewController {
+
+	@IBOutlet weak private var resultLabel: UILabel!
+	@IBOutlet weak private var calculatorDisplay: UILabel!
 
 	private var titleResult: String = ""
 	private var numberDisplay: String = ""
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-
-	@IBAction private func digitButtonTouchInside(_ sender: UIButton) {
-		let theNumber = sender.titleLabel?.text ?? ""
+	@IBAction private func digitButtonTouchUpInside(_ sender: UIButton) {
+		guard let theNumber = sender.titleLabel?.text else { return }
 		titleResult += theNumber
 		numberDisplay += theNumber
 		calculatorDisplay.text = titleResult
 	}
 
-	@IBAction private func clearButtonTouchInside(_ sender: UIButton) {
+	@IBAction private func clearButtonTouchUpInside(_ sender: UIButton) {
 		Calculator.share.numbers = []
 		Calculator.share.calculators = []
 		Calculator.share.result = 0
@@ -28,10 +24,10 @@ class CalculatorViewController: UIViewController {
 		titleResult = ""
 	}
 
-	@IBAction private func perfomOperationButtonTouchInside(_ sender: UIButton) {
-		let text = calculatorDisplay.text ?? ""
+	@IBAction private func perfomOperationButtonTouchUpInside(_ sender: UIButton) {
+		guard let text = calculatorDisplay.text else { return }
 		guard text != "0" else { return }
-		let calculation = sender.titleLabel?.text ?? ""
+		guard let calculation = sender.titleLabel?.text else { return }
 		titleResult += calculation
 		calculatorDisplay.text = titleResult
 		Calculator.share.addNumber(numberStr: numberDisplay)
@@ -39,7 +35,7 @@ class CalculatorViewController: UIViewController {
 		numberDisplay = ""
 	}
 
-	@IBAction func handleResultButtonTouchInside(_ sender: Any) {
+	@IBAction private func handleResultButtonTouchUpInside(_ sender: Any) {
 		Calculator.share.addNumber(numberStr: numberDisplay)
 		Calculator.share.calculator()
 		resultLabel.text = "\(Calculator.share.result)"

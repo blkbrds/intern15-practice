@@ -35,7 +35,7 @@ final class Calculator {
 
 	func addNumber(numberStr: String) {
 		guard let number = Int(numberStr) else { return }
-		self.numbers.append(number)
+		numbers.append(number)
 	}
 
 	func addCalculator(calculatorStr: String) {
