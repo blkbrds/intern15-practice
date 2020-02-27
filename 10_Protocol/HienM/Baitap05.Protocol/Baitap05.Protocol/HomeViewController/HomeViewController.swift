@@ -15,7 +15,7 @@ final class HomeViewController: UIViewController {
 		calculaterView.frame = CGRect(x: 32, y: 300, width: 350, height: 300)
 		calculaterView.dataSource = self
 		calculaterView.configView()
-		calculaterView.deligate = self
+		calculaterView.delegate = self
 		view.addSubview(calculaterView)
 	}
 }
@@ -32,7 +32,7 @@ extension HomeViewController: CalculateViewDataSource {
 	}
 }
 
-extension HomeViewController: CalculateViewDeligate {
+extension HomeViewController: CalculateViewDelegate {
 	func calculateView(view: CalculateView, needPerformAction action: CalculateView.action) {
 		switch action {
 		case .clearAction(let clearText):

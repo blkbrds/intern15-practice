@@ -1,11 +1,12 @@
 import UIKit
+
 protocol HomeViewControllerDataSource: class {
 	func getHuyen () -> String?
 	func getTinh () -> String?
 	func getMien () -> String?
 }
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
 
 	weak var dataSource: HomeViewControllerDataSource?
 

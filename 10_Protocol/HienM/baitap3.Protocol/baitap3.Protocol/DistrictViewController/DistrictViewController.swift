@@ -1,6 +1,6 @@
 import UIKit
 
-class DistrictViewController: BaseViewController {
+final class DistrictViewController: BaseViewController {
 
 	var diaDiem: DiaDiem = DiaDiem()
 	var huyen: String?

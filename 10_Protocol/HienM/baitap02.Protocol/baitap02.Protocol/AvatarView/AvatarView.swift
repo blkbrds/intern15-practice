@@ -1,5 +1,6 @@
 import SwiftUI
-protocol AvatarViewDeligate: class {
+
+protocol AvatarViewDelegate: class {
 	func avatarView(view: AvatarView, needPerformAction action: AvatarView.Action)
 }
 
@@ -10,7 +11,7 @@ final class AvatarView: UIView {
 			nameLabel.text = name
 		}
 	}
-	weak var delegate: AvatarViewDeligate?
+	weak var delegate: AvatarViewDelegate?
 
 	@IBOutlet weak private var avatarImage: UIImageView!
 	@IBOutlet weak private var nameLabel: UILabel!

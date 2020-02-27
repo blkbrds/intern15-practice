@@ -1,4 +1,5 @@
 import UIKit
+
 struct DiaDiem {
 	var mien: String = ""
 	var tinh: String = ""

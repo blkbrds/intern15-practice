@@ -43,7 +43,7 @@ final class HomeViewController: UIViewController {
 	}
 }
 
-extension HomeViewController: AvatarViewDeligate {
+extension HomeViewController: AvatarViewDelegate {
 	func avatarView(view: AvatarView, needPerformAction action: AvatarView.Action) {
 		switch action {
 		case .nameUser(let nameUser):

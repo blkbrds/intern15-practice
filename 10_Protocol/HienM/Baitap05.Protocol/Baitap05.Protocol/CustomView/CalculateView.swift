@@ -5,14 +5,14 @@ protocol CalculateViewDataSource: class {
 	func getValueY() -> Int?
 }
 
-protocol CalculateViewDeligate: class {
+protocol CalculateViewDelegate: class {
 	func calculateView(view: CalculateView, needPerformAction action: CalculateView.action)
 }
 
-class CalculateView: UIView {
+final class CalculateView: UIView {
 
 	weak var dataSource: CalculateViewDataSource?
-	weak var deligate: CalculateViewDeligate?
+	weak var delegate: CalculateViewDelegate?
 
 	enum action {
 		case doneAction(resultText: String?)
@@ -60,8 +60,9 @@ class CalculateView: UIView {
 	@IBAction private func clearButtonTouchUpInside(_ sender: Any) {
 		xResultLabel.text = ""
 		yResultLabel.text = ""
-
-		deligate?.calculateView(view: self, needPerformAction: .clearAction(clearText: ""))
+		if let delegate = delegate {
+			delegate.calculateView(view: self, needPerformAction: .clearAction(clearText: ""))
+		}
 	}
 
 	@IBAction private func cannelActionTouchUpInside(_ sender: Any) {
@@ -70,10 +71,10 @@ class CalculateView: UIView {
 
 	@IBAction private func completeButtonTouchUpInside(_ sender: Any) {
 		self.isHidden = true
-
 		guard let result = result else { return }
-		deligate?.calculateView(view: self, needPerformAction: .doneAction(resultText: String(result)))
-
+		if let delegate = delegate {
+			delegate.calculateView(view: self, needPerformAction: .doneAction(resultText: String(result)))
+		}
 	}
 }
 
