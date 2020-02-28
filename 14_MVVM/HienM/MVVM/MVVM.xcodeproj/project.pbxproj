@@ -21,6 +21,11 @@
 		FD06D4EE23FED09200CC62A8 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD06D4EC23FED09200CC62A8 /* FavoriteViewController.xib */; };
 		FD06D4F123FED1EE00CC62A8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD06D4EF23FED1EE00CC62A8 /* TabBarViewController.swift */; };
 		FD1A52A72403812400148D24 /* CoffeeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A52A62403812400148D24 /* CoffeeCollectionView.swift */; };
+		FD1A52AB2403AAFA00148D24 /* CoffeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A52A92403AAFA00148D24 /* CoffeeCollectionViewCell.swift */; };
+		FD1A52AC2403AAFA00148D24 /* CoffeeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1A52AA2403AAFA00148D24 /* CoffeeCollectionViewCell.xib */; };
+		FD6156F524060DBD00E61CDD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6156F324060DBD00E61CDD /* DetailViewController.swift */; };
+		FD6156F624060DBD00E61CDD /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6156F424060DBD00E61CDD /* DetailViewController.xib */; };
+		FD6253AB2404C1E7006E1444 /* CoffeeCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6253AA2404C1E7006E1444 /* CoffeeCollectionViewModel.swift */; };
 		FDA30A0A23FEDA050063119D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA30A0923FEDA050063119D /* BaseViewController.swift */; };
 		FDA30A0C23FEDEDF0063119D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA30A0B23FEDEDF0063119D /* HomeViewModel.swift */; };
 		FDA30A0E23FEE03C0063119D /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA30A0D23FEE03C0063119D /* Objects.swift */; };
@@ -49,6 +54,11 @@
 		FD06D4EC23FED09200CC62A8 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		FD06D4EF23FED1EE00CC62A8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FD1A52A62403812400148D24 /* CoffeeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionView.swift; sourceTree = "<group>"; };
+		FD1A52A92403AAFA00148D24 /* CoffeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD1A52AA2403AAFA00148D24 /* CoffeeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeCollectionViewCell.xib; sourceTree = "<group>"; };
+		FD6156F324060DBD00E61CDD /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FD6156F424060DBD00E61CDD /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		FD6253AA2404C1E7006E1444 /* CoffeeCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionViewModel.swift; sourceTree = "<group>"; };
 		FDA30A0923FEDA050063119D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FDA30A0B23FEDEDF0063119D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FDA30A0D23FEE03C0063119D /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
@@ -107,10 +117,11 @@
 		FD06D4D223FECF1700CC62A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FD6156F22406085900E61CDD /* DetailVC */,
+				FD06D4DA23FECFF200CC62A8 /* HomeVC */,
 				FD06D4DE23FED03600CC62A8 /* FavoriteVC */,
 				FD06D4DC23FED00300CC62A8 /* ProlileVC */,
 				FD06D4DB23FED00000CC62A8 /* MapVC */,
-				FD06D4DA23FECFF200CC62A8 /* HomeVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,9 +214,29 @@
 		FD1A52A5240380A600148D24 /* ColectionView */ = {
 			isa = PBXGroup;
 			children = (
+				FD1A52A82403AAC600148D24 /* cell */,
 				FD1A52A62403812400148D24 /* CoffeeCollectionView.swift */,
 			);
 			path = ColectionView;
+			sourceTree = "<group>";
+		};
+		FD1A52A82403AAC600148D24 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A52A92403AAFA00148D24 /* CoffeeCollectionViewCell.swift */,
+				FD6253AA2404C1E7006E1444 /* CoffeeCollectionViewModel.swift */,
+				FD1A52AA2403AAFA00148D24 /* CoffeeCollectionViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		FD6156F22406085900E61CDD /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				FD6156F324060DBD00E61CDD /* DetailViewController.swift */,
+				FD6156F424060DBD00E61CDD /* DetailViewController.xib */,
+			);
+			path = DetailVC;
 			sourceTree = "<group>";
 		};
 		FDA30A0F23FF6FE70063119D /* CustomCell */ = {
@@ -302,6 +333,8 @@
 				FD06D4EE23FED09200CC62A8 /* FavoriteViewController.xib in Resources */,
 				FD06D4E223FED06200CC62A8 /* HomeViewController.xib in Resources */,
 				FD06D4EA23FED07E00CC62A8 /* ProfileViewController.xib in Resources */,
+				FD1A52AC2403AAFA00148D24 /* CoffeeCollectionViewCell.xib in Resources */,
+				FD6156F624060DBD00E61CDD /* DetailViewController.xib in Resources */,
 				FD06D4E623FED06F00CC62A8 /* MapViewController.xib in Resources */,
 				FDD69F4623FFE146006B1C24 /* SecondTableViewCell.xib in Resources */,
 			);
@@ -318,10 +351,13 @@
 				FDA30A0C23FEDEDF0063119D /* HomeViewModel.swift in Sources */,
 				FDA30A1D23FF71510063119D /* FirstCollectionViewCell.swift in Sources */,
 				FD06D4C123FECEF400CC62A8 /* SceneDelegate.swift in Sources */,
+				FD6253AB2404C1E7006E1444 /* CoffeeCollectionViewModel.swift in Sources */,
 				FD06D4E923FED07E00CC62A8 /* ProfileViewController.swift in Sources */,
 				FD06D4E123FED06200CC62A8 /* HomeViewController.swift in Sources */,
 				FD06D4F123FED1EE00CC62A8 /* TabBarViewController.swift in Sources */,
 				FDA30A0E23FEE03C0063119D /* Objects.swift in Sources */,
+				FD6156F524060DBD00E61CDD /* DetailViewController.swift in Sources */,
+				FD1A52AB2403AAFA00148D24 /* CoffeeCollectionViewCell.swift in Sources */,
 				FDA30A0A23FEDA050063119D /* BaseViewController.swift in Sources */,
 				FD1A52A72403812400148D24 /* CoffeeCollectionView.swift in Sources */,
 				FDD69F4823FFE15D006B1C24 /* SecondTableViewModel.swift in Sources */,

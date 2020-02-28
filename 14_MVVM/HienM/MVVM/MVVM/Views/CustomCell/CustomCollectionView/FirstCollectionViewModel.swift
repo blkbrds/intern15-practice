@@ -1,15 +1,14 @@
-
-import Foundation
 import UIKit
 
-class FirstCollectionViewModel {
-	var imageCoffee: String
-	var nameCoffee: String
+final class FirstCollectionViewModel {
+	var coffeeImageName: String
+	var coffeeName: String
 	var addressCoffee: String
 	var rating: String
+	
 	init(image: String, name: String, address: String, rating: String) {
-		self.imageCoffee = image
-		self.nameCoffee = name
+		self.coffeeImageName = image
+		self.coffeeName = name
 		self.addressCoffee = address
 		self.rating = rating
 	}

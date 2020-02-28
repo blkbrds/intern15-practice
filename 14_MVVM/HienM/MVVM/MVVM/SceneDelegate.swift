@@ -24,9 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	private func createTabbar() {
 		let tabbarVC = TabBarViewController()
-		let tabbarNavi = UINavigationController(rootViewController: tabbarVC)
+	//	let tabbarNavi = UINavigationController(rootViewController: tabbarVC)
 
-		window?.rootViewController = tabbarNavi
+		window?.rootViewController = tabbarVC
 	}
 	func changeScreen(type: TypeScreen) {
 		switch type {
