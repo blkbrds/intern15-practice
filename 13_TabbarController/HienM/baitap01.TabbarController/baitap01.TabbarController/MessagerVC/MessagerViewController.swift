@@ -1,6 +1,6 @@
 import UIKit
 
-class MessagerViewController: BaseViewController {
+final class MessagerViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

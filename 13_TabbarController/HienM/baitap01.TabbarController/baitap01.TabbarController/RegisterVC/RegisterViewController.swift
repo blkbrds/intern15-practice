@@ -1,9 +1,10 @@
 import UIKit
 
-class RegisterViewController: BaseViewController {
-	@IBOutlet weak var nameAccountTextField: UITextField!
-	@IBOutlet weak var ConfirmTextField: UITextField!
-	@IBOutlet weak var passwordAccountTextField: UITextField!
+final class RegisterViewController: BaseViewController {
+	
+	@IBOutlet weak private var nameAccountTextField: UITextField!
+	@IBOutlet weak private var ConfirmTextField: UITextField!
+	@IBOutlet weak private var passwordAccountTextField: UITextField!
 
 	let loginVC = LoginViewController()
 	var username: String? {
@@ -24,7 +25,7 @@ class RegisterViewController: BaseViewController {
 		loginVC.configData(userName: usernameText, password: passwordText)
 	}
 
-	@IBAction func doneButtonTapp(_ sender: Any) {
+	@IBAction private func doneButtonTapp(_ sender: Any) {
 		let myTabBar = MyTabbarViewController()
 		SceneDelegate.shared.changtabBarController(myTabBar)
 	}

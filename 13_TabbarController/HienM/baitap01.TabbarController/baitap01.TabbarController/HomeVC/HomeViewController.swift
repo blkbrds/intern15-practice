@@ -1,6 +1,6 @@
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
 
 	@IBOutlet weak var imageView: UIImageView!
 	override func viewDidLoad() {

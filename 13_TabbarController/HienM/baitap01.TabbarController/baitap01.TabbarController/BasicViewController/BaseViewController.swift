@@ -6,12 +6,12 @@ class BaseViewController: UIViewController {
 		super.viewDidLoad()
 		setupUI()
 	}
-	
+
 	func setupUI() {
 		setupTabBar()
 	}
-	
-	func setupTabBar() {
+
+	private func setupTabBar() {
 		self.tabBarItem.badgeColor = .blue
 	}
 }
