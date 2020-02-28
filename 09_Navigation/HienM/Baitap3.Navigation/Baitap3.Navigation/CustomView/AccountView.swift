@@ -8,7 +8,7 @@ final class AccountView: UIView {
 
 	weak var delegate: AccountViewDelegate?
 
-	@IBOutlet weak var userImage: UIImageView!
+	@IBOutlet weak private var accountImageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 
 	override init(frame: CGRect) {
@@ -17,8 +17,8 @@ final class AccountView: UIView {
 
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
-
 	}
+	
 	@IBAction private func avatarButtonTouchUpInside (_ sender: Any) {
 		if let delegate = delegate {
 			delegate.accountView(viewController: SecondViewController(), value: self.nameLabel.text ?? "")

@@ -1,10 +1,10 @@
 import UIKit
 
-class FirstViewController: UIViewController {
+final class FirstViewController: UIViewController {
 
-	@IBOutlet weak var userNameTextField: UITextField!
-	@IBOutlet weak var PasswordTextField: UITextField!
-	@IBOutlet weak var notificationLabel: UILabel!
+	@IBOutlet weak private var userNameTextField: UITextField!
+	@IBOutlet weak private var PasswordTextField: UITextField!
+	@IBOutlet weak private var notificationLabel: UILabel!
 
 	private let account1: String = "ngochien"
 	private let password1: String = "duapro123"
@@ -19,7 +19,7 @@ class FirstViewController: UIViewController {
 		notificationLabel.isHidden = true
 	}
 
-	@objc func rightAction() {
+	@objc private func rightAction() {
 		if let username = userNameTextField.text, let password = PasswordTextField.text {
 			let useraccount: (String, String) = (username, password)
 			if useraccount == (account1, password1) {

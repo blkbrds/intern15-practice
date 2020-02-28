@@ -6,16 +6,16 @@ final class CViewController: UIViewController {
         super.viewDidLoad()
     }
 	
-	@IBAction private func push(_ sender: Any) {
+	@IBAction private func pushToDViewController(_ sender: Any) {
 		let vc = DViewController()
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
-	@IBAction private func pop(_ sender: Any) {
+	@IBAction private func popToBViewController(_ sender: Any) {
 		navigationController?.popViewController(animated: true)
 	}
 	
-	@IBAction private func root(_ sender: Any) {
+	@IBAction private func rootToAViewController(_ sender: Any) {
 		navigationController?.popToRootViewController(animated: true)
 	}
 	
