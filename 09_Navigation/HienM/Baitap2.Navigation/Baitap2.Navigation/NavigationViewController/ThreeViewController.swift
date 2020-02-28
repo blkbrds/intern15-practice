@@ -1,6 +1,6 @@
 import UIKit
 
-class ThreeViewController: UIViewController {
+final class ThreeViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
