@@ -4,8 +4,8 @@ final class HomeViewController: UIViewController {
 
 	@IBOutlet weak private var homeTableView: UITableView!
 
-	private let nameFirstCell: String = "FirstTableViewCell"
-	private let nameSecomdCell: String = "SecondTableViewCell"
+	private let firstCell: String = "FirstTableViewCell"
+	private let secomdCell: String = "SecondTableViewCell"
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -13,10 +13,10 @@ final class HomeViewController: UIViewController {
 	}
 
 	private func loadFirstNib() {
-		let nib1 = UINib(nibName: nameFirstCell, bundle: .main)
-		let nib2 = UINib(nibName: nameSecomdCell, bundle: .main)
-		homeTableView.register(nib1, forCellReuseIdentifier: nameFirstCell)
-		homeTableView.register(nib2, forCellReuseIdentifier: nameSecomdCell)
+		let nib1 = UINib(nibName: firstCell, bundle: .main)
+		let nib2 = UINib(nibName: secomdCell, bundle: .main)
+		homeTableView.register(nib1, forCellReuseIdentifier: firstCell)
+		homeTableView.register(nib2, forCellReuseIdentifier: secomdCell)
 	}
 }
 
@@ -35,18 +35,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let firstCell = tableView.dequeueReusableCell(withIdentifier: firstCell),
+			let secondCell = tableView.dequeueReusableCell(withIdentifier: secomdCell) else {
+				return UITableViewCell()
+		}
 		if indexPath.section == 0 {
-			guard let cell = tableView.dequeueReusableCell(withIdentifier: nameFirstCell) else {
-				let cell = UITableViewCell(style: .default, reuseIdentifier: nameFirstCell)
-				return cell
-			}
-			return cell
+			return firstCell
 		} else {
-			guard let cell = tableView.dequeueReusableCell(withIdentifier: nameSecomdCell) else {
-				let cell = UITableViewCell(style: .default, reuseIdentifier: nameSecomdCell)
-				return cell
-			}
-			return cell
+			return secondCell
 		}
 	}
 
