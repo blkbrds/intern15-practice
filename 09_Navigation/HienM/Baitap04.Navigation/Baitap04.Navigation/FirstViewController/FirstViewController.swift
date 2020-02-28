@@ -1,6 +1,6 @@
 import UIKit
 
-class FirstViewController: UIViewController {
+final class FirstViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -12,7 +12,7 @@ class FirstViewController: UIViewController {
 
 		navigationItem.rightBarButtonItems = [searchItem, bookMarkItem, settingItem]
 	}
-	@objc func pushUpInsideSecondView() {
+	@objc private func pushUpInsideSecondView() {
 		let vc = SecondViewController()
 		navigationController?.pushViewController(vc, animated: true)
 	}

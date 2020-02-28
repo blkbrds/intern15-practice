@@ -4,7 +4,7 @@ protocol AccountViewDelegate: class {
 	func accountView(viewController: UIViewController, value: String)
 }
 
-class AccountView: UIView {
+final class AccountView: UIView {
 
 	weak var delegate: AccountViewDelegate?
 
@@ -19,7 +19,7 @@ class AccountView: UIView {
 		super.init(coder: coder)
 
 	}
-	@IBAction func avatarButtonTouchUpInside (_ sender: Any) {
+	@IBAction private func avatarButtonTouchUpInside (_ sender: Any) {
 		if let delegate = delegate {
 			delegate.accountView(viewController: SecondViewController(), value: self.nameLabel.text ?? "")
 		}

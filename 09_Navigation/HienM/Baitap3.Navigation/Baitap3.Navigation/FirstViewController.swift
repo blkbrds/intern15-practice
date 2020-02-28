@@ -1,14 +1,15 @@
 import UIKit
 
 final class FirstViewController: UIViewController {
+	
 	@IBOutlet weak private var scrollView: UIScrollView!
-	let widthView: CGFloat = 100
-	let hightView: CGFloat = 170
-	let spacing: CGFloat = 25
-	var spacingtoScrollView: CGFloat = 35
-	var spacingHorizotal: CGFloat = 20
-	let widthScreen = UIScreen.main.bounds.width
-	var names: [String] = []
+	private let widthView: CGFloat = 100
+	private let hightView: CGFloat = 170
+	private let spacing: CGFloat = 25
+	private var spacingtoScrollView: CGFloat = 35
+	private var spacingHorizotal: CGFloat = 20
+	private let widthScreen = UIScreen.main.bounds.width
+	private var names: [String] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

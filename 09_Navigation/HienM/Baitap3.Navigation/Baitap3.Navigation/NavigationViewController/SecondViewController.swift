@@ -8,16 +8,16 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+final class SecondViewController: UIViewController {
 
-	@IBOutlet weak var userImage: UIImageView!
-	@IBOutlet weak var userNameLabel: UILabel!
+	@IBOutlet weak private var userImage: UIImageView!
+	@IBOutlet weak private var userNameLabel: UILabel!
 
 	var name: String = ""
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+
 		title = "Profile"
 		let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(pop
 			))
@@ -25,7 +25,7 @@ class SecondViewController: UIViewController {
 		userNameLabel.text = name
 	}
 
-	@objc func pop() {
+	@objc private func pop() {
 		navigationController?.popViewController(animated: true)
 	}
 }
