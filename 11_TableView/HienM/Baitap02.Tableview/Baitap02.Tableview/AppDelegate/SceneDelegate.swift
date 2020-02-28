@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Baitap02.Tableview
-//
-//  Created by Ngoc Hien on 2/7/20.
-//  Copyright © 2020 NgocHien. All rights reserved.
-//
 
 import UIKit
 
