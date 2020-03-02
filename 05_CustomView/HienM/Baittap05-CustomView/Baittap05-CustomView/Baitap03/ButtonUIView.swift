@@ -1,7 +1,6 @@
-
 import SwiftUI
 
-class ButtonUIView: UIButton {
+class ButtonUIView: UIView {
 	enum Position {
 		case topLeft
 		case topRight
@@ -31,8 +30,15 @@ class ButtonUIView: UIButton {
 		badgeNumberLabel.frame.size = CGSize(width: 20, height: 20)
 		badgeNumberLabel.backgroundColor = .blue
 		badgeNumberLabel.text = "13"
+		badgeNumberLabel.layer.cornerRadius = 10
+		badgeNumberLabel.clipsToBounds = true
+		button.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+		button.setTitle("email", for: .normal)
+		button.backgroundColor = .orange
+		button.layer.cornerRadius = 20
 		addSubview(badgeNumberLabel)
 		addSubview(button)
+		
 		switch positionBadge {
 		case .topLeft:
 			badgeNumberLabel.center = CGPoint(x: 0, y: 0)
@@ -54,4 +60,3 @@ class ButtonUIView: UIButton {
 		button.addSubview(badgeNumberLabel)
 	}
 }
-

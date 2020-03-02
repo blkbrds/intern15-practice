@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,6 +14,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
         // config tab Home
         let homeViewController = HomeViewController()
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
@@ -22,7 +22,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // config tab Map
         let mapViewController = MapViewController()
-        mapViewController.dataSource = homeViewController
         let mapNavigationController = UINavigationController(rootViewController: mapViewController)
         mapNavigationController.tabBarItem = UITabBarItem(title: "Map", image: #imageLiteral(resourceName: "tabbar_icon_map_png.png"), selectedImage: #imageLiteral(resourceName: "tabbar_icon_map_selected_png.png"))
         
@@ -31,8 +30,13 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let favoritesNavigationController = UINavigationController(rootViewController: favoritesViewController)
         favoritesNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         
+        // config tab Profile
+        let profileViewController = ProfileViewController()
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
+        profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "tabbar_icon_profile_png.png"), selectedImage: #imageLiteral(resourceName: "tabbar_icon_profile_selected_png.png"))
+        
         // config tab bar controller
-        let viewControllers = [homeNavigationController, mapNavigationController, favoritesNavigationController]
+        let viewControllers = [homeNavigationController, mapNavigationController, favoritesNavigationController, profileNavigationController]
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = viewControllers
         

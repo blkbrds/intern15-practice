@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Simple401ViewController" customModule="AutoLayout" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J5u-LI-AQq">
+                    <rect key="frame" x="0.0" y="408" width="414" height="80"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PBD-gL-asF">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" id="CwC-gd-KX2"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I75-RA-kxb">
+                            <rect key="frame" x="43.5" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" red="0.51862046630000003" green="0.047126690989999998" blue="0.026476631390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="I75-RA-kxb" secondAttribute="height" multiplier="1:1" id="FFv-py-UDo"/>
+                                <constraint firstAttribute="width" constant="80" id="T1C-sE-Vhc"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQu-yS-Wn2">
+                            <rect key="frame" x="167" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" red="0.51862046630000003" green="0.047126690989999998" blue="0.026476631390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="5bV-Lw-Kgs"/>
+                                <constraint firstAttribute="width" constant="80" id="nv8-nY-UId"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wk-4r-9nR">
+                            <rect key="frame" x="290.5" y="0.0" width="80" height="80"/>
+                            <color key="backgroundColor" red="0.51862046630000003" green="0.047126690989999998" blue="0.026476631390000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="ShJ-vu-Sr8"/>
+                                <constraint firstAttribute="width" constant="80" id="atc-oI-1TZ"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UBB-ph-FDC">
+                            <rect key="frame" x="414" y="0.0" width="0.0" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" id="dB6-7L-Yn4"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="J5u-LI-AQq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="G12-IR-sMC"/>
+                <constraint firstItem="J5u-LI-AQq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SRe-eZ-rOL"/>
+                <constraint firstItem="J5u-LI-AQq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="zA6-Gy-p1V"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="145" y="148"/>
+        </view>
+    </objects>
+</document>

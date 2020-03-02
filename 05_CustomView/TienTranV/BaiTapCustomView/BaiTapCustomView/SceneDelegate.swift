@@ -22,10 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
 
-         let viewController = MyAvatarViewController()
+        // let viewController = MyAvatarViewController()
         // let viewController = MySliderViewController()
 //         let viewController = MyButtonViewController()
-//        let viewController = MyDatePickerViewController()
+        let viewController = MyDatePickerViewController()
         window?.rootViewController = viewController
     }
 
