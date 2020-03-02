@@ -10,12 +10,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocalViewController" customModule="baitap3_Protocol" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="mienButtons" destination="ThL-3n-hUx" collectionClass="NSMutableArray" id="ypy-Jr-Ugr"/>
-                <outletCollection property="mienButtons" destination="uPp-ph-eTA" collectionClass="NSMutableArray" id="BOg-j4-sqx"/>
-                <outletCollection property="mienButtons" destination="T6Q-r3-tzP" collectionClass="NSMutableArray" id="mj8-c5-FDs"/>
-                <outletCollection property="mienButtons" destination="GTK-Dy-G7F" collectionClass="NSMutableArray" id="RlA-57-EdC"/>
-                <outletCollection property="mienButtons" destination="AvI-pK-PlX" collectionClass="NSMutableArray" id="dPW-Uj-5RC"/>
-                <outletCollection property="mienButtons" destination="ByF-t5-yhJ" collectionClass="NSMutableArray" id="6xJ-i3-FtW"/>
+                <outletCollection property="localButtons" destination="ThL-3n-hUx" collectionClass="NSMutableArray" id="ypy-Jr-Ugr"/>
+                <outletCollection property="localButtons" destination="uPp-ph-eTA" collectionClass="NSMutableArray" id="BOg-j4-sqx"/>
+                <outletCollection property="localButtons" destination="T6Q-r3-tzP" collectionClass="NSMutableArray" id="mj8-c5-FDs"/>
+                <outletCollection property="localButtons" destination="GTK-Dy-G7F" collectionClass="NSMutableArray" id="RlA-57-EdC"/>
+                <outletCollection property="localButtons" destination="AvI-pK-PlX" collectionClass="NSMutableArray" id="dPW-Uj-5RC"/>
+                <outletCollection property="localButtons" destination="ByF-t5-yhJ" collectionClass="NSMutableArray" id="6xJ-i3-FtW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -36,7 +36,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="getLocalAction:" destination="-1" eventType="touchUpInside" id="lZJ-Tb-Y9P"/>
+                                <action selector="getLocalButtonTouchInside:" destination="-1" eventType="touchUpInside" id="lZJ-Tb-Y9P"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-ph-eTA">
@@ -45,7 +45,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="getLocalAction:" destination="-1" eventType="touchUpInside" id="1EH-V1-GJN"/>
+                                <action selector="getLocalButtonTouchInside:" destination="-1" eventType="touchUpInside" id="1EH-V1-GJN"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6Q-r3-tzP">
@@ -54,7 +54,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="getLocalAction:" destination="-1" eventType="touchUpInside" id="0Mj-KY-laX"/>
+                                <action selector="getLocalButtonTouchInside:" destination="-1" eventType="touchUpInside" id="0Mj-KY-laX"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTK-Dy-G7F">
@@ -63,7 +63,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="getLocalAction:" destination="-1" eventType="touchUpInside" id="G3W-KT-qax"/>
+                                <action selector="getLocalButtonTouchInside:" destination="-1" eventType="touchUpInside" id="G3W-KT-qax"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvI-pK-PlX">
@@ -72,7 +72,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="getLocalAction:" destination="-1" eventType="touchUpInside" id="v8a-X3-VnW"/>
+                                <action selector="getLocalButtonTouchInside:" destination="-1" eventType="touchUpInside" id="v8a-X3-VnW"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-t5-yhJ">
@@ -81,7 +81,7 @@
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="getLocalAction:" destination="-1" eventType="touchUpInside" id="nMt-gW-pVg"/>
+                                <action selector="getLocalButtonTouchInside:" destination="-1" eventType="touchUpInside" id="nMt-gW-pVg"/>
                             </connections>
                         </button>
                     </subviews>

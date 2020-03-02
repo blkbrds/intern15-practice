@@ -2,7 +2,7 @@ import UIKit
 
 final class ProvinceViewController: BaseViewController {
 
-	@IBOutlet private var TinhButton: [UIButton]!
+	@IBOutlet private var provinceButton: [UIButton]!
 	var diaDiem: DiaDiem = DiaDiem()
 
 	override func viewDidLoad() {
@@ -12,26 +12,26 @@ final class ProvinceViewController: BaseViewController {
 	override func setupNavigationBar() {
 		title = "Province"
 
-		let rightButton = UIBarButtonItem(title: "District", style: .plain, target: self, action: #selector(pushToDistrictViewController))
+		let rightButton = UIBarButtonItem(title: "District", style: .plain, target: self, action: #selector(rightButtonTouchUpInside))
 		navigationItem.rightBarButtonItem = rightButton
 
-		let backButton = UIBarButtonItem(image: UIImage(named: "back arrow"), style: .plain, target: self, action: #selector(backtoViewLocalViewController))
+		let backButton = UIBarButtonItem(image: UIImage(named: "back arrow"), style: .plain, target: self, action: #selector(leftButtonTouchUpInside))
 		navigationItem.leftBarButtonItem = backButton
 	}
 
-	@objc private func pushToDistrictViewController() {
+	@objc private func rightButtonTouchUpInside() {
 		let vc = DistrictViewController()
 		vc.diaDiem = diaDiem
 		navigationController?.pushViewController(vc, animated: true)
 	}
 
-	@objc private func backtoViewLocalViewController() {
+	@objc private func leftButtonTouchUpInside() {
 		navigationController?.popViewController(animated: true)
 	}
 
-	@IBAction private func getProvinceAction(_ sender: UIButton) {
-		TinhButton.forEach({ $0.backgroundColor = .gray })
+	@IBAction private func getProvinceTouchUpInside(_ sender: UIButton) {
+		provinceButton.forEach({ $0.backgroundColor = .gray })
 		sender.backgroundColor = .green
-		diaDiem.tinh = sender.titleLabel?.text ?? ""
+		diaDiem.province = sender.titleLabel?.text ?? ""
 	}
 }

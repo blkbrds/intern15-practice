@@ -1,20 +1,16 @@
 import UIKit
 
 struct DiaDiem {
-	var mien: String = ""
-	var tinh: String = ""
-	var huyen: String = ""
+	var local: String = ""
+	var province: String = ""
+	var district: String = ""
 }
 
 final class LocalViewController: BaseViewController {
 
-	@IBOutlet private var mienButtons: [UIButton]!
+	@IBOutlet private var localButtons: [UIButton]!
 
 	var diaDiem: DiaDiem = DiaDiem()
-
-	enum Action {
-		case NameLocal (nameLocal: String?)
-	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,32 +19,33 @@ final class LocalViewController: BaseViewController {
 	override func setupNavigationBar() {
 		title = "Local"
 
-		let rightButton = UIBarButtonItem(title: "Province", style: .plain, target: self, action: #selector(pushToProvinceViewController))
+		let rightButton = UIBarButtonItem(title: "Province", style: .plain, target: self, action: #selector(rightBarButtonTouchUpInside))
 		navigationItem.rightBarButtonItem = rightButton
 
-		let backButton = UIBarButtonItem(image: UIImage(named: "back arrow"), style: .plain, target: self, action: #selector(backToHomeViewController))
+		let backButton = UIBarButtonItem(image: UIImage(named: "back arrow"), style: .plain, target: self, action: #selector(leftBarButtonTouchUpInside))
 		navigationItem.leftBarButtonItem = backButton
 
 	}
 
-	@objc private func pushToProvinceViewController() {
+	@objc private func rightBarButtonTouchUpInside() {
 		let provinceViewController = ProvinceViewController()
 		provinceViewController.diaDiem = diaDiem
 		navigationController?.pushViewController(provinceViewController, animated: true)
 	}
 
-	@objc private func backToHomeViewController() {
+	@objc private func leftBarButtonTouchUpInside() {
 		guard let navi = navigationController else { return }
 		for vc in navi.viewControllers where vc is HomeViewController {
-			let homeVC = vc as! HomeViewController
+			guard let homeVC = vc as? HomeViewController else { return }
 			navi.popToViewController(homeVC, animated: true)
 		}
 	}
 
-	@IBAction private func getLocalAction(_ sender: UIButton) {
-		mienButtons.forEach({ $0.backgroundColor = .gray })
+	@IBAction private func getLocalButtonTouchInside(_ sender: UIButton) {
+		localButtons.forEach({ $0.backgroundColor = .gray })
 		sender.backgroundColor = .blue
-		diaDiem.mien = sender.titleLabel?.text ?? ""
+		guard let titleText = sender.titleLabel?.text else { return }
+		diaDiem.local = titleText
 	}
 }
 

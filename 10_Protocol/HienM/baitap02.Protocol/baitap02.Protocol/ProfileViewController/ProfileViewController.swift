@@ -6,7 +6,7 @@ protocol ProfileViewControllerDelegate: class {
 
 final class ProfileViewController: UIViewController {
 
-	@IBOutlet private weak var avatarImage: UIImageView!
+	@IBOutlet private weak var avatarImageView: UIImageView!
 	@IBOutlet private weak var userNameTextField: UITextField!
 
 	weak var delegate: ProfileViewControllerDelegate?
@@ -20,13 +20,13 @@ final class ProfileViewController: UIViewController {
 		super.viewDidLoad()
 
 		title = "Profile"
-		let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(DoneToViewControllerAction
+		let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(popToViewController
 			))
 		navigationItem.rightBarButtonItem = rightButton
 		userNameTextField.text = name
 	}
 
-	@objc private func DoneToViewControllerAction() {
+	@objc private func popToViewController() {
 		navigationController?.popViewController(animated: true)
 		guard let name = userNameTextField.text else { return }
 		if let delegate = delegate {

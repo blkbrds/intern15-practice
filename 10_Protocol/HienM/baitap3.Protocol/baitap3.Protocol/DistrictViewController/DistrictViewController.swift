@@ -3,11 +3,11 @@ import UIKit
 final class DistrictViewController: BaseViewController {
 
 	var diaDiem: DiaDiem = DiaDiem()
-	var huyen: String?
-	var tinh: String?
-	var mien: String?
+	var district: String?
+	var province: String?
+	var local: String?
 
-	@IBOutlet private var huyenButton: [UIButton]!
+	@IBOutlet private var districtButton: [UIButton]!
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
@@ -15,7 +15,7 @@ final class DistrictViewController: BaseViewController {
 
 		title = "District"
 
-		let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(rootToHomeViewController))
+		let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(backToHomeViewControllerTouchUpInside))
 		navigationItem.rightBarButtonItem = rightButton
 
 		let backButton = UIBarButtonItem(image: UIImage(named: "back arrow"), style: .plain, target: self, action: #selector(backToProvinceViewController))
@@ -27,19 +27,19 @@ final class DistrictViewController: BaseViewController {
 	}
 
 	@IBAction private func getDistrictButtonTouchUpInside(_ sender: UIButton) {
-		huyenButton.forEach({ $0.backgroundColor = .gray })
+		districtButton.forEach({ $0.backgroundColor = .gray })
 		sender.backgroundColor = .orange
-		diaDiem.huyen = sender.titleLabel?.text ?? ""
+		diaDiem.district = sender.titleLabel?.text ?? ""
 	}
 
-	@objc private func rootToHomeViewController() {
-		huyen = diaDiem.huyen
-		tinh = diaDiem.tinh
-		mien = diaDiem.mien
+	@objc private func backToHomeViewControllerTouchUpInside() {
+		district = diaDiem.district
+		province = diaDiem.province
+		local = diaDiem.local
 
 		guard let navi = navigationController else { return }
 		for vc in navi.viewControllers where vc is HomeViewController {
-			let locationVC = vc as! HomeViewController
+			guard let locationVC = vc as? HomeViewController else {return}
 			locationVC.dataSource = self
 			locationVC.configViewController()
 			navi.popToViewController(locationVC, animated: true)
@@ -48,18 +48,18 @@ final class DistrictViewController: BaseViewController {
 }
 
 extension DistrictViewController: HomeViewControllerDataSource {
-	func getHuyen() -> String? {
-		guard let huyen = huyen else { return "" }
-		return huyen
+	func getDistrict() -> String? {
+		guard let district = district else { return "" }
+		return district
 	}
 
-	func getTinh() -> String? {
-		guard let tinh = tinh else { return "" }
-		return tinh
+	func getProvince() -> String? {
+		guard let province = province else { return "" }
+		return province
 	}
 
-	func getMien() -> String? {
-		guard let mien = mien else { return "" }
-		return mien
+	func getLocal() -> String? {
+		guard let local = local else { return "" }
+		return local
 	}
 }

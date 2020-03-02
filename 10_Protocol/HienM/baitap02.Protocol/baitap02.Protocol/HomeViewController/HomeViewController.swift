@@ -21,7 +21,7 @@ final class HomeViewController: UIViewController {
 		setupUI()
 	}
 
-	var arrayView = [AvatarView]()
+	var avatarViews = [AvatarView]()
 
 	private func setupUI() {
 
@@ -38,7 +38,7 @@ final class HomeViewController: UIViewController {
 			userView.delegate = self
 			userView.name = names[i]
 			scrollView.addSubview(userView)
-			arrayView.append(userView)
+			avatarViews.append(userView)
 		}
 	}
 }
@@ -61,7 +61,7 @@ extension HomeViewController: ProfileViewControllerDelegate {
 		switch action {
 		case .updateName(let nameUser):
 			let index = controller.view.tag
-			let arvatarView = arrayView[index]
+			let arvatarView = avatarViews[index]
 
 			arvatarView.name = nameUser
 		}

@@ -13,7 +13,7 @@ final class AvatarView: UIView {
 	}
 	weak var delegate: AvatarViewDelegate?
 
-	@IBOutlet weak private var avatarImage: UIImageView!
+	@IBOutlet weak private var avatarImageView: UIImageView!
 	@IBOutlet weak private var nameLabel: UILabel!
 
 	enum Action {

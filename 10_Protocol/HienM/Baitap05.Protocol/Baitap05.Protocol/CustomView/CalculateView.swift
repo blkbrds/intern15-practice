@@ -19,9 +19,9 @@ final class CalculateView: UIView {
 		case clearAction(clearText: String?)
 	}
 
-	@IBOutlet weak var xResultLabel: UILabel!
-	@IBOutlet weak var yResultLabel: UILabel!
-	@IBOutlet weak var resultLabel: UILabel!
+	@IBOutlet private weak var xResultLabel: UILabel!
+	@IBOutlet private weak var yResultLabel: UILabel!
+	@IBOutlet private weak var resultLabel: UILabel!
 
 	private var x: Int?
 	private var y: Int?
