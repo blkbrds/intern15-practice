@@ -4,6 +4,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var ruaViewImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,21 +21,21 @@ class ViewController: UIViewController {
         ruaViewImage.addGestureRecognizer(tapGesture)
         ruaViewImage.addGestureRecognizer(doubleTapGesture)
     }
+    
     @objc private func handleRotate(recognizer: UIRotationGestureRecognizer) {
         if let view = recognizer.view {
             view.transform = view.transform.rotated(by: recognizer.rotation)
             recognizer.rotation = 0
         }
-        print("xzv")
     }
+    
     @objc func handlePinch(recognizer: UIPinchGestureRecognizer) {
         if let view = recognizer.view {
-
             view.transform = view.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
             recognizer.scale = 1
         }
-        print("xzv1")
     }
+    
     @objc func handleTap(recognizer: UITapGestureRecognizer) {
         messageLabel.isHidden = false
         Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { _ in
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     @objc func handleDoubleTap(recognizer: UITapGestureRecognizer) {
         messageLabel.isHidden = false
         messageLabel.text = "Turtle It me"
@@ -55,4 +57,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
