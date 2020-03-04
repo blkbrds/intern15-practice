@@ -10,7 +10,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         passWordTextField.isSecureTextEntry = true
         loginButton.layer.masksToBounds = false
         loginButton.layer.cornerRadius = 5
@@ -33,7 +32,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.switchBasedNextTextField(textField)
-
         return true
     }
     
@@ -44,7 +42,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             titleHiden.isHidden = false
         } else {
             titleHiden.isHidden = true
-
         }
     }
 
@@ -52,6 +49,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userNameTextField.text = ""
         passWordTextField.text = ""
     }
-    
-    
 }

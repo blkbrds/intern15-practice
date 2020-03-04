@@ -2,11 +2,10 @@ import UIKit
 
 class MyViewController: UIViewController {
 
-    @IBOutlet weak var lineSlider: UISlider!
-    @IBOutlet weak var labelValue: UILabel!
+    @IBOutlet private weak var lineSlider: UISlider!
+    @IBOutlet private weak var labelValue: UILabel!
 
-    func DEGTORAD(deg: Double) -> CGFloat
-    {
+    func degtorad(deg: Double) -> CGFloat {
         return CGFloat(deg * M_PI / 180.0)
     }
 
@@ -18,13 +17,11 @@ class MyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        lineSlider.layer.setAffineTransform(CGAffineTransform(rotationAngle: DEGTORAD(deg: 90)))
-//        lineSlider.trackRect(forBounds: CGRect(x: 0, y: 0, width: 100, height: 100))
+        lineSlider.layer.setAffineTransform(CGAffineTransform(rotationAngle: degtorad(deg: -90)))
         lineSlider.thumbTintColor = .orange
-
     }
 
     @IBAction func sliderChangedValue(_ sender: UISlider) {
-        labelValue.text = "\(lineSlider.value * 100)"
+        labelValue.text = "\(Int(lineSlider.value * 100))"
     }
 }

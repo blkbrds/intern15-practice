@@ -9,6 +9,7 @@ class MyViewController: UIViewController {
     @IBOutlet weak var valueGreen: UILabel!
     @IBOutlet weak var changeValueTextLabel: UILabel!
     @IBOutlet weak var changeColorView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         changeColorView.backgroundColor = UIColor(red: .random(in: 0...1),
