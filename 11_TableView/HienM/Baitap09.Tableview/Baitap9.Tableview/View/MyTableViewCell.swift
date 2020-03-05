@@ -1,19 +1,19 @@
 import UIKit
 
-class MyTableViewCell: UITableViewCell {
+final class MyTableViewCell: UITableViewCell {
 
-	@IBOutlet weak  var cellImage: UIImageView!
-	@IBOutlet weak  var nameLabel: UILabel!
-	@IBOutlet weak  var subTitleLabel: UILabel!
+	@IBOutlet weak var cellImageView: UIImageView!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var subTitleLabel: UILabel!
 
-	 var name: Int?
+	var number: Int?
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
 
 	@IBAction private func tapMeButton(_ sender: Any) {
-		guard let index = name else { return }
+		guard let index = number else { return }
 		print("HomeCell->tap me : \(index)")
 	}
 }

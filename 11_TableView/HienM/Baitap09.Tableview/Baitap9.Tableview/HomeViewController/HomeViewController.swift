@@ -46,7 +46,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 		let cell = tableView.dequeueReusableCell(withIdentifier: myCell) as! MyTableViewCell
 		let user = BundleManager.share().usersArray[indexPath.section][indexPath.row]
 		cell.nameLabel.text = user.name
-		cell.name = indexPath.row
+		cell.number = indexPath.row
 		return cell
 	}
 }

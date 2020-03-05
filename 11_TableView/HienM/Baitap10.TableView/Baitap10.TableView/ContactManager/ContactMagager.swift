@@ -1,9 +1,9 @@
 import Foundation
 import ContactsUI
 
-class PhoneContacts {
+final class PhoneContacts {
 
-	open var contacts: [Contact] = []
+	var contacts: [Contact] = []
 
 	static func share () -> PhoneContacts {
 		return phoneContacts

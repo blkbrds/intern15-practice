@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Baitap12.TableView
-//
-//  Created by Ngoc Hien on 2/10/20.
-//  Copyright © 2020 NgocHien. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

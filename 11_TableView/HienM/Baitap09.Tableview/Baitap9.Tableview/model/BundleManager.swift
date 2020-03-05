@@ -1,6 +1,6 @@
 import Foundation
 
-class BundleManager {
+final class BundleManager {
 	var usersArray: [[User]] = []
 
 	static func share() -> BundleManager {

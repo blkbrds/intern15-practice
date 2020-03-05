@@ -1,9 +1,9 @@
 
 import UIKit
 
-class NavigationViewController: UIViewController {
+final class NavigationViewController: UIViewController {
 
-	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak private var nameLabel: UILabel!
 
 	var nameText: String?
 

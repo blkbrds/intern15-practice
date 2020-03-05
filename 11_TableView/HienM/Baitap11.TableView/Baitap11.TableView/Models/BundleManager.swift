@@ -1,5 +1,5 @@
 import Foundation
-class BundleManager {
+final class BundleManager {
 
 	private init() { }
 

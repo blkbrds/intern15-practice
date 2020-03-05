@@ -2,7 +2,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-	@IBOutlet weak private var SearchBar: UISearchBar!
+	@IBOutlet weak private var searchBar: UISearchBar!
 	@IBOutlet weak private var tableView: UITableView!
 
 	private var users: [User] = []

@@ -1,6 +1,6 @@
 import Contacts
 
-struct Contact {
+final class Contact {
 
 	var name: String?
     var avatarData: Data?

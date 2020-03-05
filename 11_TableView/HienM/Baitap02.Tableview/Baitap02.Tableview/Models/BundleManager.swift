@@ -1,6 +1,6 @@
 import Foundation
 
-class BundleManager {
+final class BundleManager {
 
 	static let shared: BundleManager = BundleManager()
 
