@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatePickerView" customModule="Bai4" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvT-qx-ZeC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-N8-IMa">
+                    <rect key="frame" x="0.0" y="612" width="414" height="250"/>
+                    <subviews>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egz-IW-TkR">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="pGo-lt-3uj"/>
+                            </constraints>
+                            <items>
+                                <barButtonItem title="Done" style="done" id="tfu-N3-ehJ">
+                                    <connections>
+                                        <action selector="done:" destination="iN0-l3-epB" id="ixH-Io-fLG"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="o8W-mZ-3lB">
+                            <rect key="frame" x="0.0" y="44" width="414" height="206"/>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="o8W-mZ-3lB" secondAttribute="bottom" id="3KV-rC-szB"/>
+                        <constraint firstItem="Egz-IW-TkR" firstAttribute="top" secondItem="TWk-N8-IMa" secondAttribute="top" id="4uf-pt-83E"/>
+                        <constraint firstItem="Egz-IW-TkR" firstAttribute="leading" secondItem="TWk-N8-IMa" secondAttribute="leading" id="7an-yk-t2n"/>
+                        <constraint firstAttribute="height" constant="250" id="Hsl-gZ-Zaj"/>
+                        <constraint firstAttribute="trailing" secondItem="o8W-mZ-3lB" secondAttribute="trailing" id="J9X-16-2cB"/>
+                        <constraint firstItem="o8W-mZ-3lB" firstAttribute="top" secondItem="Egz-IW-TkR" secondAttribute="bottom" id="Who-hQ-UMA"/>
+                        <constraint firstAttribute="trailing" secondItem="Egz-IW-TkR" secondAttribute="trailing" id="fhi-e4-k9o"/>
+                        <constraint firstItem="o8W-mZ-3lB" firstAttribute="leading" secondItem="TWk-N8-IMa" secondAttribute="leading" id="leM-gc-OBj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KvT-qx-ZeC" secondAttribute="bottom" id="2Ka-Hk-eUv"/>
+                <constraint firstItem="KvT-qx-ZeC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Hzk-Gb-td1"/>
+                <constraint firstItem="TWk-N8-IMa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Lre-Ek-aew"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KvT-qx-ZeC" secondAttribute="trailing" id="iqV-iL-amS"/>
+                <constraint firstItem="TWk-N8-IMa" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="kqH-ju-rtn"/>
+                <constraint firstItem="KvT-qx-ZeC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uon-qE-41U"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="TWk-N8-IMa" secondAttribute="bottom" id="zcw-1V-S2f"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backgroundView" destination="KvT-qx-ZeC" id="Knw-fK-HjJ"/>
+                <outlet property="contentView" destination="TWk-N8-IMa" id="Vgs-iN-K1i"/>
+                <outlet property="datePickerView" destination="o8W-mZ-3lB" id="Ff5-1U-vsY"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </view>
+    </objects>
+</document>
