@@ -10,7 +10,7 @@ enum soNghiem {
     case voSoNghiem
     case nghiemKep (x: Float)
 }
-func canBacHai(a: Float, b: Float, c: Float) -> soNghiem {
+func giaiPhuongTrinhBacHai(a: Float, b: Float, c: Float) -> soNghiem {
     if a == 0 {
         if b == 0 {
             if c == 0 {
@@ -31,4 +31,4 @@ func canBacHai(a: Float, b: Float, c: Float) -> soNghiem {
     }
 }
 
-canBacHai(a: 0, b: 0, c: -6)
+giaiPhuongTrinhBacHai(a: 0, b: 0, c: -6)

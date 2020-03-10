@@ -1,14 +1,14 @@
 import UIKit
 
-func tinhSvaV(R: Float, pi: Float) -> String{
+func tinhSvaV(r: Float, pi: Float) -> String{
     
     
-    let S = R * R * 4 * pi
-    print (S)
-    let V = 4 / 3 * (pi * R * R * R)
-    print  (V)
+    let s = r * r * 4 * pi
+    print (s)
+    let v = 4 / 3 * (pi * r * r * r)
+    print  (v)
     
-    return " Dien tich mat cau la \(S) , the tich mat cau la \(V)"
+    return " Dien tich mat cau la \(s) , the tich mat cau la \(v)"
 }
-tinhSvaV(R: 10, pi: 3.14)
+tinhSvaV(r: 10, pi: 3.14)
 
