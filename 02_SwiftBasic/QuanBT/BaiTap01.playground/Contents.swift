@@ -1,10 +1,10 @@
 import UIKit
 
-func areaAndVolume(_ r: Double) -> (Double, Double){
+func areaAndVolume(radius: Double) -> (Double, Double){
     let pi: Double = 3.14159
-    let s: Double = 4 / 3 * pi * pow(r, 3)
-    let v: Double = 4 * pi * pow(r, 2)
-    return (s , v)
+    let acreage: Double = 4 / 3 * pi * pow(radius, 3)
+    let volume: Double = 4 * pi * pow(radius, 2)
+    return (acreage, volume)
 }
-print(areaAndVolume(3))
+print(areaAndVolume(radius: 3))
 

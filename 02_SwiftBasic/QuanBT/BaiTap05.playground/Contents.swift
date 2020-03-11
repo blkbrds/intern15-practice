@@ -1,27 +1,27 @@
 import UIKit
 
-func findString(_ string: String,_ substring: String ) -> Int{
-    let x =  Array(string)
-    let y = Array(substring)
-    var n = 0, i = 0, m = 0, t = 0
-    while n < x.count {
-        i = n
-        var d = 0
-        while m < y.count {
-            if(y[m] == x[i]){
-                d += 1
+func findString(string: String, substring: String) -> Int{
+    let arr1 =  Array(string)
+    let arr2 = Array(substring)
+    var count = 0, temp = 0, count2 = 0, result = 0
+    while count < arr1.count {
+        temp = count
+        var test = 0
+        while count2 < arr2.count {
+            if(arr2[count2] == arr1[temp]) {
+                test += 1
             }
-            m += 1
-            i += 1
-            if( d == y.count){
-                t += 1
+            count2 += 1
+            temp += 1
+            if( test == arr2.count) {
+                result += 1
             }
         }
-        if (n < x.count - y.count) {
-            m = 0
+        if(count < arr1.count - arr2.count) {
+            count2 = 0
         }
-        n += 1
+        count += 1
     }
-    return t
+    return result
 }
-print(findString("abababaabaaabababaaab","ab"))
+print(findString(string: "aababaabaaabababaaab", substring: "ab"))
