@@ -15,7 +15,7 @@ class AvatarViewController: UIViewController {
         view.addSubview(myScrollView)
         for i in 1..<name.count + 1 {
             let frame = CGRect(x: xSpacing, y: ySpaceing, width: 100, height: 200)
-            let avatarView = MyAvatar(frame: frame)
+            let avatarView = AvatarView(frame: frame)
             avatarView.delegate = self
             avatarView.userNameLabel?.text = name[i - 1]
             xSpacing += 110
@@ -29,7 +29,7 @@ class AvatarViewController: UIViewController {
 }
 
 extension AvatarViewController: MyAvatarDelegate {
-    func myAvatar(_ myAvatar: MyAvatar, didSelect index: Int) {
+    func myAvatar(_ myAvatar: AvatarView, didSelect index: Int) {
         print("asdasd")
     }
 }

@@ -1,11 +1,3 @@
-//
-//  MySliderViewController.swift
-//  BaiTapCustomView
-//
-//  Created by TranVanTien on 11/15/19.
-//  Copyright © 2019 TranVanTien. All rights reserved.
-//
-
 import UIKit
 
 final class MySliderViewController: UIViewController {

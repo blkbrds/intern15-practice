@@ -17,7 +17,7 @@ final class DatePickerViewController: UIViewController {
 }
 
 extension DatePickerViewController: DatePickerViewDelegate {
-  func selectDate(pickerView: DatePickerView, action: DatePickerView.Action, selectDate: Date?) {
+  func datePickerView(_ pickerView: DatePickerView, action: DatePickerView.Action, selectDate: Date?) {
     guard let date = selectDate else { return }
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "MMMM dd, yyyy"

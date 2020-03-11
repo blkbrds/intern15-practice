@@ -1,7 +1,7 @@
 import UIKit
 
 protocol DatePickerViewDelegate: class {
-    func selectDate(pickerView: DatePickerView, action: DatePickerView.Action, selectDate: Date?)
+    func datePickerView(_ datePicker: DatePickerView, needsPerformAction action: DatePickerView.Action, selectDate: Date?)
 }
 
 class DatePickerView: UIView {
@@ -55,7 +55,7 @@ class DatePickerView: UIView {
     @IBAction func done(_ sender: Any) {
         hide(animation: true)
         guard let delegate = delegate else { return }
-        delegate.selectDate(pickerView: self, action: .done, selectDate: datePickerView.date)
+        delegate.datePickerView(self, needsPerformAction: .done, selectDate: datePickerView.date)
     }
 
 }

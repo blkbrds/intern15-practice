@@ -1,11 +1,3 @@
-//
-//  MySlider.swift
-//  BaiTapCustomView
-//
-//  Created by TranVanTien on 11/16/19.
-//  Copyright © 2019 TranVanTien. All rights reserved.
-//
-
 import UIKit
 
 protocol MySliderViewDelegate: class {

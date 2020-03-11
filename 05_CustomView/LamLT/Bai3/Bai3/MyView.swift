@@ -9,7 +9,7 @@ class MyView: UIView {
     @IBOutlet weak var badgeFriendLabel: UILabel!
     @IBOutlet weak var badgeEmailLabel: UILabel!
     @IBOutlet weak var badgePhotoLabel: UILabel!
-    
+
     var widthStyle: CGFloat = 40
     var heightStyle: CGFloat = 30
     var count = 0
@@ -33,12 +33,13 @@ class MyView: UIView {
 
     @IBAction func clickFriendButtonTouchUpInside(_ sender: UIButton) {
         widthStyle += 1
-               heightStyle += 1
-               count += 1
-               badgeFriendLabel.isHidden = false
-               badgeFriendLabel.text = "\(count)"
-               badgeFriendLabel.frame = CGRect(x: badgeFriendLabel.frame.minX, y: badgeFriendLabel.frame.minY, width: widthStyle, height: heightStyle)
+        heightStyle += 1
+        count += 1
+        badgeFriendLabel.isHidden = false
+        badgeFriendLabel.text = "\(count)"
+        badgeFriendLabel.frame = CGRect(x: badgeFriendLabel.frame.minX, y: badgeFriendLabel.frame.minY, width: widthStyle, height: heightStyle)
     }
+
     @IBAction func clickPhotosButtonTouchUpInside(_ sender: UIButton) {
         widthStyle += 1
         heightStyle += 1
@@ -48,4 +49,3 @@ class MyView: UIView {
         badgePhotoLabel.frame = CGRect(x: badgePhotoLabel.frame.minX, y: badgePhotoLabel.frame.minY, width: widthStyle, height: heightStyle)
     }
 }
-

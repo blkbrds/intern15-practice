@@ -1,17 +1,18 @@
 import UIKit
-protocol  MyAvatarDelegate: class{
-    func myAvatar(_ myAvatar: MyAvatar, didSelect index: Int)
+protocol MyAvatarDelegate: class {
+    func avatarView(_ myAvatar: AvatarView, didSelect index: Int)
 }
-class MyAvatar: UIView {
-    
+class AvatarView: UIView {
+
     weak var delegate: MyAvatarDelegate?
-    
+
     var count: Int = 0
     var userAvatarImageView: UIImageView?
     var userNameLabel: UILabel?
-    override init(frame: CGRect){
+
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         userAvatarImageView = UIImageView(image: UIImage(named: "uss"))
         userAvatarImageView?.frame = frame
@@ -32,14 +33,14 @@ class MyAvatar: UIView {
         buttonUser.addTarget(self, action: #selector(buttonDidClick), for: .touchUpInside)
         addSubview(buttonUser)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     @objc func buttonDidClick() {
         count += 1
         userNameLabel?.text = "\(count)"
-        delegate?.myAvatar(self, didSelect: 10)
+        delegate?.avatarView(self, didSelect: 10)
     }
 }
