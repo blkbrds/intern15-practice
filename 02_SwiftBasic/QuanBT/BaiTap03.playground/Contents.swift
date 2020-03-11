@@ -1,17 +1,17 @@
 import UIKit
 
-func equations(a1: Double, b1: Double, c1: Double, a2: Double, b2: Double, c2: Double) -> String{
+func equations(a1: Double, b1: Double, c1: Double, a2: Double, b2: Double, c2: Double) -> String {
     let d = a1 * b2 - a2 * b1
     let dx = c1 * b2 - c2 * b1
     let dy = a1 * c2 - a2 * c1
     
-    if(d == 0){
-        if( dx + dy == 0){
+    if d==0 {
+        if dx + dy==0 {
             return "Hệ phương trình có vô số nghiệm"
-        }else {
+        } else {
             return "Hệ phương trình vô nghiệm"
         }
-    }else{
+    } else {
         let x = dx / d
         let y = dy / d
         return "Hệ phương trình có nghiệm (x,y) là (\(x),\(y))"
