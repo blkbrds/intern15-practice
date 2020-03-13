@@ -17,9 +17,9 @@ final class Dates {
         case 11, 9, 6, 4:
             result = 30
         default:
-            if self.year % 100==0 && self.year % 400==0 {
+            if self.year % 100 == 0 && self.year % 400 == 0 {
                 result = 29
-            } else if self.year % 4==0 {
+            } else if self.year % 4 == 0 {
                 result = 29
             } else {
                 result = 28
@@ -33,13 +33,13 @@ final class Dates {
     }
     
     func normalize() {
-        if self.day>daysIn() || self.day<1 {
+        if self.day > daysIn() || self.day < 1 {
             self.day = 14
         }
-        if self.month>12 || self.month<1 {
+        if self.month > 12 || self.month < 1 {
             self.month = 2
         }
-        if self.year<1 {
+        if self.year < 1 {
             self.year = 1998
         }
     }

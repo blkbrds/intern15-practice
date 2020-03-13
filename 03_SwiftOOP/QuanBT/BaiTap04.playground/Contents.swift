@@ -13,7 +13,7 @@ final class TestPitago {
         let edge1 = triangle.0
         let edge2 = triangle.1
         let edge3 = triangle.2
-            if edge1 * edge1==(edge2 * edge2 + edge3 * edge3) || edge2 * edge2==(edge1 * edge1 + edge3 * edge3) || edge3 * edge3==(edge1 * edge1 + edge2 * edge2) {
+            if edge1 * edge1 == (edge2 * edge2 + edge3 * edge3) || edge2 * edge2 == (edge1 * edge1 + edge3 * edge3) || edge3 * edge3 == (edge1 * edge1 + edge2 * edge2) {
                 return true
             } else {
                 return false
@@ -22,7 +22,7 @@ final class TestPitago {
     
     func printTriangle() {
         var i = 0
-        while i<self.n {
+        while i < self.n {
             if pitago(triangle: self.triangles[i]) {
                 print(self.triangles[i])
             }

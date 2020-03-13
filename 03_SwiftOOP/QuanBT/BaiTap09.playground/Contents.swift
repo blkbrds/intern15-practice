@@ -16,10 +16,10 @@ final class OneDimensionalArray {
     func minMaxArray() {
         var min = self.arr[0], max = self.arr[0]
         for item in self.arr {
-            if min>item {
+            if min > item {
                 min = item
             }
-            if max<item {
+            if max < item {
                 max = item
             }
         }

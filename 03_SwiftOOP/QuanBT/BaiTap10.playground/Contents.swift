@@ -9,7 +9,7 @@ final class A {
     
     func sum() {
         var sum = 0
-        for item in 1..<self.n+1 {
+        for item in 1 ..< self.n+1 {
             sum += item
         }
         print("Tổng của \(self.n) số nguyên là: \(sum)")

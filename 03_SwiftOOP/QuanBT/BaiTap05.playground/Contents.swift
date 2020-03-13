@@ -10,7 +10,7 @@ final class CStack {
     }
     
     func emptyTest() {
-        if self.stack.count==0 {
+        if self.stack.count == 0 {
             print("Stack của bạn rỗng")
         } else {
             print("Stack của bạn không rỗng")
@@ -18,7 +18,7 @@ final class CStack {
     }
     
     func fullTest() {
-        if self.numberOfElements==self.stack.count {
+        if self.numberOfElements == self.stack.count {
             print("Stack của bạn đã đầy")
         } else {
             print("Stack của bạn chưa đầy")
@@ -26,7 +26,7 @@ final class CStack {
     }
     
     func addElement(additionalElement: Int) {
-        if self.numberOfElements>self.stack.count {
+        if self.numberOfElements > self.stack.count {
             self.stack.append(additionalElement)
         } else {
             fullTest()
@@ -34,7 +34,7 @@ final class CStack {
     }
     
     func deleteElement() {
-        if self.stack.count>0 {
+        if self.stack.count > 0 {
             self.stack.remove(at: self.stack.count - 1)
         } else {
             print("Stack đã hết phần tử để xoá")

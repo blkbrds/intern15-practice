@@ -31,14 +31,14 @@ final class StudentArrangements {
     
     func sort() {
         var temp: Students
-        for item in 0..<self.n-1 {
-            for i in item+1..<self.n {
-                if self.arr[i].totalScore>self.arr[item].totalScore {
+        for item in 0 ..< self.n-1 {
+            for i in item+1 ..< self.n {
+                if self.arr[i].totalScore > self.arr[item].totalScore {
                     temp = self.arr[item]
                     self.arr[item] = self.arr[i]
                     self.arr[i] = temp
-                } else if self.arr[item].totalScore==self.arr[i].totalScore {
-                    if self.arr[item].yearOfBirth>self.arr[i].yearOfBirth {
+                } else if self.arr[item].totalScore == self.arr[i].totalScore {
+                    if self.arr[item].yearOfBirth > self.arr[i].yearOfBirth {
                         temp = self.arr[item]
                         self.arr[item] = self.arr[i]
                         self.arr[i] = temp
@@ -49,7 +49,7 @@ final class StudentArrangements {
     }
     
     func printStudens() {
-        for item in 0..<self.n {
+        for item in 0 ..< self.n {
             self.arr[item].nameFormat()
             print(self.arr[item].toString())
         }
