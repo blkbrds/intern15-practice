@@ -16,7 +16,7 @@ final class ViewController: UIViewController {
         // Ve hinh tron
         let rec = CircleView(frame: CGRect(x: 20.0, y: 50.0, width: view.bounds.width - 80, height: 250.0))
         // Xet gia tri cho tung part cua hinh tron
-        rec.values = [30, 60, 90, 60, 120, 90, 50]
+        rec.values = [20,30,40]
         view.addSubview(rec)
 
         // Ve bieu do
