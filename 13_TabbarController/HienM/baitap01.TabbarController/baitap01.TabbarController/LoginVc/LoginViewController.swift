@@ -9,6 +9,7 @@ final class LoginViewController: BaseViewController {
 	@IBOutlet weak private var passwordTextField: UITextField!
 	@IBOutlet weak private var userNameTextField: UITextField!
 
+	// MARK: - Life cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		title = "Home"
@@ -16,7 +17,7 @@ final class LoginViewController: BaseViewController {
 		setupUI()
 	}
 
-	private func configData(userName: String, password: String) {
+	func configData(userName: String, password: String) {
 		userNameText = userName
 		passwordText = password
 	}

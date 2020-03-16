@@ -3,7 +3,7 @@ import UIKit
 final class RegisterViewController: BaseViewController {
 	
 	@IBOutlet weak private var nameAccountTextField: UITextField!
-	@IBOutlet weak private var ConfirmTextField: UITextField!
+	@IBOutlet weak private var confirmTextField: UITextField!
 	@IBOutlet weak private var passwordAccountTextField: UITextField!
 
 	let loginVC = LoginViewController()
@@ -18,6 +18,7 @@ final class RegisterViewController: BaseViewController {
 		}
 	}
 
+	// MARK: - Life cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		title = "Register"

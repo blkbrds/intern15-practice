@@ -2,6 +2,7 @@ import UIKit
 
 final class ProfileViewController: BaseViewController {
 
+	// MARK: - Life cycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		title = "Profile"
