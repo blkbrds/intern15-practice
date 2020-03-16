@@ -2,20 +2,20 @@ import UIKit
 
 final class ColorViewController: UIViewController {
 
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var viewColor: UIView!
-    @IBOutlet weak var sliderRed: UISlider!
-    @IBOutlet weak var sliderGreen: UISlider!
-    @IBOutlet weak var sliderBlue: UISlider!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var blueSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewColor.layer.cornerRadius = 40
-        viewColor.clipsToBounds = true
+        colorView.layer.cornerRadius = 40
+        colorView.clipsToBounds = true
     }
 
     @IBAction func actionChangeColor(_ sender: Any) {
-        viewColor.backgroundColor = UIColor(red: CGFloat(sliderRed.value)/255, green: CGFloat(sliderGreen.value)/255, blue: CGFloat(sliderBlue.value)/255, alpha: 1)
-        labelTitle.text = "Color(R: \(Int(sliderRed.value)), G: \(Int(sliderGreen.value)), B: \(Int(sliderBlue.value)))"
+        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
+        titleLabel.text = "Color(R: \(Int(redSlider.value)), G: \(Int(greenSlider.value)), B: \(Int(blueSlider.value)))"
     }
 }
