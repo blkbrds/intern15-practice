@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A4BE9E9B241F19D000CAA482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE9E9A241F19D000CAA482 /* AppDelegate.swift */; };
+		A4BE9E9D241F19D000CAA482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE9E9C241F19D000CAA482 /* SceneDelegate.swift */; };
+		A4BE9EA4241F19D100CAA482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BE9EA3241F19D100CAA482 /* Assets.xcassets */; };
+		A4BE9EA7241F19D100CAA482 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4BE9EA5241F19D100CAA482 /* LaunchScreen.storyboard */; };
+		A4BE9EB1241F1A4800CAA482 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE9EAF241F1A4800CAA482 /* MyViewController.swift */; };
+		A4BE9EB2241F1A4800CAA482 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BE9EB0241F1A4800CAA482 /* MyViewController.xib */; };
+		A4BE9EB5241F1BB300CAA482 /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4BE9EB4241F1BB300CAA482 /* avatar.jpg */; };
+		A4BE9EBE241F236400CAA482 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE9EBD241F236400CAA482 /* AvatarViewController.swift */; };
+		A4BE9EC0241F237600CAA482 /* AvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BE9EBF241F237600CAA482 /* AvatarViewController.xib */; };
+		A4BE9EC3241F26A000CAA482 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE9EC2241F26A000CAA482 /* LoginViewController.swift */; };
+		A4BE9EC5241F26BA00CAA482 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BE9EC4241F26BA00CAA482 /* LoginViewController.xib */; };
+		A4BE9EC8241F2C5C00CAA482 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE9EC7241F2C5C00CAA482 /* ColorViewController.swift */; };
+		A4BE9ECA241F2C6B00CAA482 /* ColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4BE9EC9241F2C6B00CAA482 /* ColorViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A4BE9E97241F19D000CAA482 /* BaiTapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BE9E9A241F19D000CAA482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4BE9E9C241F19D000CAA482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A4BE9EA3241F19D100CAA482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4BE9EA6241F19D100CAA482 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A4BE9EA8241F19D100CAA482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4BE9EAF241F1A4800CAA482 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		A4BE9EB0241F1A4800CAA482 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		A4BE9EB4241F1BB300CAA482 /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
+		A4BE9EBD241F236400CAA482 /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		A4BE9EBF241F237600CAA482 /* AvatarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarViewController.xib; sourceTree = "<group>"; };
+		A4BE9EC2241F26A000CAA482 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A4BE9EC4241F26BA00CAA482 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A4BE9EC7241F2C5C00CAA482 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		A4BE9EC9241F2C6B00CAA482 /* ColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4BE9E94241F19D000CAA482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4BE9E8E241F19D000CAA482 = {
+			isa = PBXGroup;
+			children = (
+				A4BE9E99241F19D000CAA482 /* BaiTapView */,
+				A4BE9E98241F19D000CAA482 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4BE9E98241F19D000CAA482 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE9E97241F19D000CAA482 /* BaiTapView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A4BE9E99241F19D000CAA482 /* BaiTapView */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE9EC6241F2B0400CAA482 /* BaiTap04 */,
+				A4BE9EC1241F260600CAA482 /* BaiTap03 */,
+				A4BE9EB6241F1BCD00CAA482 /* BaiTap02 */,
+				A4BE9EB3241F1B7F00CAA482 /* Image */,
+				A4BE9EAE241F1A2D00CAA482 /* BaiTap01 */,
+				A4BE9E9A241F19D000CAA482 /* AppDelegate.swift */,
+				A4BE9E9C241F19D000CAA482 /* SceneDelegate.swift */,
+				A4BE9EA3241F19D100CAA482 /* Assets.xcassets */,
+				A4BE9EA5241F19D100CAA482 /* LaunchScreen.storyboard */,
+				A4BE9EA8241F19D100CAA482 /* Info.plist */,
+			);
+			path = BaiTapView;
+			sourceTree = "<group>";
+		};
+		A4BE9EAE241F1A2D00CAA482 /* BaiTap01 */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE9EAF241F1A4800CAA482 /* MyViewController.swift */,
+				A4BE9EB0241F1A4800CAA482 /* MyViewController.xib */,
+			);
+			path = BaiTap01;
+			sourceTree = "<group>";
+		};
+		A4BE9EB3241F1B7F00CAA482 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE9EB4241F1BB300CAA482 /* avatar.jpg */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A4BE9EB6241F1BCD00CAA482 /* BaiTap02 */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE9EBD241F236400CAA482 /* AvatarViewController.swift */,
+				A4BE9EBF241F237600CAA482 /* AvatarViewController.xib */,
+			);
+			path = BaiTap02;
+			sourceTree = "<group>";
+		};
+		A4BE9EC1241F260600CAA482 /* BaiTap03 */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE9EC2241F26A000CAA482 /* LoginViewController.swift */,
+				A4BE9EC4241F26BA00CAA482 /* LoginViewController.xib */,
+			);
+			path = BaiTap03;
+			sourceTree = "<group>";
+		};
+		A4BE9EC6241F2B0400CAA482 /* BaiTap04 */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE9EC7241F2C5C00CAA482 /* ColorViewController.swift */,
+				A4BE9EC9241F2C6B00CAA482 /* ColorViewController.xib */,
+			);
+			path = BaiTap04;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A4BE9E96241F19D000CAA482 /* BaiTapView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4BE9EAB241F19D100CAA482 /* Build configuration list for PBXNativeTarget "BaiTapView" */;
+			buildPhases = (
+				A4BE9E93241F19D000CAA482 /* Sources */,
+				A4BE9E94241F19D000CAA482 /* Frameworks */,
+				A4BE9E95241F19D000CAA482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaiTapView;
+			productName = BaiTapView;
+			productReference = A4BE9E97241F19D000CAA482 /* BaiTapView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A4BE9E8F241F19D000CAA482 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = QuanBT;
+				TargetAttributes = {
+					A4BE9E96241F19D000CAA482 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A4BE9E92241F19D000CAA482 /* Build configuration list for PBXProject "BaiTapView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4BE9E8E241F19D000CAA482;
+			productRefGroup = A4BE9E98241F19D000CAA482 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A4BE9E96241F19D000CAA482 /* BaiTapView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A4BE9E95241F19D000CAA482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4BE9EC0241F237600CAA482 /* AvatarViewController.xib in Resources */,
+				A4BE9EB5241F1BB300CAA482 /* avatar.jpg in Resources */,
+				A4BE9EC5241F26BA00CAA482 /* LoginViewController.xib in Resources */,
+				A4BE9EA7241F19D100CAA482 /* LaunchScreen.storyboard in Resources */,
+				A4BE9EA4241F19D100CAA482 /* Assets.xcassets in Resources */,
+				A4BE9ECA241F2C6B00CAA482 /* ColorViewController.xib in Resources */,
+				A4BE9EB2241F1A4800CAA482 /* MyViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A4BE9E93241F19D000CAA482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4BE9E9B241F19D000CAA482 /* AppDelegate.swift in Sources */,
+				A4BE9EB1241F1A4800CAA482 /* MyViewController.swift in Sources */,
+				A4BE9E9D241F19D000CAA482 /* SceneDelegate.swift in Sources */,
+				A4BE9EC3241F26A000CAA482 /* LoginViewController.swift in Sources */,
+				A4BE9EC8241F2C5C00CAA482 /* ColorViewController.swift in Sources */,
+				A4BE9EBE241F236400CAA482 /* AvatarViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A4BE9EA5241F19D100CAA482 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A4BE9EA6241F19D100CAA482 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A4BE9EA9241F19D100CAA482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A4BE9EAA241F19D100CAA482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A4BE9EAC241F19D100CAA482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BaiTapView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QuanBT.BaiTapView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A4BE9EAD241F19D100CAA482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BaiTapView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QuanBT.BaiTapView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A4BE9E92241F19D000CAA482 /* Build configuration list for PBXProject "BaiTapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BE9EA9241F19D100CAA482 /* Debug */,
+				A4BE9EAA241F19D100CAA482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4BE9EAB241F19D100CAA482 /* Build configuration list for PBXNativeTarget "BaiTapView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4BE9EAC241F19D100CAA482 /* Debug */,
+				A4BE9EAD241F19D100CAA482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A4BE9E8F241F19D000CAA482 /* Project object */;
+}
