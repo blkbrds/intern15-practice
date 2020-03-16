@@ -1,7 +1,7 @@
 import UIKit
 
-class AvatarViewController: UIViewController {
-    var arrUsers = [1,2,3,4,5,6,7,8,9]
+final class AvatarViewController: UIViewController {
+    var arrUsers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     var arrImage = ["avatar.jpg","avatar.jpg","avatar.jpg","avatar.jpg","avatar.jpg",
                     "avatar.jpg","avatar.jpg","avatar.jpg","avatar.jpg"]
     @IBOutlet var labelNames: [UILabel]!
@@ -28,7 +28,4 @@ class AvatarViewController: UIViewController {
             }
         }
     }
-        
 }
-
-

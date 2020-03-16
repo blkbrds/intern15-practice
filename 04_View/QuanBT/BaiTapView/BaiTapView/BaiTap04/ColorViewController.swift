@@ -1,6 +1,6 @@
 import UIKit
 
-class ColorViewController: UIViewController {
+final class ColorViewController: UIViewController {
 
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var viewColor: UIView!
@@ -14,7 +14,7 @@ class ColorViewController: UIViewController {
         viewColor.clipsToBounds = true
     }
 
-    @IBAction func actionRed(_ sender: Any) {
+    @IBAction func actionChangeColor(_ sender: Any) {
         viewColor.backgroundColor = UIColor(red: CGFloat(sliderRed.value)/255, green: CGFloat(sliderGreen.value)/255, blue: CGFloat(sliderBlue.value)/255, alpha: 1)
         labelTitle.text = "Color(R: \(Int(sliderRed.value)), G: \(Int(sliderGreen.value)), B: \(Int(sliderBlue.value)))"
     }
