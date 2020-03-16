@@ -1,16 +1,13 @@
 import UIKit
-func timchuoi (mom : String,str2: String) -> Int {
-    var x = [Character](str1)
-    var y = [Character](str2)
-    let a = x.count
-    let b = y.count
-    var s : Int = 0;
-    for (i,_) in x.enumerated(){
-        for (j in 0..<b{
-            if(i == a){
-                i += 1
-            }
-            if(
+func solaxuathienchuoicontrongchuoime(str1: String, str2: String) -> Int {
+    var dem: Int = 0
+    var arr1 = Array(str1)
+    var arr2 = Array(str2)
+    for i in 0..<arr1.count {
+        if arr2[0] == arr1[i] && arr2[1] == arr1[i + 1] {
+            dem = dem + 1
         }
     }
+    return dem
 }
+print(solaxuathienchuoicontrongchuoime(str1: "ababababaab",str2:"ab"))

@@ -1,5 +1,5 @@
 import UIKit
-func ptbacnhat2anso(a1 : Double,
+func ptBacNhat2AnSo(a1 : Double,
                     a2 : Double,
                     b1 : Double,
                     b2 : Double,
@@ -12,4 +12,4 @@ func ptbacnhat2anso(a1 : Double,
     let y : Double = Dy / D
     return(x,y)
 }
-print(ptbacnhat2anso(a1: 1, a2: 2, b1: 3, b2: 1, c1: 1, c2: 2))
+print(ptBacNhat2AnSo(a1: 1, a2: 2, b1: 3, b2: 1, c1: 1, c2: 2))

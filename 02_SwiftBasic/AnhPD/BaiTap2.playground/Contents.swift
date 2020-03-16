@@ -1,5 +1,5 @@
 import UIKit
-func ptbac2(a : Double,b : Double,c : Double) -> String {
+func ptBac2(a : Double,b : Double,c : Double) -> String {
     let Delta : Double = ((b * b) - (4 * a * c))
     if (Delta < 0) {
         return("Phương trình vô nghiệm")
@@ -12,4 +12,4 @@ func ptbac2(a : Double,b : Double,c : Double) -> String {
         return("Phương trình có 2 nghiệm phân biệt \(x1) và \(x2)")
     }
 }
-ptbac2(a: 10, b: 1, c: 2)
+print(ptBac2(a: 1, b: 4, c: 2))
