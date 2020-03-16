@@ -2,6 +2,8 @@ import UIKit
 
 class ChartViewController: UIViewController {
     var ballColor: UIColor = .green
+    
+    var x: Int = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         drawLine(start: CGPoint(x: 50, y: 100), end: CGPoint(x: 50, y: 500))
