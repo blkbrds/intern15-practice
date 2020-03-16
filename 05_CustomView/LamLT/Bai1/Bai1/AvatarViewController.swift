@@ -5,7 +5,7 @@ class AvatarViewController: UIViewController {
     var xSpacing = 20
     var ySpaceing = 30
     var names = ["Jack", "SISO", "TIDE", "OBAMA", "OMO", "SIRO", "TURTEL", "JEANNE", "JESSI"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let screenSize = UIScreen.main.bounds
@@ -29,7 +29,7 @@ class AvatarViewController: UIViewController {
 }
 
 extension AvatarViewController: MyAvatarDelegate {
-    func myAvatar(_ myAvatar: AvatarView, didSelect index: Int) {
-        print("asdasd")
+    func avatarView(_ myAvatar: AvatarView, didSelect index: Int) {
+        <#code#>
     }
 }
