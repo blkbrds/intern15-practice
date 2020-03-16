@@ -16,8 +16,24 @@ typealias Completion<Value> = (Result<Value>) -> Void
 typealias APICompletion = (APIResult) -> Void
 
 enum APIResult {
-    case success(Data?)
+    case success
     case failure(Error)
+}
+
+// MARK: - Equatable
+
+extension APIResult: Equatable {
+
+    public static func == (lhs: APIResult, rhs: APIResult) -> Bool {
+        switch (lhs, rhs) {
+        case (.success, .success):
+            return true
+        case (.failure(let lhsError), .failure(let rhsError)):
+            return lhsError.code == rhsError.code && lhsError.localizedDescription == rhsError.localizedDescription
+        default:
+            return false
+        }
+    }
 }
 
 // MARK: - Get error for api result
@@ -33,20 +49,13 @@ extension APIResult {
     }
 }
 
-struct ApiManager {
+let api = ApiManager()
 
-    struct Path {
-        static let baseURL = "https://api.foursquare.com/v2/"
-        static let baseURLDirection = "https://maps.googleapis.com/maps/api/directions/json?"
-    }
-    
-    struct Key {
-        static let GoogleAPI = "AIzaSyAZGlweYtcWgzVKTUt5nz961P0ipsCtO3c"
-    }
-    
-    struct Places {}
+final class ApiManager {
 
-    struct Downloader {}
-    
-    struct Direction {}
+    var defaultHTTPHeaders: [String: String] {
+        var headers: [String: String] = [:]
+        headers["Content-Type"] = "application/json"
+        return headers
+    }
 }

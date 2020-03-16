@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DistrictViewController" customModule="baitap3_Protocol" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="districtButton" destination="fay-dm-7FY" collectionClass="NSMutableArray" id="JUz-QZ-ovE"/>
+                <outletCollection property="districtButton" destination="uky-ft-PMH" collectionClass="NSMutableArray" id="8UX-IC-ffP"/>
+                <outletCollection property="districtButton" destination="mtb-di-kps" collectionClass="NSMutableArray" id="gve-as-lda"/>
+                <outletCollection property="districtButton" destination="sbC-jT-7SD" collectionClass="NSMutableArray" id="SO7-6L-waA"/>
+                <outletCollection property="districtButton" destination="zKd-av-Vm1" collectionClass="NSMutableArray" id="M61-ih-grb"/>
+                <outletCollection property="districtButton" destination="nxO-8T-GL1" collectionClass="NSMutableArray" id="7dh-pK-gjD"/>
+                <outletCollection property="districtButton" destination="hvi-OM-mAM" collectionClass="NSMutableArray" id="YlS-ZL-MyX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="MvB-hp-q6m">
+                    <rect key="frame" x="107" y="245" width="200" height="406"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fay-dm-7FY">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="0VT-RY-5xr"/>
+                                <constraint firstAttribute="height" constant="40" id="cgA-m6-ToI"/>
+                            </constraints>
+                            <state key="normal" title="Huyện 1">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getDistrictButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="3qj-fr-lAe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uky-ft-PMH">
+                            <rect key="frame" x="0.0" y="71" width="200" height="30"/>
+                            <state key="normal" title="Huyện 2">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getDistrictButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="I5R-Yt-Eby"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtb-di-kps">
+                            <rect key="frame" x="0.0" y="132" width="200" height="30"/>
+                            <state key="normal" title="Huyện 3">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getDistrictButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="J5u-2k-Uko"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbC-jT-7SD">
+                            <rect key="frame" x="0.0" y="193" width="200" height="30"/>
+                            <state key="normal" title="Huyện 4">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getDistrictButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="90A-2m-H79"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKd-av-Vm1">
+                            <rect key="frame" x="0.0" y="254" width="200" height="30"/>
+                            <state key="normal" title="Huyện 5">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getDistrictButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="R6S-zs-POi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxO-8T-GL1">
+                            <rect key="frame" x="0.0" y="315" width="200" height="30"/>
+                            <state key="normal" title="Huyện 6">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getDistrictButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="ESV-YR-Imo"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvi-OM-mAM">
+                            <rect key="frame" x="0.0" y="376" width="200" height="30"/>
+                            <state key="normal" title="Huyện 7">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="getDistrictButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="D7H-zH-2fb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="MvB-hp-q6m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mib-fn-LLU"/>
+                <constraint firstItem="MvB-hp-q6m" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Wao-29-gdl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="137"/>
+        </view>
+    </objects>
+</document>
