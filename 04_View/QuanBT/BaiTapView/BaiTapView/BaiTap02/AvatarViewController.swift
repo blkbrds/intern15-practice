@@ -1,16 +1,18 @@
 import UIKit
 
 final class AvatarViewController: UIViewController {
-    var usernames = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    var images = ["avatar.jpg","avatar.jpg","avatar.jpg","avatar.jpg","avatar.jpg",
-                    "avatar.jpg","avatar.jpg","avatar.jpg","avatar.jpg"]
+    var usernames = Array(1...9)
+    var images = Array(repeating: "avatar.jpg", count: 9)
     @IBOutlet var usernameLabels: [UILabel]!
     @IBOutlet var imageViews: [UIImageView]!
-    @IBOutlet var buttons: [UIButton]!
+    @IBOutlet var nameButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setView()
+    }
+    
+    func setView() {
         for index in 0 ..< usernameLabels.count {
             usernameLabels[index].text = "Name \(usernames[index])"
         }
@@ -20,10 +22,10 @@ final class AvatarViewController: UIViewController {
             imageViews[i].contentMode = .scaleToFill
         }
     }
-  
-    @IBAction func printName1(_ sender: UIButton) {
-        for index in 0 ..< buttons.count {
-            if sender == buttons[index] {
+    
+    @IBAction func printUsername(_ sender: UIButton) {
+        for index in 0 ..< nameButtons.count {
+            if sender == nameButtons[index] {
                 print("Name \(usernames[index])")
             }
         }

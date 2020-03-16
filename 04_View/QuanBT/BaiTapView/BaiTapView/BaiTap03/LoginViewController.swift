@@ -12,20 +12,24 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
+    }
+    
+    func setView() {
         usernameTextFields.layer.borderColor = UIColor.brown.cgColor
-        passwordTextFields.layer.borderColor = UIColor.brown.cgColor
-        usernameTextFields.layer.borderWidth = 2
-        passwordTextFields.layer.borderWidth = 2
-        usernameTextFields.layer.cornerRadius = 5
-        passwordTextFields.layer.cornerRadius = 5
-        loginButton.layer.cornerRadius = 5
-        clearButton.layer.cornerRadius = 5
-        loginButton.clipsToBounds = true
-        clearButton.clipsToBounds = true
-        usernameTextFields.delegate = self
-        usernameTextFields.tag = 0
-        passwordTextFields.delegate = self
-        passwordTextFields.tag = 1
+           passwordTextFields.layer.borderColor = UIColor.brown.cgColor
+           usernameTextFields.layer.borderWidth = 2
+           passwordTextFields.layer.borderWidth = 2
+           usernameTextFields.layer.cornerRadius = 5
+           passwordTextFields.layer.cornerRadius = 5
+           loginButton.layer.cornerRadius = 5
+           clearButton.layer.cornerRadius = 5
+           loginButton.clipsToBounds = true
+           clearButton.clipsToBounds = true
+           usernameTextFields.delegate = self
+           usernameTextFields.tag = 0
+           passwordTextFields.delegate = self
+           passwordTextFields.tag = 1
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -48,11 +52,11 @@ final class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func actionLogin(_ sender: Any) {
+    @IBAction func login(_ sender: Any) {
         login()
     }
     
-    @IBAction func actionClear(_ sender: Any) {
+    @IBAction func clear(_ sender: Any) {
         usernameTextFields.text = ""
         passwordTextFields.text = ""
     }

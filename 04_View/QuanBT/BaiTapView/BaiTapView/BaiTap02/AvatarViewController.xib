@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -27,15 +28,15 @@
                 <outletCollection property="imageViews" destination="Fbx-t0-ADx" collectionClass="NSMutableArray" id="ey0-dH-M4f"/>
                 <outletCollection property="imageViews" destination="N1q-6Z-Uxb" collectionClass="NSMutableArray" id="dyo-4e-hom"/>
                 <outletCollection property="imageViews" destination="CTf-Aj-dSl" collectionClass="NSMutableArray" id="QpQ-AE-DaS"/>
-                <outletCollection property="buttons" destination="3Zl-8O-EYD" collectionClass="NSMutableArray" id="xYg-GK-u1F"/>
-                <outletCollection property="buttons" destination="1M7-CA-wGe" collectionClass="NSMutableArray" id="dgW-uY-AVQ"/>
-                <outletCollection property="buttons" destination="8Wa-vO-QP7" collectionClass="NSMutableArray" id="8TY-D8-MRP"/>
-                <outletCollection property="buttons" destination="Gp2-cp-rTM" collectionClass="NSMutableArray" id="zAg-pi-42n"/>
-                <outletCollection property="buttons" destination="iwm-Cg-RFX" collectionClass="NSMutableArray" id="XWR-zs-pSc"/>
-                <outletCollection property="buttons" destination="Nch-K7-MO1" collectionClass="NSMutableArray" id="FzI-sp-ao7"/>
-                <outletCollection property="buttons" destination="a6T-Jw-xEK" collectionClass="NSMutableArray" id="Jay-fU-uaJ"/>
-                <outletCollection property="buttons" destination="B5j-T9-HAB" collectionClass="NSMutableArray" id="OAD-Ai-sfD"/>
-                <outletCollection property="buttons" destination="wPo-mD-gde" collectionClass="NSMutableArray" id="iph-Sz-sH0"/>
+                <outletCollection property="nameButtons" destination="3Zl-8O-EYD" collectionClass="NSMutableArray" id="xYg-GK-u1F"/>
+                <outletCollection property="nameButtons" destination="1M7-CA-wGe" collectionClass="NSMutableArray" id="dgW-uY-AVQ"/>
+                <outletCollection property="nameButtons" destination="8Wa-vO-QP7" collectionClass="NSMutableArray" id="8TY-D8-MRP"/>
+                <outletCollection property="nameButtons" destination="Gp2-cp-rTM" collectionClass="NSMutableArray" id="zAg-pi-42n"/>
+                <outletCollection property="nameButtons" destination="iwm-Cg-RFX" collectionClass="NSMutableArray" id="XWR-zs-pSc"/>
+                <outletCollection property="nameButtons" destination="Nch-K7-MO1" collectionClass="NSMutableArray" id="FzI-sp-ao7"/>
+                <outletCollection property="nameButtons" destination="a6T-Jw-xEK" collectionClass="NSMutableArray" id="Jay-fU-uaJ"/>
+                <outletCollection property="nameButtons" destination="B5j-T9-HAB" collectionClass="NSMutableArray" id="OAD-Ai-sfD"/>
+                <outletCollection property="nameButtons" destination="wPo-mD-gde" collectionClass="NSMutableArray" id="iph-Sz-sH0"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -158,7 +159,7 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="JC5-jZ-McC"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="JC5-jZ-McC"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wa-vO-QP7" userLabel="Button3">
@@ -168,7 +169,7 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="DNc-ig-TMO"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="DNc-ig-TMO"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gp2-cp-rTM" userLabel="Button4">
@@ -178,7 +179,7 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="tzL-nH-yuH"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="tzL-nH-yuH"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nch-K7-MO1" userLabel="Button6">
@@ -188,7 +189,7 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="gDH-rH-w7y"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="gDH-rH-w7y"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwm-Cg-RFX" userLabel="Button5">
@@ -198,7 +199,7 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="s0O-bb-34R"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="s0O-bb-34R"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6T-Jw-xEK" userLabel="Button7">
@@ -208,7 +209,7 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="n1s-gW-lIn"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="n1s-gW-lIn"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPo-mD-gde" userLabel="Button9">
@@ -218,7 +219,7 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="8vc-rW-Rgc"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="8vc-rW-Rgc"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5j-T9-HAB" userLabel="Button8">
@@ -228,14 +229,14 @@
                         <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="qOb-HF-8SB"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="qOb-HF-8SB"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M7-CA-wGe" userLabel="Button2">
                     <rect key="frame" x="157" y="100" width="100" height="125"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>
-                        <action selector="printName1:" destination="-1" eventType="touchUpInside" id="hS8-mp-zgy"/>
+                        <action selector="printUsername:" destination="-1" eventType="touchUpInside" id="hS8-mp-zgy"/>
                     </connections>
                 </button>
             </subviews>

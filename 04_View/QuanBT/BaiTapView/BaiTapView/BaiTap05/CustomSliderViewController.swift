@@ -9,6 +9,10 @@ final class CustomSliderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
+    }
+    
+    func setView() {
         whiteView.layer.borderWidth = 1
         whiteView.layer.borderColor = UIColor.blue.cgColor
         blueView.layer.borderWidth = 1
