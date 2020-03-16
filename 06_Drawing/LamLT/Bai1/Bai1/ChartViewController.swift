@@ -49,7 +49,6 @@ class ChartViewController: UIViewController {
         shapeLayer.strokeColor = UIColor.green.cgColor
         shapeLayer.lineWidth = 1.0
         shapeLayer.path = path.cgPath
-//        shapeLayer.isHidden = true
         self.view.layer.addSublayer(shapeLayer)
     }
 

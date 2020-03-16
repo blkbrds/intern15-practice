@@ -2,10 +2,6 @@ import UIKit
 
 class PieChartView: UIView {
 
-    var line: Bool = true
-    var radiusCircle: CGFloat = 150
-    var colorPie: UIColor = .red
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -16,32 +12,21 @@ class PieChartView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        createPath(radiusCircle: 150, start: 0, end: .pi / 4, lineClock: true, colorPie: .red)
+        createPath(radiusCircle: 180, start: 0, end: (-1 / 2) * .pi, lineClock: false, colorPie: .green)
+        createPath(radiusCircle: 100, start: .pi / 4, end: .pi, lineClock: true, colorPie: .blue)
+        createPath(radiusCircle: 160, start: .pi, end: 3 / 2 * .pi, lineClock: true, colorPie: .darkGray)
+
+    }
+
+    func createPath(radiusCircle: CGFloat, start: CGFloat, end: CGFloat, lineClock: Bool, colorPie: UIColor) {
         let path = UIBezierPath()
         path.move(to: center)
-        path.addArc(withCenter: center, radius: radiusCircle, startAngle: 0, endAngle: .pi / 4, clockwise: line)
+        path.addArc(withCenter: center, radius: radiusCircle, startAngle: start, endAngle: end, clockwise: lineClock)
         path.close()
         colorPie.setFill()
         path.fill()
 
-        let path1 = UIBezierPath()
-        path1.move(to: center)
-        path1.addArc(withCenter: center, radius: radiusCircle + 30, startAngle: 0, endAngle: (-1 / 2) * .pi, clockwise: !line)
-        path1.close()
-        UIColor.green.setFill()
-        path1.fill()
-
-        let path2 = UIBezierPath()
-        path2.move(to: center)
-        path2.addArc(withCenter: center, radius: radiusCircle - 50, startAngle: .pi / 4, endAngle: .pi, clockwise: line)
-        path2.close()
-        UIColor.blue.setFill()
-        path2.fill()
-
-        let path3 = UIBezierPath()
-        path3.move(to: center)
-        path3.addArc(withCenter: center, radius: radiusCircle + 10, startAngle: .pi, endAngle: 3 / 2 * .pi, clockwise: line)
-        path3.close()
-        UIColor.gray.setFill()
-        path3.fill()
     }
+
 }
