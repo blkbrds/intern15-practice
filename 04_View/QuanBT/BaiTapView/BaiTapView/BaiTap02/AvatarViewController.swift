@@ -9,10 +9,10 @@ final class AvatarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
+        setupView()
     }
     
-    func setView() {
+    func setupView() {
         for index in 0 ..< usernameLabels.count {
             usernameLabels[index].text = "Name \(usernames[index])"
         }

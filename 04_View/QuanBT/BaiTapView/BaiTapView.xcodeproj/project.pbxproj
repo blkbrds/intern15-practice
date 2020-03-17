@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45B60EF241FCBB900852111 /* MonkeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45B60ED241FCBB900852111 /* MonkeyViewController.swift */; };
+		A45B60F0241FCBB900852111 /* MonkeyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45B60EE241FCBB900852111 /* MonkeyViewController.xib */; };
+		A474AEEB2420680500A982AB /* Monkey2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A474AEE92420680500A982AB /* Monkey2ViewController.swift */; };
+		A474AEEC2420680500A982AB /* Monkey2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A474AEEA2420680500A982AB /* Monkey2ViewController.xib */; };
 		A49779E0241F5C4500D5C77D /* CustomSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49779DE241F5C4500D5C77D /* CustomSliderViewController.swift */; };
 		A49779E1241F5C4500D5C77D /* CustomSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49779DF241F5C4500D5C77D /* CustomSliderViewController.xib */; };
 		A4BE9E9B241F19D000CAA482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE9E9A241F19D000CAA482 /* AppDelegate.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A45B60ED241FCBB900852111 /* MonkeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyViewController.swift; sourceTree = "<group>"; };
+		A45B60EE241FCBB900852111 /* MonkeyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonkeyViewController.xib; sourceTree = "<group>"; };
+		A474AEE92420680500A982AB /* Monkey2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monkey2ViewController.swift; sourceTree = "<group>"; };
+		A474AEEA2420680500A982AB /* Monkey2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Monkey2ViewController.xib; sourceTree = "<group>"; };
 		A49779DE241F5C4500D5C77D /* CustomSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderViewController.swift; sourceTree = "<group>"; };
 		A49779DF241F5C4500D5C77D /* CustomSliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSliderViewController.xib; sourceTree = "<group>"; };
 		A4BE9E97241F19D000CAA482 /* BaiTapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +63,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A45B60EC241FCB2D00852111 /* BaiTap06 */ = {
+			isa = PBXGroup;
+			children = (
+				A45B60ED241FCBB900852111 /* MonkeyViewController.swift */,
+				A45B60EE241FCBB900852111 /* MonkeyViewController.xib */,
+			);
+			path = BaiTap06;
+			sourceTree = "<group>";
+		};
+		A474AEE8242067C500A982AB /* BaiTap07 */ = {
+			isa = PBXGroup;
+			children = (
+				A474AEE92420680500A982AB /* Monkey2ViewController.swift */,
+				A474AEEA2420680500A982AB /* Monkey2ViewController.xib */,
+			);
+			path = BaiTap07;
+			sourceTree = "<group>";
+		};
 		A4BE9E8E241F19D000CAA482 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +100,8 @@
 		A4BE9E99241F19D000CAA482 /* BaiTapView */ = {
 			isa = PBXGroup;
 			children = (
+				A474AEE8242067C500A982AB /* BaiTap07 */,
+				A45B60EC241FCB2D00852111 /* BaiTap06 */,
 				A4BE9ECD241F30A800CAA482 /* BaiTap05 */,
 				A4BE9EC6241F2B0400CAA482 /* BaiTap04 */,
 				A4BE9EC1241F260600CAA482 /* BaiTap03 */,
@@ -200,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A474AEEC2420680500A982AB /* Monkey2ViewController.xib in Resources */,
 				A4BE9EC0241F237600CAA482 /* AvatarViewController.xib in Resources */,
 				A4BE9EB5241F1BB300CAA482 /* avatar.jpg in Resources */,
 				A4BE9EC5241F26BA00CAA482 /* LoginViewController.xib in Resources */,
@@ -208,6 +237,7 @@
 				A4BE9EA4241F19D100CAA482 /* Assets.xcassets in Resources */,
 				A4BE9ECA241F2C6B00CAA482 /* ColorViewController.xib in Resources */,
 				A4BE9EB2241F1A4800CAA482 /* MyViewController.xib in Resources */,
+				A45B60F0241FCBB900852111 /* MonkeyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,10 +251,12 @@
 				A4BE9E9B241F19D000CAA482 /* AppDelegate.swift in Sources */,
 				A4BE9EB1241F1A4800CAA482 /* MyViewController.swift in Sources */,
 				A4BE9E9D241F19D000CAA482 /* SceneDelegate.swift in Sources */,
+				A474AEEB2420680500A982AB /* Monkey2ViewController.swift in Sources */,
 				A4BE9EC3241F26A000CAA482 /* LoginViewController.swift in Sources */,
 				A4BE9EC8241F2C5C00CAA482 /* ColorViewController.swift in Sources */,
 				A49779E0241F5C4500D5C77D /* CustomSliderViewController.swift in Sources */,
 				A4BE9EBE241F236400CAA482 /* AvatarViewController.swift in Sources */,
+				A45B60EF241FCBB900852111 /* MonkeyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

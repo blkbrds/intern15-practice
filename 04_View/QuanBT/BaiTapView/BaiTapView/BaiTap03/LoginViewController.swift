@@ -12,10 +12,10 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
+        setupView()
     }
     
-    func setView() {
+    func setupView() {
         usernameTextFields.layer.borderColor = UIColor.brown.cgColor
            passwordTextFields.layer.borderColor = UIColor.brown.cgColor
            usernameTextFields.layer.borderWidth = 2
