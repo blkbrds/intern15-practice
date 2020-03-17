@@ -17,6 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = Monkey2ViewController()
+        //window.rootViewController = MonkeyViewController()
+        //window.rootViewController = CustomSliderViewController()
+        //window.rootViewController = ColorViewController()
+        //window.rootViewController = LoginViewController()
+        //window.rootViewController = AvatarViewController()
+        //window.rootViewController = MyViewController()
         self.window = window
         window.makeKeyAndVisible()
     }

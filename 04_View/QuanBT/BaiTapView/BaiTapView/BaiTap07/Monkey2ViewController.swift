@@ -1,8 +1,8 @@
 import UIKit
 
 final class Monkey2ViewController: UIViewController {
-    @IBOutlet weak var monkeyImageView: UIImageView!
-    @IBOutlet weak var mesageLabel: UILabel!
+    @IBOutlet private weak var monkeyImageView: UIImageView!
+    @IBOutlet private weak var mesageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,7 +10,7 @@ final class Monkey2ViewController: UIViewController {
         setupLabel()
     }
     
-    func setupLabel() {
+    private func setupLabel() {
         mesageLabel.text = "Tôi là Khỉ "
         mesageLabel.layer.borderWidth = 1
         mesageLabel.layer.borderColor = UIColor.black.cgColor
@@ -21,28 +21,28 @@ final class Monkey2ViewController: UIViewController {
         mesageLabel.clipsToBounds = true
         mesageLabel.alpha = 0
     }
-
-    @IBAction func oneTap(_ sender: UITapGestureRecognizer) {
-         if sender.view != nil {
+    
+    @IBAction private func oneTap(_ sender: UITapGestureRecognizer) {
+        if sender.view != nil {
             UIView.animate(withDuration: 1, animations: {
                 self.mesageLabel.alpha = 1
                 self.mesageLabel.text = "Tôi là Khỉ"
             })
-                UIView.animate(withDuration: 1, delay: 5, options: [], animations: {
-                    self.mesageLabel.alpha = 0
-                })
+            UIView.animate(withDuration: 1, delay: 5, options: [], animations: {
+                self.mesageLabel.alpha = 0
+            })
         }
     }
     
-    @IBAction func doubleTap(_ sender: UITapGestureRecognizer) {
+    @IBAction private func doubleTap(_ sender: UITapGestureRecognizer) {
         if sender.view != nil {
             UIView.animate(withDuration: 1, animations: {
                 self.mesageLabel.alpha = 1
                 self.mesageLabel.text = "Khỉ là Tôi"
             })
-                UIView.animate(withDuration: 1, delay: 5, options: [], animations: {
-                    self.mesageLabel.alpha = 0
-                })
+            UIView.animate(withDuration: 1, delay: 5, options: [], animations: {
+                self.mesageLabel.alpha = 0
+            })
         }
     }
 }

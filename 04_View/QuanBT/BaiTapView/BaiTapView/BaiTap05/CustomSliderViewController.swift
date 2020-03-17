@@ -2,17 +2,17 @@ import UIKit
 
 final class CustomSliderViewController: UIViewController {
     
-    @IBOutlet weak var whiteView: UIView!
-    @IBOutlet weak var sliderView: UIView!
-    @IBOutlet weak var blueView: UIView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var whiteView: UIView!
+    @IBOutlet private weak var sliderView: UIView!
+    @IBOutlet private weak var blueView: UIView!
+    @IBOutlet private weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         whiteView.layer.borderWidth = 1
         whiteView.layer.borderColor = UIColor.blue.cgColor
         blueView.layer.borderWidth = 1
@@ -22,7 +22,7 @@ final class CustomSliderViewController: UIViewController {
         sliderView.layer.cornerRadius = 25
     }
     
-    @IBAction func handlePan(_ gesture: UIPanGestureRecognizer) {
+    @IBAction private func handlePan(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
         
         guard let gestureView = gesture.view else {

@@ -6,7 +6,7 @@ final class MyViewController: UIViewController {
         super.viewDidLoad()
         setupView()
     }
-    func setupView() {
+    private func setupView() {
         let frame = CGRect(x: 50, y: 100, width: 100, height: 100)
         let userAvatar = UIImageView(image: UIImage(named: "avatar.jpg"))
         userAvatar.frame = frame
