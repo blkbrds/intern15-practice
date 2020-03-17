@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKz-d2-VTg">
-                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="b7O-9b-X9M"/>
                     </constraints>
@@ -35,7 +34,7 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Logout"/>
                                     <connections>
-                                        <action selector="logoutButtonTapp:" destination="-1" eventType="touchUpInside" id="PUs-oY-gSL"/>
+                                        <action selector="logoutButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="PUs-oY-gSL"/>
                                     </connections>
                                 </button>
                             </barButtonItem>

@@ -24,7 +24,7 @@ final class LoginViewController: BaseViewController {
 
 	override func setupUI () {
 		let rightButton = UIBarButtonItem(title: "Register", style: .plain, target: self, action: #selector(registerButton))
-		self.navigationItem.rightBarButtonItem = rightButton
+		navigationItem.rightBarButtonItem = rightButton
 	}
 
 	@objc private func registerButton() {
@@ -32,7 +32,7 @@ final class LoginViewController: BaseViewController {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 
-	@IBAction private func loginButtonTap(_ sender: Any) {
+	@IBAction private func loginButtonTouchUpInside(_ sender: Any) {
 		if userNameText == passwordTextField.text, passwordTextField.text == passwordText {
 			let myTabBar = MyTabbarViewController()
 			SceneDelegate.shared.changtabBarController(myTabBar)

@@ -8,7 +8,7 @@ final class ProfileViewController: BaseViewController {
 		title = "Profile"
 	}
 
-	@IBAction private func logoutButtonTapp(_ sender: Any) {
+	@IBAction private func logoutButtonTouchUpInside(_ sender: Any) {
 		let vc = LoginViewController()
 		navigationController?.pushViewController(vc, animated: true)
 	}

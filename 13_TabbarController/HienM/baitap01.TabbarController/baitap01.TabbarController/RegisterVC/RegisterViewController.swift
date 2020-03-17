@@ -26,7 +26,7 @@ final class RegisterViewController: BaseViewController {
 		loginVC.configData(userName: usernameText, password: passwordText)
 	}
 
-	@IBAction private func doneButtonTapp(_ sender: Any) {
+	@IBAction private func doneButtonTouchUpInside(_ sender: Any) {
 		let myTabBar = MyTabbarViewController()
 		SceneDelegate.shared.changtabBarController(myTabBar)
 	}
