@@ -18,11 +18,6 @@ class DaGiac {
 class tamgiac : DaGiac {
     override  func chuVi() -> Int{
         super.chuVi()
-        var chuvi: Int = 0
-        for i in 0 ..< arr.count {
-           chuvi = chuvi + arr[i]
-       }
-        return chuvi
     }
     func dienTich() -> Double {
         var S: Double = 0
