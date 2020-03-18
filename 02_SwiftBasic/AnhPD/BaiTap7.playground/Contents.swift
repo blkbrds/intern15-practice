@@ -1,12 +1,13 @@
 import UIKit
 
-func replace(x: Int,y: Int){
+func replace() {
     var arr: [Int] = [1,2,1]
     for i in 0..<arr.count {
-        if arr[i] == x {
-            arr[i] = y
+        if arr[i] == 1 {
+            arr[i] = 3
         }
     }
     print(arr)
 }
-replace(x: 1,y: 3)
+replace()
+
