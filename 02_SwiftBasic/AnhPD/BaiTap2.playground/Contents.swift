@@ -1,15 +1,17 @@
 import UIKit
-func ptBac2(a : Double,b : Double,c : Double) -> String {
-    let Delta : Double = ((b * b) - (4 * a * c))
-    if (Delta < 0) {
-        return("Phương trình vô nghiệm")
-    }else if (Delta == 0) {
-        let kep : Double = -b / (2 * a)
-        return("Phương trình có nghiệm kép = \(kep)")
+
+func giaiPTBac2(a: Double,b: Double,c: Double) {
+    var delta: Double = 0
+    delta = b * b - (4 * a * c)
+    let kep: Double = -b / (2 * a)
+    let x1: Double = -b + delta / (2 * a)
+    let x2: Double = -b - delta / (2 * a)
+    if delta > 0 {
+        print("PT co 2 nghiem phan biet \(x1) va \(x2)")
+    }else if delta == 0 {
+        print("PT co nghiem kep \(kep)")
     }else {
-        let x1 : Double = (-b + Delta) / (2 * a)
-        let x2 : Double = (-b - Delta) / (2 * a)
-        return("Phương trình có 2 nghiệm phân biệt \(x1) và \(x2)")
+        print("PT vo nghiem")
     }
 }
-print(ptBac2(a: 1, b: 4, c: 2))
+giaiPTBac2(a: 1, b: 5, c: 1)

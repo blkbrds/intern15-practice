@@ -1,55 +1,41 @@
 import UIKit
-//Tính tổng Fibonacy
-func tongFibonacy () -> Double {
-    var s : Double = 0
-    var s1 : Double = 1
-    var s2 : Double = 1
-    var k : Double = s1
-    for _ in 0...10 {
-        s = s + s1
-        s1 = s2
-        s2 = s2 + k
-        k = s1
+
+func tong100SoFiBoNaCyVaLietKe() {
+    var tong: Int = 0
+    var x0: Int = 1
+    var x1: Int = 1
+    var tam: Int = x0
+    for _ in 0...5 {
+        tong = tong + x0
+        x0 = x1
+        x1 = x1 + tam
+        print("\(tam)")
+        tam = x0
     }
-    return s
+    print("Tong bang = \(tong)")
 }
-print(tongFibonacy())
-//Liệt kê Fibonacy
-func lietkeFibonacy () {
-    var s1: Int = 1
-    var s2: Int = 1
-    var k : Int = s1
-    for _ in 0...10 {
-        print(s1)
-        s1 = s2
-        s2 = s2 + k
-        k = s1
-    }
-}
-print(lietkeFibonacy())
-//Tính sinx cosx theo chuỗi Taylor
-func giaithua(n : Double) -> Double{
-    if(n>1) {
-        return n * giaithua(n: n-1)
-    }else {
+tong100SoFiBoNaCyVaLietKe()
+
+//tinh sinx cosx bang cong thuc chuoi taylor
+func giaiThua(n: Double) -> Double{
+    if n > 0 {
+        return n * giaiThua(n: n-1)
+    } else {
         return 1
     }
 }
-func sinx(x: Double,n: Int) -> Double {
-    var sinx : Double = 0
-    let t : Double = -1
-    for i in 0 ..< n {
-        let a: Double = (2 * Double(i) + 1)
-        sinx = sinx + pow(t,Double(i)) * pow(x,a)/giaithua(n: a)
-    }
+
+func tinhSinx(x: Double,n: Double) -> Double {
+    var sinx: Double = 0
+    sinx = pow(-1,n) * ((pow(x, 2 * n + 1)) / ((2 * n + 1) * giaiThua(n: n)))
     return sinx
 }
-print(sinx(x: 5, n: 15))
-func cosx() -> Double{
-    var cosx = 1 - sinx(x: 5, n: 15) * sinx(x: 5, n: 15)
-    return sqrt(cosx)
+tinhSinx(x: 2, n: 16)
+func tinhcosx() {
+    var cosx: Double = 0
+    cosx = sqrt(1 - (tinhSinx(x: 2, n: 1)) * tinhSinx(x: 2, n: 16))
 }
-print(cosx())
+tinhcosx()
 //Liệt kê số hạnh phúc bé hơn 10000
 func tongbinhphuong(n: Int) -> Int {
     var s: Int = 0
@@ -81,5 +67,3 @@ func lietkesohanhphuc() {
     }
 }
 print(lietkesohanhphuc())
-
-

@@ -1,8 +1,10 @@
 import UIKit
-func dienTichVaTheTichHinhCau(R : Float) -> (V : Float, S : Float) {
-    let pi : Float = 3.14
-    let S = (4 * pi) * (R * R)
-    let V = (4 / 3) * (pi * R * R * R)
-    return (S,V)
+
+func tinhSVaVHinhCau(r: Int) -> (s: Double,v: Double) {
+    var s: Double = 0
+    var v: Double = 0
+    s = 4 * .pi * Double(r) * Double(r)
+    v = (4 * .pi * Double(r) * Double (r) * Double (r)) / 3
+    return (s,v)
 }
-print(dientichvathetichhinhcau(R: 11))
+tinhSVaVHinhCau(r: 4)
