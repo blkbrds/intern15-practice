@@ -7,16 +7,16 @@ class BadgeNumberButton: UIView {
     private var pointBadgeNumber: BadgeNumber
     private var text: String = ""
     
-       enum BadgeNumber {
-           case TopLeft
-           case TopCenter
-           case TopRight
-           case CenterRight
-           case BottomRight
-           case BottomCenter
-           case BottomLeft
-           case CenterLeft
-       }
+    enum BadgeNumber {
+        case TopLeft
+        case TopCenter
+        case TopRight
+        case CenterRight
+        case BottomRight
+        case BottomCenter
+        case BottomLeft
+        case CenterLeft
+    }
     
     init(frame: CGRect, pointBadgeNumber: BadgeNumber, text: String) {
         self.pointBadgeNumber = pointBadgeNumber
@@ -35,8 +35,8 @@ class BadgeNumberButton: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-   
-     // MARK: - Private function
+    
+    // MARK: - Private function
     private func setupUI(){
         let temp = 20 + text.count * 10
         badgeNumberLabel.frame.size = CGSize(width: temp, height: 30)
@@ -47,7 +47,7 @@ class BadgeNumberButton: UIView {
         badgeNumberLabel.clipsToBounds = true
         badgeNumberLabel.textAlignment = .center
         badgeNumberLabel.numberOfLines = 0
-     
+        
         switch pointBadgeNumber {
         case .TopLeft:
             badgeNumberLabel.center = CGPoint(x: 0, y: 0)

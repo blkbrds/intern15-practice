@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A440BA7A242355BA0049C6C4 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A440BA79242355BA0049C6C4 /* DatePickerView.xib */; };
 		A44C402C2421B6F800766805 /* BadgeNumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44C402B2421B6F800766805 /* BadgeNumberButton.swift */; };
 		A47B28472420D4BA00645119 /* MyAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47B28462420D4BA00645119 /* MyAvatar.swift */; };
 		A48A39702421064F0059EA47 /* CustomSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A396E2421064F0059EA47 /* CustomSliderViewController.swift */; };
 		A48A39712421064F0059EA47 /* CustomSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48A396F2421064F0059EA47 /* CustomSliderViewController.xib */; };
 		A48A3973242106960059EA47 /* MySliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A3972242106960059EA47 /* MySliderView.swift */; };
+		A49D00822423078C00D2C2F7 /* CustomDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49D00802423078C00D2C2F7 /* CustomDatePickerViewController.swift */; };
+		A49D00832423078C00D2C2F7 /* CustomDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49D00812423078C00D2C2F7 /* CustomDatePickerViewController.xib */; };
+		A49D00852423233500D2C2F7 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49D00842423233500D2C2F7 /* DatePickerView.swift */; };
 		A4E29A562422729A00D86325 /* CustomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E29A542422729A00D86325 /* CustomButtonViewController.swift */; };
 		A4E29A572422729A00D86325 /* CustomButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4E29A552422729A00D86325 /* CustomButtonViewController.xib */; };
 		A4F282A02420B2D900EF60BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F2829F2420B2D900EF60BA /* AppDelegate.swift */; };
@@ -23,11 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A440BA79242355BA0049C6C4 /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
 		A44C402B2421B6F800766805 /* BadgeNumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeNumberButton.swift; sourceTree = "<group>"; };
 		A47B28462420D4BA00645119 /* MyAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAvatar.swift; sourceTree = "<group>"; };
 		A48A396E2421064F0059EA47 /* CustomSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSliderViewController.swift; sourceTree = "<group>"; };
 		A48A396F2421064F0059EA47 /* CustomSliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSliderViewController.xib; sourceTree = "<group>"; };
 		A48A3972242106960059EA47 /* MySliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySliderView.swift; sourceTree = "<group>"; };
+		A49D00802423078C00D2C2F7 /* CustomDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePickerViewController.swift; sourceTree = "<group>"; };
+		A49D00812423078C00D2C2F7 /* CustomDatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDatePickerViewController.xib; sourceTree = "<group>"; };
+		A49D00842423233500D2C2F7 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		A4E29A542422729A00D86325 /* CustomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewController.swift; sourceTree = "<group>"; };
 		A4E29A552422729A00D86325 /* CustomButtonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomButtonViewController.xib; sourceTree = "<group>"; };
 		A4F2829C2420B2D900EF60BA /* BaiTapCustomView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapCustomView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +79,17 @@
 			path = BaiTap02;
 			sourceTree = "<group>";
 		};
+		A49D007D242306E900D2C2F7 /* BaiTap04 */ = {
+			isa = PBXGroup;
+			children = (
+				A49D00802423078C00D2C2F7 /* CustomDatePickerViewController.swift */,
+				A49D00812423078C00D2C2F7 /* CustomDatePickerViewController.xib */,
+				A49D00842423233500D2C2F7 /* DatePickerView.swift */,
+				A440BA79242355BA0049C6C4 /* DatePickerView.xib */,
+			);
+			path = BaiTap04;
+			sourceTree = "<group>";
+		};
 		A4F282932420B2D900EF60BA = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +109,7 @@
 		A4F2829E2420B2D900EF60BA /* BaiTapCustomView */ = {
 			isa = PBXGroup;
 			children = (
+				A49D007D242306E900D2C2F7 /* BaiTap04 */,
 				A44C402A2421B5D700766805 /* BaiTap03 */,
 				A48A396D242103C90059EA47 /* BaiTap02 */,
 				A4F282B32420B39000EF60BA /* BaiTap01 */,
@@ -171,6 +191,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4E29A572422729A00D86325 /* CustomButtonViewController.xib in Resources */,
+				A440BA7A242355BA0049C6C4 /* DatePickerView.xib in Resources */,
+				A49D00832423078C00D2C2F7 /* CustomDatePickerViewController.xib in Resources */,
 				A48A39712421064F0059EA47 /* CustomSliderViewController.xib in Resources */,
 				A4F282B72420B49100EF60BA /* AvatarViewController.xib in Resources */,
 				A4F282AC2420B2DB00EF60BA /* LaunchScreen.storyboard in Resources */,
@@ -191,6 +213,8 @@
 				A48A39702421064F0059EA47 /* CustomSliderViewController.swift in Sources */,
 				A4F282A22420B2D900EF60BA /* SceneDelegate.swift in Sources */,
 				A48A3973242106960059EA47 /* MySliderView.swift in Sources */,
+				A49D00852423233500D2C2F7 /* DatePickerView.swift in Sources */,
+				A49D00822423078C00D2C2F7 /* CustomDatePickerViewController.swift in Sources */,
 				A47B28472420D4BA00645119 /* MyAvatar.swift in Sources */,
 				A4F282B62420B49100EF60BA /* AvatarViewController.swift in Sources */,
 			);

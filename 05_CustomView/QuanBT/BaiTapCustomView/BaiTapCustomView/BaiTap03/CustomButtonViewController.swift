@@ -16,10 +16,10 @@ class CustomButtonViewController: UIViewController {
         view.addSubview(buttonBadgeNumber1)
         
         let buttonBadgeNumber2 = BadgeNumberButton(frame: CGRect(x: 100, y: 400, width: 200, height: 100), pointBadgeNumber: .TopLeft, text: "99+")
-               buttonBadgeNumber2.button?.backgroundColor = .yellow
-               buttonBadgeNumber2.button?.setTitle("Friends", for: .normal)
-               view.addSubview(buttonBadgeNumber2)
-
+        buttonBadgeNumber2.button?.backgroundColor = .yellow
+        buttonBadgeNumber2.button?.setTitle("Friends", for: .normal)
+        view.addSubview(buttonBadgeNumber2)
+        
         let buttonBadgeNumber3 = BadgeNumberButton(frame: CGRect(x: 100, y: 600, width: 200, height: 100), pointBadgeNumber: .TopCenter, text: "8")
         buttonBadgeNumber3.button?.backgroundColor = .purple
         buttonBadgeNumber3.button?.setTitle("Photos", for: .normal)

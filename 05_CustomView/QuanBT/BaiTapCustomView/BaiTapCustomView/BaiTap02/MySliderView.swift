@@ -7,7 +7,6 @@ protocol SliderViewDelegate: class {
 final class MySliderView: UIView {
     // MARK: - Declare Variable
     private var label: UILabel = UILabel(frame: .zero)
-    private var shapeLayer2 = CAShapeLayer()
     private var sliderView: UIView = UIView(frame: .zero)
     
     weak var delegate: SliderViewDelegate?
@@ -28,35 +27,32 @@ final class MySliderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func draw(_ rect: CGRect) {
+        let percent: CGFloat = value / 100.0
+        let context = UIGraphicsGetCurrentContext()
+        context?.setStrokeColor(UIColor.green.cgColor)
+        context?.move(to: CGPoint(x: 0, y: 0))
+        context?.addLine(to: CGPoint(x: self.bounds.midX, y: self.bounds.maxY - 20))
+        context?.addLine(to: CGPoint(x: self.bounds.width, y: 0))
+        context?.addLine(to: CGPoint.zero)
+        context?.setLineWidth(1)
+        context?.setStrokeColor(UIColor.blue.cgColor)
+        context?.setFillColor(UIColor.white.cgColor)
+        context?.strokePath()
+        context?.closePath()
+        context?.fillPath()
+        
+        let context1 = UIGraphicsGetCurrentContext()
+        context1?.move(to: CGPoint(x: self.bounds.midX, y: self.bounds.maxY - 20))
+        context1?.addLine(to: CGPoint(x: self.bounds.midX + self.bounds.width / 2 * percent, y: self.bounds.maxY - self.bounds.height * percent - 20))
+        context1?.addLine(to: CGPoint(x: self.bounds.midX - self.bounds.width / 2 * percent, y: self.bounds.maxY - self.bounds.height * percent - 20))
+        context1?.addLine(to: CGPoint(x: self.bounds.midX, y: self.bounds.maxY - 20))
+        context1?.setFillColor(UIColor.systemBlue.cgColor)
+        context1?.fillPath()
+    }
+    
     // MARK: - Private function
     private func setupUIView() {
-        let path = UIBezierPath()
-        path.move(to: CGPoint(x: self.frame.size.width/2, y: self.frame.size.height))
-        path.addLine(to: CGPoint(x: 0.0, y: 0.0))
-        path.addLine(to: CGPoint(x: self.frame.size.width, y: 0.0))
-        path.close()
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = UIColor.blue.cgColor
-        shapeLayer.lineWidth = 1.0
-        shapeLayer.fillColor = .none
-        shapeLayer.path = path.cgPath
-        self.layer.addSublayer(shapeLayer)
-        
-        sliderView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: 400))
-        addSubview(sliderView)
-        
-        let path2 = UIBezierPath()
-        path2.move(to: CGPoint(x: self.frame.size.width/2, y: self.frame.size.height))
-        path2.addLine(to: CGPoint(x: 0.0, y: 0.0))
-        path2.addLine(to: CGPoint(x: self.frame.size.width, y: 0.0))
-        path2.close()
-        
-        shapeLayer2.strokeColor = UIColor.blue.cgColor
-        shapeLayer2.lineWidth = 1.0
-        shapeLayer2.fillColor = UIColor.blue.cgColor
-        shapeLayer2.path = path2.cgPath
-        sliderView.layer.addSublayer(shapeLayer2)
         
         label = UILabel(frame: CGRect(x: 0, y: frame.height - 20 - CGFloat(value) / 100.0 * frame.height, width: frame.width, height: 40))
         label.text = "100"
@@ -70,6 +66,7 @@ final class MySliderView: UIView {
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         label.isUserInteractionEnabled = true
         label.addGestureRecognizer(panGestureRecognizer)
+        backgroundColor = .white
     }
     
     @objc private func handlePan(sender: UIPanGestureRecognizer){
@@ -80,7 +77,6 @@ final class MySliderView: UIView {
         value = (frame.height - 20 - label.center.y) * 100.0 / (frame.height - 20)
         isChange = true
         delegate?.changeValue(value: value)
-        sliderView.frame = CGRect(x: 0, y: label.center.y, width: 80 , height: frame.height * value / 100)
     }
     
     func updateUI() {
