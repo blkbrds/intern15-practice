@@ -1,14 +1,12 @@
 import UIKit
 
 class appPitago {
-    var soChuoi : Int
     var nhapMang :[(Int,Int,Int)]
 
-    init(soChuoi: Int ,nhapMang: [(Int,Int,Int)] ) {
-        self.soChuoi = soChuoi
+    init(nhapMang: [(Int,Int,Int)] ) {
         self.nhapMang = nhapMang
-
     }
+    
     func PytaGo (cacCanh:(Int,Int,Int)) -> Bool{
         let a = cacCanh.0
         let b = cacCanh.1
@@ -20,17 +18,18 @@ class appPitago {
         }
         return false
     }
+    
     func inPytago() {
-    var i = 0
-    while i<self.soChuoi {
-        if PytaGo(cacCanh: self.nhapMang[i]){
-            print(self.nhapMang[i])
+        var i = 0
+        while i < nhapMang.count {
+        if PytaGo(cacCanh: nhapMang[i]){
+            print(nhapMang[i])
             }
             i += 1
         }
     }
 }
-var nhap = appPitago.init(soChuoi: 5, nhapMang: [(2,3,4),(3,4,5),(3,5,8),(7,24,25),(9,40,41)])
+var nhap = appPitago(nhapMang: [(2,3,4),(3,4,5),(3,5,8),(7,24,25),(9,40,41)])
 nhap.inPytago()
 
 

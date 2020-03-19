@@ -1,12 +1,12 @@
 import UIKit
 
 class TinhTong{
-    var n :Int
+    var n: Int
     
-    init(n:Int){
+    init(n: Int){
         self.n = n
     }
-    func tongNSoNGuyen()->Int{
+    func tongNSoNGuyen() -> Int {
        var tong = 0
         for i in 0...n {
             tong = tong + i
@@ -15,5 +15,5 @@ class TinhTong{
         return tong
     }
 }
-var nhapN = TinhTong.init(n: 2)
+var nhapN = TinhTong(n: 2)
 nhapN.tongNSoNGuyen()

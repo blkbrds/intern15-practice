@@ -1,57 +1,57 @@
 import UIKit
 
-class CStack{
-    var mangSoNguyen :[Int]
-    var soStack :Int
-    init(soStack:Int, mangSoNguyen :[Int]){
+class buildStack{
+    var mangSoNguyen: [Int]
+    var soStack: Int
+    init(soStack: Int, mangSoNguyen: [Int]){
         self.mangSoNguyen = mangSoNguyen
         self.soStack = soStack
         if self.soStack < self.mangSoNguyen.count{
-            print (" Stack khong hop le ")
+            print ("Stack khong hop le ")
         }
     }
     
-    func emptyStack(){
+    func isEmptyStack(){
         if self.mangSoNguyen.isEmpty{
-            print(" Stack rong")
+            print("Stack rong")
         }else{
             print("Stack co chua gia tri")
         }
     }
     
-    func fullStack(){
+    func isFullStack(){
         if mangSoNguyen.count == soStack {
-            print (" Stack day gia tri ")
+            print ("Stack day gia tri ")
         }else{
             print ("Stack khong day gia tri")
         }
     }
     
-   func addStack(them: Int){
+   func isPushStack(element: Int){
     if mangSoNguyen.count == soStack {
-        print (" khong the them stack duoc")
+        print ("Khong the them stack duoc")
     }else{
-        mangSoNguyen.append(them)
+        mangSoNguyen.append(element)
+        }
     }
-    }
-    func delStack(){
+    func isPopStack(){
         if mangSoNguyen.count == 0{
-          print("khong the xoa them ")
+          print("Khong the xoa them ")
         }else{
          self.mangSoNguyen.removeLast()
-   }
+        }
+    }
 }
-}
-var mangStack = CStack.init(soStack: 5,mangSoNguyen:[1,3,4,7,5])
+var mangStack = buildStack(soStack: 5,mangSoNguyen: [1,3,4,7,5])
 
-mangStack.emptyStack()
-mangStack.fullStack()
+mangStack.isEmptyStack()
+mangStack.isFullStack()
 print(mangStack.mangSoNguyen)
-mangStack.addStack(them: 7)
+mangStack.isPushStack(element: 7)
 print(mangStack.mangSoNguyen)
-mangStack.addStack(them: 8)
+mangStack.isPushStack(element: 8)
 print(mangStack.mangSoNguyen)
-mangStack.addStack(them: 12)
+mangStack.isPushStack(element: 12)
 print(mangStack.mangSoNguyen)
-mangStack.delStack()
+mangStack.isPopStack()
 print(mangStack.mangSoNguyen)

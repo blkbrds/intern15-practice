@@ -7,25 +7,25 @@ class PhanSo{
         self.tuSo = tuSo
         self .mauSo = mauSo
     }
-    func inPhanSo()->String{
+    func inPhanSo() -> String{
     return "\(tuSo)/\(mauSo)"
     }
-    func tongPhanSo(soB: PhanSo)->PhanSo{
+    func tongPhanSo(soB: PhanSo) -> PhanSo{
         let tongTuSo = (tuSo * soB.mauSo) + (mauSo * soB.tuSo)
         let tongMauSo = (mauSo * soB.mauSo)
         return PhanSo(tuSo: tongTuSo, mauSo: tongMauSo)
     }
-    func hieuPhanSo(soB: PhanSo)->PhanSo{
+    func hieuPhanSo(soB: PhanSo) -> PhanSo{
         let hieuTuSo = (tuSo * soB.mauSo) - (mauSo * soB.tuSo)
         let hieuMauSo = (mauSo * soB.mauSo)
         return PhanSo (tuSo: hieuTuSo, mauSo: hieuMauSo)
     }
-    func tichPhanSo(soB: PhanSo)->PhanSo{
+    func tichPhanSo(soB: PhanSo) -> PhanSo{
         let tichTuSo = (tuSo * soB.tuSo)
         let tichMauSo = (mauSo * soB.mauSo)
         return PhanSo(tuSo: tichTuSo, mauSo: tichMauSo)
     }
-    func thuongPhanSo(soB: PhanSo)->PhanSo{
+    func thuongPhanSo(soB: PhanSo) -> PhanSo{
         let thuongTuSo = (tuSo * soB.mauSo)
         let thuongMauSo = (mauSo * soB.tuSo)
         return PhanSo(tuSo: thuongTuSo, mauSo: thuongMauSo)

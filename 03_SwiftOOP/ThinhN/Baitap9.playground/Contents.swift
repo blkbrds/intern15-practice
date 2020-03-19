@@ -7,10 +7,11 @@ class Mang1c{
         self.soNguyen = soNguyen
     }
     
-    func inMang()->String {
-        return " Ham co \(soNguyen) "
+    func inMang() -> String {
+        return "Ham co \(soNguyen) "
     }
-    func soLonNhat()-> Int {
+    
+    func soLonNhat() -> Int {
         var soLonNhat = soNguyen[0]
         for i in 0..<soNguyen.count  {
             if soLonNhat < soNguyen[i]{
@@ -21,10 +22,10 @@ class Mang1c{
         return soLonNhat
     }
      
-    func soNhoNhat()->Int {
+    func soNhoNhat() -> Int {
         var soNhoNhat = soNguyen[0]
         for i in 0..<soNguyen.count {
-            if soNhoNhat < soNguyen[i]{
+            if soNhoNhat  > soNguyen[i]{
                 soNhoNhat = soNguyen[i]
             }
         }
@@ -32,7 +33,7 @@ class Mang1c{
         return soNhoNhat
     }
 }
-var nhap = Mang1c(soNguyen: [4,5,6,7,8])
-print(nhap.inMang())
-nhap.soLonNhat()
-nhap.soNhoNhat()
+var mangSoNguyen = Mang1c(soNguyen: [4,5,6,7,8])
+print(mangSoNguyen.inMang())
+mangSoNguyen.soLonNhat()
+mangSoNguyen.soNhoNhat()
