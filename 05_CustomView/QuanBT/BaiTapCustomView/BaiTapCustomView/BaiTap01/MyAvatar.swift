@@ -1,4 +1,3 @@
-
 import UIKit
 
 protocol MyAvatarDelegate: class {
