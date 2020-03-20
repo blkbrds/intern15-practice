@@ -1,6 +1,6 @@
 import UIKit
 
-class MyPieChart: UIView {
+final class MyPieChart: UIView {
     // MARK: - Declare Variable
     var values: [CGFloat]?
     private var startAngle: CGFloat = CGFloat(0.0) * CGFloat.pi / 180

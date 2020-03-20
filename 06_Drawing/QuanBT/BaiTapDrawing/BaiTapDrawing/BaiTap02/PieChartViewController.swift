@@ -1,6 +1,6 @@
 import UIKit
 
-class PieChartViewController: UIViewController {
+final class PieChartViewController: UIViewController {
     // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A434A7C624249FB6003EB4E8 /* MyChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A7C524249FB6003EB4E8 /* MyChart.swift */; };
+		A434A7C924249FDF003EB4E8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A434A7C724249FDF003EB4E8 /* ChartViewController.swift */; };
+		A434A7CA24249FDF003EB4E8 /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A434A7C824249FDF003EB4E8 /* ChartViewController.xib */; };
 		A4BAFB6D24245D5A00636CCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BAFB6C24245D5A00636CCA /* AppDelegate.swift */; };
 		A4BAFB6F24245D5A00636CCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BAFB6E24245D5A00636CCA /* SceneDelegate.swift */; };
 		A4BAFB7624245D5C00636CCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4BAFB7524245D5C00636CCA /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A434A7C524249FB6003EB4E8 /* MyChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChart.swift; sourceTree = "<group>"; };
+		A434A7C724249FDF003EB4E8 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		A434A7C824249FDF003EB4E8 /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
 		A4BAFB6924245D5A00636CCA /* BaiTapDrawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapDrawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BAFB6C24245D5A00636CCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4BAFB6E24245D5A00636CCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A434A7C424249F8E003EB4E8 /* BaiTap01 */ = {
+			isa = PBXGroup;
+			children = (
+				A434A7C524249FB6003EB4E8 /* MyChart.swift */,
+				A434A7C724249FDF003EB4E8 /* ChartViewController.swift */,
+				A434A7C824249FDF003EB4E8 /* ChartViewController.xib */,
+			);
+			path = BaiTap01;
+			sourceTree = "<group>";
+		};
 		A4BAFB6024245D5900636CCA = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +74,7 @@
 		A4BAFB6B24245D5A00636CCA /* BaiTapDrawing */ = {
 			isa = PBXGroup;
 			children = (
+				A434A7C424249F8E003EB4E8 /* BaiTap01 */,
 				A4BAFB8024245E9900636CCA /* BaiTap02 */,
 				A4BAFB6C24245D5A00636CCA /* AppDelegate.swift */,
 				A4BAFB6E24245D5A00636CCA /* SceneDelegate.swift */,
@@ -137,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4BAFB7924245D5C00636CCA /* LaunchScreen.storyboard in Resources */,
+				A434A7CA24249FDF003EB4E8 /* ChartViewController.xib in Resources */,
 				A4BAFB7624245D5C00636CCA /* Assets.xcassets in Resources */,
 				A4BAFB8424245F1000636CCA /* PieChartViewController.xib in Resources */,
 			);
@@ -152,7 +170,9 @@
 				A4BAFB8324245F1000636CCA /* PieChartViewController.swift in Sources */,
 				A4BAFB8624245F4F00636CCA /* MyPieChart.swift in Sources */,
 				A4BAFB6D24245D5A00636CCA /* AppDelegate.swift in Sources */,
+				A434A7C624249FB6003EB4E8 /* MyChart.swift in Sources */,
 				A4BAFB6F24245D5A00636CCA /* SceneDelegate.swift in Sources */,
+				A434A7C924249FDF003EB4E8 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
