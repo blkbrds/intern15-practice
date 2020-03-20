@@ -15,9 +15,7 @@ class Date{
     }
     
     func kiemTraNgay() -> String {
-        if ngay > 31 || ngay < 0{
-            return("Ngay khong hop le")
-        }
+        
         if thang < 0 || thang > 12{
             return("Thang khong hop le")
         }
@@ -31,42 +29,39 @@ class Date{
                 return("Ngay khong hop le")
             }
         }
-        if thang == 2 && nam % 4 == 0 && ngay > 29{
+       let soNgay = daysIn(thang: thang, nam: nam)
+        if soNgay < ngay {
             return("Ngay khong hop le")
         }
-        if thang == 2 && nam % 4 != 0 && ngay > 28{
-            return "Ngay khong hop le"
-        }
-        return ("Ngay hop le")
-    }
         
+        return ("Ngay hop le")
+        }
 }
+
 func daysIn(thang:Int, nam: Int) -> Int{
     let thang30Ngay = [4,6,9,11]
     if nam % 4 == 0  && thang == 2{
-        print("So ngay cua thang la: 29 ")
+        print("So ngay cua thang 2 la: 29 ")
         return (29)
     }
     if nam % 4 != 0 && thang == 2{
-        print("So ngay cua thang la: 28")
+        print("So ngay cua thang 2 la: 28")
         return (28)
     }
     var soNgay:Int = 0
     for i in thang30Ngay{
         if i == thang {
             soNgay = 30
-        } else{
+        }else{
             soNgay = 31
         }
     }
-    print ("So ngay cua thang la: \(soNgay)")
+    print ("So ngay cua thang \(thang) la: \(soNgay)")
     
     return (soNgay)
 }
-
-var ngayBatKy = Date(ngay: 20, thang: 2, nam: 2020)
+var ngayBatKy = Date(ngay: 30, thang: 11, nam: 2020)
 ngayBatKy.hamTruyCapDuLieu()
-ngayBatKy.kiemTraNgay()
 print(ngayBatKy.hamTruyCapDuLieu())
-daysIn(thang: 2, nam: 2020)
 print(ngayBatKy.kiemTraNgay())
+daysIn(thang: 9, nam: 2020)

@@ -27,14 +27,14 @@ class buildStack{
         }
     }
     
-   func isPushStack(element: Int){
+   func push(element: Int){
     if mangSoNguyen.count == soStack {
         print ("Khong the them stack duoc")
     }else{
         mangSoNguyen.append(element)
         }
     }
-    func isPopStack(){
+    func pop(){
         if mangSoNguyen.count == 0{
           print("Khong the xoa them ")
         }else{
@@ -47,11 +47,11 @@ var mangStack = buildStack(soStack: 5,mangSoNguyen: [1,3,4,7,5])
 mangStack.isEmptyStack()
 mangStack.isFullStack()
 print(mangStack.mangSoNguyen)
-mangStack.isPushStack(element: 7)
+mangStack.push(element: 7)
 print(mangStack.mangSoNguyen)
-mangStack.isPushStack(element: 8)
+mangStack.push(element: 8)
 print(mangStack.mangSoNguyen)
-mangStack.isPushStack(element: 12)
+mangStack.push(element: 12)
 print(mangStack.mangSoNguyen)
-mangStack.isPopStack()
+mangStack.pop()
 print(mangStack.mangSoNguyen)
