@@ -22,13 +22,7 @@ class Date{
         if nam < 0 {
             return("Nam khong hop le")
         }
-        
-        let thang30Ngay = [4,6,9,11]
-        for i in thang30Ngay{
-            if i == thang && ngay > 30{
-                return("Ngay khong hop le")
-            }
-        }
+
        let soNgay = daysIn(thang: thang, nam: nam)
         if soNgay < ngay {
             return("Ngay khong hop le")
@@ -60,7 +54,7 @@ func daysIn(thang:Int, nam: Int) -> Int{
     
     return (soNgay)
 }
-var ngayBatKy = Date(ngay: 30, thang: 11, nam: 2020)
+var ngayBatKy = Date(ngay: 30, thang: 2, nam: 2020)
 ngayBatKy.hamTruyCapDuLieu()
 print(ngayBatKy.hamTruyCapDuLieu())
 print(ngayBatKy.kiemTraNgay())
