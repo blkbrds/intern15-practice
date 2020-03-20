@@ -18,9 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
 //      window.rootViewController = AvatarViewController()
-        window.rootViewController = CustomSliderViewController()
+//      window.rootViewController = CustomSliderViewController()
 //      window.rootViewController = CustomButtonViewController()
-//      window.rootViewController = CustomDatePickerViewController()
+        window.rootViewController = CustomDatePickerViewController()
         self.window = window
         window.makeKeyAndVisible()
         

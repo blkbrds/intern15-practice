@@ -1,4 +1,5 @@
 import UIKit
+
 protocol MyDatePickerViewDelegate: class {
     func selectDate(selectDate: Date?)
 }
@@ -12,11 +13,6 @@ final class DatePickerView: UIView {
     weak var delegate: MyDatePickerViewDelegate?
     
     // MARK: - function
-    func setupUI() {
-        contentView.alpha = 1
-        isHidden = true
-    }
-    
     func show() {
         self.isHidden = false
         UIView.animate(withDuration: 0.5, animations: {
@@ -24,8 +20,8 @@ final class DatePickerView: UIView {
         })
     }
     
-    // MARK: - IBOutlet
-    @IBAction func doneTouchUpInside(_ sender: Any) {
+    // MARK: - IBAction
+    @IBAction private func doneTouchUpInside(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             self.contentView.alpha = 0
         }) { (done) in

@@ -11,7 +11,6 @@ final class CustomDatePickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         datePickerView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
-        datePickerView?.setupUI()
         datePickerView?.delegate = self
         view.addSubview(datePickerView!)
         dateTextField.delegate = self
