@@ -1,31 +1,41 @@
 import UIKit
 
 class DaGiac {
-    var socanh: Int
+    var soCanh: Int
     var arr: [Int]
-    init(socanh: Int,arr: [Int]) {
-        self.socanh = socanh
-        self.arr = arr
-    }
-    func chuVi() -> Int {
-        var chuvi: Int = 0
-        for i in 0 ..< arr.count {
-            chuvi = chuvi + arr[i]
+    
+    init(soCanh: Int, arr: [Int]) {
+        self.soCanh = soCanh
+        if soCanh > arr.count {
+            self.arr = arr
+        } else {
+            self.arr = Array(arr[0..<soCanh])
         }
-        return chuvi
+    }
+    
+    func tinhChuVi() -> Int {
+        var p: Int = 0
+        for i in 0..<arr.count {
+            p += arr[i]
+        }
+        return(p)
     }
 }
-class tamgiac : DaGiac {
-    override  func chuVi() -> Int{
-        super.chuVi()
+
+class TamGiac : DaGiac {
+    override func tinhChuVi() -> Int{
+        super.tinhChuVi()
     }
-    func dienTich() -> Double {
-        var S: Double = 0
-        var p: Double = Double(chuVi())
-        S = sqrt(p * (p - Double(arr[0])) * (p - Double(arr[1])) * (p - Double(arr[2])) )
-        return S
+    
+    func tinhDienTich() -> Double {
+        var s: Double = 0
+        s = sqrt(Double(tinhChuVi()) * Double(tinhChuVi() - arr[0]) * Double(tinhChuVi() - arr[1]) * Double(tinhChuVi() - arr[2]))
+        return s
     }
 }
-var tg = tamgiac(socanh: 3, arr: [3,4,5])
-tg.chuVi()
-tg.dienTich()
+
+var dg = DaGiac(soCanh: 3, arr: [2,5,4])
+dg.tinhChuVi()
+var tg = TamGiac(soCanh: 3, arr: [3,4,5])
+tg.tinhChuVi()
+tg.tinhDienTich()

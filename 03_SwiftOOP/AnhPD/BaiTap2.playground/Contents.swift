@@ -1,25 +1,25 @@
 import UIKit
 
 class DaGiac {
-    var socanh: Int
+    var soCanh: Int
     var arr: [Int]
-    init(socanh: Int, arr: [Int])  {
-        self.socanh = socanh
-        self.arr = arr
-    }
-    func chuVi() -> Int {
-        var chuvi : Int = 0
-        for i in 0..<arr.count {
-            chuvi = chuvi + arr[i]
+    init(soCanh: Int, arr: [Int]) {
+        self.soCanh = soCanh
+        if soCanh > arr.count {
+            self.arr = arr
+        } else {
+            self.arr = Array(arr[0..<soCanh])
         }
-        return chuvi
     }
-    func soCanhDaGiac() {
+    
+    func tinhChuViDaGiac() -> String {
+        var p: Int = 0
         for i in 0..<arr.count {
-            print("Canh thu \(i + 1) = \(arr[i])")
+            p += arr[i]
+            print("Độ dài cạnh thứ \(i + 1) là: \(arr[i])")
         }
+        return("Chu vi = \(String(p))")
     }
 }
-var dagiac = DaGiac(socanh: 5, arr: [1,2,3,4,5])
-print(dagiac.chuVi())
-dagiac.soCanhDaGiac()
+var dg = DaGiac(soCanh: 5, arr: [4,2,5,3,8])
+print(dg.tinhChuViDaGiac())

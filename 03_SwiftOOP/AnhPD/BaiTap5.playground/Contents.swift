@@ -1,56 +1,51 @@
 import UIKit
 
 class CStack {
-    var stack : [Int]
-    var phantu: Int
-    
-    init(stack: [Int], phantu: Int) {
-        if stack.count > phantu {
-            self.stack = Array(stack[0..<phantu])
-        } else {
+    var n: Int
+    var stack: [Int]
+    init(n: Int,stack: [Int]) {
+        self.n = n
+        if n > stack.count {
             self.stack = stack
-        }
-        self.phantu = phantu
-    }
-    //ktra ngan xep rong
-    func isEmpty() {
-        if self.stack.count == 0 {
-            print("Stack rỗng")
         } else {
-            print("Stack không rỗng")
+            self.stack = Array(stack[0..<n])
         }
     }
-    
-    func isFull() {
-        if self.phantu <= self.stack.count {
-            print("Stack đã đầy")
+    func kTraRong() -> Bool {
+        if stack.count == 0{
+            return true
         } else {
-            print("Stack chưa đầy")
+            return false
         }
     }
-    
-    func themPhanTu(_ phantu: Int) {
-        if self.phantu > self.stack.count {
-            self.stack.append(phantu)
+    func kTraStackDaDayChua() {
+        if stack.count < n {
+            print("Stack của bạn chưa đầy")
         } else {
-            isFull()
+            print("Stack của bạn đã đầy")
         }
     }
-    
-    func xoaPhanTu() {
-        if self.stack.count > 0 {
-            self.stack.removeLast()
+    func themPhanTu(a: Int) {
+        if stack.count < n {
+            stack.append(a)
+            print("Bạn thêm thành công ",stack)
         } else {
-            print("Stack không có phần tử để xoá")
+            print("Stack của bạn đã đầy")
+        }
+    }
+    func xoaPhanTuODinh() {
+        if stack.count != 0 {
+            stack.popLast()
+            print("Bạn đã xoá phần tử ở đỉnh ",stack)
+        } else {
+            print("Ngăn xếp rỗng")
         }
     }
 }
+var st = CStack(n: 10, stack: [1,2,3])
+print(st.kTraRong())
+st.kTraStackDaDayChua()
+st.themPhanTu(a: 4)
+st.xoaPhanTuODinh()
 
-var st = CStack(stack: [1,2,3,6,9], phantu:10)
-st.isEmpty()
-st.isFull()
-st.themPhanTu(4)
-print(st.stack)
-st.xoaPhanTu()
-print(st.stack)
 

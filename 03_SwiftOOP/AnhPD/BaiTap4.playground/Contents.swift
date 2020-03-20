@@ -9,25 +9,21 @@ class TamGiac {
         self.b = b
         self.c = c
     }
-    func ktraTamGiac() -> Bool {
-        if a + b > c || a + c > b && b + c > a {
-            return true
+    func kTraTamGiac() {
+        if a == b || b == c || a == c {
+            print("Day la tam giac can & do dai cua 3 canh lan luot la: a = \(a),b = \(b),c = \(c)")
+        } else if a == b && b == c && a == c {
+            print("Day la tam giac deu & do dai cua 3 canh lan luot la: a = \(a),b = \(b),c = \(c)")
+        } else if a * a == b * b + c * c || b * b == a * a + c * c || c * c == a * a + b * b {
+            print("Day la tam giac vuong & do dai cua 3 canh lan luot la: a = \(a),b = \(b),c = \(c)")
+        } else  if a + b > c || a + c > b || c + b > a {
+            print("Day la tam giac & do dai cua 3 canh lan luot la: a = \(a),b = \(b),c = \(c)")
         } else {
-            return false
+            print("Day khong phai la tam giac")
         }
-    }
-    func ktraPytago() -> Bool{
-        if a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a {
-            return true
-        }else {
-            return false
-        }
-    }
-    func inCanh(){
-        print("\(self.a),\(self.b),\(self.c)")
     }
 }
-var ktra = TamGiac(a: 3, b: 5, c: 4)
-print(ktra.ktraTamGiac())
-print(ktra.ktraPytago())
-ktra.inCanh()
+var tg1 = TamGiac(a: 22, b: 10, c: 14)
+var tg2 = TamGiac(a: 8, b: 8, c: 8)
+tg1.kTraTamGiac()
+tg2.kTraTamGiac()

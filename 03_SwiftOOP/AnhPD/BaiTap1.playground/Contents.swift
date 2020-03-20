@@ -4,50 +4,61 @@ class PhanSo {
     var tuSo: Int
     var mauSo: Int
     
-    init(tuSo: Int,mauSo: Int) {
+    init?(tuSo: Int,mauSo: Int) {
+        if mauSo == 0 {
+            return nil
+        }
         self.tuSo = tuSo
         self.mauSo = mauSo
     }
     
+    func ktraPhanSo() {
+        if mauSo != 0 {
+            
+        }
+    }
     func inPhanSo() {
         print("\(tuSo) / \(mauSo)")
     }
     
     func phepCong(phanSo: PhanSo) -> String {
-        var tu = tuSo * phanSo.mauSo + phanSo.tuSo * mauSo
-        var mau = mauSo * phanSo.mauSo
+        let tu = tuSo * phanSo.mauSo + phanSo.tuSo * mauSo
+        let mau = mauSo * phanSo.mauSo
         return("\(tu) / \(mau)")
     }
     func phepTru(phanSo: PhanSo) -> String {
-        var tu = tuSo * phanSo.mauSo - phanSo.tuSo * mauSo
-        var mau = mauSo * phanSo.mauSo
+        let tu = tuSo * phanSo.mauSo - phanSo.tuSo * mauSo
+        let mau = mauSo * phanSo.mauSo
         return("\(tu) / \(mau)")
     }
     func phepNhan(phanSo: PhanSo) -> String {
-        var tu = tuSo * phanSo.tuSo
-        var mau = mauSo * phanSo.mauSo
+        let tu = tuSo * phanSo.tuSo
+        let mau = mauSo * phanSo.mauSo
         return("\(tu) / \(mau)")
     }
     func phepChia(phanSo: PhanSo) -> String  {
-        var tu = tuSo * phanSo.mauSo
-        var mau = phanSo.tuSo * mauSo
+        let tu = tuSo * phanSo.mauSo
+        let mau = phanSo.tuSo * mauSo
         return("\(tu) / \(mau)")
     }
 }
 
-var pS1 = PhanSo(tuSo: 3, mauSo: 2)
-var pS2 = PhanSo(tuSo: 2, mauSo: 6)
+var pS1 = PhanSo(tuSo: 3, mauSo: 4)
+var pS2 = PhanSo(tuSo: 2, mauSo: 0)
 
+if let pS1 = pS1, let pS2 = pS2 {
+    var Cong = pS1.phepCong(phanSo: pS2)
+    var Tru = pS1.phepTru(phanSo: pS2)
+    var Nhan = pS1.phepNhan(phanSo: pS2)
+    var Chia = pS1.phepChia(phanSo: pS2)
+    print("Cong: \(Cong)")
+    print("Tru: \(Tru)")
+    print("Nhan: \(Nhan)")
+    print("Chia: \(Chia)")
+} else {
+    print("Mau so khong duoc bang 0")
+}
 
-var Cong = pS1.phepCong(phanSo: pS2)
-var Tru = pS1.phepTru(phanSo: pS2)
-var Nhan = pS1.phepNhan(phanSo: pS2)
-var Chia = pS1.phepChia(phanSo: pS2)
-print(pS1.inPhanSo())
-print(Cong)
-print(Tru)
-print(Nhan)
-print(Chia)
 
 
 
