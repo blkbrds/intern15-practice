@@ -24,7 +24,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func login 
+    private func setUpUITextView(textField :UITextView) {
+        textField.layer.borderColor = UIColor.black.cgColor
+        
+    }
     @IBAction func clickClearButton(_ sender: Any) {
     }
     
