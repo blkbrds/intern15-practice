@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutoLayout6_1ViewController" customModule="BaiTapAutoLayout" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhB-sh-910">
+                    <rect key="frame" x="182" y="423" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cOc-8M-5am"/>
+                        <constraint firstAttribute="width" constant="50" id="lFN-Vv-8d0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZe-bD-OBr">
+                    <rect key="frame" x="100" y="423" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="BUc-fv-afZ"/>
+                        <constraint firstAttribute="height" constant="50" id="IPS-pa-iRy"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyF-Rb-LHH">
+                    <rect key="frame" x="14" y="423" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ZV9-Mk-lDX"/>
+                        <constraint firstAttribute="width" constant="50" id="gl3-aA-m0a"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIh-fP-2JC">
+                    <rect key="frame" x="350" y="423" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="0YS-MF-d5y"/>
+                        <constraint firstAttribute="height" constant="50" id="CB2-ac-l2V"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ric-7i-85i">
+                    <rect key="frame" x="264" y="423" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="JfR-vb-yLN"/>
+                        <constraint firstAttribute="width" constant="50" id="Ps9-5m-hXX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WIh-fP-2JC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="88D-vb-gdi"/>
+                <constraint firstItem="ric-7i-85i" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8cu-mg-Jff"/>
+                <constraint firstAttribute="trailing" secondItem="dyF-Rb-LHH" secondAttribute="trailing" constant="350" id="EX2-Ow-tE4"/>
+                <constraint firstItem="EhB-sh-910" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XjN-hM-RfQ"/>
+                <constraint firstItem="EhB-sh-910" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y7l-6Y-0k4"/>
+                <constraint firstItem="dyF-Rb-LHH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aMP-0L-RXK"/>
+                <constraint firstItem="ric-7i-85i" firstAttribute="leading" secondItem="dyF-Rb-LHH" secondAttribute="trailing" constant="200" id="aah-3W-2Fi"/>
+                <constraint firstItem="fZe-bD-OBr" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dWQ-HB-DQq"/>
+                <constraint firstItem="WIh-fP-2JC" firstAttribute="leading" secondItem="fZe-bD-OBr" secondAttribute="trailing" constant="200" id="t2a-zs-WeI"/>
+                <constraint firstItem="WIh-fP-2JC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="350" id="zTr-Gw-39Y"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="131.91964285714286"/>
+        </view>
+    </objects>
+</document>
