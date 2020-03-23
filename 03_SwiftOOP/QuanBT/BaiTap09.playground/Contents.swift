@@ -7,7 +7,7 @@ final class OneDimensionalArray {
         self.arr = arr
     }
     
-    func printInfo(){
+    func printInfo() {
         for item in self.arr {
             print(item)
         }

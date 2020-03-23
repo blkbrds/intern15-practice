@@ -26,11 +26,9 @@ class TwoDimensionalGeometry: Geometry {
     }
     
     func perimeter() {
-        
     }
     
     func acreage() {
-        
     }
 }
 
@@ -48,11 +46,9 @@ class ThreeDimensionalGeometry: Geometry {
     }
     
     func acreage() {
-        
     }
     
     func volume() {
-        
     }
 }
 

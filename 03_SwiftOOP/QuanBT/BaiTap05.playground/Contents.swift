@@ -42,7 +42,7 @@ final class CStack {
     }
 }
 
-var stack: CStack = CStack(stack: [1,2,3], numberOfElements: 10)
+var stack: CStack = CStack(stack: [1, 2, 3], numberOfElements: 10)
 stack.emptyTest()
 stack.fullTest()
 stack.addElement(additionalElement: 4)

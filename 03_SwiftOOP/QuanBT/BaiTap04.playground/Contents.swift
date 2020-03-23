@@ -2,14 +2,14 @@ import UIKit
 
 final class TestPitago {
     var n: Int
-    var triangles: [(Int,Int,Int)]
+    var triangles: [(Int, Int, Int)]
     
-    init(n: Int, triangles: [(Int,Int,Int)]) {
+    init(n: Int, triangles: [(Int, Int, Int)]) {
         self.n = n
         self.triangles = triangles
     }
     
-    func pitago(triangle: (Int,Int,Int)) -> Bool {
+    func pitago(triangle: (Int, Int, Int)) -> Bool {
         let edge1 = triangle.0
         let edge2 = triangle.1
         let edge3 = triangle.2
@@ -31,5 +31,5 @@ final class TestPitago {
     }
 }
 
-var testpitago: TestPitago = TestPitago(n: 4, triangles: [(1,2,3),(3,4,5),(4,5,6),(8,6,10)])
+var testpitago: TestPitago = TestPitago(n: 4, triangles: [(1, 2, 3),(3, 4, 5),(4, 5, 6),(8, 6, 10)])
 testpitago.printTriangle()

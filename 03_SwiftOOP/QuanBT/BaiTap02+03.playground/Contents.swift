@@ -41,7 +41,7 @@ final class Triangle: Polygons {
     
     func area() -> Double {
         var result: Double = 1
-        for i in self.lengthOfEdges{
+        for i in self.lengthOfEdges {
             result *= Double(perimeter() / 2 - i)
         }
         result *= Double(perimeter() / 2)
