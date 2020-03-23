@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutoLayout7_5_2ViewController" customModule="BaiTapAutoLayout" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PL9-ck-HpA">
+                    <rect key="frame" x="164" y="100" width="86.5" height="86.5"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVE-Kg-x4I">
+                    <rect key="frame" x="164" y="286.5" width="86.5" height="86.5"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTO-HO-e1s">
+                    <rect key="frame" x="164" y="709.5" width="86.5" height="86.5"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnB-jT-Ibr">
+                    <rect key="frame" x="164" y="523" width="86.5" height="86.5"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="PL9-ck-HpA" firstAttribute="height" secondItem="DVE-Kg-x4I" secondAttribute="width" id="2gD-Ln-htS"/>
+                <constraint firstItem="DVE-Kg-x4I" firstAttribute="top" secondItem="PL9-ck-HpA" secondAttribute="bottom" constant="100" id="CLP-Lx-bLs"/>
+                <constraint firstItem="tTO-HO-e1s" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D7w-dN-wKE"/>
+                <constraint firstItem="tTO-HO-e1s" firstAttribute="top" secondItem="cnB-jT-Ibr" secondAttribute="bottom" constant="100" id="LWx-4E-pDd"/>
+                <constraint firstItem="cnB-jT-Ibr" firstAttribute="top" secondItem="DVE-Kg-x4I" secondAttribute="bottom" constant="150" id="MdS-7C-H8R"/>
+                <constraint firstItem="DVE-Kg-x4I" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UyW-bU-VbU"/>
+                <constraint firstItem="PL9-ck-HpA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="ZeT-FT-0lF"/>
+                <constraint firstItem="PL9-ck-HpA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zy9-zq-uzk"/>
+                <constraint firstItem="DVE-Kg-x4I" firstAttribute="top" secondItem="PL9-ck-HpA" secondAttribute="bottom" constant="100" id="akC-Su-6lP"/>
+                <constraint firstItem="cnB-jT-Ibr" firstAttribute="top" secondItem="DVE-Kg-x4I" secondAttribute="bottom" constant="150" id="e1w-F5-y5M"/>
+                <constraint firstItem="PL9-ck-HpA" firstAttribute="width" secondItem="DVE-Kg-x4I" secondAttribute="width" id="e45-mS-YUa"/>
+                <constraint firstItem="cnB-jT-Ibr" firstAttribute="width" secondItem="tTO-HO-e1s" secondAttribute="width" id="eV3-bQ-8Db"/>
+                <constraint firstItem="cnB-jT-Ibr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fhl-ih-WF9"/>
+                <constraint firstItem="tTO-HO-e1s" firstAttribute="height" secondItem="DVE-Kg-x4I" secondAttribute="height" id="hoJ-N9-kpA"/>
+                <constraint firstItem="tTO-HO-e1s" firstAttribute="top" secondItem="cnB-jT-Ibr" secondAttribute="bottom" constant="100" id="iOT-kM-8kb"/>
+                <constraint firstItem="DVE-Kg-x4I" firstAttribute="height" secondItem="PL9-ck-HpA" secondAttribute="height" id="jrh-kw-SJq"/>
+                <constraint firstItem="tTO-HO-e1s" firstAttribute="width" secondItem="DVE-Kg-x4I" secondAttribute="width" id="noh-Rm-cCd"/>
+                <constraint firstItem="cnB-jT-Ibr" firstAttribute="height" secondItem="DVE-Kg-x4I" secondAttribute="height" id="uSQ-Oz-a5k"/>
+                <constraint firstAttribute="bottom" secondItem="tTO-HO-e1s" secondAttribute="bottom" constant="100" id="y8v-qj-mB7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="132"/>
+        </view>
+    </objects>
+</document>
