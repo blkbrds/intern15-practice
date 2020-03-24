@@ -9,7 +9,8 @@ class MyViewController: UIViewController {
     @IBOutlet weak var valueGreen: UILabel!
     @IBOutlet weak var changeValueTextLabel: UILabel!
     @IBOutlet weak var changeColorView: UIView!
-
+    @IBOutlet weak var valueBlueSlider: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         changeColorView.backgroundColor = UIColor(red: .random(in: 0...1),
@@ -27,5 +28,8 @@ class MyViewController: UIViewController {
         let c = blueValueSlider.value
         changeColorView.backgroundColor = UIColor(red: CGFloat(a), green: CGFloat(b), blue: CGFloat(c), alpha: 1.0)
         valueTextLabel.text = "Color (R: \(round(a * 255)),G: \(round(b * 255)),B: \(round(c * 255))"
+        changeValueTextLabel.text = "\(round(a * 255))"
+        valueGreen.text = "\(round(b * 255))"
+        valueBlueSlider.text = "\(round(c * 255))"
     }
 }
