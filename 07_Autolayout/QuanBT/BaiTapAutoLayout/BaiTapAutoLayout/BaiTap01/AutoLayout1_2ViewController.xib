@@ -20,13 +20,15 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oe-Zn-xdN">
                     <rect key="frame" x="103.5" y="344.5" width="207" height="207"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8oe-Zn-xdN" secondAttribute="height" multiplier="1:1" id="iHY-6d-u8B"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="8oe-Zn-xdN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="6LJ-tb-cYd"/>
                 <constraint firstItem="8oe-Zn-xdN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Uxa-0c-Voa"/>
-                <constraint firstItem="8oe-Zn-xdN" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="Xbl-tj-hFo"/>
                 <constraint firstItem="8oe-Zn-xdN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="dHQ-5g-8hA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

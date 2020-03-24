@@ -18,15 +18,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIj-Me-IH8">
-                    <rect key="frame" x="25" y="498.5" width="364" height="313.5"/>
+                    <rect key="frame" x="25" y="478" width="364" height="334"/>
                     <color key="backgroundColor" red="0.32429138739773722" green="0.80417073731146682" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-ae-OVr">
-                    <rect key="frame" x="25" y="94" width="169.5" height="354.5"/>
+                    <rect key="frame" x="25" y="94" width="169.5" height="334"/>
                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6g-rR-G2p">
-                    <rect key="frame" x="219.5" y="94" width="169.5" height="354.5"/>
+                    <rect key="frame" x="219.5" y="94" width="169.5" height="334"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
@@ -36,12 +36,11 @@
                 <constraint firstItem="q6g-rR-G2p" firstAttribute="width" secondItem="KrZ-ae-OVr" secondAttribute="width" id="OSJ-it-py9"/>
                 <constraint firstItem="q6g-rR-G2p" firstAttribute="leading" secondItem="KrZ-ae-OVr" secondAttribute="trailing" constant="25" id="PEX-EP-mUA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RIj-Me-IH8" secondAttribute="bottom" constant="50" id="ShQ-kY-3Kk"/>
-                <constraint firstItem="q6g-rR-G2p" firstAttribute="leading" secondItem="KrZ-ae-OVr" secondAttribute="trailing" constant="25" id="XgN-db-YBl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="q6g-rR-G2p" secondAttribute="trailing" constant="25" id="Yg9-aO-XH8"/>
                 <constraint firstItem="KrZ-ae-OVr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="bj6-il-rNQ"/>
                 <constraint firstItem="RIj-Me-IH8" firstAttribute="top" secondItem="q6g-rR-G2p" secondAttribute="bottom" constant="50" id="eOR-0T-P3b"/>
-                <constraint firstItem="RIj-Me-IH8" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="kpe-Qh-btw"/>
                 <constraint firstItem="KrZ-ae-OVr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="lmR-1K-Lvz"/>
+                <constraint firstItem="RIj-Me-IH8" firstAttribute="height" secondItem="q6g-rR-G2p" secondAttribute="height" id="oU9-HQ-DVv"/>
                 <constraint firstItem="RIj-Me-IH8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="wZE-e7-Lsb"/>
                 <constraint firstItem="RIj-Me-IH8" firstAttribute="top" secondItem="KrZ-ae-OVr" secondAttribute="bottom" constant="50" id="wqj-AK-OC8"/>
                 <constraint firstItem="q6g-rR-G2p" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="x2K-1v-229"/>

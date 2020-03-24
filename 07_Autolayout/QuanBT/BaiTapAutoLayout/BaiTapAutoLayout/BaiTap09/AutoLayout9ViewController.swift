@@ -2,9 +2,9 @@ import UIKit
 
 final class AutoLayout9ViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var contentLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
     
     // MARK: - Declare Variable
     var test = 1
@@ -25,7 +25,7 @@ final class AutoLayout9ViewController: UIViewController {
     }
     
     // MARK: - IBAction
-    @IBAction func chevronRight(_ sender: Any) {
+    @IBAction private func chevronRightButtonTouchUpInside(_ sender: Any) {
         if self.test == 10 {
             return
         }
@@ -36,7 +36,7 @@ final class AutoLayout9ViewController: UIViewController {
         titleLabel.text = "\(test)/10"
     }
     
-    @IBAction func chevronLeft(_ sender: Any) {
+    @IBAction private func chevronLeftButtonTouchUpInside(_ sender: Any) {
         if self.test == 1 {
             return
         }
