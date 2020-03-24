@@ -14,24 +14,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var pinkButton: UIButton!
     @IBOutlet weak var heightPinkButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthPinkButtonConstraint: NSLayoutConstraint!
-    var heightH: CGFloat = UIScreen.main.bounds.width * 0.1
-    var widthW: CGFloat = UIScreen.main.bounds.width * 0.1
+    var heightSquare: CGFloat = UIScreen.main.bounds.width * 0.1
+    var widthSquare: CGFloat = UIScreen.main.bounds.width * 0.1
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
     }
 
-    @IBAction func blueButtonClick(_ sender: Any) {
+    @IBAction func blueButtonTouchUpInside(_ sender: Any) {
         if blueButton.isSelected == false {
-            heightBlueButtonConstraint.constant = heightH * 1.5
-            widthBlueButtonConstraint.constant = widthW * 1.5
-            heightRedButtonConstraint.constant = heightH
-            widthRedButtonConstraint.constant = widthW
-            heightYellowButtonConstraint.constant = heightH
-            widthYellowButtonConstraint.constant = widthW
-            heightPinkButtonConstraint.constant = heightH
-            widthPinkButtonConstraint.constant = widthW
+            heightBlueButtonConstraint.constant = heightSquare * 1.5
+            widthBlueButtonConstraint.constant = widthSquare * 1.5
+            heightRedButtonConstraint.constant = heightSquare
+            widthRedButtonConstraint.constant = widthSquare
+            heightYellowButtonConstraint.constant = heightSquare
+            widthYellowButtonConstraint.constant = widthSquare
+            heightPinkButtonConstraint.constant = heightSquare
+            widthPinkButtonConstraint.constant = widthSquare
             view.layoutIfNeeded()
             blueButton.isSelected = !blueButton.isSelected
             redButton.isSelected = false
@@ -44,38 +44,37 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func redButtonClick(_ sender: Any) {
+    @IBAction func redButtonTouchUpInside(_ sender: Any) {
         if redButton.isSelected == false {
-            heightBlueButtonConstraint.constant = heightH
-            widthBlueButtonConstraint.constant = widthW
-            heightRedButtonConstraint.constant = heightH * 1.5
-            widthRedButtonConstraint.constant = widthW * 1.5
-            heightYellowButtonConstraint.constant = heightH
-            widthYellowButtonConstraint.constant = widthW
-            heightPinkButtonConstraint.constant = heightH
-            widthPinkButtonConstraint.constant = widthW
+            heightBlueButtonConstraint.constant = heightSquare
+            widthBlueButtonConstraint.constant = widthSquare
+            heightRedButtonConstraint.constant = heightSquare * 1.5
+            widthRedButtonConstraint.constant = widthSquare * 1.5
+            heightYellowButtonConstraint.constant = heightSquare
+            widthYellowButtonConstraint.constant = widthSquare
+            heightPinkButtonConstraint.constant = heightSquare
+            widthPinkButtonConstraint.constant = widthSquare
             view.layoutIfNeeded()
             redButton.isSelected = !redButton.isSelected
             blueButton.isSelected = false
             yellowButton.isSelected = false
             pinkButton.isSelected = false
-        }
-        else {
+        } else {
             refresh()
             redButton.isSelected = !redButton.isSelected
         }
     }
 
-    @IBAction func yellowButtonClick(_ sender: Any) {
+    @IBAction func yellowButtonTouchUpInside(_ sender: Any) {
         if yellowButton.isSelected == false {
-            heightBlueButtonConstraint.constant = heightH
-            widthBlueButtonConstraint.constant = widthW
-            heightRedButtonConstraint.constant = heightH
-            widthRedButtonConstraint.constant = widthW
-            heightYellowButtonConstraint.constant = heightH * 1.5
-            widthYellowButtonConstraint.constant = widthW * 1.5
-            heightPinkButtonConstraint.constant = heightH
-            widthPinkButtonConstraint.constant = widthW
+            heightBlueButtonConstraint.constant = heightSquare
+            widthBlueButtonConstraint.constant = widthSquare
+            heightRedButtonConstraint.constant = heightSquare
+            widthRedButtonConstraint.constant = widthSquare
+            heightYellowButtonConstraint.constant = heightSquare * 1.5
+            widthYellowButtonConstraint.constant = widthSquare * 1.5
+            heightPinkButtonConstraint.constant = heightSquare
+            widthPinkButtonConstraint.constant = widthSquare
             view.layoutIfNeeded()
             yellowButton.isSelected = !yellowButton.isSelected
             redButton.isSelected = false
@@ -88,37 +87,35 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func pinkButtonClick(_ sender: Any) {
+    @IBAction func pinkButtonTouchUpInside(_ sender: Any) {
         if pinkButton.isSelected == false {
-            heightBlueButtonConstraint.constant = heightH
-            widthBlueButtonConstraint.constant = widthW
-            heightRedButtonConstraint.constant = heightH
-            widthRedButtonConstraint.constant = widthW
-            heightYellowButtonConstraint.constant = heightH
-            widthYellowButtonConstraint.constant = widthW
-            heightPinkButtonConstraint.constant = heightH * 1.5
-            widthPinkButtonConstraint.constant = widthW * 1.5
+            heightBlueButtonConstraint.constant = heightSquare
+            widthBlueButtonConstraint.constant = widthSquare
+            heightRedButtonConstraint.constant = heightSquare
+            widthRedButtonConstraint.constant = widthSquare
+            heightYellowButtonConstraint.constant = heightSquare
+            widthYellowButtonConstraint.constant = widthSquare
+            heightPinkButtonConstraint.constant = heightSquare * 1.5
+            widthPinkButtonConstraint.constant = widthSquare * 1.5
             view.layoutIfNeeded()
             pinkButton.isSelected = !pinkButton.isSelected
             yellowButton.isSelected = false
             redButton.isSelected = false
             blueButton.isSelected = false
-        }
-        else {
+        } else {
             refresh()
             pinkButton.isSelected = !pinkButton.isSelected
         }
     }
 
     func refresh() {
-        heightBlueButtonConstraint.constant = heightH
-        widthBlueButtonConstraint.constant = widthW
-        heightRedButtonConstraint.constant = heightH
-        widthRedButtonConstraint.constant = widthW
-        heightYellowButtonConstraint.constant = heightH
-        widthYellowButtonConstraint.constant = widthW
-        heightPinkButtonConstraint.constant = heightH
-        widthPinkButtonConstraint.constant = widthW
-
+        heightBlueButtonConstraint.constant = heightSquare
+        widthBlueButtonConstraint.constant = widthSquare
+        heightRedButtonConstraint.constant = heightSquare
+        widthRedButtonConstraint.constant = widthSquare
+        heightYellowButtonConstraint.constant = heightSquare
+        widthYellowButtonConstraint.constant = widthSquare
+        heightPinkButtonConstraint.constant = heightSquare
+        widthPinkButtonConstraint.constant = widthSquare
     }
 }
