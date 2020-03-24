@@ -9,15 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var index = 0
+    let arr: [String] = ["ro1","ro2","ro3","ro4","ro5","ro6","ro7","ro8","ro9"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var toaDoX = 50
+        var toaDoX = 35
         var toaDoY = 100
-        var arr: [String] = ["ro1","ro2","ro3","ro4","ro5","ro6","ro7","ro8","ro9"]
         
-        for i in 1...9 {
+        for i in 0..<9 {
+            
             //add user avatar
             let frame = CGRect(x: toaDoX, y: toaDoY, width: 100, height: 100)
             let userAvatar = UIImageView(image: UIImage(named: "ronaldo"))
@@ -27,19 +30,31 @@ class ViewController: UIViewController {
             
             //add user name
             let userName = UILabel(frame: CGRect(x: toaDoX, y: toaDoY + 100, width: 100, height: 25))
-            userName.text = arr[i-1]
+            userName.text = arr[i]
             userName.backgroundColor = .lightGray
             userName.textAlignment = .center
             userName.textColor = .blue
             view.addSubview(userName)
+            
+            //kich vao avatar print ten user
+            let button = UIButton(frame: CGRect(x: toaDoX, y: toaDoY, width: 100, height: 125))
+            button.backgroundColor = .clear
+            button.addTarget(self, action: #selector(name), for: .touchUpInside)
+            view.addSubview(button)
+            
+            button.tag = i
             toaDoX += 120
-            if i % 3 == 0 {
+            if (i + 1) % 3 == 0 {
                 toaDoY += 150
-                toaDoX = 50
+                toaDoX = 35
             }
         }
     }
-
+    
+    @objc func name(sender: UIButton) {
+        print("Content at is : \(arr[sender.tag])")
+    }
+     
 
     /*
     // MARK: - Navigation
