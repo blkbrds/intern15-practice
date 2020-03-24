@@ -18,12 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
          
-        let window = UIWindow(windowScene: windowScene)
-        //window.rootViewController = AvatarViewController()
-        //window.rootViewController = MyViewController()
-        window.rootViewController = LoginViewController()
-        self.window = window
-        window.makeKeyAndVisible()
+        window = UIWindow(windowScene: windowScene)
+        window?.makeKeyAndVisible()
+        
+        //let viewController = AvatarViewController()
+        //let viewController = MyViewController()
+        //let viewController = LoginViewController()
+        let viewController = ColorBackgroundViewController()
+        //let viewController = CustomSliderViewController()
+        //let viewController = MonkeyViewController()
+        window?.rootViewController = viewController
        
   }
 
