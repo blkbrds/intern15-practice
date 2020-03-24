@@ -21,7 +21,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.userNameTextField.delegate = self
         self.passWordTextField.delegate = self
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      super.touchesBegan(touches, with: event)
+      if touches.first?.view == view {
+        view.endEditing(true)
+      }
+    }
+    
     private func switchBasedNextTextField(_ textField: UITextField) {
         switch textField {
         case self.userNameTextField:
@@ -30,6 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.passWordTextField.resignFirstResponder()
         }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.switchBasedNextTextField(textField)
         return true
