@@ -55,12 +55,18 @@ final class MVCViewController: UIViewController {
     
     @IBAction private func calculationResults(_ sender: Any) {
         value.numbers.append(value.number)
+        if value.numbers[0] == 0 {
+                Calculations.share.result = result
+                 Calculations.share.test = Calculations.share.operand[0]
+            result = Calculations.share.processing(value: value.numbers[1])
+        } else {
         Calculations.share.result = value.numbers[0]
         for index in 1 ..< value.numbers.count {
             Calculations.share.test = Calculations.share.operand[index - 1 ]
             Calculations.share.result = Calculations.share.processing(value: value.numbers[index])
         }
         result = Calculations.share.result
+    }
         if result <= 999999 {
              resultLabel.text = String(result)
         } else {
@@ -69,5 +75,6 @@ final class MVCViewController: UIViewController {
         value.numbers = []
         Calculations.share.operand = []
         value.number = 0
+        
     }
 }
