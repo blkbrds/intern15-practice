@@ -22,13 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
 
-//        let viewController = UserViewConroller()
-//     let viewController = UsersViewController()
- //       let viewController = LoginViewController()
-  //      let viewController = SliderBackgroudColorViewController()
-  //    let viewController = CustomSliderViewController()
-        let viewController = MonkeyViewController()
-//        let viewController = MonkeyMessageViewController()
+//      let viewController = UserViewConroller()
+//      let viewController = UsersViewController()
+//      let viewController = LoginViewController()
+//      let viewController = SliderBackgroudColorViewController()
+//      let viewController = CustomSliderViewController()
+//      let viewController = MonkeyViewController()
+        let viewController = MonkeyMessageViewController()
         window?.rootViewController = viewController
     }
 
