@@ -21,6 +21,7 @@ class Calculator: UIView {
                return String(a / b)
            }
        }
+    
        func chiaLayDu(a: Double, b: Double) -> String {
            let c: Int = Int(a) % Int(b)
            if b == 0 {
@@ -29,9 +30,8 @@ class Calculator: UIView {
                return String(c)
            }
        }
+    
        func logarit(a: Double, b: Double) -> String {
            return String(pow(a, b))
        }
-
-
 }

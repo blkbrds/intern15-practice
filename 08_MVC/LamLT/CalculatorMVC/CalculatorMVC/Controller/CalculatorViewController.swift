@@ -8,14 +8,13 @@ class CalculatorViewController: UIViewController {
     var checkMath: Bool = false
     var operating = 0
 
-    var cal = Calculator()
+    var calculatorView = Calculator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
-    @IBAction func numberS(_ sender: UIButton) {
+    @IBAction func numberButtonTouchUpInside(_ sender: UIButton) {
         if checkMath == true {
             resultLable.text = String(sender.tag)
             numberSceen = Double(resultLable.text!)!
@@ -26,7 +25,7 @@ class CalculatorViewController: UIViewController {
         }
     }
 
-    @IBAction func operatorButton(_ sender: UIButton) {
+    @IBAction func operatorButtonTouchUpInside(_ sender: UIButton) {
         if resultLable.text != "" && sender.tag != 16 {
             previousNumber = Double(resultLable.text!)!
             switch sender.tag {
@@ -50,24 +49,24 @@ class CalculatorViewController: UIViewController {
         } else if sender.tag == 16 {
             switch operating {
             case 10:
-                resultLable.text = cal.sum(a: numberSceen, b: previousNumber)
+                resultLable.text = calculatorView.sum(a: numberSceen, b: previousNumber)
             case 11:
-                resultLable.text = cal.sub(a: numberSceen, b: previousNumber)
+                resultLable.text = calculatorView.sub(a: numberSceen, b: previousNumber)
             case 12:
-                resultLable.text = cal.mul(a: numberSceen, b: previousNumber)
+                resultLable.text = calculatorView.mul(a: numberSceen, b: previousNumber)
             case 13:
-                resultLable.text = cal.div(a: numberSceen, b: previousNumber)
+                resultLable.text = calculatorView.div(a: numberSceen, b: previousNumber)
             case 14:
-                resultLable.text = cal.chiaLayDu(a: numberSceen, b: previousNumber)
+                resultLable.text = calculatorView.chiaLayDu(a: numberSceen, b: previousNumber)
             case 15:
-                resultLable.text = cal.logarit(a: numberSceen, b: previousNumber)
+                resultLable.text = calculatorView.logarit(a: numberSceen, b: previousNumber)
             default:
                 print("")
             }
         }
     }
 
-    @IBAction func clearButton(_ sender: UIButton) {
+    @IBAction func clearButtonTouchUpInside(_ sender: UIButton) {
         numberSceen = 0
         previousNumber = 0
         checkMath = false
