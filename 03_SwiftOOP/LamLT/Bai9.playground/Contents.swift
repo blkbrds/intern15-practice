@@ -7,13 +7,13 @@ class Mang1C {
         self.array1Chieu = array1Chieu
     }
 
-    func inputArray(a: Mang1C) -> [Int] {
-        let x = a.array1Chieu
+    func inputArray(instaneOFMang1C: Mang1C) -> [Int] {
+        let x = instaneOFMang1C.array1Chieu
         return x
     }
     
-    func maxNumberArray(a: Mang1C) -> Int {
-        let instaneOfArray = a.array1Chieu
+    func maxNumberArray(instaneOFMang1C: Mang1C) -> Int {
+        let instaneOfArray = instaneOFMang1C.array1Chieu
         var max = instaneOfArray[0]
         for i in 0..<instaneOfArray.count {
             if max < instaneOfArray[i] {
@@ -23,8 +23,8 @@ class Mang1C {
         return max
     }
     
-    func minNumberArray(a: Mang1C) -> Int {
-        let instaneOfArray = a.array1Chieu
+    func minNumberArray(instaneOFMang1C: Mang1C) -> Int {
+        let instaneOfArray = instaneOFMang1C.array1Chieu
         var min = instaneOfArray[0]
         for i in 0..<instaneOfArray.count {
             if min > instaneOfArray[i] {
@@ -36,9 +36,9 @@ class Mang1C {
 }
 
 let x = Mang1C(array1Chieu: [5,5,1,2,6,7,2,12,-6])
-let i = x.inputArray(a: x)
+let i = x.inputArray(instaneOFMang1C: x)
 print(i)
-let max = x.maxNumberArray(a: x)
+let max = x.maxNumberArray(instaneOFMang1C: x)
 print("Max = \(max)")
-let min = x.minNumberArray(a: x)
+let min = x.minNumberArray(instaneOFMang1C: x)
 print("Min = \(min)")

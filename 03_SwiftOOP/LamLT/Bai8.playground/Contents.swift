@@ -24,7 +24,7 @@ class DateT {
         var instaneOfMonth = inputMonth
         switch instaneOfMonth {
         case 2:
-            if inputYear % 4 == 0 {
+            if checkLeapYear(y: inputYear) == true {
                 instaneOfMonth = 29
             } else {
                 instaneOfMonth = 28
@@ -58,12 +58,12 @@ class DateT {
     }
 
     func advance(inputDay: Int, inputMonth: Int, inputYear: Int, t: DateT) -> String {
-        var checkDay = t.day
-        var checkMonth = t.month
-        var checkYear = t.year
-        var outputDay: Int = inputDay + checkDay - 31
-        var outputMonth: Int = inputMonth + checkMonth - 12
-        var outputYear: Int = inputYear + checkYear
+        let checkDay = t.day
+        let checkMonth = t.month
+        let checkYear = t.year
+        let outputDay: Int = inputDay + checkDay - 31
+        let outputMonth: Int = inputMonth + checkMonth - 12
+        let outputYear: Int = inputYear + checkYear
         return "Day \(outputDay) Month \(outputMonth) Year \(outputYear)"
     }
 }

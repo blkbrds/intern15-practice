@@ -1,10 +1,10 @@
 import UIKit
 
 class TriganlePitago {
-    var triganle = [Int]()
+    var triganles = [Int]()
 
-    init(triganle: [Int]) {
-        self.triganle = triganle
+    init(triganles: [Int]) {
+        self.triganles = triganles
     }
 
     func maxNumberArray(arrayInput: [Int]) -> Int {
@@ -19,7 +19,7 @@ class TriganlePitago {
     }
 
     func checkTriganle(t: TriganlePitago) -> [Int] {
-        var instaneOfTriArray = t.triganle
+        var instaneOfTriArray = t.triganles
         var sum: Int = 0
         let instaneMaxNumber = maxNumberArray(arrayInput: instaneOfTriArray)
         for i in 0..<instaneOfTriArray.count {
@@ -38,6 +38,6 @@ class TriganlePitago {
         return instaneOfTriArray
     }
 }
-let tri1 = TriganlePitago(triganle: [5,4,2])
+let tri1 = TriganlePitago(triganles: [5,4,2])
 let q = tri1.checkTriganle(t: tri1)
 print(q)

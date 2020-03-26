@@ -3,15 +3,12 @@ import UIKit
 class HinhVe {
 
     func calculaterPerimeter() {
-
     }
 
     func calculaterArea() {
-
     }
 
     func calculaterVolume() {
-
     }
 }
 
@@ -52,7 +49,6 @@ class Hinh3chieu: HinhVe {
     override func calculaterVolume() {
         print("The Tich \(name)")
     }
-
 }
 
 let tamGiac = Hinh2Chieu(name: "Tam Giac")
