@@ -1,12 +1,13 @@
 //
 //  SceneDelegate.swift
-//  BaiTapCustomView
+//  baiTapCustomView
 //
-//  Created by PCI0002 on 11/15/19.
-//  Copyright © 2019 TranVanTien. All rights reserved.
+//  Created by ADMIN on 3/25/2563 BE.
+//  Copyright © 2563 BE asiantech. All rights reserved.
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,16 +18,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        window = UIWindow(windowScene: windowScene)
-        window?.makeKeyAndVisible()
+        // Create the SwiftUI view that provides the window contents.
+        let contentView = ContentView()
 
-         let viewController = MyAvatarViewController()
-        // let viewController = MySliderViewController()
-//         let viewController = MyButtonViewController()
-        //let viewController = MyDatePickerViewController()
-        window?.rootViewController = viewController
+        // Use a UIHostingController as window root view controller.
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = UIHostingController(rootView: contentView)
+            self.window = window
+            window.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
