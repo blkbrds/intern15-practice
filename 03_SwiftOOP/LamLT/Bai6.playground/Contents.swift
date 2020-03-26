@@ -2,15 +2,15 @@ import UIKit
 
 class HinhVe {
 
-    func perimeter() {
+    func calculaterPerimeter() {
 
     }
 
-    func area() {
+    func calculaterArea() {
 
     }
 
-    func volume() {
+    func calculaterVolume() {
 
     }
 }
@@ -21,15 +21,15 @@ class Hinh2Chieu: HinhVe {
     init(name: String) {
         self.name = name
     }
-    override func perimeter() {
+    override func calculaterPerimeter() {
         print("Chu Vi \(name)")
     }
 
-    override func area() {
+    override func calculaterArea() {
         print("Dien Tich \(name)")
     }
 
-    override func volume() {
+    override func calculaterVolume() {
         print("The Tich \(name)")
     }
 }
@@ -41,25 +41,25 @@ class Hinh3chieu: HinhVe {
         self.name = name
     }
 
-    override func perimeter() {
+    override func calculaterPerimeter() {
         print("Chu Vi \(name)")
     }
 
-    override func area() {
+    override func calculaterArea() {
         print("Dien Tich \(name)")
     }
 
-    override func volume() {
+    override func calculaterVolume() {
         print("The Tich \(name)")
     }
 
 }
 
 let tamGiac = Hinh2Chieu(name: "Tam Giac")
-tamGiac.perimeter()
-tamGiac.area()
-tamGiac.volume()
+tamGiac.calculaterPerimeter()
+tamGiac.calculaterArea()
+tamGiac.calculaterVolume()
 let lapPhuong = Hinh3chieu(name: "Lap Phuong")
-lapPhuong.perimeter()
-lapPhuong.area()
-lapPhuong.volume()
+lapPhuong.calculaterPerimeter()
+lapPhuong.calculaterArea()
+lapPhuong.calculaterVolume()

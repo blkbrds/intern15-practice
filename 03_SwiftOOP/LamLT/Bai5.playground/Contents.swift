@@ -10,17 +10,17 @@ class CStack {
     func checkNullStack(f: CStack) -> String {
         var txt: String = ""
         var dem: Int = 0
-        var g = f.item
-        if g.count == 0 {
+        let instaneArrayItem = f.item
+        if instaneArrayItem.count == 0 {
             txt = "This Stack is Empty"
         }
         else {
-            for i in 0..<g.count {
-                if g[i] == nil {
+            for i in 0..<instaneArrayItem.count {
+                if instaneArrayItem[i] == nil {
                     dem += 1
                 }
             }
-            if dem == g.count {
+            if dem == instaneArrayItem.count {
                 txt = "This Stack Is Empty"
             } else {
                 txt = "This Stack Is  Not Empty"
@@ -34,17 +34,17 @@ class CStack {
     func checkFullStack(f: CStack) -> String {
         var txt: String = ""
         var dem: Int = 0
-        let g = f.item
-        if g.count == 0 {
+        let instaneArrayItem = f.item
+        if instaneArrayItem.count == 0 {
             txt = "This Stack is Empty"
         }
         else {
-            for i in 0..<g.count {
-                if g[i] != nil {
+            for i in 0..<instaneArrayItem.count {
+                if instaneArrayItem[i] != nil {
                     dem += 1
                 }
             }
-            if dem == g.count {
+            if dem == instaneArrayItem.count {
                 txt = "This Stack Is Full"
             } else {
                 txt = "This Stack Is  Not Full"
@@ -53,15 +53,15 @@ class CStack {
         return txt
     }
     func pushvalue(f: CStack, n: Int) -> [Int] {
-        var g = f.item
-        g.append(n)
-        return g
+        var instaneArrayItem = f.item
+        instaneArrayItem.append(n)
+        return instaneArrayItem
     }
 
     func popTop(f: CStack) -> [Int] {
-        var g = f.item
-        g.popLast()
-        return g
+        var instaneArrayItem = f.item
+        instaneArrayItem.popLast()
+        return instaneArrayItem
     }
 }
 

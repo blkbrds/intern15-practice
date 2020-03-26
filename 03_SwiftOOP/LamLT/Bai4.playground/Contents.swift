@@ -7,35 +7,35 @@ class TriganlePitago {
         self.triganle = triganle
     }
 
-    func maxNumberArray(a: [Int]) -> Int {
-        let n = a
-        var max = n[0]
-        for i in 0..<n.count {
-            if max < n[i] {
-                max = n[i]
+    func maxNumberArray(arrayInput: [Int]) -> Int {
+        let instaneOfInputArray = arrayInput
+        var max = instaneOfInputArray[0]
+        for i in 0..<instaneOfInputArray.count {
+            if max < instaneOfInputArray[i] {
+                max = instaneOfInputArray[i]
             }
         }
         return max
     }
 
     func checkTriganle(t: TriganlePitago) -> [Int] {
-        var m = t.triganle
+        var instaneOfTriArray = t.triganle
         var sum: Int = 0
-        let n = maxNumberArray(a: m)
-        for i in 0..<m.count {
-            if m[i] < n {
-                sum = sum + m[i] * m[i]
+        let instaneMaxNumber = maxNumberArray(arrayInput: instaneOfTriArray)
+        for i in 0..<instaneOfTriArray.count {
+            if instaneOfTriArray[i] < instaneMaxNumber {
+                sum = sum + instaneOfTriArray[i] * instaneOfTriArray[i]
             }
         }
         print(sum)
-        print(n)
-        if sum == n * n {
-            print("Triganle \(m) is Pitago")
+        print(instaneMaxNumber)
+        if sum == instaneMaxNumber * instaneMaxNumber {
+            print("Triganle \(instaneOfTriArray) is Pitago")
         } else {
-            print("Triganle \(m) is Not Pitago")
-            m = []
+            print("Triganle \(instaneOfTriArray) is Not Pitago")
+            instaneOfTriArray = []
         }
-        return m
+        return instaneOfTriArray
     }
 }
 let tri1 = TriganlePitago(triganle: [5,4,2])

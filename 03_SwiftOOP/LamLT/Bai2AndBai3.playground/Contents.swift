@@ -1,52 +1,52 @@
 import UIKit
 
 class Polygons {
-    var n: Int = 3
-    var arr = [Int]()
+    var numberEdges: Int = 3
+    var lengthEdges = [Int]()
 
-    init(arr: [Int]) {
-        self.arr = arr
+    init(lengthEdges: [Int]) {
+        self.lengthEdges = lengthEdges
     }
-    init(n: Int, arr: [Int]) {
-        self.n = n
-        self.arr = arr
+    init(numberEdges: Int, lengthEdges: [Int]) {
+        self.numberEdges = numberEdges
+        self.lengthEdges = lengthEdges
     }
 
-    func edge(p: Polygons) {
-        let a = p.n
-        let x = p.arr
-        if x.count < a {
+    func printWidthEdges(p: Polygons) {
+        let instaneOfNumberEdges = p.numberEdges
+        let instaneOfLengthEdges = p.lengthEdges
+        if instaneOfLengthEdges.count < instaneOfNumberEdges {
             print("can't print")
         } else {
-            for index in 0..<x.count {
-                print(x[index])
+            for index in 0..<instaneOfLengthEdges.count {
+                print(instaneOfLengthEdges[index])
             }
         }
     }
 
-    func perimeter(p: Polygons) -> Float {
-        let y = p.arr
+    func calculaterPerimeter(p: Polygons) -> Float {
+        let instaneOfLengthEdges = p.lengthEdges
         var per: Float = 0
-        for i in 0..<y.count {
-            per = per + Float(y[i])
+        for i in 0..<instaneOfLengthEdges.count {
+            per = per + Float(instaneOfLengthEdges[i])
         }
         print(per)
         return per
     }
 }
 
-let pol1 = Polygons(n: 5, arr: [1, 6, 3, 2, 6])
-pol1.edge(p: pol1)
-pol1.perimeter(p: pol1)
+let pol1 = Polygons(numberEdges: 5, lengthEdges: [1, 6, 3, 2, 6])
+pol1.printWidthEdges(p: pol1)
+pol1.calculaterPerimeter(p: pol1)
 
-let pol2 = Polygons(arr: [1, 6, 3])
-pol1.edge(p: pol2)
-pol1.perimeter(p: pol2)
+let pol2 = Polygons(lengthEdges: [1, 6, 3])
+pol1.printWidthEdges(p: pol2)
+pol1.calculaterPerimeter(p: pol2)
 
-class triganle: Polygons {
+class Triganle: Polygons {
 
 }
 
-let tri1 = triganle(arr: [4, 5, 7])
-tri1.edge(p: tri1)
-tri1.perimeter(p: tri1)
+let tri1 = Triganle(lengthEdges: [4, 5, 7])
+tri1.printWidthEdges(p: tri1)
+tri1.calculaterPerimeter(p: tri1)

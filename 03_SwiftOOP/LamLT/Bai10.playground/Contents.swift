@@ -1,21 +1,21 @@
 import UIKit
 
 class A {
-    var arr: [Int]
+    var arrayInput: [Int]
     
-    init(arr: [Int]) {
-        self.arr = arr
+    init(arrayInput: [Int]) {
+        self.arrayInput = arrayInput
     }
     
     func sum(a: A) -> Int {
         var s: Int = 0
-        let x = a.arr
-        for index in 0..<x.count {
-            s += x[index]
+        let instaneOfArray = a.arrayInput
+        for index in 0..<instaneOfArray.count {
+            s += instaneOfArray[index]
         }
         return s
     }
 }
 
-let t = A(arr: [5,1,2,7,8,12,-5,-10])
+let t = A(arrayInput: [5,1,2,7,8,12,-5,-10])
 print(t.sum(a: t))

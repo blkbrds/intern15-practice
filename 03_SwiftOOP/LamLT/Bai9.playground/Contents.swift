@@ -1,41 +1,41 @@
 import UIKit
 
 class Mang1C {
-    var arr = [Int]()
+    var array1Chieu = [Int]()
 
-    init(arr: [Int]) {
-        self.arr = arr
+    init(array1Chieu: [Int]) {
+        self.array1Chieu = array1Chieu
     }
 
     func inputArray(a: Mang1C) -> [Int] {
-        let x = a.arr
+        let x = a.array1Chieu
         return x
     }
     
     func maxNumberArray(a: Mang1C) -> Int {
-        let n = a.arr
-        var max = n[0]
-        for i in 0..<n.count {
-            if max < n[i] {
-                max = n[i]
+        let instaneOfArray = a.array1Chieu
+        var max = instaneOfArray[0]
+        for i in 0..<instaneOfArray.count {
+            if max < instaneOfArray[i] {
+                max = instaneOfArray[i]
             }
         }
         return max
     }
     
     func minNumberArray(a: Mang1C) -> Int {
-        let n = a.arr
-        var min = n[0]
-        for i in 0..<n.count {
-            if min > n[i] {
-                min = n[i]
+        let instaneOfArray = a.array1Chieu
+        var min = instaneOfArray[0]
+        for i in 0..<instaneOfArray.count {
+            if min > instaneOfArray[i] {
+                min = instaneOfArray[i]
             }
         }
         return min
     }
 }
 
-let x = Mang1C(arr: [5,5,1,2,6,7,2,12,-6])
+let x = Mang1C(array1Chieu: [5,5,1,2,6,7,2,12,-6])
 let i = x.inputArray(a: x)
 print(i)
 let max = x.maxNumberArray(a: x)
