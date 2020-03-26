@@ -12,6 +12,8 @@
 		F04CC006242C923700B44DD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04CC005242C923700B44DD2 /* Assets.xcassets */; };
 		F04CC014242C93C900B44DD2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CC012242C93C900B44DD2 /* HomeViewController.swift */; };
 		F04CC015242C93C900B44DD2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04CC013242C93C900B44DD2 /* HomeViewController.xib */; };
+		F04CC018242C96C400B44DD2 /* avatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04CC017242C96C400B44DD2 /* avatarView.xib */; };
+		F04CC01A242C96D400B44DD2 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CC019242C96D400B44DD2 /* AvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F04CC00A242C923700B44DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F04CC012242C93C900B44DD2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F04CC013242C93C900B44DD2 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F04CC017242C96C400B44DD2 /* avatarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = avatarView.xib; sourceTree = "<group>"; };
+		F04CC019242C96D400B44DD2 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 		F04CC016242C948700B44DD2 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				F04CC017242C96C400B44DD2 /* avatarView.xib */,
+				F04CC019242C96D400B44DD2 /* AvatarView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 			files = (
 				F04CC006242C923700B44DD2 /* Assets.xcassets in Resources */,
 				F04CC015242C93C900B44DD2 /* HomeViewController.xib in Resources */,
+				F04CC018242C96C400B44DD2 /* avatarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04CBFFD242C923600B44DD2 /* AppDelegate.swift in Sources */,
+				F04CC01A242C96D400B44DD2 /* AvatarView.swift in Sources */,
 				F04CBFFF242C923600B44DD2 /* SceneDelegate.swift in Sources */,
 				F04CC014242C93C900B44DD2 /* HomeViewController.swift in Sources */,
 			);
