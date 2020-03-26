@@ -25,8 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //let viewController = MyViewController()
         //let viewController = LoginViewController()
         //let viewController = ColorBackgroundViewController()
-        let viewController = CustomSliderViewController()
-        //let viewController = MonkeyViewController()
+        //let viewController = CustomSliderViewController()
+        let viewController = MonkeyViewController()
         //let viewController = Monkey2ViewController()
         window?.rootViewController = viewController
        

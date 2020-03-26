@@ -9,20 +9,15 @@
 import UIKit
 
 class ColorBackgroundViewController: UIViewController {
-
     
-    @IBOutlet weak var textColorLabel: UILabel!
-    @IBOutlet weak var colorViewLabel: UILabel!
-    
-    
-    @IBOutlet weak var redSliderValueLabel: UILabel!
-    @IBOutlet weak var greenSliderValueLabel: UILabel!
-    @IBOutlet weak var blueSliderValueLabel: UILabel!
-    
-    
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet private weak var textColorLabel: UILabel!
+    @IBOutlet private weak var colorViewLabel: UILabel!
+    @IBOutlet private weak var redSliderValueLabel: UILabel!
+    @IBOutlet private weak var greenSliderValueLabel: UILabel!
+    @IBOutlet private weak var blueSliderValueLabel: UILabel!
+    @IBOutlet private weak var redSlider: UISlider!
+    @IBOutlet private weak var greenSlider: UISlider!
+    @IBOutlet private weak var blueSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +33,7 @@ class ColorBackgroundViewController: UIViewController {
 
     @IBAction private func sliderAction(_ sender: Any) {
         colorViewLabel.backgroundColor = UIColor(red: CGFloat(redSlider.value)/255, green: CGFloat(greenSlider.value)/255, blue: CGFloat(blueSlider.value)/255, alpha: 1)
-        
         textColorLabel.text = "Color( R: \(Int(redSlider.value)), G: \(Int(greenSlider.value)), B: \(Int(blueSlider.value)))"
     }
-
 }
     

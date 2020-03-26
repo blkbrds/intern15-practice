@@ -16,8 +16,8 @@ class AvatarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
             
-        //view.backgroundColor = .white
         let space : CGFloat = 20
         let widthScreen = UIScreen.main.bounds.width
         
@@ -39,7 +39,7 @@ class AvatarViewController: UIViewController {
         }
     }
     
-    func creatAvatarView(frame: CGRect,index:Int)-> UIView {
+    func creatAvatarView(frame: CGRect,index:Int) -> UIView {
         let avatarView = UIView(frame: frame)
         
         let avatar = UIImageView(frame: CGRect(x: 0, y: 0, width:avatarView.bounds.width , height: avatarView.bounds.height - 25))

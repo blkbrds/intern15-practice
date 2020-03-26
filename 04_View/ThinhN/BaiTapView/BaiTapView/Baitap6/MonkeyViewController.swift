@@ -10,14 +10,12 @@ import UIKit
 
 class MonkeyViewController: UIViewController {
 
-    @IBOutlet weak var monkeyImageView: UIImageView!
-
-    
+    @IBOutlet private weak var monkeyImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
+    @IBAction private func pichGestureRecognizer(_ sender: UIPinchGestureRecognizer) {
         guard let senderView = sender.view else {
             return
         }
@@ -26,7 +24,7 @@ class MonkeyViewController: UIViewController {
         }
     }
     
-    @IBAction func rotation(_ sender: UIRotationGestureRecognizer) {
+    @IBAction private func rotationGestureRecognizer(_ sender: UIRotationGestureRecognizer) {
         guard let senderView = sender.view else {
             return
         }
@@ -34,7 +32,7 @@ class MonkeyViewController: UIViewController {
         sender.rotation = 0
     }
     
-    @IBAction func long(_ sender: UILongPressGestureRecognizer) {
+    @IBAction private func longGestureRecognizer(_ sender: UILongPressGestureRecognizer) {
         if let view = sender.view {
           UIView.animate(withDuration: 0.5) {
               view.transform = view.transform.scaledBy(x: 1.0, y: 1.0)

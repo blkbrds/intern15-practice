@@ -9,15 +9,14 @@ import UIKit
 
 final class LoginViewController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
-
     @IBOutlet private weak var clearButton: UIButton!
     @IBOutlet private weak var loginButton: UIButton!
 
-    private let username = "Admin"
-    private let pass = "Admin123"
+    private let validUsername = "Admin"
+    private let validPassword = "Admin123"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +25,8 @@ final class LoginViewController: UIViewController {
         usernameTextField.delegate = self
         let tapToScreen = UITapGestureRecognizer(target: self, action: #selector(tapToScreen(_:)))
         view.addGestureRecognizer(tapToScreen)
-        loginButton.addTarget(self, action: #selector(tapLoginButton(_:)), for: .touchUpInside)
-        clearButton.addTarget(self, action: #selector(tapClearButton(_:)), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTouchUpInside(_:)), for: .touchUpInside)
+        clearButton.addTarget(self, action: #selector(clearButtonTouchUpInside(_:)), for: .touchUpInside)
     }
 
     private func initView() {
@@ -52,42 +51,44 @@ final class LoginViewController: UIViewController {
         button.layer.cornerRadius = 10
     }
    
-    private func checkLogin(stringData: (String, String)) -> String {
-        var errorString = ""
-
-        switch stringData {
-        case ("", ""):
-            errorString = "Bạn chưa nhập dữ liệu"
-        case ("", _):
-            errorString = "Bạn chưa điền username"
-        case (_, ""):
-            errorString = "Bạn chưa điền password"
-        default:
-            errorString = "Nhập sai tên username hoặc password"
+    private func checkLogin() -> String {
+        enum errorString :String {
+            case chuaNhapUsernameVaPassword = "Bạn chưa nhập dữ liệu"
+            case chuaNhapUsername = "Bạn chưa điền username"
+            case chuaNhapPassword = "Bạn chưa điền password"
+            case nhapSaiUsernameVaPassword = "Nhập sai tên username hoặc password"
         }
-        return errorString
+        switch (usernameTextField.text, passwordTextField.text) {
+        case ("",""):
+            return errorString.chuaNhapUsernameVaPassword.rawValue
+        case ("",_):
+            return errorString.chuaNhapUsername.rawValue
+        case (_, ""):
+            return errorString.chuaNhapPassword.rawValue
+        default:
+            return errorString.nhapSaiUsernameVaPassword.rawValue
+        }
     }
     
     private func login() {
         if let username = usernameTextField.text, let password = passwordTextField.text {
-        let stringData: (String, String) = (username, password)
-        if stringData == (username, pass) {
-            errorLabel.isHidden = true
-            print("Đăng nhập thành công")
-                 } else {
-                     errorLabel.isHidden = false
-                     errorLabel.text = checkLogin(stringData: stringData)
-                     errorLabel.textColor = .red
-                 }
-           }
-       }
+            if (username, password) == (validUsername, validPassword) {
+                errorLabel.isHidden = true
+                print("Đăng nhập thành công")
+            } else {
+                errorLabel.isHidden = false
+                errorLabel.text = checkLogin()
+                errorLabel.textColor = .red
+            }
+        }
+    }
     
-    @objc private func tapLoginButton(_ sender: Any) {
+    @objc private func loginButtonTouchUpInside(_ sender: Any) {
         login()
         passwordTextField.endEditing(true)
     }
 
-    @objc private func tapClearButton(_ sender: Any) {
+    @objc private func clearButtonTouchUpInside(_ sender: Any) {
         usernameTextField.text = nil
         passwordTextField.text = nil
         errorLabel.isHidden = true

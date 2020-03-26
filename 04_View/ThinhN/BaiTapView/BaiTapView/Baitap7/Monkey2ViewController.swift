@@ -11,8 +11,8 @@ import UIKit
 class Monkey2ViewController: UIViewController {
 
     
-    @IBOutlet weak var monkeyImageView: UIImageView!
-    @IBOutlet weak var labelView: UILabel!
+    @IBOutlet private weak var monkeyImageView: UIImageView!
+    @IBOutlet private weak var labelView: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class Monkey2ViewController: UIViewController {
         labelView.layer.cornerRadius = 20
     }
     
-    @IBAction func tapImage(_ sender: UITapGestureRecognizer) {
+    @IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         if sender.view != nil {
             UIView.animate(withDuration: 1, animations: {
                 self.labelView.alpha = 1
@@ -38,7 +38,7 @@ class Monkey2ViewController: UIViewController {
             })
         }
 }
-    @IBAction func doubleTapImage(_ sender: UITapGestureRecognizer) {
+    @IBAction func doubleTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         if sender.view != nil {
             UIView.animate(withDuration: 2, animations: {
                 self.labelView.alpha = 1
@@ -50,3 +50,4 @@ class Monkey2ViewController: UIViewController {
         }
     }
 }
+

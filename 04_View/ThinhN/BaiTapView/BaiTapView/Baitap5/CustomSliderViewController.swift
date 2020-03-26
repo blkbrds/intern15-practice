@@ -10,17 +10,17 @@ import UIKit
 
 class CustomSliderViewController: UIViewController {
     
-    @IBOutlet weak var SliderView: UIView!
-    @IBOutlet weak var whiteView: UIView!
-    @IBOutlet weak var thumbValue: UILabel!
+    @IBOutlet weak var sliderView: UIView!
+    @IBOutlet private weak var whiteView: UIView!
+    @IBOutlet weak var thumbValueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpSliderView(view: SliderView)
+        setUpSliderView(view: sliderView)
         setUpSliderView(view: whiteView)
         setUpThumb()
         if view.tag == 1 {
-        view.frame = CGRect(x: 0, y: 0, width: SliderView.frame.width, height: SliderView.frame.midY)
+        view.frame = CGRect(x: 0, y: 0, width: sliderView.frame.width, height: sliderView.frame.midY)
         }
     }
 
@@ -30,34 +30,34 @@ class CustomSliderViewController: UIViewController {
     }
     
     func setUpThumb(){
-        thumbValue.text = "50%"
-        thumbValue.layer.borderWidth = 1
-        thumbValue.layer.borderColor = UIColor.systemOrange.cgColor
-        thumbValue.layer.cornerRadius = thumbValue.frame.size.width
+        thumbValueLabel.text = "50%"
+        thumbValueLabel.layer.borderWidth = 1
+        thumbValueLabel.layer.borderColor = UIColor.systemOrange.cgColor
+        thumbValueLabel.layer.cornerRadius = thumbValueLabel.frame.size.width
          / 2
-        thumbValue.clipsToBounds = true
+        thumbValueLabel.clipsToBounds = true
     
-        thumbValue.center = CGPoint(x: SliderView.frame.midX, y: SliderView.frame.midY)
+        thumbValueLabel.center = CGPoint(x: sliderView.frame.midX, y: sliderView.frame.midY)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
        if let touch = touches.first {
             let position = touch.location(in: self.view)
-            if position.x >= thumbValue.frame.minX,
-                position.x <= thumbValue.frame.maxX,
-                position.y >= thumbValue.frame.minY,
-                position.y <= thumbValue.frame.maxY,
-                position.y >= SliderView.frame.minY,
-                position.y <= SliderView.frame.maxY {
+            if position.x >= thumbValueLabel.frame.minX,
+                position.x <= thumbValueLabel.frame.maxX,
+                position.y >= thumbValueLabel.frame.minY,
+                position.y <= thumbValueLabel.frame.maxY,
+                position.y >= sliderView.frame.minY,
+                position.y <= sliderView.frame.maxY {
 
-                thumbValue.center = CGPoint(x: SliderView.center.x, y: position.y)
+                thumbValueLabel.center = CGPoint(x: sliderView.center.x, y: position.y)
 
-                whiteView.frame = CGRect(x: 0, y: 0, width: SliderView.frame.width, height: thumbValue.center.y - SliderView.frame.origin.y)
+                whiteView.frame = CGRect(x: 0, y: 0, width: sliderView.frame.width, height: thumbValueLabel.center.y - sliderView.frame.origin.y)
 
-                let percentSlider = 100 * (1 - whiteView.frame.height / SliderView.frame.height)
+                let percentSlider = 100 * (1 - whiteView.frame.height / sliderView.frame.height)
 
-                thumbValue.text = "\(Int(percentSlider))%"
+                thumbValueLabel.text = "\(Int(percentSlider))%"
             }
         }
     }
