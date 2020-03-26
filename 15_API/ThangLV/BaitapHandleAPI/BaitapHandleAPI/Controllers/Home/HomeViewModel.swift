@@ -40,7 +40,6 @@ final class HomeViewModel {
                             let name = item["name"] as! String
                             self?.names.append(name)
                         }
-
                         completion(true, "")
                     } else {
                         completion(false, "Data format is error.")

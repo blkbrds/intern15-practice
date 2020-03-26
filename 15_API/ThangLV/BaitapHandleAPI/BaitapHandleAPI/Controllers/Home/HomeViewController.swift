@@ -3,7 +3,7 @@ import UIKit
 final class HomeViewController: BaseViewController {
 
     struct Config {
-        static let heightForRows = CGFloat(200)
+        static let heightForRow = CGFloat(200)
     }
 
     // MARK: - IBOutlets
@@ -49,9 +49,6 @@ final class HomeViewController: BaseViewController {
     private func updateUI() {
         tableView.reloadData()
     }
-    
-    
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -66,16 +63,16 @@ extension HomeViewController: UITableViewDataSource {
         cell.configData(title: item.name, artistName: item.artistName)
         if let _ = item.thumbnailImage {
             cell.configData2(thumbnailImage: item.thumbnailImage)
-        }else {
+        } else {
             cell.configData2(thumbnailImage: nil)
             viewModel.loadImage(at: indexPath) { [weak self] (done, error, url) in
-                guard let _ = self else {return }
+                guard let _ = self else { return }
                 if done, url == item.artworkUrl100 {
                     cell.configData2(thumbnailImage: item.thumbnailImage)
                 }
             }
         }
-        
+
         return cell
     }
 }
@@ -83,7 +80,7 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Config.heightForRows
+        return Config.heightForRow
     }
 }
 
