@@ -39,6 +39,8 @@
 		A44239BC2426652900ACEFF0 /* AutoLayout4_4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44239BA2426652900ACEFF0 /* AutoLayout4_4ViewController.xib */; };
 		A44239BF2426665D00ACEFF0 /* AutoLayout4_5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44239BD2426665D00ACEFF0 /* AutoLayout4_5ViewController.swift */; };
 		A44239C02426665D00ACEFF0 /* AutoLayout4_5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44239BE2426665D00ACEFF0 /* AutoLayout4_5ViewController.xib */; };
+		A48241D9242C42E20090E20C /* AutoLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48241D7242C42E10090E20C /* AutoLayoutViewController.xib */; };
+		A48241DA242C42E20090E20C /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48241D8242C42E20090E20C /* AutoLayoutViewController.swift */; };
 		A48869C824279B3300CEFBD5 /* AutoLayout5_1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48869C624279B3300CEFBD5 /* AutoLayout5_1ViewController.swift */; };
 		A48869C924279B3300CEFBD5 /* AutoLayout5_1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48869C724279B3300CEFBD5 /* AutoLayout5_1ViewController.xib */; };
 		A48869CC24279F0D00CEFBD5 /* AutoLayout5_3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48869CA24279F0D00CEFBD5 /* AutoLayout5_3ViewController.swift */; };
@@ -136,6 +138,8 @@
 		A44239BA2426652900ACEFF0 /* AutoLayout4_4ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoLayout4_4ViewController.xib; sourceTree = "<group>"; };
 		A44239BD2426665D00ACEFF0 /* AutoLayout4_5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout4_5ViewController.swift; sourceTree = "<group>"; };
 		A44239BE2426665D00ACEFF0 /* AutoLayout4_5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoLayout4_5ViewController.xib; sourceTree = "<group>"; };
+		A48241D7242C42E10090E20C /* AutoLayoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AutoLayoutViewController.xib; sourceTree = "<group>"; };
+		A48241D8242C42E20090E20C /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
 		A48869C624279B3300CEFBD5 /* AutoLayout5_1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout5_1ViewController.swift; sourceTree = "<group>"; };
 		A48869C724279B3300CEFBD5 /* AutoLayout5_1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AutoLayout5_1ViewController.xib; sourceTree = "<group>"; };
 		A48869CA24279F0D00CEFBD5 /* AutoLayout5_3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout5_3ViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		A442397824264F1E00ACEFF0 /* BaiTapAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				A48241D6242C422C0090E20C /* BaiTapBoSung */,
 				A4EBC9FA2429E79E003351D1 /* BaiTap13 */,
 				A413F0402429B87E002C8E4A /* BaiTap14 */,
 				A413F03B2429AF34002C8E4A /* BaiTap12 */,
@@ -328,6 +333,15 @@
 				A48869ED2427BB1D00CEFBD5 /* AutoLayout4_2ViewController.xib */,
 			);
 			path = BaiTap04;
+			sourceTree = "<group>";
+		};
+		A48241D6242C422C0090E20C /* BaiTapBoSung */ = {
+			isa = PBXGroup;
+			children = (
+				A48241D8242C42E20090E20C /* AutoLayoutViewController.swift */,
+				A48241D7242C42E10090E20C /* AutoLayoutViewController.xib */,
+			);
+			path = BaiTapBoSung;
 			sourceTree = "<group>";
 		};
 		A48869C524279B1000CEFBD5 /* BaiTap05 */ = {
@@ -497,6 +511,7 @@
 			files = (
 				A4BC020A2428613800AB0FE6 /* AutoLayout7_4_5ViewController.xib in Resources */,
 				A4423999242651A800ACEFF0 /* AutoLayout1_2ViewController.xib in Resources */,
+				A48241D9242C42E20090E20C /* AutoLayoutViewController.xib in Resources */,
 				A4B9E5252428B60A00D7471A /* AutoLayout10ViewController.xib in Resources */,
 				A4BC021E24286C3100AB0FE6 /* AutoLayout7_5_5ViewController.xib in Resources */,
 				A4BC021A24286B8B00AB0FE6 /* AutoLayout7_5_4ViewController.xib in Resources */,
@@ -564,6 +579,7 @@
 				A48869D92427A31A00CEFBD5 /* AutoLayout6_1ViewController.swift in Sources */,
 				A48869F62427CF1400CEFBD5 /* AutoLayout6_2ViewController.swift in Sources */,
 				A4BC022D242874E200AB0FE6 /* AutoLayout7_6_4ViewController.swift in Sources */,
+				A48241DA242C42E20090E20C /* AutoLayoutViewController.swift in Sources */,
 				A48869E12427A55500CEFBD5 /* AutoLayout6_4ViewController.swift in Sources */,
 				A424B59124289C8300D6D240 /* AutoLayout9ViewController.swift in Sources */,
 				A4BC020D2428675800AB0FE6 /* AutoLayout7_5_1ViewController.swift in Sources */,
