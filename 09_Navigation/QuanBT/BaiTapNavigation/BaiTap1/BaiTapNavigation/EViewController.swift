@@ -17,17 +17,17 @@ class EViewController: UIViewController {
 
     // MARK: - IBAction
     @IBAction private func cTouchUpInside(_ sender: Any) {
-        let vc = (self.navigationController?.viewControllers[2])!
-        self.navigationController?.popToViewController(vc, animated: true)
+        let vcC = (self.navigationController?.viewControllers[2])!
+        self.navigationController?.popToViewController(vcC, animated: true)
     }
     
     @IBAction private func bTouchUpInside(_ sender: Any) {
-        let vc = (self.navigationController?.viewControllers[1])!
-        self.navigationController?.popToViewController(vc, animated: true)
+        let vcB = (self.navigationController?.viewControllers[1])!
+        self.navigationController?.popToViewController(vcB, animated: true)
     }
     @IBAction private func dTouchUpInside(_ sender: Any) {
-        let vc = (self.navigationController?.viewControllers[3])!
-        self.navigationController?.popToViewController(vc, animated: true)
+        let vcD = (self.navigationController?.viewControllers[3])!
+        self.navigationController?.popToViewController(vcD, animated: true)
     }
     @IBAction private func rootTouchUpInside(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)

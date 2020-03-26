@@ -17,8 +17,8 @@ class CViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction private func nextTouchUpInside(_ sender: Any) {
-        let vc = DViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vcD = DViewController()
+        self.navigationController?.pushViewController(vcD, animated: true)
     }
     
     @IBAction private func preTouchUpInside(_ sender: Any) {

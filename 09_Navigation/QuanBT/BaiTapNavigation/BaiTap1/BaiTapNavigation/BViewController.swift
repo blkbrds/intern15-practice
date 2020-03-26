@@ -21,7 +21,7 @@ class BViewController: UIViewController {
     }
     
     @IBAction private func nextTouchUpInside(_ sender: Any) {
-        let vc = CViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vcC = CViewController()
+        self.navigationController?.pushViewController(vcC, animated: true)
     }
 }

@@ -9,6 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController" customModule="BaiTapNavigationLogin" customModuleProvider="target">
             <connections>
+                <outlet property="confirmpassTextField" destination="GJb-Ux-qZh" id="RFe-Rg-kvA"/>
+                <outlet property="newpassTextField" destination="RaQ-Xx-wI3" id="p52-Xu-eXX"/>
+                <outlet property="reportLabel" destination="AnO-bS-xqX" id="btc-Ph-WDY"/>
+                <outlet property="usernameTextField" destination="XZR-Ik-jvs" id="IDQ-xF-sPv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,28 +24,38 @@
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZR-Ik-jvs">
                     <rect key="frame" x="41.5" y="117.5" width="331" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaQ-Xx-wI3">
+                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RaQ-Xx-wI3">
                     <rect key="frame" x="41.5" y="162" width="331" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJb-Ux-qZh">
+                <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GJb-Ux-qZh">
                     <rect key="frame" x="41.5" y="207" width="331" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnO-bS-xqX">
+                    <rect key="frame" x="41.5" y="431" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.97632795569999997" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="AnO-bS-xqX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3kI-Kk-0BC"/>
                 <constraint firstItem="GJb-Ux-qZh" firstAttribute="width" secondItem="RaQ-Xx-wI3" secondAttribute="width" id="679-i8-DoQ"/>
                 <constraint firstItem="GJb-Ux-qZh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BkE-hV-Qhg"/>
                 <constraint firstItem="RaQ-Xx-wI3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="G2H-LY-nQM"/>
                 <constraint firstItem="RaQ-Xx-wI3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="Jl3-G0-qFh"/>
                 <constraint firstItem="XZR-Ik-jvs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.3" id="OWW-98-Mev"/>
+                <constraint firstItem="AnO-bS-xqX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OhK-LG-tFA"/>
+                <constraint firstItem="AnO-bS-xqX" firstAttribute="width" secondItem="GJb-Ux-qZh" secondAttribute="width" id="eGq-NJ-Hoo"/>
                 <constraint firstItem="XZR-Ik-jvs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fle-jM-TdR"/>
                 <constraint firstItem="RaQ-Xx-wI3" firstAttribute="width" secondItem="XZR-Ik-jvs" secondAttribute="width" id="jKx-7a-7ua"/>
+                <constraint firstItem="AnO-bS-xqX" firstAttribute="height" secondItem="GJb-Ux-qZh" secondAttribute="height" id="u8W-CQ-h7a"/>
                 <constraint firstItem="GJb-Ux-qZh" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="vE0-TG-YzX"/>
                 <constraint firstItem="XZR-Ik-jvs" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="yW8-Fl-Wx0"/>
             </constraints>
