@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EViewController" customModule="Bai1" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="5Qy-Fy-DAi">
+                    <rect key="frame" x="172" y="306.5" width="70" height="283"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilA-oK-Avm">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
+                            <color key="backgroundColor" red="0.71676669250000002" green="0.89849098319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="IfT-I0-RbU"/>
+                                <constraint firstAttribute="width" constant="70" id="zqV-Nn-wc1"/>
+                            </constraints>
+                            <state key="normal" title="D">
+                                <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="popToDViewController:" destination="-1" eventType="touchUpInside" id="jnG-0e-29U"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2W-47-hCq">
+                            <rect key="frame" x="0.0" y="81" width="70" height="40"/>
+                            <color key="backgroundColor" red="0.71676669250000002" green="0.89849098319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="1kO-l8-Bw4"/>
+                                <constraint firstAttribute="width" constant="70" id="g9u-zV-eqh"/>
+                            </constraints>
+                            <state key="normal" title="C">
+                                <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="popToCViewController:" destination="-1" eventType="touchUpInside" id="JZs-8Z-vIe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2B-Nl-XIZ">
+                            <rect key="frame" x="0.0" y="162" width="70" height="40"/>
+                            <color key="backgroundColor" red="0.71676669250000002" green="0.89849098319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="BfZ-HO-LCO"/>
+                                <constraint firstAttribute="height" constant="40" id="puX-Ru-rph"/>
+                            </constraints>
+                            <state key="normal" title="B">
+                                <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="popToBViewController:" destination="-1" eventType="touchUpInside" id="Fhy-pQ-o8T"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWH-7U-s6m">
+                            <rect key="frame" x="0.0" y="243" width="70" height="40"/>
+                            <color key="backgroundColor" red="0.71676669250000002" green="0.89849098319999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="1pL-KX-kZj"/>
+                                <constraint firstAttribute="height" constant="40" id="71h-Au-bJ0"/>
+                            </constraints>
+                            <state key="normal" title="Root">
+                                <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="rootToAViewCOntroller:" destination="-1" eventType="touchUpInside" id="5gD-AN-GxK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="e2B-Nl-XIZ" firstAttribute="width" secondItem="ilA-oK-Avm" secondAttribute="width" id="6Yo-pf-eEA"/>
+                        <constraint firstItem="rWH-7U-s6m" firstAttribute="height" secondItem="ilA-oK-Avm" secondAttribute="height" id="8uf-Sj-35k"/>
+                        <constraint firstItem="u2W-47-hCq" firstAttribute="height" secondItem="ilA-oK-Avm" secondAttribute="height" id="aML-Yk-ZzA"/>
+                        <constraint firstItem="u2W-47-hCq" firstAttribute="width" secondItem="ilA-oK-Avm" secondAttribute="width" id="cQV-iz-7r4"/>
+                        <constraint firstItem="rWH-7U-s6m" firstAttribute="width" secondItem="ilA-oK-Avm" secondAttribute="width" id="mDB-bo-veK"/>
+                        <constraint firstItem="e2B-Nl-XIZ" firstAttribute="height" secondItem="ilA-oK-Avm" secondAttribute="height" id="xa9-1Q-3aE"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5Qy-Fy-DAi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UuV-Ga-0uA"/>
+                <constraint firstItem="5Qy-Fy-DAi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mH9-vZ-aB4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="154"/>
+        </view>
+    </objects>
+</document>

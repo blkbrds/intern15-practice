@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditViewController" customModule="Bai2" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmPassWordTextField" destination="xQt-Bo-WIT" id="AcG-Ax-NIo"/>
+                <outlet property="editPassWordTextField" destination="pUU-SJ-jfC" id="nGC-Xb-9Vm"/>
+                <outlet property="editUserNameTextField" destination="RMp-cQ-Vd5" id="Pii-fV-lHe"/>
+                <outlet property="titelArletLabel" destination="gEb-oc-e1Y" id="NDi-tY-cRI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kCL-hk-ucI">
+                    <rect key="frame" x="50" y="262.5" width="275" height="142"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RMp-cQ-Vd5">
+                            <rect key="frame" x="0.0" y="0.0" width="275" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="275" id="Ytg-O4-e2X"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New PassWord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pUU-SJ-jfC">
+                            <rect key="frame" x="0.0" y="54" width="275" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="275" id="rHF-xe-sWs"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm PassWord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xQt-Bo-WIT">
+                            <rect key="frame" x="0.0" y="108" width="275" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="275" id="nYM-nx-ih4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="xQt-Bo-WIT" firstAttribute="width" secondItem="RMp-cQ-Vd5" secondAttribute="width" id="0ik-0P-s2R"/>
+                        <constraint firstItem="xQt-Bo-WIT" firstAttribute="height" secondItem="RMp-cQ-Vd5" secondAttribute="height" id="P6z-Cp-i5x"/>
+                        <constraint firstItem="pUU-SJ-jfC" firstAttribute="width" secondItem="RMp-cQ-Vd5" secondAttribute="width" id="ibs-sO-2G1"/>
+                        <constraint firstItem="pUU-SJ-jfC" firstAttribute="height" secondItem="RMp-cQ-Vd5" secondAttribute="height" id="lDa-0H-lUt"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PassWord Or Confirm PassWord Wrong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-oc-e1Y">
+                    <rect key="frame" x="50" y="446" width="275" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.1556692113" blue="0.27022745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gEb-oc-e1Y" firstAttribute="top" secondItem="kCL-hk-ucI" secondAttribute="bottom" constant="41.5" id="5w3-Pn-5yu"/>
+                <constraint firstItem="kCL-hk-ucI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OoR-uQ-N2p"/>
+                <constraint firstItem="gEb-oc-e1Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="WQy-eW-EQe"/>
+                <constraint firstItem="kCL-hk-ucI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="bnC-3t-3DI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gEb-oc-e1Y" secondAttribute="trailing" constant="50" id="iK1-iU-KD4"/>
+                <constraint firstItem="kCL-hk-ucI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kWi-8v-VMv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kCL-hk-ucI" secondAttribute="trailing" constant="50" id="qkc-Eq-tre"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-175.19999999999999" y="103.89805097451276"/>
+        </view>
+    </objects>
+</document>
