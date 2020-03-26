@@ -1,5 +1,7 @@
 import UIKit
 
+//Input: số nguyên n
+//Output: tổng số nguyên từ 1 đến n
 final class A {
     var n: Int
     

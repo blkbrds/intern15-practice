@@ -1,21 +1,21 @@
 import UIKit
 
 final class OneDimensionalArray {
-    var arr: [Int]
+    var arrays: [Int]
     
-    init(arr:[Int]) {
-        self.arr = arr
+    init(arrays:[Int]) {
+        self.arrays = arrays
     }
     
     func printInfo() {
-        for item in self.arr {
+        for item in self.arrays {
             print(item)
         }
     }
     
     func minMaxArray() {
-        var min = self.arr[0], max = self.arr[0]
-        for item in self.arr {
+        var min = self.arrays[0], max = self.arrays[0]
+        for item in self.arrays {
             if min > item {
                 min = item
             }
@@ -27,7 +27,7 @@ final class OneDimensionalArray {
         print("Số nhỏ nhất của mảng là: \(min)")
     }
 }
-var arr: OneDimensionalArray = OneDimensionalArray(arr: [4,2,5,6,7,1,2,3,5,7,8,9,10])
-arr.printInfo()
-arr.minMaxArray()
+var arrays: OneDimensionalArray = OneDimensionalArray(arrays: [4,2,5,6,7,1,2,3,5,7,8,9,10])
+arrays.printInfo()
+arrays.minMaxArray()
 
