@@ -1,8 +1,8 @@
 import UIKit
 
 func randomArray() {
-    var arr = Array(0...9)
-    arr.shuffle()
-    print(arr)
+    var arrays = Array(0...9)
+    arrays.shuffle()
+    print(arrays)
 }
 randomArray()
