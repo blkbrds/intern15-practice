@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AvatarView" customModule="Bai3" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="147" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -43,7 +43,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="101.59999999999999" y="-51.27436281859071"/>
+            <connections>
+                <outlet property="avatarImage" destination="u1A-5O-lDi" id="pKU-Ie-t4Q"/>
+            </connections>
+            <point key="canvasLocation" x="-1284" y="-94"/>
         </view>
     </objects>
 </document>
