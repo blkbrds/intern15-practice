@@ -15,7 +15,7 @@ final class MVCViewController: UIViewController {
         resultLabel.layer.borderColor = UIColor.blue.cgColor
     }
     
-     // MARK: - Function
+     // MARK: - IBAction
     @IBAction private func enterTheNumber(_ sender: UIButton) {
         resultLabel.text = String(value.addNumbers(number: Float(sender.tag)))
     }
@@ -54,6 +54,9 @@ final class MVCViewController: UIViewController {
     }
     
     @IBAction private func calculationResults(_ sender: Any) {
+        guard value.number != 0 else {
+            return
+        }
         value.numbers.append(value.number)
         if value.numbers[0] == 0 {
                 Calculations.share.result = result
@@ -75,6 +78,5 @@ final class MVCViewController: UIViewController {
         value.numbers = []
         Calculations.share.operand = []
         value.number = 0
-        
     }
 }
