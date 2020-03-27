@@ -18,19 +18,13 @@ final class BarButtonViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(.none, for: .default)
         navigationController?.navigationBar.backgroundColor = .cyan
         navigationController?.navigationBar.tintColor = .systemPink
-        let left1Button = UIBarButtonItem(title: "Left1", style: .plain, target: self, action: #selector(left))
-        let left2Button = UIBarButtonItem(title: "Left2", style: .plain, target: self, action: #selector(left))
+        let left1Button = UIBarButtonItem(title: "Left1", style: .plain, target: nil, action: nil)
+        let left2Button = UIBarButtonItem(title: "Left2", style: .plain, target: nil, action: nil)
         navigationItem.leftBarButtonItems = [left1Button, left2Button]
-        let right1Button = UIBarButtonItem(title: "Right1", style: .plain, target: self, action: #selector(right))
-        let right2Button = UIBarButtonItem(title: "Right2", style: .plain, target: self, action: #selector(right))
-        navigationItem.rightBarButtonItems = [ right1Button, right2Button]
-    }
-    
-    // MARK: - Function
-    @objc private func left() {
-    }
-    
-    @objc private func right() {
+        let right1Button = UIBarButtonItem(title: "Right1", style: .plain, target: nil, action: nil)
+        let right2Button = UIBarButtonItem(title: "Right2", style: .plain, target: nil, action: nil)
+        let profile = UIBarButtonItem(image: UIImage(named: "profile"), style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItems = [ right1Button, right2Button, profile]
     }
     
     // MARK: - IBAction

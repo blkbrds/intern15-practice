@@ -20,20 +20,13 @@ final class NewsFeedViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let  image = UIImage(named: "2")
         navigationController?.navigationBar.setBackgroundImage(image, for: .default)
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(search))
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: nil, action: nil)
         navigationItem.leftBarButtonItem = searchButton
-        let settingButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(search))
+        let settingButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: nil)
         navigationItem.rightBarButtonItem = settingButton
         navigationController?.navigationBar.tintColor = .blue
     }
-    
-    // MARK: - Function
-    @objc private func search() {
-    }
-    
-    @objc private func profile() {
-    }
-    
+        
     // MARK: - IBAction
     @IBAction func nextTouchUpInside(_ sender: Any) {
         let vcBarButton = BarButtonViewController()
