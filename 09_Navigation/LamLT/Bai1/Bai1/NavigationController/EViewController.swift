@@ -8,21 +8,21 @@ class EViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    @IBAction private func popToBViewController(_ sender: Any) {
+    @IBAction private func popToBViewControllerTouchUpInside(_ sender: Any) {
         let backToB = (self.navigationController?.viewControllers[1])!
         navigationController?.popToViewController(backToB, animated: true)
     }
 
-    @IBAction private func popToCViewController(_ sender: Any) {
+    @IBAction private func popToCViewControllerTouchUpInside(_ sender: Any) {
         let backToC = (self.navigationController?.viewControllers[2])!
         navigationController?.popToViewController(backToC, animated: true)
     }
     
-    @IBAction private func popToDViewController(_ sender: Any) {
+    @IBAction private func popToDViewControllerTouchUpInside(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction private func rootToAViewCOntroller(_ sender: Any) {
+    @IBAction private func rootToAViewCOntrollerTouchUpInside(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 

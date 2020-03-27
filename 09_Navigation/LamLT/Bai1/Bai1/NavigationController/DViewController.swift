@@ -8,23 +8,21 @@ class DViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    @IBAction private func pushToEViewController(_ sender: Any) {
-           let EViewControl = EViewController()
-           self.navigationController?.pushViewController(EViewControl, animated: true)
+    @IBAction private func pushToEViewControllerTouchUpInside(_ sender: Any) {
+           let eVC = EViewController()
+           self.navigationController?.pushViewController(eVC, animated: true)
     }
     
-    @IBAction private func popToBViewController(_ sender: Any) {
+    @IBAction private func popToBViewControllerTouchUpInside(_ sender: Any) {
         let vc = (self.navigationController?.viewControllers[1])!
         navigationController?.popToViewController(vc, animated: true)
     }
 
-    @IBAction private func popToCViewController(_ sender: Any) {
+    @IBAction private func popToCViewControllerTouchUpInside(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction private func rootToAViewCOntroller(_ sender: Any) {
+    @IBAction private func rootToAViewCOntrollerTouchUpInside(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
-
-
 }

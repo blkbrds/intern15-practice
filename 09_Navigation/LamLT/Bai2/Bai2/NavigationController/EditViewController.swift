@@ -20,6 +20,7 @@ class EditViewController: UIViewController {
         confirmPassWordTextField.isSecureTextEntry = true
         titelArletLabel.isHidden = true
     }
+    
     @objc func doneAction() {
         if editPassWordTextField.text == confirmPassWordTextField.text {
             calLogin.userName = editUserNameTextField.text!
@@ -28,7 +29,6 @@ class EditViewController: UIViewController {
         } else {
             titelArletLabel.isHidden = false
         }
-        
     }
 
     @objc func cancelAction() {

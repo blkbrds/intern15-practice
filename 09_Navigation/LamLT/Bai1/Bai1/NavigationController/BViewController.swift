@@ -6,12 +6,12 @@ class BViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    @IBAction private func pushToCviewController(_ sender: Any) {
+    @IBAction private func pushToViewCButtonTouchUpSide(_ sender: Any) {
         let nextCVC = CViewController()
         navigationController?.pushViewController(nextCVC, animated: true)
     }
 
-    @IBAction private func backToAViewController(_ sender: Any) {
+    @IBAction private func backToAViewButtonTouchUpSide(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 }
