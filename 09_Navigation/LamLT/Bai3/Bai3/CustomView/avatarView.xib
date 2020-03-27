@@ -23,7 +23,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DL-KB-jdZ">
-                    <rect key="frame" x="0.0" y="126" width="147" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="147" height="170"/>
+                    <connections>
+                        <action selector="avatarButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="QCw-cm-i1f"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -31,22 +34,24 @@
                 <constraint firstItem="u1A-5O-lDi" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.741176" id="CVh-Mw-0XH"/>
                 <constraint firstItem="u1A-5O-lDi" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Md5-jm-jaZ"/>
                 <constraint firstItem="8FV-LF-Rdg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Pzn-ia-hBo"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8DL-KB-jdZ" secondAttribute="trailing" id="XDq-RT-4PI"/>
-                <constraint firstItem="8DL-KB-jdZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gbj-Ic-yTY"/>
+                <constraint firstItem="8DL-KB-jdZ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="T23-XF-Y3f"/>
+                <constraint firstItem="8DL-KB-jdZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="YVX-va-uhW"/>
                 <constraint firstItem="u1A-5O-lDi" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="kjZ-TO-N1s"/>
+                <constraint firstItem="8DL-KB-jdZ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="lSR-Bm-jSf"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8FV-LF-Rdg" secondAttribute="bottom" id="nva-89-PoS"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8DL-KB-jdZ" secondAttribute="bottom" id="qoy-wS-91j"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8FV-LF-Rdg" secondAttribute="trailing" id="sHS-R5-cPh"/>
                 <constraint firstItem="u1A-5O-lDi" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="u1l-jz-NqK"/>
-                <constraint firstItem="8DL-KB-jdZ" firstAttribute="top" secondItem="u1A-5O-lDi" secondAttribute="bottom" id="vgi-FC-KJg"/>
+                <constraint firstItem="8DL-KB-jdZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yHh-br-yQ9"/>
                 <constraint firstItem="8FV-LF-Rdg" firstAttribute="top" secondItem="u1A-5O-lDi" secondAttribute="bottom" id="zgY-Ih-8l0"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="avatarImage" destination="u1A-5O-lDi" id="pKU-Ie-t4Q"/>
+                <outlet property="avatarImageView" destination="u1A-5O-lDi" id="Orz-xU-hAL"/>
+                <outlet property="detailsButton" destination="8DL-KB-jdZ" id="taw-d0-JMq"/>
+                <outlet property="nameAvatarLabel" destination="8FV-LF-Rdg" id="Jqd-Go-B4Z"/>
             </connections>
-            <point key="canvasLocation" x="-1284" y="-94"/>
+            <point key="canvasLocation" x="-1759.2" y="-148.42578710644679"/>
         </view>
     </objects>
 </document>
