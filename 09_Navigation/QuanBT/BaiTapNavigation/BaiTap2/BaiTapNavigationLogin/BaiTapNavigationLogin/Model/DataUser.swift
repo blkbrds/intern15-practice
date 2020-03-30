@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataUser {
+final class DataUser {
     var testuser = ""
     var testpass = ""
     var username: [String] = ["quan", "admin", "vu"]
