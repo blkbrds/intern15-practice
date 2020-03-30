@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BViewController: UIViewController {
+final class BViewController: UIViewController {
      // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
