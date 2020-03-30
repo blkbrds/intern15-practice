@@ -54,7 +54,7 @@ final class MyAvatar: UIView {
         }
     }
     
-     func updateUI(imageAvatar: String, getUsername: String) {
+    func updateUI(imageAvatar: String, getUsername: String) {
         avatarImageView.image  = UIImage(named: imageAvatar)
         usernameLabel.text = getUsername
     }

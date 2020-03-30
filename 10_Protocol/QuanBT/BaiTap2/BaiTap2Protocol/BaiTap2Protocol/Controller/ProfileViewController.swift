@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol MyProfileDelegate {
+protocol MyProfileDelegate: class {
     func profileName(name: String)
 }
 
 final class ProfileViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
     
     // MARK: - Properties
     var username = ""
-    var delegate: MyProfileDelegate?
+    weak var delegate: MyProfileDelegate?
     
     //MARK: - Override
     override func viewDidLoad() {
