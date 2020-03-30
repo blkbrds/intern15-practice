@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,7 +30,7 @@
                                 <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="popToDViewControllerTouchUpInside:" destination="-1" eventType="touchUpInside" id="jnG-0e-29U"/>
+                                <action selector="popToDButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="jnG-0e-29U"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2W-47-hCq">
@@ -45,7 +44,7 @@
                                 <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="popToCViewControllerTouchUpInside:" destination="-1" eventType="touchUpInside" id="JZs-8Z-vIe"/>
+                                <action selector="popToCButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="JZs-8Z-vIe"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2B-Nl-XIZ">
@@ -59,7 +58,7 @@
                                 <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="popToBViewControllerTouchUpInside:" destination="-1" eventType="touchUpInside" id="Fhy-pQ-o8T"/>
+                                <action selector="popToBButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="Fhy-pQ-o8T"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWH-7U-s6m">
@@ -73,7 +72,7 @@
                                 <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="rootToAViewCOntrollerTouchUpInside:" destination="-1" eventType="touchUpInside" id="5gD-AN-GxK"/>
+                                <action selector="rootToAButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="5gD-AN-GxK"/>
                             </connections>
                         </button>
                     </subviews>

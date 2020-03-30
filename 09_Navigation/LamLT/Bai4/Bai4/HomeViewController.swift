@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
             navBar = navigationController?.navigationBar
         }
         
-        lazy var searchBar = UISearchBar()
+        var searchBar = UISearchBar()
 
         @IBAction private func changeNavigationBarToucUpInside(_ sender: UIButton) {
             clearNavigationBar()

@@ -3,30 +3,29 @@ import UIKit
 class EditViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var profileImageView: UIImageView!
     var nameImage: String = ""
-    var name: String = ""
+    var nameLabelAvatar: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
-        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneAction))
+        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donButtonTouchUpInside))
         navigationItem.rightBarButtonItem = rightButton
         
         let imageBack = UIImage(named: "iconBack")
-//        UIEdgeInsets()
-        let backButton = UIBarButtonItem(image: imageBack, style: .plain, target: self, action: #selector(cancelAction))
+        let backButton = UIBarButtonItem(image: imageBack, style: .plain, target: self, action: #selector(cancelButtonTouchUpInside))
         navigationItem.leftBarButtonItem = backButton
         
-        nameTextField.text = name
+        nameTextField.text = nameLabelAvatar
         profileImageView.image = UIImage(named: nameImage)
     }
-    @objc func doneAction() {
+    
+    @objc func donButtonTouchUpInside() {
         navigationController?.popViewController(animated: true)
-        
     }
 
-    @objc func cancelAction() {
+    @objc func cancelButtonTouchUpInside() {
         navigationController?.popViewController(animated: true)
     }
 }

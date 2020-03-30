@@ -16,6 +16,7 @@
 		F04CBFEB242C6B1700B44DD2 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04CBFE9242C6B1700B44DD2 /* HomeViewController.xib */; };
 		F04CBFEE242C829900B44DD2 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CBFEC242C829900B44DD2 /* EditViewController.swift */; };
 		F04CBFEF242C829900B44DD2 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04CBFED242C829900B44DD2 /* EditViewController.xib */; };
+		F093E672242DE33500788144 /* SaveDataUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093E671242DE33500788144 /* SaveDataUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F04CBFE9242C6B1700B44DD2 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F04CBFEC242C829900B44DD2 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		F04CBFED242C829900B44DD2 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
+		F093E671242DE33500788144 /* SaveDataUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		F04CBFCE242C686400B44DD2 /* Bai2 */ = {
 			isa = PBXGroup;
 			children = (
+				F093E670242DE31000788144 /* Model */,
 				F04CBFE3242C68EC00B44DD2 /* NavigationController */,
 				F04CBFCF242C686400B44DD2 /* AppDelegate.swift */,
 				F04CBFD1242C686400B44DD2 /* SceneDelegate.swift */,
@@ -82,6 +85,14 @@
 				F04CBFED242C829900B44DD2 /* EditViewController.xib */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		F093E670242DE31000788144 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F093E671242DE33500788144 /* SaveDataUserView.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 			files = (
 				F04CBFEE242C829900B44DD2 /* EditViewController.swift in Sources */,
 				F04CBFE6242C68FC00B44DD2 /* LoginViewController.swift in Sources */,
+				F093E672242DE33500788144 /* SaveDataUserView.swift in Sources */,
 				F04CBFD0242C686400B44DD2 /* AppDelegate.swift in Sources */,
 				F04CBFD2242C686400B44DD2 /* SceneDelegate.swift in Sources */,
 				F04CBFEA242C6B1700B44DD2 /* HomeViewController.swift in Sources */,

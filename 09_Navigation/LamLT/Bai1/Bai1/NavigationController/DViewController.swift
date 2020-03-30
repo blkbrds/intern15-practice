@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 class DViewController: UIViewController {
@@ -8,21 +6,21 @@ class DViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    @IBAction private func pushToEViewControllerTouchUpInside(_ sender: Any) {
+    @IBAction private func pushToEButtonTouchUpInside(_ sender: Any) {
            let eVC = EViewController()
            self.navigationController?.pushViewController(eVC, animated: true)
     }
     
-    @IBAction private func popToBViewControllerTouchUpInside(_ sender: Any) {
+    @IBAction private func popToBButtonTouchUpInside(_ sender: Any) {
         let vc = (self.navigationController?.viewControllers[1])!
         navigationController?.popToViewController(vc, animated: true)
     }
 
-    @IBAction private func popToCViewControllerTouchUpInside(_ sender: Any) {
+    @IBAction private func popToCButtonTouchUpInside(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction private func rootToAViewCOntrollerTouchUpInside(_ sender: Any) {
+    @IBAction private func rootToAButtonTouchUpInside(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
 }

@@ -1,8 +1,6 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-//    weak var delegate: HomeViewControllerDelate?
-    
     @IBOutlet weak var bigScrollViewUI: UIScrollView!
     var xSpace: CGFloat = 10
     var ySpace: CGFloat = 20
@@ -12,6 +10,8 @@ class HomeViewController: UIViewController {
     var nameAvatar: [String] = ["Obama","Donaln Trump","Putin","Mical JackSon","Messi","Ronadinho","Bee","Jeanne","Arthur","Atila","Demon","Evil","Ho Cam Dao","Smile","XXA","ScopField","Police","Enmy","CoTo","Phonexi","Zidane"]
     
     var saveImage: [String] = ["obama","trump","putin","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao","jao",]
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +35,15 @@ class HomeViewController: UIViewController {
                 xSpace = 10
             }
             createAvatarView!.delegate = self
-
         }
     }
-
 }
+
 extension HomeViewController: AvatarViewDelegate {
     func avatarView(viewController: UIViewController, value: String, buttonTag: Int) {
         let editVC = EditViewController()
         navigationController?.pushViewController(editVC, animated: true)
-        editVC.name = value
+        editVC.nameLabelAvatar = value
         editVC.nameImage = saveImage[buttonTag]
     }
 }
