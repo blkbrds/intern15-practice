@@ -10,9 +10,8 @@ import UIKit
 
 class MyViewController: UIViewController {
 
-    override private func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
-        
         let frame = CGRect(x: 50, y: 100, width: 100, height: 100)
         let userAvatar = UIImageView(image: UIImage(named: "avatar.png"))
         userAvatar.frame = frame

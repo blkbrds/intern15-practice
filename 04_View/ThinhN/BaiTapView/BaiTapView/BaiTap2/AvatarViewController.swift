@@ -16,16 +16,12 @@ class AvatarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-            
         let space : CGFloat = 20
         let widthScreen = UIScreen.main.bounds.width
-        
         let widthAvatarView: CGFloat = 110
         let heightAvatarView: CGFloat = 175
         var yAvatarView: CGFloat = 50
         var xAvatarView: CGFloat = space
-        
         for index in 0..<names.count {
         let frame = CGRect(x: xAvatarView, y: yAvatarView, width: widthAvatarView, height: heightAvatarView)
         let avatarView  = creatAvatarView(frame: frame, index: index)
@@ -38,7 +34,6 @@ class AvatarViewController: UIViewController {
             }
         }
     }
-    
     func creatAvatarView(frame: CGRect,index:Int) -> UIView {
         let avatarView = UIView(frame: frame)
         
@@ -46,27 +41,24 @@ class AvatarViewController: UIViewController {
         avatar.image = UIImage(named: images[index])
         avatar.contentMode = .scaleToFill
         avatarView.addSubview(avatar)
-        
         let name = UILabel(frame: CGRect(x: 0, y: 150, width: avatarView.bounds.width, height: avatarView.bounds.height - avatar.bounds.height))
         name.text = names[index]
         name.textAlignment = .center
         name.backgroundColor = .systemBlue
         name.textColor = .white
         avatarView.addSubview(name)
-        
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: avatar.bounds.width, height: avatarView.bounds.height))
         button.backgroundColor = .clear
-        let tap = UITapGestureRecognizer(target: self, action: #selector(buttonDiDClick))
-        tap.name = names[index]
+        let tap = UITapGestureRecognizer(target: self, action: #selector(buttonDidClick))
+        button.tag = index
         button.addGestureRecognizer(tap)
         avatarView.addSubview(button)
-        
         return avatarView
     }
-    
-    @objc private func buttonDiDClick(_ sender:UITapGestureRecognizer){
-        let avatar = sender.name
-        print(" User name is \(avatar ?? "no name") ")
+    @objc private func buttonDidClick(_ sender:UITapGestureRecognizer){
+        if let view = sender.view {
+            let index = view.tag
+            print("User name is: Name \(index + 1)")
+        }
     }
 }
-
