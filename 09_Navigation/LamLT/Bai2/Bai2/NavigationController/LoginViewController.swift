@@ -14,17 +14,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
-        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(nextAction))
+        let rightButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(nextActionButtonTouchUpInSide))
         navigationItem.rightBarButtonItem = rightButton
         passWordTextField.isSecureTextEntry = true
         alertLabel.isHidden = true
     }
     
-    @objc private func nextAction() {
-            let userAccount: (String, String) = (userNameTextField.text!, passWordTextField.text!)
+    @objc private func nextActionButtonTouchUpInSide() {
+        let userAccount: (userName: String, String) = (userNameTextField.text!, passWordTextField.text!)
             if userAccount == (userName, passWord) {
-                let nextHomeView = HomeViewController()
-                self.navigationController?.pushViewController(nextHomeView, animated: true)
+                let nextHomeViewController = HomeViewController()
+                nextHomeViewController.userName = userAccount.userName
+                nextHomeViewController.password = userAccount.1
+                self.navigationController?.pushViewController(nextHomeViewController, animated: true)
             } else {
                 alertLabel.isHidden = false
             }
