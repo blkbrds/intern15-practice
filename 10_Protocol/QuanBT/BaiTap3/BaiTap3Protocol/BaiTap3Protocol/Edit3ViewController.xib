@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Edit3ViewController" customModule="BaiTap3Protocol" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="districtButtons" destination="ikN-Jl-VIQ" collectionClass="NSMutableArray" id="GcN-wD-xYp"/>
+                <outletCollection property="districtButtons" destination="o9X-sQ-WAe" collectionClass="NSMutableArray" id="ygb-Jv-VGC"/>
+                <outletCollection property="districtButtons" destination="Vc5-po-aaj" collectionClass="NSMutableArray" id="hed-8F-ifk"/>
+                <outletCollection property="districtButtons" destination="Qwt-hf-7zk" collectionClass="NSMutableArray" id="sMg-HO-tmc"/>
+                <outletCollection property="districtButtons" destination="NO9-1k-n4t" collectionClass="NSMutableArray" id="P3i-EM-iQL"/>
+                <outletCollection property="districtButtons" destination="WgX-VZ-iea" collectionClass="NSMutableArray" id="Zfd-6B-tUQ"/>
+                <outletCollection property="districtButtons" destination="B3M-Fr-o4V" collectionClass="NSMutableArray" id="DXB-pz-Xs8"/>
+                <outletCollection property="districtButtons" destination="Kmm-Lk-1zc" collectionClass="NSMutableArray" id="DIg-qO-Aqj"/>
+                <outletCollection property="districtButtons" destination="ieK-Pp-vMR" collectionClass="NSMutableArray" id="QP2-uN-rYv"/>
+                <outletCollection property="districtButtons" destination="Emc-rv-bGW" collectionClass="NSMutableArray" id="634-k8-p5L"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikN-Jl-VIQ">
+                    <rect key="frame" x="41.5" y="117.5" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 1">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="pqW-jo-7qO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-sQ-WAe">
+                    <rect key="frame" x="41.5" y="184.5" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 2">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="ga0-KD-t0A"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vc5-po-aaj">
+                    <rect key="frame" x="41.5" y="252" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 3">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="gcv-bF-DC7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwt-hf-7zk">
+                    <rect key="frame" x="41.5" y="319" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 4">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="YRw-71-1Rj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO9-1k-n4t">
+                    <rect key="frame" x="41.5" y="386" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 5">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="eYI-rH-Eyq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgX-VZ-iea">
+                    <rect key="frame" x="41.5" y="453.5" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 6">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="d8W-s8-8ap"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3M-Fr-o4V">
+                    <rect key="frame" x="41.5" y="520.5" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 7">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="pgL-G8-jRC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmm-Lk-1zc">
+                    <rect key="frame" x="41.5" y="588" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 8">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="ZwC-zr-5tF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieK-Pp-vMR">
+                    <rect key="frame" x="41.5" y="655" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 9">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="MU2-OK-FdU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emc-rv-bGW">
+                    <rect key="frame" x="41.5" y="722" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Huyện 10">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="districtTouchUpInside:" destination="-1" eventType="touchUpInside" id="5k5-FQ-OM7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WgX-VZ-iea" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5nI-TW-t0l"/>
+                <constraint firstItem="B3M-Fr-o4V" firstAttribute="width" secondItem="WgX-VZ-iea" secondAttribute="width" id="7Mx-Lc-5tm"/>
+                <constraint firstItem="B3M-Fr-o4V" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="89V-Tt-qT0"/>
+                <constraint firstItem="ieK-Pp-vMR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.5" id="9II-Mq-tqE"/>
+                <constraint firstItem="o9X-sQ-WAe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Nj-eW-pBb"/>
+                <constraint firstItem="o9X-sQ-WAe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.45" id="A4M-53-TcB"/>
+                <constraint firstItem="Vc5-po-aaj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E3M-4Y-iuo"/>
+                <constraint firstItem="ikN-Jl-VIQ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="Kc7-aE-woH"/>
+                <constraint firstItem="WgX-VZ-iea" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.05" id="KfX-lS-Ux3"/>
+                <constraint firstItem="Emc-rv-bGW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.65" id="LLS-2A-wIR"/>
+                <constraint firstItem="Qwt-hf-7zk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.75" id="Nrc-LS-ftU"/>
+                <constraint firstItem="Vc5-po-aaj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.6" id="R4f-mO-8AG"/>
+                <constraint firstItem="B3M-Fr-o4V" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.2" id="UAR-Cz-CUc"/>
+                <constraint firstItem="Emc-rv-bGW" firstAttribute="width" secondItem="ieK-Pp-vMR" secondAttribute="width" id="YMh-W1-6kz"/>
+                <constraint firstItem="Kmm-Lk-1zc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YZh-hA-oC1"/>
+                <constraint firstItem="WgX-VZ-iea" firstAttribute="width" secondItem="NO9-1k-n4t" secondAttribute="width" id="amN-o0-gLK"/>
+                <constraint firstItem="Emc-rv-bGW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dj4-xB-n44"/>
+                <constraint firstItem="ikN-Jl-VIQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.3" id="f96-dM-NLM"/>
+                <constraint firstItem="o9X-sQ-WAe" firstAttribute="width" secondItem="ikN-Jl-VIQ" secondAttribute="width" id="fKL-jS-fWy"/>
+                <constraint firstItem="Kmm-Lk-1zc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.35" id="fW5-y5-C3H"/>
+                <constraint firstItem="NO9-1k-n4t" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.9" id="i1C-sn-Ss5"/>
+                <constraint firstItem="Qwt-hf-7zk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oOP-K0-LdM"/>
+                <constraint firstItem="ieK-Pp-vMR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p7s-Iy-Kej"/>
+                <constraint firstItem="Vc5-po-aaj" firstAttribute="width" secondItem="o9X-sQ-WAe" secondAttribute="width" id="q8i-oe-VmP"/>
+                <constraint firstItem="NO9-1k-n4t" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wFj-2U-Mz7"/>
+                <constraint firstItem="NO9-1k-n4t" firstAttribute="width" secondItem="Qwt-hf-7zk" secondAttribute="width" id="wm9-dA-8rQ"/>
+                <constraint firstItem="ieK-Pp-vMR" firstAttribute="width" secondItem="Kmm-Lk-1zc" secondAttribute="width" id="xOh-JK-vjc"/>
+                <constraint firstItem="Qwt-hf-7zk" firstAttribute="width" secondItem="Vc5-po-aaj" secondAttribute="width" id="xQG-9g-4Iq"/>
+                <constraint firstItem="Kmm-Lk-1zc" firstAttribute="width" secondItem="B3M-Fr-o4V" secondAttribute="width" id="xbw-uI-lBy"/>
+                <constraint firstItem="ikN-Jl-VIQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yjG-Y9-JWL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="132"/>
+        </view>
+    </objects>
+</document>
