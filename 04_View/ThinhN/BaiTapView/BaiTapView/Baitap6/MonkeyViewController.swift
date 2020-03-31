@@ -14,7 +14,6 @@ class MonkeyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
     @IBAction private func pichGestureRecognizer(_ sender: UIPinchGestureRecognizer) {
         guard let senderView = sender.view else {
             return
@@ -23,7 +22,6 @@ class MonkeyViewController: UIViewController {
             senderView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
         }
     }
-    
     @IBAction private func rotationGestureRecognizer(_ sender: UIRotationGestureRecognizer) {
         guard let senderView = sender.view else {
             return
@@ -31,7 +29,6 @@ class MonkeyViewController: UIViewController {
         senderView.transform = senderView.transform.rotated(by: sender.rotation)
         sender.rotation = 0
     }
-    
     @IBAction private func longGestureRecognizer(_ sender: UILongPressGestureRecognizer) {
         if let view = sender.view {
           UIView.animate(withDuration: 0.5) {

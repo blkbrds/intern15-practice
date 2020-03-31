@@ -12,8 +12,6 @@ class AvatarViewController: UIViewController {
     
     private let names: [String] = ["Name 1", "Name 2", "Name 3", "Name 4", "Name 5", "Name 6", "Name 7", "Name 8", "Name 9"]
     private let images: [String] = ["avatar-1.jpg", "avatar-2.jpg", "avatar-3.jpg", "avatar-4.jpg", "avatar-5.jpg", "avatar-6.jpg", "avatar-7.jpg", "avatar-8.jpg", "avatar-9.jpg"]
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let space : CGFloat = 20
