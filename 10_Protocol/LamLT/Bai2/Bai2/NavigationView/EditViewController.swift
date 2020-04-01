@@ -1,11 +1,20 @@
 import UIKit
 
+protocol EditAvatarDelegate: class {
+    func controller(controller: EditViewController, needPerformAction action: EditViewController.Action)
+}
+
 class EditViewController: UIViewController {
+    weak var delegate: EditAvatarDelegate?
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
     var nameImage: String = ""
     var nameLabelAvatar: String = ""
-
+    
+    enum Action {
+         case updateUI(nameImage: String?)
+     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
@@ -22,6 +31,10 @@ class EditViewController: UIViewController {
 
     @objc func donButtonTouchUpInside() {
         navigationController?.popViewController(animated: true)
+        guard let nameImage = nameTextField.text else { return }
+        if let delegate = delegate {
+            delegate.controller(controller: self, needPerformAction: .updateUI(nameImage: nameImage))
+        }
     }
 
     @objc func cancelButtonTouchUpInside() {
