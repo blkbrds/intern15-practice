@@ -1,7 +1,7 @@
 import UIKit
 
 protocol AvatarViewDelegate: class {
-    func avatarView(viewController: UIViewController, value: String, buttonTag: Int)
+    func view(view: AvatarView, value: String, buttonTag: Int)
 }
 class AvatarView: UIView {
 
@@ -19,7 +19,7 @@ class AvatarView: UIView {
     }
 
     @IBAction private func avatarButtonTouchUpInside (_ sender: Any) {
-        if let delegate = delegate {
-            delegate.avatarView(viewController: EditViewController(), value: self.avatarNameLabel.text ?? "", buttonTag: avatarDetailButoon.tag)
+        if let delegate = delegate, let name = self.avatarNameLabel.text {
+            delegate.view(view: self, value: name, buttonTag: avatarDetailButoon.tag)
         }
     } }

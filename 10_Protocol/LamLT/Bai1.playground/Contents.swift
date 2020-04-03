@@ -69,4 +69,4 @@ class Fish: Animal, CanSwin {
     }
 }
 
-var animal1: [Animal] = [Mammal(name: "Bo"), Mammal(name: "Heo"), Mammal(name: "Ngua"), Bird(name: "Bo Cau"), Bird(name: "Edge"), Fish(name: "Shark")]
+var animal1s: [Animal] = [Mammal(name: "Bo"), Mammal(name: "Heo"), Mammal(name: "Ngua"), Bird(name: "Bo Cau"), Bird(name: "Edge"), Fish(name: "Shark")]
