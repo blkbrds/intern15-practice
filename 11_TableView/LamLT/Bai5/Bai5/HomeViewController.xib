@@ -21,13 +21,12 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-8X-4WP">
                     <rect key="frame" x="0.0" y="114" width="375" height="553"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Wu0-he-JIi"/>
                         <outlet property="delegate" destination="-1" id="rGL-50-DKc"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2Qb-55-RBl">
+                <searchBar contentMode="redraw" placeholder="Enter Name" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Qb-55-RBl">
                     <rect key="frame" x="0.0" y="58" width="375" height="56"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
@@ -43,7 +42,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ySR-8X-4WP" secondAttribute="trailing" id="sOc-cm-6Uz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="153.37331334332833"/>
+            <point key="canvasLocation" x="-346" y="145"/>
         </view>
     </objects>
 </document>
