@@ -10,7 +10,7 @@ import Foundation
 
 final class SectionViewModel {
     // MARK: - Properties
-    var users: [[User]] = getUser()
+    var users: [[User]] = []
     
     // MARK: - Function
     func numberOfSection() -> Int {
@@ -27,13 +27,12 @@ final class SectionViewModel {
         return viewModel
     }
     
-    static func getUser() -> [[User]] {
+     func getUser() {
         var users: [[User]] = []
         guard let path = Bundle.main.url(forResource: "Sections", withExtension: "plist") else {
-            return [[User]()]
-        }
+            return         }
         guard let data = NSArray(contentsOf: path) as? [[String]] else {
-            return [[User]()]
+            return
         }
         
         for index1 in 0 ..< data.count {
@@ -44,6 +43,6 @@ final class SectionViewModel {
             }
             users.append(userNames)
         }
-        return users
+        self.users = users
     }
 }

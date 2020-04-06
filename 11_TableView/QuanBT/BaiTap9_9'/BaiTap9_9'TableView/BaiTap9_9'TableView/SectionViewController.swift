@@ -15,7 +15,6 @@ final class SectionViewController: UIViewController {
     // MARK: - Properties
     var viewModel = SectionViewModel()
     private var gardenIndex: [String] = []
-    private var users: [[User]] = []
     
     // MARK: - Override
     override func viewDidLoad() {
@@ -27,7 +26,7 @@ final class SectionViewController: UIViewController {
     // MARK: - Function
     private func loadData() {
         gardenIndex = ["T", "G", "Đ"]
-        users = viewModel.users
+        viewModel.getUser()
     }
     
     private func configTableView() {
