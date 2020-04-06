@@ -26,7 +26,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
-// MARK: - Extention
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count

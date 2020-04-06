@@ -10,11 +10,11 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     private var datas: [Int] = Array(0...25)
-    private var heightArray: [CGFloat] = []
+    private var heights: [CGFloat] = []
     
     // MARK: - Override
     override func viewDidLoad() {
@@ -24,14 +24,14 @@ final class HomeViewController: UIViewController {
         collectionView.dataSource = self
         if let layout = collectionView?.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
-            randomHeightForCell()
+            randomHeight()
         }
     }
     
     // MARK: - Function
-    private func randomHeightForCell() {
+    private func randomHeight() {
         for _ in 0 ..< datas.count {
-            heightArray.append(CGFloat.random(in: 30...200))
+            heights.append(CGFloat.random(in: 30...200))
         }
     }
 }
@@ -51,6 +51,6 @@ extension HomeViewController: UICollectionViewDataSource {
 // MARK: - PinterestLayoutDelegate
 extension HomeViewController:  PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return heightArray[indexPath.item]
+        return heights[indexPath.item]
     }
 }

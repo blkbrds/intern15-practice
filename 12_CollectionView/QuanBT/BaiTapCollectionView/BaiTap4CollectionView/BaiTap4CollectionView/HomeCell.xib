@@ -9,34 +9,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCell" customModule="BaiTap3CollectionView" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCell" customModule="BaiTap4CollectionView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCM-Xi-hvs">
+                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPe-uU-HCe">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" red="0.32429138740000002" green="0.80417073729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <state key="normal" title="0">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="fCM-Xi-hvs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7GC-PF-kT7"/>
-                <constraint firstAttribute="trailing" secondItem="fCM-Xi-hvs" secondAttribute="trailing" id="ifp-Ny-50A"/>
-                <constraint firstItem="fCM-Xi-hvs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="s2Z-3v-Z4g"/>
-                <constraint firstAttribute="bottom" secondItem="fCM-Xi-hvs" secondAttribute="bottom" id="vRC-uO-Ov4"/>
+                <constraint firstItem="kPe-uU-HCe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="eNR-WO-gWq"/>
+                <constraint firstItem="kPe-uU-HCe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eo1-Am-owa"/>
+                <constraint firstAttribute="bottom" secondItem="kPe-uU-HCe" secondAttribute="bottom" id="opR-Ka-1yz"/>
+                <constraint firstAttribute="trailing" secondItem="kPe-uU-HCe" secondAttribute="trailing" id="t2n-ES-Goh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="buttonCell" destination="fCM-Xi-hvs" id="fYr-Hh-hQw"/>
+                <outlet property="cellButton" destination="kPe-uU-HCe" id="Zen-ui-qZt"/>
             </connections>
-            <point key="canvasLocation" x="57.971014492753625" y="132.58928571428572"/>
+            <point key="canvasLocation" x="58" y="133"/>
         </collectionViewCell>
     </objects>
 </document>
