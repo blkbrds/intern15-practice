@@ -29,7 +29,7 @@ final class HomeViewController: UIViewController {
 }
 
 // MARK: - Extension
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return datas.count
     }
