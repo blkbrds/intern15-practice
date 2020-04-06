@@ -13,6 +13,7 @@ final class SectionViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Properties
+    var viewModel = SectionViewModel()
     private var gardenIndex: [String] = []
     private var users: [[User]] = []
     
@@ -26,7 +27,7 @@ final class SectionViewController: UIViewController {
     // MARK: - Function
     private func loadData() {
         gardenIndex = ["T", "G", "Đ"]
-        users = User.getUser()
+        users = viewModel.users
     }
     
     private func configTableView() {
@@ -34,25 +35,23 @@ final class SectionViewController: UIViewController {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: "HomeTableViewCell")
         tableView.dataSource = self
-        tableView.delegate = self
+        tableView.rowHeight = 100
     }
 }
 
-// MARK: - Extension
+// MARK: - UITableViewDataSource
 extension SectionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return users.count
+        return viewModel.numberOfSection()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users[section].count
+        return viewModel.numberOfRowInSection(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-        cell.avatarImageView.image = UIImage(named: users[indexPath.section][indexPath.row].imageUser)
-        cell.nameLabel.text = users[indexPath.section][indexPath.row].nameUser
-        cell.subTitleLabel.text = users[indexPath.section][indexPath.row].subTitle
+        cell.viewModel = viewModel.viewModelForCell(at: indexPath)
         cell.detegale = self
         return cell
     }
@@ -77,12 +76,7 @@ extension SectionViewController: UITableViewDataSource {
     }
 }
 
-extension SectionViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-}
-
+// MARK: - HomeTableViewCellDelegate
 extension SectionViewController: HomeTableViewCellDelegate {
     func tapMe(_ homeTableViewCell: HomeTableViewCell) {
         var userName = ""

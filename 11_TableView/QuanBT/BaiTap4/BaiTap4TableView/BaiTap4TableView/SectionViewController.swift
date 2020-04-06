@@ -40,7 +40,7 @@ final class SectionViewController: UIViewController {
     }
 }
 
-// MARK: - Extension
+// MARK: - UITableViewDataSource
 extension SectionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return plants.count

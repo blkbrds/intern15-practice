@@ -34,11 +34,11 @@ final class HomeViewController: UIViewController {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: "HomeTableViewCell")
         tableView.dataSource = self
-        tableView.delegate = self
+        tableView.rowHeight = 100
     }
 }
 
-// MARK: - Extension
+// MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return users.count
@@ -77,12 +77,7 @@ extension HomeViewController: UITableViewDataSource {
     }
 }
 
-extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-}
-
+// MARK: - HomeTableViewCellDelegate
 extension HomeViewController: HomeTableViewCellDelegate {
     func tapMe(_ homeTableViewCell: HomeTableViewCell) {
         var userName = ""

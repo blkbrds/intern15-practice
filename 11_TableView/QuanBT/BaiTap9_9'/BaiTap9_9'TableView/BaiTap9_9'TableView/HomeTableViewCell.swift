@@ -21,6 +21,12 @@ final class HomeTableViewCell: UITableViewCell {
     // MARK: - Properties
     weak var detegale: HomeTableViewCellDelegate?
     
+    var viewModel = HomeCellModel() {
+        didSet {
+            updateView()
+        }
+    }
+    
     // MARK: - Override
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,5 +45,13 @@ final class HomeTableViewCell: UITableViewCell {
     // MARK: - Function
     @objc func tapMe() {
         detegale?.tapMe(self)
+    }
+    
+    // MARK: - updateView
+    private func updateView() {
+        let user = viewModel.user
+        nameLabel.text = user.nameUser
+        avatarImageView.image = UIImage(named: user.imageUser)
+        subTitleLabel.text = user.subTitle
     }
 }
