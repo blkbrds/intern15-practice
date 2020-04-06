@@ -5,6 +5,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     var contacts: [[String]] = [[]]
     var titles: [String] = ["Đông Vật", "Thức Ăn"]
+    var sectionTitles: [String] {
+        return titles.compactMap { $0.first?.uppercased() }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,7 @@ class HomeViewController: UIViewController {
         guard let contactsData = NSArray(contentsOf: path) as? [[String]]
             else { return }
         contacts = contactsData
+        
     }
 
     func configTableView() {
@@ -48,6 +52,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return titles[section]
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionTitles
     }
 }
 
