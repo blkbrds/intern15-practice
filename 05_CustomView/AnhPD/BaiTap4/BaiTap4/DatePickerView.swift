@@ -6,14 +6,11 @@ protocol DatePickerViewDelegate {
 
 class DatePickerView: UIView {
   
-    
     @IBOutlet weak var viewHienThi: UIView!
     
     @IBOutlet weak var datePicker: UIDatePicker!
     var delegate: DatePickerViewDelegate?
     var datePicker1: UIDatePicker?
-    
-    
     
     func hideDatePickker() {
         datePicker.alpha = 1
@@ -22,9 +19,7 @@ class DatePickerView: UIView {
     
     func showDatePick() {
         self.isHidden = false
-              UIView.animate(withDuration: 0.5, animations: {
-                self.viewHienThi.alpha = 1
-              })
+              UIView.animate(withDuration: 0.5, animations: { self.viewHienThi.alpha = 1 })
     }
     
     @IBAction func done(_ sender: Any) {
