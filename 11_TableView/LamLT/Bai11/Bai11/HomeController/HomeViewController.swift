@@ -45,15 +45,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
-
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return titles[section]
     }
 
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return sectionTitles
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+               print("Deleted")
+               self.contacts.remove(at: indexPath.row)
+               self.tableView.beginUpdates()
+               self.tableView.deleteRows(at: [indexPath], with: .automatic)
+               self.tableView.endUpdates()
+            }
     }
 }
