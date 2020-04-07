@@ -34,14 +34,28 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG2-or-crQ">
+                        <rect key="frame" x="281" y="25" width="100" height="50"/>
+                        <color key="backgroundColor" red="0.32429138740000002" green="0.80417073729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="Jph-xa-vEh"/>
+                            <constraint firstAttribute="width" constant="100" id="vut-XO-38k"/>
+                        </constraints>
+                        <state key="normal" title="Tap Me"/>
+                        <connections>
+                            <action selector="tapMeTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MiZ-jW-k8W"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="3L4-d7-LZi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3te-HO-NtO"/>
                     <constraint firstAttribute="bottom" secondItem="3L4-d7-LZi" secondAttribute="bottom" constant="10" id="7Z2-kr-IO1"/>
                     <constraint firstAttribute="bottom" secondItem="L4P-r4-4lU" secondAttribute="bottom" constant="10" id="KYj-8Y-Ndi"/>
+                    <constraint firstItem="rG2-or-crQ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.6" id="NwR-VB-T9X"/>
                     <constraint firstItem="L4P-r4-4lU" firstAttribute="leading" secondItem="3L4-d7-LZi" secondAttribute="trailing" constant="10" id="Txp-w0-Jt6"/>
                     <constraint firstItem="3L4-d7-LZi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fn0-gQ-XaF"/>
                     <constraint firstItem="02m-cO-lls" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="gQ8-df-d2S"/>
+                    <constraint firstItem="rG2-or-crQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="h5c-xA-2Iz"/>
                     <constraint firstItem="02m-cO-lls" firstAttribute="leading" secondItem="3L4-d7-LZi" secondAttribute="trailing" constant="10" id="rJ6-KR-h64"/>
                 </constraints>
             </tableViewCellContentView>

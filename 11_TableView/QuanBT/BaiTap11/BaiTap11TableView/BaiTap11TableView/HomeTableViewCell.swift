@@ -12,6 +12,13 @@ final class HomeTableViewCell: UITableViewCell {
     // MARK: - IBOutlet
     @IBOutlet weak var textDataLabel: UILabel!
     
+    // MARK: - Properties
+    var viewModel = HomeCellModel() {
+        didSet {
+            updateView()
+        }
+    }
+    
     // MARK: - Override
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,4 +27,10 @@ final class HomeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+     // MARK: - updateView
+    private func updateView() {
+        let data = viewModel.data
+        textDataLabel.text = data
+       }
 }

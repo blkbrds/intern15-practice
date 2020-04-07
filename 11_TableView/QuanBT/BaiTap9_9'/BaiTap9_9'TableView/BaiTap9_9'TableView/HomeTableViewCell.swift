@@ -30,20 +30,14 @@ final class HomeTableViewCell: UITableViewCell {
     // MARK: - Override
     override func awakeFromNib() {
         super.awakeFromNib()
-        let tapButton = UIButton(frame: CGRect(x: frame.maxX - 150, y: 25, width: 100, height: 50))
-        tapButton.setTitle("Tap Me", for: .normal)
-        tapButton.setTitleColor(UIColor.blue, for: .normal)
-        tapButton.backgroundColor = UIColor.gray
-        tapButton.addTarget(self, action: #selector(tapMe), for: .touchUpInside)
-        addSubview(tapButton)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    // MARK: - Function
-    @objc func tapMe() {
+    // MARK: - IBAction
+    @IBAction func tapMeTouchUpInside(_ sender: Any) {
         detegale?.tapMe(self)
     }
     
