@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, DatePickerViewDelegate, UITextFieldDelegate {
-    @IBOutlet weak var textFieldHienThi: UITextField!
+    
+    @IBOutlet weak var dateTimeTextField: UITextField!
+    
     var datePicker : DatePickerView?
     
     override func viewDidLoad() {
@@ -17,7 +19,7 @@ class ViewController: UIViewController, DatePickerViewDelegate, UITextFieldDeleg
         datePicker = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
         datePicker?.hideDatePickker()
         datePicker?.delegate = self
-        textFieldHienThi.delegate = self
+        dateTimeTextField.delegate = self
         view.addSubview(datePicker!)
     }
     
@@ -28,7 +30,7 @@ class ViewController: UIViewController, DatePickerViewDelegate, UITextFieldDeleg
         let dinhDangNgay = DateFormatter()
         dinhDangNgay.dateFormat = "MMMM dd yyyy"
         let dateString = dinhDangNgay.string(from: date)
-        textFieldHienThi.text = dateString
+        dateTimeTextField.text = dateString
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
