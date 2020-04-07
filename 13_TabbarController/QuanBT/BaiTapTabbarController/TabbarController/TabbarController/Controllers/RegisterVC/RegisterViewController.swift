@@ -9,9 +9,21 @@
 import UIKit
 
 final class RegisterViewController: UIViewController {
-
+    // MARK: - IBOutlet
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "register"
+    }
+    
+    // MARK: - IBAction
+    @IBAction func registerTouchUpInside(_ sender: Any) {
+        if confirmPasswordTextField.text == passwordTextField.text {
+             SceneDelegate.shared.changtabBarController()
+        }
     }
 }

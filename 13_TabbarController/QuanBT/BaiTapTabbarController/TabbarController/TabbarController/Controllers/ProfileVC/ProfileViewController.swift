@@ -9,7 +9,7 @@
 import UIKit
 
 final class ProfileViewController: UIViewController {
-
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
@@ -17,7 +17,8 @@ final class ProfileViewController: UIViewController {
         navigationItem.rightBarButtonItem = logoutButton
     }
     
-    @objc func logout() {
+    // MARK: - Function
+    @objc private func logout() {
         SceneDelegate.shared.changLoginVC()
     }
 }

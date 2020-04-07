@@ -9,7 +9,7 @@
 import UIKit
 
 final class ForgotPasswordViewController: UIViewController {
-
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Forgot Password"

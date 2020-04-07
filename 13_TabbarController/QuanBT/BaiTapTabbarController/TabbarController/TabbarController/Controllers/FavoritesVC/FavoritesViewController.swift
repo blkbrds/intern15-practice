@@ -9,7 +9,7 @@
 import UIKit
 
 final class FavoritesViewController: UIViewController {
-
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Favorites"
