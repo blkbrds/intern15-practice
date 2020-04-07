@@ -21,6 +21,10 @@
 		A49084BD243C5A4C0059112C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49084BB243C5A4C0059112C /* ProfileViewController.xib */; };
 		A49084C1243C64D60059112C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49084BF243C64D50059112C /* LoginViewController.swift */; };
 		A49084C2243C64D60059112C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49084C0243C64D50059112C /* LoginViewController.xib */; };
+		A49084C6243C797E0059112C /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49084C4243C797E0059112C /* ForgotPasswordViewController.swift */; };
+		A49084C7243C797E0059112C /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49084C5243C797E0059112C /* ForgotPasswordViewController.xib */; };
+		A49084CB243C79EA0059112C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49084C9243C79EA0059112C /* RegisterViewController.swift */; };
+		A49084CC243C79EA0059112C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49084CA243C79EA0059112C /* RegisterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		A49084BB243C5A4C0059112C /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		A49084BF243C64D50059112C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A49084C0243C64D50059112C /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A49084C4243C797E0059112C /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		A49084C5243C797E0059112C /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		A49084C9243C79EA0059112C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A49084CA243C79EA0059112C /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,8 @@
 		A49084A9243C58FD0059112C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A49084C8243C79A70059112C /* RegisterVC */,
+				A49084C3243C79500059112C /* ForgotPasswordVC */,
 				A49084BE243C64C20059112C /* LoginVC */,
 				A49084AD243C59700059112C /* ProfileVC */,
 				A49084AC243C594C0059112C /* FavoritesVC */,
@@ -145,6 +155,24 @@
 				A49084C0243C64D50059112C /* LoginViewController.xib */,
 			);
 			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		A49084C3243C79500059112C /* ForgotPasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				A49084C4243C797E0059112C /* ForgotPasswordViewController.swift */,
+				A49084C5243C797E0059112C /* ForgotPasswordViewController.xib */,
+			);
+			path = ForgotPasswordVC;
+			sourceTree = "<group>";
+		};
+		A49084C8243C79A70059112C /* RegisterVC */ = {
+			isa = PBXGroup;
+			children = (
+				A49084C9243C79EA0059112C /* RegisterViewController.swift */,
+				A49084CA243C79EA0059112C /* RegisterViewController.xib */,
+			);
+			path = RegisterVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,10 +233,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49084C7243C797E0059112C /* ForgotPasswordViewController.xib in Resources */,
 				A49084BD243C5A4C0059112C /* ProfileViewController.xib in Resources */,
 				A49084A0243C584C0059112C /* LaunchScreen.storyboard in Resources */,
 				A490849D243C584C0059112C /* Assets.xcassets in Resources */,
 				A49084B1243C59AF0059112C /* HomeViewController.xib in Resources */,
+				A49084CC243C79EA0059112C /* RegisterViewController.xib in Resources */,
 				A49084B9243C5A170059112C /* FavoritesViewController.xib in Resources */,
 				A49084C2243C64D60059112C /* LoginViewController.xib in Resources */,
 				A49084B5243C59DB0059112C /* MapViewController.xib in Resources */,
@@ -222,6 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A49084CB243C79EA0059112C /* RegisterViewController.swift in Sources */,
+				A49084C6243C797E0059112C /* ForgotPasswordViewController.swift in Sources */,
 				A49084C1243C64D60059112C /* LoginViewController.swift in Sources */,
 				A49084BC243C5A4C0059112C /* ProfileViewController.swift in Sources */,
 				A4908494243C584A0059112C /* AppDelegate.swift in Sources */,

@@ -14,6 +14,4 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         title = "Map"
     }
-
-
 }

@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  RegisterViewController.swift
 //  TabbarController
 //
 //  Created by Sếp Quân on 4/7/20.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        title = "register"
     }
 }

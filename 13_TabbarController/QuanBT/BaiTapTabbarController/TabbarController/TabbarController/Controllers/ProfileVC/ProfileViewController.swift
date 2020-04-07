@@ -18,6 +18,6 @@ final class ProfileViewController: UIViewController {
     }
     
     @objc func logout() {
-        
+        SceneDelegate.shared.changLoginVC()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ForgotPasswordViewController.swift
 //  TabbarController
 //
 //  Created by Sếp Quân on 4/7/20.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class ForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        title = "Forgot Password"
     }
 }
