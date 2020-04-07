@@ -13,7 +13,7 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Properties
-    var contacts: [String] = []
+    private var viewModel = HomeViewModel()
     
     // MARK: - Override
     override func viewDidLoad() {
@@ -31,29 +31,19 @@ final class HomeViewController: UIViewController {
     }
     
     private func loadData() {
-        guard let path = Bundle.main.url(forResource: "name", withExtension: "plist") else {
-            return
-        }
-        guard let contactsData = NSArray(contentsOf: path) as? [String] else {
-            return
-        }
-        contacts = contactsData
+        viewModel.getData()
     }
 }
 
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return viewModel.numberOfRowsInSection(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(contacts[indexPath.row])"
+        cell.textLabel?.text = viewModel.viewModelForCell(at: indexPath)
         return cell
     }
 }
@@ -62,7 +52,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vcDetail = DetailViewController()
-        vcDetail.name = contacts[indexPath.row]
+        vcDetail.name = viewModel.viewModelForCell(at: indexPath)
         navigationController?.pushViewController(vcDetail, animated: true)
     }
 }

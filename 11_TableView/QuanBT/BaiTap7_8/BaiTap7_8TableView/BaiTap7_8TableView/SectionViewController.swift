@@ -13,7 +13,7 @@ final class SectionViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Properties
-    private var plants = [[String]()]
+    private var viewModel = SectionViewModel()
     private var gardenIndex: [String] = []
     
     // MARK: - Override
@@ -25,13 +25,7 @@ final class SectionViewController: UIViewController {
     
     // MARK: - Function
     private func loadData() {
-        guard let path = Bundle.main.url(forResource: "Sections", withExtension: "plist") else {
-            return
-        }
-        guard let data = NSArray(contentsOf: path) else {
-            return
-        }
-        plants = data as! [[String]]
+        viewModel.getData()
         gardenIndex = ["T", "G", "Đ"]
     }
     
@@ -45,16 +39,16 @@ final class SectionViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension SectionViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return plants.count
+        return viewModel.numberOfSections()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return plants[section].count
+        return viewModel.numberOfRowsInSection(in: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = plants[indexPath.section][indexPath.row]
+        cell.textLabel?.text = viewModel.viewModelForCell(at: indexPath)
         let label = UILabel(frame: CGRect(x: 40, y: 30, width: 100, height: 20))
         label.text = "Name"
         label.textColor = .red

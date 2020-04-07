@@ -1,14 +1,14 @@
 //
-//  SectionViewModel.swift
-//  BaiTap9_9'TableView
+//  HomeViewModel.swift
+//  BaiTap10TableView
 //
-//  Created by Sếp Quân on 4/6/20.
+//  Created by Sếp Quân on 4/7/20.
 //  Copyright © 2020 QuanBT. All rights reserved.
 //
 
 import Foundation
 
-final class SectionViewModel {
+final class HomeViewModel {
     // MARK: - Properties
     var users: [[User]] = []
     
@@ -29,16 +29,17 @@ final class SectionViewModel {
     
      func getUser() {
         var users: [[User]] = []
-        guard let path = Bundle.main.url(forResource: "Sections", withExtension: "plist") else {
-            return         }
-        guard let data = NSArray(contentsOf: path) as? [[String]] else {
+        guard let path = Bundle.main.url(forResource: "Contact", withExtension: "plist") else {
+            return 
+        }
+        guard let data = NSArray(contentsOf: path) as? [[[String]]] else {
             return
         }
         
         for index1 in 0 ..< data.count {
             var userNames = [User]()
             for index2 in 0 ..< data[index1].count {
-                let user = User(name: data[index1][index2], image: "avatar", title: "Sub title")
+                let user = User(name: data[index1][index2][0], image: "avatar", title: data[index1][index2][1])
                 userNames.append(user)
             }
             users.append(userNames)

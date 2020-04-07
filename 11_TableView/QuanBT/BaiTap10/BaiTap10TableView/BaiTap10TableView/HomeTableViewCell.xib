@@ -34,14 +34,28 @@
                         <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oax-wy-zgX">
+                        <rect key="frame" x="306" y="25" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6Pm-Gc-bNQ"/>
+                            <constraint firstAttribute="width" secondItem="Oax-wy-zgX" secondAttribute="height" id="drJ-dc-P6O"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <state key="normal" image="phone.fill" catalog="system"/>
+                        <connections>
+                            <action selector="callToUserTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="K5l-x0-Yue"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hZu-wz-y9r" firstAttribute="leading" secondItem="VKV-CD-hzF" secondAttribute="trailing" constant="10" id="4V9-Cj-nM4"/>
                     <constraint firstItem="VKV-CD-hzF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9Sf-JC-9sy"/>
+                    <constraint firstItem="Oax-wy-zgX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1.6" id="CDa-Ui-1t7"/>
                     <constraint firstItem="hZu-wz-y9r" firstAttribute="top" secondItem="6xi-MZ-aeW" secondAttribute="bottom" constant="20" id="E7g-JX-I6s"/>
                     <constraint firstAttribute="bottom" secondItem="VKV-CD-hzF" secondAttribute="bottom" constant="10" id="ZI1-Wc-cLI"/>
                     <constraint firstItem="6xi-MZ-aeW" firstAttribute="leading" secondItem="VKV-CD-hzF" secondAttribute="trailing" constant="10" id="bGk-Tn-PwL"/>
                     <constraint firstItem="VKV-CD-hzF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fnN-Gx-86j"/>
+                    <constraint firstItem="Oax-wy-zgX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="t7j-MY-EXc"/>
                     <constraint firstItem="6xi-MZ-aeW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="uHo-wk-sIh"/>
                 </constraints>
             </tableViewCellContentView>
@@ -54,4 +68,7 @@
             <point key="canvasLocation" x="139" y="133"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="phone.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
