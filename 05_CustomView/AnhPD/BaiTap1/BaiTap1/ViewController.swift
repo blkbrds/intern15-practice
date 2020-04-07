@@ -6,6 +6,7 @@ class ViewController: UIViewController, MyAvatarDelegate {
     
     let name: [String] = ["anh","binh","cong","dat","em","phuoc","giang","hiep","quoc","quang","tien","ro","thuy","yen","uyen","long","son","phong","truong","tung","khoan","linh","hoang","hung","viet","man","ninh","dieu","ly","luan"]
     let image: [String] = Array(repeating: "ronaldo", count: 30)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = CGSize(width: view.bounds.width, height: view.bounds.height)
@@ -23,9 +24,8 @@ class ViewController: UIViewController, MyAvatarDelegate {
         avatar.delegate = self
         scrollView.addSubview(avatar)
         }
-
-        // Do any additional setup after loading the view.
     }
+    
     func didTap(name: String) {
         print("\(name)")
     }
