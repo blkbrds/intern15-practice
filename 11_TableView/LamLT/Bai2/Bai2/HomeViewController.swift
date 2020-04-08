@@ -3,6 +3,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     var contacts: [String] = []
 
     override func viewDidLoad() {
@@ -11,10 +12,9 @@ class HomeViewController: UIViewController {
         loadData()
         configTableView()
     }
+    
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "DataArray", withExtension: "plist")
-            else { return }
-        guard let contactsData = NSArray(contentsOf: path) as? [String]
+        guard let path = Bundle.main.url(forResource: "DataArray", withExtension: "plist"), let contactsData = NSArray(contentsOf: path) as? [String]
             else { return }
         contacts = contactsData
     }

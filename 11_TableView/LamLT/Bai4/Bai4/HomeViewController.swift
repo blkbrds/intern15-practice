@@ -3,6 +3,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
+    
     var contacts: [[String]] = [[]]
     var titles: [String] = ["Đông Vật", "Thức Ăn"]
     var sectionTitles: [String] {
@@ -15,10 +16,9 @@ class HomeViewController: UIViewController {
         loadData()
         configTableView()
     }
+    
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "DataList", withExtension: "plist")
-            else { return }
-        guard let contactsData = NSArray(contentsOf: path) as? [[String]]
+        guard let path = Bundle.main.url(forResource: "DataList", withExtension: "plist"), let contactsData = NSArray(contentsOf: path) as? [[String]]
             else { return }
         contacts = contactsData
     }

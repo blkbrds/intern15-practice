@@ -3,6 +3,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
     var contacts: [String] = []
     var titles: [String] = ["Gánh Mẹ"]
     var sectionTitles: [String] {
