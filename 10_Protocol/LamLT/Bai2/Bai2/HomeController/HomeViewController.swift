@@ -3,6 +3,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var bigScrollViewUI: UIScrollView!
+    
     var xSpace: CGFloat = 10
     var ySpace: CGFloat = 20
     let widthView: CGFloat = 100

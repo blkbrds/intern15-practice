@@ -5,9 +5,12 @@ protocol EditAvatarDelegate: class {
 }
 
 class EditViewController: UIViewController {
+    
     weak var delegate: EditAvatarDelegate?
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var profileImageView: UIImageView!
+    
     var nameImage: String = ""
     var nameLabelAvatar: String = ""
     

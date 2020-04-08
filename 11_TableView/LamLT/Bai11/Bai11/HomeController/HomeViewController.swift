@@ -17,9 +17,7 @@ class HomeViewController: UIViewController {
     }
 
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "Content", withExtension: "plist")
-            else { return }
-        guard let contactsData = NSArray(contentsOf: path) as? [String]
+        guard let path = Bundle.main.url(forResource: "Content", withExtension: "plist"), let contactsData = NSArray(contentsOf: path) as? [String]
             else { return }
         contacts = contactsData
     }
@@ -52,6 +50,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return sectionTitles
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Deleted \(contacts[indexPath.row])")
