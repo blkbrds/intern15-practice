@@ -2,7 +2,8 @@ import UIKit
 
 class SubViewCellCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var contentButton: UIButton!
+    @IBOutlet weak var subCellLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

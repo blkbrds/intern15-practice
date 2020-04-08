@@ -1,6 +1,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+
     var datas: [Data] = Data.getDummyDatas()
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -8,6 +9,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         title = "Home"
         configCollectionView()
+        if let layout = collectionView?.collectionViewLayout as? CellLayout {
+                   layout.delegate = self
+               }
     }
 
     func configCollectionView() {
@@ -24,13 +28,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SubViewCellCollectionViewCell
         let item = datas[indexPath.row]
+        cell.subCellLabel.text = String(item.number)
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-      let cellHeight = arc4random_uniform(100) + 200
-      print("cell height: \(cellHeight)")
-      return CGSize(width: collectionView.bounds.size.width/2 - 1, height: CGFloat(cellHeight))
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.bottom + 10)) / 2
+        return CGSize(width: itemSize, height: itemSize)
     }
+
 }
 
+extension HomeViewController: CellLayoutDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        let random = arc4random_uniform(4) + 1
+        return CGFloat(random * 100)
+    }
+}
