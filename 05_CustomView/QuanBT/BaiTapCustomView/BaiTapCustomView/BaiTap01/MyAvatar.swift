@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MyAvatarDelegate: class {
-    func nameAvatar(name: String)
+    func printNameAvatar(name: String)
 }
 
 final class MyAvatar: UIView {
@@ -34,15 +34,15 @@ final class MyAvatar: UIView {
         usernameLabel.backgroundColor = .blue
         addSubview(usernameLabel)
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedUsername))
         tapGestureRecognizer.name = usernameLabel.text
         usernameLabel.isUserInteractionEnabled = true
         usernameLabel.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc private func tapGesture(sender: UITapGestureRecognizer){
+    @objc private func tappedUsername(sender: UITapGestureRecognizer) {
         if let username = usernameLabel.text {
-            delegate?.nameAvatar(name: username)
+            delegate?.printNameAvatar(name: username)
         }
     }
     

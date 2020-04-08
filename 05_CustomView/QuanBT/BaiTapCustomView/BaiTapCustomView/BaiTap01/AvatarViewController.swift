@@ -44,7 +44,7 @@ class AvatarViewController: UIViewController {
 
 // MARK: - Extension
 extension AvatarViewController: MyAvatarDelegate {
-    func nameAvatar(name avatar: String ) {
+    func printNameAvatar(name avatar: String ) {
         print(avatar)
     }
 }
