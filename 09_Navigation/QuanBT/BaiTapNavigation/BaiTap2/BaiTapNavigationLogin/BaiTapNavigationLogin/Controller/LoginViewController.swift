@@ -21,6 +21,7 @@ final class LoginViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         reportLabel.text = ""
         usernameTextField.text = ""
         passwordTextField.text = ""
@@ -33,11 +34,11 @@ final class LoginViewController: UIViewController {
         usernameTextField.tag = 0
         passwordTextField.delegate = self
         passwordTextField.tag = 1
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneTouchUpInside))
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTouchUpInside))
         navigationItem.rightBarButtonItem = doneButton
     }
     
-    @objc private func doneTouchUpInside(){
+    @objc private func doneButtonTouchUpInside() {
         login()
     }
     
@@ -61,15 +62,16 @@ final class LoginViewController: UIViewController {
         if DataUser.share.test() == 0 {
             reportLabel.text = "Bạn nhập sai username hoặc password"
         } else {
-            let username = usernameTextField.text
-            let vcHome = HomeViewController()
-            vcHome.username = username!
-            self.navigationController?.pushViewController(vcHome, animated: true)
+            if let username = usernameTextField.text {
+                let vcHome = HomeViewController()
+                vcHome.username = username
+                navigationController?.pushViewController(vcHome, animated: true)
+            }
         }
     }
 }
 
-// MARK: - Extension
+// MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -78,7 +80,8 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 0 {
-            passwordTextField.becomeFirstResponder() }
+            passwordTextField.becomeFirstResponder()
+        }
         if textField.tag == 1 {
             test()
         }

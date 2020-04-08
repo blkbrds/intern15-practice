@@ -15,6 +15,7 @@ final class NewsFeedViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         title = "News Feed"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let  image = UIImage(named: "2")
@@ -25,14 +26,14 @@ final class NewsFeedViewController: UIViewController {
         navigationItem.rightBarButtonItem = settingButton
         navigationController?.navigationBar.tintColor = .blue
     }
-        
+    
     // MARK: - IBAction
-    @IBAction func nextTouchUpInside(_ sender: Any) {
+    @IBAction func nextButtonTouchUpInside(_ sender: Any) {
         let vcBarButton = BarButtonViewController()
-        self.navigationController?.pushViewController(vcBarButton, animated: true)
+        navigationController?.pushViewController(vcBarButton, animated: true)
     }
     
-    @IBAction func preTouchUpInside(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func preButtonTouchUpInside(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }

@@ -15,6 +15,7 @@ final class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         title = "Gradient NavigationBar"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         let image = UIImage(named: "1")
@@ -22,8 +23,8 @@ final class HomeViewController: UIViewController {
     }
     
     // MARK: - IBAction
-    @IBAction func nextTouchUpInside(_ sender: Any) {
+    @IBAction func nextButtonTouchUpInside(_ sender: Any) {
         let vcNewsFeed = NewsFeedViewController()
-        self.navigationController?.pushViewController(vcNewsFeed, animated: true)
+        navigationController?.pushViewController(vcNewsFeed, animated: true)
     }
 }

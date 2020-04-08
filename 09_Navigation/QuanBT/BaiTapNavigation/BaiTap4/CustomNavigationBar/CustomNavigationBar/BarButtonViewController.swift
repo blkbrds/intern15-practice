@@ -15,6 +15,7 @@ final class BarButtonViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.navigationBar.setBackgroundImage(.none, for: .default)
         navigationController?.navigationBar.backgroundColor = .cyan
         navigationController?.navigationBar.tintColor = .systemPink
@@ -24,15 +25,15 @@ final class BarButtonViewController: UIViewController {
         let right1Button = UIBarButtonItem(title: "Right1", style: .plain, target: nil, action: nil)
         let right2Button = UIBarButtonItem(title: "Right2", style: .plain, target: nil, action: nil)
         let profile = UIBarButtonItem(image: UIImage(named: "profile"), style: .plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItems = [ right1Button, right2Button, profile]
+        navigationItem.rightBarButtonItems = [right1Button, right2Button, profile]
     }
     
     // MARK: - IBAction
-    @IBAction func preTouchUpInside(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction func preButtonTouchUpInside(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func rootTouchUpInside(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+    @IBAction func rootButtonTouchUpInside(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
 }

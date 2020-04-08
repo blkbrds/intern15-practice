@@ -14,23 +14,26 @@ final class DViewController: UIViewController {
         super.viewDidLoad()
         title = "ViewController D"
     }
-
+    
     // MARK: - IBAction
-    @IBAction private func nextTouchUpInside(_ sender: Any) {
+    @IBAction private func nextButtonTouchUpInside(_ sender: Any) {
         let vcE = EViewController()
-        self.navigationController?.pushViewController(vcE, animated: true)
+        navigationController?.pushViewController(vcE, animated: true)
     }
     
-    @IBAction private func cTouchUpInside(_ sender: Any) {
-        let vcC = (self.navigationController?.viewControllers[2])!
-        self.navigationController?.popToViewController(vcC, animated: true)
+    @IBAction private func cButtonTouchUpInside(_ sender: Any) {
+        if let vcC = navigationController?.viewControllers[2] {
+            navigationController?.popToViewController(vcC, animated: true)
+        }
     }
     
-    @IBAction private func bTouchUpInside(_ sender: Any) {
-        let vcB = (self.navigationController?.viewControllers[1])!
-        self.navigationController?.popToViewController(vcB, animated: true)
+    @IBAction private func bButtonTouchUpInside(_ sender: Any) {
+        if let vcB = (navigationController?.viewControllers[1]) {
+            navigationController?.popToViewController(vcB, animated: true)
+        }
     }
-    @IBAction private func RootTouchUpInside(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+    
+    @IBAction private func rootButtonTouchUpInside(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
 }

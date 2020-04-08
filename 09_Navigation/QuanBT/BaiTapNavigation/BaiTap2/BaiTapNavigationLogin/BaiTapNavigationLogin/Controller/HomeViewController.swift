@@ -22,24 +22,25 @@ final class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         usernameLabel.text = username
     }
     
     // MARK: - Function
     private func setupView() {
         title = "Home"
-        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTouchUpInside))
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButtonTouchUpInside))
         navigationItem.leftBarButtonItem = logoutButton
-        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editTouchUpInside))
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTouchUpInside))
         navigationItem.rightBarButtonItem = editButton
     }
     
-    @objc private func logoutTouchUpInside(){
-        self.navigationController?.popViewController(animated: true)
+    @objc private func logoutButtonTouchUpInside() {
+        navigationController?.popViewController(animated: true)
     }
     
-    @objc private func editTouchUpInside(){
+    @objc private func editButtonTouchUpInside() {
         let vcEdit = EditViewController()
-        self.navigationController?.pushViewController(vcEdit, animated: true)
+        navigationController?.pushViewController(vcEdit, animated: true)
     }
 }

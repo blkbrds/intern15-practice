@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MyAvatarDelegate: class {
-    func nameAvatar(name: String)
+    func printNameAvatar(name: String)
 }
 
 final class MyAvatar: UIView {
@@ -42,19 +42,19 @@ final class MyAvatar: UIView {
         usernameLabel.backgroundColor = .blue
         addSubview(usernameLabel)
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedAvatar))
         tapGestureRecognizer.name = usernameLabel.text
         avatarImageView.isUserInteractionEnabled = true
         avatarImageView.addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc private func tapGesture(sender: UITapGestureRecognizer){
+    @objc private func tappedAvatar(sender: UITapGestureRecognizer) {
         if let username = usernameLabel.text {
-            delegate?.nameAvatar(name: username)
+            delegate?.printNameAvatar(name: username)
         }
     }
     
-     func updateUI(imageAvatar: String, getUsername: String) {
+    func updateUI(imageAvatar: String, getUsername: String) {
         avatarImageView.image  = UIImage(named: imageAvatar)
         usernameLabel.text = getUsername
     }

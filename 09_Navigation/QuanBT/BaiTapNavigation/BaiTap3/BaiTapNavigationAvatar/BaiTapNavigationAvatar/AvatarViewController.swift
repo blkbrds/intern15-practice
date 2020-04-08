@@ -22,6 +22,7 @@ final class AvatarViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupView()
     }
     
@@ -55,7 +56,7 @@ final class AvatarViewController: UIViewController {
 
 // MARK: - Extension
 extension AvatarViewController: MyAvatarDelegate {
-    func nameAvatar(name avatar: String ) {
+    func printNameAvatar(name avatar: String ) {
         let vcProfile = ProfileViewController()
         vcProfile.username = avatar
         for index in 0 ..< usenames.count {
@@ -63,6 +64,6 @@ extension AvatarViewController: MyAvatarDelegate {
                 vcProfile.temp = index
             }
         }
-        self.navigationController?.pushViewController(vcProfile, animated: true)
+        navigationController?.pushViewController(vcProfile, animated: true)
     }
 }

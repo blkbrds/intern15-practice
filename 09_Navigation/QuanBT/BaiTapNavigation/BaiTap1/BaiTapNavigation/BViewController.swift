@@ -16,12 +16,12 @@ final class BViewController: UIViewController {
     }
     
     // MARK: - IBAction
-    @IBAction private func preTouchUpInside(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    @IBAction private func preButtonTouchUpInside(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction private func nextTouchUpInside(_ sender: Any) {
+    @IBAction private func nextButtonTouchUpInside(_ sender: Any) {
         let vcC = CViewController()
-        self.navigationController?.pushViewController(vcC, animated: true)
+        navigationController?.pushViewController(vcC, animated: true)
     }
 }

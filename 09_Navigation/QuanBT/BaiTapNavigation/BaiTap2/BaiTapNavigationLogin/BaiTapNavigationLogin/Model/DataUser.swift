@@ -11,16 +11,16 @@ import Foundation
 final class DataUser {
     var testuser = ""
     var testpass = ""
-    var username: [String] = ["quan", "admin", "vu"]
-    var password: [String] = ["quan123", "admin123", "vu123"]
+    var usernames: [String] = ["quan", "admin", "vu"]
+    var passwords: [String] = ["quan123", "admin123", "vu123"]
     var result = 0
     
-   static var share: DataUser = DataUser()
+    static var share: DataUser = DataUser()
     
-     func test() -> Int {
-        for index in 0 ..< username.count {
-            if username[index] == testuser {
-                if password[index] == testpass {
+    func test() -> Int {
+        for index in 0 ..< usernames.count {
+            if usernames[index] == testuser {
+                if passwords[index] == testpass {
                     result = index
                     return 1
                 } else {

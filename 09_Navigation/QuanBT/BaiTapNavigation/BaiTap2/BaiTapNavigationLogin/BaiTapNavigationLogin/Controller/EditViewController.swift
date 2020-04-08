@@ -22,6 +22,7 @@ final class EditViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
@@ -34,16 +35,16 @@ final class EditViewController: UIViewController {
         newpassTextField.tag = 1
         confirmpassTextField.delegate = self
         confirmpassTextField.tag = 2
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTouchUpInside))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTouchUpInside))
         navigationItem.leftBarButtonItem = cancelButton
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTouchUpInside))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInside))
         navigationItem.rightBarButtonItem = doneButton
     }
     
-    @objc private func cancelTouchUpInside(){
-        self.navigationController?.popViewController(animated: true)
+    @objc private func cancelButtonTouchUpInside() {
+        navigationController?.popViewController(animated: true)
     }
-    @objc private func doneTouchUpInside(){
+    @objc private func doneButtonTouchUpInside() {
         edit()
     }
     
@@ -63,19 +64,20 @@ final class EditViewController: UIViewController {
     
     private func test() {
         if newpassTextField.text == confirmpassTextField.text {
-            DataUser.share.username[DataUser.share.result] = usernameTextField.text!
-            DataUser.share.password[DataUser.share.result] = newpassTextField.text!
-            let username = usernameTextField.text
-            let vcHome = self.navigationController?.viewControllers[1] as! HomeViewController
-            vcHome.username = username!
-            self.navigationController?.popToViewController(vcHome, animated: true)
+            DataUser.share.usernames[DataUser.share.result] = usernameTextField.text!
+            DataUser.share.passwords[DataUser.share.result] = newpassTextField.text!
+            if let username = usernameTextField.text {
+                let vcHome = self.navigationController?.viewControllers[1] as! HomeViewController
+                vcHome.username = username
+                navigationController?.popToViewController(vcHome, animated: true)
+            }
         } else {
             reportLabel.text = "Bạn nhập sai confirm password"
         }
     }
 }
 
-// MARK: - Extension
+// MARK: - UITextFieldDelegate
 extension EditViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -84,7 +86,8 @@ extension EditViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 0 {
-            newpassTextField.becomeFirstResponder() }
+            newpassTextField.becomeFirstResponder()
+        }
         if textField.tag == 1 {
             confirmpassTextField.becomeFirstResponder()
         }
