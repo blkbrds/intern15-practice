@@ -8,13 +8,14 @@
 
 import UIKit
 
-final class RegisterViewController: UIViewController {
+final class RegisterViewController: BaseViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var reportLabel: UILabel!
     
-    // MARK: - Override
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "register"
@@ -22,8 +23,28 @@ final class RegisterViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func registerTouchUpInside(_ sender: Any) {
-        if confirmPasswordTextField.text == passwordTextField.text {
-             SceneDelegate.shared.changtabBarController()
+        register()  
+    }
+    
+    private func register() {
+        switch (usernameTextField.text, passwordTextField.text) {
+        case ("", ""):
+            reportLabel.text = "Bạn chưa nhập username và password"
+        case ("", _):
+            reportLabel.text = "Bạn chưa nhập username"
+        case (_, ""):
+            reportLabel.text = "Bạn chưa nhập password"
+        case (_, _):
+            test()
+        }
+        view.endEditing(true)
+    }
+    
+    private func test() {
+        if confirmPasswordTextField.text != passwordTextField.text {
+            reportLabel.text = "Bạn nhập sai password và confirm password"
+        } else {
+           SceneDelegate.shared.changRootViewController()
         }
     }
 }

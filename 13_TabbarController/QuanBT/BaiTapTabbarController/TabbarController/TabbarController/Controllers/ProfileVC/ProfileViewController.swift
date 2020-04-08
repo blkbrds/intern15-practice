@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class ProfileViewController: UIViewController {
-    // MARK: - Override
+final class ProfileViewController: BaseViewController {
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Profile"
@@ -19,6 +19,6 @@ final class ProfileViewController: UIViewController {
     
     // MARK: - Function
     @objc private func logout() {
-        SceneDelegate.shared.changLoginVC()
+        SceneDelegate.shared.changRootViewController()
     }
 }

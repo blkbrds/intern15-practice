@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: BaseViewController {
     // MARK: - IBOutlet
     @IBOutlet private weak var reportLabel: UILabel!
     @IBOutlet private weak var usernameTextField: UITextField!
@@ -18,7 +18,7 @@ final class LoginViewController: UIViewController {
     var username = "admin"
     var password = "admin123"
     
-    // MARK: - Override
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -33,6 +33,10 @@ final class LoginViewController: UIViewController {
     // MARK: - Function
     private func setupView() {
         title = "Login"
+        usernameTextField.delegate = self
+        usernameTextField.tag = 0
+        passwordTextField.delegate = self
+        passwordTextField.tag = 1
         let doneButton = UIBarButtonItem(title: "Login", style: .done, target: self, action: #selector(doneTouchUpInside))
         navigationItem.rightBarButtonItem = doneButton
     }
@@ -56,10 +60,10 @@ final class LoginViewController: UIViewController {
     }
     
     private func test() {
-        if usernameTextField.text != username || passwordTextField.text != password{
+        if usernameTextField.text != username || passwordTextField.text != password {
             reportLabel.text = "Bạn nhập sai username hoặc password"
         } else {
-           SceneDelegate.shared.changtabBarController()
+           SceneDelegate.shared.changRootViewController()
         }
     }
     
@@ -75,3 +79,18 @@ final class LoginViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == 0 {
+            passwordTextField.becomeFirstResponder() }
+        if textField.tag == 1 {
+            test()
+        }
+    }
+}

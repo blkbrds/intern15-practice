@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class MapViewController: UIViewController {
-    // MARK: - Override
+final class MapViewController: BaseViewController {
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Map"

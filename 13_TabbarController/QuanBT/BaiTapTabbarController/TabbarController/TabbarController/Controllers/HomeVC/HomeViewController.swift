@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
-    // MARK: - Override
+final class HomeViewController: BaseViewController {
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"

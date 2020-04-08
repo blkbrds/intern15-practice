@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="confirmPasswordTextField" destination="1Ei-IV-ngr" id="NRd-XJ-qwY"/>
                 <outlet property="passwordTextField" destination="oRk-MG-fc5" id="pTg-UD-lCW"/>
+                <outlet property="reportLabel" destination="ow9-Ij-oHx" id="2fz-uC-r23"/>
                 <outlet property="usernameTextField" destination="RzH-8E-TUw" id="emT-hS-wg8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -43,11 +44,19 @@
                         <action selector="registerTouchUpInside:" destination="-1" eventType="touchUpInside" id="bjk-BC-6Q6"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ow9-Ij-oHx">
+                    <rect key="frame" x="207" y="134.5" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.9646971822" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ow9-Ij-oHx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2na-se-nvd"/>
                 <constraint firstItem="1Ei-IV-ngr" firstAttribute="width" secondItem="oRk-MG-fc5" secondAttribute="width" id="69d-RM-pxI"/>
                 <constraint firstItem="RzH-8E-TUw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="FqM-a9-zfm"/>
+                <constraint firstItem="ow9-Ij-oHx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.3" id="FrF-DN-J5P"/>
                 <constraint firstItem="1Ei-IV-ngr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ioe-R0-Mue"/>
                 <constraint firstItem="1Ei-IV-ngr" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.8" id="ZUb-d7-Tw4"/>
                 <constraint firstItem="RzH-8E-TUw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cUU-GF-9tt"/>

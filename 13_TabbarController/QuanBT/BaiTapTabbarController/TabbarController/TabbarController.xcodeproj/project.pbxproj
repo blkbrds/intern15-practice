@@ -25,6 +25,8 @@
 		A49084C7243C797E0059112C /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49084C5243C797E0059112C /* ForgotPasswordViewController.xib */; };
 		A49084CB243C79EA0059112C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49084C9243C79EA0059112C /* RegisterViewController.swift */; };
 		A49084CC243C79EA0059112C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A49084CA243C79EA0059112C /* RegisterViewController.xib */; };
+		A4F6B185243D749E0006214F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F6B184243D749E0006214F /* BaseViewController.swift */; };
+		A4F6B187243D762C0006214F /* BaseTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F6B186243D762C0006214F /* BaseTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		A49084C5243C797E0059112C /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		A49084C9243C79EA0059112C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A49084CA243C79EA0059112C /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		A4F6B184243D749E0006214F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A4F6B186243D762C0006214F /* BaseTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		A49084A9243C58FD0059112C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4F6B183243D74740006214F /* BaseVC */,
 				A49084C8243C79A70059112C /* RegisterVC */,
 				A49084C3243C79500059112C /* ForgotPasswordVC */,
 				A49084BE243C64C20059112C /* LoginVC */,
@@ -173,6 +178,15 @@
 				A49084CA243C79EA0059112C /* RegisterViewController.xib */,
 			);
 			path = RegisterVC;
+			sourceTree = "<group>";
+		};
+		A4F6B183243D74740006214F /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				A4F6B184243D749E0006214F /* BaseViewController.swift */,
+				A4F6B186243D762C0006214F /* BaseTabBarViewController.swift */,
+			);
+			path = BaseVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +271,9 @@
 				A49084C1243C64D60059112C /* LoginViewController.swift in Sources */,
 				A49084BC243C5A4C0059112C /* ProfileViewController.swift in Sources */,
 				A4908494243C584A0059112C /* AppDelegate.swift in Sources */,
+				A4F6B185243D749E0006214F /* BaseViewController.swift in Sources */,
 				A4908496243C584A0059112C /* SceneDelegate.swift in Sources */,
+				A4F6B187243D762C0006214F /* BaseTabBarViewController.swift in Sources */,
 				A49084B0243C59AF0059112C /* HomeViewController.swift in Sources */,
 				A49084B8243C5A170059112C /* FavoritesViewController.swift in Sources */,
 				A49084B4243C59DB0059112C /* MapViewController.swift in Sources */,
