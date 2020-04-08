@@ -2,7 +2,7 @@ import UIKit
 
 final class MyChart: UIView {
     // MARK: - Declare Variable
-    var values: [CGFloat]?
+    var values: [CGFloat] = []
     
     // MARK: - Override
     override init(frame: CGRect) {
@@ -11,9 +11,9 @@ final class MyChart: UIView {
     }
     
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
         drawTheChartFrame()
         drawChart()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -40,7 +40,7 @@ final class MyChart: UIView {
         var start: CGPoint = CGPoint(x: 30, y: self.bounds.size.height)
         var end: CGPoint = CGPoint()
         var temp: CGFloat = 80
-        for item in values! {
+        for item in values {
             if temp < self.frame.size.width {
                 end = CGPoint(x: temp, y: self.bounds.size.height - ((self.bounds.size.height - 30) * item / 100))
                 drawLine(start: start, end: end , color: .blue)

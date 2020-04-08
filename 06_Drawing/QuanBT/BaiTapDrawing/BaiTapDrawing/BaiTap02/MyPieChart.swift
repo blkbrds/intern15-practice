@@ -2,7 +2,7 @@ import UIKit
 
 final class MyPieChart: UIView {
     // MARK: - Declare Variable
-    var values: [CGFloat]?
+    var values: [CGFloat] = []
     private var startAngle: CGFloat = CGFloat(0.0) * CGFloat.pi / 180
     private var endAngle: CGFloat = CGFloat(180.0) * CGFloat.pi / 180
     
@@ -13,8 +13,9 @@ final class MyPieChart: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        for index in  0 ..< values!.count {
-            endAngle = endAngle + CGFloat(values![index] / sumValues() * 360) * CGFloat.pi / 180
+        super.draw(rect)
+        for index in  0 ..< values.count {
+            endAngle = endAngle + CGFloat(values[index] / sumValues() * 360) * CGFloat.pi / 180
             drawChart(withCenter: CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2), radius: self.frame.size.height/2, startAngle: startAngle, endAngle: endAngle, clockwise: true, color: UIColor(red: CGFloat.random(in: 0...255) / 255, green: CGFloat.random(in: 0...255) / 255, blue: CGFloat.random(in: 0...255) / 255, alpha: 1.0))
             startAngle = endAngle
         }
@@ -28,7 +29,7 @@ final class MyPieChart: UIView {
     // MARK: - Function
     private func sumValues() -> CGFloat {
         var sum: CGFloat = 0
-        for item in values! {
+        for item in values {
             sum += item
         }
         return sum
@@ -43,7 +44,6 @@ final class MyPieChart: UIView {
         let shapeLayer = CAShapeLayer()
         shapeLayer.fillColor = color.cgColor
         shapeLayer.path = path.cgPath
-        
         layer.addSublayer(shapeLayer)
     }
 }
