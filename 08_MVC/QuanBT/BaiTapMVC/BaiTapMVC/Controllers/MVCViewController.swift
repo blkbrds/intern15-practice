@@ -8,19 +8,19 @@ final class MVCViewController: UIViewController {
     private var value: Operands = Operands()
     private var result: Float = 0
     
-     // MARK: - Override
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         resultLabel.layer.borderWidth = 2
         resultLabel.layer.borderColor = UIColor.blue.cgColor
     }
     
-     // MARK: - IBAction
-    @IBAction private func enterTheNumber(_ sender: UIButton) {
+    // MARK: - IBAction
+    @IBAction private func enterTheNumberTouchUpInside(_ sender: UIButton) {
         resultLabel.text = String(value.addNumbers(number: Float(sender.tag)))
     }
     
-    @IBAction private func calculate(_ sender: UIButton) {
+    @IBAction private func enterTheCalculationTouchUpInside(_ sender: UIButton) {
         switch sender.tag {
         case 0:
             Calculations.share.operand.append("+")
@@ -53,25 +53,25 @@ final class MVCViewController: UIViewController {
         result = 0
     }
     
-    @IBAction private func calculationResults(_ sender: Any) {
+    @IBAction private func showResults(_ sender: Any) {
         guard value.number != 0 else {
             return
         }
         value.numbers.append(value.number)
         if value.numbers[0] == 0 {
-                Calculations.share.result = result
-                 Calculations.share.test = Calculations.share.operand[0]
+            Calculations.share.result = result
+            Calculations.share.test = Calculations.share.operand[0]
             result = Calculations.share.processing(value: value.numbers[1])
         } else {
-        Calculations.share.result = value.numbers[0]
-        for index in 1 ..< value.numbers.count {
-            Calculations.share.test = Calculations.share.operand[index - 1 ]
-            Calculations.share.result = Calculations.share.processing(value: value.numbers[index])
+            Calculations.share.result = value.numbers[0]
+            for index in 1 ..< value.numbers.count {
+                Calculations.share.test = Calculations.share.operand[index - 1 ]
+                Calculations.share.result = Calculations.share.processing(value: value.numbers[index])
+            }
+            result = Calculations.share.result
         }
-        result = Calculations.share.result
-    }
         if result <= 999999 {
-             resultLabel.text = String(result)
+            resultLabel.text = String(result)
         } else {
             resultLabel.text = "999999"
         }
