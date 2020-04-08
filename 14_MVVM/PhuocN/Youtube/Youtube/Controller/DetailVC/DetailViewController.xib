@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Youtube" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="vtl-x2-ulR" id="54V-nJ-u49"/>
+                <outlet property="maskView" destination="BMq-Rz-aYu" id="QCH-B2-Cu1"/>
+                <outlet property="tableView" destination="iXH-lM-mD9" id="aBs-dX-jRE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webKit" destination="Qpg-V5-MDm" id="0B0-A1-wg6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iXH-lM-mD9">
+                    <rect key="frame" x="0.0" y="276" width="414" height="586"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qpg-V5-MDm">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Qpg-V5-MDm" secondAttribute="height" multiplier="1.5" id="R6x-g0-5OJ"/>
+                    </constraints>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtl-x2-ulR">
+                    <rect key="frame" x="10" y="54" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="vtl-x2-ulR" secondAttribute="height" id="D9H-pv-dlk"/>
+                        <constraint firstAttribute="height" constant="30" id="OYl-3A-d8G"/>
+                    </constraints>
+                    <color key="tintColor" red="0.12941176469999999" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="chevron.left" catalog="system"/>
+                </button>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMq-Rz-aYu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="viewColor"/>
+            <constraints>
+                <constraint firstItem="BMq-Rz-aYu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2KU-X0-lJJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qpg-V5-MDm" secondAttribute="trailing" id="8nT-wo-nKB"/>
+                <constraint firstItem="iXH-lM-mD9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ISN-9g-MjC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iXH-lM-mD9" secondAttribute="bottom" id="IhE-Js-HQR"/>
+                <constraint firstItem="vtl-x2-ulR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="KoI-2v-Zea"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iXH-lM-mD9" secondAttribute="trailing" id="MA3-am-K7m"/>
+                <constraint firstItem="iXH-lM-mD9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="R8e-cc-w73"/>
+                <constraint firstItem="Qpg-V5-MDm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Sip-9n-SfF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iXH-lM-mD9" secondAttribute="trailing" id="T90-FI-J95"/>
+                <constraint firstItem="Qpg-V5-MDm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UhS-KD-oMr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iXH-lM-mD9" secondAttribute="bottom" id="YAK-M4-eIT"/>
+                <constraint firstItem="iXH-lM-mD9" firstAttribute="top" secondItem="Qpg-V5-MDm" secondAttribute="bottom" id="YBB-hA-KZt"/>
+                <constraint firstAttribute="bottom" secondItem="BMq-Rz-aYu" secondAttribute="bottom" id="fcj-Ae-H04"/>
+                <constraint firstAttribute="trailing" secondItem="BMq-Rz-aYu" secondAttribute="trailing" id="hQT-x6-lt8"/>
+                <constraint firstItem="vtl-x2-ulR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="kzY-YD-Sa5"/>
+                <constraint firstItem="BMq-Rz-aYu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vbt-My-neG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <namedColor name="viewColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
+</document>
