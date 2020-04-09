@@ -7,25 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2CD1D13243B0814001A4316 /* HinhChuNhat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CD1D12243B0814001A4316 /* HinhChuNhat.swift */; };
 		F2F2B72E243AD6D6004C6566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2B72D243AD6D6004C6566 /* AppDelegate.swift */; };
 		F2F2B730243AD6D6004C6566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2B72F243AD6D6004C6566 /* SceneDelegate.swift */; };
 		F2F2B737243AD6D8004C6566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F2B736243AD6D8004C6566 /* Assets.xcassets */; };
 		F2F2B747243AD724004C6566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2B745243AD724004C6566 /* ViewController.swift */; };
 		F2F2B748243AD724004C6566 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F2B746243AD724004C6566 /* ViewController.xib */; };
-		F2F2B74A243AD80D004C6566 /* PainTing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2B749243AD80D004C6566 /* PainTing.swift */; };
+		F2F8BB43243EDE7E00B6B5A3 /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8BB42243EDE7E00B6B5A3 /* PaintView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F2CD1D12243B0814001A4316 /* HinhChuNhat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HinhChuNhat.swift; sourceTree = "<group>"; };
-		F2F2B72A243AD6D6004C6566 /* BaiTap1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTap1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F2B72A243AD6D6004C6566 /* BaiTap1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BaiTap1.app; path = "/Users/pci0012/WORKING/intern15-practice/06_Drawing/AnhPD/BaiTap1/build/Debug-iphoneos/BaiTap1.app"; sourceTree = "<absolute>"; };
 		F2F2B72D243AD6D6004C6566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F2B72F243AD6D6004C6566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F2F2B736243AD6D8004C6566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F2B73B243AD6D8004C6566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F2B745243AD724004C6566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F2F2B746243AD724004C6566 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		F2F2B749243AD80D004C6566 /* PainTing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTing.swift; sourceTree = "<group>"; };
+		F2F8BB42243EDE7E00B6B5A3 /* PaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,16 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F2B72C243AD6D6004C6566 /* BaiTap1 */,
-				F2F2B72B243AD6D6004C6566 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		F2F2B72B243AD6D6004C6566 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F2F2B72A243AD6D6004C6566 /* BaiTap1.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		F2F2B72C243AD6D6004C6566 /* BaiTap1 */ = {
@@ -64,8 +53,7 @@
 				F2F2B73B243AD6D8004C6566 /* Info.plist */,
 				F2F2B745243AD724004C6566 /* ViewController.swift */,
 				F2F2B746243AD724004C6566 /* ViewController.xib */,
-				F2F2B749243AD80D004C6566 /* PainTing.swift */,
-				F2CD1D12243B0814001A4316 /* HinhChuNhat.swift */,
+				F2F8BB42243EDE7E00B6B5A3 /* PaintView.swift */,
 			);
 			path = BaiTap1;
 			sourceTree = "<group>";
@@ -114,7 +102,7 @@
 				Base,
 			);
 			mainGroup = F2F2B721243AD6D6004C6566;
-			productRefGroup = F2F2B72B243AD6D6004C6566 /* Products */;
+			productRefGroup = F2F2B721243AD6D6004C6566;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -141,10 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F2B747243AD724004C6566 /* ViewController.swift in Sources */,
+				F2F8BB43243EDE7E00B6B5A3 /* PaintView.swift in Sources */,
 				F2F2B72E243AD6D6004C6566 /* AppDelegate.swift in Sources */,
 				F2F2B730243AD6D6004C6566 /* SceneDelegate.swift in Sources */,
-				F2F2B74A243AD80D004C6566 /* PainTing.swift in Sources */,
-				F2CD1D13243B0814001A4316 /* HinhChuNhat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
