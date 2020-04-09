@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var titleHiden: UILabel!
+    @IBOutlet weak var titleHidenLabel: UILabel!
     @IBOutlet weak var passWordTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var clearButton: UIButton!
@@ -17,9 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         clearButton.layer.masksToBounds = false
         clearButton.layer.cornerRadius = 5
         clearButton.clipsToBounds = true
-        titleHiden.isHidden = true
-        self.userNameTextField.delegate = self
-        self.passWordTextField.delegate = self
+        titleHidenLabel.isHidden = true
+        userNameTextField.delegate = self
+        passWordTextField.delegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -47,9 +47,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let userName = userNameTextField.text
         let passWord = passWordTextField.text
         if userName != "Admin" || passWord != "Admin123" {
-            titleHiden.isHidden = false
+            titleHidenLabel.isHidden = false
         } else {
-            titleHiden.isHidden = true
+            titleHidenLabel.isHidden = true
         }
     }
 

@@ -3,7 +3,7 @@ import UIKit
 class MyViewController: UIViewController {
 
     @IBOutlet private weak var lineSlider: UISlider!
-    @IBOutlet private weak var labelValue: UILabel!
+    @IBOutlet private weak var numberValueLabel: UILabel!
 
     func degtorad(deg: Double) -> CGFloat {
         return CGFloat(deg * M_PI / 180.0)
@@ -22,6 +22,6 @@ class MyViewController: UIViewController {
     }
 
     @IBAction func sliderChangedValue(_ sender: UISlider) {
-        labelValue.text = "\(Int(lineSlider.value * 100))"
+        numberValueLabel.text = "\(Int(lineSlider.value * 100))"
     }
 }

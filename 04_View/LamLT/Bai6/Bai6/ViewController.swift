@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var ruaViewImage: UIImageView!
+    @IBOutlet weak var ruaImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,12 +14,12 @@ class ViewController: UIViewController {
         tapGesture.numberOfTapsRequired = 1
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(recognizer:)))
         doubleTapGesture.numberOfTapsRequired = 2
-        ruaViewImage.addGestureRecognizer(rotateGesture)
-        ruaViewImage.addGestureRecognizer(pindGesture)
+        ruaImageView.addGestureRecognizer(rotateGesture)
+        ruaImageView.addGestureRecognizer(pindGesture)
         messageLabel.text = "I Am Turtle"
         messageLabel.isHidden = true
-        ruaViewImage.addGestureRecognizer(tapGesture)
-        ruaViewImage.addGestureRecognizer(doubleTapGesture)
+        ruaImageView.addGestureRecognizer(tapGesture)
+        ruaImageView.addGestureRecognizer(doubleTapGesture)
     }
     
     @objc private func handleRotate(recognizer: UIRotationGestureRecognizer) {

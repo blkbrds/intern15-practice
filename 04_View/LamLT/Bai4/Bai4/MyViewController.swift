@@ -6,10 +6,10 @@ class MyViewController: UIViewController {
     @IBOutlet weak var redValueSlider: UISlider!
     @IBOutlet weak var blueValueSlider: UISlider!
     @IBOutlet weak var greenValueSlider: UISlider!
-    @IBOutlet weak var valueGreen: UILabel!
-    @IBOutlet weak var changeValueTextLabel: UILabel!
+    @IBOutlet weak var greenValueLabel: UILabel!
+    @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var changeColorView: UIView!
-    @IBOutlet weak var valueBlueSlider: UILabel!
+    @IBOutlet weak var valueBlueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,8 @@ class MyViewController: UIViewController {
         let c = blueValueSlider.value
         changeColorView.backgroundColor = UIColor(red: CGFloat(a), green: CGFloat(b), blue: CGFloat(c), alpha: 1.0)
         valueTextLabel.text = "Color (R: \(round(a * 255)),G: \(round(b * 255)),B: \(round(c * 255))"
-        changeValueTextLabel.text = "\(round(a * 255))"
-        valueGreen.text = "\(round(b * 255))"
-        valueBlueSlider.text = "\(round(c * 255))"
+        redValueLabel.text = "\(round(a * 255))"
+        greenValueLabel.text = "\(round(b * 255))"
+        valueBlueLabel.text = "\(round(c * 255))"
     }
 }
