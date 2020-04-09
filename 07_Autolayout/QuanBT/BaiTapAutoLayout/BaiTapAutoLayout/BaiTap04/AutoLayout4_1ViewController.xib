@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NMX-Fe-P2F">
-                    <rect key="frame" x="34" y="398" width="100" height="100"/>
+                    <rect key="frame" x="157" y="398" width="100" height="100"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="Y96-ZM-WxQ"/>
@@ -26,7 +26,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUZ-wn-4Ko">
-                    <rect key="frame" x="157" y="398" width="100" height="100"/>
+                    <rect key="frame" x="12" y="398" width="100" height="100"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="5Wz-hr-rcR"/>
@@ -34,7 +34,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6c-23-zKD">
-                    <rect key="frame" x="280" y="398" width="100" height="100"/>
+                    <rect key="frame" x="302" y="398" width="100" height="100"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="9Sk-4P-ToX"/>
@@ -44,11 +44,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ZUZ-wn-4Ko" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2mq-N0-rs3"/>
-                <constraint firstItem="P6c-23-zKD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="280" id="Ckd-b4-x64"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NMX-Fe-P2F" secondAttribute="trailing" constant="280" id="TUm-Zc-nNz"/>
+                <constraint firstItem="ZUZ-wn-4Ko" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.3" id="2mq-N0-rs3"/>
+                <constraint firstItem="NMX-Fe-P2F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4xb-36-uoe"/>
                 <constraint firstItem="ZUZ-wn-4Ko" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TeX-b4-1ik"/>
                 <constraint firstItem="NMX-Fe-P2F" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hPf-K2-Dm1"/>
+                <constraint firstItem="P6c-23-zKD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.7" id="hrA-4D-9ga"/>
                 <constraint firstItem="P6c-23-zKD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="pJH-aX-pSG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

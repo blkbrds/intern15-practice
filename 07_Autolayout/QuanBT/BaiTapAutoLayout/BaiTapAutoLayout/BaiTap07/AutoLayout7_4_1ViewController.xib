@@ -26,7 +26,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xri-hk-jeG">
-                    <rect key="frame" x="157" y="46" width="100" height="100"/>
+                    <rect key="frame" x="157" y="174" width="100" height="100"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="Lna-M2-juo"/>
@@ -34,7 +34,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQW-W8-zvi">
-                    <rect key="frame" x="157" y="750" width="100" height="100"/>
+                    <rect key="frame" x="157" y="622" width="100" height="100"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="8S6-WQ-AHj"/>
@@ -45,10 +45,10 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="bQW-W8-zvi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2ge-qd-K0D"/>
-                <constraint firstItem="bQW-W8-zvi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="750" id="6PQ-Zi-FQv"/>
+                <constraint firstItem="Xri-hk-jeG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="J71-0a-DrF"/>
                 <constraint firstItem="RLK-OM-32G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Osy-Xa-PSJ"/>
-                <constraint firstAttribute="bottom" secondItem="Xri-hk-jeG" secondAttribute="bottom" constant="750" id="Ysc-Vo-uQC"/>
                 <constraint firstItem="Xri-hk-jeG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ysi-ZF-8OS"/>
+                <constraint firstItem="bQW-W8-zvi" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.5" id="hgk-yd-JpY"/>
                 <constraint firstItem="RLK-OM-32G" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="neu-Qu-IWo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

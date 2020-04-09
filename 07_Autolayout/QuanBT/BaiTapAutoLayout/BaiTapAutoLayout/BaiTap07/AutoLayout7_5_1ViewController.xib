@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pBx-dp-SIK">
-                    <rect key="frame" x="182" y="346" width="50" height="50"/>
+                    <rect key="frame" x="182" y="333.5" width="50" height="50"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="02K-vb-ITR"/>
@@ -26,7 +26,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-Fl-r8a">
-                    <rect key="frame" x="182" y="500" width="50" height="50"/>
+                    <rect key="frame" x="182" y="512.5" width="50" height="50"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="1a4-nZ-L9L"/>
@@ -34,7 +34,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDs-wL-itG">
-                    <rect key="frame" x="182" y="700" width="50" height="50"/>
+                    <rect key="frame" x="182" y="692" width="50" height="50"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="fT7-Jz-bWP"/>
@@ -42,7 +42,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ue-q8-E04">
-                    <rect key="frame" x="182" y="146" width="50" height="50"/>
+                    <rect key="frame" x="182" y="154" width="50" height="50"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="6Bc-bA-TTd"/>
@@ -52,14 +52,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="pBx-dp-SIK" secondAttribute="bottom" constant="500" id="CHm-fw-m1D"/>
                 <constraint firstItem="pDs-wL-itG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TJh-hf-WCQ"/>
-                <constraint firstItem="pDs-wL-itG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="700" id="XV3-is-3no"/>
+                <constraint firstItem="4Ue-q8-E04" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="ZO9-h6-ksc"/>
                 <constraint firstItem="IYe-Fl-r8a" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fiH-xR-XFJ"/>
-                <constraint firstAttribute="bottom" secondItem="4Ue-q8-E04" secondAttribute="bottom" constant="700" id="hVv-da-jCc"/>
                 <constraint firstItem="4Ue-q8-E04" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mOx-H5-F6E"/>
+                <constraint firstItem="pBx-dp-SIK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.8" id="pNT-Ev-ksu"/>
+                <constraint firstItem="IYe-Fl-r8a" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.2" id="qLh-MS-IkJ"/>
                 <constraint firstItem="pBx-dp-SIK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sSf-ui-4hh"/>
-                <constraint firstItem="IYe-Fl-r8a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="500" id="tdn-H3-6en"/>
+                <constraint firstItem="pDs-wL-itG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.6" id="uZW-Gi-P8Q"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="132"/>

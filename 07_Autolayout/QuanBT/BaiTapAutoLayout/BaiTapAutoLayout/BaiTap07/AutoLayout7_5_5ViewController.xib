@@ -18,19 +18,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ocl-cJ-JA3">
-                    <rect key="frame" x="186.5" y="127.5" width="41" height="41"/>
+                    <rect key="frame" x="186.5" y="327.5" width="41" height="41"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTh-rT-Uy7">
-                    <rect key="frame" x="186.5" y="727.5" width="41" height="41"/>
+                    <rect key="frame" x="186.5" y="527.5" width="41" height="41"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQa-xE-he4">
-                    <rect key="frame" x="186.5" y="800" width="41" height="41.5"/>
+                    <rect key="frame" x="186.5" y="696" width="41" height="41.5"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6eW-zJ-ewQ">
-                    <rect key="frame" x="186.5" y="54.5" width="41" height="41.5"/>
+                    <rect key="frame" x="186.5" y="158.5" width="41" height="41.5"/>
                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
@@ -38,19 +38,20 @@
             <constraints>
                 <constraint firstItem="uQa-xE-he4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1IJ-7Z-baF"/>
                 <constraint firstItem="eTh-rT-Uy7" firstAttribute="width" secondItem="Ocl-cJ-JA3" secondAttribute="width" id="9QM-mz-I0o"/>
-                <constraint firstItem="Ocl-cJ-JA3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-300" id="JKJ-HK-1pp"/>
+                <constraint firstItem="uQa-xE-he4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.6" id="IMv-Od-tEr"/>
+                <constraint firstItem="Ocl-cJ-JA3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="JKJ-HK-1pp"/>
                 <constraint firstItem="6eW-zJ-ewQ" firstAttribute="width" secondItem="Ocl-cJ-JA3" secondAttribute="width" id="MQJ-9j-7FB"/>
-                <constraint firstAttribute="bottom" secondItem="6eW-zJ-ewQ" secondAttribute="bottom" constant="800" id="Pb6-Pt-H4X"/>
                 <constraint firstItem="Ocl-cJ-JA3" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.1" id="QLV-UG-sVD"/>
                 <constraint firstItem="eTh-rT-Uy7" firstAttribute="height" secondItem="Ocl-cJ-JA3" secondAttribute="height" id="RcP-cU-S5p"/>
                 <constraint firstItem="uQa-xE-he4" firstAttribute="height" secondItem="Ocl-cJ-JA3" secondAttribute="height" id="Rmb-nA-ffN"/>
-                <constraint firstItem="uQa-xE-he4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="800" id="Snn-q6-nmQ"/>
+                <constraint firstItem="6eW-zJ-ewQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SWE-vm-rss"/>
                 <constraint firstItem="6eW-zJ-ewQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XjQ-nv-VNq"/>
                 <constraint firstItem="Ocl-cJ-JA3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e5K-DV-Hv5"/>
                 <constraint firstItem="Ocl-cJ-JA3" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.1" id="iLe-vA-Dnv"/>
                 <constraint firstItem="6eW-zJ-ewQ" firstAttribute="height" secondItem="Ocl-cJ-JA3" secondAttribute="height" id="jwN-l0-k1f"/>
-                <constraint firstItem="eTh-rT-Uy7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="300" id="llm-8e-fEN"/>
+                <constraint firstItem="eTh-rT-Uy7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="100" id="llm-8e-fEN"/>
                 <constraint firstItem="uQa-xE-he4" firstAttribute="width" secondItem="Ocl-cJ-JA3" secondAttribute="width" id="wQt-Rg-yOH"/>
+                <constraint firstItem="6eW-zJ-ewQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="xBh-Lt-hfr"/>
                 <constraint firstItem="eTh-rT-Uy7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yac-aM-otg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
