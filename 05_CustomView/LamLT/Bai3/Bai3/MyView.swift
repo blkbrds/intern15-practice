@@ -22,7 +22,7 @@ class MyView: UIView {
         super.init(coder: aDecoder)
     }
 
-    @IBAction func clickEmailButtonTouchUpInside(_ sender: Any) {
+    @IBAction func emailButtonTouchUpInside(_ sender: Any) {
         widthStyle += 1
         heightStyle += 1
         count += 1
@@ -31,7 +31,7 @@ class MyView: UIView {
         badgeEmailLabel.frame = CGRect(x: badgeEmailLabel.frame.minX, y: badgeEmailLabel.frame.minY, width: widthStyle, height: heightStyle)
     }
 
-    @IBAction func clickFriendButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction func friendButtonTouchUpInside(_ sender: UIButton) {
         widthStyle += 1
         heightStyle += 1
         count += 1
@@ -40,7 +40,7 @@ class MyView: UIView {
         badgeFriendLabel.frame = CGRect(x: badgeFriendLabel.frame.minX, y: badgeFriendLabel.frame.minY, width: widthStyle, height: heightStyle)
     }
 
-    @IBAction func clickPhotosButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction func photosButtonTouchUpInside(_ sender: UIButton) {
         widthStyle += 1
         heightStyle += 1
         count += 1

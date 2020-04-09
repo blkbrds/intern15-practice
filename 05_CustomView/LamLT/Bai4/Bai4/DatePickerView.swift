@@ -52,7 +52,7 @@ class DatePickerView: UIView {
         }
     }
 
-    @IBAction func done(_ sender: Any) {
+    @IBAction func doneButtonTouchUpinside(_ sender: Any) {
         hide(animation: true)
         guard let delegate = delegate else { return }
         delegate.datePickerView(self, needsPerformAction: .done, selectDate: datePickerView.date)

@@ -29,8 +29,7 @@ class ChartViewController: UIViewController {
         shapeLayer.strokeColor = UIColor.blue.cgColor
         shapeLayer.lineWidth = 1.0
         shapeLayer.path = path.cgPath
-
-        self.view.layer.addSublayer(shapeLayer)
+        view.layer.addSublayer(shapeLayer)
     }
 
     func drawChart(start: CGPoint, end: CGPoint) {
@@ -43,9 +42,7 @@ class ChartViewController: UIViewController {
         shapeLayer.strokeColor = UIColor.green.cgColor
         shapeLayer.lineWidth = 1.0
         shapeLayer.path = path.cgPath
-//        shapeLayer.isHidden = true
-
-        self.view.layer.addSublayer(shapeLayer)
+        view.layer.addSublayer(shapeLayer)
     }
 
     func draw(_ rect: CGRect) {
@@ -58,9 +55,6 @@ class ChartViewController: UIViewController {
         let label = UILabel()
         label.frame = CGRect(x: xPosition, y: yPosition, width: 50, height: 20)
         label.text = textLine
-        self.view.addSubview(label)
+        view.addSubview(label)
     }
-
-
-
 }

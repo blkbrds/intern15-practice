@@ -16,7 +16,7 @@ class AvatarViewController: UIViewController {
         for i in 1..<names.count + 1 {
             let frame = CGRect(x: xSpacing, y: ySpaceing, width: 100, height: 200)
             let avatarView = AvatarView(frame: frame)
-            avatarView.delegate = self
+            avatarView.delegate = self as? MyAvatarDelegate
             avatarView.userNameLabel?.text = names[i - 1]
             xSpacing += 110
             if i % 3 == 0 {
@@ -28,8 +28,4 @@ class AvatarViewController: UIViewController {
     }
 }
 
-extension AvatarViewController: MyAvatarDelegate {
-    func avatarView(_ myAvatar: AvatarView, didSelect index: Int) {
-        <#code#>
-    }
-}
+
