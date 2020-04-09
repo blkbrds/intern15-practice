@@ -10,20 +10,20 @@
 		F2F2B72E243AD6D6004C6566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2B72D243AD6D6004C6566 /* AppDelegate.swift */; };
 		F2F2B730243AD6D6004C6566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2B72F243AD6D6004C6566 /* SceneDelegate.swift */; };
 		F2F2B737243AD6D8004C6566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F2B736243AD6D8004C6566 /* Assets.xcassets */; };
-		F2F2B747243AD724004C6566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F2B745243AD724004C6566 /* ViewController.swift */; };
-		F2F2B748243AD724004C6566 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F2B746243AD724004C6566 /* ViewController.xib */; };
 		F2F8BB43243EDE7E00B6B5A3 /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8BB42243EDE7E00B6B5A3 /* PaintView.swift */; };
+		F2F8BB68243F0D2000B6B5A3 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F8BB66243F0D2000B6B5A3 /* ChartViewController.swift */; };
+		F2F8BB69243F0D2000B6B5A3 /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2F8BB67243F0D2000B6B5A3 /* ChartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F2F2B72A243AD6D6004C6566 /* BaiTap1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BaiTap1.app; path = "/Users/pci0012/WORKING/intern15-practice/06_Drawing/AnhPD/BaiTap1/build/Debug-iphoneos/BaiTap1.app"; sourceTree = "<absolute>"; };
 		F2F2B72D243AD6D6004C6566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F2B72F243AD6D6004C6566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F2F2B736243AD6D8004C6566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F2B73B243AD6D8004C6566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2F2B745243AD724004C6566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F2F2B746243AD724004C6566 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		F2F8BB42243EDE7E00B6B5A3 /* PaintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
+		F2F8BB65243F0CE800B6B5A3 /* BaiTap1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTap1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F8BB66243F0D2000B6B5A3 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		F2F8BB67243F0D2000B6B5A3 /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F2B72C243AD6D6004C6566 /* BaiTap1 */,
+				F2F8BB65243F0CE800B6B5A3 /* BaiTap1.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,9 +52,9 @@
 				F2F2B72F243AD6D6004C6566 /* SceneDelegate.swift */,
 				F2F2B736243AD6D8004C6566 /* Assets.xcassets */,
 				F2F2B73B243AD6D8004C6566 /* Info.plist */,
-				F2F2B745243AD724004C6566 /* ViewController.swift */,
-				F2F2B746243AD724004C6566 /* ViewController.xib */,
 				F2F8BB42243EDE7E00B6B5A3 /* PaintView.swift */,
+				F2F8BB66243F0D2000B6B5A3 /* ChartViewController.swift */,
+				F2F8BB67243F0D2000B6B5A3 /* ChartViewController.xib */,
 			);
 			path = BaiTap1;
 			sourceTree = "<group>";
@@ -75,7 +76,7 @@
 			);
 			name = BaiTap1;
 			productName = BaiTap1;
-			productReference = F2F2B72A243AD6D6004C6566 /* BaiTap1.app */;
+			productReference = F2F8BB65243F0CE800B6B5A3 /* BaiTap1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -116,8 +117,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2F2B748243AD724004C6566 /* ViewController.xib in Resources */,
 				F2F2B737243AD6D8004C6566 /* Assets.xcassets in Resources */,
+				F2F8BB69243F0D2000B6B5A3 /* ChartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2F2B747243AD724004C6566 /* ViewController.swift in Sources */,
 				F2F8BB43243EDE7E00B6B5A3 /* PaintView.swift in Sources */,
+				F2F8BB68243F0D2000B6B5A3 /* ChartViewController.swift in Sources */,
 				F2F2B72E243AD6D6004C6566 /* AppDelegate.swift in Sources */,
 				F2F2B730243AD6D6004C6566 /* SceneDelegate.swift in Sources */,
 			);
