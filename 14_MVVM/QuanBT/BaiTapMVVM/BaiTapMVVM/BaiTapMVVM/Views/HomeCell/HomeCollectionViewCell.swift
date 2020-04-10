@@ -16,6 +16,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -35,5 +37,22 @@ class HomeCollectionViewCell: UICollectionViewCell {
         addressLabel.text = data.address
         rateLabel.text = data.rate
         rangeLabel.text = data.range
+        if data.favorite {
+            favoriteButton.tintColor = .systemYellow
+            favoriteButton.isSelected = false
+        } else {
+            favoriteButton.tintColor = .black
+            favoriteButton.isSelected = true
+        }
+    }
+    
+    @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
+        if favoriteButton.isSelected {
+            favoriteButton.tintColor = .systemYellow
+            favoriteButton.isSelected = false
+        } else {
+            favoriteButton.tintColor = .black
+            favoriteButton.isSelected = true
+        }
     }
 }

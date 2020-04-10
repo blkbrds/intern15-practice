@@ -28,6 +28,9 @@
                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <state key="normal" image="star.fill" catalog="system"/>
+                        <connections>
+                            <action selector="favoriteButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="uPh-Zd-Wba"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-BW-3Rh">
                         <rect key="frame" x="133.5" y="15" width="248.5" height="24"/>

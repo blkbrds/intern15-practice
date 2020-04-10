@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A4432C0C243ECD1F00C4EBC3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4432C0B243ECD1F00C4EBC3 /* DataManager.swift */; };
-		A4432C10243ECF9800C4EBC3 /* SliderHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4432C0E243ECF9800C4EBC3 /* SliderHomeCell.swift */; };
-		A4432C11243ECF9800C4EBC3 /* SliderHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4432C0F243ECF9800C4EBC3 /* SliderHomeCell.xib */; };
-		A4432C15243ED4DA00C4EBC3 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4432C13243ED4DA00C4EBC3 /* ImageCell.swift */; };
-		A4432C16243ED4DA00C4EBC3 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4432C14243ED4DA00C4EBC3 /* ImageCell.xib */; };
 		A4432C19243ED5D400C4EBC3 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4432C17243ED5D400C4EBC3 /* HomeCollectionViewCell.swift */; };
 		A4432C1A243ED5D400C4EBC3 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4432C18243ED5D400C4EBC3 /* HomeCollectionViewCell.xib */; };
 		A46CE33F243F021B00A8F210 /* HomeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CE33E243F021B00A8F210 /* HomeCellModel.swift */; };
@@ -30,14 +26,11 @@
 		A4924827243E18DB00E3F48C /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4924825243E18DB00E3F48C /* FavoritesViewController.xib */; };
 		A492482C243E191100E3F48C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492482A243E191100E3F48C /* ProfileViewController.swift */; };
 		A492482D243E191100E3F48C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A492482B243E191100E3F48C /* ProfileViewController.xib */; };
+		A4930B42243F86C0003D9733 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4930B40243F86C0003D9733 /* HomeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4432C0B243ECD1F00C4EBC3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		A4432C0E243ECF9800C4EBC3 /* SliderHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHomeCell.swift; sourceTree = "<group>"; };
-		A4432C0F243ECF9800C4EBC3 /* SliderHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderHomeCell.xib; sourceTree = "<group>"; };
-		A4432C13243ED4DA00C4EBC3 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		A4432C14243ED4DA00C4EBC3 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		A4432C17243ED5D400C4EBC3 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A4432C18243ED5D400C4EBC3 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		A46CE33E243F021B00A8F210 /* HomeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModel.swift; sourceTree = "<group>"; };
@@ -58,6 +51,7 @@
 		A4924825243E18DB00E3F48C /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
 		A492482A243E191100E3F48C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A492482B243E191100E3F48C /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		A4930B40243F86C0003D9733 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,23 +65,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A4432C0D243ECF5D00C4EBC3 /* SliderHomeCell */ = {
-			isa = PBXGroup;
-			children = (
-				A4432C0E243ECF9800C4EBC3 /* SliderHomeCell.swift */,
-				A4432C0F243ECF9800C4EBC3 /* SliderHomeCell.xib */,
-				A4432C13243ED4DA00C4EBC3 /* ImageCell.swift */,
-				A4432C14243ED4DA00C4EBC3 /* ImageCell.xib */,
-			);
-			path = SliderHomeCell;
-			sourceTree = "<group>";
-		};
 		A4432C12243ED47100C4EBC3 /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
 				A4432C17243ED5D400C4EBC3 /* HomeCollectionViewCell.swift */,
 				A4432C18243ED5D400C4EBC3 /* HomeCollectionViewCell.xib */,
 				A46CE33E243F021B00A8F210 /* HomeCellModel.swift */,
+				A4930B40243F86C0003D9733 /* HomeCell.xib */,
 			);
 			path = HomeCell;
 			sourceTree = "<group>";
@@ -143,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				A4432C12243ED47100C4EBC3 /* HomeCell */,
-				A4432C0D243ECF5D00C4EBC3 /* SliderHomeCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,13 +256,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A492482D243E191100E3F48C /* ProfileViewController.xib in Resources */,
-				A4432C16243ED4DA00C4EBC3 /* ImageCell.xib in Resources */,
 				A4924807243E023400E3F48C /* LaunchScreen.storyboard in Resources */,
-				A4432C11243ECF9800C4EBC3 /* SliderHomeCell.xib in Resources */,
 				A4432C1A243ED5D400C4EBC3 /* HomeCollectionViewCell.xib in Resources */,
 				A4924804243E023400E3F48C /* Assets.xcassets in Resources */,
 				A4924818243E038B00E3F48C /* HomeViewController.xib in Resources */,
 				A4924827243E18DB00E3F48C /* FavoritesViewController.xib in Resources */,
+				A4930B42243F86C0003D9733 /* HomeCell.xib in Resources */,
 				A4924822243E187D00E3F48C /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,8 +275,6 @@
 			files = (
 				A46CE33F243F021B00A8F210 /* HomeCellModel.swift in Sources */,
 				A49247FB243E023300E3F48C /* AppDelegate.swift in Sources */,
-				A4432C10243ECF9800C4EBC3 /* SliderHomeCell.swift in Sources */,
-				A4432C15243ED4DA00C4EBC3 /* ImageCell.swift in Sources */,
 				A4924821243E187D00E3F48C /* MapViewController.swift in Sources */,
 				A4924826243E18DB00E3F48C /* FavoritesViewController.swift in Sources */,
 				A492481B243E17BF00E3F48C /* BaseViewController.swift in Sources */,
