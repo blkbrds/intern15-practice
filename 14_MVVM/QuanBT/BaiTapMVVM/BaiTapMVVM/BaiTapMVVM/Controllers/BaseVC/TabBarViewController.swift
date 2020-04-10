@@ -15,6 +15,7 @@ final class BaseTabBarViewController: UITabBarController {
         setupUI()
     }
     
+    // MARK: - Function
     private func setupUI() {
         //Home
         let homeVC = HomeViewController()
@@ -39,7 +40,7 @@ final class BaseTabBarViewController: UITabBarController {
         //tabbar controller
         self.viewControllers = [homeNavi, mapNavi, favoritesNavi, profileNavi]
         self.selectedIndex = 0
-        self.tabBar.tintColor = .blue
+        self.tabBar.tintColor = .red
         self.tabBar.unselectedItemTintColor = .black
     }
 }

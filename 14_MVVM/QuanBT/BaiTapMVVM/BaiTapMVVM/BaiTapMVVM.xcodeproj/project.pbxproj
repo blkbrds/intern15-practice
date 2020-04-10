@@ -27,6 +27,12 @@
 		A492482C243E191100E3F48C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492482A243E191100E3F48C /* ProfileViewController.swift */; };
 		A492482D243E191100E3F48C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A492482B243E191100E3F48C /* ProfileViewController.xib */; };
 		A4930B42243F86C0003D9733 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4930B40243F86C0003D9733 /* HomeCell.xib */; };
+		A4A9BC882440186400B22EA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC862440186400B22EA3 /* DetailViewController.swift */; };
+		A4A9BC892440186400B22EA3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A9BC872440186400B22EA3 /* DetailViewController.xib */; };
+		A4A9BC8D244024F600B22EA3 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC8B244024F600B22EA3 /* DetailTableViewCell.swift */; };
+		A4A9BC8E244024F600B22EA3 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A9BC8C244024F600B22EA3 /* DetailTableViewCell.xib */; };
+		A4A9BC9024404C2600B22EA3 /* DetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC8F24404C2600B22EA3 /* DetailCellModel.swift */; };
+		A4A9BC9224404D2F00B22EA3 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC9124404D2F00B22EA3 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +58,12 @@
 		A492482A243E191100E3F48C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A492482B243E191100E3F48C /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		A4930B40243F86C0003D9733 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		A4A9BC862440186400B22EA3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A4A9BC872440186400B22EA3 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		A4A9BC8B244024F600B22EA3 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		A4A9BC8C244024F600B22EA3 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		A4A9BC8F24404C2600B22EA3 /* DetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellModel.swift; sourceTree = "<group>"; };
+		A4A9BC9124404D2F00B22EA3 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,7 @@
 		A4924810243E030200E3F48C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A4A9BC8A244024DB00B22EA3 /* DetailCell */,
 				A4432C12243ED47100C4EBC3 /* HomeCell */,
 			);
 			path = Views;
@@ -142,6 +155,7 @@
 		A4924813243E032700E3F48C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4A9BC852440182C00B22EA3 /* DetailVC */,
 				A4924828243E18F600E3F48C /* ProfileVC */,
 				A4924823243E18A000E3F48C /* FavoritesVC */,
 				A492481E243E186100E3F48C /* MapVC */,
@@ -195,6 +209,26 @@
 				A492482B243E191100E3F48C /* ProfileViewController.xib */,
 			);
 			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		A4A9BC852440182C00B22EA3 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9BC862440186400B22EA3 /* DetailViewController.swift */,
+				A4A9BC872440186400B22EA3 /* DetailViewController.xib */,
+				A4A9BC9124404D2F00B22EA3 /* DetailViewModel.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		A4A9BC8A244024DB00B22EA3 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9BC8B244024F600B22EA3 /* DetailTableViewCell.swift */,
+				A4A9BC8C244024F600B22EA3 /* DetailTableViewCell.xib */,
+				A4A9BC8F24404C2600B22EA3 /* DetailCellModel.swift */,
+			);
+			path = DetailCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +293,9 @@
 				A4924807243E023400E3F48C /* LaunchScreen.storyboard in Resources */,
 				A4432C1A243ED5D400C4EBC3 /* HomeCollectionViewCell.xib in Resources */,
 				A4924804243E023400E3F48C /* Assets.xcassets in Resources */,
+				A4A9BC892440186400B22EA3 /* DetailViewController.xib in Resources */,
 				A4924818243E038B00E3F48C /* HomeViewController.xib in Resources */,
+				A4A9BC8E244024F600B22EA3 /* DetailTableViewCell.xib in Resources */,
 				A4924827243E18DB00E3F48C /* FavoritesViewController.xib in Resources */,
 				A4930B42243F86C0003D9733 /* HomeCell.xib in Resources */,
 				A4924822243E187D00E3F48C /* MapViewController.xib in Resources */,
@@ -273,7 +309,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4A9BC9024404C2600B22EA3 /* DetailCellModel.swift in Sources */,
+				A4A9BC882440186400B22EA3 /* DetailViewController.swift in Sources */,
 				A46CE33F243F021B00A8F210 /* HomeCellModel.swift in Sources */,
+				A4A9BC8D244024F600B22EA3 /* DetailTableViewCell.swift in Sources */,
 				A49247FB243E023300E3F48C /* AppDelegate.swift in Sources */,
 				A4924821243E187D00E3F48C /* MapViewController.swift in Sources */,
 				A4924826243E18DB00E3F48C /* FavoritesViewController.swift in Sources */,
@@ -285,6 +324,7 @@
 				A4432C0C243ECD1F00C4EBC3 /* DataManager.swift in Sources */,
 				A4924817243E038B00E3F48C /* HomeViewController.swift in Sources */,
 				A4432C19243ED5D400C4EBC3 /* HomeCollectionViewCell.swift in Sources */,
+				A4A9BC9224404D2F00B22EA3 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

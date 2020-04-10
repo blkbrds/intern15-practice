@@ -9,18 +9,25 @@
 import UIKit
 
 final class HomeViewController: BaseViewController {
-
+    // MARK: - IBOutlet
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    // MARK: - Properties
     var viewModel = HomeViewModel()
     var index = 0
     var status: Status = .tableView
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    // MARK: - Override
+    override func setupData() {
+        super.setupData()
+        viewModel.getData()
     }
     
     override func setupUI() {
@@ -36,6 +43,7 @@ final class HomeViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "collectionview"), style: .plain, target: self, action: #selector(collectionViewButton))
     }
     
+    // MARK: - Function
     @objc private func tableViewButton() {
         self.status = .tableView
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "collectionview"), style: .plain, target: self, action: #selector(collectionViewButton))
@@ -48,11 +56,16 @@ final class HomeViewController: BaseViewController {
         collectionView.reloadData()
     }
     
-    override func setupData() {
-        super.setupData()
-        viewModel.getData()
+    private func setupScrollView() {
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(viewModel.images.count), height: 300)
+        for index in 0 ..< viewModel.images.count {
+            let imageView = UIImageView(image: UIImage(named: viewModel.images[index]))
+            imageView.frame = CGRect(x: view.frame.width * CGFloat(index), y: 0, width: view.frame.width, height: 300)
+            scrollView.addSubview(imageView)
+        }
     }
     
+    // MARK: - IBAction
     @IBAction func turnLeftButtonTouchUpInside(_ sender: Any) {
         if index > 0 {
             index -= 1
@@ -72,17 +85,9 @@ final class HomeViewController: BaseViewController {
             })
         }
     }
-    
-    private func setupScrollView() {
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(viewModel.images.count), height: 300)
-        for index in 0 ..< viewModel.images.count {
-            let imageView = UIImageView(image: UIImage(named: viewModel.images[index]))
-            imageView.frame = CGRect(x: view.frame.width * CGFloat(index), y: 0, width: view.frame.width, height: 300)
-            scrollView.addSubview(imageView)
-        }
-    }
 }
 
+// MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         viewModel.numberOfSections()
@@ -122,5 +127,12 @@ extension HomeViewController: UICollectionViewDelegate {
             cell.alpha = 1
             cell.transform = .identity
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detaiVC = DetailViewController()
+        detaiVC.tilleDetail = viewModel.datas[indexPath.row].name
+        detaiVC.favorite = viewModel.datas[indexPath.row].favorite
+        navigationController?.pushViewController(detaiVC, animated: true)
     }
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
-
+final class HomeCollectionViewCell: UICollectionViewCell {
+    // MARK: - IBOutlet
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -17,19 +17,20 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    // MARK: - Properties
     var viewModel = HomeCellModel() {
         didSet {
             updateView()
         }
     }
     
-    // MARK: - updateView
+    // MARK: - Override
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    // MARK: - UpdateView
     private func updateView() {
         let data = viewModel.data
         nameLabel.text = data.name
@@ -46,13 +47,16 @@ class HomeCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - IBAction
     @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
         if favoriteButton.isSelected {
             favoriteButton.tintColor = .systemYellow
             favoriteButton.isSelected = false
+            viewModel.data.favorite = true
         } else {
             favoriteButton.tintColor = .black
             favoriteButton.isSelected = true
+            viewModel.data.favorite = false
         }
     }
 }
