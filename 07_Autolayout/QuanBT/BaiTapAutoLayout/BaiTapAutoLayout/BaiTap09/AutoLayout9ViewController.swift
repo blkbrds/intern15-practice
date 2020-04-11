@@ -4,7 +4,7 @@ final class AutoLayout9ViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var contentLabel: UILabel!
-    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK: - Declare Variable
     var test = 1
@@ -18,8 +18,12 @@ final class AutoLayout9ViewController: UIViewController {
     
     // MARK: - Function
     private func setupView() {
-        imageView.image = UIImage(named: String(test))
-        imageView.contentMode = .scaleToFill
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width * 10, height: scrollView.bounds.height)
+        for index in 0 ... 9 {
+            let imageView = UIImageView(image: UIImage(named: String(index + 1)))
+            imageView.frame = CGRect(x: scrollView.bounds.width * CGFloat(index), y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
+            scrollView.addSubview(imageView)
+        }
         contentLabel.text = String(content.prefix(Int.random(in: 50...content.count)))
         titleLabel.text = "1/10"
     }
@@ -30,8 +34,9 @@ final class AutoLayout9ViewController: UIViewController {
             return
         }
         test += 1
-        imageView.image = UIImage(named: String(test))
-        imageView.contentMode = .scaleToFill
+        UIView.animate(withDuration: 1, animations: {
+            self.scrollView.contentOffset = CGPoint(x: CGFloat(self.test - 1) * self.scrollView.bounds.width, y: 0)
+        })
         contentLabel.text = String(content.prefix(Int.random(in: 50...content.count)))
         titleLabel.text = "\(test)/10"
     }
@@ -41,8 +46,9 @@ final class AutoLayout9ViewController: UIViewController {
             return
         }
         test -= 1
-        imageView.image = UIImage(named: String(test))
-        imageView.contentMode = .scaleToFill
+        UIView.animate(withDuration: 1, animations: {
+            self.scrollView.contentOffset = CGPoint(x: CGFloat(self.test - 1) * self.scrollView.bounds.width, y: 0)
+        })
         contentLabel.text = String(content.prefix(Int.random(in: 50...content.count)))
         titleLabel.text = "\(test)/10"
     }
