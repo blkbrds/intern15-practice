@@ -66,12 +66,14 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         cell.cellLabel.text = viewModel.names[indexPath.row]
-        let item = viewModel.urlImages[indexPath.row]
-        viewModel.loadImage(at: indexPath) { [weak self] (done, error, url) in
-            guard let _ = self else { return }
-            if done, url == item {
-                cell.cellImageView.image = self!.viewModel.images
-            }
+        if viewModel.urlImages.count != 0 {
+            let item = viewModel.urlImages[indexPath.row]
+                   viewModel.loadImage(at: indexPath) { [weak self] (done, error, url) in
+                       guard let _ = self else { return }
+                       if done, url == item {
+                           cell.cellImageView.image = self!.viewModel.images
+                       }
+                   }
         }
         return cell
     }
