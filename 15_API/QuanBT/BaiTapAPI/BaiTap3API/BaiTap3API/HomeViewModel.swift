@@ -17,10 +17,11 @@ final class HomeViewModel {
     var dataAPISearchs : [DataAPI] = []
     var titleVideos: [String] = []
     var titleSearchs: [String] = []
+    var nextPageToken: String = ""
     
     // MARK: - Function
     func loadAPI(completion: @escaping Completion) {
-        let urlString = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=lactroi&type=video&key=AIzaSyDIJ9UssMoN9IfR9KnTc4lb3B9NtHpRF-c"
+        let urlString = "https://www.googleapis.com/youtube/v3/search?pageToken=\(nextPageToken)&part=snippet&maxResults=25&order=relevance&q=lactroi&key=AIzaSyDIJ9UssMoN9IfR9KnTc4lb3B9NtHpRF-c"
         let url = URL(string: urlString)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
@@ -35,6 +36,8 @@ final class HomeViewModel {
                 } else {
                     if let data = data {
                         let json = data.toJSON()
+                        let nextPageToken = json["nextPageToken"] as! String
+                        self.nextPageToken = nextPageToken
                         let items = json["items"] as! [JSON]
                         for item in items {
                             let snippet = item["snippet"] as! JSON

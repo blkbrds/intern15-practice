@@ -15,6 +15,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: - Properties
     private var viewModel = HomeViewModel()
+    private var isLoadingMore = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ final class HomeViewController: UIViewController {
         tableView.rowHeight = 100
         loadAPI()
         searchBar.delegate = self
+        tableView.delegate = self
     }
     
     private func loadAPI() {
@@ -58,7 +60,7 @@ extension HomeViewController: UITableViewDataSource {
         viewModel.loadImage(at: indexPath) { (done, error, url) in
             if done, url == item {
                 cell.viewModel = self.viewModel.viewModelForCell(at: indexPath)
-            }
+            } 
         }
         return cell
     }
@@ -67,6 +69,7 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - UISearchBarDelegate
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.isLoadingMore = true
         let upperText = searchText.uppercased()
         viewModel.titleSearchs = viewModel.titleVideos.filter {
             $0.uppercased().hasPrefix(upperText)
@@ -76,3 +79,19 @@ extension HomeViewController: UISearchBarDelegate {
     }
 }
 
+extension HomeViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if !isLoadingMore && (maximumOffset - contentOffset <= 100) {
+            // Get more data - API call
+            loadAPI()
+            self.isLoadingMore = true
+            // Update UI
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.tableView.reloadData()
+                self.isLoadingMore = false
+            }
+        }
+    }
+}
