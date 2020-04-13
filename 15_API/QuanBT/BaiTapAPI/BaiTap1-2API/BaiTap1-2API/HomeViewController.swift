@@ -66,10 +66,9 @@ extension HomeViewController: UITableViewDataSource {
         cell.cellLabel.text = viewModel.names[indexPath.row]
         if viewModel.urlImages.count != 0 {
             let item = viewModel.urlImages[indexPath.row]
-                   viewModel.loadImage(at: indexPath) { [weak self] (done, error, url) in
-                       guard let _ = self else { return }
+                   viewModel.loadImage(at: indexPath) { (done, error, url) in
                        if done, url == item {
-                           cell.cellImageView.image = self!.viewModel.images
+                        cell.cellImageView.image = self.viewModel.images
                        }
                    }
         }
