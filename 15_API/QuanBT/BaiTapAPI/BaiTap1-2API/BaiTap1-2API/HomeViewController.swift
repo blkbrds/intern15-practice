@@ -30,10 +30,9 @@ final class HomeViewController: UIViewController {
     // MARK: - Function
     private func loadAPI() {
         print("Load API")
-        viewModel.loadAPI { [weak self] (done, msg) in
-            guard let this = self else { return }
+        viewModel.loadAPI {  (done, msg) in
             if done {
-                this.updateUI()
+                self.updateUI()
             } else {
                 print("API erorr: \(msg)")
             }
@@ -42,10 +41,9 @@ final class HomeViewController: UIViewController {
     
     private func loadAPIImage() {
         print("Load APIImage")
-        viewModel.loadAPIImage { [weak self] (done, msg) in
-            guard let this = self else { return }
+        viewModel.loadAPIImage { (done, msg) in
             if done {
-                this.updateUI()
+                self.updateUI()
             } else {
                 print("API erorr: \(msg)")
             }

@@ -28,7 +28,7 @@ final class HomeViewModel {
         config.waitsForConnectivity = true
         let session = URLSession(configuration: config)
         
-        let task = session.dataTask(with: request) { [weak self] (data, _, error) in
+        let task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(false, error.localizedDescription)
@@ -41,7 +41,7 @@ final class HomeViewModel {
                         for item in entry {
                             let imname = item["im:name"] as! JSON
                             let name = imname["label"] as! String
-                            self?.names.append(name)
+                            self.names.append(name)
                         }
                         completion(true, "")
                     } else {
@@ -63,7 +63,7 @@ final class HomeViewModel {
         config.waitsForConnectivity = true
         let session = URLSession(configuration: config)
         
-        let task = session.dataTask(with: request) { [weak self] (data, _, error) in
+        let task = session.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 if let error = error {
                     completion(false, error.localizedDescription)
@@ -77,7 +77,7 @@ final class HomeViewModel {
                             let imimage = item["im:image"] as! [JSON]
                             let item2 = imimage[0]
                             let urlImage = item2["label"] as! String
-                            self?.urlImages.append(urlImage)
+                            self.urlImages.append(urlImage)
                         }
                         completion(true, "")
                     } else {
@@ -98,7 +98,7 @@ final class HomeViewModel {
         let config = URLSessionConfiguration.default
         config.waitsForConnectivity = true
         let session = URLSession(configuration: config)
-        let task = session.dataTask(with: url) { [weak self] (data, _, error) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 if let _ = error {
                     completion(nil)
