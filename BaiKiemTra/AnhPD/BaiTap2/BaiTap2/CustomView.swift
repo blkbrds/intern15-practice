@@ -15,6 +15,10 @@ class CustomView: UIView {
         let view1 = UIView(frame: CGRect(x: 50, y: 100, width: 300, height: 300))
         view1.backgroundColor = .white
         self.addSubview(view1)
+        
+        let name = UILabel(frame: CGRect(x: 20, y: 50, width: 100, height: 50))
+        name.text = "Justin Nguyen"
+        view1.addSubview(name)
     }
 
 }
