@@ -60,7 +60,6 @@ final class HomeViewModel {
             }
         }
         task.resume()
-        
         print("Done")
     }
     
