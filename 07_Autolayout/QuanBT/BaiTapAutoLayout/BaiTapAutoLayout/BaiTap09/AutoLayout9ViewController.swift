@@ -14,7 +14,9 @@ final class AutoLayout9ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        print("ViewDidLoad")
     }
+    
     
     // MARK: - Function
     private func setupView() {
@@ -24,6 +26,7 @@ final class AutoLayout9ViewController: UIViewController {
             imageView.frame = CGRect(x: scrollView.bounds.width * CGFloat(index), y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
             scrollView.addSubview(imageView)
         }
+        
         contentLabel.text = String(content.prefix(Int.random(in: 50...content.count)))
         titleLabel.text = "1/10"
     }
@@ -33,10 +36,12 @@ final class AutoLayout9ViewController: UIViewController {
         if self.test == 10 {
             return
         }
+        
         test += 1
         UIView.animate(withDuration: 1, animations: {
             self.scrollView.contentOffset = CGPoint(x: CGFloat(self.test - 1) * self.scrollView.bounds.width, y: 0)
         })
+        
         contentLabel.text = String(content.prefix(Int.random(in: 50...content.count)))
         titleLabel.text = "\(test)/10"
     }
@@ -45,10 +50,12 @@ final class AutoLayout9ViewController: UIViewController {
         if self.test == 1 {
             return
         }
+        
         test -= 1
         UIView.animate(withDuration: 1, animations: {
             self.scrollView.contentOffset = CGPoint(x: CGFloat(self.test - 1) * self.scrollView.bounds.width, y: 0)
         })
+        
         contentLabel.text = String(content.prefix(Int.random(in: 50...content.count)))
         titleLabel.text = "\(test)/10"
     }
