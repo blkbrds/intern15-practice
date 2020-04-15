@@ -43,6 +43,7 @@ final class HomeViewController: UIViewController {
     
     private func loadAPI() {
         print("Load API")
+        tableView.contentOffset = CGPoint(x: 0, y: 0)
         viewModel.loadAPI {  (done, msg) in
             if done {
                 self.tableView.reloadData()
@@ -55,6 +56,7 @@ final class HomeViewController: UIViewController {
     // MARK: - IBAction
     @IBAction func nextPageTouchUpInside(_ sender: Any) {
         print("Load API Next")
+        tableView.contentOffset = CGPoint(x: 0, y: 0)
         tableView.alpha = 0
         UIView.animate(withDuration: 3, animations: {
             self.tableView.alpha = 1
@@ -70,6 +72,7 @@ final class HomeViewController: UIViewController {
     
     @IBAction func prevPageTouchUpInside(_ sender: Any) {
         print("Load API Prev")
+        tableView.contentOffset = CGPoint(x: 0, y: 0)
         tableView.alpha = 0
         UIView.animate(withDuration: 3, animations: {
             self.tableView.alpha = 1
@@ -92,10 +95,14 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
-        let item = viewModel.dataAPIs[indexPath.row].url
-        viewModel.loadImage(at: indexPath) { (done, error, url) in
-            if done, url == item {
-                cell.viewModel = self.viewModel.viewModelForCell(at: indexPath)
+        cell.viewModel = self.viewModel.viewModelForCell(at: indexPath)
+        if let item = viewModel.dataAPIs[indexPath.row].url {
+            viewModel.downloadImage(url: item) { (image) in
+                if let image = image {
+                    cell.configImage(image: image)
+                } else {
+                    cell.configImage(image: nil)
+                }
             }
         }
         return cell

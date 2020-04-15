@@ -63,7 +63,7 @@ final class HomeViewModel {
         print("Done")
     }
     
-    private func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
+     func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: url) else {
             completion(nil)
             return
@@ -86,18 +86,6 @@ final class HomeViewModel {
             }
         }
         task.resume()
-    }
-    
-    func loadImage(at indexPath: IndexPath, completion: @escaping (Bool, String, String) -> Void) {
-        let dataAPI = dataAPISearchs[indexPath.row]
-        downloadImage(url: dataAPI.url!) { (image) in
-            if let image = image {
-                self.dataAPISearchs[indexPath.row].thumbnail = image
-                completion(true, "", dataAPI.url!)
-            } else {
-                completion(false, "", "")
-            }
-        }
     }
     
     func search() {

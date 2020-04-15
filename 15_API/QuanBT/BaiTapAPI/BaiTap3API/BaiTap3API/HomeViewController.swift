@@ -56,11 +56,14 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
-        let item = viewModel.dataAPISearchs[indexPath.row].url
-        viewModel.loadImage(at: indexPath) { (done, error, url) in
-            if done, url == item {
-                cell.viewModel = self.viewModel.viewModelForCell(at: indexPath)
-            } 
+        cell.viewModel = self.viewModel.viewModelForCell(at: indexPath)
+        let item = viewModel.dataAPISearchs[indexPath.row]
+        viewModel.downloadImage(url: item.url) { (image) in
+            if let image = image {
+                cell.configImage(image: image)
+            } else {
+                cell.configImage(image: nil)
+            }
         }
         return cell
     }
@@ -79,6 +82,7 @@ extension HomeViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset.y

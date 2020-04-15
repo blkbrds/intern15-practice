@@ -34,9 +34,12 @@ final class HomeTableViewCell: UITableViewCell {
     // MARK: - Function
     private func updateView() {
         let dataAPI = viewModel.dataAPI
-        cellImageView.image = dataAPI.thumbnail
         titleVideoLabel.text = dataAPI.titleVideo
         titleChannelLabel.text = dataAPI.channelTitle
         publishedAtLabel.text = dataAPI.publishedAt
+    }
+    
+    func configImage(image: UIImage?) {
+        cellImageView.image = image
     }
 }
