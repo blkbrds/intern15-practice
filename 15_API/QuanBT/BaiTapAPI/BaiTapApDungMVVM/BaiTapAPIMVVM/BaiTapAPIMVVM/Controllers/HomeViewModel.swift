@@ -14,7 +14,7 @@ typealias Completion = (Bool, String) -> Void
 final class HomeViewModel {
     // MARK: - Properties
     var dataAPIs: [DataAPI] = []
-    var pageToken: [String] = ["", ""]
+    var pageToken: [String] = ["", "CBkQAA", "CDIQAA", "CEsQAA", "CGQQAA"]
     
     // MARK: - Function
     func loadAPI(pageToken: String = "", completion: @escaping Completion) {
@@ -26,10 +26,6 @@ final class HomeViewModel {
             } else {
                 if let data = data {
                     let json = data.toJSON()
-                    let prevPageToken = json["prevPageToken"] as? String
-                    let nextPageToken = json["nextPageToken"] as! String
-                    self.pageToken[0] = prevPageToken ?? ""
-                    self.pageToken[1] = nextPageToken
                     let items = json["items"] as! [JSON]
                     for item in items {
                         let snippet = item["snippet"] as! JSON
@@ -55,10 +51,10 @@ final class HomeViewModel {
     func numberOfRowInSection() -> Int {
         return dataAPIs.count
     }
-    //
-    //    func viewModelForCell(at indexPath: IndexPath) -> HomeCellViewModel {
-    //        let item = dataAPIs[indexPath.row]
-    //        let viewModel = HomeCellViewModel(dataAPI: item)
-    //        return viewModel
-    //    }
+    
+    func viewModelForCell(at indexPath: IndexPath) -> HomeTableViewModel {
+        let item = dataAPIs[indexPath.row]
+        let viewModel = HomeTableViewModel(dataAPI: item)
+        return viewModel
+    }
 }

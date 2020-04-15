@@ -22,14 +22,50 @@
                             <constraint firstAttribute="width" constant="120" id="lJY-Sv-FVt"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Video" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-dy-7uB">
+                        <rect key="frame" x="140" y="10" width="274" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="rtV-gf-TLA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Channel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P91-bT-RtY">
+                        <rect key="frame" x="140" y="55" width="274" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PublishedAt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsW-z0-0G2">
+                        <rect key="frame" x="140" y="78" width="274" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="KYu-dy-7uB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="6ra-Ya-Ovo"/>
+                    <constraint firstItem="QsW-z0-0G2" firstAttribute="leading" secondItem="qQu-nq-vWq" secondAttribute="trailing" constant="10" id="I3b-hi-TRN"/>
+                    <constraint firstAttribute="trailing" secondItem="P91-bT-RtY" secondAttribute="trailing" id="KSQ-83-8Xg"/>
+                    <constraint firstAttribute="trailing" secondItem="QsW-z0-0G2" secondAttribute="trailing" id="O5h-eN-gCM"/>
+                    <constraint firstItem="P91-bT-RtY" firstAttribute="leading" secondItem="qQu-nq-vWq" secondAttribute="trailing" constant="10" id="UXb-h2-EBY"/>
                     <constraint firstAttribute="bottom" secondItem="qQu-nq-vWq" secondAttribute="bottom" constant="10" id="WKG-n7-cKi"/>
+                    <constraint firstItem="KYu-dy-7uB" firstAttribute="leading" secondItem="qQu-nq-vWq" secondAttribute="trailing" constant="10" id="bqb-fh-Z7o"/>
+                    <constraint firstAttribute="trailing" secondItem="KYu-dy-7uB" secondAttribute="trailing" id="da2-4Q-yeg"/>
+                    <constraint firstItem="QsW-z0-0G2" firstAttribute="top" secondItem="P91-bT-RtY" secondAttribute="bottom" constant="5" id="fqw-6c-76S"/>
                     <constraint firstItem="qQu-nq-vWq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lhq-BL-TAt"/>
                     <constraint firstItem="qQu-nq-vWq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="nUW-4U-p7S"/>
+                    <constraint firstItem="P91-bT-RtY" firstAttribute="top" secondItem="KYu-dy-7uB" secondAttribute="bottom" constant="5" id="vnI-bL-9EL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellImageView" destination="qQu-nq-vWq" id="DoC-cv-vDc"/>
+                <outlet property="publishedAtLabel" destination="QsW-z0-0G2" id="kMT-XM-oQ1"/>
+                <outlet property="titleChannelLabel" destination="P91-bT-RtY" id="53P-eb-gam"/>
+                <outlet property="titleVideoLabel" destination="KYu-dy-7uB" id="MPW-mS-p7h"/>
+            </connections>
             <point key="canvasLocation" x="139" y="133"/>
         </tableViewCell>
     </objects>

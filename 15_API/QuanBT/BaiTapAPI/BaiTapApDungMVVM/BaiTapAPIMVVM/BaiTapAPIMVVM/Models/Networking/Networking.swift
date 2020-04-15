@@ -57,7 +57,7 @@ final class Networking {
                     if let data = data {
                         completion(data, nil)
                     } else {
-                       completion(nil, APIError.error("Data format is error."))
+                        completion(nil, APIError.error("Data format is error."))
                     }
                 }
             }
