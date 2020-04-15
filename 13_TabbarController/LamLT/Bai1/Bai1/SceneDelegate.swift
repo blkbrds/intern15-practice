@@ -8,7 +8,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         return shared
     }()
-
+    
+    enum TypeScreen {
+        case login
+        case tabbar
+    }
+    
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -18,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
 
-        navigationController()
+        changeScreen(type: .login)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -60,12 +65,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let tabbarController = UITabBarController()
         tabbarController.viewControllers = [homeNavi, mapNavi, favortiesNavi, profileNavi]
+        tabbarController.tabBar.tintColor = .red
+        tabbarController.tabBar.backgroundImage = UIImage(named: "CM    ")
         window?.rootViewController = tabbarController
     }
 
     func navigationController() {
         let loginVC = LoginViewController()
-        let navi = UINavigationController(rootViewController: loginVC)
+        let navi = BaseNavigationController(rootViewController: loginVC)
         window?.rootViewController = navi
+    }
+    
+    func changeScreen(type: TypeScreen) {
+        switch type {
+        case .login:
+            navigationController()
+        default:
+            tabBarController()
+        }
     }
 }

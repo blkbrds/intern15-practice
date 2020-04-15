@@ -1,9 +1,9 @@
 import UIKit
 
-class HomeViewController: UIViewController {
+class FavortiesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+    
     }
 }

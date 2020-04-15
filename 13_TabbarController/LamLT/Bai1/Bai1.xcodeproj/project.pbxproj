@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F023F698244455BD0023A413 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023F696244455BD0023A413 /* RegisterViewController.swift */; };
-		F023F699244455BD0023A413 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F023F697244455BD0023A413 /* RegisterViewController.xib */; };
 		F023F69C24445E170023A413 /* ForGotPassWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023F69A24445E170023A413 /* ForGotPassWordViewController.swift */; };
 		F023F69D24445E170023A413 /* ForGotPassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F023F69B24445E170023A413 /* ForGotPassWordViewController.xib */; };
-		F023F6A0244460660023A413 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023F69F244460660023A413 /* MyData.swift */; };
+		F023F6A0244460660023A413 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023F69F244460660023A413 /* DataManager.swift */; };
 		F023F6A22444621F0023A413 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023F6A12444621F0023A413 /* BaseViewController.swift */; };
 		F023F6A52444663F0023A413 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023F6A42444663F0023A413 /* BaseTabBarController.swift */; };
 		F023F6A7244466610023A413 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F023F6A6244466610023A413 /* BaseNavigationController.swift */; };
+		F0D7B86724455C09002A677B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7B86524455C09002A677B /* RegisterViewController.swift */; };
+		F0D7B86824455C09002A677B /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D7B86624455C09002A677B /* RegisterViewController.xib */; };
+		F0D7B86B24455C4D002A677B /* FavortiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7B86924455C4D002A677B /* FavortiesViewController.swift */; };
+		F0D7B86C24455C4D002A677B /* FavortiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D7B86A24455C4D002A677B /* FavortiesViewController.xib */; };
+		F0D7B86E24456876002A677B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7B86D24456876002A677B /* LoginViewModel.swift */; };
+		F0D7B87024470354002A677B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D7B86F24470354002A677B /* HomeViewModel.swift */; };
 		F0E4A1C9244067930012F5C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4A1C8244067930012F5C7 /* AppDelegate.swift */; };
 		F0E4A1CB244067930012F5C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4A1CA244067930012F5C7 /* SceneDelegate.swift */; };
 		F0E4A1D2244067940012F5C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E4A1D1244067940012F5C7 /* Assets.xcassets */; };
@@ -22,8 +26,6 @@
 		F0E4A1E0244069190012F5C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E4A1DE244069190012F5C7 /* HomeViewController.xib */; };
 		F0E4A1E324406E140012F5C7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4A1E124406E140012F5C7 /* MapViewController.swift */; };
 		F0E4A1E424406E140012F5C7 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E4A1E224406E140012F5C7 /* MapViewController.xib */; };
-		F0E891CB24443FB50001FC9D /* FavortiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E891C924443FB50001FC9D /* FavortiesViewController.swift */; };
-		F0E891CC24443FB50001FC9D /* FavortiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E891CA24443FB50001FC9D /* FavortiesViewController.xib */; };
 		F0E891CF24443FC40001FC9D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E891CD24443FC40001FC9D /* ProfileViewController.swift */; };
 		F0E891D024443FC40001FC9D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E891CE24443FC40001FC9D /* ProfileViewController.xib */; };
 		F0E891D32444401D0001FC9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E891D12444401D0001FC9D /* LoginViewController.swift */; };
@@ -31,14 +33,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F023F696244455BD0023A413 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		F023F697244455BD0023A413 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		F023F69A24445E170023A413 /* ForGotPassWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForGotPassWordViewController.swift; sourceTree = "<group>"; };
 		F023F69B24445E170023A413 /* ForGotPassWordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForGotPassWordViewController.xib; sourceTree = "<group>"; };
-		F023F69F244460660023A413 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
+		F023F69F244460660023A413 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		F023F6A12444621F0023A413 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F023F6A42444663F0023A413 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		F023F6A6244466610023A413 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		F0D7B86524455C09002A677B /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../../../../../../.Trash/RegisterViewController.swift; sourceTree = "<group>"; };
+		F0D7B86624455C09002A677B /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = ../../../../../../../.Trash/RegisterViewController.xib; sourceTree = "<group>"; };
+		F0D7B86924455C4D002A677B /* FavortiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavortiesViewController.swift; sourceTree = "<group>"; };
+		F0D7B86A24455C4D002A677B /* FavortiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavortiesViewController.xib; sourceTree = "<group>"; };
+		F0D7B86D24456876002A677B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F0D7B86F24470354002A677B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F0E4A1C5244067930012F5C7 /* Bai1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bai1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E4A1C8244067930012F5C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E4A1CA244067930012F5C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +54,6 @@
 		F0E4A1DE244069190012F5C7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F0E4A1E124406E140012F5C7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F0E4A1E224406E140012F5C7 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
-		F0E891C924443FB50001FC9D /* FavortiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavortiesViewController.swift; sourceTree = "<group>"; };
-		F0E891CA24443FB50001FC9D /* FavortiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavortiesViewController.xib; sourceTree = "<group>"; };
 		F0E891CD24443FC40001FC9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F0E891CE24443FC40001FC9D /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		F0E891D12444401D0001FC9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +74,7 @@
 		F023F69E244460580023A413 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F023F69F244460660023A413 /* MyData.swift */,
+				F023F69F244460660023A413 /* DataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -83,6 +87,62 @@
 				F023F6A6244466610023A413 /* BaseNavigationController.swift */,
 			);
 			path = BaseController;
+			sourceTree = "<group>";
+		};
+		F0D7B85F24455940002A677B /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				F0E4A1DD244069190012F5C7 /* HomeViewController.swift */,
+				F0E4A1DE244069190012F5C7 /* HomeViewController.xib */,
+				F0D7B86F24470354002A677B /* HomeViewModel.swift */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		F0D7B86024455950002A677B /* MapController */ = {
+			isa = PBXGroup;
+			children = (
+				F0E4A1E124406E140012F5C7 /* MapViewController.swift */,
+				F0E4A1E224406E140012F5C7 /* MapViewController.xib */,
+			);
+			path = MapController;
+			sourceTree = "<group>";
+		};
+		F0D7B86124455961002A677B /* ProfileController */ = {
+			isa = PBXGroup;
+			children = (
+				F0E891CD24443FC40001FC9D /* ProfileViewController.swift */,
+				F0E891CE24443FC40001FC9D /* ProfileViewController.xib */,
+			);
+			path = ProfileController;
+			sourceTree = "<group>";
+		};
+		F0D7B8622445596F002A677B /* FavortiesController */ = {
+			isa = PBXGroup;
+			children = (
+				F0D7B86924455C4D002A677B /* FavortiesViewController.swift */,
+				F0D7B86A24455C4D002A677B /* FavortiesViewController.xib */,
+			);
+			path = FavortiesController;
+			sourceTree = "<group>";
+		};
+		F0D7B86324455A33002A677B /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				F0E891D12444401D0001FC9D /* LoginViewController.swift */,
+				F0E891D22444401D0001FC9D /* LoginViewController.xib */,
+				F0D7B86D24456876002A677B /* LoginViewModel.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		F0D7B86424455A44002A677B /* RegisterController */ = {
+			isa = PBXGroup;
+			children = (
+				F0D7B86524455C09002A677B /* RegisterViewController.swift */,
+				F0D7B86624455C09002A677B /* RegisterViewController.xib */,
+			);
+			path = RegisterController;
 			sourceTree = "<group>";
 		};
 		F0E4A1BC244067930012F5C7 = {
@@ -117,19 +177,13 @@
 		F0E4A1DC244067AD0012F5C7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F0D7B86424455A44002A677B /* RegisterController */,
+				F0D7B86324455A33002A677B /* LoginController */,
+				F0D7B8622445596F002A677B /* FavortiesController */,
+				F0D7B86124455961002A677B /* ProfileController */,
+				F0D7B86024455950002A677B /* MapController */,
+				F0D7B85F24455940002A677B /* HomeController */,
 				F023F6A3244464590023A413 /* BaseController */,
-				F0E891C924443FB50001FC9D /* FavortiesViewController.swift */,
-				F0E891CA24443FB50001FC9D /* FavortiesViewController.xib */,
-				F0E891D12444401D0001FC9D /* LoginViewController.swift */,
-				F0E891D22444401D0001FC9D /* LoginViewController.xib */,
-				F0E891CD24443FC40001FC9D /* ProfileViewController.swift */,
-				F0E891CE24443FC40001FC9D /* ProfileViewController.xib */,
-				F0E4A1E124406E140012F5C7 /* MapViewController.swift */,
-				F0E4A1E224406E140012F5C7 /* MapViewController.xib */,
-				F0E4A1DD244069190012F5C7 /* HomeViewController.swift */,
-				F0E4A1DE244069190012F5C7 /* HomeViewController.xib */,
-				F023F696244455BD0023A413 /* RegisterViewController.swift */,
-				F023F697244455BD0023A413 /* RegisterViewController.xib */,
 				F023F69A24445E170023A413 /* ForGotPassWordViewController.swift */,
 				F023F69B24445E170023A413 /* ForGotPassWordViewController.xib */,
 			);
@@ -197,11 +251,11 @@
 				F023F69D24445E170023A413 /* ForGotPassWordViewController.xib in Resources */,
 				F0E4A1D2244067940012F5C7 /* Assets.xcassets in Resources */,
 				F0E4A1E424406E140012F5C7 /* MapViewController.xib in Resources */,
-				F023F699244455BD0023A413 /* RegisterViewController.xib in Resources */,
 				F0E891D42444401D0001FC9D /* LoginViewController.xib in Resources */,
-				F0E891CC24443FB50001FC9D /* FavortiesViewController.xib in Resources */,
 				F0E891D024443FC40001FC9D /* ProfileViewController.xib in Resources */,
 				F0E4A1E0244069190012F5C7 /* HomeViewController.xib in Resources */,
+				F0D7B86C24455C4D002A677B /* FavortiesViewController.xib in Resources */,
+				F0D7B86824455C09002A677B /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,13 +271,15 @@
 				F023F69C24445E170023A413 /* ForGotPassWordViewController.swift in Sources */,
 				F023F6A22444621F0023A413 /* BaseViewController.swift in Sources */,
 				F0E891CF24443FC40001FC9D /* ProfileViewController.swift in Sources */,
-				F023F6A0244460660023A413 /* MyData.swift in Sources */,
+				F023F6A0244460660023A413 /* DataManager.swift in Sources */,
+				F0D7B86E24456876002A677B /* LoginViewModel.swift in Sources */,
 				F0E4A1C9244067930012F5C7 /* AppDelegate.swift in Sources */,
-				F023F698244455BD0023A413 /* RegisterViewController.swift in Sources */,
-				F0E891CB24443FB50001FC9D /* FavortiesViewController.swift in Sources */,
 				F023F6A52444663F0023A413 /* BaseTabBarController.swift in Sources */,
 				F0E4A1CB244067930012F5C7 /* SceneDelegate.swift in Sources */,
+				F0D7B86B24455C4D002A677B /* FavortiesViewController.swift in Sources */,
+				F0D7B86724455C09002A677B /* RegisterViewController.swift in Sources */,
 				F0E4A1DF244069190012F5C7 /* HomeViewController.swift in Sources */,
+				F0D7B87024470354002A677B /* HomeViewModel.swift in Sources */,
 				F0E4A1E324406E140012F5C7 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
