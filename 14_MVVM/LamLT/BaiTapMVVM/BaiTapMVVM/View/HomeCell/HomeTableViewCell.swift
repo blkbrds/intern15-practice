@@ -1,24 +1,50 @@
-//
-//  HomeTableViewCell.swift
-//  BaiTapMVVM
-//
-//  Created by PCI0002 on 4/16/20.
-//  Copyright © 2020 LeThanhLam. All rights reserved.
-//
-
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+final class HomeTableViewCell: UITableViewCell {
+
+
+    @IBOutlet weak var imageCafeView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var rangeLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+
+    var viewModel = HomeCellModel() {
+        didSet {
+            updateView()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    private func updateView() {
+        let data = viewModel.data
+        nameLabel.text = data.name
+        imageCafeView.image = UIImage(named: data.image)
+        addressLabel.text = data.address
+        rateLabel.text = data.rate
+        rangeLabel.text = data.range
+        if data.favorite {
+            favoriteButton.tintColor = .systemYellow
+            favoriteButton.isSelected = false
+        } else {
+            favoriteButton.tintColor = .black
+            favoriteButton.isSelected = true
+        }
     }
-    
+
+    @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
+        if favoriteButton.isSelected {
+            favoriteButton.tintColor = .systemYellow
+            favoriteButton.isSelected = false
+            viewModel.data.favorite = true
+        } else {
+            favoriteButton.tintColor = .black
+            favoriteButton.isSelected = true
+            viewModel.data.favorite = false
+        }
+    }
 }

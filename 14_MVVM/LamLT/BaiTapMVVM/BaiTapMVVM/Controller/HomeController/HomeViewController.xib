@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BaiTapMVVM" customModuleProvider="target">
             <connections>
+                <outlet property="scrollPageControl" destination="eke-at-dbr" id="zTL-2E-XtD"/>
+                <outlet property="scrollView" destination="RqH-Jc-3Ri" id="ezN-Qb-rFd"/>
+                <outlet property="tableView" destination="A2W-FH-qNX" id="kIf-Uu-M8r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +23,27 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A2W-FH-qNX">
                     <rect key="frame" x="0.0" y="252" width="375" height="415"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FZC-1A-D9T"/>
+                        <outlet property="delegate" destination="-1" id="6tI-rj-Fve"/>
+                    </connections>
                 </tableView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RqH-Jc-3Ri">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xav-wo-LDu">
                             <rect key="frame" x="20" y="111" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" backgroundImage="left"/>
+                            <connections>
+                                <action selector="turnRightButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="j6e-zy-fFX"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sd0-EB-V2H">
                             <rect key="frame" x="313" y="111" width="46" height="30"/>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" backgroundImage="right"/>
+                            <connections>
+                                <action selector="turnLeftButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="WZS-CT-qJX"/>
+                            </connections>
                         </button>
                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="eke-at-dbr">
                             <rect key="frame" x="168" y="201" width="39" height="37"/>
@@ -68,4 +81,8 @@
             <point key="canvasLocation" x="-250.40000000000001" y="16.641679160419791"/>
         </view>
     </objects>
+    <resources>
+        <image name="left" width="50" height="50"/>
+        <image name="right" width="50" height="50"/>
+    </resources>
 </document>
