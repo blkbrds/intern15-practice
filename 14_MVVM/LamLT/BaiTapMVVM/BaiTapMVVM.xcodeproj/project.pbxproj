@@ -14,6 +14,8 @@
 		F06018402447E20F003C92A0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F060183E2447E20F003C92A0 /* HomeViewController.xib */; };
 		F06018462447EA4D003C92A0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06018442447EA4D003C92A0 /* MapViewController.swift */; };
 		F06018472447EA4D003C92A0 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06018452447EA4D003C92A0 /* MapViewController.xib */; };
+		F060184D24483FB6003C92A0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060184B24483FB6003C92A0 /* HomeTableViewCell.swift */; };
+		F060184E24483FB6003C92A0 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F060184C24483FB6003C92A0 /* HomeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		F060183E2447E20F003C92A0 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F06018442447EA4D003C92A0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F06018452447EA4D003C92A0 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		F060184B24483FB6003C92A0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		F060184C24483FB6003C92A0 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,8 @@
 		F06018272447072B003C92A0 /* BaiTapMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				F06018482447EA6E003C92A0 /* New Group */,
+				F060184924480B9E003C92A0 /* View */,
+				F06018482447EA6E003C92A0 /* Model */,
 				F060183C244708CE003C92A0 /* Controller */,
 				F06018282447072B003C92A0 /* AppDelegate.swift */,
 				F060182A2447072B003C92A0 /* SceneDelegate.swift */,
@@ -95,11 +100,28 @@
 			path = MapController;
 			sourceTree = "<group>";
 		};
-		F06018482447EA6E003C92A0 /* New Group */ = {
+		F06018482447EA6E003C92A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "New Group";
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F060184924480B9E003C92A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F060184A24480BA5003C92A0 /* HomeCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F060184A24480BA5003C92A0 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				F060184B24483FB6003C92A0 /* HomeTableViewCell.swift */,
+				F060184C24483FB6003C92A0 /* HomeTableViewCell.xib */,
+			);
+			path = HomeCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +184,7 @@
 			files = (
 				F06018322447072D003C92A0 /* Assets.xcassets in Resources */,
 				F06018472447EA4D003C92A0 /* MapViewController.xib in Resources */,
+				F060184E24483FB6003C92A0 /* HomeTableViewCell.xib in Resources */,
 				F06018402447E20F003C92A0 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06018292447072B003C92A0 /* AppDelegate.swift in Sources */,
+				F060184D24483FB6003C92A0 /* HomeTableViewCell.swift in Sources */,
 				F060182B2447072B003C92A0 /* SceneDelegate.swift in Sources */,
 				F060183F2447E20F003C92A0 /* HomeViewController.swift in Sources */,
 				F06018462447EA4D003C92A0 /* MapViewController.swift in Sources */,
