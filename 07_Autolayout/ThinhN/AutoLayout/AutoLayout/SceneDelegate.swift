@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         guard let windowScene = (scene as? UIWindowScene) else { return}
             let window = UIWindow(windowScene: windowScene)
-        let viewController = AutoLayout5_1ViewController()
+        let viewController = bai14ViewController()
         self.window = window
         window.rootViewController = viewController
             window.makeKeyAndVisible()
