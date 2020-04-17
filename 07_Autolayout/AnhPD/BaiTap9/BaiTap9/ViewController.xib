@@ -20,9 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pc8-9f-AdZ">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc8-9f-AdZ">
                     <rect key="frame" x="83" y="114.5" width="248" height="179"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21L-P7-oC0">
                     <rect key="frame" x="186" y="80" width="42" height="21"/>
@@ -97,13 +96,18 @@
                 <constraint firstItem="iWX-Cl-Hp0" firstAttribute="top" secondItem="qFt-R7-Zrv" secondAttribute="bottom" constant="85.5" id="36S-te-gVm"/>
                 <constraint firstItem="qN8-ad-fPN" firstAttribute="leading" secondItem="FqA-rt-lWx" secondAttribute="trailing" constant="60" id="80x-py-zAB"/>
                 <constraint firstItem="qN8-ad-fPN" firstAttribute="top" secondItem="qFt-R7-Zrv" secondAttribute="bottom" constant="85.5" id="Gfs-ZO-F7G"/>
+                <constraint firstItem="pc8-9f-AdZ" firstAttribute="leading" secondItem="dVn-Sj-bEu" secondAttribute="trailing" constant="23" id="I1Q-yY-Qob"/>
+                <constraint firstItem="qFt-R7-Zrv" firstAttribute="top" secondItem="pc8-9f-AdZ" secondAttribute="bottom" constant="42.5" id="IwG-F3-IaG"/>
                 <constraint firstItem="21L-P7-oC0" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.2" id="USu-wq-cMt"/>
+                <constraint firstItem="FqA-rt-lWx" firstAttribute="top" secondItem="qFt-R7-Zrv" secondAttribute="bottom" constant="85.5" id="VoT-ML-pka"/>
                 <constraint firstItem="SUh-3b-b1D" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.45" id="Vux-of-tdC"/>
                 <constraint firstItem="dVn-Sj-bEu" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.45" id="WDE-ez-l7v"/>
                 <constraint firstItem="FqA-rt-lWx" firstAttribute="width" secondItem="qN8-ad-fPN" secondAttribute="width" multiplier="0.5" id="XKN-Ok-kgJ"/>
+                <constraint firstItem="pc8-9f-AdZ" firstAttribute="top" secondItem="21L-P7-oC0" secondAttribute="bottom" constant="13.5" id="Ymr-AS-dCw"/>
                 <constraint firstItem="qFt-R7-Zrv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="75" id="ZT4-1Z-Eav"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SUh-3b-b1D" secondAttribute="trailing" constant="10" id="cok-Y6-dNM"/>
                 <constraint firstItem="FqA-rt-lWx" firstAttribute="top" secondItem="qFt-R7-Zrv" secondAttribute="bottom" constant="85.5" id="eOm-Nx-ir6"/>
+                <constraint firstItem="SUh-3b-b1D" firstAttribute="leading" secondItem="pc8-9f-AdZ" secondAttribute="trailing" constant="23" id="hVg-Lg-ExR"/>
                 <constraint firstItem="dVn-Sj-bEu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ieC-Ot-rXl"/>
                 <constraint firstItem="qFt-R7-Zrv" firstAttribute="top" secondItem="dVn-Sj-bEu" secondAttribute="bottom" constant="82" id="iwe-ek-9OB"/>
                 <constraint firstItem="FqA-rt-lWx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="jfW-fp-NBi"/>
