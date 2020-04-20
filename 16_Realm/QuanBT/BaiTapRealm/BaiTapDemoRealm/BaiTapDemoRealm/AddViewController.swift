@@ -42,7 +42,7 @@ final class AddViewController: UIViewController {
             category.title = title
             category.type = type
             category.count = results.count
-            
+
             // add to realm
             try realm.write {
                 realm.add(category)

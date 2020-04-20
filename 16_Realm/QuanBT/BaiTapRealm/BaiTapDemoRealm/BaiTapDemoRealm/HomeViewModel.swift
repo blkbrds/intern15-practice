@@ -80,4 +80,21 @@ final class HomeViewModel {
             completion(false)
         }
     }
+    
+    func deleteItem(item: String) {
+        do {
+            // realm
+            let realm = try Realm()
+            
+            // results
+            let results = realm.objects(Category.self).filter("count == \(item)")
+            
+            // delete all items
+            try realm.write {
+                realm.delete(results)
+            }
+        } catch {
+
+        }
+    }
 }

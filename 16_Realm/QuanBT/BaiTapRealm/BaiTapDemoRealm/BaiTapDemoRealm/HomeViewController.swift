@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class HomeViewController: UIViewController {
     // MARK: - IBOutlet
@@ -29,11 +30,11 @@ final class HomeViewController: UIViewController {
     // MARK: - Function
     private func setupView() {
         title = "Category"
-        viewModel.addData(title: "Category1", type: 10)
         let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.rowHeight = 100
         tableView.dataSource = self
+        tableView.delegate = self
         let addButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(addButtonTouchUpInside))
         navigationItem.leftBarButtonItem = addButton
         let deleteButton = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteButtonTouchUpInside))
@@ -45,14 +46,30 @@ final class HomeViewController: UIViewController {
         navigationController?.pushViewController(addVC, animated: true)
     }
     
+    
     @objc private func deleteButtonTouchUpInside() {
-        viewModel.deleteAll { (done) in
-            if done {
-                self.fetchData()
-            } else {
-                print("Lỗi xoá tất cả đối tượng")
+        var message = "Bạn muốn xoá tất cả?"
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            self.viewModel.deleteAll { (done) in
+                if done {
+                    self.fetchData()
+                } else {
+                    print("Lỗi xoá tất cả đối tượng")
+                }
             }
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (cancel) in
+        }
+        
+        var actions: [UIAlertAction] = [cancelAction, okAction]
+        if viewModel.datas.isEmpty {
+            message = "Không có dữ liệu"
+            actions = [cancelAction]
+        }
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .actionSheet)
+        actions.forEach { alert.addAction($0) }
+        present(alert, animated: true, completion: nil)
     }
     
     private func fetchData() {
@@ -80,5 +97,16 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
         cell.viewModel = viewModel.viewModelForCell(at: indexPath)
         return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteItem(item: String(viewModel.datas[indexPath.row].count))
+            viewModel.datas.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+        }
     }
 }
