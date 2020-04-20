@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="BaiTapDemoRealm" customModuleProvider="target">
+            <connections>
+                <outlet property="countLabel" destination="jiB-KW-lX5" id="sGT-Xz-fUX"/>
+                <outlet property="titleTextField" destination="r4D-Ph-NRf" id="0yi-P2-6EF"/>
+                <outlet property="typeTextField" destination="gej-UT-d23" id="9Hm-qo-k6w"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r4D-Ph-NRf">
+                    <rect key="frame" x="41.5" y="162" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gej-UT-d23">
+                    <rect key="frame" x="41.5" y="252" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1Y-SH-lfQ">
+                    <rect key="frame" x="74" y="336" width="59" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiB-KW-lX5">
+                    <rect key="frame" x="153" y="336" width="13" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="D1Y-SH-lfQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.5" id="8SY-hr-x22"/>
+                <constraint firstItem="jiB-KW-lX5" firstAttribute="top" secondItem="gej-UT-d23" secondAttribute="bottom" constant="50" id="Hln-eE-D6c"/>
+                <constraint firstItem="r4D-Ph-NRf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KLP-pS-IE2"/>
+                <constraint firstItem="gej-UT-d23" firstAttribute="width" secondItem="r4D-Ph-NRf" secondAttribute="width" id="Q19-FN-JZU"/>
+                <constraint firstItem="D1Y-SH-lfQ" firstAttribute="top" secondItem="gej-UT-d23" secondAttribute="bottom" constant="50" id="Q3E-ba-jyE"/>
+                <constraint firstItem="r4D-Ph-NRf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="Xoj-tS-wWZ"/>
+                <constraint firstItem="gej-UT-d23" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.6" id="cgs-17-rSA"/>
+                <constraint firstItem="gej-UT-d23" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l92-Yl-eiH"/>
+                <constraint firstItem="jiB-KW-lX5" firstAttribute="leading" secondItem="D1Y-SH-lfQ" secondAttribute="trailing" constant="20" id="lcQ-uS-dAb"/>
+                <constraint firstItem="r4D-Ph-NRf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="wzu-Qj-NEG"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="109"/>
+        </view>
+    </objects>
+</document>
