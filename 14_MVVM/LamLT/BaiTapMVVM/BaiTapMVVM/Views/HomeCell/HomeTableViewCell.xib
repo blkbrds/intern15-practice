@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="117" id="B43-1K-6SQ" customClass="HomeTableViewCell" customModule="BaiTapMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="465" height="117"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B43-1K-6SQ" id="SMH-fr-Gl1">
+                <rect key="frame" x="0.0" y="0.0" width="465" height="117"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O1i-UL-Xfd">
+                        <rect key="frame" x="10" y="10" width="240" height="97"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAL-0Z-SAW">
+                        <rect key="frame" x="264" y="12" width="93" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fee-v1-JOv">
+                        <rect key="frame" x="264" y="47" width="93" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ET-P1-rsv">
+                        <rect key="frame" x="264" y="81.5" width="93" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwC-RK-x5j">
+                        <rect key="frame" x="381" y="20" width="64" height="64"/>
+                        <state key="normal" backgroundImage="icons8-add-to-favorites-64"/>
+                        <connections>
+                            <action selector="favoriteButtonTouchUpInside:" destination="B43-1K-6SQ" eventType="touchUpInside" id="4b0-VZ-yKS"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-AH-Kx5">
+                        <rect key="frame" x="396" y="86" width="49" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4ET-P1-rsv" firstAttribute="top" secondItem="fee-v1-JOv" secondAttribute="bottom" constant="14" id="1Mi-TO-6Me"/>
+                    <constraint firstAttribute="bottom" secondItem="O1i-UL-Xfd" secondAttribute="bottom" constant="10" id="2jj-jC-DVm"/>
+                    <constraint firstAttribute="trailing" secondItem="CwC-RK-x5j" secondAttribute="trailing" constant="20" id="4OE-Im-pZY"/>
+                    <constraint firstItem="CAL-0Z-SAW" firstAttribute="leading" secondItem="O1i-UL-Xfd" secondAttribute="trailing" constant="14" id="Dy6-ss-Sq5"/>
+                    <constraint firstItem="O1i-UL-Xfd" firstAttribute="top" secondItem="SMH-fr-Gl1" secondAttribute="top" constant="10" id="F2r-3P-54v"/>
+                    <constraint firstItem="O1i-UL-Xfd" firstAttribute="width" secondItem="SMH-fr-Gl1" secondAttribute="width" multiplier="0.516129" id="HR5-ph-ZBN"/>
+                    <constraint firstItem="CwC-RK-x5j" firstAttribute="top" secondItem="SMH-fr-Gl1" secondAttribute="top" constant="20" id="KEp-WQ-chd"/>
+                    <constraint firstItem="O1i-UL-Xfd" firstAttribute="leading" secondItem="SMH-fr-Gl1" secondAttribute="leading" constant="10" id="TfX-GB-6ut"/>
+                    <constraint firstAttribute="bottom" secondItem="RBn-AH-Kx5" secondAttribute="bottom" constant="10" id="Wqj-uh-8l6"/>
+                    <constraint firstAttribute="trailing" secondItem="RBn-AH-Kx5" secondAttribute="trailing" constant="20" id="e4o-v5-R9a"/>
+                    <constraint firstItem="4ET-P1-rsv" firstAttribute="width" secondItem="SMH-fr-Gl1" secondAttribute="width" multiplier="0.2" id="eH4-i0-uCs"/>
+                    <constraint firstItem="4ET-P1-rsv" firstAttribute="leading" secondItem="O1i-UL-Xfd" secondAttribute="trailing" constant="14" id="hst-oT-YzP"/>
+                    <constraint firstItem="fee-v1-JOv" firstAttribute="top" secondItem="CAL-0Z-SAW" secondAttribute="bottom" constant="14" id="qE4-4P-EjY"/>
+                    <constraint firstItem="CAL-0Z-SAW" firstAttribute="top" secondItem="SMH-fr-Gl1" secondAttribute="top" constant="12" id="r3c-mp-8cf"/>
+                    <constraint firstItem="fee-v1-JOv" firstAttribute="leading" secondItem="O1i-UL-Xfd" secondAttribute="trailing" constant="14" id="tpA-u0-9GE"/>
+                    <constraint firstItem="CAL-0Z-SAW" firstAttribute="width" secondItem="SMH-fr-Gl1" secondAttribute="width" multiplier="0.2" id="tuU-B9-ecx"/>
+                    <constraint firstItem="fee-v1-JOv" firstAttribute="width" secondItem="SMH-fr-Gl1" secondAttribute="width" multiplier="0.2" id="ugD-SV-Vfa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="fWE-RO-WMt"/>
+            <connections>
+                <outlet property="addressLabel" destination="fee-v1-JOv" id="M6w-46-vO7"/>
+                <outlet property="favoriteButton" destination="CwC-RK-x5j" id="ugW-SQ-Nti"/>
+                <outlet property="imageCafeView" destination="O1i-UL-Xfd" id="Sdv-kM-fKr"/>
+                <outlet property="nameLabel" destination="CAL-0Z-SAW" id="Lhj-B8-uW8"/>
+                <outlet property="rangeLabel" destination="RBn-AH-Kx5" id="Np0-aN-6jX"/>
+                <outlet property="rateLabel" destination="4ET-P1-rsv" id="Bmd-uh-5dL"/>
+            </connections>
+            <point key="canvasLocation" x="27" y="55"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icons8-add-to-favorites-64" width="64" height="64"/>
+    </resources>
+</document>

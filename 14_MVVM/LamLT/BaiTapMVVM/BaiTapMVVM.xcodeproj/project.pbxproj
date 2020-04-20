@@ -7,51 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F06018292447072B003C92A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06018282447072B003C92A0 /* AppDelegate.swift */; };
-		F060182B2447072B003C92A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060182A2447072B003C92A0 /* SceneDelegate.swift */; };
-		F06018322447072D003C92A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F06018312447072D003C92A0 /* Assets.xcassets */; };
-		F060183F2447E20F003C92A0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060183D2447E20F003C92A0 /* HomeViewController.swift */; };
-		F06018402447E20F003C92A0 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F060183E2447E20F003C92A0 /* HomeViewController.xib */; };
-		F06018462447EA4D003C92A0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06018442447EA4D003C92A0 /* MapViewController.swift */; };
-		F06018472447EA4D003C92A0 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06018452447EA4D003C92A0 /* MapViewController.xib */; };
-		F060184D24483FB6003C92A0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060184B24483FB6003C92A0 /* HomeTableViewCell.swift */; };
-		F060184E24483FB6003C92A0 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F060184C24483FB6003C92A0 /* HomeTableViewCell.xib */; };
-		F0601851244844AC003C92A0 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0601850244844AC003C92A0 /* BaseTabBarController.swift */; };
-		F06018552448450D003C92A0 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06018532448450D003C92A0 /* FavoritesViewController.swift */; };
-		F06018562448450D003C92A0 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06018542448450D003C92A0 /* FavoritesViewController.xib */; };
-		F060185E24484552003C92A0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060185C24484552003C92A0 /* ProfileViewController.swift */; };
-		F060185F24484552003C92A0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F060185D24484552003C92A0 /* ProfileViewController.xib */; };
-		F06018612448479A003C92A0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06018602448479A003C92A0 /* DataManager.swift */; };
-		F0601863244849B5003C92A0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0601862244849B5003C92A0 /* HomeViewModel.swift */; };
-		F060186524484AC3003C92A0 /* HomeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F060186424484AC3003C92A0 /* HomeCellModel.swift */; };
-		F0601867244851FC003C92A0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0601866244851FC003C92A0 /* BaseViewController.swift */; };
+		A4432C0C243ECD1F00C4EBC3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4432C0B243ECD1F00C4EBC3 /* DataManager.swift */; };
+		A4432C19243ED5D400C4EBC3 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4432C17243ED5D400C4EBC3 /* HomeCollectionViewCell.swift */; };
+		A4432C1A243ED5D400C4EBC3 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4432C18243ED5D400C4EBC3 /* HomeCollectionViewCell.xib */; };
+		A46CE33F243F021B00A8F210 /* HomeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CE33E243F021B00A8F210 /* HomeCellModel.swift */; };
+		A46CE341243F029600A8F210 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46CE340243F029600A8F210 /* HomeViewModel.swift */; };
+		A49247FB243E023300E3F48C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49247FA243E023300E3F48C /* AppDelegate.swift */; };
+		A49247FD243E023300E3F48C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49247FC243E023300E3F48C /* SceneDelegate.swift */; };
+		A4924804243E023400E3F48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4924803243E023400E3F48C /* Assets.xcassets */; };
+		A4924817243E038B00E3F48C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4924815243E038B00E3F48C /* HomeViewController.swift */; };
+		A4924818243E038B00E3F48C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4924816243E038B00E3F48C /* HomeViewController.xib */; };
+		A492481B243E17BF00E3F48C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492481A243E17BF00E3F48C /* BaseViewController.swift */; };
+		A492481D243E183C00E3F48C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492481C243E183C00E3F48C /* TabBarViewController.swift */; };
+		A4924821243E187D00E3F48C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492481F243E187D00E3F48C /* MapViewController.swift */; };
+		A4924822243E187D00E3F48C /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4924820243E187D00E3F48C /* MapViewController.xib */; };
+		A4924826243E18DB00E3F48C /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4924824243E18DB00E3F48C /* FavoritesViewController.swift */; };
+		A4924827243E18DB00E3F48C /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4924825243E18DB00E3F48C /* FavoritesViewController.xib */; };
+		A492482C243E191100E3F48C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A492482A243E191100E3F48C /* ProfileViewController.swift */; };
+		A492482D243E191100E3F48C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A492482B243E191100E3F48C /* ProfileViewController.xib */; };
+		A4930B42243F86C0003D9733 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4930B40243F86C0003D9733 /* HomeCell.xib */; };
+		A4A9BC882440186400B22EA3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC862440186400B22EA3 /* DetailViewController.swift */; };
+		A4A9BC892440186400B22EA3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A9BC872440186400B22EA3 /* DetailViewController.xib */; };
+		A4A9BC8D244024F600B22EA3 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC8B244024F600B22EA3 /* DetailTableViewCell.swift */; };
+		A4A9BC8E244024F600B22EA3 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4A9BC8C244024F600B22EA3 /* DetailTableViewCell.xib */; };
+		A4A9BC9024404C2600B22EA3 /* DetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC8F24404C2600B22EA3 /* DetailCellModel.swift */; };
+		A4A9BC9224404D2F00B22EA3 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A9BC9124404D2F00B22EA3 /* DetailViewModel.swift */; };
+		F0601872244D41AD003C92A0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0601870244D41AD003C92A0 /* HomeTableViewCell.swift */; };
+		F0601873244D41AD003C92A0 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0601871244D41AD003C92A0 /* HomeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F06018252447072B003C92A0 /* BaiTapMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F06018282447072B003C92A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F060182A2447072B003C92A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F06018312447072D003C92A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F06018362447072D003C92A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F060183D2447E20F003C92A0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		F060183E2447E20F003C92A0 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		F06018442447EA4D003C92A0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		F06018452447EA4D003C92A0 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
-		F060184B24483FB6003C92A0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		F060184C24483FB6003C92A0 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-		F0601850244844AC003C92A0 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		F06018532448450D003C92A0 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		F06018542448450D003C92A0 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
-		F060185C24484552003C92A0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		F060185D24484552003C92A0 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		F06018602448479A003C92A0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		F0601862244849B5003C92A0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		F060186424484AC3003C92A0 /* HomeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModel.swift; sourceTree = "<group>"; };
-		F0601866244851FC003C92A0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A4432C0B243ECD1F00C4EBC3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A4432C17243ED5D400C4EBC3 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4432C18243ED5D400C4EBC3 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		A46CE33E243F021B00A8F210 /* HomeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellModel.swift; sourceTree = "<group>"; };
+		A46CE340243F029600A8F210 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A49247F7243E023300E3F48C /* BaiTapMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49247FA243E023300E3F48C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A49247FC243E023300E3F48C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A4924803243E023400E3F48C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4924808243E023400E3F48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4924815243E038B00E3F48C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A4924816243E038B00E3F48C /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		A492481A243E17BF00E3F48C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A492481C243E183C00E3F48C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		A492481F243E187D00E3F48C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A4924820243E187D00E3F48C /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		A4924824243E18DB00E3F48C /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		A4924825243E18DB00E3F48C /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		A492482A243E191100E3F48C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A492482B243E191100E3F48C /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		A4930B40243F86C0003D9733 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		A4A9BC862440186400B22EA3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A4A9BC872440186400B22EA3 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		A4A9BC8B244024F600B22EA3 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		A4A9BC8C244024F600B22EA3 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		A4A9BC8F24404C2600B22EA3 /* DetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellModel.swift; sourceTree = "<group>"; };
+		A4A9BC9124404D2F00B22EA3 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		F0601870244D41AD003C92A0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		F0601871244D41AD003C92A0 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F06018222447072B003C92A0 /* Frameworks */ = {
+		A49247F4243E023300E3F48C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,130 +79,171 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F060181C2447072B003C92A0 = {
+		A4432C12243ED47100C4EBC3 /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
-				F06018272447072B003C92A0 /* BaiTapMVVM */,
-				F06018262447072B003C92A0 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		F06018262447072B003C92A0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F06018252447072B003C92A0 /* BaiTapMVVM.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F06018272447072B003C92A0 /* BaiTapMVVM */ = {
-			isa = PBXGroup;
-			children = (
-				F060184924480B9E003C92A0 /* View */,
-				F06018482447EA6E003C92A0 /* Model */,
-				F060183C244708CE003C92A0 /* Controller */,
-				F06018282447072B003C92A0 /* AppDelegate.swift */,
-				F060182A2447072B003C92A0 /* SceneDelegate.swift */,
-				F06018312447072D003C92A0 /* Assets.xcassets */,
-				F06018362447072D003C92A0 /* Info.plist */,
-			);
-			path = BaiTapMVVM;
-			sourceTree = "<group>";
-		};
-		F060183C244708CE003C92A0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F060185B2448452C003C92A0 /* ProfileController */,
-				F0601852244844E9003C92A0 /* FavoritesController */,
-				F060184F24484469003C92A0 /* BaseController */,
-				F06018422447E452003C92A0 /* MapController */,
-				F06018412447E438003C92A0 /* HomeController */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F06018412447E438003C92A0 /* HomeController */ = {
-			isa = PBXGroup;
-			children = (
-				F060183E2447E20F003C92A0 /* HomeViewController.xib */,
-				F060183D2447E20F003C92A0 /* HomeViewController.swift */,
-				F0601862244849B5003C92A0 /* HomeViewModel.swift */,
-			);
-			path = HomeController;
-			sourceTree = "<group>";
-		};
-		F06018422447E452003C92A0 /* MapController */ = {
-			isa = PBXGroup;
-			children = (
-				F06018442447EA4D003C92A0 /* MapViewController.swift */,
-				F06018452447EA4D003C92A0 /* MapViewController.xib */,
-			);
-			path = MapController;
-			sourceTree = "<group>";
-		};
-		F06018482447EA6E003C92A0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F06018602448479A003C92A0 /* DataManager.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F060184924480B9E003C92A0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F060184A24480BA5003C92A0 /* HomeCell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F060184A24480BA5003C92A0 /* HomeCell */ = {
-			isa = PBXGroup;
-			children = (
-				F060184B24483FB6003C92A0 /* HomeTableViewCell.swift */,
-				F060184C24483FB6003C92A0 /* HomeTableViewCell.xib */,
-				F060186424484AC3003C92A0 /* HomeCellModel.swift */,
+				A4432C17243ED5D400C4EBC3 /* HomeCollectionViewCell.swift */,
+				A4432C18243ED5D400C4EBC3 /* HomeCollectionViewCell.xib */,
+				A46CE33E243F021B00A8F210 /* HomeCellModel.swift */,
+				A4930B40243F86C0003D9733 /* HomeCell.xib */,
+				F0601870244D41AD003C92A0 /* HomeTableViewCell.swift */,
+				F0601871244D41AD003C92A0 /* HomeTableViewCell.xib */,
 			);
 			path = HomeCell;
 			sourceTree = "<group>";
 		};
-		F060184F24484469003C92A0 /* BaseController */ = {
+		A49247EE243E023300E3F48C = {
 			isa = PBXGroup;
 			children = (
-				F0601850244844AC003C92A0 /* BaseTabBarController.swift */,
-				F0601866244851FC003C92A0 /* BaseViewController.swift */,
+				A49247F9243E023300E3F48C /* BaiTapMVVM */,
+				A49247F8243E023300E3F48C /* Products */,
 			);
-			path = BaseController;
 			sourceTree = "<group>";
 		};
-		F0601852244844E9003C92A0 /* FavoritesController */ = {
+		A49247F8243E023300E3F48C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F06018532448450D003C92A0 /* FavoritesViewController.swift */,
-				F06018542448450D003C92A0 /* FavoritesViewController.xib */,
+				A49247F7243E023300E3F48C /* BaiTapMVVM.app */,
 			);
-			path = FavoritesController;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		F060185B2448452C003C92A0 /* ProfileController */ = {
+		A49247F9243E023300E3F48C /* BaiTapMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				F060185C24484552003C92A0 /* ProfileViewController.swift */,
-				F060185D24484552003C92A0 /* ProfileViewController.xib */,
+				A4924810243E030200E3F48C /* Views */,
+				A4924811243E031900E3F48C /* Models */,
+				A4924813243E032700E3F48C /* Controllers */,
+				A492480F243E029900E3F48C /* Resources */,
+				A492480E243E025D00E3F48C /* AppDelegate */,
+				A4924808243E023400E3F48C /* Info.plist */,
 			);
-			path = ProfileController;
+			path = BaiTapMVVM;
+			sourceTree = "<group>";
+		};
+		A492480E243E025D00E3F48C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A49247FA243E023300E3F48C /* AppDelegate.swift */,
+				A49247FC243E023300E3F48C /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A492480F243E029900E3F48C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4924803243E023400E3F48C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A4924810243E030200E3F48C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9BC8A244024DB00B22EA3 /* DetailCell */,
+				A4432C12243ED47100C4EBC3 /* HomeCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4924811243E031900E3F48C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A4432C0B243ECD1F00C4EBC3 /* DataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4924813243E032700E3F48C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9BC852440182C00B22EA3 /* DetailVC */,
+				A4924828243E18F600E3F48C /* ProfileVC */,
+				A4924823243E18A000E3F48C /* FavoritesVC */,
+				A492481E243E186100E3F48C /* MapVC */,
+				A4924819243E17A800E3F48C /* BaseVC */,
+				A4924814243E033D00E3F48C /* HomeVC */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A4924814243E033D00E3F48C /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				A4924815243E038B00E3F48C /* HomeViewController.swift */,
+				A4924816243E038B00E3F48C /* HomeViewController.xib */,
+				A46CE340243F029600A8F210 /* HomeViewModel.swift */,
+			);
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		A4924819243E17A800E3F48C /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				A492481A243E17BF00E3F48C /* BaseViewController.swift */,
+				A492481C243E183C00E3F48C /* TabBarViewController.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		A492481E243E186100E3F48C /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				A492481F243E187D00E3F48C /* MapViewController.swift */,
+				A4924820243E187D00E3F48C /* MapViewController.xib */,
+			);
+			path = MapVC;
+			sourceTree = "<group>";
+		};
+		A4924823243E18A000E3F48C /* FavoritesVC */ = {
+			isa = PBXGroup;
+			children = (
+				A4924824243E18DB00E3F48C /* FavoritesViewController.swift */,
+				A4924825243E18DB00E3F48C /* FavoritesViewController.xib */,
+			);
+			path = FavoritesVC;
+			sourceTree = "<group>";
+		};
+		A4924828243E18F600E3F48C /* ProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				A492482A243E191100E3F48C /* ProfileViewController.swift */,
+				A492482B243E191100E3F48C /* ProfileViewController.xib */,
+			);
+			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		A4A9BC852440182C00B22EA3 /* DetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9BC862440186400B22EA3 /* DetailViewController.swift */,
+				A4A9BC872440186400B22EA3 /* DetailViewController.xib */,
+				A4A9BC9124404D2F00B22EA3 /* DetailViewModel.swift */,
+			);
+			path = DetailVC;
+			sourceTree = "<group>";
+		};
+		A4A9BC8A244024DB00B22EA3 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				A4A9BC8B244024F600B22EA3 /* DetailTableViewCell.swift */,
+				A4A9BC8C244024F600B22EA3 /* DetailTableViewCell.xib */,
+				A4A9BC8F24404C2600B22EA3 /* DetailCellModel.swift */,
+			);
+			path = DetailCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F06018242447072B003C92A0 /* BaiTapMVVM */ = {
+		A49247F6243E023300E3F48C /* BaiTapMVVM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F06018392447072D003C92A0 /* Build configuration list for PBXNativeTarget "BaiTapMVVM" */;
+			buildConfigurationList = A492480B243E023400E3F48C /* Build configuration list for PBXNativeTarget "BaiTapMVVM" */;
 			buildPhases = (
-				F06018212447072B003C92A0 /* Sources */,
-				F06018222447072B003C92A0 /* Frameworks */,
-				F06018232447072B003C92A0 /* Resources */,
+				A49247F3243E023300E3F48C /* Sources */,
+				A49247F4243E023300E3F48C /* Frameworks */,
+				A49247F5243E023300E3F48C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -192,25 +251,25 @@
 			);
 			name = BaiTapMVVM;
 			productName = BaiTapMVVM;
-			productReference = F06018252447072B003C92A0 /* BaiTapMVVM.app */;
+			productReference = A49247F7243E023300E3F48C /* BaiTapMVVM.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F060181D2447072B003C92A0 /* Project object */ = {
+		A49247EF243E023300E3F48C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
-				ORGANIZATIONNAME = LeThanhLam;
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = QuanBT;
 				TargetAttributes = {
-					F06018242447072B003C92A0 = {
-						CreatedOnToolsVersion = 11.2;
+					A49247F6243E023300E3F48C = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = F06018202447072B003C92A0 /* Build configuration list for PBXProject "BaiTapMVVM" */;
+			buildConfigurationList = A49247F2243E023300E3F48C /* Build configuration list for PBXProject "BaiTapMVVM" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -218,56 +277,65 @@
 				en,
 				Base,
 			);
-			mainGroup = F060181C2447072B003C92A0;
-			productRefGroup = F06018262447072B003C92A0 /* Products */;
+			mainGroup = A49247EE243E023300E3F48C;
+			productRefGroup = A49247F8243E023300E3F48C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F06018242447072B003C92A0 /* BaiTapMVVM */,
+				A49247F6243E023300E3F48C /* BaiTapMVVM */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F06018232447072B003C92A0 /* Resources */ = {
+		A49247F5243E023300E3F48C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F060185F24484552003C92A0 /* ProfileViewController.xib in Resources */,
-				F06018322447072D003C92A0 /* Assets.xcassets in Resources */,
-				F06018472447EA4D003C92A0 /* MapViewController.xib in Resources */,
-				F060184E24483FB6003C92A0 /* HomeTableViewCell.xib in Resources */,
-				F06018562448450D003C92A0 /* FavoritesViewController.xib in Resources */,
-				F06018402447E20F003C92A0 /* HomeViewController.xib in Resources */,
+				F0601873244D41AD003C92A0 /* HomeTableViewCell.xib in Resources */,
+				A492482D243E191100E3F48C /* ProfileViewController.xib in Resources */,
+				A4432C1A243ED5D400C4EBC3 /* HomeCollectionViewCell.xib in Resources */,
+				A4924804243E023400E3F48C /* Assets.xcassets in Resources */,
+				A4A9BC892440186400B22EA3 /* DetailViewController.xib in Resources */,
+				A4924818243E038B00E3F48C /* HomeViewController.xib in Resources */,
+				A4A9BC8E244024F600B22EA3 /* DetailTableViewCell.xib in Resources */,
+				A4924827243E18DB00E3F48C /* FavoritesViewController.xib in Resources */,
+				A4930B42243F86C0003D9733 /* HomeCell.xib in Resources */,
+				A4924822243E187D00E3F48C /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F06018212447072B003C92A0 /* Sources */ = {
+		A49247F3243E023300E3F48C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F06018292447072B003C92A0 /* AppDelegate.swift in Sources */,
-				F060184D24483FB6003C92A0 /* HomeTableViewCell.swift in Sources */,
-				F06018552448450D003C92A0 /* FavoritesViewController.swift in Sources */,
-				F060186524484AC3003C92A0 /* HomeCellModel.swift in Sources */,
-				F0601863244849B5003C92A0 /* HomeViewModel.swift in Sources */,
-				F0601867244851FC003C92A0 /* BaseViewController.swift in Sources */,
-				F0601851244844AC003C92A0 /* BaseTabBarController.swift in Sources */,
-				F060182B2447072B003C92A0 /* SceneDelegate.swift in Sources */,
-				F060183F2447E20F003C92A0 /* HomeViewController.swift in Sources */,
-				F060185E24484552003C92A0 /* ProfileViewController.swift in Sources */,
-				F06018612448479A003C92A0 /* DataManager.swift in Sources */,
-				F06018462447EA4D003C92A0 /* MapViewController.swift in Sources */,
+				A4A9BC9024404C2600B22EA3 /* DetailCellModel.swift in Sources */,
+				A4A9BC882440186400B22EA3 /* DetailViewController.swift in Sources */,
+				A46CE33F243F021B00A8F210 /* HomeCellModel.swift in Sources */,
+				A4A9BC8D244024F600B22EA3 /* DetailTableViewCell.swift in Sources */,
+				A49247FB243E023300E3F48C /* AppDelegate.swift in Sources */,
+				A4924821243E187D00E3F48C /* MapViewController.swift in Sources */,
+				A4924826243E18DB00E3F48C /* FavoritesViewController.swift in Sources */,
+				A492481B243E17BF00E3F48C /* BaseViewController.swift in Sources */,
+				A49247FD243E023300E3F48C /* SceneDelegate.swift in Sources */,
+				A492481D243E183C00E3F48C /* TabBarViewController.swift in Sources */,
+				A46CE341243F029600A8F210 /* HomeViewModel.swift in Sources */,
+				A492482C243E191100E3F48C /* ProfileViewController.swift in Sources */,
+				A4432C0C243ECD1F00C4EBC3 /* DataManager.swift in Sources */,
+				A4924817243E038B00E3F48C /* HomeViewController.swift in Sources */,
+				A4432C19243ED5D400C4EBC3 /* HomeCollectionViewCell.swift in Sources */,
+				F0601872244D41AD003C92A0 /* HomeTableViewCell.swift in Sources */,
+				A4A9BC9224404D2F00B22EA3 /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F06018372447072D003C92A0 /* Debug */ = {
+		A4924809243E023400E3F48C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -327,7 +395,7 @@
 			};
 			name = Debug;
 		};
-		F06018382447072D003C92A0 /* Release */ = {
+		A492480A243E023400E3F48C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -381,7 +449,7 @@
 			};
 			name = Release;
 		};
-		F060183A2447072D003C92A0 /* Debug */ = {
+		A492480C243E023400E3F48C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -391,14 +459,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lybkit.BaiTapMVVM;
+				PRODUCT_BUNDLE_IDENTIFIER = LamLT.BaiTapMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F060183B2447072D003C92A0 /* Release */ = {
+		A492480D243E023400E3F48C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -408,7 +476,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lybkit.BaiTapMVVM;
+				PRODUCT_BUNDLE_IDENTIFIER = LamLT.BaiTapMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,25 +486,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F06018202447072B003C92A0 /* Build configuration list for PBXProject "BaiTapMVVM" */ = {
+		A49247F2243E023300E3F48C /* Build configuration list for PBXProject "BaiTapMVVM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F06018372447072D003C92A0 /* Debug */,
-				F06018382447072D003C92A0 /* Release */,
+				A4924809243E023400E3F48C /* Debug */,
+				A492480A243E023400E3F48C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F06018392447072D003C92A0 /* Build configuration list for PBXNativeTarget "BaiTapMVVM" */ = {
+		A492480B243E023400E3F48C /* Build configuration list for PBXNativeTarget "BaiTapMVVM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F060183A2447072D003C92A0 /* Debug */,
-				F060183B2447072D003C92A0 /* Release */,
+				A492480C243E023400E3F48C /* Debug */,
+				A492480D243E023400E3F48C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F060181D2447072B003C92A0 /* Project object */;
+	rootObject = A49247EF243E023300E3F48C /* Project object */;
 }
