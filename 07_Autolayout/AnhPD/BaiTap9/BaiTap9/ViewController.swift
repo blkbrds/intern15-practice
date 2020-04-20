@@ -20,18 +20,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(contents.count), height: scrollView.bounds.height)
-        for i in 0...9 {
-            let image = UIImageView(image: UIImage(named: String(i + 1)))
-            image.frame = CGRect(x: scrollView.bounds.width * CGFloat(i), y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
-            scrollView.addSubview(image)
-        }
         contentLabel.text = contents[0]
         sttLabel.text = "1/10"
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func turnToRightButton(_ sender: Any) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configScrollView()
+    }
+    
+    private func configScrollView() {
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(contents.count), height: scrollView.bounds.height)
+        for i in 0...9 {
+            let imageView = UIImageView(image: UIImage(named: String(i + 1)))
+            imageView.frame = CGRect(x: scrollView.bounds.width * CGFloat(i), y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
+            scrollView.addSubview(imageView)
+        }
+    }
+    
+    @IBAction private func turnToRightButtonTouchUpInside(_ sender: Any) {
         if location == 10 {
             return
         }
@@ -43,7 +51,7 @@ class ViewController: UIViewController {
         sttLabel.text = "\(location)/10"
     }
     
-    @IBAction func turnToLeftButton(_ sender: Any) {
+    @IBAction private func turnToLeftButtonTouchUpInside(_ sender: Any) {
         if location == 1 {
             return
         }

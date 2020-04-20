@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc8-9f-AdZ">
-                    <rect key="frame" x="83" y="114.5" width="248" height="179"/>
+                    <rect key="frame" x="83" y="114.99999999999999" width="261" height="178.66666666666663"/>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21L-P7-oC0">
-                    <rect key="frame" x="186" y="80" width="42" height="21"/>
+                    <rect key="frame" x="186" y="80" width="42" height="21.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
                     </state>
                     <connections>
-                        <action selector="turnToLeftButton:" destination="-1" eventType="touchUpInside" id="6dm-oK-kN0"/>
+                        <action selector="turnToLeftButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="6dm-oK-kN0"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUh-3b-b1D">
@@ -56,11 +56,11 @@
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
                     </state>
                     <connections>
-                        <action selector="turnToRightButton:" destination="-1" eventType="touchUpInside" id="vXp-8V-ojw"/>
+                        <action selector="turnToRightButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="vXp-8V-ojw"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqA-rt-lWx">
-                    <rect key="frame" x="50" y="442" width="48.5" height="34"/>
+                    <rect key="frame" x="50" y="442" width="48.666666666666657" height="34"/>
                     <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Like">
@@ -68,7 +68,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWX-Cl-Hp0">
-                    <rect key="frame" x="315.5" y="442" width="48.5" height="34"/>
+                    <rect key="frame" x="315.66666666666669" y="442" width="48.333333333333314" height="34"/>
                     <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Share">
@@ -76,7 +76,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN8-ad-fPN">
-                    <rect key="frame" x="158.5" y="442" width="97" height="34"/>
+                    <rect key="frame" x="158.66666666666666" y="442" width="97" height="34"/>
                     <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Comment">
@@ -84,7 +84,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gsdgsdgssdg" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFt-R7-Zrv">
-                    <rect key="frame" x="75" y="336" width="264" height="20.5"/>
+                    <rect key="frame" x="75" y="336" width="264" height="20.333333333333314"/>
                     <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -97,17 +97,18 @@
                 <constraint firstItem="qN8-ad-fPN" firstAttribute="leading" secondItem="FqA-rt-lWx" secondAttribute="trailing" constant="60" id="80x-py-zAB"/>
                 <constraint firstItem="qN8-ad-fPN" firstAttribute="top" secondItem="qFt-R7-Zrv" secondAttribute="bottom" constant="85.5" id="Gfs-ZO-F7G"/>
                 <constraint firstItem="pc8-9f-AdZ" firstAttribute="leading" secondItem="dVn-Sj-bEu" secondAttribute="trailing" constant="23" id="I1Q-yY-Qob"/>
+                <constraint firstItem="21L-P7-oC0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="36" id="IMM-tf-KBt"/>
                 <constraint firstItem="qFt-R7-Zrv" firstAttribute="top" secondItem="pc8-9f-AdZ" secondAttribute="bottom" constant="42.5" id="IwG-F3-IaG"/>
-                <constraint firstItem="21L-P7-oC0" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.2" id="USu-wq-cMt"/>
+                <constraint firstItem="qFt-R7-Zrv" firstAttribute="top" secondItem="SUh-3b-b1D" secondAttribute="bottom" constant="82" id="L4y-LV-TvO"/>
+                <constraint firstItem="SUh-3b-b1D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="110" id="LsC-Vg-eh7"/>
                 <constraint firstItem="FqA-rt-lWx" firstAttribute="top" secondItem="qFt-R7-Zrv" secondAttribute="bottom" constant="85.5" id="VoT-ML-pka"/>
-                <constraint firstItem="SUh-3b-b1D" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.45" id="Vux-of-tdC"/>
-                <constraint firstItem="dVn-Sj-bEu" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.45" id="WDE-ez-l7v"/>
+                <constraint firstItem="dVn-Sj-bEu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="110" id="WlO-Yq-r4m"/>
                 <constraint firstItem="FqA-rt-lWx" firstAttribute="width" secondItem="qN8-ad-fPN" secondAttribute="width" multiplier="0.5" id="XKN-Ok-kgJ"/>
                 <constraint firstItem="pc8-9f-AdZ" firstAttribute="top" secondItem="21L-P7-oC0" secondAttribute="bottom" constant="13.5" id="Ymr-AS-dCw"/>
                 <constraint firstItem="qFt-R7-Zrv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="75" id="ZT4-1Z-Eav"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SUh-3b-b1D" secondAttribute="trailing" constant="10" id="cok-Y6-dNM"/>
                 <constraint firstItem="FqA-rt-lWx" firstAttribute="top" secondItem="qFt-R7-Zrv" secondAttribute="bottom" constant="85.5" id="eOm-Nx-ir6"/>
-                <constraint firstItem="SUh-3b-b1D" firstAttribute="leading" secondItem="pc8-9f-AdZ" secondAttribute="trailing" constant="23" id="hVg-Lg-ExR"/>
+                <constraint firstItem="SUh-3b-b1D" firstAttribute="leading" secondItem="pc8-9f-AdZ" secondAttribute="trailing" constant="10" id="hVg-Lg-ExR"/>
                 <constraint firstItem="dVn-Sj-bEu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="ieC-Ot-rXl"/>
                 <constraint firstItem="qFt-R7-Zrv" firstAttribute="top" secondItem="dVn-Sj-bEu" secondAttribute="bottom" constant="82" id="iwe-ek-9OB"/>
                 <constraint firstItem="FqA-rt-lWx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="jfW-fp-NBi"/>
