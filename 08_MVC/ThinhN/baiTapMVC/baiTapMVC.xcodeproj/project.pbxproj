@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8444955C24489F5B00D903D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444955B24489F5B00D903D1 /* AppDelegate.swift */; };
+		8444955E24489F5B00D903D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444955D24489F5B00D903D1 /* SceneDelegate.swift */; };
+		8444956224489F5E00D903D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8444956124489F5E00D903D1 /* Assets.xcassets */; };
+		8444956524489F5E00D903D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8444956424489F5E00D903D1 /* Preview Assets.xcassets */; };
+		844495722448A02700D903D1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844495702448A02700D903D1 /* CalculatorViewController.swift */; };
+		844495732448A02700D903D1 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844495712448A02700D903D1 /* CalculatorViewController.xib */; };
+		84449576244959CD00D903D1 /* tinhToan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84449575244959CD00D903D1 /* tinhToan.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8444955824489F5B00D903D1 /* baiTapMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baiTapMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8444955B24489F5B00D903D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8444955D24489F5B00D903D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8444956124489F5E00D903D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8444956424489F5E00D903D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8444956924489F5E00D903D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844495702448A02700D903D1 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		844495712448A02700D903D1 /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		84449575244959CD00D903D1 /* tinhToan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinhToan.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8444955524489F5B00D903D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8444954F24489F5B00D903D1 = {
+			isa = PBXGroup;
+			children = (
+				8444955A24489F5B00D903D1 /* baiTapMVC */,
+				8444955924489F5B00D903D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8444955924489F5B00D903D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8444955824489F5B00D903D1 /* baiTapMVC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8444955A24489F5B00D903D1 /* baiTapMVC */ = {
+			isa = PBXGroup;
+			children = (
+				844495742449547A00D903D1 /* tinhtoan */,
+				8444956F24489FB800D903D1 /* baiTap1 */,
+				8444955B24489F5B00D903D1 /* AppDelegate.swift */,
+				8444955D24489F5B00D903D1 /* SceneDelegate.swift */,
+				8444956124489F5E00D903D1 /* Assets.xcassets */,
+				8444956924489F5E00D903D1 /* Info.plist */,
+				8444956324489F5E00D903D1 /* Preview Content */,
+			);
+			path = baiTapMVC;
+			sourceTree = "<group>";
+		};
+		8444956324489F5E00D903D1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8444956424489F5E00D903D1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8444956F24489FB800D903D1 /* baiTap1 */ = {
+			isa = PBXGroup;
+			children = (
+				844495702448A02700D903D1 /* CalculatorViewController.swift */,
+				844495712448A02700D903D1 /* CalculatorViewController.xib */,
+			);
+			path = baiTap1;
+			sourceTree = "<group>";
+		};
+		844495742449547A00D903D1 /* tinhtoan */ = {
+			isa = PBXGroup;
+			children = (
+				84449575244959CD00D903D1 /* tinhToan.swift */,
+			);
+			path = tinhtoan;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8444955724489F5B00D903D1 /* baiTapMVC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8444956C24489F5E00D903D1 /* Build configuration list for PBXNativeTarget "baiTapMVC" */;
+			buildPhases = (
+				8444955424489F5B00D903D1 /* Sources */,
+				8444955524489F5B00D903D1 /* Frameworks */,
+				8444955624489F5B00D903D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = baiTapMVC;
+			productName = baiTapMVC;
+			productReference = 8444955824489F5B00D903D1 /* baiTapMVC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8444955024489F5B00D903D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = asiantech;
+				TargetAttributes = {
+					8444955724489F5B00D903D1 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 8444955324489F5B00D903D1 /* Build configuration list for PBXProject "baiTapMVC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8444954F24489F5B00D903D1;
+			productRefGroup = 8444955924489F5B00D903D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8444955724489F5B00D903D1 /* baiTapMVC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8444955624489F5B00D903D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8444956524489F5E00D903D1 /* Preview Assets.xcassets in Resources */,
+				844495732448A02700D903D1 /* CalculatorViewController.xib in Resources */,
+				8444956224489F5E00D903D1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8444955424489F5B00D903D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8444955C24489F5B00D903D1 /* AppDelegate.swift in Sources */,
+				844495722448A02700D903D1 /* CalculatorViewController.swift in Sources */,
+				84449576244959CD00D903D1 /* tinhToan.swift in Sources */,
+				8444955E24489F5B00D903D1 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8444956A24489F5E00D903D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8444956B24489F5E00D903D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8444956D24489F5E00D903D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"baiTapMVC/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = baiTapMVC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.baiTapMVC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8444956E24489F5E00D903D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"baiTapMVC/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = baiTapMVC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.baiTapMVC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8444955324489F5B00D903D1 /* Build configuration list for PBXProject "baiTapMVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8444956A24489F5E00D903D1 /* Debug */,
+				8444956B24489F5E00D903D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8444956C24489F5E00D903D1 /* Build configuration list for PBXNativeTarget "baiTapMVC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8444956D24489F5E00D903D1 /* Debug */,
+				8444956E24489F5E00D903D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8444955024489F5B00D903D1 /* Project object */;
+}
