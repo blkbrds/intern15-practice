@@ -9,17 +9,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
-        fetchData()
-    }
-
-    func updateUI() {
         userNameLabel.text = viewModel.userName
+        fetchData()
     }
 
     func fetchData() {
         viewModel.fetchData { (done, userName, password) in
             if done {
-                self.updateUI()
+                userNameLabel.text = viewModel.userName
             } else {
                 print("Failed")
             }

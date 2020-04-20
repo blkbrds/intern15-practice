@@ -10,7 +10,7 @@ class HomeViewModel {
         let userName = data.0
         let password = data.1
 
-        if userName != "" || password != "" {
+        if userName.isEmpty == false || password.isEmpty == false {
             self.userName = userName
             self.password = password
             completion(true, userName, password)

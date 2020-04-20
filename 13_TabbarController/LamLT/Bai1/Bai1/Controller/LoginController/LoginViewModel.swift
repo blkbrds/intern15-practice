@@ -18,7 +18,7 @@ class LoginViewModel {
     }
 
     func login(userName: String, password: String, completion: Completion) {
-        if userName == "" || password == "" {
+        if userName.isEmpty || password.isEmpty {
             completion(.failure(true, "UserName or Password incoret"))
         } else {
             self.userName = ""
