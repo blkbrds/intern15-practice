@@ -29,10 +29,6 @@ class LoginViewController: BaseViewController {
         updateView()
     }
 
-    override func setupData() {
-
-    }
-
     func updateView() {
         userNameTextField.text = viewModel.userName
         passWordTextField.text = viewModel.password
