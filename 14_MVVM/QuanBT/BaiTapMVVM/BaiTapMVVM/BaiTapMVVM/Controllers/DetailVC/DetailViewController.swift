@@ -33,7 +33,6 @@ final class DetailViewController: BaseViewController {
         let nib = UINib(nibName: "DetailTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "DetailTableViewCell")
         tableView.dataSource = self
-        tableView.delegate = self
         setupScrollView()
         setupMapView()
         sliderImage()
@@ -109,18 +108,6 @@ extension DetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
         cell.viewModel = viewModel.viewModelForCell(at: indexPath)
         return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-extension DetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.alpha = 0
-        cell.transform = CGAffineTransform(translationX: 0, y: 200)
-        UIView.animate(withDuration: 1) {
-            cell.alpha = 1
-            cell.transform = .identity
-        }
     }
 }
 

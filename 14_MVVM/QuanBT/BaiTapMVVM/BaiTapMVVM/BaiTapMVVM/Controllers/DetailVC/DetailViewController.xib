@@ -21,43 +21,71 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBX-GV-VKw">
-                    <rect key="frame" x="0.0" y="44" width="414" height="300"/>
-                </scrollView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3H-bP-nhB">
-                    <rect key="frame" x="0.0" y="354" width="414" height="61"/>
-                    <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-C3-oGp">
-                    <rect key="frame" x="0.0" y="425" width="414" height="200"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIq-6W-Bpo">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBB-3Y-teU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1344"/>
+                            <subviews>
+                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBX-GV-VKw">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                                </scrollView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3H-bP-nhB">
+                                    <rect key="frame" x="0.0" y="300" width="414" height="264"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="fL8-g7-wP0"/>
+                                    </constraints>
+                                    <mutableString key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-C3-oGp">
+                                    <rect key="frame" x="0.0" y="584" width="414" height="300"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="300" id="87d-A9-Jv5"/>
+                                    </constraints>
+                                </mapView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-xe-UdP">
+                                    <rect key="frame" x="0.0" y="904" width="414" height="440"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="QBX-GV-VKw" firstAttribute="top" secondItem="xBB-3Y-teU" secondAttribute="top" id="0lK-9L-CHH"/>
+                                <constraint firstAttribute="trailing" secondItem="QBX-GV-VKw" secondAttribute="trailing" id="36E-j0-7lh"/>
+                                <constraint firstAttribute="bottom" secondItem="IM8-xe-UdP" secondAttribute="bottom" id="CvH-ah-7uT"/>
+                                <constraint firstAttribute="trailing" secondItem="GXK-C3-oGp" secondAttribute="trailing" id="ES4-Cx-17q"/>
+                                <constraint firstAttribute="trailing" secondItem="IM8-xe-UdP" secondAttribute="trailing" id="Fj3-YI-IPK"/>
+                                <constraint firstItem="IM8-xe-UdP" firstAttribute="leading" secondItem="xBB-3Y-teU" secondAttribute="leading" id="JwY-AM-rkw"/>
+                                <constraint firstAttribute="trailing" secondItem="K3H-bP-nhB" secondAttribute="trailing" id="QF0-6w-PVK"/>
+                                <constraint firstItem="K3H-bP-nhB" firstAttribute="top" secondItem="xBB-3Y-teU" secondAttribute="top" constant="300" id="RBt-A1-gId"/>
+                                <constraint firstItem="GXK-C3-oGp" firstAttribute="top" secondItem="K3H-bP-nhB" secondAttribute="bottom" constant="20" id="YBn-NU-eTM"/>
+                                <constraint firstItem="QBX-GV-VKw" firstAttribute="leading" secondItem="xBB-3Y-teU" secondAttribute="leading" id="f75-7u-MBh"/>
+                                <constraint firstItem="K3H-bP-nhB" firstAttribute="leading" secondItem="xBB-3Y-teU" secondAttribute="leading" id="vSk-oh-9vg"/>
+                                <constraint firstItem="K3H-bP-nhB" firstAttribute="top" secondItem="QBX-GV-VKw" secondAttribute="bottom" constant="20" id="vqW-2l-v66"/>
+                                <constraint firstItem="IM8-xe-UdP" firstAttribute="top" secondItem="GXK-C3-oGp" secondAttribute="bottom" constant="20" id="wvP-aG-yu5"/>
+                                <constraint firstItem="GXK-C3-oGp" firstAttribute="leading" secondItem="xBB-3Y-teU" secondAttribute="leading" id="z5E-Nn-LGX"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="87d-A9-Jv5"/>
+                        <constraint firstItem="xBB-3Y-teU" firstAttribute="top" secondItem="vIq-6W-Bpo" secondAttribute="top" id="KpR-FD-d2r"/>
+                        <constraint firstAttribute="bottom" secondItem="xBB-3Y-teU" secondAttribute="bottom" id="XNz-4v-l4o"/>
+                        <constraint firstItem="xBB-3Y-teU" firstAttribute="height" secondItem="vIq-6W-Bpo" secondAttribute="height" multiplier="1.5" id="ZKR-xr-2gP"/>
+                        <constraint firstAttribute="trailing" secondItem="xBB-3Y-teU" secondAttribute="trailing" id="aSy-6f-vHl"/>
+                        <constraint firstItem="xBB-3Y-teU" firstAttribute="width" secondItem="vIq-6W-Bpo" secondAttribute="width" id="kIz-wW-Iqr"/>
+                        <constraint firstItem="xBB-3Y-teU" firstAttribute="leading" secondItem="vIq-6W-Bpo" secondAttribute="leading" id="oDV-OA-5W7"/>
                     </constraints>
-                </mapView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-xe-UdP">
-                    <rect key="frame" x="0.0" y="635" width="414" height="227"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IM8-xe-UdP" secondAttribute="trailing" id="3Qg-hK-qlL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IM8-xe-UdP" secondAttribute="bottom" id="4Fw-5d-9g6"/>
-                <constraint firstItem="K3H-bP-nhB" firstAttribute="top" secondItem="QBX-GV-VKw" secondAttribute="bottom" constant="10" id="4RK-EX-PLI"/>
-                <constraint firstItem="GXK-C3-oGp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Eqc-gE-ZWi"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GXK-C3-oGp" secondAttribute="trailing" id="Exz-ft-lVW"/>
-                <constraint firstItem="K3H-bP-nhB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="310" id="JG9-qP-1hv"/>
-                <constraint firstItem="K3H-bP-nhB" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="OiI-4o-wOZ"/>
-                <constraint firstItem="QBX-GV-VKw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WwZ-QY-gYf"/>
-                <constraint firstItem="K3H-bP-nhB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cPb-RJ-DOy"/>
-                <constraint firstItem="QBX-GV-VKw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ge7-C8-Ork"/>
-                <constraint firstItem="IM8-xe-UdP" firstAttribute="top" secondItem="GXK-C3-oGp" secondAttribute="bottom" constant="10" id="hFr-j3-XRd"/>
-                <constraint firstItem="QBX-GV-VKw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hh5-GD-jhb"/>
-                <constraint firstItem="IM8-xe-UdP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pI7-8l-Hb5"/>
-                <constraint firstItem="GXK-C3-oGp" firstAttribute="top" secondItem="K3H-bP-nhB" secondAttribute="bottom" constant="10" id="pIV-6e-FBF"/>
+                <constraint firstItem="vIq-6W-Bpo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6r7-Ak-Dom"/>
+                <constraint firstAttribute="bottom" secondItem="vIq-6W-Bpo" secondAttribute="bottom" id="Dno-c2-anh"/>
+                <constraint firstAttribute="trailing" secondItem="vIq-6W-Bpo" secondAttribute="trailing" id="K1t-ng-onh"/>
+                <constraint firstItem="vIq-6W-Bpo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QjJ-IK-X5H"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="131.91964285714286"/>

@@ -20,7 +20,7 @@ final class HomeViewModel {
     
     // MARK: - Function
     func numberOfSections() -> Int {
-        return 2
+        return 1
     }
     
     func numberOfRowInSection() -> Int {
