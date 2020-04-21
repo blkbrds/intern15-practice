@@ -10,10 +10,10 @@ import UIKit
 
 final class RegisterViewController: BaseViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var reportLabel: UILabel!
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var confirmPasswordTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var reportLabel: UILabel!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -22,11 +22,7 @@ final class RegisterViewController: BaseViewController {
     }
     
     // MARK: - IBAction
-    @IBAction func registerTouchUpInside(_ sender: Any) {
-        register()  
-    }
-    
-    private func register() {
+    @IBAction func registerButtonTouchUpInside(_ sender: Any) {
         switch (usernameTextField.text, passwordTextField.text) {
         case ("", ""):
             reportLabel.text = "Bạn chưa nhập username và password"
@@ -35,16 +31,16 @@ final class RegisterViewController: BaseViewController {
         case (_, ""):
             reportLabel.text = "Bạn chưa nhập password"
         case (_, _):
-            test()
+            testPassword()
         }
         view.endEditing(true)
     }
     
-    private func test() {
+    private func testPassword() {
         if confirmPasswordTextField.text != passwordTextField.text {
             reportLabel.text = "Bạn nhập sai password và confirm password"
         } else {
-           SceneDelegate.shared.changRootViewController()
+            SceneDelegate.shared.changeRootViewController()
         }
     }
 }

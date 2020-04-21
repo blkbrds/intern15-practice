@@ -19,6 +19,6 @@ final class ProfileViewController: BaseViewController {
     
     // MARK: - Function
     @objc private func logout() {
-        SceneDelegate.shared.changRootViewController()
+        SceneDelegate.shared.changeRootViewController()
     }
 }

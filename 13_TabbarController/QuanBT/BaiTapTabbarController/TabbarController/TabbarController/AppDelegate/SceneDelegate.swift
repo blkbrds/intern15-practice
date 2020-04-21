@@ -64,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 extension SceneDelegate {
-    func changRootViewController() {
+    func changeRootViewController() {
         if self.index {
             let tabBarVC = BaseTabBarViewController()
             let navi = UINavigationController(rootViewController: tabBarVC)

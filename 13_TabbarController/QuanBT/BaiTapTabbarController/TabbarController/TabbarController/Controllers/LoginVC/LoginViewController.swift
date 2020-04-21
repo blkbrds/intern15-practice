@@ -15,8 +15,8 @@ final class LoginViewController: BaseViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     
     // MARK: - Properties
-    var username = "admin"
-    var password = "admin123"
+    private var username = "admin"
+    private var password = "admin123"
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -37,11 +37,11 @@ final class LoginViewController: BaseViewController {
         usernameTextField.tag = 0
         passwordTextField.delegate = self
         passwordTextField.tag = 1
-        let doneButton = UIBarButtonItem(title: "Login", style: .done, target: self, action: #selector(doneTouchUpInside))
+        let doneButton = UIBarButtonItem(title: "Login", style: .done, target: self, action: #selector(doneButtonTouchUpInside))
         navigationItem.rightBarButtonItem = doneButton
     }
     
-    @objc private func doneTouchUpInside(){
+    @objc private func doneButtonTouchUpInside(){
         login()
     }
     
@@ -54,26 +54,26 @@ final class LoginViewController: BaseViewController {
         case (_, ""):
             reportLabel.text = "Bạn chưa nhập password"
         case (_, _):
-            test()
+            testPassword()
         }
         view.endEditing(true)
     }
     
-    private func test() {
+    private func testPassword() {
         if usernameTextField.text != username || passwordTextField.text != password {
             reportLabel.text = "Bạn nhập sai username hoặc password"
         } else {
-           SceneDelegate.shared.changRootViewController()
+           SceneDelegate.shared.changeRootViewController()
         }
     }
     
     // MARK: - IBAction
-    @IBAction func forgotPassword(_ sender: Any) {
+    @IBAction func forgotPasswordButtonTouchUpInside(_ sender: Any) {
         let forgotpassVC = ForgotPasswordViewController()
         self.navigationController?.pushViewController(forgotpassVC, animated: true)
     }
     
-    @IBAction func registration(_ sender: Any) {
+    @IBAction func registrationButtonTouchUpInside(_ sender: Any) {
         let registerVC = RegisterViewController()
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
@@ -90,7 +90,7 @@ extension LoginViewController: UITextFieldDelegate {
         if textField.tag == 0 {
             passwordTextField.becomeFirstResponder() }
         if textField.tag == 1 {
-            test()
+            testPassword()
         }
     }
 }
