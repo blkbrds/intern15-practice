@@ -1,8 +1,6 @@
 import UIKit
-
 class TinhTong{
     var n: Int
-    
     init(n: Int){
         self.n = n
     }
