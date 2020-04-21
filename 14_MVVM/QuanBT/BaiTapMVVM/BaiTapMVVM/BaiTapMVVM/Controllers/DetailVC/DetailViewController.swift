@@ -17,9 +17,8 @@ final class DetailViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    private var viewModel = DetailViewModel()
-    var titleDetail = ""
-    var favorite = false
+    var viewModel = DetailViewModel()
+    
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -29,7 +28,7 @@ final class DetailViewController: BaseViewController {
     // MARK: - Override
     override func setupUI() {
         super.setupUI()
-        title = titleDetail
+        title = viewModel.titleDetail
         let nib = UINib(nibName: "DetailTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "DetailTableViewCell")
         tableView.dataSource = self
@@ -37,7 +36,7 @@ final class DetailViewController: BaseViewController {
         setupMapView()
         sliderImage()
         let rightButton = UIBarButtonItem(image: UIImage(systemName: "star.fill"), style: .plain, target: self, action: #selector(favoriteViewButton))
-        if favorite {
+        if viewModel.favorite {
             rightButton.tintColor = .systemYellow
         } else {
             rightButton.tintColor = .black
@@ -61,14 +60,14 @@ final class DetailViewController: BaseViewController {
     }
     
     @objc private func favoriteViewButton() {
-        if favorite {
-            favorite = false
+        if viewModel.favorite {
+            viewModel.favorite = false
         } else {
-            favorite = true
+            viewModel.favorite = true
         }
         
         let rightButton = UIBarButtonItem(image: UIImage(systemName: "star.fill"), style: .plain, target: self, action: #selector(favoriteViewButton))
-        if favorite {
+        if viewModel.favorite {
             rightButton.tintColor = .systemYellow
         } else {
             rightButton.tintColor = .black

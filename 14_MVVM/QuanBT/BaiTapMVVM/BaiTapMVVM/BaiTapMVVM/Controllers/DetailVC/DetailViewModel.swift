@@ -12,6 +12,8 @@ final class DetailViewModel {
     // MARK: - Properties
     var dataDetail: [DataDetail] = []
     let images = ["image1", "image2", "image3", "image4", "image5"]
+    var titleDetail = ""
+    var favorite = false
     
     // MARK: - Function
     func numberOfSections() -> Int {
