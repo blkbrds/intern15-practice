@@ -9,11 +9,11 @@
 import UIKit
 
 class BadgeNumberButton: UIView {
-    var button: UIButton?
+    var button: UIButton = UIButton()
     private var badgeNumberLabel = UILabel()
-    private var valueBadgeNumber: position
+    private var badgePositon: Position
     private var text: String = ""
-    enum position {
+    enum Position {
         case topLeft
         case topCenter
         case topRight
@@ -23,16 +23,14 @@ class BadgeNumberButton: UIView {
         case bottomCenter
         case bottomRight
     }
-    init(frame: CGRect, valueBadgeNumber: position, text: String){
-        self.valueBadgeNumber = valueBadgeNumber
+    init(frame: CGRect, valueBadgeNumber: Position, text: String){
+        self.badgePositon = valueBadgeNumber
         self.text = text
         super.init(frame: frame)
-        button = UIButton(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
-        button?.backgroundColor = .green
-        button?.layer.cornerRadius = 20
-        button?.clipsToBounds = true
-        button?.setTitle("text", for: .normal)
-        addSubview(button!)
+        button.backgroundColor = .green
+        button.layer.cornerRadius = 20
+        button.clipsToBounds = true
+        button.setTitle("text", for: .normal)
         setupUI()
     }
     required init?(coder: NSCoder) {
@@ -48,24 +46,26 @@ class BadgeNumberButton: UIView {
         badgeNumberLabel.clipsToBounds = true
         badgeNumberLabel.textAlignment = .center
         badgeNumberLabel.numberOfLines = 0
+        button = UIButton(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+        addSubview(button)
         
-        switch valueBadgeNumber {
+        switch badgePositon {
         case.topLeft:
             badgeNumberLabel.center = CGPoint(x: 0, y: 0)
         case.topCenter:
-            badgeNumberLabel.center = CGPoint(x: button!.frame.midX, y: 0)
+            badgeNumberLabel.center = CGPoint(x: button.frame.midX, y: 0)
         case .topRight:
-            badgeNumberLabel.center = CGPoint(x: button!.frame.maxX, y: 0)
+            badgeNumberLabel.center = CGPoint(x: button.frame.maxX, y: 0)
         case .centerLeft:
-            badgeNumberLabel.center = CGPoint(x: 0, y: button!.frame.midY)
+            badgeNumberLabel.center = CGPoint(x: 0, y: button.frame.midY)
         case .centerRight:
-            badgeNumberLabel.center = CGPoint(x: button!.frame.maxX, y: button!.frame.midY)
+            badgeNumberLabel.center = CGPoint(x: button.frame.maxX, y: button.frame.midY)
         case .bottomLeft:
-            badgeNumberLabel.center = CGPoint(x: 0, y: button!.frame.maxY)
+            badgeNumberLabel.center = CGPoint(x: 0, y: button.frame.maxY)
         case .bottomCenter:
-            badgeNumberLabel.center = CGPoint(x: button!.frame.midX, y: button!.frame.maxY)
+            badgeNumberLabel.center = CGPoint(x: button.frame.midX, y: button.frame.maxY)
         case .bottomRight:
-            badgeNumberLabel.center = CGPoint(x: button!.frame.maxX, y: button!.frame.maxY)
+            badgeNumberLabel.center = CGPoint(x: button.frame.maxX, y: button.frame.maxY)
         }
         
         if text != "0" {

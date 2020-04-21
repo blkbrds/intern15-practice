@@ -8,24 +8,24 @@
 
 import UIKit
 
-protocol MyAvatarDelegate: class {
+protocol MyAvatarViewDelegate: class {
     func nameAvatar(avatar: String)
 }
 
-final class MyAvatar: UIView{
+final class MyAvatarView: UIView{
     private var avatarImageView: UIImageView = UIImageView(frame: .zero)
     private var usernameLabel: UILabel = UILabel (frame: .zero)
     
-    weak var delegate:MyAvatarDelegate?
+    weak var delegate:MyAvatarViewDelegate?
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        setupUIView()
+        setUpView()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has been implemented")
     }
-    private func setupUIView(){
+    private func setUpView(){
         avatarImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 3 * frame.height / 4))
         avatarImageView.image = UIImage(named: "avatar")
         avatarImageView.contentMode = .scaleToFill
@@ -48,9 +48,9 @@ final class MyAvatar: UIView{
             delegate?.nameAvatar(avatar: username)
         }
     }
-    func updateUI(imageAvatar: String, getUsername: Int){
-        avatarImageView.image = UIImage(named: imageAvatar)
-        usernameLabel.text = "Name \(getUsername)"
+    func updateUI(avatarImage: String, userName: Int){
+        avatarImageView.image = UIImage(named: avatarImage)
+        usernameLabel.text = "Name \(userName)"
     }
 }
 

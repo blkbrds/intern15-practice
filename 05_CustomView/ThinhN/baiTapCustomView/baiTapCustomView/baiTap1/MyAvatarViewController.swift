@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyAvatarViewController: UIViewController {
+final class MyAvatarViewController: UIViewController {
 
     @IBOutlet private weak var scrollView: UIScrollView!
     private let usernames: [Int] = Array(1...30)
@@ -28,11 +28,10 @@ class MyAvatarViewController: UIViewController {
         
         for index in 0..<usernames.count{
             let frame = CGRect(x: xUserView, y: yUserView, width: widthUserView, height: heightUserView)
-            let avatar = MyAvatar(frame: frame)
-            avatar.updateUI(imageAvatar: images[index], getUsername: usernames[index])
-            avatar.delegate = self
-            scrollView.addSubview(avatar)
-        
+            let avatarView = MyAvatarView(frame: frame)
+            avatarView.updateUI(avatarImage: images[index], userName: usernames[index])
+            avatarView.delegate = self
+            scrollView.addSubview(avatarView)
             if xUserView + widthUserView > widthScreen - xUserView {
             xUserView = space
             yUserView += heightUserView + space
@@ -42,7 +41,7 @@ class MyAvatarViewController: UIViewController {
         }
     }
 }
-extension MyAvatarViewController: MyAvatarDelegate{
+extension MyAvatarViewController: MyAvatarViewDelegate{
     func nameAvatar(avatar: String) {
         print(avatar)
     }

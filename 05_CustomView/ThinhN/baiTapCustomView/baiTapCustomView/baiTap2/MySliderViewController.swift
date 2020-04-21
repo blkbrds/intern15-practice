@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MySliderViewController: UIViewController {
+final class MySliderViewController: UIViewController {
 
-    @IBOutlet weak var valueTextField: UITextField!
+    @IBOutlet weak private var valueTextField: UITextField!
     private var value: Int = 50{
         didSet{
             valueTextField.text = String(value)
@@ -25,7 +25,7 @@ class MySliderViewController: UIViewController {
         mySliderView.frame.size = CGSize(width: 50, height: 400)
         mySliderView.center = view.center
         mySliderView.delegate = self
-        self.view.addSubview(mySliderView)
+        view.addSubview(mySliderView)
     }
     
     @IBAction private func changeValue(_ sender: Any) {
