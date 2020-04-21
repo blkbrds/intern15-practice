@@ -15,18 +15,18 @@ final class DetailViewModel {
     
     // MARK: - Function
     func numberOfSections() -> Int {
-           return 2
-       }
-       
-       func numberOfRowInSection() -> Int {
-           return dataDetail.count
-       }
-       
-       func viewModelForCell(at indexPath: IndexPath) -> DetailCellModel {
-           let item = dataDetail[indexPath.row]
-           let viewModel = DetailCellModel(dataDetail: item)
-           return viewModel
-       }
+        return 2
+    }
+    
+    func numberOfRowInSection() -> Int {
+        return dataDetail.count
+    }
+    
+    func viewModelForCell(at indexPath: IndexPath) -> DetailCellModel {
+        let item = dataDetail[indexPath.row]
+        let viewModel = DetailCellModel(dataDetail: item)
+        return viewModel
+    }
     
     func getDataDetail() {
         let data1 = DataDetail(name: "Bùi Thiện Quân", image: "avatarDetail", comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ", time: "5 days ago")

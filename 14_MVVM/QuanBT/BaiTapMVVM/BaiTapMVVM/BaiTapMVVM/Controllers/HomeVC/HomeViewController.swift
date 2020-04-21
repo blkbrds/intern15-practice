@@ -11,6 +11,7 @@ import UIKit
 final class HomeViewController: BaseViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -33,8 +34,11 @@ final class HomeViewController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         title = "Home"
-        let nib1 = UINib(nibName: "HomeCollectionViewCell", bundle: .main)
-        collectionView.register(nib1, forCellWithReuseIdentifier: "HomeCollectionViewCell")
+        let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: "TableCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = 100
         let nib2 = UINib(nibName: "HomeCell", bundle: .main)
         collectionView.register(nib2, forCellWithReuseIdentifier: "HomeCell")
         collectionView.dataSource = self
@@ -47,13 +51,23 @@ final class HomeViewController: BaseViewController {
     @objc private func tableViewButton() {
         self.status = .tableView
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "collectionview"), style: .plain, target: self, action: #selector(collectionViewButton))
-        collectionView.reloadData()
+        collectionView.isHidden = true
+        tableView.isHidden = false
+        tableView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            self.tableView.alpha = 1
+        })
     }
     
     @objc private func collectionViewButton() {
         self.status = .collectionView
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "tableview"), style: .plain, target: self, action: #selector(tableViewButton))
-        collectionView.reloadData()
+        collectionView.isHidden = false
+        tableView.isHidden = true
+        collectionView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            self.collectionView.alpha = 1
+        })
     }
     
     private func setupScrollView() {
@@ -98,41 +112,46 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if self.status == .collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCollectionViewCell
             cell.viewModel = viewModel.viewModelForCell(at: indexPath)
             return cell
-        }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
-        cell.viewModel = viewModel.viewModelForCell(at: indexPath)
-        return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if self.status == .collectionView {
             return CGSize(width: UIScreen.main.bounds.width / 2 - 10, height: 200)
-        }
-        return CGSize(width: UIScreen.main.bounds.width, height: 100)
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.alpha = 0
-        cell.transform = CGAffineTransform(translationX: -200, y: 0)
-        UIView.animate(withDuration: 1) {
-            cell.alpha = 1
-            cell.transform = .identity
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detaiVC = DetailViewController()
-        detaiVC.tilleDetail = viewModel.datas[indexPath.row].name
-        detaiVC.favorite = viewModel.datas[indexPath.row].favorite
-        navigationController?.pushViewController(detaiVC, animated: true)
+        let detailVC = DetailViewController()
+        detailVC.titleDetail = viewModel.datas[indexPath.row].name
+        detailVC.favorite = viewModel.datas[indexPath.row].favorite
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRowInSection()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! HomeTableViewCell
+        cell.viewModel = viewModel.viewModelForCell(at: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailViewController()
+        detailVC.titleDetail = viewModel.datas[indexPath.row].name
+        detailVC.favorite = viewModel.datas[indexPath.row].favorite
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+

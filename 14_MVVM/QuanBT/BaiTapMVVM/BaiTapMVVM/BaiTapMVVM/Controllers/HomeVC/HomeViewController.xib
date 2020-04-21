@@ -12,6 +12,7 @@
                 <outlet property="collectionView" destination="N0w-1w-8OA" id="chI-aP-CSk"/>
                 <outlet property="pageControl" destination="oJw-Xs-LZg" id="XJR-eR-dOk"/>
                 <outlet property="scrollView" destination="w86-9t-j8q" id="uZ4-QX-LAz"/>
+                <outlet property="tableView" destination="PdX-um-nZ8" id="NgB-ws-lUf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-1w-8OA">
+                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-1w-8OA">
                     <rect key="frame" x="0.0" y="354" width="414" height="508"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="5" id="YfU-RN-tYN">
@@ -66,13 +67,20 @@
                     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="pageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PdX-um-nZ8">
+                    <rect key="frame" x="0.0" y="354" width="414" height="508"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="w86-9t-j8q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2Qg-IB-MQn"/>
                 <constraint firstItem="oJw-Xs-LZg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2qM-nx-36F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="w86-9t-j8q" secondAttribute="trailing" id="4c2-JY-bXc"/>
+                <constraint firstItem="PdX-um-nZ8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5JO-Py-QzQ"/>
+                <constraint firstItem="PdX-um-nZ8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="310" id="Ij2-oD-uzG"/>
                 <constraint firstItem="N0w-1w-8OA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="310" id="K93-Zh-rev"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PdX-um-nZ8" secondAttribute="bottom" id="NHt-jO-90K"/>
                 <constraint firstItem="isZ-eq-D0U" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.8" id="NnW-0l-nrZ"/>
                 <constraint firstItem="w86-9t-j8q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="O6h-zh-H6X"/>
                 <constraint firstItem="N0w-1w-8OA" firstAttribute="top" secondItem="w86-9t-j8q" secondAttribute="bottom" constant="10" id="Xx7-bY-DHa"/>
@@ -80,6 +88,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N0w-1w-8OA" secondAttribute="bottom" id="hEN-vi-fhg"/>
                 <constraint firstItem="kHV-24-zwa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="125" id="hjj-w9-idh"/>
                 <constraint firstItem="N0w-1w-8OA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jcd-be-1Ze"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PdX-um-nZ8" secondAttribute="trailing" id="oix-s0-Cqa"/>
                 <constraint firstItem="oJw-Xs-LZg" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="ons-T5-ZpS"/>
                 <constraint firstItem="oJw-Xs-LZg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="250" id="shO-6z-1Fw"/>
                 <constraint firstItem="isZ-eq-D0U" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="125" id="uAh-lz-DDg"/>
