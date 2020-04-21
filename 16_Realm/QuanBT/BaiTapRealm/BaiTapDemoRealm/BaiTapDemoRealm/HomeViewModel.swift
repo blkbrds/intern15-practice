@@ -24,6 +24,10 @@ final class HomeViewModel {
         return viewModel
     }
     
+    func getData(at indexPath: IndexPath) -> Category {
+        return datas[indexPath.row]
+    }
+    
     func fetchData(completion: (Bool) -> ()) {
         do {
             // realm

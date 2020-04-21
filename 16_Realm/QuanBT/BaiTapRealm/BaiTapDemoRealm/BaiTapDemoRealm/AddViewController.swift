@@ -15,6 +15,7 @@ final class AddViewController: UIViewController {
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var countLabel: UILabel!
     
+    var category: Category?
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,14 @@ final class AddViewController: UIViewController {
             category.title = title
             category.type = type
             category.count = results.count
+            
+            let post1 = Post()
+            post1.content = "quan"
+            post1.isFavorite = false
+            post1.title = "1"
+            post1.owner = category
+            
+            category.posts.append(post1)
             
             // add to realm
             try realm.write {
