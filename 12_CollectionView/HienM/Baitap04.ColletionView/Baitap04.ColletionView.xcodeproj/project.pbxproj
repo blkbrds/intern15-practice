@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDE13C2C23F3DC81004BB8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13C2B23F3DC81004BB8AC /* AppDelegate.swift */; };
+		FDE13C2E23F3DC81004BB8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13C2D23F3DC81004BB8AC /* SceneDelegate.swift */; };
+		FDE13C3523F3DC82004BB8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE13C3423F3DC82004BB8AC /* Assets.xcassets */; };
+		FDE13C4223F3DCF8004BB8AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13C4023F3DCF8004BB8AC /* HomeViewController.swift */; };
+		FDE13C4323F3DCF8004BB8AC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE13C4123F3DCF8004BB8AC /* HomeViewController.xib */; };
+		FDE13C5B23F44C87004BB8AC /* FirstCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13C5923F44C87004BB8AC /* FirstCustomViewCell.swift */; };
+		FDE13C5C23F44C87004BB8AC /* FirstCustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE13C5A23F44C87004BB8AC /* FirstCustomViewCell.xib */; };
+		FDE13C5F23F44ED8004BB8AC /* SecondCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13C5D23F44ED8004BB8AC /* SecondCustomViewCell.swift */; };
+		FDE13C6023F44ED8004BB8AC /* SecondCustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE13C5E23F44ED8004BB8AC /* SecondCustomViewCell.xib */; };
+		FDE13C6323F451E8004BB8AC /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13C6123F451E8004BB8AC /* FirstTableViewCell.swift */; };
+		FDE13C6423F451E8004BB8AC /* FirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE13C6223F451E8004BB8AC /* FirstTableViewCell.xib */; };
+		FDE13C6723F45E66004BB8AC /* SecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE13C6523F45E66004BB8AC /* SecondTableViewCell.swift */; };
+		FDE13C6823F45E66004BB8AC /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE13C6623F45E66004BB8AC /* SecondTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FDE13C2823F3DC81004BB8AC /* Baitap04.ColletionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baitap04.ColletionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDE13C2B23F3DC81004BB8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDE13C2D23F3DC81004BB8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FDE13C3423F3DC82004BB8AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDE13C3923F3DC82004BB8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDE13C4023F3DCF8004BB8AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FDE13C4123F3DCF8004BB8AC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FDE13C5923F44C87004BB8AC /* FirstCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCustomViewCell.swift; sourceTree = "<group>"; };
+		FDE13C5A23F44C87004BB8AC /* FirstCustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstCustomViewCell.xib; sourceTree = "<group>"; };
+		FDE13C5D23F44ED8004BB8AC /* SecondCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCustomViewCell.swift; sourceTree = "<group>"; };
+		FDE13C5E23F44ED8004BB8AC /* SecondCustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCustomViewCell.xib; sourceTree = "<group>"; };
+		FDE13C6123F451E8004BB8AC /* FirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
+		FDE13C6223F451E8004BB8AC /* FirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstTableViewCell.xib; sourceTree = "<group>"; };
+		FDE13C6523F45E66004BB8AC /* SecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewCell.swift; sourceTree = "<group>"; };
+		FDE13C6623F45E66004BB8AC /* SecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDE13C2523F3DC81004BB8AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDE13C1F23F3DC81004BB8AC = {
+			isa = PBXGroup;
+			children = (
+				FDE13C2A23F3DC81004BB8AC /* Baitap04.ColletionView */,
+				FDE13C2923F3DC81004BB8AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDE13C2923F3DC81004BB8AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13C2823F3DC81004BB8AC /* Baitap04.ColletionView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDE13C2A23F3DC81004BB8AC /* Baitap04.ColletionView */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13C4823F3E2A9004BB8AC /* ColletionViewCell */,
+				FDE13C3F23F3DCC3004BB8AC /* Controller */,
+				FDE13C4423F3DD05004BB8AC /* App Delegate */,
+				FDE13C3423F3DC82004BB8AC /* Assets.xcassets */,
+				FDE13C3923F3DC82004BB8AC /* Info.plist */,
+			);
+			path = Baitap04.ColletionView;
+			sourceTree = "<group>";
+		};
+		FDE13C3F23F3DCC3004BB8AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13C4023F3DCF8004BB8AC /* HomeViewController.swift */,
+				FDE13C4123F3DCF8004BB8AC /* HomeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FDE13C4423F3DD05004BB8AC /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13C2B23F3DC81004BB8AC /* AppDelegate.swift */,
+				FDE13C2D23F3DC81004BB8AC /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		FDE13C4823F3E2A9004BB8AC /* ColletionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FDE13C6123F451E8004BB8AC /* FirstTableViewCell.swift */,
+				FDE13C6223F451E8004BB8AC /* FirstTableViewCell.xib */,
+				FDE13C5923F44C87004BB8AC /* FirstCustomViewCell.swift */,
+				FDE13C5A23F44C87004BB8AC /* FirstCustomViewCell.xib */,
+				FDE13C6523F45E66004BB8AC /* SecondTableViewCell.swift */,
+				FDE13C6623F45E66004BB8AC /* SecondTableViewCell.xib */,
+				FDE13C5D23F44ED8004BB8AC /* SecondCustomViewCell.swift */,
+				FDE13C5E23F44ED8004BB8AC /* SecondCustomViewCell.xib */,
+			);
+			path = ColletionViewCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDE13C2723F3DC81004BB8AC /* Baitap04.ColletionView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE13C3C23F3DC82004BB8AC /* Build configuration list for PBXNativeTarget "Baitap04.ColletionView" */;
+			buildPhases = (
+				FDE13C2423F3DC81004BB8AC /* Sources */,
+				FDE13C2523F3DC81004BB8AC /* Frameworks */,
+				FDE13C2623F3DC81004BB8AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Baitap04.ColletionView;
+			productName = Baitap04.ColletionView;
+			productReference = FDE13C2823F3DC81004BB8AC /* Baitap04.ColletionView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDE13C2023F3DC81004BB8AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = NgocHien;
+				TargetAttributes = {
+					FDE13C2723F3DC81004BB8AC = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = FDE13C2323F3DC81004BB8AC /* Build configuration list for PBXProject "Baitap04.ColletionView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDE13C1F23F3DC81004BB8AC;
+			productRefGroup = FDE13C2923F3DC81004BB8AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDE13C2723F3DC81004BB8AC /* Baitap04.ColletionView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDE13C2623F3DC81004BB8AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE13C6423F451E8004BB8AC /* FirstTableViewCell.xib in Resources */,
+				FDE13C6023F44ED8004BB8AC /* SecondCustomViewCell.xib in Resources */,
+				FDE13C3523F3DC82004BB8AC /* Assets.xcassets in Resources */,
+				FDE13C6823F45E66004BB8AC /* SecondTableViewCell.xib in Resources */,
+				FDE13C5C23F44C87004BB8AC /* FirstCustomViewCell.xib in Resources */,
+				FDE13C4323F3DCF8004BB8AC /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDE13C2423F3DC81004BB8AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDE13C6323F451E8004BB8AC /* FirstTableViewCell.swift in Sources */,
+				FDE13C5F23F44ED8004BB8AC /* SecondCustomViewCell.swift in Sources */,
+				FDE13C2C23F3DC81004BB8AC /* AppDelegate.swift in Sources */,
+				FDE13C5B23F44C87004BB8AC /* FirstCustomViewCell.swift in Sources */,
+				FDE13C6723F45E66004BB8AC /* SecondTableViewCell.swift in Sources */,
+				FDE13C2E23F3DC81004BB8AC /* SceneDelegate.swift in Sources */,
+				FDE13C4223F3DCF8004BB8AC /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FDE13C3A23F3DC82004BB8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDE13C3B23F3DC82004BB8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDE13C3D23F3DC82004BB8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TVBU6KWA;
+				INFOPLIST_FILE = Baitap04.ColletionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NgocHien.Baitap04-ColletionView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDE13C3E23F3DC82004BB8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TVBU6KWA;
+				INFOPLIST_FILE = Baitap04.ColletionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NgocHien.Baitap04-ColletionView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDE13C2323F3DC81004BB8AC /* Build configuration list for PBXProject "Baitap04.ColletionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE13C3A23F3DC82004BB8AC /* Debug */,
+				FDE13C3B23F3DC82004BB8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDE13C3C23F3DC82004BB8AC /* Build configuration list for PBXNativeTarget "Baitap04.ColletionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDE13C3D23F3DC82004BB8AC /* Debug */,
+				FDE13C3E23F3DC82004BB8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDE13C2023F3DC81004BB8AC /* Project object */;
+}
