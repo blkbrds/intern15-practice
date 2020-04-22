@@ -15,6 +15,5 @@ final class Category: Object {
     @objc dynamic var count = 0
     @objc dynamic var type = 0
     @objc dynamic var date = NSDate()
-    var posts = List<Post>()
 }
 

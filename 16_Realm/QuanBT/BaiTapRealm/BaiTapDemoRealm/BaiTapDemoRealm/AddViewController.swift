@@ -43,15 +43,7 @@ final class AddViewController: UIViewController {
             category.title = title
             category.type = type
             category.count = results.count
-            
-            let post1 = Post()
-            post1.content = "quan"
-            post1.isFavorite = false
-            post1.title = "1"
-            post1.owner = category
-            
-            category.posts.append(post1)
-            
+        
             // add to realm
             try realm.write {
                 realm.add(category)

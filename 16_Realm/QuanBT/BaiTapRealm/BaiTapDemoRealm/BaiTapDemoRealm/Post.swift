@@ -14,5 +14,4 @@ final class Post: Object {
     @objc dynamic var createDate = NSDate()
     @objc dynamic var title: String = ""
     @objc dynamic var isFavorite: Bool = false
-    @objc dynamic var owner: Category?
 }
