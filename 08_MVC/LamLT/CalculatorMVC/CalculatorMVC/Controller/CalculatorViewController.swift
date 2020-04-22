@@ -3,8 +3,8 @@ import UIKit
 final class CalculatorViewController: UIViewController {
 
     @IBOutlet private weak var resultLable: UILabel!
-    var numberSceen: Double = 0
-    var previousNumber: Double = 0
+    var numberSceen: Double?
+    var previousNumber: Double?
     var checkMath: Bool = false
     var operating: Double = 0
 
@@ -15,19 +15,31 @@ final class CalculatorViewController: UIViewController {
     }
 
     @IBAction private func numberButtonTouchUpInside(_ sender: UIButton) {
+        guard var resultLabel1 = resultLable else {
+            return
+        }
+        guard var numberSceen1 = numberSceen else {
+            return
+        }
         if checkMath == true {
             resultLable.text = String(sender.tag)
-            numberSceen = Double(resultLable.text!)!
+            numberSceen1 = Double(resultLabel1.text ?? "0")
             checkMath = false
         } else {
             resultLable.text = resultLable.text! + String(sender.tag)
-            numberSceen = Double(resultLable.text!)!
+            numberSceen1 = Double(resultLabel1.text ?? "0")
         }
     }
 
     @IBAction private func operatorButtonTouchUpInside(_ sender: UIButton) {
+        guard let resultLabel1 = resultLable else {
+            return
+        }
+        guard let previousNumber1 = previousNumber else {
+            return
+        }
         if resultLable.text != "" && sender.tag != 16 {
-            previousNumber = Double(resultLable.text!)!
+            previousNumber1 = Double(resultLabel1.text ?? "0")
             switch sender.tag {
             case 10:
                 resultLable.text = "+"
