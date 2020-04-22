@@ -57,9 +57,8 @@ extension HomeViewController: EditAvatarDelegate {
             
             let index = controller.view.tag
             let viewAvatar = avatarViews[index]
-
+            
             viewAvatar.avatarNameLabel.text = nameImage
-        
         }
     }
 }
