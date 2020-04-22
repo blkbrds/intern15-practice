@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="192" id="KGk-i7-Jjw" customClass="HomeTableViewCell" customModule="DemoConnectNetworking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="192"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="192"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3jL-jZ-yNh">
+                        <rect key="frame" x="20" y="10" width="346" height="128"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2E-8T-wWI">
+                        <rect key="frame" x="20" y="146" width="346" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-cI-ABW">
+                        <rect key="frame" x="20" y="171" width="346" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="3jL-jZ-yNh" secondAttribute="trailing" constant="20" id="2rl-wg-jp1"/>
+                    <constraint firstItem="G2E-8T-wWI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3pI-xV-6Lg"/>
+                    <constraint firstItem="3jL-jZ-yNh" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.666667" id="8OY-qK-VMl"/>
+                    <constraint firstAttribute="trailing" secondItem="jfb-cI-ABW" secondAttribute="trailing" constant="20" id="AgS-5B-TgL"/>
+                    <constraint firstItem="3jL-jZ-yNh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GgI-xi-Faf"/>
+                    <constraint firstItem="jfb-cI-ABW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LzC-EW-AEE"/>
+                    <constraint firstItem="G2E-8T-wWI" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="W3M-8k-d6L"/>
+                    <constraint firstItem="G2E-8T-wWI" firstAttribute="top" secondItem="3jL-jZ-yNh" secondAttribute="bottom" constant="8" id="ibS-3r-Ro4"/>
+                    <constraint firstItem="jfb-cI-ABW" firstAttribute="top" secondItem="G2E-8T-wWI" secondAttribute="bottom" constant="4" id="rit-TS-pcc"/>
+                    <constraint firstItem="3jL-jZ-yNh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="stG-t3-uRV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="artistNameLabel" destination="jfb-cI-ABW" id="kSc-Dx-mJn"/>
+                <outlet property="thumbnail" destination="3jL-jZ-yNh" id="GbV-Zy-Fkm"/>
+                <outlet property="titleLabel" destination="G2E-8T-wWI" id="gwY-Hz-OHm"/>
+            </connections>
+            <point key="canvasLocation" x="235" y="93"/>
+        </tableViewCell>
+    </objects>
+</document>
