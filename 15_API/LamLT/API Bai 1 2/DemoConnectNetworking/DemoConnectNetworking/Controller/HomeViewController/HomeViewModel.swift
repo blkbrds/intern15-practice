@@ -17,7 +17,7 @@ class HomeViewModel {
     
     func loadAPI(completion: @escaping Completion) {
         
-        let urlString = "https://itunes.apple.com/us/rss/topaudiobooks/limit=10/json"
+        let urlString = "https://rss.itunes.apple.com/api/v1/us/itunes-music/hot-tracks/all/100/explicit.json"
         let url = URL(string: urlString)
         guard let urlRe = url else {
             return

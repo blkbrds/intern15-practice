@@ -22,3 +22,26 @@ enum APIError: Error {
         }
     }
 }
+
+typealias APICompletion<T> = (Result<T, APIError>) -> Void
+
+enum APIResult {
+    case success(Data?)
+    case failure(APIError)
+}
+
+//MARK: - API
+struct API {
+    //singleton
+    private static var shareAPI: API = {
+        let shareAPI = API()
+        return shareAPI
+    }()
+
+ static func shared() -> API {
+        return shareAPI
+    }
+    
+    //init
+    private init() {}
+}
