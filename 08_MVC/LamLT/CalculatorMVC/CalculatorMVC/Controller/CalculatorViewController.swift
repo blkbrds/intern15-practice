@@ -1,12 +1,12 @@
 import UIKit
 
-class CalculatorViewController: UIViewController {
+final class CalculatorViewController: UIViewController {
 
-    @IBOutlet weak var resultLable: UILabel!
+    @IBOutlet private weak var resultLable: UILabel!
     var numberSceen: Double = 0
     var previousNumber: Double = 0
     var checkMath: Bool = false
-    var operating = 0
+    var operating: Double = 0
 
     var calculatorView = Calculator()
 
@@ -14,7 +14,7 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func numberButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction private func numberButtonTouchUpInside(_ sender: UIButton) {
         if checkMath == true {
             resultLable.text = String(sender.tag)
             numberSceen = Double(resultLable.text!)!
@@ -25,7 +25,7 @@ class CalculatorViewController: UIViewController {
         }
     }
 
-    @IBAction func operatorButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction private func operatorButtonTouchUpInside(_ sender: UIButton) {
         if resultLable.text != "" && sender.tag != 16 {
             previousNumber = Double(resultLable.text!)!
             switch sender.tag {
@@ -45,7 +45,7 @@ class CalculatorViewController: UIViewController {
                 print("bam +-x/")
             }
             checkMath = true
-            operating = sender.tag
+            operating = Double(sender.tag)
         } else if sender.tag == 16 {
             switch operating {
             case 10:
@@ -66,7 +66,7 @@ class CalculatorViewController: UIViewController {
         }
     }
 
-    @IBAction func clearButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction private func clearButtonTouchUpInside(_ sender: UIButton) {
         numberSceen = 0
         previousNumber = 0
         checkMath = false
