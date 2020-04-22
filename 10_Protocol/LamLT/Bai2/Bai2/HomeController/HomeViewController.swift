@@ -8,9 +8,9 @@ final class HomeViewController: UIViewController {
     let widthView: CGFloat = 100
     let heightView: CGFloat = 150
 
-    var imageNames: [String] = ["Obama", "Donaln Trump", "Putin", "Mical JackSon", "Messi", "Ronadinho", "Bee", "Jeanne", "Arthur", "Atila", "Demon", "Evil", "Ho Cam Dao", "Smile", "XXA", "ScopField", "Police", "Enmy", "CoTo", "Phonexi", "Zidane"]
+    var avatarNames: [String] = ["Obama", "Donaln Trump", "Putin", "Mical JackSon", "Messi", "Ronadinho", "Bee", "Jeanne", "Arthur", "Atila", "Demon", "Evil", "Ho Cam Dao", "Smile", "XXA", "ScopField", "Police", "Enmy", "CoTo", "Phonexi", "Zidane"]
 
-    var saveImage: [String] = ["obama", "trump", "putin", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao",]
+    var savedImageNames: [String] = ["obama", "trump", "putin", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao", "jao",]
 
     var avatarViews = [AvatarView]()
 
@@ -29,9 +29,10 @@ final class HomeViewController: UIViewController {
                 return
             }
             createAvatarView1.frame = CGRect(x: xSpace, y: ySpace, width: widthView, height: heightView)
-            createAvatarView1.avatarNameLabel.text = imageNames[i - 1]
-            createAvatarView1.avatarImageView.image = UIImage(named: saveImage[i - 1])
-            createAvatarView1.avatarDetailButoon.tag = i - 1
+            createAvatarView1.setAvatarName(avatarName: avatarNames[i - 1])
+            guard let avatarImage = UIImage(named: savedImageNames[i - 1]) else { return }
+            createAvatarView1.setAvatarImage(avatarImage: avatarImage)
+            createAvatarView1.setAvatarDetailButtonTag(avatarTag: i - 1)
             scrollView.addSubview(createAvatarView1)
             xSpace += 120
             if i % 3 == 0 {
@@ -48,7 +49,7 @@ extension HomeViewController: AvatarViewDelegate {
         let editVC = EditViewController()
         navigationController?.pushViewController(editVC, animated: true)
         editVC.nameLabelAvatar = value
-        editVC.nameImage = saveImage[buttonTag]
+        editVC.nameImage = savedImageNames[buttonTag]
     }
 }
 
@@ -60,7 +61,7 @@ extension HomeViewController: EditAvatarDelegate {
             let index = controller.view.tag
             let viewAvatar = avatarViews[index]
 
-            viewAvatar.avatarNameLabel.text = nameImage
+            viewAvatar.setAvatarName(avatarName: nameImage ?? "")
 
         }
     }
