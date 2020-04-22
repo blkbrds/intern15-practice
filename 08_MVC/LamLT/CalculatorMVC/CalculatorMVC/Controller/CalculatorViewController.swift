@@ -15,19 +15,16 @@ final class CalculatorViewController: UIViewController {
     }
 
     @IBAction private func numberButtonTouchUpInside(_ sender: UIButton) {
-        guard var resultLabel1 = resultLable else {
-            return
-        }
-        guard var numberSceen1 = numberSceen else {
+        guard let resultLable1 = resultLable else {
             return
         }
         if checkMath == true {
             resultLable.text = String(sender.tag)
-            numberSceen1 = Double(resultLabel1.text ?? "0")
+            numberSceen = Double(resultLable1.text ?? "0")!
             checkMath = false
         } else {
-            resultLable.text = resultLable.text! + String(sender.tag)
-            numberSceen1 = Double(resultLabel1.text ?? "0")
+            resultLable.text = resultLable1.  + String(sender.tag)
+            numberSceen = Double(resultLable1.text ?? "0")!
         }
     }
 
@@ -39,7 +36,7 @@ final class CalculatorViewController: UIViewController {
             return
         }
         if resultLable.text != "" && sender.tag != 16 {
-            previousNumber1 = Double(resultLabel1.text ?? "0")
+            previousNumber = Double(resultLable.text!)!
             switch sender.tag {
             case 10:
                 resultLable.text = "+"
