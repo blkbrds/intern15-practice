@@ -6,6 +6,7 @@ protocol AvatarViewDelegate: class {
 class AvatarView: UIView {
 
     weak var delegate: AvatarViewDelegate?
+    
     @IBOutlet weak var avatarDetailButoon: UIButton!
     @IBOutlet weak var avatarNameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -18,7 +19,7 @@ class AvatarView: UIView {
         super.init(coder: aDecoder)
     }
 
-    @IBAction private func avatarButtonTouchUpInside (_ sender: Any) {
+    @IBAction private func avatarButtonTouchUpInside(_ sender: Any) {
         if let delegate = delegate, let name = self.avatarNameLabel.text {
             delegate.view(view: self, value: name, buttonTag: avatarDetailButoon.tag)
         }
