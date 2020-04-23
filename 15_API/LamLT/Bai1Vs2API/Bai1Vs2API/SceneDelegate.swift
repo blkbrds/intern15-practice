@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Bai3
+//  Bai1Vs2API
 //
-//  Created by PCI0002 on 4/22/20.
+//  Created by PCI0002 on 4/23/20.
 //  Copyright © 2020 LeThanhLam. All rights reserved.
 //
 
@@ -15,12 +15,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-             let window = UIWindow(windowScene: windowScene)
-             let vc = HomeViewController()
-             let navi = UINavigationController(rootViewController: vc)
-             window.rootViewController = navi
-             self.window = window
-             window.makeKeyAndVisible()
+        let window = UIWindow(windowScene: windowScene)
+
+        let vc = HomeViewController()
+        let navi = UINavigationController(rootViewController: vc)
+        window.rootViewController = navi
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
