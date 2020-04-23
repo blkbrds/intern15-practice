@@ -25,19 +25,4 @@ extension Data {
     }
 }
 
-final class DataAPI {
-    // MARK: - Properties
-    var titleVideo: String
-    var channelTitle: String
-    var publishedAt: String
-    var url: String
-    var thumbnail: UIImage?
 
-    // MARK: - Init
-    init(titleVideo: String = "", channelTitle: String = "", publishedAt: String = "", url: String = "") {
-        self.titleVideo = titleVideo
-        self.channelTitle = channelTitle
-        self.publishedAt = publishedAt
-        self.url = url
-    }
-}

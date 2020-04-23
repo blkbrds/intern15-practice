@@ -11,7 +11,7 @@ import UIKit
 final class HomeTableViewCell: UITableViewCell {
    
     // MARK: - IBOutlet
-    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var thumblainImage: UIImageView!
     @IBOutlet weak var publishedAtLabel: UILabel!
     @IBOutlet weak var titleChannelLabel: UILabel!
     @IBOutlet weak var titleVideoLabel: UILabel!
@@ -43,7 +43,7 @@ final class HomeTableViewCell: UITableViewCell {
     }
     
     func configImage(image: UIImage?) {
-        cellImageView.image = image
+        thumblainImage.image = image
     }
 }
 

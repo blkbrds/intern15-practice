@@ -63,7 +63,8 @@ final class HomeViewModel {
         print("Done")
     }
     
-     func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
+    //MARK: - downloader
+    func downloadImage(url: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URL(string: url) else {
             completion(nil)
             return
