@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD2042CE23E92AA7003AF6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2042CD23E92AA7003AF6BD /* AppDelegate.swift */; };
+		FD2042D023E92AA7003AF6BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2042CF23E92AA7003AF6BD /* SceneDelegate.swift */; };
+		FD2042D723E92AA8003AF6BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD2042D623E92AA8003AF6BD /* Assets.xcassets */; };
+		FD2042E823E92B6A003AF6BD /* AvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD2042E723E92B6A003AF6BD /* AvatarView.xib */; };
+		FD2042EA23E92B79003AF6BD /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2042E923E92B79003AF6BD /* AvatarView.swift */; };
+		FD2042EE23E92ED3003AF6BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2042EC23E92ED3003AF6BD /* HomeViewController.swift */; };
+		FD2042EF23E92ED3003AF6BD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD2042ED23E92ED3003AF6BD /* HomeViewController.xib */; };
+		FD2042F323E92FFC003AF6BD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2042F123E92FFC003AF6BD /* ProfileViewController.swift */; };
+		FD2042F423E92FFC003AF6BD /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD2042F223E92FFC003AF6BD /* ProfileViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FD2042CA23E92AA7003AF6BD /* baitap02.Protocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baitap02.Protocol.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD2042CD23E92AA7003AF6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD2042CF23E92AA7003AF6BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FD2042D623E92AA8003AF6BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD2042DB23E92AA8003AF6BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD2042E723E92B6A003AF6BD /* AvatarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarView.xib; sourceTree = "<group>"; };
+		FD2042E923E92B79003AF6BD /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		FD2042EC23E92ED3003AF6BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FD2042ED23E92ED3003AF6BD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FD2042F123E92FFC003AF6BD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FD2042F223E92FFC003AF6BD /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD2042C723E92AA7003AF6BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD2042C123E92AA7003AF6BD = {
+			isa = PBXGroup;
+			children = (
+				FD2042CC23E92AA7003AF6BD /* baitap02.Protocol */,
+				FD2042CB23E92AA7003AF6BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD2042CB23E92AA7003AF6BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD2042CA23E92AA7003AF6BD /* baitap02.Protocol.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD2042CC23E92AA7003AF6BD /* baitap02.Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FD2042F023E92FDA003AF6BD /* ProfileViewController */,
+				FD2042E623E92B4B003AF6BD /* HomeViewController */,
+				FD2042E523E92B40003AF6BD /* AvatarView */,
+				FD2042CD23E92AA7003AF6BD /* AppDelegate.swift */,
+				FD2042CF23E92AA7003AF6BD /* SceneDelegate.swift */,
+				FD2042D623E92AA8003AF6BD /* Assets.xcassets */,
+				FD2042DB23E92AA8003AF6BD /* Info.plist */,
+			);
+			path = baitap02.Protocol;
+			sourceTree = "<group>";
+		};
+		FD2042E523E92B40003AF6BD /* AvatarView */ = {
+			isa = PBXGroup;
+			children = (
+				FD2042E723E92B6A003AF6BD /* AvatarView.xib */,
+				FD2042E923E92B79003AF6BD /* AvatarView.swift */,
+			);
+			path = AvatarView;
+			sourceTree = "<group>";
+		};
+		FD2042E623E92B4B003AF6BD /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FD2042EC23E92ED3003AF6BD /* HomeViewController.swift */,
+				FD2042ED23E92ED3003AF6BD /* HomeViewController.xib */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		FD2042F023E92FDA003AF6BD /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FD2042F123E92FFC003AF6BD /* ProfileViewController.swift */,
+				FD2042F223E92FFC003AF6BD /* ProfileViewController.xib */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD2042C923E92AA7003AF6BD /* baitap02.Protocol */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD2042DE23E92AA8003AF6BD /* Build configuration list for PBXNativeTarget "baitap02.Protocol" */;
+			buildPhases = (
+				FD2042C623E92AA7003AF6BD /* Sources */,
+				FD2042C723E92AA7003AF6BD /* Frameworks */,
+				FD2042C823E92AA7003AF6BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = baitap02.Protocol;
+			productName = baitap02.Protocol;
+			productReference = FD2042CA23E92AA7003AF6BD /* baitap02.Protocol.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD2042C223E92AA7003AF6BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = NgocHien;
+				TargetAttributes = {
+					FD2042C923E92AA7003AF6BD = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = FD2042C523E92AA7003AF6BD /* Build configuration list for PBXProject "baitap02.Protocol" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD2042C123E92AA7003AF6BD;
+			productRefGroup = FD2042CB23E92AA7003AF6BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD2042C923E92AA7003AF6BD /* baitap02.Protocol */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD2042C823E92AA7003AF6BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD2042E823E92B6A003AF6BD /* AvatarView.xib in Resources */,
+				FD2042D723E92AA8003AF6BD /* Assets.xcassets in Resources */,
+				FD2042F423E92FFC003AF6BD /* ProfileViewController.xib in Resources */,
+				FD2042EF23E92ED3003AF6BD /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD2042C623E92AA7003AF6BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD2042CE23E92AA7003AF6BD /* AppDelegate.swift in Sources */,
+				FD2042EA23E92B79003AF6BD /* AvatarView.swift in Sources */,
+				FD2042F323E92FFC003AF6BD /* ProfileViewController.swift in Sources */,
+				FD2042D023E92AA7003AF6BD /* SceneDelegate.swift in Sources */,
+				FD2042EE23E92ED3003AF6BD /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FD2042DC23E92AA8003AF6BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD2042DD23E92AA8003AF6BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD2042DF23E92AA8003AF6BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TVBU6KWA;
+				INFOPLIST_FILE = baitap02.Protocol/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NgocHien.baitap02-Protocol";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD2042E023E92AA8003AF6BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 53TVBU6KWA;
+				INFOPLIST_FILE = baitap02.Protocol/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "NgocHien.baitap02-Protocol";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD2042C523E92AA7003AF6BD /* Build configuration list for PBXProject "baitap02.Protocol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD2042DC23E92AA8003AF6BD /* Debug */,
+				FD2042DD23E92AA8003AF6BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD2042DE23E92AA8003AF6BD /* Build configuration list for PBXNativeTarget "baitap02.Protocol" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD2042DF23E92AA8003AF6BD /* Debug */,
+				FD2042E023E92AA8003AF6BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD2042C223E92AA7003AF6BD /* Project object */;
+}

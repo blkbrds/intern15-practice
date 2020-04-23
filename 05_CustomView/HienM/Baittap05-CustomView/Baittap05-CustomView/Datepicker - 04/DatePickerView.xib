@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DatePickerView" customModule="Baittap05_CustomView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="wuW-3A-4B9">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQH-wL-Lei">
+                    <rect key="frame" x="346" y="20" width="48" height="30"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancelButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bf0-7z-RVq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjG-5K-Fgs">
+                    <rect key="frame" x="20" y="20" width="37" height="30"/>
+                    <state key="normal" title="Done"/>
+                    <connections>
+                        <action selector="doneButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="N5u-Is-2Al"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wuW-3A-4B9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4MJ-l7-E32"/>
+                <constraint firstItem="MjG-5K-Fgs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Z6c-A0-z8s"/>
+                <constraint firstItem="wuW-3A-4B9" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Z6r-nK-Mao"/>
+                <constraint firstAttribute="trailing" secondItem="fQH-wL-Lei" secondAttribute="trailing" constant="20" id="abR-qW-caz"/>
+                <constraint firstItem="MjG-5K-Fgs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="duI-t5-m7K"/>
+                <constraint firstItem="wuW-3A-4B9" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="hJy-QY-fQe"/>
+                <constraint firstItem="fQH-wL-Lei" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="xdR-6h-ANJ"/>
+                <constraint firstItem="wuW-3A-4B9" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="xn0-Xj-88P"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cancelButton" destination="fQH-wL-Lei" id="NRn-KA-5Ho"/>
+                <outlet property="datePicker" destination="wuW-3A-4B9" id="DQc-ga-eoI"/>
+                <outlet property="doneButton" destination="MjG-5K-Fgs" id="BHl-aj-sfS"/>
+            </connections>
+            <point key="canvasLocation" x="72" y="103"/>
+        </view>
+    </objects>
+</document>

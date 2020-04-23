@@ -47,6 +47,7 @@ final class PinterestLayout: UICollectionViewLayout {
                 let size = delegate.collectionView(collectionView, sizeForItemAtIndexPath: indexPath)
                 let cellWidth = columnWidth
                 let cellHeight = size.height * cellWidth / size.width
+				
                 let frame = CGRect(x: xOffSets[column], y: yOffSets[column], width: cellWidth, height: cellHeight)
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 attributes.frame = frame

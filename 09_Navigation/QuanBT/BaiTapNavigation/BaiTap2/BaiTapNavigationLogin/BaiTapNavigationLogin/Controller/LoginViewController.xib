@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BaiTapNavigationLogin" customModuleProvider="target">
+            <connections>
+                <outlet property="passwordTextField" destination="gTf-KY-g4S" id="G9T-0h-OXS"/>
+                <outlet property="reportLabel" destination="sIJ-gI-GNE" id="Hgo-kV-Imn"/>
+                <outlet property="usernameTextField" destination="4WW-kj-rDl" id="1cd-Ps-rMV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4WW-kj-rDl">
+                    <rect key="frame" x="41.5" y="117.5" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gTf-KY-g4S">
+                    <rect key="frame" x="41.5" y="162" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIJ-gI-GNE">
+                    <rect key="frame" x="41.5" y="252" width="331" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.9646971822" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gTf-KY-g4S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Nz-z7-nJ5"/>
+                <constraint firstItem="gTf-KY-g4S" firstAttribute="width" secondItem="4WW-kj-rDl" secondAttribute="width" id="2ku-JH-7sJ"/>
+                <constraint firstItem="sIJ-gI-GNE" firstAttribute="width" secondItem="gTf-KY-g4S" secondAttribute="width" id="8M8-5O-zib"/>
+                <constraint firstItem="sIJ-gI-GNE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.6" id="GSt-Zx-Mlr"/>
+                <constraint firstItem="sIJ-gI-GNE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="H05-Uw-6cf"/>
+                <constraint firstItem="gTf-KY-g4S" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="H0u-CW-mH7"/>
+                <constraint firstItem="4WW-kj-rDl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.3" id="eyk-GA-Rbc"/>
+                <constraint firstItem="4WW-kj-rDl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iP4-jN-7xN"/>
+                <constraint firstItem="4WW-kj-rDl" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="nym-I4-nFh"/>
+                <constraint firstItem="sIJ-gI-GNE" firstAttribute="height" secondItem="gTf-KY-g4S" secondAttribute="height" id="wkj-CR-2lE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="132"/>
+        </view>
+    </objects>
+</document>
