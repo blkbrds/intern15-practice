@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         }
         save.numbers.append(save.number)
         if save.numbers[0] == 0 {
-            Calculator.share.result = result // result ở class Calculator = 0. Vì ta khai báo result ở trên = 0
+            Calculator.share.result = result // result ở class Calculator = result(ket qua vua tinh)
             Calculator.share.test = Calculator.share.operands[0]
             result = Calculator.share.calculation(value: save.numbers[1])
         } else {
