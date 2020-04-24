@@ -2,7 +2,7 @@
 //  HomeViewModel.swift
 //  BaiTapAPIMVVM
 //
-//  Created by Sếp Quân on 4/14/20.
+//  Created by Sếp Quân on 4/24/20.
 //  Copyright © 2020 QuanBT. All rights reserved.
 //
 
@@ -26,7 +26,7 @@ final class HomeViewModel {
             } else {
                 if let data = data {
                     let json = data.toJSON()
-                    let items = json["items"] as! [JSON]
+                    let items = json["items"] as? [JSON] ?? [JSON]()
                     for item in items {
                         let snippet = item["snippet"] as! JSON
                         let dataAPI = DataAPI()

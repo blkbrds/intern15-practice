@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,11 @@
 		A44EE75D2445FFF1003E96EF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44EE75C2445FFF1003E96EF /* HomeViewModel.swift */; };
 		A44EE75F24460039003E96EF /* HomeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44EE75E24460039003E96EF /* HomeTableViewModel.swift */; };
 		A44EE7612446011D003E96EF /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44EE7602446011D003E96EF /* DataAPI.swift */; };
+		A46455C12452C1A6007488B4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46455BF2452C1A6007488B4 /* FavoritesViewController.swift */; };
+		A46455C22452C1A6007488B4 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A46455C02452C1A6007488B4 /* FavoritesViewController.xib */; };
+		A46455C42452C6FE007488B4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46455C32452C6FE007488B4 /* RealmManager.swift */; };
+		A46455C62452C90B007488B4 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46455C52452C90B007488B4 /* FavoritesViewModel.swift */; };
+		A46455C82452CC1F007488B4 /* RealmDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46455C72452CC1F007488B4 /* RealmDatas.swift */; };
 		A4D4606B2445A68000B39064 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D4606A2445A68000B39064 /* AppDelegate.swift */; };
 		A4D4606D2445A68000B39064 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D4606C2445A68000B39064 /* SceneDelegate.swift */; };
 		A4D460742445A68200B39064 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D460732445A68200B39064 /* Assets.xcassets */; };
@@ -35,6 +40,11 @@
 		A44EE75C2445FFF1003E96EF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A44EE75E24460039003E96EF /* HomeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewModel.swift; sourceTree = "<group>"; };
 		A44EE7602446011D003E96EF /* DataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAPI.swift; sourceTree = "<group>"; };
+		A46455BF2452C1A6007488B4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		A46455C02452C1A6007488B4 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		A46455C32452C6FE007488B4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		A46455C52452C90B007488B4 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		A46455C72452CC1F007488B4 /* RealmDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatas.swift; sourceTree = "<group>"; };
 		A4D460672445A68000B39064 /* BaiTapAPIMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapAPIMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D4606A2445A68000B39064 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4D4606C2445A68000B39064 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A44EE7552445FD6B003E96EF /* Networking.swift */,
+				A46455C32452C6FE007488B4 /* RealmManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -76,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				A44EE7602446011D003E96EF /* DataAPI.swift */,
+				A46455C72452CC1F007488B4 /* RealmDatas.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -147,6 +159,9 @@
 				A44EE74D2445FCE2003E96EF /* HomeViewController.swift */,
 				A44EE74E2445FCE2003E96EF /* HomeViewController.xib */,
 				A44EE75C2445FFF1003E96EF /* HomeViewModel.swift */,
+				A46455BF2452C1A6007488B4 /* FavoritesViewController.swift */,
+				A46455C02452C1A6007488B4 /* FavoritesViewController.xib */,
+				A46455C52452C90B007488B4 /* FavoritesViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,7 +180,6 @@
 				5EF8B734D5450746C483BC31 /* Pods-BaiTapAPIMVVM.debug.xcconfig */,
 				C2AA0F97EE5137E3481D9A78 /* Pods-BaiTapAPIMVVM.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -232,6 +246,7 @@
 				A4D460772445A68200B39064 /* LaunchScreen.storyboard in Resources */,
 				A4D460742445A68200B39064 /* Assets.xcassets in Resources */,
 				A44EE75B2445FFE2003E96EF /* HomeTableViewCell.xib in Resources */,
+				A46455C22452C1A6007488B4 /* FavoritesViewController.xib in Resources */,
 				A44EE7502445FCE3003E96EF /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,12 +302,16 @@
 			files = (
 				A44EE75F24460039003E96EF /* HomeTableViewModel.swift in Sources */,
 				A44EE75A2445FFE2003E96EF /* HomeTableViewCell.swift in Sources */,
+				A46455C42452C6FE007488B4 /* RealmManager.swift in Sources */,
 				A4D4606B2445A68000B39064 /* AppDelegate.swift in Sources */,
 				A44EE75D2445FFF1003E96EF /* HomeViewModel.swift in Sources */,
 				A44EE7562445FD6B003E96EF /* Networking.swift in Sources */,
+				A46455C62452C90B007488B4 /* FavoritesViewModel.swift in Sources */,
 				A4D4606D2445A68000B39064 /* SceneDelegate.swift in Sources */,
+				A46455C82452CC1F007488B4 /* RealmDatas.swift in Sources */,
 				A44EE7532445FD23003E96EF /* Data.Ext.swift in Sources */,
 				A44EE7612446011D003E96EF /* DataAPI.swift in Sources */,
+				A46455C12452C1A6007488B4 /* FavoritesViewController.swift in Sources */,
 				A44EE74F2445FCE3003E96EF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
