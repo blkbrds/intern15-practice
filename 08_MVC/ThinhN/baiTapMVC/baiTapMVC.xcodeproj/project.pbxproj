@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8438E90F24503BDA00BC2409 /* ToanHang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8438E90E24503BDA00BC2409 /* ToanHang.swift */; };
 		8444955C24489F5B00D903D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444955B24489F5B00D903D1 /* AppDelegate.swift */; };
 		8444955E24489F5B00D903D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444955D24489F5B00D903D1 /* SceneDelegate.swift */; };
 		8444956224489F5E00D903D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8444956124489F5E00D903D1 /* Assets.xcassets */; };
 		8444956524489F5E00D903D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8444956424489F5E00D903D1 /* Preview Assets.xcassets */; };
 		844495722448A02700D903D1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844495702448A02700D903D1 /* CalculatorViewController.swift */; };
 		844495732448A02700D903D1 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844495712448A02700D903D1 /* CalculatorViewController.xib */; };
-		84449576244959CD00D903D1 /* tinhToan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84449575244959CD00D903D1 /* tinhToan.swift */; };
+		84449576244959CD00D903D1 /* TinhToan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84449575244959CD00D903D1 /* TinhToan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8438E90E24503BDA00BC2409 /* ToanHang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToanHang.swift; sourceTree = "<group>"; };
 		8444955824489F5B00D903D1 /* baiTapMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baiTapMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8444955B24489F5B00D903D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8444955D24489F5B00D903D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +27,7 @@
 		8444956924489F5E00D903D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844495702448A02700D903D1 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		844495712448A02700D903D1 /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
-		84449575244959CD00D903D1 /* tinhToan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinhToan.swift; sourceTree = "<group>"; };
+		84449575244959CD00D903D1 /* TinhToan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinhToan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 		8444955A24489F5B00D903D1 /* baiTapMVC */ = {
 			isa = PBXGroup;
 			children = (
-				844495742449547A00D903D1 /* tinhtoan */,
+				844495742449547A00D903D1 /* Models */,
 				8444956F24489FB800D903D1 /* baiTap1 */,
 				8444955B24489F5B00D903D1 /* AppDelegate.swift */,
 				8444955D24489F5B00D903D1 /* SceneDelegate.swift */,
@@ -86,12 +88,13 @@
 			path = baiTap1;
 			sourceTree = "<group>";
 		};
-		844495742449547A00D903D1 /* tinhtoan */ = {
+		844495742449547A00D903D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				84449575244959CD00D903D1 /* tinhToan.swift */,
+				84449575244959CD00D903D1 /* TinhToan.swift */,
+				8438E90E24503BDA00BC2409 /* ToanHang.swift */,
 			);
-			path = tinhtoan;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8438E90F24503BDA00BC2409 /* ToanHang.swift in Sources */,
 				8444955C24489F5B00D903D1 /* AppDelegate.swift in Sources */,
 				844495722448A02700D903D1 /* CalculatorViewController.swift in Sources */,
-				84449576244959CD00D903D1 /* tinhToan.swift in Sources */,
+				84449576244959CD00D903D1 /* TinhToan.swift in Sources */,
 				8444955E24489F5B00D903D1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

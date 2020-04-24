@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalculatorViewController" customModule="baiTapMVC" customModuleProvider="target">
             <connections>
-                <outlet property="showResult" destination="VIs-QZ-ljK" id="vue-tG-rv0"/>
+                <outlet property="hienKetQua" destination="VIs-QZ-ljK" id="Pnn-XC-ZRv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +24,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="CXj-ao-lRb" userLabel="Stack View 1">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="91.5"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou4-Iy-iij">
+                                <button tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ou4-Iy-iij">
                                     <rect key="frame" x="0.0" y="0.0" width="84" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -35,7 +35,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="YJj-LC-ZOu"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-Vr-SJr">
+                                <button tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-Vr-SJr">
                                     <rect key="frame" x="97" y="0.0" width="83.5" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -46,7 +46,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="rPS-OI-LxT"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boZ-KO-el5">
+                                <button tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boZ-KO-el5">
                                     <rect key="frame" x="193.5" y="0.0" width="84" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -73,7 +73,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="gK9-PD-dlQ" userLabel="Stack View 2">
                             <rect key="frame" x="0.0" y="112.5" width="374" height="91.5"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2o0-ZJ-I3d">
+                                <button tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2o0-ZJ-I3d">
                                     <rect key="frame" x="0.0" y="0.0" width="84" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -84,7 +84,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="MTq-Q3-7lI"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-Wz-22e" userLabel="5">
+                                <button tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzT-Wz-22e" userLabel="5">
                                     <rect key="frame" x="97" y="0.0" width="83.5" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -95,7 +95,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="ApJ-Aj-R4D"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-tI-8gb">
+                                <button tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-tI-8gb">
                                     <rect key="frame" x="193.5" y="0.0" width="84" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -106,7 +106,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="Dyo-6z-hBM"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-dE-Dsf">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilZ-dE-Dsf">
                                     <rect key="frame" x="290.5" y="0.0" width="83.5" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -122,7 +122,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="WG1-pz-TI6" userLabel="Stack View 3">
                             <rect key="frame" x="0.0" y="225" width="374" height="91.5"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d52-am-zTg">
+                                <button tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d52-am-zTg">
                                     <rect key="frame" x="0.0" y="0.0" width="84" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -133,7 +133,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="NaS-Pe-nwc"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQN-uK-tRW">
+                                <button tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQN-uK-tRW">
                                     <rect key="frame" x="97" y="0.0" width="83.5" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -144,7 +144,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="dQ4-Cu-8gF"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-s3-4wV">
+                                <button tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-s3-4wV">
                                     <rect key="frame" x="193.5" y="0.0" width="84" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -155,7 +155,7 @@
                                         <action selector="chooseNumberTouchUpInsine:" destination="-1" eventType="touchUpInside" id="sfI-Bm-Syd"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upv-C7-Jqb">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upv-C7-Jqb">
                                     <rect key="frame" x="290.5" y="0.0" width="83.5" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -182,7 +182,7 @@
                                         <action selector="clearButtonTouchUpInsine:" destination="-1" eventType="touchUpInside" id="0oa-3a-myv"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8F-nM-O8L">
+                                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8F-nM-O8L">
                                     <rect key="frame" x="97" y="0.0" width="83.5" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -204,7 +204,7 @@
                                         <action selector="resultButtonTouchUpInsine:" destination="-1" eventType="touchUpInside" id="lNJ-Se-CBU"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XL-Zs-XiT">
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XL-Zs-XiT">
                                     <rect key="frame" x="290.5" y="0.0" width="83.5" height="91.5"/>
                                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
@@ -219,28 +219,32 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIs-QZ-ljK">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIs-QZ-ljK">
                     <rect key="frame" x="0.0" y="44" width="414" height="379"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="414" id="ETm-xy-5Gl"/>
                         <constraint firstAttribute="height" constant="379" id="V5M-7v-QMN"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="60"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="A2q-Xy-6ha" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.52445" id="2AU-FR-SNe"/>
                 <constraint firstItem="VIs-QZ-ljK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4M9-Ln-IcO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A2q-Xy-6ha" secondAttribute="trailing" constant="20" id="6V1-de-YMy"/>
                 <constraint firstItem="VIs-QZ-ljK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8c4-2Z-ceQ"/>
                 <constraint firstItem="A2q-Xy-6ha" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jcy-mN-W8h"/>
+                <constraint firstItem="A2q-Xy-6ha" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.903382" id="Plw-nJ-GA9"/>
                 <constraint firstItem="A2q-Xy-6ha" firstAttribute="top" secondItem="VIs-QZ-ljK" secondAttribute="bottom" constant="10" id="QOU-Dl-Wqn"/>
+                <constraint firstItem="VIs-QZ-ljK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="SRW-qY-4NA"/>
                 <constraint firstItem="A2q-Xy-6ha" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="XJY-W7-QrM"/>
                 <constraint firstItem="A2q-Xy-6ha" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="efb-AC-rvu"/>
                 <constraint firstItem="VIs-QZ-ljK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nMS-yR-zjH"/>
+                <constraint firstItem="VIs-QZ-ljK" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.463325" id="sYN-lK-9YZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
