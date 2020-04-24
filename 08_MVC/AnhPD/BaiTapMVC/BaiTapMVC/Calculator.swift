@@ -9,20 +9,31 @@
 import Foundation
 
 class Calculator {
+    static let share = Calculator()
+    var test: String = ""
+    var operands: [String] = []
+    var result: Float = 0
     
-    func add(a: Float, b: Float) -> Float {
-        return a + b
+    func add(value: Float) -> Float {
+        return result + value
     }
     
-    func sub(a: Float, b: Float) -> Float {
-        return a - b
-    }
-    
-    func mul(a: Double, b: Double) -> Double {
-        return a * b
-    }
-    
-    func  div(a: Double, b: Double) -> Double {
-        return a / b
+    func calculation(value: Float) -> Float {
+        switch test {
+        case "+":
+            return result + value
+        case "-":
+            return result - value
+        case "x":
+            return result * value
+        case "/":
+            if value == 0 {
+                return 0
+            } else {
+                return result / value
+            }
+        default:
+            return 0
+        }
     }
 }
