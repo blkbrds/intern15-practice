@@ -98,6 +98,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
         cell.viewModel = viewModel.viewModelForCell(at: indexPath)
+        cell.detegale = self
         if let item = viewModel.dataAPIs[indexPath.row].url {
             Networking.shared().downloadImage(url: item) { (image) in
                 if let image = image {
@@ -111,3 +112,28 @@ extension HomeViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - HomeTableViewCellDelegate
+extension HomeViewController: HomeTableViewCellDelegate {
+    func tapFavorite(_ homeTableViewCell: HomeTableViewCell) {
+        if homeTableViewCell.viewModel.dataAPI.favorite {
+            homeTableViewCell.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            homeTableViewCell.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+    }
+    
+    func addFavoriteToRealm(with object: RealmDatas) {
+        RealmManager.shared.addObject(with: object) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .sucessful:
+                self.tableView.reloadData()
+            case .failture(let error):
+                print("error", error.localizedDescription)
+            }
+        }
+        
+    }
+}
+

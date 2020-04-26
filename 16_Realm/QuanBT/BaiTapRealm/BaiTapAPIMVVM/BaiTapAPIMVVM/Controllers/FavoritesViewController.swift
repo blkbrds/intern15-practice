@@ -8,29 +8,41 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController {
-
+final class FavoritesViewController: UIViewController {
+    // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: - Properties
     private var viewModel = FavoritesViewModel()
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-         setupView()
+        setupView()
     }
-
+    
     // MARK: - Function
-       private func setupView() {
-           title = "Favorites"
-           let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
-           tableView.register(nib, forCellReuseIdentifier: "cell")
-           tableView.dataSource = self
-           tableView.rowHeight = 100
+    private func setupView() {
+        title = "Favorites"
+        let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        tableView.rowHeight = 100
+        viewModel.getData()
         let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteButtonTouchUpInside))
-           navigationItem.rightBarButtonItem = deleteButton
-       }
+        navigationItem.rightBarButtonItem = deleteButton
+    }
     
     @objc private func deleteButtonTouchUpInside() {
+        RealmManager.shared.deleteAllObject(with: viewModel.getFavorites()) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .failture(let error):
+                print("error", error.localizedDescription)
+            case .sucessful:
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }
@@ -52,7 +64,6 @@ extension FavoritesViewController: UITableViewDataSource {
                     cell.configImage(image: nil)
                 }
             }
-            
         }
         return cell
     }

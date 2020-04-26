@@ -11,11 +11,10 @@ import RealmSwift
 
 final class RealmDatas: Object {
     // MARK: - Properties
-    @objc dynamic var id = 1
-//    var dataPages = List<RealmDataAPI>()
-    
-    // MARK: - PrimaryKey
-    override class func primaryKey() -> String? {
-        return "id"
-    }
+    @objc dynamic var idVideo: String = ""
+    @objc dynamic var titleVideo: String = ""
+    @objc dynamic var channelTitle: String = ""
+    @objc dynamic var publishedAt: String = ""
+    @objc dynamic var url: String = ""
+    @objc dynamic var favorite: Bool = true
 }

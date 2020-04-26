@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol HomeTableViewCellDelegate: class {
+    func tapFavorite(_ homeTableViewCell: HomeTableViewCell)
+    
+    func addFavoriteToRealm(with object: RealmDatas)
+}
+
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - IBOutlet
     @IBOutlet weak var cellImageView: UIImageView!
@@ -17,6 +23,7 @@ final class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     // MARK: - Properties
+    weak var detegale: HomeTableViewCellDelegate?
     var viewModel = HomeTableViewModel() {
         didSet {
             updateView()
@@ -47,5 +54,22 @@ final class HomeTableViewCell: UITableViewCell {
     
     func configImage(image: UIImage?) {
         cellImageView.image = image
+    }
+    
+    @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
+        let dataAPI = viewModel.dataAPI
+        if dataAPI.favorite {
+            dataAPI.favorite = false
+        } else {
+            dataAPI.favorite = true
+            let realmDatas = RealmDatas()
+            realmDatas.idVideo = dataAPI.idVideo
+            realmDatas.titleVideo = dataAPI.titleVideo
+            realmDatas.channelTitle = dataAPI.channelTitle
+            realmDatas.publishedAt = dataAPI.publishedAt
+            realmDatas.url = dataAPI.url ?? ""
+            detegale?.addFavoriteToRealm(with: realmDatas)
+        }
+        detegale?.tapFavorite(self)
     }
 }

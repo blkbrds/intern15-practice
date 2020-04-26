@@ -28,8 +28,10 @@ final class HomeViewModel {
                     let json = data.toJSON()
                     let items = json["items"] as? [JSON] ?? [JSON]()
                     for item in items {
-                        let snippet = item["snippet"] as! JSON
                         let dataAPI = DataAPI()
+                        let id = item["id"] as! JSON
+                        dataAPI.idVideo = id["videoId"] as! String
+                        let snippet = item["snippet"] as! JSON
                         dataAPI.titleVideo = snippet["title"] as! String
                         dataAPI.channelTitle = snippet["channelTitle"] as! String
                         dataAPI.publishedAt = snippet["publishedAt"] as! String

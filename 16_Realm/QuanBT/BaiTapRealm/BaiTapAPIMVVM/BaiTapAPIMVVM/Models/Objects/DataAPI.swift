@@ -11,6 +11,7 @@ import UIKit
 
 final class DataAPI {
     // MARK: - Properties
+    var idVideo: String
     var titleVideo: String
     var channelTitle: String
     var publishedAt: String
@@ -19,7 +20,8 @@ final class DataAPI {
     var favorite: Bool
     
     // MARK: - Init
-    init(titleVideo: String = "", channelTitle: String = "", publishedAt: String = "", favorite: Bool = false) {
+    init(idVideo: String = "", titleVideo: String = "", channelTitle: String = "", publishedAt: String = "", favorite: Bool = false) {
+        self.idVideo = idVideo
         self.titleVideo = titleVideo
         self.channelTitle = channelTitle
         self.publishedAt = publishedAt
