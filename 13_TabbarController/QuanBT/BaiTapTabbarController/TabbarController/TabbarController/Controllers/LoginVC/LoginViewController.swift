@@ -68,12 +68,12 @@ final class LoginViewController: BaseViewController {
     }
     
     // MARK: - IBAction
-    @IBAction func forgotPasswordButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func forgotPasswordButtonTouchUpInside(_ sender: Any) {
         let forgotpassVC = ForgotPasswordViewController()
         self.navigationController?.pushViewController(forgotpassVC, animated: true)
     }
     
-    @IBAction func registrationButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func registrationButtonTouchUpInside(_ sender: Any) {
         let registerVC = RegisterViewController()
         self.navigationController?.pushViewController(registerVC, animated: true)
     }

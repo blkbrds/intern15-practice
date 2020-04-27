@@ -22,7 +22,7 @@ final class RegisterViewController: BaseViewController {
     }
     
     // MARK: - IBAction
-    @IBAction func registerButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func registerButtonTouchUpInside(_ sender: Any) {
         switch (usernameTextField.text, passwordTextField.text) {
         case ("", ""):
             reportLabel.text = "Bạn chưa nhập username và password"
