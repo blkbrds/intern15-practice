@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BaiTapAPIMVVM" customModuleProvider="target">
             <connections>
-                <outlet property="segmentedControl" destination="o4b-RF-Q6S" id="BmJ-eA-YEz"/>
                 <outlet property="tableView" destination="e6O-mW-VFc" id="mJ2-bC-ZyT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,28 +22,33 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="717"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="o4b-RF-Q6S">
-                    <rect key="frame" x="137.5" y="835.5" width="139" height="32"/>
-                    <segments>
-                        <segment title="1"/>
-                        <segment title="2"/>
-                        <segment title="3"/>
-                        <segment title="4"/>
-                        <segment title="5"/>
-                    </segments>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpo-uA-PYf">
+                    <rect key="frame" x="88" y="833" width="72" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="PrePage"/>
                     <connections>
-                        <action selector="selectPageValueChanged:" destination="-1" eventType="valueChanged" id="5pT-TW-AkI"/>
+                        <action selector="prePageButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="6o2-UY-YDW"/>
                     </connections>
-                </segmentedControl>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jam-up-Knl">
+                    <rect key="frame" x="247.5" y="833" width="85" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="NextPage"/>
+                    <connections>
+                        <action selector="nextPageButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="hAC-ux-ieo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="e6O-mW-VFc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.8" id="4jc-VD-NWr"/>
                 <constraint firstItem="e6O-mW-VFc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="C9l-63-c9e"/>
                 <constraint firstItem="e6O-mW-VFc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MMa-V2-pbb"/>
-                <constraint firstItem="o4b-RF-Q6S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aXF-EB-qKx"/>
+                <constraint firstItem="rpo-uA-PYf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.9" id="UYl-pP-XQT"/>
+                <constraint firstItem="jam-up-Knl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="1.4" id="bRy-ZT-aMQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e6O-mW-VFc" secondAttribute="trailing" id="cmm-eb-5KI"/>
-                <constraint firstItem="o4b-RF-Q6S" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.9" id="dLE-p9-vSc"/>
+                <constraint firstItem="jam-up-Knl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.9" id="k9L-G4-H1O"/>
+                <constraint firstItem="rpo-uA-PYf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" multiplier="0.6" id="mji-9n-OYT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="133"/>

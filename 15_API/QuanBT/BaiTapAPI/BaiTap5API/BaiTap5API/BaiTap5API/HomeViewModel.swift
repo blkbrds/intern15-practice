@@ -14,7 +14,8 @@ typealias Completion = (Bool, String) -> Void
 final class HomeViewModel {
     // MARK: - Properties
     var dataAPIs: [DataAPI] = []
-    var pageToken: [String] = ["", ""]
+    var prevPageToken: String = ""
+    var nextPageToken: String = ""
     
     // MARK: - Function
     func loadAPI(pageToken: String = "", completion: @escaping Completion) {
@@ -36,8 +37,8 @@ final class HomeViewModel {
                         let json = data.toJSON()
                         let prevPageToken = json["prevPageToken"] as? String
                         let nextPageToken = json["nextPageToken"] as! String
-                        self.pageToken[0] = prevPageToken ?? ""
-                        self.pageToken[1] = nextPageToken
+                        self.prevPageToken = prevPageToken ?? ""
+                        self.nextPageToken = nextPageToken
                         let items = json["items"] as! [JSON]
                         for item in items {
                             let snippet = item["snippet"] as! JSON

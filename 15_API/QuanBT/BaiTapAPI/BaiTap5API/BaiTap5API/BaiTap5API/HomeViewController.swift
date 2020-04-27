@@ -61,7 +61,7 @@ final class HomeViewController: UIViewController {
         UIView.animate(withDuration: 3, animations: {
             self.tableView.alpha = 1
         })
-        viewModel.loadAPI(pageToken: viewModel.pageToken[1]) {  (done, msg) in
+        viewModel.loadAPI(pageToken: viewModel.nextPageToken) {  (done, msg) in
             if done {
                 self.tableView.reloadData()
             } else {
@@ -77,7 +77,7 @@ final class HomeViewController: UIViewController {
         UIView.animate(withDuration: 3, animations: {
             self.tableView.alpha = 1
         })
-        viewModel.loadAPI(pageToken: viewModel.pageToken[0]) {  (done, msg) in
+        viewModel.loadAPI(pageToken: viewModel.prevPageToken) {  (done, msg) in
             if done {
                 self.tableView.reloadData()
             } else {

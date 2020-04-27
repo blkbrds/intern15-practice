@@ -11,7 +11,6 @@ import UIKit
 final class HomeViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
     // MARK: - Properties
     private var viewModel = HomeViewModel()
@@ -39,7 +38,6 @@ final class HomeViewController: UIViewController {
         UIView.animate(withDuration: 3, animations: {
             self.tableView.alpha = 1
         })
-        segmentedControl.selectedSegmentIndex = 0
         loadAPI()
     }
     
@@ -55,13 +53,13 @@ final class HomeViewController: UIViewController {
         tableView.contentOffset = CGPoint(x: 0, y: 0)
     }
     
-    private func loadMoreAPI(index: Int) {
-        print("Load API page \(index + 1)")
+    private func loadMoreAPI(page: String) {
+        print("Load API page ")
         tableView.alpha = 0
         UIView.animate(withDuration: 3, animations: {
             self.tableView.alpha = 1
         })
-        viewModel.loadAPI(pageToken: viewModel.pageToken[index]) {  (done, msg) in
+        viewModel.loadAPI(pageToken: page) {  (done, msg) in
             if done {
                 self.tableView.reloadData()
             } else {
@@ -72,19 +70,12 @@ final class HomeViewController: UIViewController {
     }
     
     // MARK: - IBAction
-    @IBAction private func selectPageValueChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            loadMoreAPI(index: sender.selectedSegmentIndex)
-        case 1:
-            loadMoreAPI(index: sender.selectedSegmentIndex)
-        case 2:
-            loadMoreAPI(index: sender.selectedSegmentIndex)
-        case 3:
-            loadMoreAPI(index: sender.selectedSegmentIndex)
-        default:
-            loadMoreAPI(index: sender.selectedSegmentIndex)
-        }
+
+    @IBAction func prePageButtonTouchUpInside(_ sender: Any) {
+        loadMoreAPI(page: viewModel.prevPageToken)
+    }
+    @IBAction func nextPageButtonTouchUpInside(_ sender: Any) {
+        loadMoreAPI(page: viewModel.nextPageToken)
     }
 }
 
