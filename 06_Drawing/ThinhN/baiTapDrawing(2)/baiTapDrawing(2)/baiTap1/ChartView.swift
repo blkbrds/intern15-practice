@@ -10,9 +10,9 @@ import UIKit
 class ChartView: UIView {
     var xStart = 60
     var yStart = 325
-    let verticalValue:[String] = ["300","250","200","150","100","50","0"]
+    let verticalValue: [String] = ["300","250","200","150","100","50","0"]
     let horizontalValue: [String] = ["Thảo", "Nam", "An", "Lan", "Đức", "Long", "Mai","Huy","Sơn"]
-    func draw(){
+    func draw() {
         var point: Int = 350
         let line: Int = 6
         for _ in 0...line {
@@ -55,6 +55,7 @@ class ChartView: UIView {
     chart8View.backgroundColor = .systemBlue
     self.addSubview(chart8View)
     }
+    
     func labelView(){
     for i in 0...8{
     let yColurmLabel: UILabel = UILabel(frame: CGRect(x: xStart, y: 650, width: 40, height: 50))
