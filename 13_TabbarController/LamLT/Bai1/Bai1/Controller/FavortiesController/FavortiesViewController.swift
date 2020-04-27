@@ -1,9 +1,8 @@
 import UIKit
 
-class FavortiesViewController: UIViewController {
+final class FavortiesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
 }

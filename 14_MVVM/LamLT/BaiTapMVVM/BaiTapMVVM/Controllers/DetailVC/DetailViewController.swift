@@ -1,11 +1,11 @@
 import UIKit
 import MapKit
 
-class DetailViewController: BaseViewController {
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var detailMapView: MKMapView!
-    @IBOutlet weak var tableView: UITableView!
+final class DetailViewController: BaseViewController {
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var detailLabel: UILabel!
+    @IBOutlet private weak var detailMapView: MKMapView!
+    @IBOutlet private weak var tableView: UITableView!
     
     var tilleDetail = ""
     var favorite = false

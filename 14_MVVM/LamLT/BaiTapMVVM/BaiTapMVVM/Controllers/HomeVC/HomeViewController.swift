@@ -75,22 +75,6 @@ class HomeViewController: BaseViewController {
     }
 }
 
-//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return viewModel.numberOfSections()
-//    }
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.numberOfRowInSection()
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
-//        cell.viewModel = viewModel.viewModelForCell(at: indexPath)
-//        return cell
-//    }
-//}
-
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         viewModel.numberOfSections()
