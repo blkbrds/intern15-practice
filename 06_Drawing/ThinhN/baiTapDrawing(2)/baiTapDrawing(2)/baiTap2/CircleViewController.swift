@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircleViewController: UIViewController {
+final class CircleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

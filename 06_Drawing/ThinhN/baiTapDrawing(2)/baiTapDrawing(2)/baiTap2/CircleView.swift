@@ -15,13 +15,13 @@ class CircleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func draw(_ frame: CGRect){
+    override func draw(_ frame: CGRect) {
         for i in 0..<values.count{
             endAngle = endAngle + (CGFloat(values[i]) / sumValue() * 360) * CGFloat.pi / 180
             drawChart(withCenter: CGPoint(x: self.frame.width/2, y: self.frame.height/2), radius: self.frame.size.height/2, startAngle: startAngle, endAngle: endAngle, colorwise: true, color: UIColor(red: CGFloat.random(in: 0...255)/255, green: CGFloat.random(in: 0...255)/255, blue: CGFloat.random(in: 0...255)/255, alpha: 1))
@@ -29,15 +29,15 @@ class CircleView: UIView {
         }
     }
     
-    func sumValue() -> CGFloat{
+    func sumValue() -> CGFloat {
         var sum: CGFloat = 0
         for i in values {
             sum += i
         }
         return sum
-        
     }
-    func drawChart(withCenter: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, colorwise: Bool, color: UIColor){
+    
+    func drawChart(withCenter: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, colorwise: Bool, color: UIColor) {
         let path = UIBezierPath()
         path.move(to: withCenter)
         path.addArc(withCenter: withCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: colorwise)
