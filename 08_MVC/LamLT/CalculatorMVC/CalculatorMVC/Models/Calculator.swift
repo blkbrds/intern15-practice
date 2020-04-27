@@ -1,7 +1,7 @@
 
 import UIKit
 
-class Calculator: UIView {
+final class Calculator: UIView {
     func sum(a: Double, b: Double) -> String {
         return String(a + b)
     }

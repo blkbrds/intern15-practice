@@ -20,11 +20,11 @@ final class CalculatorViewController: UIViewController {
         }
         if checkMath == true {
             resultLable.text = String(sender.tag)
-            numberSceen = Double(resultLable1.text ?? "0")!
+            numberSceen = Double(resultLable1.text)
             checkMath = false
         } else {
-            resultLable.text = (resultLable1.text ?? "0") + String(sender.tag)
-            numberSceen = Double(resultLable1.text ?? "0")!
+            resultLable.text = (resultLable1.text) + String(sender.tag)
+            numberSceen = Double(resultLable1.text)
         }
     }
 
@@ -33,7 +33,7 @@ final class CalculatorViewController: UIViewController {
             return
         }
         if resultLable.text != "" && sender.tag != 16 {
-            previousNumber = Double(resultLabel1.text)!
+            previousNumber = Double(resultLabel.text)
             switch sender.tag {
             case 10:
                 resultLable.text = "+"
