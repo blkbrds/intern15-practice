@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DViewController" customModule="BaiTap1" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eE-gA-fN5">
+                    <rect key="frame" x="182" y="302" width="50" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="8wJ-UL-4ni"/>
+                        <constraint firstAttribute="width" constant="50" id="ii1-XN-ulT"/>
+                    </constraints>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="nextButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="LCb-dC-9v4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnB-ev-2CD">
+                    <rect key="frame" x="182" y="370" width="50" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="4st-y7-070"/>
+                        <constraint firstAttribute="height" constant="30" id="Kzf-xv-6KJ"/>
+                    </constraints>
+                    <state key="normal" title="C">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="cButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="F8Z-0i-V89"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCm-Fy-YN7">
+                    <rect key="frame" x="182" y="438" width="50" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="c9a-L9-N2L"/>
+                        <constraint firstAttribute="width" constant="50" id="xvm-5X-0PL"/>
+                    </constraints>
+                    <state key="normal" title="B">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="bButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="msp-0S-0eT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwY-e5-AN4">
+                    <rect key="frame" x="182" y="506" width="50" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="fgP-XO-cA8"/>
+                        <constraint firstAttribute="height" constant="30" id="oeh-ay-RSn"/>
+                    </constraints>
+                    <state key="normal" title="Root">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="rootButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="NT4-jt-ZYz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6eE-gA-fN5" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="6NZ-lV-Bvw"/>
+                <constraint firstItem="UCm-Fy-YN7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Ez2-8M-t5X"/>
+                <constraint firstItem="6eE-gA-fN5" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.7" id="IQw-v0-bfy"/>
+                <constraint firstItem="YwY-e5-AN4" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="1.15" id="J3l-BW-eLG"/>
+                <constraint firstItem="RnB-ev-2CD" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.85" id="RO3-SR-xQl"/>
+                <constraint firstItem="UCm-Fy-YN7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="buc-nL-DU2"/>
+                <constraint firstItem="YwY-e5-AN4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nQN-x3-Bch"/>
+                <constraint firstItem="RnB-ev-2CD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ypb-v0-VPq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="154"/>
+        </view>
+    </objects>
+</document>
