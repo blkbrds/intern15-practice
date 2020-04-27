@@ -129,8 +129,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
-        detailVC.viewModel.titleDetail = viewModel.datas[indexPath.row].name
-        detailVC.viewModel.favorite = viewModel.datas[indexPath.row].favorite
+        let data = viewModel.datas[indexPath.row]
+        let vm = DetailViewModel(titleDetail: data.name, favorite: data.favorite)
+        detailVC.viewModel = vm
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
@@ -149,8 +150,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
-        detailVC.viewModel.titleDetail = viewModel.datas[indexPath.row].name
-        detailVC.viewModel.favorite = viewModel.datas[indexPath.row].favorite
+        let data = viewModel.datas[indexPath.row]
+        let vm = DetailViewModel(titleDetail: data.name, favorite: data.favorite)
+        detailVC.viewModel = vm
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

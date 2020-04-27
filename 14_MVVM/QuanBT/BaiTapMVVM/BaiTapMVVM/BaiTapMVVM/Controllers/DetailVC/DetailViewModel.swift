@@ -16,6 +16,11 @@ final class DetailViewModel {
     var favorite = false
     
     // MARK: - Function
+    init(titleDetail: String = "", favorite: Bool = false) {
+        self.titleDetail = titleDetail
+        self.favorite = favorite
+    }
+    
     func numberOfSections() -> Int {
         return 2
     }
