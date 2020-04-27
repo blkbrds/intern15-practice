@@ -53,7 +53,7 @@ class AvatarViewController: UIViewController {
         avatarView.addSubview(button)
         return avatarView
     }
-    @objc private func buttonDidClick(_ sender:UITapGestureRecognizer){
+    @objc private func buttonDidClick(_ sender:UITapGestureRecognizer) {
         if let view = sender.view {
             let index = view.tag
             print("User name is: Name \(index + 1)")

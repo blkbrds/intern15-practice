@@ -22,7 +22,7 @@ class ColorBackgroundViewController: UIViewController {
         super.viewDidLoad()
         setupView()
     }
-    private func setupView (){
+    private func setupView() {
         colorViewLabel.layer.borderColor = UIColor.systemBlue.cgColor
         colorViewLabel.layer.borderWidth = 1
         colorViewLabel.clipsToBounds = true

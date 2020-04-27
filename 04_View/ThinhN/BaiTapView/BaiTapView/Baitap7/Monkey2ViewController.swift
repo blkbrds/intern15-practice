@@ -16,13 +16,15 @@ class Monkey2ViewController: UIViewController {
         super.viewDidLoad()
         setupView()
     }
-    private func setupView(){
+    
+    private func setupView() {
         labelView.layer.cornerRadius = 1
         labelView.clipsToBounds = true
         labelView.textColor = .white
         labelView.alpha = 0
         labelView.layer.cornerRadius = 20
     }
+    
     @IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         if sender.view != nil {
             UIView.animate(withDuration: 1, animations: {
@@ -34,6 +36,7 @@ class Monkey2ViewController: UIViewController {
             })
         }
     }
+    
     @IBAction func doubleTapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         if sender.view != nil {
             UIView.animate(withDuration: 2, animations: {

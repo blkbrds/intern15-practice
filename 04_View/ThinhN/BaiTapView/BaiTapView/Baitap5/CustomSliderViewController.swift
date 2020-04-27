@@ -23,11 +23,11 @@ class CustomSliderViewController: UIViewController {
         view.frame = CGRect(x: 0, y: 0, width: sliderView.frame.width, height: sliderView.frame.midY)
         }
     }
-   private func setUpSliderView(view: UIView){
+   private func setUpSliderView(view: UIView) {
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.systemBlue.cgColor
     }
-    func setUpThumb(){
+    func setUpThumb() {
         thumbValueLabel.text = "50%"
         thumbValueLabel.layer.borderWidth = 1
         thumbValueLabel.layer.borderColor = UIColor.systemOrange.cgColor

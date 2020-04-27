@@ -15,7 +15,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var clearButton: UIButton!
     @IBOutlet private weak var loginButton: UIButton!
     
-    enum LoginError :String{
+    enum LoginError: String {
        case chuaNhapUsernameVaPassword = "Bạn chưa nhập dữ liệu"
        case chuaNhapUsername = "Bạn chưa nhập username"
        case chuaNhapPassword = "Bạn chưa nhập password"
@@ -43,26 +43,27 @@ final class LoginViewController: UIViewController {
         errorLabel.isHidden = true
         passwordTextField.isSecureTextEntry = true
     }
+    
     private func setupTextField(textField: UITextField) {
         textField.layer.borderColor = UIColor.black.cgColor
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 10
         textField.clipsToBounds = true
     }
+    
     private func setupButton(button: UIButton) {
         button.clipsToBounds = true
         button.layer.cornerRadius = 10
     }
-    private func checkLogin() -> LoginError{
+    
+    private func checkLogin() -> LoginError {
         let username = usernameTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         if username.isEmpty && password.isEmpty{
             return .chuaNhapUsernameVaPassword
-        }
-        else if  username.isEmpty{
+        } else if  username.isEmpty {
             return .chuaNhapUsername
-        }
-        else if password.isEmpty{
+        } else if password.isEmpty {
             return .chuaNhapPassword
         }
         return .nhapSaiUsernameVaPassword
