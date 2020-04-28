@@ -2,7 +2,7 @@ import UIKit
 
 final class CalculatorViewController: UIViewController {
 
-    @IBOutlet private weak var resultLable: UILabel!
+    @IBOutlet private weak var calculatorResultLable: UILabel!
     var numberSceen: Double = 0
     var previousNumber: Double = 0
     var checkMath: Bool = false
