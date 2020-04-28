@@ -38,7 +38,6 @@ final class PopupViewController: UIViewController {
 
     // MARK: - Action
     @IBAction func hideButtonTouchUpInside(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
     }
 
@@ -52,7 +51,6 @@ final class PopupViewController: UIViewController {
     // MARK: - Override Function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first, touch.view == view {
-            navigationController?.popViewController(animated: true)
             dismiss(animated: true, completion: nil)
         }
     }
