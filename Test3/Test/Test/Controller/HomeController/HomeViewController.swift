@@ -22,6 +22,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
+//MARK: - PopupViewDataSource
 extension HomeViewController: PopupViewDataSource {
     func getImage(imageNameFood popupView: PopupViewController) -> String {
         return Config.foodImage
@@ -32,6 +33,7 @@ extension HomeViewController: PopupViewDataSource {
     }
 }
 
+//MARK: - PopupViewDelegate
 extension HomeViewController: PopupViewDelegate {
     func updateView() {
         showPopupButton.isHidden = true

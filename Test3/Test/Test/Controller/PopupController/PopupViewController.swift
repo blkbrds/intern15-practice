@@ -13,7 +13,7 @@ protocol PopupViewDelegate: class {
 final class PopupViewController: UIViewController {
 
     //MARK: - Outlet
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var titleFoodLabel: UILabel!
     @IBOutlet weak private var imageFood: UIImageView!
     @IBOutlet weak private var sourceFoodTextView: UITextView!
@@ -50,7 +50,7 @@ final class PopupViewController: UIViewController {
             delegate.updateView()
         }
     }
-    
+
     //MARK: - Override Function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
