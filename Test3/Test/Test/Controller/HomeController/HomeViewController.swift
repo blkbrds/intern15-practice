@@ -2,18 +2,18 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    //MARK: - IBOutlet
+    // MARK: - IBOutlet
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var showPopupButton: UIButton!
     
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
         resultLabel.isHidden = true
     }
 
-    //MARK: - Action
+    // MARK: - Action
     @IBAction func showPopupTouchUpInside(_ sender: Any) {
         let popUpViewController = PopupViewController()
         popUpViewController.dataSource = self
@@ -22,7 +22,7 @@ final class HomeViewController: UIViewController {
     }
 }
 
-//MARK: - PopupViewDataSource
+// MARK: - PopupViewDataSource
 extension HomeViewController: PopupViewDataSource {
     func getImage(imageNameFood popupView: PopupViewController) -> String {
         return Config.foodImage
@@ -33,7 +33,7 @@ extension HomeViewController: PopupViewDataSource {
     }
 }
 
-//MARK: - PopupViewDelegate
+// MARK: - PopupViewDelegate
 extension HomeViewController: PopupViewDelegate {
     func updateView() {
         showPopupButton.isHidden = true
@@ -41,7 +41,7 @@ extension HomeViewController: PopupViewDelegate {
     }
 }
 
-//MARK: - Config
+// MARK: - Config
 extension HomeViewController {
     struct Config {
         static var foodTitle: String = "Cafe"
