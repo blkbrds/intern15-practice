@@ -57,19 +57,19 @@ final class LoginViewController: UIViewController {
     }
     
     private func checkLogin() -> LoginError {
-        let username = usernameTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        if username.isEmpty && password.isEmpty{
-            return .chuaNhapUsernameVaPassword
-        } else if  username.isEmpty {
-            return .chuaNhapUsername
-        } else if password.isEmpty {
-            return .chuaNhapPassword
+        if let username = usernameTextField.text, let password = passwordTextField.text {
+            if username.isEmpty && password.isEmpty {
+                return .chuaNhapUsernameVaPassword
+            } else if  username.isEmpty {
+                return .chuaNhapUsername
+            } else if password.isEmpty {
+                return .chuaNhapPassword
+            }
         }
         return .nhapSaiUsernameVaPassword
     }
     
-    private func login() {
+    func login() {
         if let username = usernameTextField.text, let password = passwordTextField.text {
             if (username, password) == (validUsername, validPassword) {
                 errorLabel.isHidden = true
