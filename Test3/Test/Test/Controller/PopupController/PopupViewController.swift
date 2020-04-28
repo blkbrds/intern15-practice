@@ -53,13 +53,9 @@ final class PopupViewController: UIViewController {
 
     //MARK: - Override Function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            if touch.view == contentView {
-                print("Can't")
-            } else {
-                navigationController?.popViewController(animated: true)
-                dismiss(animated: true, completion: nil)
-            }
+        if let touch = touches.first, touch.view == view {
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
         }
     }
 }

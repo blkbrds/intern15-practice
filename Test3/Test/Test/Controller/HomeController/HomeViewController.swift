@@ -2,7 +2,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
 
-    //MARK: - Outlet
+    //MARK: - IBOutlet
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var showPopupButton: UIButton!
     
