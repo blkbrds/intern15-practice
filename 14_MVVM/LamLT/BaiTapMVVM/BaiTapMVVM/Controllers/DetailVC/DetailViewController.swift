@@ -3,18 +3,18 @@ import MapKit
 
 final class DetailViewController: BaseViewController {
 
-    //MARK: - Outlet
+    // MARK: - Outlet
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var detailLabel: UILabel!
     @IBOutlet private weak var detailMapView: MKMapView!
     @IBOutlet private weak var tableView: UITableView!
 
-    //MARK: - Properties
+    // MARK: - Properties
     var isFavorite = false
     var detailsTitle: String = ""
     var viewModel = DetailViewModel()
 
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
@@ -22,7 +22,7 @@ final class DetailViewController: BaseViewController {
         viewModel.getDataDetail()
     }
 
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func configTableView() {
         let nib = UINib(nibName: Config.detailTableViewCell, bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: Config.detailTableViewCell)

@@ -1,6 +1,6 @@
 import Foundation
 
-//MARK: - Enum
+// MARK: - Enum
 enum Status {
     case tableView
     case collectionView
@@ -8,11 +8,11 @@ enum Status {
 
 final class HomeViewModel {
 
-    //MARK: - Properties
+    // MARK: - Properties
     var datas: [DataManager] = []
     let images: [String] = ["image1", "image2", "image3", "image4", "image5"]
 
-    //MARK: - Public Functions
+    // MARK: - Public Functions
     func numberOfSections() -> Int {
         return 2
     }

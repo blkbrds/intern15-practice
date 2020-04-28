@@ -7,7 +7,7 @@ final class HomeViewController: BaseViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
 
-    //MARK: - Properties
+    // MARK: - Properties
     var viewModel = HomeViewModel()
     var index = 0
     var status: Status = .tableView
@@ -20,7 +20,7 @@ final class HomeViewController: BaseViewController {
         setupScrollView()
     }
 
-    //MARK: - Private Functions
+    // MARK: - Private Functions
     private func configCollectionView() {
         let nib1 = UINib(nibName: Config.homeCollectionViewCell, bundle: .main)
         collectionView.register(nib1, forCellWithReuseIdentifier: Config.homeCollectionViewCell)
@@ -45,7 +45,7 @@ final class HomeViewController: BaseViewController {
         }
     }
 
-    //MARK: - Action
+    // MARK: - Action
     @objc private func tableViewButtonTouchUpInside() {
         status = .tableView
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "collectionview"), style: .plain, target: self, action: #selector(collectionViewButtonTouchUpInside))
@@ -79,7 +79,7 @@ final class HomeViewController: BaseViewController {
     }
 }
 
-//MARK: - UICollectionViewDataSource, UICollectionViewDelegate
+// MARK: - UICollectionViewDataSource, UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         viewModel.numberOfSections()
@@ -117,7 +117,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-//MARK: - UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.status == .collectionView {
@@ -127,7 +127,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//MARK: - Config
+// MARK: - Config
 extension HomeViewController {
     struct Config {
         static var homeCollectionViewCell: String = "HomeCollectionViewCell"
