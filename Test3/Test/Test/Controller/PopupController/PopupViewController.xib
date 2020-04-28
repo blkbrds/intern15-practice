@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupViewController" customModule="Test" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Pji-yd-gs7" id="JCn-hc-M5k"/>
+                <outlet property="imageFood" destination="cmK-vW-Xfj" id="7oY-oQ-zEc"/>
+                <outlet property="titleFoodLabel" destination="xqh-mY-Rvr" id="4UE-pD-kGK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pji-yd-gs7">
+                    <rect key="frame" x="57" y="154.66666666666663" width="300" height="427"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Hb-jJ-mce">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="128"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label123123123123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqh-mY-Rvr">
+                                    <rect key="frame" x="0.0" y="87.666666666666686" width="300" height="20.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STI-io-ACN">
+                                    <rect key="frame" x="260" y="0.0" width="40" height="40"/>
+                                    <state key="normal" image="xicon"/>
+                                    <connections>
+                                        <action selector="hideButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="0xj-NP-h2m"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="xqh-mY-Rvr" secondAttribute="trailing" id="BHH-Ga-eRd"/>
+                                <constraint firstItem="xqh-mY-Rvr" firstAttribute="leading" secondItem="7Hb-jJ-mce" secondAttribute="leading" id="BhR-ky-24E"/>
+                                <constraint firstAttribute="bottom" secondItem="xqh-mY-Rvr" secondAttribute="bottom" constant="20" id="bYe-No-Zyz"/>
+                                <constraint firstAttribute="trailing" secondItem="STI-io-ACN" secondAttribute="trailing" id="d1e-3z-9Jx"/>
+                                <constraint firstItem="STI-io-ACN" firstAttribute="top" secondItem="7Hb-jJ-mce" secondAttribute="top" id="uEf-GY-olz"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dme-21-9TB">
+                            <rect key="frame" x="0.0" y="128" width="300" height="299"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cmK-vW-Xfj">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="128"/>
+                                </imageView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IYd-iK-KHf">
+                                    <rect key="frame" x="0.0" y="128" width="300" height="128"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3h-Rs-aL7">
+                                    <rect key="frame" x="20" y="260.99999999999994" width="260" height="30"/>
+                                    <state key="normal" title="Update"/>
+                                    <connections>
+                                        <action selector="updateTextButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="lAu-ev-eAl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="IYd-iK-KHf" firstAttribute="height" secondItem="Dme-21-9TB" secondAttribute="height" multiplier="0.428094" id="4aR-Gb-1sk"/>
+                                <constraint firstItem="cmK-vW-Xfj" firstAttribute="leading" secondItem="Dme-21-9TB" secondAttribute="leading" id="LMK-SD-ez9"/>
+                                <constraint firstItem="V3h-Rs-aL7" firstAttribute="top" secondItem="IYd-iK-KHf" secondAttribute="bottom" constant="5" id="Mpm-Ap-GSQ"/>
+                                <constraint firstItem="cmK-vW-Xfj" firstAttribute="top" secondItem="Dme-21-9TB" secondAttribute="top" id="MuB-Qr-I4A"/>
+                                <constraint firstItem="IYd-iK-KHf" firstAttribute="top" secondItem="cmK-vW-Xfj" secondAttribute="bottom" id="TXg-yX-5oR"/>
+                                <constraint firstAttribute="trailing" secondItem="IYd-iK-KHf" secondAttribute="trailing" id="UuX-FY-T5f"/>
+                                <constraint firstItem="V3h-Rs-aL7" firstAttribute="leading" secondItem="Dme-21-9TB" secondAttribute="leading" constant="20" id="eHf-qy-M6t"/>
+                                <constraint firstAttribute="trailing" secondItem="cmK-vW-Xfj" secondAttribute="trailing" id="kB0-WH-SSq"/>
+                                <constraint firstItem="IYd-iK-KHf" firstAttribute="leading" secondItem="Dme-21-9TB" secondAttribute="leading" id="nA0-eq-gFq"/>
+                                <constraint firstItem="cmK-vW-Xfj" firstAttribute="height" secondItem="Dme-21-9TB" secondAttribute="height" multiplier="0.428094" id="ptW-SE-PgE"/>
+                                <constraint firstAttribute="trailing" secondItem="V3h-Rs-aL7" secondAttribute="trailing" constant="20" id="zVa-FM-ZvV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Dme-21-9TB" secondAttribute="trailing" id="4oR-kP-ZAh"/>
+                        <constraint firstAttribute="bottom" secondItem="Dme-21-9TB" secondAttribute="bottom" id="8Jp-T3-ywQ"/>
+                        <constraint firstItem="Dme-21-9TB" firstAttribute="top" secondItem="7Hb-jJ-mce" secondAttribute="bottom" id="AuS-QR-c5k"/>
+                        <constraint firstAttribute="trailing" secondItem="7Hb-jJ-mce" secondAttribute="trailing" id="QbU-pf-hWX"/>
+                        <constraint firstItem="Dme-21-9TB" firstAttribute="leading" secondItem="Pji-yd-gs7" secondAttribute="leading" id="Wds-PG-V2g"/>
+                        <constraint firstItem="7Hb-jJ-mce" firstAttribute="height" secondItem="Pji-yd-gs7" secondAttribute="height" multiplier="0.299766" id="cgX-L7-hNp"/>
+                        <constraint firstItem="7Hb-jJ-mce" firstAttribute="leading" secondItem="Pji-yd-gs7" secondAttribute="leading" id="gRt-Z8-kzC"/>
+                        <constraint firstItem="7Hb-jJ-mce" firstAttribute="top" secondItem="Pji-yd-gs7" secondAttribute="top" id="iJB-61-Ak0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Pji-yd-gs7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.580163" id="d5r-ey-pqE"/>
+                <constraint firstItem="Pji-yd-gs7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ft2-FI-tyH"/>
+                <constraint firstItem="Pji-yd-gs7" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.724638" id="gQa-wF-yxB"/>
+                <constraint firstItem="Pji-yd-gs7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="tUe-zL-Msg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="52" y="-211"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xicon" width="40" height="40"/>
+    </resources>
+</document>
