@@ -1,23 +1,23 @@
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var rateLabel: UILabel!
-    @IBOutlet weak var rangeLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIButton!
-    
+final class HomeCollectionViewCell: UICollectionViewCell {
+
+    // MARK: - Outlet
+    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var addressLabel: UILabel!
+    @IBOutlet weak private var rateLabel: UILabel!
+    @IBOutlet weak private var rangeLabel: UILabel!
+    @IBOutlet weak private var favoriteButton: UIButton!
+
+    // MARK: - Property
     var viewModel = HomeCellModel() {
         didSet {
             updateView()
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+
+    // MARK: - Private Function
     private func updateView() {
         let data = viewModel.data
         nameLabel.text = data.name
@@ -33,8 +33,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
             favoriteButton.isSelected = true
         }
     }
-    
-    @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
+
+    // MARK: - Action
+    @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         if favoriteButton.isSelected {
             favoriteButton.tintColor = .systemYellow
             favoriteButton.isSelected = false

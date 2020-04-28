@@ -1,7 +1,7 @@
 import Foundation
 
-class DetailCellModel {
-
+final class DetailCellModel {
+    
     var dataDetail: DataDetail = DataDetail()
     
     init(dataDetail: DataDetail = DataDetail()) {

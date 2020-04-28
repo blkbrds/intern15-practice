@@ -2,23 +2,22 @@ import UIKit
 
 final class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageCafeView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var rateLabel: UILabel!
-    @IBOutlet weak var rangeLabel: UILabel!
-    @IBOutlet weak var favoriteButton: UIButton!
+    // MARK: - Outlet
+    @IBOutlet weak private var imageCafeView: UIImageView!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var addressLabel: UILabel!
+    @IBOutlet weak private var rateLabel: UILabel!
+    @IBOutlet weak private var rangeLabel: UILabel!
+    @IBOutlet weak private var favoriteButton: UIButton!
 
+    // MARK: - Properties
     var viewModel = HomeCellModel() {
         didSet {
             updateView()
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
+    // MARK: - Private Funtion
     private func updateView() {
         let data = viewModel.data
         nameLabel.text = data.name
@@ -35,6 +34,7 @@ final class HomeTableViewCell: UITableViewCell {
         }
     }
 
+    // MARK: - Action
     @IBAction private func favoriteButtonTouchUpInside(_ sender: Any) {
         if favoriteButton.isSelected {
             favoriteButton.tintColor = .systemYellow

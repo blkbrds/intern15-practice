@@ -1,11 +1,14 @@
 import UIKit
 
-class BaseTabBarViewController: UITabBarController {
+final class BaseTabBarViewController: UITabBarController {
+
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 
+    // MARK: - Private Function
     private func setupUI() {
         let homeVC = HomeViewController()
         let homeNavi = UINavigationController(rootViewController: homeVC)
