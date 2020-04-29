@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol DatePickerViewDelegate: class {
-    func selectDate(selectDate: Date?)
+protocol DatePickerViewDelegate: DatePickerViewController {
+    func valueDate(pickerView: DatePickerView, select: Date?)
 }
 class DatePickerView: UIView {
 
@@ -29,6 +29,6 @@ class DatePickerView: UIView {
             self.isHidden = true
         }
         guard let delegate = delegate else {return}
-        delegate.selectDate(selectDate: datePicker.date)
+        delegate.valueDate(pickerView: datePicker.date, select: )
     }
 }

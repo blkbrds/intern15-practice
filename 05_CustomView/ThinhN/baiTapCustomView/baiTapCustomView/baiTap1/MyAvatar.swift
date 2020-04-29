@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MyAvatarViewDelegate: class {
+protocol MyAvatarViewDelegate: MyAvatarViewController {
     func nameAvatar(avatar: String)
 }
 

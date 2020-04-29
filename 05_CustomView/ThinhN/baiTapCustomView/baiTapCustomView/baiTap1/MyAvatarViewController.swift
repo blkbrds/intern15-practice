@@ -33,10 +33,10 @@ final class MyAvatarViewController: UIViewController {
             avatarView.delegate = self
             scrollView.addSubview(avatarView)
             if xUserView + widthUserView > widthScreen - xUserView {
-            xUserView = space
-            yUserView += heightUserView + space
+                xUserView = space
+                yUserView += heightUserView + space
             } else {
-            xUserView += widthUserView + space
+                xUserView += widthUserView + space
             }
         }
     }

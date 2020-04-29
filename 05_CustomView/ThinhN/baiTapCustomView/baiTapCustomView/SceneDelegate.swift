@@ -23,9 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         //let viewController = MyAvatarViewController()
-        //let viewController = MySliderViewController()
+        let viewController = MySliderViewController()
         //let viewController = BadgeNumberViewController()
-          let viewController = DatePickerViewController()
+        // let viewController = MyAvatarViewController()
         window?.rootViewController = viewController
     }
 
