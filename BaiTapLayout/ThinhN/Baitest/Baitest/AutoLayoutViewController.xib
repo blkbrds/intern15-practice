@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutoLayoutViewController" customModule="Baitest" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="MkC-mT-lQS">
+                    <rect key="frame" x="0.0" y="393" width="414" height="110"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nguyễn Văn A" textAlignment="natural" id="NaK-EA-8gd">
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="09 - 09 -2019" textAlignment="natural" id="grz-GB-sdA">
+                            <rect key="frame" x="207" y="0.0" width="207" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="41" id="KXR-1E-jPz">
+                    <rect key="frame" x="0.0" y="205" width="414" height="110"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monkey" translatesAutoresizingMaskIntoConstraints="NO" id="Bh6-Tp-pVd">
+                            <rect key="frame" x="0.0" y="0.0" width="186.5" height="110"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tiểu sử cá nhân Tiểu sử cá nhân Tiểu sử cá nhân Tiểu sử cá nhânTiểu sử cá nhânTiểu sử cá nhânTiểu sử cá nhân" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WGb-sa-WcY">
+                            <rect key="frame" x="227.5" y="0.0" width="186.5" height="110"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="WGb-sa-WcY" secondAttribute="bottom" id="Bu4-Qg-kck"/>
+                        <constraint firstItem="Bh6-Tp-pVd" firstAttribute="top" secondItem="KXR-1E-jPz" secondAttribute="top" id="Hhz-We-JiB"/>
+                        <constraint firstItem="Bh6-Tp-pVd" firstAttribute="leading" secondItem="KXR-1E-jPz" secondAttribute="leading" id="OYE-O1-UJx"/>
+                        <constraint firstAttribute="bottom" secondItem="Bh6-Tp-pVd" secondAttribute="bottom" id="UnX-gl-eGE"/>
+                        <constraint firstAttribute="trailing" secondItem="WGb-sa-WcY" secondAttribute="trailing" id="a7v-vr-BHy"/>
+                        <constraint firstItem="WGb-sa-WcY" firstAttribute="top" secondItem="KXR-1E-jPz" secondAttribute="top" id="yL9-zY-FPl"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BTB-rh-2Ca">
+                    <rect key="frame" x="0.0" y="44" width="414" height="151"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="DANH SÁCH BẠN BÈ " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-yv-lY3">
+                            <rect key="frame" x="20" y="20" width="374" height="121"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="NKS-yv-lY3" firstAttribute="top" secondItem="BTB-rh-2Ca" secondAttribute="top" constant="20" symbolic="YES" id="2I5-BF-Ph9"/>
+                        <constraint firstAttribute="bottom" secondItem="NKS-yv-lY3" secondAttribute="bottom" constant="10" id="3OQ-hl-Mxn"/>
+                        <constraint firstAttribute="trailing" secondItem="NKS-yv-lY3" secondAttribute="trailing" constant="20" symbolic="YES" id="5ZG-8n-nc5"/>
+                        <constraint firstItem="NKS-yv-lY3" firstAttribute="leading" secondItem="BTB-rh-2Ca" secondAttribute="leading" constant="20" symbolic="YES" id="UwD-yx-oML"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" id="Kmo-kQ-8wa">
+                    <rect key="frame" x="-9" y="540" width="446" height="110"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Nguyễn Văn B" textAlignment="natural" id="bWG-Ga-x59">
+                            <rect key="frame" x="0.0" y="0.0" width="207" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="09 - 09 -2019" textAlignment="natural" id="Vtb-9Y-hnf">
+                            <rect key="frame" x="239" y="0.0" width="207" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BTB-rh-2Ca" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.168527" id="Pkt-qx-N8A"/>
+                <constraint firstItem="BTB-rh-2Ca" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bTg-gr-yKx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="monkey" width="452" height="720"/>
+    </resources>
+</document>
