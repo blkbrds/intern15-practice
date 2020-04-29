@@ -11,7 +11,7 @@ import UIKit
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - IBOutlet
     @IBOutlet private weak var imageViewCell: UIImageView!
-    @IBOutlet private weak var tieuSuTextView: UITextView!
+    @IBOutlet weak var tieuSuLabel: UILabel!
     @IBOutlet private weak var nameLable: UILabel!
     @IBOutlet private weak var diaChiLable: UILabel!
     @IBOutlet private weak var ngayLable: UILabel!
@@ -26,7 +26,10 @@ final class HomeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imageViewCell.layer.cornerRadius = imageViewCell.bounds.width / 2
+        imageViewCell.clipsToBounds = true
+        tieuSuLabel.layer.cornerRadius = 10
+        tieuSuLabel.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,7 +43,7 @@ final class HomeTableViewCell: UITableViewCell {
         let data = viewModel.data
         nameLable.text = data.name
         imageViewCell.image = UIImage(named: data.image)
-        tieuSuTextView.text = data.tieusu
+        tieuSuLabel.text = data.tieusu
         diaChiLable.text = data.diachi
         ngayLable.text = data.ngay
         gioiTinhLabel.text = data.gioitinh

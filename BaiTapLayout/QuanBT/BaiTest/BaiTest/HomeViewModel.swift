@@ -29,7 +29,7 @@ final class HomeViewModel {
     
     func getData() {
         let data1 = DataTest(name: "Nguyễn Văn A", tieusu: "Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là", diachi: "Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng", gioitinh: "Nam", ngay: "09-09-2009", image: "img-avatar")
-        let data2 = DataTest(name: "Nguyễn Văn B", tieusu: "Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là", diachi: "Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng", gioitinh: "Nam", ngay: "09-09-2009", image: "img-avatar")
+        let data2 = DataTest(name: "Nguyễn Văn B", tieusu: "Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là", diachi: "Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng", gioitinh: "Nam", ngay: "09-09-2009", image: "img-avatar")
         let data3 = DataTest(name: "Nguyễn Văn C", tieusu: "Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là", diachi: "Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng", gioitinh: "Nam", ngay: "09-09-2009", image: "img-avatar")
         let data4 = DataTest(name: "Nguyễn Văn D", tieusu: "Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là", diachi: "Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng, Hải Châu, Đà Nẵng", gioitinh: "Nam", ngay: "09-09-2009", image: "img-avatar")
         let data5 = DataTest(name: "Nguyễn Văn E", tieusu: "Tiểu sử là Tiểu sử là Tiểu sử là Tiểu sử là", diachi: "Hải Châu, Đà Nẵng", gioitinh: "Nam", ngay: "09-09-2009", image: "img-avatar")

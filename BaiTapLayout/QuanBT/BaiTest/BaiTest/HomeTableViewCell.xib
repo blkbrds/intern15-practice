@@ -46,13 +46,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tiểu sử cá nhân" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mwn-Ud-yX0">
-                        <rect key="frame" x="115" y="20" width="279" height="75"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tiểu sử" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWN-va-vlR">
+                        <rect key="frame" x="115" y="20" width="279" height="20.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.90707403419999999" green="0.63113629819999995" blue="0.06370040029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
@@ -63,13 +63,13 @@
                     <constraint firstItem="4Ho-ON-sgP" firstAttribute="top" secondItem="S45-o4-MnY" secondAttribute="top" id="7lA-eT-AEa"/>
                     <constraint firstItem="8Om-wi-1vo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="8vn-hG-Z4U"/>
                     <constraint firstItem="ViD-1H-yJo" firstAttribute="trailing" secondItem="4Ho-ON-sgP" secondAttribute="trailing" id="9GI-tL-xBD"/>
-                    <constraint firstItem="mwn-Ud-yX0" firstAttribute="top" secondItem="8Om-wi-1vo" secondAttribute="top" id="D8f-Vv-ME1"/>
-                    <constraint firstItem="mwn-Ud-yX0" firstAttribute="height" secondItem="8Om-wi-1vo" secondAttribute="height" id="IQ0-qf-QIc"/>
+                    <constraint firstItem="qWN-va-vlR" firstAttribute="trailing" secondItem="4Ho-ON-sgP" secondAttribute="trailing" id="JLP-Yn-32k"/>
                     <constraint firstItem="5Bg-u7-RQA" firstAttribute="leading" secondItem="S45-o4-MnY" secondAttribute="leading" id="Qu0-La-n8N"/>
-                    <constraint firstItem="mwn-Ud-yX0" firstAttribute="leading" secondItem="8Om-wi-1vo" secondAttribute="trailing" constant="20" id="VCQ-EO-tkF"/>
+                    <constraint firstItem="qWN-va-vlR" firstAttribute="top" secondItem="8Om-wi-1vo" secondAttribute="top" id="Vyt-qU-kAo"/>
                     <constraint firstItem="8Om-wi-1vo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="fuA-CU-YU1"/>
                     <constraint firstItem="ViD-1H-yJo" firstAttribute="top" secondItem="5Bg-u7-RQA" secondAttribute="top" id="hBA-OO-iGu"/>
-                    <constraint firstItem="mwn-Ud-yX0" firstAttribute="trailing" secondItem="4Ho-ON-sgP" secondAttribute="trailing" id="nzN-ml-gGR"/>
+                    <constraint firstItem="qWN-va-vlR" firstAttribute="leading" secondItem="8Om-wi-1vo" secondAttribute="trailing" constant="20" id="oyD-jN-N3c"/>
+                    <constraint firstItem="qWN-va-vlR" firstAttribute="height" relation="lessThanOrEqual" secondItem="8Om-wi-1vo" secondAttribute="height" id="qUG-HT-S5g"/>
                     <constraint firstItem="S45-o4-MnY" firstAttribute="leading" secondItem="8Om-wi-1vo" secondAttribute="leading" id="sIE-i0-igD"/>
                     <constraint firstItem="8Om-wi-1vo" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="75/414" id="y7w-By-mPF"/>
                     <constraint firstAttribute="bottom" secondItem="5Bg-u7-RQA" secondAttribute="bottom" constant="20.5" id="yHN-c2-e2r"/>
@@ -82,7 +82,7 @@
                 <outlet property="imageViewCell" destination="8Om-wi-1vo" id="dEr-3d-b8g"/>
                 <outlet property="nameLable" destination="S45-o4-MnY" id="dE4-oE-gp9"/>
                 <outlet property="ngayLable" destination="4Ho-ON-sgP" id="Qmr-Cd-v88"/>
-                <outlet property="tieuSuTextView" destination="mwn-Ud-yX0" id="7qw-vN-JFI"/>
+                <outlet property="tieuSuLabel" destination="qWN-va-vlR" id="cU7-pQ-xtO"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
         </tableViewCell>
