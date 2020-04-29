@@ -11,10 +11,10 @@ import UIKit
 final class HomeTableViewCell: UITableViewCell {
     // MARK: - IBOutlet
     @IBOutlet private weak var imageViewCell: UIImageView!
-    @IBOutlet weak var tieuSuLabel: UILabel!
-    @IBOutlet private weak var nameLable: UILabel!
-    @IBOutlet private weak var diaChiLable: UILabel!
-    @IBOutlet private weak var ngayLable: UILabel!
+    @IBOutlet private weak var tieuSuLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var diaChiLabel: UILabel!
+    @IBOutlet private weak var ngayLabel: UILabel!
     @IBOutlet private weak var gioiTinhLabel: UILabel!
     
     // MARK: - Properties
@@ -41,11 +41,11 @@ final class HomeTableViewCell: UITableViewCell {
     // MARK: - UpdateView
     private func updateView() {
         let data = viewModel.data
-        nameLable.text = data.name
+        nameLabel.text = data.name
         imageViewCell.image = UIImage(named: data.image)
         tieuSuLabel.text = data.tieusu
-        diaChiLable.text = data.diachi
-        ngayLable.text = data.ngay
+        diaChiLabel.text = data.diachi
+        ngayLabel.text = data.ngay
         gioiTinhLabel.text = data.gioitinh
     }
 }
