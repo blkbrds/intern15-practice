@@ -12,8 +12,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var avatarImageView1: UIImageView!
-    @IBOutlet weak var informationLabel: UILabel!
-    @IBOutlet weak var informationLabel1: UILabel!
+    @IBOutlet weak var informationView: UIView!
+    @IBOutlet weak var informationView1: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Danh sách bạn bè"
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
         avatarImageView.layer.masksToBounds = false
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.height / 2
         avatarImageView.clipsToBounds = true
+        
         //setup avatarImageView1
         avatarImageView1.layer.borderWidth = 1.0
         avatarImageView1.layer.masksToBounds = false
@@ -34,14 +36,14 @@ class ViewController: UIViewController {
         avatarImageView1.clipsToBounds = true
         
         //setup informationLabel
-        informationLabel.layer.masksToBounds = false
-        informationLabel.layer.cornerRadius = 5
-        informationLabel.clipsToBounds = true
+        informationView.layer.masksToBounds = false
+        informationView.layer.cornerRadius = 5
+        informationView.clipsToBounds = true
         
         //setup informationLabel1
-        informationLabel1.layer.masksToBounds = false
-        informationLabel1.layer.cornerRadius = 5
-        informationLabel1.clipsToBounds = true
+        informationView1.layer.masksToBounds = false
+        informationView1.layer.cornerRadius = 5
+        informationView1.clipsToBounds = true
     }
 
     /*
