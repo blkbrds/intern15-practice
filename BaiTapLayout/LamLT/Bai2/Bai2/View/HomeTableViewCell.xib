@@ -28,7 +28,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BirthDay" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJI-MU-zXk">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BirthDay" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJI-MU-zXk">
                         <rect key="frame" x="268" y="115" width="116" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
@@ -48,9 +48,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEi-NI-Gxv">
-                        <rect key="frame" x="184" y="10" width="220" height="80"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <string key="text">Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân.  Thông Tin Cá Nhân.  Thông Tin Cá Nhân</string>
+                        <rect key="frame" x="141.5" y="10" width="242.5" height="80"/>
+                        <color key="backgroundColor" red="0.83524578810000005" green="0.83103889230000005" blue="0.85162800549999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <string key="text">Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân.  Thông Tin Cá Nhân.  Thông Tin Cá Nhân, Thông Tin Cá Nhân.  Thông Tin Cá Nhân</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -58,24 +58,23 @@
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.77590350679999998" blue="0.32804806959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="sEi-NI-Gxv" secondAttribute="trailing" id="1Sj-4C-b2F"/>
                     <constraint firstItem="sEi-NI-Gxv" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.432432" id="4gT-dv-06Q"/>
-                    <constraint firstItem="kzI-nz-zPr" firstAttribute="top" secondItem="j4J-2v-8l1" secondAttribute="bottom" constant="25" id="8Mx-yC-rcR"/>
+                    <constraint firstItem="kzI-nz-zPr" firstAttribute="top" secondItem="sEi-NI-Gxv" secondAttribute="bottom" constant="25" id="8Mx-yC-rcR"/>
                     <constraint firstItem="sEi-NI-Gxv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9we-Kq-DXZ"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.287129" id="A8g-5v-qaE"/>
                     <constraint firstItem="j4J-2v-8l1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="C4e-me-KPS"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.48" id="CGZ-Xr-Wiv"/>
+                    <constraint firstItem="LJI-MU-zXk" firstAttribute="top" secondItem="kzI-nz-zPr" secondAttribute="top" id="DpJ-tj-FOL"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="NN2-Eh-L9d"/>
                     <constraint firstItem="LJI-MU-zXk" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.287129" id="ROO-aU-jg8"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="S0U-yX-WFZ"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="YpT-Vh-CwO"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="top" secondItem="kzI-nz-zPr" secondAttribute="bottom" constant="5" id="aXQ-SB-Z7g"/>
-                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ao3-hg-wdf"/>
-                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.544554" id="bOk-dE-MLN"/>
+                    <constraint firstAttribute="trailing" secondItem="sEi-NI-Gxv" secondAttribute="trailing" constant="20" id="aYm-cI-5c9"/>
+                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.6" id="bOk-dE-MLN"/>
                     <constraint firstItem="kzI-nz-zPr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hcY-Ms-Xk0"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="top" secondItem="LJI-MU-zXk" secondAttribute="bottom" constant="23" id="lf9-yf-0Pt"/>
                     <constraint firstItem="kzI-nz-zPr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.388614" id="o3n-uh-GVf"/>
-                    <constraint firstAttribute="trailing" secondItem="sEi-NI-Gxv" secondAttribute="trailing" id="rHb-Ka-T0X"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="szH-TA-Y3S"/>
                     <constraint firstItem="j4J-2v-8l1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="u8r-7b-brI"/>
                     <constraint firstItem="LJI-MU-zXk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vIm-ui-Phb"/>
