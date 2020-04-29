@@ -23,7 +23,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzI-nz-zPr">
-                        <rect key="frame" x="20" y="115" width="157" height="18"/>
+                        <rect key="frame" x="20" y="115" width="157" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,41 +40,42 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEi-NI-Gxv">
-                        <rect key="frame" x="140" y="10" width="244" height="80"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zga-yf-9r5">
+                        <rect key="frame" x="20" y="139.5" width="194" height="34.5"/>
+                        <string key="text">Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng, Hải Châu Đà Nẵng" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zga-yf-9r5">
-                        <rect key="frame" x="20" y="138" width="194" height="36"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEi-NI-Gxv">
+                        <rect key="frame" x="184" y="10" width="220" height="80"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <string key="text">Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân, Thông Tin Cá Nhân.  Thông Tin Cá Nhân.  Thông Tin Cá Nhân</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.77590350679999998" blue="0.32804806959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="sEi-NI-Gxv" secondAttribute="trailing" constant="20" id="1kL-or-Z7p"/>
+                    <constraint firstAttribute="trailing" secondItem="sEi-NI-Gxv" secondAttribute="trailing" id="1Sj-4C-b2F"/>
+                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.432432" id="4gT-dv-06Q"/>
                     <constraint firstItem="kzI-nz-zPr" firstAttribute="top" secondItem="j4J-2v-8l1" secondAttribute="bottom" constant="25" id="8Mx-yC-rcR"/>
+                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9we-Kq-DXZ"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.287129" id="A8g-5v-qaE"/>
                     <constraint firstItem="j4J-2v-8l1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="C4e-me-KPS"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.48" id="CGZ-Xr-Wiv"/>
-                    <constraint firstItem="LJI-MU-zXk" firstAttribute="top" secondItem="kzI-nz-zPr" secondAttribute="top" id="GnP-xl-bne"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="NN2-Eh-L9d"/>
-                    <constraint firstItem="LJI-MU-zXk" firstAttribute="top" secondItem="sEi-NI-Gxv" secondAttribute="bottom" constant="25" id="RId-Us-tQu"/>
                     <constraint firstItem="LJI-MU-zXk" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.287129" id="ROO-aU-jg8"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="S0U-yX-WFZ"/>
-                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.60396" id="SW5-hR-sqX"/>
-                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="leading" secondItem="j4J-2v-8l1" secondAttribute="trailing" constant="50" id="WFl-HV-F0T"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="YpT-Vh-CwO"/>
                     <constraint firstItem="zga-yf-9r5" firstAttribute="top" secondItem="kzI-nz-zPr" secondAttribute="bottom" constant="5" id="aXQ-SB-Z7g"/>
-                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="amO-GU-3o7"/>
-                    <constraint firstItem="LJI-MU-zXk" firstAttribute="bottom" secondItem="kzI-nz-zPr" secondAttribute="bottom" id="bIx-9J-meo"/>
+                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ao3-hg-wdf"/>
+                    <constraint firstItem="sEi-NI-Gxv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.544554" id="bOk-dE-MLN"/>
                     <constraint firstItem="kzI-nz-zPr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hcY-Ms-Xk0"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="top" secondItem="LJI-MU-zXk" secondAttribute="bottom" constant="23" id="lf9-yf-0Pt"/>
                     <constraint firstItem="kzI-nz-zPr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.388614" id="o3n-uh-GVf"/>
+                    <constraint firstAttribute="trailing" secondItem="sEi-NI-Gxv" secondAttribute="trailing" id="rHb-Ka-T0X"/>
                     <constraint firstItem="LhE-oZ-7ds" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="szH-TA-Y3S"/>
                     <constraint firstItem="j4J-2v-8l1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="u8r-7b-brI"/>
                     <constraint firstItem="LJI-MU-zXk" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="vIm-ui-Phb"/>
