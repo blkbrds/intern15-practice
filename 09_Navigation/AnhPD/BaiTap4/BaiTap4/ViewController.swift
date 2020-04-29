@@ -17,8 +17,12 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(image, for: .default)
         //Add search
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
-        navigationController?.navigationBar. intColor = .systemRed
+        navigationController?.navigationBar.tintColor = .systemRed
         navigationItem.leftBarButtonItem = searchButton
+        //add
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationController?.navigationBar.tintColor = .systemRed
+        navigationItem.rightBarButtonItem = addButton
     }
     
     
