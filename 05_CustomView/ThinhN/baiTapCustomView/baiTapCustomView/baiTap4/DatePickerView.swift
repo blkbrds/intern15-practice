@@ -28,7 +28,6 @@ class DatePickerView: UIView {
         {(done) in
             self.isHidden = true
         }
-        guard let delegate = delegate else {return}
-        delegate.valueDate(pickerView: datePicker.date, select: )
+        delegate?.valueDate(pickerView: self, select: datePicker.date)
     }
 }
