@@ -65,3 +65,13 @@ func soNgayTrongThang(thang: Int, nam: Int) -> Int {
     }
 }
 ngayKeTiep(ngay: 1, thang: 3, nam: 2020)
+
+func kiemTraSoNguyen(mang: [Int]) -> Bool {
+    for i in 0..<mang.count {
+        if mang[i] % 2 == 0 && mang[i] < 2004 {
+            return true
+        }
+    }
+    return false
+}
+kiemTraSoNguyen(mang: [3, 5, 7])
