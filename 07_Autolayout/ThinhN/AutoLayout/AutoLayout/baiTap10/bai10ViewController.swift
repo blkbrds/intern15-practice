@@ -10,51 +10,50 @@ import UIKit
 
 class bai10ViewController: UIViewController {
 
-    
-    @IBOutlet weak var button1widthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var button2widthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var button3widthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var button4widthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var button1WidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var button2WidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var button3WidthConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var button4WidthConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func clickButton1(_ sender: Any) {
-        button1widthConstraint.constant = 160
-        button2widthConstraint.constant = 80
-        button3widthConstraint.constant = 80
-        button4widthConstraint.constant = 80
+    @IBAction func button1TouchUpInsine(_ sender: Any) {
+        button1WidthConstraint.constant = 160
+        button2WidthConstraint.constant = 80
+        button3WidthConstraint.constant = 80
+        button4WidthConstraint.constant = 80
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })
     }
     
-    @IBAction func clickButton2(_ sender: Any) {
-        button1widthConstraint.constant = 80
-        button2widthConstraint.constant = 160
-        button3widthConstraint.constant = 80
-        button4widthConstraint.constant = 80
+    @IBAction func button2TouchUpInsine(_ sender: Any) {
+        button1WidthConstraint.constant = 80
+        button2WidthConstraint.constant = 160
+        button3WidthConstraint.constant = 80
+        button4WidthConstraint.constant = 80
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })
     }
     
-    @IBAction func clickButton3(_ sender: Any) {
-        button1widthConstraint.constant = 80
-        button2widthConstraint.constant = 80
-        button3widthConstraint.constant = 160
-        button4widthConstraint.constant = 80
+    @IBAction func button3TouchUpInsine(_ sender: Any) {
+        button1WidthConstraint.constant = 80
+        button2WidthConstraint.constant = 80
+        button3WidthConstraint.constant = 160
+        button4WidthConstraint.constant = 80
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })
     }
     
-    @IBAction func clickButton4(_ sender: Any) {
-        button1widthConstraint.constant = 80
-        button2widthConstraint.constant = 80
-        button3widthConstraint.constant = 80
-        button4widthConstraint.constant = 160
+    @IBAction func button4TouchUpInsine(_ sender: Any) {
+        button1WidthConstraint.constant = 80
+        button2WidthConstraint.constant = 80
+        button3WidthConstraint.constant = 80
+        button4WidthConstraint.constant = 160
         UIView.animate(withDuration: 0.2, animations: {
             self.view.layoutIfNeeded()
         })

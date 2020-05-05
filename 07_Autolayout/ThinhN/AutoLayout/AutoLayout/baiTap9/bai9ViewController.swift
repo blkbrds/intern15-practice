@@ -43,6 +43,7 @@ class bai9ViewController: UIViewController {
             self.imageScrollView.contentOffset = CGPoint(x: CGFloat(self.image - 1) * self.imageScrollView.bounds.width, y: 0)
         })
     }
+    
     @IBAction func clickLeftButton(_ sender: Any) {
         if self.image == 1 {
             return

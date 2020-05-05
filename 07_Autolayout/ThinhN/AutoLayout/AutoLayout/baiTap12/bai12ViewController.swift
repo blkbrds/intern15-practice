@@ -16,10 +16,9 @@ class bai12ViewController: UIViewController {
     }
     final class ThongButton: UIButton {
 
-        override init(frame: CGRect){
+        override init(frame: CGRect) {
             super.init(frame: frame)
         }
-
         required init?(coder: NSCoder) {
             super.init(coder: coder)
         }
@@ -35,7 +34,4 @@ class bai12ViewController: UIViewController {
             self.layer.borderWidth = 1.0
         }
     }
-    
-   
-
 }
