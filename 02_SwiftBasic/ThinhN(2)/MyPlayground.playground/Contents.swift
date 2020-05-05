@@ -75,3 +75,19 @@ func kiemTraSoNguyen(mang: [Int]) -> Bool {
     return false
 }
 kiemTraSoNguyen(mang: [3, 5, 7])
+
+func giaTriXaNhat(mang: [Int], x: Int) -> Int {
+    var mangTam: [Int] = []
+    var giaTriTam: Int
+    var giaTriLonNhat: Int
+    for i in 0..<mang.count {
+        giaTriTam = abs(mang[i] - x)
+        mangTam.append(giaTriTam)
+    }
+    for i in 0..<mangTam.count {
+        if mangTam[i] > mangTam[i + 1] {
+            giaTriLonNhat = mangTam[i]
+        }
+    }
+    
+}
