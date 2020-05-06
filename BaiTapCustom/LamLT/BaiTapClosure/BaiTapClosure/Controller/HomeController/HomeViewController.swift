@@ -2,7 +2,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
-    var viewModel = Data()
+    var viewModel = HomeViewModel()
 
     // MARK: - IBOutlet
     @IBOutlet weak var onlineButton: UIButton!
@@ -42,8 +42,8 @@ class HomeViewController: BaseViewController {
             guard let this = self else { return }
             switch action {
             case .updateImage:
-                this.online = "cat"
-                this.name = "Con Mèo"
+                this.online = self!.viewModel.image
+                this.name = self!.viewModel.name
                 dvc.profileImage.image = UIImage(named: this.online)
                 dvc.nameProfileLabel.text = this.name
                 dvc.profileImage.layer.borderColor = UIColor.gray.cgColor
@@ -58,8 +58,8 @@ class HomeViewController: BaseViewController {
             guard let this = self else { return }
             switch action {
             case .updateImage:
-                this.online = "cat"
-                this.name = "Con Mèo"
+                this.online = self!.viewModel.image
+                this.name = self!.viewModel.name
                 dvc.profileImage.image = UIImage(named: this.online)
                 dvc.nameProfileLabel.text = this.name
             }
