@@ -47,11 +47,12 @@ class HomeViewController: BaseViewController {
                 dvc.profileImage.image = UIImage(named: this.online)
                 dvc.nameProfileLabel.text = this.name
                 dvc.profileImage.layer.borderColor = UIColor.gray.cgColor
+                dvc.profileImage.layer.borderWidth = 4.0
             }
         }
         self.navigationController?.pushViewController(dvc, animated: true)
     }
-
+    
     @IBAction func offlineStatusButtonTouchUpInside(_ sender: Any) {
         let dvc = DetailsViewController()
         dvc.action = { [weak self] action in
