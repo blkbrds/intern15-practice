@@ -26,7 +26,6 @@ class DetailsViewController: BaseViewController {
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
-        profileImage.layer.borderColor = UIColor.gray.cgColor
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "sceen"), for: .default)
     }
 

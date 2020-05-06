@@ -46,6 +46,7 @@ class HomeViewController: BaseViewController {
                 this.name = "Con Mèo"
                 dvc.profileImage.image = UIImage(named: this.online)
                 dvc.nameProfileLabel.text = this.name
+                dvc.profileImage.layer.borderColor = UIColor.gray.cgColor
             }
         }
         self.navigationController?.pushViewController(dvc, animated: true)
@@ -57,8 +58,8 @@ class HomeViewController: BaseViewController {
             guard let this = self else { return }
             switch action {
             case .updateImage:
-                this.online = "dog"
-                this.name = "Con Chó"
+                this.online = "cat"
+                this.name = "Con Mèo"
                 dvc.profileImage.image = UIImage(named: this.online)
                 dvc.nameProfileLabel.text = this.name
             }
