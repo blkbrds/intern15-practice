@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F8263AC62602CB4C96A8740 /* Pods_BaiTapRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BFFD38F87D62FAA2847298 /* Pods_BaiTapRealm.framework */; };
+		F04E0AD32460243100B5BDC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E0AD22460243100B5BDC0 /* AppDelegate.swift */; };
+		F04E0AD52460243100B5BDC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04E0AD42460243100B5BDC0 /* SceneDelegate.swift */; };
+		F04E0ADC2460243200B5BDC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04E0ADB2460243200B5BDC0 /* Assets.xcassets */; };
+		F0E773012460273300A32269 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E772FF2460273300A32269 /* HomeViewController.swift */; };
+		F0E773022460273300A32269 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E773002460273300A32269 /* HomeViewController.xib */; };
+		F0E773072460295700A32269 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E773052460295700A32269 /* HomeTableViewCell.swift */; };
+		F0E773082460295700A32269 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E773062460295700A32269 /* HomeTableViewCell.xib */; };
+		F0E7730B246029BA00A32269 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7730A246029BA00A32269 /* BaseViewController.swift */; };
+		F0E7730E2462504500A32269 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7730D2462504500A32269 /* Music.swift */; };
+		F0E773102462517000A32269 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7730F2462517000A32269 /* HomeViewModel.swift */; };
+		F0E773142462615700A32269 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E773122462615700A32269 /* AddCategoryViewController.swift */; };
+		F0E773152462615700A32269 /* AddCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0E773132462615700A32269 /* AddCategoryViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F569039EDC0D018AB6E221A /* Pods-BaiTapRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapRealm.release.xcconfig"; path = "Target Support Files/Pods-BaiTapRealm/Pods-BaiTapRealm.release.xcconfig"; sourceTree = "<group>"; };
+		61BFFD38F87D62FAA2847298 /* Pods_BaiTapRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaiTapRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1F13E48B9E198FFAB349732 /* Pods-BaiTapRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapRealm.debug.xcconfig"; path = "Target Support Files/Pods-BaiTapRealm/Pods-BaiTapRealm.debug.xcconfig"; sourceTree = "<group>"; };
+		F04E0ACF2460243100B5BDC0 /* BaiTapRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F04E0AD22460243100B5BDC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F04E0AD42460243100B5BDC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F04E0ADB2460243200B5BDC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F04E0AE02460243200B5BDC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0E772FF2460273300A32269 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F0E773002460273300A32269 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F0E773052460295700A32269 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		F0E773062460295700A32269 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		F0E7730A246029BA00A32269 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F0E7730D2462504500A32269 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		F0E7730F2462517000A32269 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0E773122462615700A32269 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		F0E773132462615700A32269 /* AddCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F04E0ACC2460243100B5BDC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F8263AC62602CB4C96A8740 /* Pods_BaiTapRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6113D91A57DEE8A7D4DF6E56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1F13E48B9E198FFAB349732 /* Pods-BaiTapRealm.debug.xcconfig */,
+				4F569039EDC0D018AB6E221A /* Pods-BaiTapRealm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		73D345146FD7E438A5C9A2A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61BFFD38F87D62FAA2847298 /* Pods_BaiTapRealm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F04E0AC62460243100B5BDC0 = {
+			isa = PBXGroup;
+			children = (
+				F04E0AD12460243100B5BDC0 /* BaiTapRealm */,
+				F04E0AD02460243100B5BDC0 /* Products */,
+				6113D91A57DEE8A7D4DF6E56 /* Pods */,
+				73D345146FD7E438A5C9A2A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F04E0AD02460243100B5BDC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F04E0ACF2460243100B5BDC0 /* BaiTapRealm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F04E0AD12460243100B5BDC0 /* BaiTapRealm */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7730C2462500400A32269 /* Models */,
+				F0E772FD2460272100A32269 /* Controller */,
+				F04E0AD22460243100B5BDC0 /* AppDelegate.swift */,
+				F04E0AD42460243100B5BDC0 /* SceneDelegate.swift */,
+				F04E0ADB2460243200B5BDC0 /* Assets.xcassets */,
+				F04E0AE02460243200B5BDC0 /* Info.plist */,
+			);
+			path = BaiTapRealm;
+			sourceTree = "<group>";
+		};
+		F0E772FD2460272100A32269 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F0E773112462585600A32269 /* EditMusicController */,
+				F0E772FE2460272700A32269 /* Home */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F0E772FE2460272700A32269 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0E773092460297500A32269 /* Base */,
+				F0E77304246028D100A32269 /* HomeModel */,
+				F0E77303246028AF00A32269 /* Cell */,
+				F0E772FF2460273300A32269 /* HomeViewController.swift */,
+				F0E773002460273300A32269 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F0E77303246028AF00A32269 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0E773052460295700A32269 /* HomeTableViewCell.swift */,
+				F0E773062460295700A32269 /* HomeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F0E77304246028D100A32269 /* HomeModel */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7730F2462517000A32269 /* HomeViewModel.swift */,
+			);
+			path = HomeModel;
+			sourceTree = "<group>";
+		};
+		F0E773092460297500A32269 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7730A246029BA00A32269 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F0E7730C2462500400A32269 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0E7730D2462504500A32269 /* Music.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0E773112462585600A32269 /* EditMusicController */ = {
+			isa = PBXGroup;
+			children = (
+				F0E773122462615700A32269 /* AddCategoryViewController.swift */,
+				F0E773132462615700A32269 /* AddCategoryViewController.xib */,
+			);
+			path = EditMusicController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F04E0ACE2460243100B5BDC0 /* BaiTapRealm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F04E0AE32460243200B5BDC0 /* Build configuration list for PBXNativeTarget "BaiTapRealm" */;
+			buildPhases = (
+				5C9DF0AF8DE0D6DD373304D7 /* [CP] Check Pods Manifest.lock */,
+				F04E0ACB2460243100B5BDC0 /* Sources */,
+				F04E0ACC2460243100B5BDC0 /* Frameworks */,
+				F04E0ACD2460243100B5BDC0 /* Resources */,
+				7BEBF811C3564B2B78013A86 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaiTapRealm;
+			productName = BaiTapRealm;
+			productReference = F04E0ACF2460243100B5BDC0 /* BaiTapRealm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F04E0AC72460243100B5BDC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = LeThanhLam;
+				TargetAttributes = {
+					F04E0ACE2460243100B5BDC0 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = F04E0ACA2460243100B5BDC0 /* Build configuration list for PBXProject "BaiTapRealm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F04E0AC62460243100B5BDC0;
+			productRefGroup = F04E0AD02460243100B5BDC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F04E0ACE2460243100B5BDC0 /* BaiTapRealm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F04E0ACD2460243100B5BDC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E773152462615700A32269 /* AddCategoryViewController.xib in Resources */,
+				F04E0ADC2460243200B5BDC0 /* Assets.xcassets in Resources */,
+				F0E773082460295700A32269 /* HomeTableViewCell.xib in Resources */,
+				F0E773022460273300A32269 /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C9DF0AF8DE0D6DD373304D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaiTapRealm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BEBF811C3564B2B78013A86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaiTapRealm/Pods-BaiTapRealm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaiTapRealm/Pods-BaiTapRealm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaiTapRealm/Pods-BaiTapRealm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F04E0ACB2460243100B5BDC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E773142462615700A32269 /* AddCategoryViewController.swift in Sources */,
+				F0E7730B246029BA00A32269 /* BaseViewController.swift in Sources */,
+				F04E0AD32460243100B5BDC0 /* AppDelegate.swift in Sources */,
+				F0E773102462517000A32269 /* HomeViewModel.swift in Sources */,
+				F04E0AD52460243100B5BDC0 /* SceneDelegate.swift in Sources */,
+				F0E773072460295700A32269 /* HomeTableViewCell.swift in Sources */,
+				F0E773012460273300A32269 /* HomeViewController.swift in Sources */,
+				F0E7730E2462504500A32269 /* Music.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F04E0AE12460243200B5BDC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F04E0AE22460243200B5BDC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F04E0AE42460243200B5BDC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1F13E48B9E198FFAB349732 /* Pods-BaiTapRealm.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BaiTapRealm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lybkit.BaiTapRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F04E0AE52460243200B5BDC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F569039EDC0D018AB6E221A /* Pods-BaiTapRealm.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BaiTapRealm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lybkit.BaiTapRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F04E0ACA2460243100B5BDC0 /* Build configuration list for PBXProject "BaiTapRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F04E0AE12460243200B5BDC0 /* Debug */,
+				F04E0AE22460243200B5BDC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F04E0AE32460243200B5BDC0 /* Build configuration list for PBXNativeTarget "BaiTapRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F04E0AE42460243200B5BDC0 /* Debug */,
+				F04E0AE52460243200B5BDC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F04E0AC72460243100B5BDC0 /* Project object */;
+}
