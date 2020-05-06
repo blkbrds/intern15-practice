@@ -1,9 +1,7 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
-
-    var viewModel = HomeViewModel()
-
+    
     // MARK: - IBOutlet
     @IBOutlet weak var onlineButton: UIButton!
     @IBOutlet weak var offButton: UIButton!
@@ -12,6 +10,7 @@ class HomeViewController: BaseViewController {
     var online: String = ""
     var off: String = ""
     var name: String = ""
+     var viewModel = HomeViewModel()
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -31,7 +30,6 @@ class HomeViewController: BaseViewController {
 
     func customNavi() {
         title = "Home"
-//        navigationController?.navigationBar.backgroundColor = UIColor(displayP3Red: 221, green: 160, blue: 72, alpha: 1)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "sceen"), for: .default)
     }
 
