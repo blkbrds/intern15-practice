@@ -9,7 +9,7 @@
 import UIKit
 
 protocol EditViewControllerDelegate: class {
-    func saveSuccess(userName: String)
+    func saveSuccess(userName: String?)
 }
 
 class EditViewController: UIViewController {
@@ -45,9 +45,12 @@ class EditViewController: UIViewController {
     }
     
     @objc func doneButtonTouchUpInSide() {
-        guard let userName = userNameTextField.text else { return }
-        delegate?.saveSuccess(userName: userName)
-        navigationController?.popViewController(animated: true)
+        if let delegate = delegate {
+            delegate.saveSuccess(userName: userNameTextField.text)
+        }
+        if let navigationController = navigationController {
+            navigationController.popViewController(animated: true)
+        }
     }
     /*
     // MARK: - Navigation
