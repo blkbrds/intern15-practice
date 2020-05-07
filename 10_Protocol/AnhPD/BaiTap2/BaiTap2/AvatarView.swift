@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AvataViewDelegate: class {
-    func tap(userName: String, imageView: String)
+    func tap(userName: String, imageView: String, index: Int)
 }
 
 class AvatarView: UIView {
@@ -18,10 +18,6 @@ class AvatarView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     var userName: String = ""
     var imageView: String = "avatar"
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
 
     func loadView() {
         nameLabel.text = userName
@@ -29,7 +25,7 @@ class AvatarView: UIView {
     
     @IBAction func profileButtonTouchUpInSide(_ sender: Any) {
         if let delegate = delegate {
-            delegate.tap(userName: userName, imageView: imageView)
+            delegate.tap(userName: userName, imageView: imageView, index: tag)
         }
     }
 }

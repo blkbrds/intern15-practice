@@ -8,32 +8,46 @@
 
 import UIKit
 
+protocol ProfileViewControllerDelegate: class {
+    func controller(controller: ProfileViewController, needPerfomAction action: ProfileViewController.Action)
+}
+
 class ProfileViewController: UIViewController {
-    var userName: String = ""
-    var imageView: String = ""
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var avatarImageView: UIImageView!
+    
+    var userName: String = ""
+    var imageView: String = ""
+    var index: Int?
+    weak var delegate: ProfileViewControllerDelegate?
+    
+    enum Action {
+        case updateData(userName: String?, index: Int)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadName()
+        configNavigationBar()
         // Do any additional setup after loading the view.
+    }
+    
+    func configNavigationBar() {
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInSide))
+        navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    @objc func doneButtonTouchUpInSide() {
+        if let delegate = delegate, let index = index {
+            delegate.controller(controller: self, needPerfomAction: .updateData(userName: nameTextField.text, index: index))
+        }
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func loadName(){
         nameTextField.text = userName
         avatarImageView.image = UIImage(named: imageView)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

@@ -18,18 +18,19 @@ class AvatarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+//        // Do any additional setup after loading the view.
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.loadAvatar()
         }
     }
     
     func loadAvatar() {
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 1.5)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 1.85)
         for i in 1...30 {
             let avatar = Bundle.main.loadNibNamed("AvatarView", owner: self, options: nil)?.first as? AvatarView
             if let avatar = avatar {
                 avatar.frame = CGRect(x: coordinatesX, y: coordinatesY, width: (UIScreen.main.bounds.width - CGFloat(40)) / 3, height: (UIScreen.main.bounds.width - CGFloat(40)) / 3)
+                avatar.tag = i
                 coordinatesX += avatar.frame.width + 10
                 avatar.userName = names[i - 1]
                 avatar.delegate = self
@@ -45,10 +46,28 @@ class AvatarViewController: UIViewController {
 }
 
 extension AvatarViewController: AvataViewDelegate {
-    func tap(userName: String, imageView: String) {
+    func tap(userName: String, imageView: String, index: Int) {
         let vc = ProfileViewController()
+        vc.delegate = self
         vc.userName = userName
         vc.imageView = imageView
+        vc.index = index
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension AvatarViewController: ProfileViewControllerDelegate {
+    func controller(controller: ProfileViewController, needPerfomAction action: ProfileViewController.Action) {
+        switch action {
+        case .updateData(let newName, let index):
+            guard index > 0 && index <= names.count, let newName = newName else { return }
+            names[index - 1] = newName
+            for subView in scrollView.subviews {
+                if let avataView = subView as? AvatarView, avataView.tag == index {
+                    avataView.userName = names[index - 1]
+                    avataView.loadView()
+                }
+            }
+        }
     }
 }
