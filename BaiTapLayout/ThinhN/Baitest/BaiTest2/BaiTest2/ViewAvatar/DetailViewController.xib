@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="BaiTest2" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="ET1-Cf-vhf" id="HAD-89-yHS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,15 +19,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rose" translatesAutoresizingMaskIntoConstraints="NO" id="ET1-Cf-vhf">
-                    <rect key="frame" x="107" y="212" width="200" height="200"/>
+                    <rect key="frame" x="132" y="373" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ET1-Cf-vhf" secondAttribute="height" multiplier="1:1" id="ffj-ZY-Oqj"/>
+                        <constraint firstAttribute="width" constant="150" id="yKt-1f-bff"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ET1-Cf-vhf" secondAttribute="trailing" constant="107" id="SXM-eL-lkT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ET1-Cf-vhf" secondAttribute="bottom" constant="450" id="bYp-it-YVm"/>
-                <constraint firstItem="ET1-Cf-vhf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="107" id="dds-GY-71B"/>
-                <constraint firstItem="ET1-Cf-vhf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="168" id="k24-77-V0K"/>
+                <constraint firstItem="ET1-Cf-vhf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3eB-QM-0j4"/>
+                <constraint firstItem="ET1-Cf-vhf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gtz-ng-w5U"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>

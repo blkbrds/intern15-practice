@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var onlineButton: UIButton!
     @IBOutlet weak var offButton: UIButton!
-    
+             
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
@@ -30,13 +30,11 @@ class HomeViewController: UIViewController {
     @IBAction func onlineButtonTouchUpInsine(_ sender: Any) {
         let vc = DetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+        vc.isOnline = true
     }
     
     @IBAction func OffButtonTouchUpInsine(_ sender: Any) {
         let vc = DetailViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
 }
