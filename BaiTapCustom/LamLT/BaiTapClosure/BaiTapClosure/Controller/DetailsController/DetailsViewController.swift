@@ -2,47 +2,38 @@ import UIKit
 
 class DetailsViewController: BaseViewController {
 
-    // MARK: - IBOutlet
-    @IBOutlet weak var nameProfileLabel: UILabel!
-    @IBOutlet weak var avatarView: AvatarView!
-    @IBOutlet weak var profileImage: UIImageView!
 
-    // MARK: - Enum
+    @IBOutlet weak var nameProfileLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+//    @IBOutlet weak var avatarView: Avatar!
+    var avatar = Avatar()
     enum Action {
         case updateImage
     }
 
-    // MARK: - Properties
     var action: ((Action) -> Void)?
-    var type: AvatarView.TypeView = .on
-    
-    // MARK: - Life Cycle
-    init(type: AvatarView.TypeView = .on) {
-        super.init(nibName: nil, bundle: nil)
-        self.type = type
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updatePicture()
+
+        avatar = Avatar(frame: CGRect(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY, width: 100, height: 100))
+        view.addSubview(avatar)
     }
 
-    // MARK: - Private Function
     private func updatePicture() {
         self.action?(.updateImage)
     }
 
-    // MARK: - Override Function
     override func setUpUI() {
         title = "Detail"
+//        let color1 = UIColor(displayP3Red: 49.0, green: 133.0, blue: 203.0, alpha: 1)
         profileImage.layer.borderWidth = 1.0
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.clipsToBounds = true
+        profileImage.layer.borderColor = UIColor.gray.cgColor
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "sceen"), for: .default)
     }
 

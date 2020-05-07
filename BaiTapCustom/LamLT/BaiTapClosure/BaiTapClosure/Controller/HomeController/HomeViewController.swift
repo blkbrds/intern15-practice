@@ -2,6 +2,8 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    var viewModel = Data()
+
     // MARK: - IBOutlet
     @IBOutlet weak var onlineButton: UIButton!
     @IBOutlet weak var offButton: UIButton!
@@ -10,7 +12,6 @@ class HomeViewController: BaseViewController {
     var online: String = ""
     var off: String = ""
     var name: String = ""
-    var viewModel = HomeViewModel()
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -25,60 +26,57 @@ class HomeViewController: BaseViewController {
         offButton.layer.masksToBounds = false
         offButton.layer.cornerRadius = 15
         offButton.clipsToBounds = true
+        customNavi()
+    }
+
+    func customNavi() {
+        title = "Home"
+//        navigationController?.navigationBar.backgroundColor = UIColor(displayP3Red: 221, green: 160, blue: 72, alpha: 1)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "sceen"), for: .default)
     }
 
     // MARK : - Action
     @IBAction func onlineStatusButtonTouchUpInside(_ sender: Any) {
-        let detail = Bundle.main.loadNibNamed("HomeView", owner: self, options: nil)?.first as? HomeView
-        if let detail = detail {
-            detail.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-            view.addSubview(detail)
-            detail.profileImage.layer.borderWidth = 1.0
-            detail.profileImage.layer.masksToBounds = false
-            detail.profileImage.layer.cornerRadius = detail.profileImage.frame.size.height / 2
-            detail.profileImage.clipsToBounds = true
-        }
-        detail?.action = { [weak self] action in
-            guard let this = self else { return }
-            switch action {
-            case .updateImage:
-                this.online = self!.viewModel.image
-                this.name = self!.viewModel.name
-                detail?.profileImage.layer.borderWidth = 5.0
-                detail?.profileImage.image = UIImage(named: this.online)
-                detail?.nameProfile.text = this.name
-                detail?.profileImage.layer.borderColor = UIColor.gray.cgColor
-            }
-        }
-        detail?.updatePicture()
-    }
-
-    @IBAction func offlineStatusButtonTouchUpInside(_ sender: Any) {
-//        let detail = Bundle.main.loadNibNamed("HomeView", owner: self, options: nil)?.first as? HomeView
-//        if let detail = detail {
-//            detail.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-//            view.addSubview(detail)
-//            detail.profileImage.layer.borderWidth = 1.0
-//            detail.profileImage.layer.masksToBounds = false
-//            detail.profileImage.layer.cornerRadius = detail.profileImage.frame.size.height / 2
-//            detail.profileImage.clipsToBounds = true
-//        }
-//        detail?.action = { [weak self] action in
+        let dvc = DetailsViewController()
+//        dvc.action = { [weak self] action in
 //            guard let this = self else { return }
 //            switch action {
 //            case .updateImage:
-//                this.online = self!.viewModel.image
-//                this.name = self!.viewModel.name
-//                detail?.profileImage.image = UIImage(named: this.online)
-//                detail?.nameProfile.text = this.name
+//                this.online = "dog"
+//                this.name = "Con Mèo"
+//                dvc.profileImage.image = UIImage(named: this.online)
+//                dvc.nameProfileLabel.text = this.name
 //            }
 //        }
-//        detail?.updatePicture()
-        let vc = DetailsViewController(type: .on)
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = Avatar()
+        vc.action = { [weak self] action in
+            guard let this = self else { return }
+            switch action {
+            case .on:
+                this.online = "dog"
+                vc.userAvatar.image = UIImage(named: this.online)
+                vc.layer.cornerRadius = vc.layer.frame.size.height / 2
+            }
+        }
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
-    
-    func hideView() {
-        
-    }
+//        @IBAction func offlineStatusButtonTouchUpInside(_ sender: Any) {
+//        let dvc = DetailsViewController()
+//        dvc.action = { [weak self] action in
+//            guard let this = self else { return }
+//            switch action {
+//            case .updateImage:
+//                this.online = "dog"
+//                this.name = "Con Chó"
+//                dvc.profileImage.image = UIImage(named: this.online)
+//                dvc.nameProfileLabel.text = this.name
+//            }
+//        }
+//
+//            let vc = DetailsViewController(type: .off)
+//
+//            self.navigationController?.pushViewController(vc, animated: true)
+//
+//        }
 }
+
