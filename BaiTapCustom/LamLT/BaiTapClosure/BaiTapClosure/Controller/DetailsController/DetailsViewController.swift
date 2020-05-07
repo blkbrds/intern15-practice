@@ -4,6 +4,7 @@ class DetailsViewController: BaseViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var nameProfileLabel: UILabel!
+    @IBOutlet weak var avatarView: AvatarView!
     @IBOutlet weak var profileImage: UIImageView!
 
     // MARK: - Enum
@@ -13,8 +14,18 @@ class DetailsViewController: BaseViewController {
 
     // MARK: - Properties
     var action: ((Action) -> Void)?
-
+    var type: AvatarView.TypeView = .on
+    
     // MARK: - Life Cycle
+    init(type: AvatarView.TypeView = .on) {
+        super.init(nibName: nil, bundle: nil)
+        self.type = type
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updatePicture()

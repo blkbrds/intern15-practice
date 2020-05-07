@@ -25,45 +25,60 @@ class HomeViewController: BaseViewController {
         offButton.layer.masksToBounds = false
         offButton.layer.cornerRadius = 15
         offButton.clipsToBounds = true
-        customNavi()
-    }
-
-    func customNavi() {
-        title = "Home"
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "sceen"), for: .default)
     }
 
     // MARK : - Action
     @IBAction func onlineStatusButtonTouchUpInside(_ sender: Any) {
-        let dvc = DetailsViewController()
-        dvc.action = { [weak self] action in
+        let detail = Bundle.main.loadNibNamed("HomeView", owner: self, options: nil)?.first as? HomeView
+        if let detail = detail {
+            detail.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            view.addSubview(detail)
+            detail.profileImage.layer.borderWidth = 1.0
+            detail.profileImage.layer.masksToBounds = false
+            detail.profileImage.layer.cornerRadius = detail.profileImage.frame.size.height / 2
+            detail.profileImage.clipsToBounds = true
+        }
+        detail?.action = { [weak self] action in
             guard let this = self else { return }
             switch action {
             case .updateImage:
                 this.online = self!.viewModel.image
                 this.name = self!.viewModel.name
-                dvc.profileImage.image = UIImage(named: this.online)
-                dvc.nameProfileLabel.text = this.name
-                dvc.profileImage.layer.borderColor = UIColor.gray.cgColor
-                dvc.profileImage.layer.borderWidth = 4.0
+                detail?.profileImage.layer.borderWidth = 5.0
+                detail?.profileImage.image = UIImage(named: this.online)
+                detail?.nameProfile.text = this.name
+                detail?.profileImage.layer.borderColor = UIColor.gray.cgColor
             }
         }
-        self.navigationController?.pushViewController(dvc, animated: true)
+        detail?.updatePicture()
     }
 
     @IBAction func offlineStatusButtonTouchUpInside(_ sender: Any) {
-        let dvc = DetailsViewController()
-        dvc.action = { [weak self] action in
-            guard let this = self else { return }
-            switch action {
-            case .updateImage:
-                this.online = self!.viewModel.image
-                this.name = self!.viewModel.name
-                dvc.profileImage.image = UIImage(named: this.online)
-                dvc.nameProfileLabel.text = this.name
-            }
-        }
-        self.navigationController?.pushViewController(dvc, animated: true)
+//        let detail = Bundle.main.loadNibNamed("HomeView", owner: self, options: nil)?.first as? HomeView
+//        if let detail = detail {
+//            detail.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//            view.addSubview(detail)
+//            detail.profileImage.layer.borderWidth = 1.0
+//            detail.profileImage.layer.masksToBounds = false
+//            detail.profileImage.layer.cornerRadius = detail.profileImage.frame.size.height / 2
+//            detail.profileImage.clipsToBounds = true
+//        }
+//        detail?.action = { [weak self] action in
+//            guard let this = self else { return }
+//            switch action {
+//            case .updateImage:
+//                this.online = self!.viewModel.image
+//                this.name = self!.viewModel.name
+//                detail?.profileImage.image = UIImage(named: this.online)
+//                detail?.nameProfile.text = this.name
+//            }
+//        }
+//        detail?.updatePicture()
+        let vc = DetailsViewController(type: .on)
+        navigationController?.pushViewController(vc, animated: true)
     }
-
+    
+    func hideView() {
+        
+    }
 }

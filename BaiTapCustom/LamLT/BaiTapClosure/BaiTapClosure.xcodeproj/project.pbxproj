@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F069BF142462C8F7005E1194 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069BF132462C8F7005E1194 /* AvatarView.swift */; };
 		F091AE9124629A3400F7BBA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091AE9024629A3400F7BBA9 /* AppDelegate.swift */; };
 		F091AE9324629A3400F7BBA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091AE9224629A3400F7BBA9 /* SceneDelegate.swift */; };
 		F091AE9A24629A3500F7BBA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F091AE9924629A3500F7BBA9 /* Assets.xcassets */; };
@@ -17,9 +18,12 @@
 		F091AEB12462A87C00F7BBA9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091AEB02462A87C00F7BBA9 /* BaseViewController.swift */; };
 		F091AEB42462A96400F7BBA9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091AEB32462A96400F7BBA9 /* Data.swift */; };
 		F0AF2DA92462B4E600393997 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF2DA82462B4E600393997 /* HomeViewModel.swift */; };
+		F0AF2DAC2462BED000393997 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF2DAB2462BED000393997 /* HomeView.swift */; };
+		F0AF2DAE2462BEDA00393997 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0AF2DAD2462BEDA00393997 /* HomeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F069BF132462C8F7005E1194 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		F091AE8D24629A3400F7BBA9 /* BaiTapClosure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapClosure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F091AE9024629A3400F7BBA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F091AE9224629A3400F7BBA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		F091AEB02462A87C00F7BBA9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F091AEB32462A96400F7BBA9 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F0AF2DA82462B4E600393997 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0AF2DAB2462BED000393997 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F0AF2DAD2462BEDA00393997 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		F091AE8F24629A3400F7BBA9 /* BaiTapClosure */ = {
 			isa = PBXGroup;
 			children = (
+				F0AF2DAA2462BBC300393997 /* View */,
 				F091AEB22462A95600F7BBA9 /* ViewModel */,
 				F091AEA424629A5700F7BBA9 /* Controller */,
 				F091AE9024629A3400F7BBA9 /* AppDelegate.swift */,
@@ -117,6 +124,16 @@
 				F091AEB32462A96400F7BBA9 /* Data.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0AF2DAA2462BBC300393997 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0AF2DAB2462BED000393997 /* HomeView.swift */,
+				F0AF2DAD2462BEDA00393997 /* HomeView.xib */,
+				F069BF132462C8F7005E1194 /* AvatarView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F091AE9A24629A3500F7BBA9 /* Assets.xcassets in Resources */,
+				F0AF2DAE2462BEDA00393997 /* HomeView.xib in Resources */,
 				F091AEAA24629AA900F7BBA9 /* HomeViewController.xib in Resources */,
 				F091AEAE24629AB500F7BBA9 /* DetailsViewController.xib in Resources */,
 			);
@@ -195,7 +213,9 @@
 				F0AF2DA92462B4E600393997 /* HomeViewModel.swift in Sources */,
 				F091AE9124629A3400F7BBA9 /* AppDelegate.swift in Sources */,
 				F091AE9324629A3400F7BBA9 /* SceneDelegate.swift in Sources */,
+				F0AF2DAC2462BED000393997 /* HomeView.swift in Sources */,
 				F091AEA924629AA900F7BBA9 /* HomeViewController.swift in Sources */,
+				F069BF142462C8F7005E1194 /* AvatarView.swift in Sources */,
 				F091AEAD24629AB500F7BBA9 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

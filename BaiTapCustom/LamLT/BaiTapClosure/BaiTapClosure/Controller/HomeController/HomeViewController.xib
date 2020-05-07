@@ -41,6 +41,22 @@
                         <action selector="offlineStatusButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="sSx-gZ-FDX"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhZ-BR-8CR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaS-5W-zgb">
+                            <rect key="frame" x="163.5" y="18" width="48.5" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.8666666666666667" green="0.62745098039215685" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="zaS-5W-zgb" firstAttribute="centerX" secondItem="VhZ-BR-8CR" secondAttribute="centerX" id="C4i-DK-cDq"/>
+                        <constraint firstItem="zaS-5W-zgb" firstAttribute="centerY" secondItem="VhZ-BR-8CR" secondAttribute="centerY" id="PPW-JO-r1y"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.87058823529411766" green="0.62352941176470589" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -48,11 +64,19 @@
                 <constraint firstItem="Thk-Cb-V35" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="112" id="46q-Vo-JJG"/>
                 <constraint firstItem="AI1-kw-kHN" firstAttribute="top" secondItem="Thk-Cb-V35" secondAttribute="bottom" constant="70" id="Caw-e9-evG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AI1-kw-kHN" secondAttribute="trailing" constant="113" id="Paj-0A-btk"/>
+                <constraint firstItem="VhZ-BR-8CR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="TT1-ub-dDG"/>
+                <constraint firstItem="VhZ-BR-8CR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dx3-ey-l5F"/>
                 <constraint firstItem="AI1-kw-kHN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="112" id="vfO-z6-zbA"/>
+                <constraint firstItem="VhZ-BR-8CR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wdR-dU-4g8"/>
                 <constraint firstItem="Thk-Cb-V35" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="243" id="xoI-P9-rIq"/>
+                <constraint firstItem="VhZ-BR-8CR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0854573" id="yEc-um-6bZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+<<<<<<< Updated upstream
             <point key="canvasLocation" x="503" y="-101"/>
+=======
+            <point key="canvasLocation" x="517.60000000000002" y="-112.89355322338831"/>
+>>>>>>> Stashed changes
         </view>
     </objects>
 </document>

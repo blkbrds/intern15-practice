@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="BaiTapClosure" customModuleProvider="target">
             <connections>
+                <outlet property="avatarView" destination="B4o-97-Aba" id="X9v-jV-mjS"/>
                 <outlet property="nameProfileLabel" destination="0gR-Hm-wRR" id="gnL-N6-cps"/>
                 <outlet property="profileImage" destination="RIu-JL-oXO" id="a0I-2W-QSp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,17 +34,27 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4o-97-Aba" customClass="AvatarView" customModule="BaiTapClosure" customModuleProvider="target">
+                    <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="D1w-BF-Jqk"/>
+                        <constraint firstAttribute="width" constant="100" id="gaN-L9-fKs"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.8666666666666667" green="0.62745098039215685" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="RIu-JL-oXO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0ol-hF-Wny"/>
+                <constraint firstItem="B4o-97-Aba" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1Mp-B1-f1m"/>
                 <constraint firstItem="RIu-JL-oXO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="66" id="78o-Wl-EFd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0gR-Hm-wRR" secondAttribute="trailing" constant="112.5" id="Auc-3Q-CU0"/>
                 <constraint firstItem="0gR-Hm-wRR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="112.5" id="KpP-qk-sL6"/>
+                <constraint firstItem="B4o-97-Aba" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wf1-jq-F8o"/>
                 <constraint firstItem="0gR-Hm-wRR" firstAttribute="top" secondItem="RIu-JL-oXO" secondAttribute="bottom" constant="60" id="wyU-mr-zq2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-548" y="-179"/>
+            <point key="canvasLocation" x="-298.39999999999998" y="-171.36431784107947"/>
         </view>
     </objects>
     <resources>
