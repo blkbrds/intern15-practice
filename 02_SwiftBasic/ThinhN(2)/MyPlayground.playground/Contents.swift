@@ -160,8 +160,8 @@ func tinhThanh(tinh: [[String: Any]]) {
             mangTam.append(dienTich1)
         }
     }
-    for i in 0..<mangTam.count - 1{
-        for j in i + 1..<mangTam.count - 1 {
+    for i in 0..<mangTam.count - 1 {
+        for j in i + 1..<mangTam.count {
             if mangTam[i] < mangTam[j] {
                 tam = mangTam[i]
                 mangTam[i] = mangTam[j]
