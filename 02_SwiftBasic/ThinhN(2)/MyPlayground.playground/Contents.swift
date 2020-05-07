@@ -99,7 +99,7 @@ import UIKit
 //    print(mang[viTriLonNhat])
 //    return 1
 //}
-//
+
 //giaTriXaNhat(mang: [3, 6, 10, 30, -20], x: 6)
 //
 //func kiemTraHoanVi(mangA: [Int], mangB: [Int]) -> Bool {
@@ -138,8 +138,9 @@ import UIKit
 func tinhThanh(tinh: [[String: Any]]) {
     var dienTichLonNhat: Int = 0
     var tam: Int
-    var giaTri: Int = 0
+    var tam2: String
     var mangTam: [Int] = []
+    var mangCacTinh: [String] = []
     for item in tinh {
         if let danSo = item["danSo"] as? Int {
             if danSo > 1000 {
@@ -155,22 +156,31 @@ func tinhThanh(tinh: [[String: Any]]) {
         }
     }
     print("Tinh co dien tich lon nhat la \(dienTichLonNhat)")
+
     for item2 in tinh {
         if let dienTich1 = item2["dienTich"] as? Int {
             mangTam.append(dienTich1)
+        }
+    }
+    for item2 in tinh {
+        if let tenTinh = item2["tenTinh"] as? String {
+            mangCacTinh.append(tenTinh)
         }
     }
     for i in 0..<mangTam.count - 1 {
         for j in i + 1..<mangTam.count {
             if mangTam[i] < mangTam[j] {
                 tam = mangTam[i]
+                tam2 = mangCacTinh[i]
                 mangTam[i] = mangTam[j]
+                mangCacTinh[i] = mangCacTinh[j]
                 mangTam[j] = tam
+                mangCacTinh[j] = tam2
+                }
             }
         }
-    }
-    
-    print("Sap xep mang \(mangTam))")
+    print(mangCacTinh)
 }
-tinhThanh(tinh: [["maTinh": 1, "tenTinh": "HaNoi", "danSo" : 1200, "dienTich" : 45], ["maTinh": 2, "tenTinh": "HaNoi2", "danSo" : 120, "dienTich" : 456 ], ["maTinh": 3, "tenTinh": "HaNoi", "danSo" : 1200, "dienTich" : 4555]])
+tinhThanh(tinh: [["maTinh": 1, "tenTinh": "HaNoi", "danSo" : 1200, "dienTich" : 49665], ["maTinh": 2, "tenTinh": "DaNang", "danSo" : 120, "dienTich" : 456 ], ["maTinh": 3, "tenTinh": "HoChiMinh", "danSo" : 1200, "dienTich" : 4555], ["maTinh": 4, "tenTinh": "QuangNam", "danSo" : 1200, "dienTich" : 225]])
+
 
