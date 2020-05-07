@@ -1,7 +1,7 @@
 import UIKit
 
 class HomeViewController: BaseViewController {
-    
+
     // MARK: - IBOutlet
     @IBOutlet weak var onlineButton: UIButton!
     @IBOutlet weak var offButton: UIButton!
@@ -10,7 +10,7 @@ class HomeViewController: BaseViewController {
     var online: String = ""
     var off: String = ""
     var name: String = ""
-     var viewModel = HomeViewModel()
+    var viewModel = HomeViewModel()
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -50,7 +50,7 @@ class HomeViewController: BaseViewController {
         }
         self.navigationController?.pushViewController(dvc, animated: true)
     }
-    
+
     @IBAction func offlineStatusButtonTouchUpInside(_ sender: Any) {
         let dvc = DetailsViewController()
         dvc.action = { [weak self] action in
