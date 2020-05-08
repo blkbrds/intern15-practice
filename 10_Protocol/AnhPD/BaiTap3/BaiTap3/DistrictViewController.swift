@@ -97,6 +97,6 @@ extension DistrictViewController: LocationViewControllerDataSource {
     func getDistrict() -> String {
         return district
     }
-    
+
 
 }
