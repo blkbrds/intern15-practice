@@ -20,17 +20,12 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var provinceTextField: UITextField!
     @IBOutlet weak var districtTextField: UITextField!
     
-    var domain: String = ""
-    var province: String = ""
-    var district: String = ""
-    
     weak var dataSource: LocationViewControllerDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Địa điểm"
         configNavigationBar()
-//        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,18 +34,12 @@ class LocationViewController: UIViewController {
     }
     
     private func setupUI() {
-        domainTextField.text = dataSource?.getDomain()
-        provinceTextField.text = dataSource?.getProvince()
-        districtTextField.text = dataSource?.getDistrict()
+        if let dataSource = dataSource {
+            domainTextField.text = dataSource.getDomain()
+            provinceTextField.text = dataSource.getProvince()
+            districtTextField.text = dataSource.getDistrict()
+        }
     }
-    
-//    private func updateUI() {
-//        if let dataSource = dataSource {
-//            domain = dataSource.getDomain()
-//            province = dataSource.getProvince()
-//            district = dataSource.getDistrict()
-//        }
-//    }
     
     func configNavigationBar() {
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonTouchUnInSide))

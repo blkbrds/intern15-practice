@@ -30,16 +30,19 @@ class DistrictViewController: UIViewController {
             districtButtons[index].clipsToBounds = true
         }
     }
+    
     func configNavigationBar() {
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInSide))
         navigationItem.rightBarButtonItem = doneButton
     }
     
     @objc func doneButtonTouchUpInSide() {
-        let vc = self.navigationController?.viewControllers[0] as! LocationViewController
-        vc.dataSource = self
-        if let navigationController = navigationController {
-            navigationController.popToViewController(vc, animated: true)
+        let vc = self.navigationController?.viewControllers[0] as? LocationViewController
+        if let vc = vc {
+            vc.dataSource = self
+            if let navigationController = navigationController {
+                navigationController.popToViewController(vc, animated: true)
+            }
         }
     }
     
