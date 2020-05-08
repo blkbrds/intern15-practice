@@ -1,5 +1,5 @@
 import UIKit
-
+//// Bai 34
 //func tinhTong(n: Int) -> Float {
 //    var S: Float = 0
 //    for i in 1...n {
@@ -8,7 +8,7 @@ import UIKit
 //    return S
 //}
 //tinhTong(n: 3)
-//
+////Bai 61
 //func kiemTraSo(n: Int) -> Bool {
 //    var i = 0
 //    var tam = n
@@ -28,7 +28,7 @@ import UIKit
 //    return true
 //}
 //kiemTraSo(n: 98741)
-//
+//// Bai 87
 //func timNnhoNhat() -> Int {
 //    var S = 0
 //    var n = 1
@@ -39,7 +39,7 @@ import UIKit
 //    return n
 //}
 //timNnhoNhat()
-//
+//// Bai 102
 //func ngayKeTiep(ngay: Int, thang: Int, nam: Int) -> (Int, Int, Int) {
 //    if ngay + 1 <= soNgayTrongThang(thang: thang, nam: nam) {
 //        return (ngay + 1, thang, nam)
@@ -65,7 +65,7 @@ import UIKit
 //    }
 //}
 //ngayKeTiep(ngay: 1, thang: 3, nam: 2020)
-//
+////Bai 124
 //func kiemTraSoNguyen(mang: [Int]) -> Bool {
 //    for i in 0..<mang.count {
 //        if mang[i] % 2 == 0 && mang[i] < 2004 {
@@ -75,7 +75,7 @@ import UIKit
 //    return false
 //}
 //kiemTraSoNguyen(mang: [3, 5, 7])
-//
+////Bai 155
 //func giaTriXaNhat(mang: [Int], x: Int) -> Int {
 //    var mangTam: [Int] = []
 //    var giaTriTam: Int
@@ -99,9 +99,8 @@ import UIKit
 //    print(mang[viTriLonNhat])
 //    return 1
 //}
-
 //giaTriXaNhat(mang: [3, 6, 10, 30, -20], x: 6)
-//
+// Bai 260
 //func kiemTraHoanVi(mangA: [Int], mangB: [Int]) -> Bool {
 //    var mangBNguoc: [Int] = []
 //    var giaTriNguoc: Int
@@ -129,58 +128,108 @@ import UIKit
 //    return false
 //}
 //kiemTraHoanVi(mangA: [2,5,6], mangB: [6,5,2])
-
-//func sapXepChanLe(mang: [mang1[Int], mang2[Int]]) -> ([Int], [Int]) {
+//Bai 413
+//func sapXepChanLe(mang: [[Int]]) -> ([Int], [Int]) {
 //
 //    return 1
 //}
+//Bai 667
+//func tinhThanh(tinh: [[String: Any]]) {
+//    var dienTichLonNhat: Int = 0
+//    var tam: Int
+//    var tam2: String
+//    var mangTam: [Int] = []
+//    var mangCacTinh: [String] = []
+//    for item in tinh {
+//        if let danSo = item["danSo"] as? Int {
+//            if danSo > 1000 {
+//                print(item)
+//            }
+//        }
+//    }
+//    for item1 in tinh {
+//        if let dienTich = item1["dienTich"] as? Int {
+//            if dienTich > dienTichLonNhat {
+//                dienTichLonNhat = dienTich
+//            }
+//        }
+//    }
+//    print("Tinh co dien tich lon nhat la \(dienTichLonNhat)")
+//    for item2 in tinh {
+//        if let dienTich1 = item2["dienTich"] as? Int {
+//            mangTam.append(dienTich1)
+//        }
+//    }
+//    for item2 in tinh {
+//        if let tenTinh = item2["tenTinh"] as? String {
+//            mangCacTinh.append(tenTinh)
+//        }
+//    }
+//    for i in 0..<mangTam.count - 1 {
+//        for j in i + 1..<mangTam.count {
+//            if mangTam[i] < mangTam[j] {
+//                tam = mangTam[i]
+//                tam2 = mangCacTinh[i]
+//                mangTam[i] = mangTam[j]
+//                mangCacTinh[i] = mangCacTinh[j]
+//                mangTam[j] = tam
+//                mangCacTinh[j] = tam2
+//                }
+//            }
+//        }
+//    print(mangCacTinh)
+//}
+//tinhThanh(tinh: [["maTinh": 1, "tenTinh": "HaNoi", "danSo" : 1200, "dienTich" : 49665], ["maTinh": 2, "tenTinh": "DaNang", "danSo" : 120, "dienTich" : 456 ], ["maTinh": 3, "tenTinh": "HoChiMinh", "danSo" : 1200, "dienTich" : 4555], ["maTinh": 4, "tenTinh": "QuangNam", "danSo" : 1200, "dienTich" : 225]])
 
-func tinhThanh(tinh: [[String: Any]]) {
-    var dienTichLonNhat: Int = 0
-    var tam: Int
-    var tam2: String
-    var mangTam: [Int] = []
-    var mangCacTinh: [String] = []
-    for item in tinh {
-        if let danSo = item["danSo"] as? Int {
-            if danSo > 1000 {
-                print(item)
-            }
-        }
-    }
-    for item1 in tinh {
-        if let dienTich = item1["dienTich"] as? Int {
-            if dienTich > dienTichLonNhat {
-                dienTichLonNhat = dienTich
-            }
-        }
-    }
-    print("Tinh co dien tich lon nhat la \(dienTichLonNhat)")
+func sapXepChanLe(mang: [[Int]]) -> ( [[Int]]) {
+    var mangTam: [[Int]] = mang
+    var mangKetQua: [[Int]] = []
 
-    for item2 in tinh {
-        if let dienTich1 = item2["dienTich"] as? Int {
-            mangTam.append(dienTich1)
+    for i in 0..<mangTam.count  {
+        if i % 2 == 0 {
+            mangTam[i] = sapXepTangDan(mangA: mangTam[i])
+            mangKetQua.append(mangTam[i])
+        } else {
+            mangTam[i] = sapXepGiamDan(mangB: mangTam[i])
+            mangKetQua.append(mangTam[i])
         }
     }
-    for item2 in tinh {
-        if let tenTinh = item2["tenTinh"] as? String {
-            mangCacTinh.append(tenTinh)
-        }
-    }
-    for i in 0..<mangTam.count - 1 {
-        for j in i + 1..<mangTam.count {
-            if mangTam[i] < mangTam[j] {
-                tam = mangTam[i]
-                tam2 = mangCacTinh[i]
-                mangTam[i] = mangTam[j]
-                mangCacTinh[i] = mangCacTinh[j]
-                mangTam[j] = tam
-                mangCacTinh[j] = tam2
-                }
-            }
-        }
-    print(mangCacTinh)
+    print(mangKetQua)
+    return mangKetQua
 }
-tinhThanh(tinh: [["maTinh": 1, "tenTinh": "HaNoi", "danSo" : 1200, "dienTich" : 49665], ["maTinh": 2, "tenTinh": "DaNang", "danSo" : 120, "dienTich" : 456 ], ["maTinh": 3, "tenTinh": "HoChiMinh", "danSo" : 1200, "dienTich" : 4555], ["maTinh": 4, "tenTinh": "QuangNam", "danSo" : 1200, "dienTich" : 225]])
-
+func sapXepTangDan(mangA: [Int]) -> [Int] {
+    var tam: Int
+    var mang: [Int] = []
+    for i in 0..<mangA.count {
+        mang.append(mangA[i])
+    }
+    for i in 0..<mang.count - 1 {
+        for j in i + 1..<mang.count {
+            if mang[i] > mang[j] {
+                tam = mang[i]
+                mang[i] = mang[j]
+                mang[j] = tam
+            }
+        }
+    }
+    return mang
+}
+func sapXepGiamDan(mangB: [Int]) -> [Int] {
+    var tam: Int
+    var mang: [Int] = []
+    for i in 0..<mangB.count{
+        mang.append(mangB[i])
+    }
+    for i in 0..<mang.count - 1 {
+        for j in i + 1..<mang.count {
+            if mang[i] < mang[j] {
+                tam = mang[i]
+                mang[i] = mang[j]
+                mang[j] = tam
+            }
+        }
+    }
+    return mang
+}
+sapXepChanLe(mang: [[120, 24], [14,22], [15,60], [22,10], [11,12], [14,20]])
 
