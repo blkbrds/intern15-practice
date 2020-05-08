@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DomainViewController" customModule="BaiTap3" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="domainButtons" destination="txi-ZZ-rL9" collectionClass="NSMutableArray" id="51d-3Y-50l"/>
+                <outletCollection property="domainButtons" destination="TiE-RE-Qag" collectionClass="NSMutableArray" id="gqS-nz-iKV"/>
+                <outletCollection property="domainButtons" destination="hDp-xS-0gj" collectionClass="NSMutableArray" id="WSC-pE-oqt"/>
+                <outletCollection property="domainButtons" destination="qKg-xY-2Nv" collectionClass="NSMutableArray" id="cEV-LB-96L"/>
+                <outletCollection property="domainButtons" destination="yzM-ur-w63" collectionClass="NSMutableArray" id="4Jx-EZ-waF"/>
+                <outletCollection property="domainButtons" destination="4AM-XD-wjN" collectionClass="NSMutableArray" id="twT-Rw-RE3"/>
+                <outletCollection property="domainButtons" destination="igB-Ou-2QJ" collectionClass="NSMutableArray" id="ynR-nV-gI8"/>
+                <outletCollection property="domainButtons" destination="9b9-7n-S1l" collectionClass="NSMutableArray" id="7Bh-YN-lKd"/>
+                <outletCollection property="domainButtons" destination="AUF-Ir-xIm" collectionClass="NSMutableArray" id="6lS-dc-CXa"/>
+                <outletCollection property="domainButtons" destination="rPn-V5-Odf" collectionClass="NSMutableArray" id="EP1-L2-FhB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txi-ZZ-rL9">
+                    <rect key="frame" x="103.5" y="142" width="207" height="30"/>
+                    <state key="normal" title="Miền 1"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="dMJ-ke-cjj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiE-RE-Qag">
+                    <rect key="frame" x="103.5" y="209" width="207" height="30"/>
+                    <state key="normal" title="Miền 2"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="VLa-QR-e99"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDp-xS-0gj">
+                    <rect key="frame" x="103.5" y="276" width="207" height="30"/>
+                    <state key="normal" title="Miền 3"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="JL6-T1-HyU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-xY-2Nv">
+                    <rect key="frame" x="103.5" y="343.5" width="207" height="30"/>
+                    <state key="normal" title="Miền 4"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="AIF-cZ-6AW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-ur-w63">
+                    <rect key="frame" x="103.5" y="410.5" width="207" height="30"/>
+                    <state key="normal" title="Miền 5"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="qKs-mu-aGg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AM-XD-wjN">
+                    <rect key="frame" x="103.5" y="478" width="207" height="30"/>
+                    <state key="normal" title="Miền 6"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="Tih-My-Ho9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igB-Ou-2QJ">
+                    <rect key="frame" x="103.5" y="545" width="207" height="30"/>
+                    <state key="normal" title="Miền 7"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="op0-gP-tzN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b9-7n-S1l">
+                    <rect key="frame" x="103.5" y="612" width="207" height="30"/>
+                    <state key="normal" title="Miền 8"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="1PS-8y-E9R"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPn-V5-Odf">
+                    <rect key="frame" x="103.5" y="746.5" width="207" height="30"/>
+                    <state key="normal" title="Miền 10"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="KkM-wN-MY2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUF-Ir-xIm">
+                    <rect key="frame" x="103.5" y="679.5" width="207" height="30"/>
+                    <state key="normal" title="Miền 9"/>
+                    <connections>
+                        <action selector="domainButtonTouchUnInSide:" destination="-1" eventType="touchUpInside" id="kJw-z8-isc"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rPn-V5-Odf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="54Q-hE-pSA"/>
+                <constraint firstItem="hDp-xS-0gj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5IJ-vl-kSb"/>
+                <constraint firstItem="igB-Ou-2QJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.25" id="5gS-HE-gYs"/>
+                <constraint firstItem="yzM-ur-w63" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.95" id="6PD-dj-yJ2"/>
+                <constraint firstItem="txi-ZZ-rL9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="9v1-0h-Tmc"/>
+                <constraint firstItem="TiE-RE-Qag" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="A6b-Rg-YFM"/>
+                <constraint firstItem="rPn-V5-Odf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.7" id="Dfp-Gf-Tdx"/>
+                <constraint firstItem="igB-Ou-2QJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="E6h-39-QqL"/>
+                <constraint firstItem="AUF-Ir-xIm" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="HOg-2t-SUN"/>
+                <constraint firstItem="qKg-xY-2Nv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="IxH-B1-dNT"/>
+                <constraint firstItem="yzM-ur-w63" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OBG-Mf-lip"/>
+                <constraint firstItem="rPn-V5-Odf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OcD-8g-SYb"/>
+                <constraint firstItem="4AM-XD-wjN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="Q6O-2w-T0y"/>
+                <constraint firstItem="9b9-7n-S1l" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.4" id="TGv-vN-vZj"/>
+                <constraint firstItem="4AM-XD-wjN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.1" id="VEm-WC-2dI"/>
+                <constraint firstItem="txi-ZZ-rL9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VuQ-Rj-7h9"/>
+                <constraint firstItem="txi-ZZ-rL9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.35" id="agb-j8-MRo"/>
+                <constraint firstItem="qKg-xY-2Nv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.8" id="akV-Lg-5NP"/>
+                <constraint firstItem="AUF-Ir-xIm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="c41-4x-r3D"/>
+                <constraint firstItem="hDp-xS-0gj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="dUz-CS-wMk"/>
+                <constraint firstItem="hDp-xS-0gj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.65" id="dpM-ge-3lH"/>
+                <constraint firstItem="9b9-7n-S1l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gTb-j4-EAt"/>
+                <constraint firstItem="yzM-ur-w63" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="gbC-Aq-ItD"/>
+                <constraint firstItem="TiE-RE-Qag" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="gkH-Vf-jW6"/>
+                <constraint firstItem="igB-Ou-2QJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="m0M-3L-5Ru"/>
+                <constraint firstItem="AUF-Ir-xIm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.55" id="pfh-Ui-XhR"/>
+                <constraint firstItem="qKg-xY-2Nv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="twL-VM-EAm"/>
+                <constraint firstItem="9b9-7n-S1l" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="uoN-eU-fA8"/>
+                <constraint firstItem="4AM-XD-wjN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xb2-vm-lZV"/>
+                <constraint firstItem="TiE-RE-Qag" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yLB-pU-mLA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="133" y="153"/>
+        </view>
+    </objects>
+</document>
