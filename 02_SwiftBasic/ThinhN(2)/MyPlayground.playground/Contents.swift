@@ -105,28 +105,24 @@ func kiemTraHoanVi(mangA: [Int], mangB: [Int]) -> Bool {
     var giaTriNguoc: Int
     var i: Int = mangB.count - 1
 
+    if mangA.count != mangB.count {
+           return false
+       }
     while i >= 0 {
         giaTriNguoc = mangB[i]
         mangBNguoc.append(giaTriNguoc)
         i -= 1
     }
-    if mangA.count != mangBNguoc.count {
-        return false
-    }
-    if mangA.count == mangBNguoc.count {
-        for i in 0..<mangA.count {
-            for i2 in 0..<mangBNguoc.count {
-                if mangA[i] == mangBNguoc [i2] {
-                    return true
-                } else {
-                    return false
-                }
-            }
+    for i in 0..<mangA.count {
+        if mangA[i] == mangBNguoc [i] {
+            return true
+        } else {
+            return false
         }
     }
     return false
 }
-kiemTraHoanVi(mangA: [2,5,6], mangB: [6,5,2])
+kiemTraHoanVi(mangA: [2, 5, 6], mangB: [6, 5, 1])
 //Bai 667
 func tinhThanh(tinh: [[String: Any]]) {
     var dienTichLonNhat: Int = 0
