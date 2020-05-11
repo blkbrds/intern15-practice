@@ -223,16 +223,12 @@ import UIKit
 //}
 //sapXepChanLe(mang: [[120, 24], [14, 22], [15, 60], [22, 10], [11, 12], [14, 20]])
 
-
-
-
+// workAtHome
 //Bai 320
 func tinhTong(soNhap: [[Float]]) -> Float {
-    var S: Float = 0
     var n: Float = 0
     for i in 0..<soNhap.count {
         n = tongS(mangA: soNhap[i]) + n
-        S += n
     }
     return n
 }
@@ -245,10 +241,9 @@ func tongS(mangA: [Float]) -> Float {
     }
   return tam
 }
-tinhTong(soNhap: [[-1.4,-2.4,-3.4,4], [1.4, 2.4]])
+tinhTong(soNhap: [[-1.4, -2.4, -3.4], [1.4, 2.4]])
 //Bai 676
 func hocSinh(hocSinh: [[String: Any]]) {
-    var soHocSinh: [Int] = []
     var mangVan: [Int] = []
     var mangToan: [Int] = []
     var tam: Int = 0
@@ -268,28 +263,17 @@ func hocSinh(hocSinh: [[String: Any]]) {
     }
     print("Diem toan la: \(mangToan)")
     for i in 0..<mangToan.count {
-        if mangToan[i] >= 8 {
-            soHocSinh.append(mangToan[i])
-        }
-    }
-    for i in 0..<mangVan.count {
-        if mangVan[i] >= 8 {
-        soHocSinh.append(mangVan[i])
-        }
-    }
-    for i in 0..<mangToan.count {
         if mangToan[i] > 8 && mangVan[i] > 8 {
             tam += 1
         }
     }
     print("So hoc sinh gioi la : \(tam)")
 }
-hocSinh(hocSinh: [["tenHocSinh": "NguyenPhuocThinh", "diemToan": 9, "diemVan": 10, "diemTrungBinh": 19], ["tenHocSinh": "NguyenPhuocThinh2", "diemToan": 10, "diemVan": 10, "diemTrungBinh": 20], ["tenHocSinh": "NguyenPhuocThinh", "diemToan": 3, "diemVan": 2, "diemTrungBinh": 3], ["tenHocSinh": "NguyenPhuocThinh", "diemToan": 9, "diemVan": 2, "diemTrungBinh": 19] ])
+hocSinh(hocSinh: [["tenHocSinh": "NguyenPhuocThinh", "diemToan": 9, "diemVan": 10, "diemTrungBinh": 19], ["tenHocSinh": "NguyenPhuocThinh2", "diemToan": 10, "diemVan": 10, "diemTrungBinh": 20], ["tenHocSinh": "NguyenPhuocThinh", "diemToan": 1, "diemVan": 9, "diemTrungBinh": 3], ["tenHocSinh": "NguyenPhuocThinh", "diemToan": 9, "diemVan": 6, "diemTrungBinh": 19] ])
 
 //Bai 677
 func lopHoc(lopHoc: [[String: Any]]) {
     var siSoLonNhat: Int = 0
-    var mangSiSo: [Int] = []
     for item in lopHoc {
         print(item)
     }
@@ -304,79 +288,102 @@ func lopHoc(lopHoc: [[String: Any]]) {
 }
 lopHoc(lopHoc: [["tenLop": "10", "siSo": 3, "danhSach": "Le Van A, Tran Van B, Dang Van C"], ["tenLop": "11", "siSo": 113, "danhSach": "Le Van A, Tran Van B, Dang Van C"], ["tenLop": "12", "siSo": 11, "danhSach": "Le Van A, Tran Van B, Dang Van C"]])
 
-//// Bai 232
-//func lietKeLapLai(mang: [Int]) -> [Int] {
-//    var mangLap: [Int] = []
-//    var giaTriLap: Int = 0
-//    var mangSapXep: [Int] = []
-//    var mangKetQua: [Int] = []
-//    for i in 0..<mang.count - 1 {
-//        for j in i + 1..<mang.count   {
-//            if mang[i] == mang[j] {
-//                giaTriLap = mang[i]
-//                mangLap.append(mang[i])
-//            }
-//        }
-//    }
-//    print(mangLap)
-////    for i in 0..<mangLap.count - 1 {
-////        mangSapXep = sapXepMang(mang: mangLap)
-////    }
-////    print(mangSapXep)
-////    for i in 0..<mangSapXep.count - 1  {
-////        for j in i + 1..<mangSapXep.count - 1 {
-////            if mangSapXep[i] == mangSapXep[j] {
-////                mangSapXep.remove(at: i)
-////            }
-////        }
-////    }
-////    for i in 0..<mangSapXep.count - 1 {
-////        for j in i + 1..<mangSapXep.count {
-////            if mangSapXep[i] != mangSapXep[j] {
-////                mangKetQua.append(mangSapXep[i])
-////                i == j
-////            }
-////        }
-////    }
-//    print("afasf\(mangKetQua)")
-////    return mangKetQua
-//    return mangSapXep
-//}
-//func sapXepMang(mang: [Int]) -> [Int] {
-//    var tam: Int
-//    var mangA: [Int] = mang
-//    for i in 0..<mang.count - 1 {
-//        for j in i + 1..<mangA.count {
-//            if mangA[i] > mangA[j] {
-//                tam = mangA[i]
-//                mangA[i] = mangA[j]
-//                mangA[j] = tam
-//            }
-//
-//        }
-//    }
-//    return mangA
-//}
-//func kiemTra(mang: [Int]) -> [Int] {
-//    for i in 0..<mang.count - 1 {
-//
-//    }
-//}
-////func kiemTra(mang: [Int]) -> [Int] {
-////    var mang: [Int] = []
-////
-////    for i in 0..<mang.count  {
-////        for j in i + 1..<mang.count {
-////            if mang[i] == mang[j] {
-////                mang.append(mang[i])
-////            }
-////        }
-////    }
-////    print(mang)
-////    return mang
-////}
-//lietKeLapLai(mang: [1,4,4,5,2,2,4])
-//sapXepMang(mang: [1,4,5,4,2,1])
-////kiemTra(mang: [1,3,5,6,7,7,3])
-////lietKeLapLai(mang: [1,3,3,3,4,3,4,5,5])
-//
+// Bai 232
+func sapXepMang(mang: [Int]) -> [Int] {
+    var tam: Int
+    var mangA: [Int] = mang
+    for i in 0..<mang.count - 1 {
+        for j in i + 1..<mangA.count {
+            if mangA[i] > mangA[j] {
+                tam = mangA[i]
+                mangA[i] = mangA[j]
+                mangA[j] = tam
+            }
+        }
+    }
+    return mangA
+}
+func kiemTraMang(mang: [Int], x: Int) -> Bool {
+    for i in 0..<mang.count {
+        if mang[i] == x {
+            return true
+        }
+    }
+    return false
+}
+func lietKeLapLai(mang: [Int]) -> [Int] {
+    var mangLap: [Int] = []
+    for i in 0..<mang.count - 1 {
+        for j in i + 1..<mang.count {
+            if mang[i] == mang[j] &&  kiemTraMang(mang: mangLap, x: mang[i]) == false {
+                mangLap.append(mang[i])
+            }
+        }
+    }
+    print("mangketqua\(mangLap)")
+    return mangLap
+}
+lietKeLapLai(mang: [2, 2, 1, 3, 3, 3, 4, 3, 4, 5, 5])
+//Bai 50(xong)
+func timSoDao(so: Int) -> Int {
+    var tam: Int = 0
+    var soNhap: Int = so
+    var soDaoNguoc: Int = 0
+    while soNhap != 0 {
+        tam = soNhap % 10
+        soDaoNguoc = soDaoNguoc * 10 + tam
+        soNhap = soNhap / 10
+    }
+    return soDaoNguoc
+}
+timSoDao(so: 23444)
+
+//Bai 265 (Xong)
+func sapXepMang(mangA: [Int], mangB: [Int]) -> [Int] {
+    var mang: [Int] = mangA
+    var mangGiamDan: [Int] = []
+    for i in 0..<mangB.count {
+        mang.append(mangB[i])
+        mangGiamDan = sapXepMang(mang: mang)
+        }
+    print(mangGiamDan)
+    return mangGiamDan
+}
+func sapXepGiamDan(mang: [Int] ) -> [Int] {
+    var tam: Int = 0
+    var mangSapXep: [Int] = mang
+    for i in 0..<mangSapXep.count - 1 {
+        for j in i + 1..<mangSapXep.count {
+            if mangSapXep[i] < mangSapXep[j] {
+                tam = mangSapXep[i]
+                mangSapXep[i] = mangSapXep[j]
+                mangSapXep[j] = tam
+            }
+        }
+    }
+  return mangSapXep
+}
+sapXepMang(mangA: [4, 5, 7, 8], mangB: [1, 2, 5, 6])
+
+//Bai 334
+func demSoDuong(soNhap: [[Float]]) -> [Float] {
+    var dem: Float
+    var mang: [Float] = []
+    for i in 0..<soNhap.count {
+        dem = hamDem(so: soNhap[i])
+        mang.append(dem)
+    }
+    print(mang)
+    return mang
+}
+func hamDem(so: [Float]) -> Float {
+    var dem: Float = 0
+    for i in 0..<so.count{
+        if so[i] >= 0 {
+            dem += 1
+        }
+    }
+    return dem
+}
+demSoDuong(soNhap: [[3, 4, -95, 7, 8, -3], [6, 5, 4, 3, 2], [6, 5, 4]])
+
