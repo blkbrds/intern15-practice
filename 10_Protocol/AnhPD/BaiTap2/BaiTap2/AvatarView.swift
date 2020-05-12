@@ -19,7 +19,7 @@ class AvatarView: UIView {
     var userName: String = ""
     var imageView: String = "avatar"
 
-    func loadView() {
+    func updateName() {
         nameLabel.text = userName
     }
     

@@ -42,7 +42,9 @@ class ProfileViewController: UIViewController {
         if let delegate = delegate, let index = index {
             delegate.controller(controller: self, needPerfomAction: .updateData(userName: nameTextField.text, index: index))
         }
-        navigationController?.popToRootViewController(animated: true)
+        if let navigation = navigationController {
+            navigation.popToRootViewController(animated: true)
+        }
     }
     
     func loadName(){

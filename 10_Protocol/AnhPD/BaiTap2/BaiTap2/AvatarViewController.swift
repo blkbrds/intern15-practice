@@ -18,10 +18,11 @@ class AvatarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.loadAvatar()
-        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadAvatar()
     }
     
     func loadAvatar() {
@@ -38,7 +39,7 @@ class AvatarViewController: UIViewController {
                     coordinatesY += (UIScreen.main.bounds.width - CGFloat(40)) / 3 + 10
                     coordinatesX = 10
                 }
-                avatar.loadView()
+                avatar.updateName()
                 scrollView.addSubview(avatar)
             }
         }
@@ -52,7 +53,9 @@ extension AvatarViewController: AvataViewDelegate {
         vc.userName = userName
         vc.imageView = imageView
         vc.index = index
-        navigationController?.pushViewController(vc, animated: true)
+        if let navigation = navigationController {
+            navigation.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -65,7 +68,7 @@ extension AvatarViewController: ProfileViewControllerDelegate {
             for subView in scrollView.subviews {
                 if let avataView = subView as? AvatarView, avataView.tag == index {
                     avataView.userName = names[index - 1]
-                    avataView.loadView()
+                    avataView.updateName()
                 }
             }
         }
