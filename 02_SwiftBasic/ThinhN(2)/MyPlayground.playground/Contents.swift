@@ -275,8 +275,7 @@ hocSinh(hocSinh: [["tenHocSinh": "NguyenPhuocThinh", "diemToan": 9, "diemVan": 1
 func lopHoc(lopHoc: [[String: Any]]) {
     var siSoLonNhat: Int = 0
     var tenLop1: [String] = []
-    var siSo1: [Int] = []
-    var tenLop: String = ""
+    var lop: [String: Any] = [:]
     for item in lopHoc {
         print(item)
     }
@@ -287,16 +286,13 @@ func lopHoc(lopHoc: [[String: Any]]) {
     }
     for i in lopHoc {
         if let siSo = i["siSo"] as? Int {
-            siSo1.append(siSo)
-        }
-    for i in 0..<siSo1.count {
-        if siSo1[i] > siSoLonNhat {
-            siSoLonNhat = siSo1[i]
-            tenLop = tenLop1[i]
+            if siSo > siSoLonNhat {
+                siSoLonNhat = siSo
+                lop = i
             }
         }
     }
-    print("Lop co si so lon nhat la \(tenLop)")
+    print("Lop co si so lon nhat la \(lop ["tenLop"])")
 }
 lopHoc(lopHoc: [["tenLop": "10A1", "siSo": 73, "danhSach": "Le Van A, Tran Van B, Dang Van C"], ["tenLop": "11A2", "siSo": 13, "danhSach": "Le Van A, Tran Van B, Dang Van C"], ["tenLop": "12A3", "siSo": 118, "danhSach": "Le Van A, Tran Van B, Dang Van C"]])
 
@@ -356,10 +352,10 @@ func sapXepMang(mangA: [Int], mangB: [Int]) -> [Int] {
 sapXepMang(mangA: [4, 5, 7, 8], mangB: [1, 2, 5, 6])
 
 //Bai 334
-func demSoDuong(soNhap: [[Float]]) -> Float {
-    var S: Float = 0
+func demSoDuong(soNhap: [[Float]]) -> Int {
+    var S: Int = 0
     for i in 0..<soNhap.count {
-        S = Float(hamDem(so: soNhap[i])) + S
+        S = hamDem(so: soNhap[i]) + S
     }
     return S
 }
