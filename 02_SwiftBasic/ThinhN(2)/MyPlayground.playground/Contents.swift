@@ -288,11 +288,11 @@ func lopHoc(lopHoc: [[String: Any]]) {
     for i in lopHoc {
         if let siSo = i["siSo"] as? Int {
             siSo1.append(siSo)
-            for i in 0..<siSo1.count   {
-                if siSo1[i] > siSoLonNhat {
-                    siSoLonNhat = siSo1[i]
-                    tenLop = tenLop1[i]
-                }
+        }
+    for i in 0..<siSo1.count {
+        if siSo1[i] > siSoLonNhat {
+            siSoLonNhat = siSo1[i]
+            tenLop = tenLop1[i]
             }
         }
     }
@@ -340,9 +340,8 @@ timSoDao(so: 23444)
 func sapXepMang(mangA: [Int], mangB: [Int]) -> [Int] {
     var tam: Int = 0
     var mang: [Int] = mangA
-    for i in 0..<mangB.count {
-        mang.append(mangB[i])
-    }
+    
+    mang.append(contentsOf: mangB)
     for i in 0..<mang.count - 1 {
         for j in i + 1..<mang.count {
             if mang[i] > mang[j] {
@@ -360,17 +359,15 @@ sapXepMang(mangA: [4, 5, 7, 8], mangB: [1, 2, 5, 6])
 func demSoDuong(soNhap: [[Float]]) -> Float {
     var S: Float = 0
     for i in 0..<soNhap.count {
-        S = hamDem(so: soNhap[i]) + S
+        S = Float(hamDem(so: soNhap[i])) + S
     }
     return S
 }
-func hamDem(so: [Float]) -> Float {
-    var dem: Float = 0
-    var mang: [Float] = []
+func hamDem(so: [Float]) -> Int {
+    var dem: Int = 0
     for i in 0..<so.count{
         if so[i] >= 0 {
-            mang.append(so[i])
-            dem += 1
+           dem += 1
         }
     }
     return dem
