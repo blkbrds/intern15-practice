@@ -7,155 +7,146 @@ class Animals {
 }
 
 protocol Animal {
-    var isDi: Bool { get }
+    var go: Bool { get }
 }
 
 protocol Bird {
-    var isBay: Bool { get }
+    var fly: Bool { get }
 }
 
 protocol Fish {
-    var isBoi: Bool { get }
+    var swim: Bool { get }
 }
 
 class FlyingFish: Animals, Fish, Bird {
-    var isBoi: Bool {
+    var swim: Bool {
         return true
     }
     
-    var isBay: Bool {
+    var fly: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Cá Chuồn"
     }
 }
 
 class Cows: Animals, Animal {
-    var isDi: Bool {
+    var go: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Bò"
     }
 }
 
 class Chicken: Animals, Bird {
-    var isBay: Bool {
+    var fly: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Gà"
     }
 }
 
 class Duck: Animals, Animal, Bird, Fish {
-    var isDi: Bool {
+    var go: Bool {
         return true
     }
     
-    var isBay: Bool {
+    var fly: Bool {
         return true
     }
     
-    var isBoi: Bool {
+    var swim: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Vịt"
     }
 }
 
 class Shark: Animals, Fish {
-    var isBoi: Bool {
+    var swim: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Ca map"
     }
 }
 
 class Pig: Animals, Animal {
-    var isDi: Bool {
+    var go: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Heo"
     }
 }
 
 class WaterSeal: Animals, Animal, Fish {
-    var isDi: Bool {
+    var go: Bool {
         return true
     }
     
-    var isBoi: Bool {
+    var swim: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Hai cau"
     }
 }
 
 class Bats: Animals, Animal, Bird {
-    var isDi: Bool {
+    var go: Bool {
         return true
     }
     
-    var isBay: Bool {
+    var fly: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "Doi"
     }
 }
 
 class Crocodile: Animals, Animal, Fish {
-    var isDi: Bool {
+    var go: Bool {
         return true
     }
     
-    var isBoi: Bool {
+    var swim: Bool {
         return true
     }
     
     override func name() -> String {
-        super.name()
         return "CaSau"
     }
 }
 
 var animalArr: [Animals] = [FlyingFish(),Cows(),Chicken(),Duck(),Shark(),Pig(),WaterSeal(),Bats(),Crocodile()]
 
-func listed() {
+func enumerateAnimals() {
     var isDi = Set<String>()
     var isBay = Set<String>()
     var isBoi = Set<String>()
     
     for i in animalArr {
-        if let test = i as? Animal, test.isDi {
+        if let test = i as? Animal, test.go {
             isDi.insert(i.name())
         }
-        if let test = i as? Bird, test.isBay {
+        if let test = i as? Bird, test.fly {
             isBay.insert(i.name())
         }
-        if let test = i as? Fish, test.isBoi {
+        if let test = i as? Fish, test.swim {
             isBoi.insert(i.name())
         }
     }
@@ -168,4 +159,4 @@ func listed() {
     print("Dong vat biet ca 3 la: \((isBoi.intersection(isBay)).intersection(isDi))")
     print("Dong vat biet 1 trong 3 la: \((isBoi.symmetricDifference(isBay)).symmetricDifference(isDi))")
 }
-listed()
+enumerateAnimals()
