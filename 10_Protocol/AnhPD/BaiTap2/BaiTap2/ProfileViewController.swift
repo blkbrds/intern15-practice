@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadName()
+        updateName()
         configNavigationBar()
         // Do any additional setup after loading the view.
     }
@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func loadName(){
+    func updateName(){
         nameTextField.text = userName
         avatarImageView.image = UIImage(named: imageView)
     }
