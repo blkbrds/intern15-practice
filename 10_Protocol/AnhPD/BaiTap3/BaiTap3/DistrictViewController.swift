@@ -46,38 +46,51 @@ class DistrictViewController: UIViewController {
         }
     }
     
-    @IBAction func DistrictButtonTouchUpInSide(_ sender: UIButton) {
+    private func resetButton() {
+        for index in 0..<districtButtons.count {
+            districtButtons[index].backgroundColor = .clear
+            districtButtons[index].setTitleColor(.black, for: .normal)
+        }
+    }
+    
+    @IBAction func districtButtonTouchUpInSide(_ sender: UIButton) {
         switch sender.tag {
         case 0:
+            resetButton()
             chooseButtonTouchUpInSide(i: 0)
         case 1:
+            resetButton()
             chooseButtonTouchUpInSide(i: 1)
         case 2:
+            resetButton()
             chooseButtonTouchUpInSide(i: 2)
         case 3:
+            resetButton()
             chooseButtonTouchUpInSide(i: 3)
         case 4:
+            resetButton()
             chooseButtonTouchUpInSide(i: 4)
         case 5:
+            resetButton()
             chooseButtonTouchUpInSide(i: 5)
         case 6:
+            resetButton()
             chooseButtonTouchUpInSide(i: 6)
         case 7:
+            resetButton()
             chooseButtonTouchUpInSide(i: 7)
         case 8:
+            resetButton()
             chooseButtonTouchUpInSide(i: 8)
         case 9:
+            resetButton()
             chooseButtonTouchUpInSide(i: 9)
         default:
             print("Error")
         }
     }
     
-    func  chooseButtonTouchUpInSide(i: Int) {
-        for index in 0..<districtButtons.count {
-            districtButtons[index].backgroundColor = .clear
-            districtButtons[index].setTitleColor(.black, for: .normal)
-        }
+    func chooseButtonTouchUpInSide(i: Int) {
         districtButtons[i].backgroundColor = .blue
         districtButtons[i].setTitleColor(.white, for: .normal)
         district = "Huyện \(i + 1)"
