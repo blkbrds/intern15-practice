@@ -1,24 +1,24 @@
 import UIKit
 
-class Animal {
-    func ten() -> String {
+class Animals {
+    func name() -> String {
         return ""
     }
 }
 
-protocol Thu {
+protocol Animal {
     var isDi: Bool { get }
 }
 
-protocol Chim {
+protocol Bird {
     var isBay: Bool { get }
 }
 
-protocol Ca {
+protocol Fish {
     var isBoi: Bool { get }
 }
 
-class CaChuon: Animal,Ca,Chim {
+class FlyingFish: Animals, Fish, Bird {
     var isBoi: Bool {
         return true
     }
@@ -27,35 +27,35 @@ class CaChuon: Animal,Ca,Chim {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Cá Chuồn"
     }
 }
 
-class Bo: Animal,Thu {
+class Cows: Animals, Animal {
     var isDi: Bool {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Bò"
     }
 }
 
-class Ga: Animal,Chim {
+class Chicken: Animals, Bird {
     var isBay: Bool {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Gà"
     }
 }
 
-class Vit: Animal,Thu,Chim,Ca {
+class Duck: Animals, Animal, Bird, Fish {
     var isDi: Bool {
         return true
     }
@@ -68,35 +68,35 @@ class Vit: Animal,Thu,Chim,Ca {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Vịt"
     }
 }
 
-class CaMap: Animal,Ca {
+class Shark: Animals, Fish {
     var isBoi: Bool {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Ca map"
     }
 }
 
-class Heo: Animal,Thu {
+class Pig: Animals, Animal {
     var isDi: Bool {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Heo"
     }
 }
 
-class HaiCau: Animal,Thu,Ca {
+class WaterSeal: Animals, Animal, Fish {
     var isDi: Bool {
         return true
     }
@@ -105,13 +105,13 @@ class HaiCau: Animal,Thu,Ca {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Hai cau"
     }
 }
 
-class Doi: Animal,Thu,Chim {
+class Bats: Animals, Animal, Bird {
     var isDi: Bool {
         return true
     }
@@ -120,13 +120,13 @@ class Doi: Animal,Thu,Chim {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "Doi"
     }
 }
 
-class CaSau: Animal,Thu,Ca {
+class Crocodile: Animals, Animal, Fish {
     var isDi: Bool {
         return true
     }
@@ -135,28 +135,28 @@ class CaSau: Animal,Thu,Ca {
         return true
     }
     
-    override func ten() -> String {
-        super.ten()
+    override func name() -> String {
+        super.name()
         return "CaSau"
     }
 }
 
-var animalArr: [Animal] = [CaChuon(),Bo(),Ga(),Vit(),CaMap(),Heo(),HaiCau(),Doi(),CaSau()]
+var animalArr: [Animals] = [FlyingFish(),Cows(),Chicken(),Duck(),Shark(),Pig(),WaterSeal(),Bats(),Crocodile()]
 
-func lietKe() {
+func listed() {
     var isDi = Set<String>()
     var isBay = Set<String>()
     var isBoi = Set<String>()
     
     for i in animalArr {
-        if let test = i as? Thu, test.isDi {
-            isDi.insert(i.ten())
+        if let test = i as? Animal, test.isDi {
+            isDi.insert(i.name())
         }
-        if let test = i as? Chim, test.isBay {
-            isBay.insert(i.ten())
+        if let test = i as? Bird, test.isBay {
+            isBay.insert(i.name())
         }
-        if let test = i as? Ca, test.isBoi {
-            isBoi.insert(i.ten())
+        if let test = i as? Fish, test.isBoi {
+            isBoi.insert(i.name())
         }
     }
     print("Dong vat biet bay la: \(isBay)")
@@ -168,4 +168,4 @@ func lietKe() {
     print("Dong vat biet ca 3 la: \((isBoi.intersection(isBay)).intersection(isDi))")
     print("Dong vat biet 1 trong 3 la: \((isBoi.symmetricDifference(isBay)).symmetricDifference(isDi))")
 }
-lietKe()
+listed()
