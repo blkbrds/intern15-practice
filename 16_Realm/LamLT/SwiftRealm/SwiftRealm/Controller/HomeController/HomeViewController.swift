@@ -2,6 +2,7 @@ import UIKit
 import RealmSwift
 
 class HomeViewController: BaseViewController {
+
     // MARK: - IBOutlet
     @IBOutlet weak var tableView: UITableView!
 
@@ -18,7 +19,7 @@ class HomeViewController: BaseViewController {
     override func setUpUI() {
         title = "Categories"
         customNavi()
-        let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        let nib = UINib(nibName: "CategoryTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "cell")
     }
 
@@ -26,22 +27,7 @@ class HomeViewController: BaseViewController {
         fetchData()
     }
 
-    // MARK: - Private Funcs
-    private func addMusic(title: String, count: Int, date: String, type: String) {
-        let realm = try! Realm()
-
-        let music = Music()
-        music.title = title
-        music.count = count
-        music.date = date
-        music.type = type
-
-        try! realm.write {
-            realm.add(music)
-        }
-    }
-
-    private func customNavi() {
+    override func customNavi() {
         let addIcon = UIImage(named: "add")
         let addButton = UIBarButtonItem(image: addIcon, style: .plain, target: self, action: #selector(newButtonTouchUpInside))
         navigationItem.leftBarButtonItem = addButton
@@ -50,8 +36,23 @@ class HomeViewController: BaseViewController {
         navigationItem.rightBarButtonItem = deleteButton
     }
 
+    // MARK: - Private Funcs
     private func updateUI() {
         tableView.reloadData()
+    }
+
+    private func addCategory(title: String, date: String, type: String, count: Int) {
+        let realm = try! Realm()
+
+        let category = Category()
+        category.title = title
+        category.date = date
+        category.type = type
+        category.count = count
+
+        try! realm.write {
+            realm.add(category)
+        }
     }
 
     private func fetchData() {
@@ -65,9 +66,9 @@ class HomeViewController: BaseViewController {
     }
 
     @objc private func newButtonTouchUpInside() {
-        let avc = AddCategoryViewController()
-        avc.isAdd = true
-        self.navigationController?.pushViewController(avc, animated: true)
+        let aev = AddEditCategoryViewController()
+        aev.isAdd = true
+        self.navigationController?.pushViewController(aev, animated: true)
     }
 
     @objc private func deleteButtonTouchUpInside() {
@@ -89,30 +90,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewmodel.numberMusic()
+        return viewmodel.numberCategory()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
-        let music = viewmodel.getMusic(at: indexPath)
-        cell.titleLabel.text = music.title
-        cell.countLabel.text = "Count: \(music.count)"
-        cell.dateLabel.text = music.date
-        cell.typeLabel.text = music.type
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryTableViewCell
+        cell.viewmodel = viewmodel.viewModelForCell(at: indexPath)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let music = viewmodel.getMusic(at: indexPath)
-        let acv = AddCategoryViewController()
-        print(music.title)
-        acv.isAdd = false
-        acv.titleName = music.title
-        acv.typeName = music.type
-        acv.count = "\(music.count)"
-        acv.music = viewmodel.getMusic(at: indexPath)
-        self.navigationController?.pushViewController(acv, animated: true)
+        let item = viewmodel.categorys[indexPath.row]
+        let vc = DetailCategoryViewController()
+        print(item)
+        vc.viewModel = AddEditCategoryViewModel(category: item)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

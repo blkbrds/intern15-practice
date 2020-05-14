@@ -30,6 +30,7 @@ class AddCategoryViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(music)
     }
 
     // MARK: -

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddEditCategoryViewController" customModule="SwiftRealm" customModuleProvider="target">
+            <connections>
+                <outlet property="countLabel" destination="jX5-iq-H97" id="Ilh-Bh-WYF"/>
+                <outlet property="deleteCategoryButton" destination="x0G-8H-eCi" id="HEg-hY-e0g"/>
+                <outlet property="titleTextField" destination="wMb-Yt-006" id="RNW-r7-aMa"/>
+                <outlet property="typeTextField" destination="A4U-vP-irg" id="Pek-xj-eHg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMb-Yt-006">
+                    <rect key="frame" x="40" y="90" width="295" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A4U-vP-irg">
+                    <rect key="frame" x="40" y="174" width="295" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX5-iq-H97">
+                    <rect key="frame" x="40" y="258" width="295" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x0G-8H-eCi">
+                    <rect key="frame" x="60" y="368.5" width="255" height="30"/>
+                    <state key="normal" title="Delete Category"/>
+                    <connections>
+                        <action selector="deleteButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="HVg-it-sh6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="x0G-8H-eCi" secondAttribute="trailing" constant="60" id="5Rn-BK-gsI"/>
+                <constraint firstItem="jX5-iq-H97" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="8Ou-wQ-F4s"/>
+                <constraint firstItem="x0G-8H-eCi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="C24-2i-dT3"/>
+                <constraint firstItem="x0G-8H-eCi" firstAttribute="top" secondItem="jX5-iq-H97" secondAttribute="bottom" constant="90" id="Prh-Am-DRE"/>
+                <constraint firstItem="jX5-iq-H97" firstAttribute="top" secondItem="A4U-vP-irg" secondAttribute="bottom" constant="50" id="R0g-ot-ZWh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jX5-iq-H97" secondAttribute="trailing" constant="40" id="ShD-iD-OGn"/>
+                <constraint firstItem="A4U-vP-irg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Tkc-Mr-3S7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wMb-Yt-006" secondAttribute="trailing" constant="40" id="WdD-mA-fbr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A4U-vP-irg" secondAttribute="trailing" constant="40" id="hmd-iy-doZ"/>
+                <constraint firstItem="wMb-Yt-006" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="y6U-4j-nLC"/>
+                <constraint firstItem="A4U-vP-irg" firstAttribute="top" secondItem="wMb-Yt-006" secondAttribute="bottom" constant="50" id="yN0-7t-4NC"/>
+                <constraint firstItem="wMb-Yt-006" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="90" id="zgn-cM-aZD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-26.399999999999999" y="29.23538230884558"/>
+        </view>
+    </objects>
+</document>
