@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BaiTapClosure" customModuleProvider="target">
+            <connections>
+                <outlet property="offButton" destination="AI1-kw-kHN" id="YkY-eO-O7I"/>
+                <outlet property="onlineButton" destination="Thk-Cb-V35" id="uYx-vC-cjn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thk-Cb-V35">
+                    <rect key="frame" x="112" y="243" width="150" height="30"/>
+                    <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Online">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onlineStatusButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="1QB-WP-nJq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-kw-kHN">
+                    <rect key="frame" x="112" y="343" width="150" height="30"/>
+                    <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Off">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="offlineStatusButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="sSx-gZ-FDX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.87058823529411766" green="0.62352941176470589" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Thk-Cb-V35" secondAttribute="trailing" constant="113" id="2rv-GQ-lmR"/>
+                <constraint firstItem="Thk-Cb-V35" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="112" id="46q-Vo-JJG"/>
+                <constraint firstItem="AI1-kw-kHN" firstAttribute="top" secondItem="Thk-Cb-V35" secondAttribute="bottom" constant="70" id="Caw-e9-evG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AI1-kw-kHN" secondAttribute="trailing" constant="113" id="Paj-0A-btk"/>
+                <constraint firstItem="AI1-kw-kHN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="112" id="vfO-z6-zbA"/>
+                <constraint firstItem="Thk-Cb-V35" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="243" id="xoI-P9-rIq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="81" y="6"/>
+        </view>
+    </objects>
+</document>
