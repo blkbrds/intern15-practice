@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DistrictViewController" customModule="BaiTap3" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="districtButtons" destination="DZq-1y-OZd" collectionClass="NSMutableArray" id="O1p-O5-dz9"/>
+                <outletCollection property="districtButtons" destination="PJK-E0-F34" collectionClass="NSMutableArray" id="APN-j9-tWN"/>
+                <outletCollection property="districtButtons" destination="PDJ-IU-3s3" collectionClass="NSMutableArray" id="o3Q-Pl-n8E"/>
+                <outletCollection property="districtButtons" destination="a1H-Jb-dV4" collectionClass="NSMutableArray" id="dLM-pt-VhG"/>
+                <outletCollection property="districtButtons" destination="hyu-t7-Tyg" collectionClass="NSMutableArray" id="trr-xo-PQN"/>
+                <outletCollection property="districtButtons" destination="Wfm-TJ-z1N" collectionClass="NSMutableArray" id="gMd-zl-JFb"/>
+                <outletCollection property="districtButtons" destination="2ty-wp-hs4" collectionClass="NSMutableArray" id="IkV-iP-E9Y"/>
+                <outletCollection property="districtButtons" destination="yoi-V3-zAq" collectionClass="NSMutableArray" id="6jc-xP-8Ey"/>
+                <outletCollection property="districtButtons" destination="MfI-tl-ybe" collectionClass="NSMutableArray" id="DCw-Hi-pkx"/>
+                <outletCollection property="districtButtons" destination="BqI-fL-eQQ" collectionClass="NSMutableArray" id="mT8-bp-O4u"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZq-1y-OZd">
+                    <rect key="frame" x="103.5" y="142" width="207" height="30"/>
+                    <state key="normal" title="Huyện 1"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="rWL-mK-kKp"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJK-E0-F34">
+                    <rect key="frame" x="103.5" y="209" width="207" height="30"/>
+                    <state key="normal" title="Huyện 2"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="8ss-LK-vVD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDJ-IU-3s3">
+                    <rect key="frame" x="103.5" y="276" width="207" height="30"/>
+                    <state key="normal" title="Huyện 3"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="BPt-W5-mwL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-Jb-dV4">
+                    <rect key="frame" x="103.5" y="343.5" width="207" height="30"/>
+                    <state key="normal" title="Huyện 4"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="Nva-Iz-u2o"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyu-t7-Tyg">
+                    <rect key="frame" x="103.5" y="410.5" width="207" height="30"/>
+                    <state key="normal" title="Huyện 5"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="CHw-Vu-Oau"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-TJ-z1N">
+                    <rect key="frame" x="103.5" y="478" width="207" height="30"/>
+                    <state key="normal" title="Huyện 6"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="sh8-ls-mvj"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ty-wp-hs4">
+                    <rect key="frame" x="103.5" y="545" width="207" height="30"/>
+                    <state key="normal" title="Huyện 7"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="zRe-56-Cow"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoi-V3-zAq">
+                    <rect key="frame" x="103.5" y="612" width="207" height="30"/>
+                    <state key="normal" title="Huyện 8"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="2Hm-Mg-QaW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfI-tl-ybe">
+                    <rect key="frame" x="103.5" y="679.5" width="207" height="30"/>
+                    <state key="normal" title="Huyện 9"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="mCN-1K-Kpx"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqI-fL-eQQ">
+                    <rect key="frame" x="103.5" y="746.5" width="207" height="30"/>
+                    <state key="normal" title="Huyện 10"/>
+                    <connections>
+                        <action selector="districtButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="ip7-Rd-zq8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hyu-t7-Tyg" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="1I4-1L-WYJ"/>
+                <constraint firstItem="2ty-wp-hs4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4nC-X4-0Io"/>
+                <constraint firstItem="a1H-Jb-dV4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.8" id="924-79-JYh"/>
+                <constraint firstItem="PDJ-IU-3s3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.65" id="Aso-Da-mTG"/>
+                <constraint firstItem="a1H-Jb-dV4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BOb-LZ-8VA"/>
+                <constraint firstItem="2ty-wp-hs4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.25" id="Cpa-S9-etq"/>
+                <constraint firstItem="yoi-V3-zAq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.4" id="FIt-yp-fpA"/>
+                <constraint firstItem="BqI-fL-eQQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.7" id="GJe-DC-dgv"/>
+                <constraint firstItem="a1H-Jb-dV4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="HkE-6J-KXa"/>
+                <constraint firstItem="Wfm-TJ-z1N" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IPn-oh-dAX"/>
+                <constraint firstItem="Wfm-TJ-z1N" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="JYL-WV-S1H"/>
+                <constraint firstItem="DZq-1y-OZd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MDE-Tp-2GS"/>
+                <constraint firstItem="MfI-tl-ybe" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="Nup-f7-uHP"/>
+                <constraint firstItem="PJK-E0-F34" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="Oqw-2Z-EXZ"/>
+                <constraint firstItem="BqI-fL-eQQ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="S0c-PV-em4"/>
+                <constraint firstItem="DZq-1y-OZd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.35" id="SWF-ml-XYq"/>
+                <constraint firstItem="DZq-1y-OZd" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="WUU-4O-A26"/>
+                <constraint firstItem="PDJ-IU-3s3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Xyu-dI-Nir"/>
+                <constraint firstItem="yoi-V3-zAq" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="c60-KH-2RH"/>
+                <constraint firstItem="PJK-E0-F34" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cme-wm-i7r"/>
+                <constraint firstItem="MfI-tl-ybe" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.55" id="mFR-gP-4BY"/>
+                <constraint firstItem="Wfm-TJ-z1N" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.1" id="mnP-5Q-ntI"/>
+                <constraint firstItem="hyu-t7-Tyg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o65-26-W2h"/>
+                <constraint firstItem="2ty-wp-hs4" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="oKL-0C-UKH"/>
+                <constraint firstItem="yoi-V3-zAq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p8h-ky-358"/>
+                <constraint firstItem="PJK-E0-F34" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="rMK-Du-euo"/>
+                <constraint firstItem="hyu-t7-Tyg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.95" id="rgL-U3-irv"/>
+                <constraint firstItem="BqI-fL-eQQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="w9g-RB-KKY"/>
+                <constraint firstItem="PDJ-IU-3s3" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="xBI-Ua-aHs"/>
+                <constraint firstItem="MfI-tl-ybe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zZZ-j5-Y7A"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="123" y="153"/>
+        </view>
+    </objects>
+</document>

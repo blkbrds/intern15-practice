@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProvinceViewController" customModule="BaiTap3" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="provinceButtons" destination="6Kh-ez-bKn" collectionClass="NSMutableArray" id="0vG-JN-EAb"/>
+                <outletCollection property="provinceButtons" destination="Zus-gn-ych" collectionClass="NSMutableArray" id="rNY-eV-ULI"/>
+                <outletCollection property="provinceButtons" destination="uZn-A7-awk" collectionClass="NSMutableArray" id="a7U-IC-8Md"/>
+                <outletCollection property="provinceButtons" destination="qVP-rl-JqJ" collectionClass="NSMutableArray" id="QaA-YE-1wN"/>
+                <outletCollection property="provinceButtons" destination="R9H-q9-lNx" collectionClass="NSMutableArray" id="58B-fy-ZvA"/>
+                <outletCollection property="provinceButtons" destination="Etu-BX-mWT" collectionClass="NSMutableArray" id="89F-6L-uaj"/>
+                <outletCollection property="provinceButtons" destination="7cd-Gg-k7t" collectionClass="NSMutableArray" id="Tc5-nx-Qk1"/>
+                <outletCollection property="provinceButtons" destination="GYj-2G-E7S" collectionClass="NSMutableArray" id="nB4-0c-Iz8"/>
+                <outletCollection property="provinceButtons" destination="Qnn-Ob-aTT" collectionClass="NSMutableArray" id="s7H-fE-CBv"/>
+                <outletCollection property="provinceButtons" destination="3NZ-re-eW5" collectionClass="NSMutableArray" id="mWI-AP-cKT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kh-ez-bKn">
+                    <rect key="frame" x="103.5" y="142" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 1"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="RnA-jR-6ig"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zus-gn-ych">
+                    <rect key="frame" x="103.5" y="209" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 2"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="kbA-DR-SNO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZn-A7-awk">
+                    <rect key="frame" x="103.5" y="276" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 3"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="7cE-z7-bsO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVP-rl-JqJ">
+                    <rect key="frame" x="103.5" y="343.5" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 4"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="rem-h8-uDF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9H-q9-lNx">
+                    <rect key="frame" x="103.5" y="410.5" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 5"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="oRr-wg-lsV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etu-BX-mWT">
+                    <rect key="frame" x="103.5" y="478" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 6"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="190-cB-NzR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cd-Gg-k7t">
+                    <rect key="frame" x="103.5" y="545" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 7"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="quT-N3-0XY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYj-2G-E7S">
+                    <rect key="frame" x="103.5" y="612" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 8"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="FHF-B4-8F6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnn-Ob-aTT">
+                    <rect key="frame" x="103.5" y="679.5" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 9"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="5n5-VS-IIE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gax-0Y-q4x">
+                    <rect key="frame" x="196" y="355" width="0.0" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dk-6B-Nhv">
+                    <rect key="frame" x="10" y="10" width="0.0" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NZ-re-eW5">
+                    <rect key="frame" x="103.5" y="746.5" width="207" height="30"/>
+                    <state key="normal" title="Tỉnh 10"/>
+                    <connections>
+                        <action selector="provinceButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="OXG-z6-NId"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Qnn-Ob-aTT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Lr-iW-Mh3"/>
+                <constraint firstItem="Zus-gn-ych" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="1Qv-0N-Axp"/>
+                <constraint firstItem="qVP-rl-JqJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1dG-ke-pZb"/>
+                <constraint firstItem="3NZ-re-eW5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2gC-at-RQy"/>
+                <constraint firstItem="7cd-Gg-k7t" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="3St-nH-K5B"/>
+                <constraint firstItem="uZn-A7-awk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.65" id="6kA-Sm-7I9"/>
+                <constraint firstItem="R9H-q9-lNx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="86Z-gN-fAI"/>
+                <constraint firstItem="Zus-gn-ych" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9th-AN-jaM"/>
+                <constraint firstItem="uZn-A7-awk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="ASl-MG-zvP"/>
+                <constraint firstItem="Etu-BX-mWT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.1" id="DEZ-yF-ioo"/>
+                <constraint firstItem="Etu-BX-mWT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HlK-xS-cGH"/>
+                <constraint firstItem="R9H-q9-lNx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KLg-h8-QRb"/>
+                <constraint firstItem="R9H-q9-lNx" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.95" id="PgE-QP-wDF"/>
+                <constraint firstItem="6Kh-ez-bKn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RgG-lS-JE3"/>
+                <constraint firstItem="3NZ-re-eW5" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="ScD-y6-juc"/>
+                <constraint firstItem="GYj-2G-E7S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TaB-Pa-hAk"/>
+                <constraint firstItem="GYj-2G-E7S" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.4" id="VJq-C0-6cZ"/>
+                <constraint firstItem="7cd-Gg-k7t" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.25" id="Y9Q-e9-uz4"/>
+                <constraint firstItem="Qnn-Ob-aTT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="Yih-EB-mFw"/>
+                <constraint firstItem="3NZ-re-eW5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.7" id="d5b-NU-BsO"/>
+                <constraint firstItem="Zus-gn-ych" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.5" id="gb4-lo-tYP"/>
+                <constraint firstItem="qVP-rl-JqJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="gwO-Rd-m6U"/>
+                <constraint firstItem="Qnn-Ob-aTT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.55" id="i7F-w0-O3Y"/>
+                <constraint firstItem="GYj-2G-E7S" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="llP-kW-179"/>
+                <constraint firstItem="6Kh-ez-bKn" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="mzP-qG-Evc"/>
+                <constraint firstItem="uZn-A7-awk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="q33-i4-1Vr"/>
+                <constraint firstItem="qVP-rl-JqJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.8" id="qBv-bn-hBE"/>
+                <constraint firstItem="Etu-BX-mWT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="r3z-Zr-Z2z"/>
+                <constraint firstItem="7cd-Gg-k7t" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tp0-iO-1AP"/>
+                <constraint firstItem="6Kh-ez-bKn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.35" id="xzg-l4-ZAM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="133" y="153"/>
+        </view>
+    </objects>
+</document>
