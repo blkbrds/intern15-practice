@@ -24,7 +24,8 @@ class SectionsViewController: UIViewController {
         super.viewDidLoad()
         title = "SECTIONS"
         updateData()
-		sectionsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		let nib = UINib(nibName: "NamesTableViewCell", bundle: .main)
+		sectionsTableView.register(nib, forCellReuseIdentifier: "cell")
 		sectionsTableView.dataSource = self
 		sectionsTableView.delegate = self
     }
@@ -65,8 +66,8 @@ extension SectionsViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = sectionsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.textLabel?.text = sections[indexPath.section][indexPath.row]
+		let cell = sectionsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? NamesTableViewCell ?? NamesTableViewCell()
+		cell.nameLabel.text = sections[indexPath.section][indexPath.row]
 		return cell
 	}
 	
