@@ -20,7 +20,32 @@ class Nguoi {
         print("Hoat dong ")
     }
 }
+
+class GiaoVien: Nguoi {
+    var boMon: String
+    init(ten: String, ngaySinh: String, boMon: String) {
+        self.boMon = boMon
+        super.init(ten: ten, ngaySinh: ngaySinh)
+    }
+    override func hoatDong() {
+        print("Giang day")
+    }
+}
+
+class HocSinh: Nguoi {
+    var lop: String
+    init(ten: String, ngaySinh: String, lop: String) {
+        self.lop = lop
+        super.init(ten: ten, ngaySinh: ngaySinh)
+    }
+    override func hoatDong() {
+        print("Hoc tap ")
+    }
+}
 var a = Nguoi(ten: "X", ngaySinh: "20/02/2002")
 a.hoatDong()
 a.tuoi
+var b = GiaoVien(ten: "x2", ngaySinh: "20/02/2222", boMon: "Toan")
+b.hoatDong()
+
 
