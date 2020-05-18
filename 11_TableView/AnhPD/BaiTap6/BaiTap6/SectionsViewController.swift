@@ -12,10 +12,9 @@ class SectionsViewController: UIViewController {
 
     @IBOutlet weak var sectionsTableView: UITableView!
     
-    var cattles = [String]()
-    var items = [String]()
-	var foods = [String]()
-
+	var cattles: [String] = []
+	var items: [String] = []
+	var foods: [String] = []
 	var titlesSection: [String] = ["Cattles", "Items","Foods"]
 	var sections: [[String]] = []
 	var sectionIndex: [String] = ["C","I","F"]
