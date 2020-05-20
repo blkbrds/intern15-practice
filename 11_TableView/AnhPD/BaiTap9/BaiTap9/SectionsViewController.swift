@@ -13,6 +13,7 @@ final class SectionsViewController: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     
     private var homeDatas: [HomeData] = []
+    var sectionIndex: [String] = ["F","I","C"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,6 @@ final class SectionsViewController: UIViewController {
         let nib = UINib(nibName: "SectionsTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
-        tableView.delegate = self
     }
     
     private func updateData() {
@@ -45,16 +45,16 @@ final class SectionsViewController: UIViewController {
             homeDatas.append(SectionsViewController.HomeData(name: "Foods", items: homeBundleDatas))
         }
         
-        if let castles = itemsData["castles"] as? [[String: Any]] {
+        if let cattles = itemsData["castles"] as? [[String: Any]] {
             var homeBundleDatas: [HomeBundleData] = []
-            castles.forEach { castle in
+            cattles.forEach { castle in
                 let avatar: String = castle["image"] as? String ?? ""
                 let name: String = castle["title"] as? String ?? ""
                 let subTitle: String = castle["sub-title"] as? String ?? ""
                 let homeBundleData = HomeBundleData(avatar: avatar, name: name, subTitle: subTitle)
                 homeBundleDatas.append(homeBundleData)
             }
-            homeDatas.append(SectionsViewController.HomeData(name: "Castles", items: homeBundleDatas))
+            homeDatas.append(SectionsViewController.HomeData(name: "Cattles", items: homeBundleDatas))
         }
         
         if let items = itemsData["items"] as? [[String: Any]] {
@@ -71,7 +71,7 @@ final class SectionsViewController: UIViewController {
     }
 }
 
-extension SectionsViewController: UITableViewDelegate, UITableViewDataSource {
+extension SectionsViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return homeDatas.count
     }
@@ -92,13 +92,13 @@ extension SectionsViewController: UITableViewDelegate, UITableViewDataSource {
         return homeDatas[section].name
     }
     
-//    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-//        return sectionIndex
-//    }
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionIndex
+    }
     
-//    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-//        return index
-//    }
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
+    }
 }
 
 extension SectionsViewController {

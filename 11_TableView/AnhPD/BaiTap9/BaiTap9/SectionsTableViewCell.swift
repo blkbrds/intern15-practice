@@ -27,4 +27,5 @@ class SectionsTableViewCell: UITableViewCell {
         avatarImageView.image = UIImage(named: data.avatar)
     }
     
+    
 }
