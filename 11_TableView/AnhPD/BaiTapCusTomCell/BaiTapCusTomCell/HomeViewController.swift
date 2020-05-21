@@ -34,9 +34,9 @@ final class HomeViewController: UIViewController {
         if let caffes = sectionsData["Caffes"] as? [[String: Any]] {
             var homeCellVMs: [HomeCellVM] = []
             caffes.forEach { caffe in
-                let avatarName: String = caffe["avatarName"] as! String
-                let nameTitle: String = caffe["nameTitle"] as! String
-                let address: String = caffe["address"] as! String
+                let avatarName: String = caffe["avatarName"] as? String ?? ""
+                let nameTitle: String = caffe["nameTitle"] as? String ?? ""
+                let address: String = caffe["address"] as? String ?? ""
                 let homeCellVM = HomeCellVM(avatarName: avatarName, nameTiltle: nameTitle, address: address)
                 homeCellVMs.append(homeCellVM)
             }
@@ -55,7 +55,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell ?? HomeCell()
         cell.homeCellVM = cafes[indexPath.row]
         cell.delegate = self
         cell.index = indexPath.row
