@@ -13,13 +13,14 @@ final class SectionsViewController: UIViewController {
     @IBOutlet weak private var tableView: UITableView!
     
     private var homeDatas: [HomeData] = []
-    var sectionIndex: [String] = ["F","I","C"]
+    var sectionIndex: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "SECTIONS"
         updateData()
         configTableView()
+        updateSectionIndex()
     }
     
     private func configTableView() {
@@ -42,7 +43,7 @@ final class SectionsViewController: UIViewController {
                 let homeBundleData = HomeBundleData(avatar: avatar, name: name, subTitle: subTitle)
                 homeBundleDatas.append(homeBundleData)
             }
-            homeDatas.append(SectionsViewController.HomeData(name: "Foods", items: homeBundleDatas))
+            homeDatas.append(SectionsViewController.HomeData(sectionIndex: "F", name: "Foods", items: homeBundleDatas))
         }
         
         if let cattles = itemsData["castles"] as? [[String: Any]] {
@@ -54,7 +55,7 @@ final class SectionsViewController: UIViewController {
                 let homeBundleData = HomeBundleData(avatar: avatar, name: name, subTitle: subTitle)
                 homeBundleDatas.append(homeBundleData)
             }
-            homeDatas.append(SectionsViewController.HomeData(name: "Cattles", items: homeBundleDatas))
+            homeDatas.append(SectionsViewController.HomeData(sectionIndex: "C", name: "Cattles", items: homeBundleDatas))
         }
         
         if let items = itemsData["items"] as? [[String: Any]] {
@@ -66,7 +67,13 @@ final class SectionsViewController: UIViewController {
                 let homeBundleData = HomeBundleData(avatar: avatar, name: name, subTitle: subTitle)
                 homeBudleDatas.append(homeBundleData)
             }
-            homeDatas.append(SectionsViewController.HomeData(name: "Items", items: homeBudleDatas))
+            homeDatas.append(SectionsViewController.HomeData(sectionIndex: "I", name: "Items", items: homeBudleDatas))
+        }
+    }
+    
+    private func updateSectionIndex() {
+        for item in homeDatas {
+            sectionIndex.append(item.sectionIndex)
         }
     }
 }
@@ -104,6 +111,7 @@ extension SectionsViewController: UITableViewDataSource{
 extension SectionsViewController {
     
     struct HomeData {
+        var sectionIndex: String
         var name: String
         var items: [HomeBundleData]
     }
