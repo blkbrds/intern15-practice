@@ -11,6 +11,7 @@ import UIKit
 class ContactsViewController: UIViewController {
     
     @IBOutlet weak var contactsTableView: UITableView!
+    @IBOutlet weak var nameTextField: UITextField!
     
     var contacts: [String] = []
     
@@ -20,10 +21,28 @@ class ContactsViewController: UIViewController {
         loadData()
         contactsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         contactsTableView.dataSource = self
+        configNavigationBar()
         // Do any additional setup after loading the view.
     }
     
-    func loadData() {
+    private func configNavigationBar() {
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTouchUpInSide))
+        navigationItem.rightBarButtonItem = add
+    }
+    
+    @objc func addButtonTouchUpInSide() {
+        if let nameTextField = nameTextField.text {
+             contacts.append(nameTextField)
+        }
+        let indexPath = IndexPath(row: contacts.count - 1, section: 0)
+        contactsTableView.beginUpdates()
+        contactsTableView.insertRows(at: [indexPath], with: .automatic)
+        contactsTableView.endUpdates()
+        nameTextField.text = ""
+        view.endEditing(true)
+    }
+    
+    private func loadData() {
         guard let path = Bundle.main.url(forResource: "Contacts", withExtension: "plist") else {
             return
         }
@@ -43,5 +62,18 @@ extension ContactsViewController: UITableViewDataSource {
         let cell = contactsTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = contacts[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            contacts.remove(at: indexPath.row)
+            contactsTableView.beginUpdates()
+            contactsTableView.deleteRows(at: [indexPath], with: .automatic)
+            contactsTableView.endUpdates()
+        }
     }
 }

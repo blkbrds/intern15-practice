@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsViewController" customModule="BaiTap2" customModuleProvider="target">
             <connections>
                 <outlet property="contactsTableView" destination="crh-dO-9Y4" id="w9B-9e-sw5"/>
+                <outlet property="nameTextField" destination="EGE-16-XMw" id="zLt-ei-cxQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,19 +20,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="crh-dO-9Y4">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="78" width="414" height="784"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EGE-16-XMw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="crh-dO-9Y4" secondAttribute="trailing" id="72z-Wm-zkT"/>
-                <constraint firstItem="crh-dO-9Y4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EFK-Ta-nh9"/>
-                <constraint firstItem="crh-dO-9Y4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bCb-Bt-y2J"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="crh-dO-9Y4" secondAttribute="bottom" id="tpE-fR-zHx"/>
+                <constraint firstItem="crh-dO-9Y4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3Yr-zU-C4s"/>
+                <constraint firstItem="EGE-16-XMw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MA9-mT-gRU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EGE-16-XMw" secondAttribute="trailing" id="Ust-4u-NC1"/>
+                <constraint firstItem="EGE-16-XMw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cZi-Ys-Dwf"/>
+                <constraint firstItem="crh-dO-9Y4" firstAttribute="top" secondItem="EGE-16-XMw" secondAttribute="bottom" id="eAY-Fa-tJi"/>
+                <constraint firstItem="crh-dO-9Y4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="glI-jJ-chp"/>
+                <constraint firstItem="crh-dO-9Y4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tf3-sf-mFU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="133" y="153"/>
+            <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>
         </view>
     </objects>
 </document>
