@@ -31,15 +31,11 @@ class ContactsViewController: UIViewController {
     }
     
     @objc func addButtonTouchUpInSide() {
-        if let nameTextField = nameTextField.text {
-             contacts.append(nameTextField)
+        guard let nameTextField = nameTextField.text else {
+            return
         }
-        let indexPath = IndexPath(row: contacts.count - 1, section: 0)
-        contactsTableView.beginUpdates()
-        contactsTableView.insertRows(at: [indexPath], with: .automatic)
-        contactsTableView.endUpdates()
-        nameTextField.text = ""
-        view.endEditing(true)
+        contacts.insert(nameTextField, at: 0)
+        contactsTableView.reloadData()
     }
     
     private func loadData() {
