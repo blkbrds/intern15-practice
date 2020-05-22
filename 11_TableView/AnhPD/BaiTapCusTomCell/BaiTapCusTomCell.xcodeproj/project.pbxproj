@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F20639C6247788DF00457F94 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20639C5247788DF00457F94 /* CustomView.swift */; };
 		F20639C8247788EB00457F94 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F20639C7247788EB00457F94 /* CustomView.xib */; };
+		F2063A0E2477BE0E00457F94 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2063A0D2477BE0E00457F94 /* HomeViewModel.swift */; };
 		F2F445E12476161B00CBD47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F445E02476161B00CBD47E /* AppDelegate.swift */; };
 		F2F445E32476161B00CBD47E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F445E22476161B00CBD47E /* SceneDelegate.swift */; };
 		F2F445EA2476161C00CBD47E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F445E92476161C00CBD47E /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		F20639C5247788DF00457F94 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F20639C7247788EB00457F94 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
+		F2063A0D2477BE0E00457F94 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F2F445DD2476161B00CBD47E /* BaiTapCusTomCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapCusTomCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F445E02476161B00CBD47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F445E22476161B00CBD47E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2063A0F2477C15100457F94 /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2F445F42476166900CBD47E /* HomeCell.swift */,
+				F2F445F52476166900CBD47E /* HomeCell.xib */,
+				F2F445FC24761FB300CBD47E /* HomeCellVM.swift */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
+		F2063A102477C17200457F94 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F2063A0F2477C15100457F94 /* HomeCell */,
+				F2F445F82476167F00CBD47E /* HomeViewController.swift */,
+				F2F445F92476167F00CBD47E /* HomeViewController.xib */,
+				F2063A0D2477BE0E00457F94 /* HomeViewModel.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		F2063A112477C24500457F94 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2F445FE247620DC00CBD47E /* Sections.plist */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F2F445D42476161B00CBD47E = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +101,8 @@
 				F2F445E22476161B00CBD47E /* SceneDelegate.swift */,
 				F2F445E92476161C00CBD47E /* Assets.xcassets */,
 				F2F445EE2476161C00CBD47E /* Info.plist */,
-				F2F445F42476166900CBD47E /* HomeCell.swift */,
-				F2F445F52476166900CBD47E /* HomeCell.xib */,
-				F2F445F82476167F00CBD47E /* HomeViewController.swift */,
-				F2F445F92476167F00CBD47E /* HomeViewController.xib */,
-				F2F445FC24761FB300CBD47E /* HomeCellVM.swift */,
-				F2F445FE247620DC00CBD47E /* Sections.plist */,
+				F2063A102477C17200457F94 /* HomeViewController */,
+				F2063A112477C24500457F94 /* Model */,
 				F20639C5247788DF00457F94 /* CustomView.swift */,
 				F20639C7247788EB00457F94 /* CustomView.xib */,
 			);
@@ -157,6 +184,7 @@
 			files = (
 				F2F445E12476161B00CBD47E /* AppDelegate.swift in Sources */,
 				F2F445F62476166900CBD47E /* HomeCell.swift in Sources */,
+				F2063A0E2477BE0E00457F94 /* HomeViewModel.swift in Sources */,
 				F2F445E32476161B00CBD47E /* SceneDelegate.swift in Sources */,
 				F20639C6247788DF00457F94 /* CustomView.swift in Sources */,
 				F2F445FA2476167F00CBD47E /* HomeViewController.swift in Sources */,

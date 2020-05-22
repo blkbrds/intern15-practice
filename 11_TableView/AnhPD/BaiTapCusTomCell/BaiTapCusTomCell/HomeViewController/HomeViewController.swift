@@ -12,13 +12,13 @@ final class HomeViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!
     
-    var cafes: [HomeCellVM] = []
+    var viewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "DANH SÁCH QUÁN CAFE"
         configTableView()
-        loadData()
+        viewModel.getDataCafes()
         configNavigationBar()
     }
     
@@ -26,24 +26,6 @@ final class HomeViewController: UIViewController {
         let nib = UINib(nibName: "HomeCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "HomeCell")
         tableView.dataSource = self
-    }
-    
-    private func loadData() {
-        guard let path = Bundle.main.url(forResource: "Sections", withExtension: "plist"), let sectionsData = NSDictionary(contentsOf: path) else {
-            return
-        }
-        
-        if let caffes = sectionsData["Caffes"] as? [[String: Any]] {
-            var homeCellVMs: [HomeCellVM] = []
-            caffes.forEach { caffe in
-                let avatarName: String = caffe["avatarName"] as? String ?? ""
-                let nameTitle: String = caffe["nameTitle"] as? String ?? ""
-                let address: String = caffe["address"] as? String ?? ""
-                let homeCellVM = HomeCellVM(avatarName: avatarName, nameTiltle: nameTitle, address: address)
-                homeCellVMs.append(homeCellVM)
-            }
-            cafes.append(contentsOf: homeCellVMs)
-        }
     }
     
     private func configNavigationBar() {
@@ -59,7 +41,7 @@ final class HomeViewController: UIViewController {
         let alert = UIAlertController(title: "Waring", message: "Bạn có chắc xoá", preferredStyle: UIAlertController.Style.alert)
         //add Action
         let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-            self.cafes.removeAll()
+            self.viewModel.dataCafes.removeAll()
             self.tableView.reloadData()
         }
         
@@ -86,18 +68,18 @@ final class HomeViewController: UIViewController {
     
     private func addCaffe(avatar: String, nameTitle: String, address: String) {
         let homeCellVM = HomeCellVM(avatarName: avatar, nameTiltle: nameTitle, address: address)
-        cafes.insert(homeCellVM, at: 0)
+        viewModel.dataCafes.insert(homeCellVM, at: 0)
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cafes.count
+        return viewModel.numberOfRowInSectionCafes()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell ?? HomeCell()
-        cell.homeCellVM = cafes[indexPath.row]
+        cell.homeCellVM = viewModel.viewModelForCellCafes(at: indexPath)
         cell.delegate = self
         cell.index = indexPath.row
         return cell
@@ -105,7 +87,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            cafes.remove(at: indexPath.row)
+            viewModel.dataCafes.remove(at: indexPath.row)
             //Cach xoa cell 1:
 //            tableView.deleteRows(at: [indexPath], with: .automatic)
             //Cach xoa cell 2:
@@ -116,7 +98,7 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: HomeCellDelegate {
     func homeCell(cell: HomeCell, didSelectRowAt index: Int) {
-        let item = cafes[index].nameTitle
+        let item = viewModel.dataCafes[index].nameTitle
         print("Select \(item)")
     }
 }
