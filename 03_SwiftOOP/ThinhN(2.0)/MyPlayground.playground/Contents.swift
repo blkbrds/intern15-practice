@@ -111,7 +111,7 @@ import UIKit
 //var b = ThiSinh(ma: 3, ten: "faf", ngayThangNamSinh: "14/4/22", diemToan: 4, diemVan: 6, diemAnh: 7)
 //var danhSach = KiemTraThiSinh(cacThiSinh: [ThiSinh(ma: 1, ten: "LeVanA", ngayThangNamSinh: "22/2/2002", diemToan: 5, diemVan: 4, diemAnh: 5), ThiSinh(ma: 2, ten: "TranBa", ngayThangNamSinh: "22/5/2014", diemToan: 8, diemVan: 8, diemAnh: 6)])
 //danhSach.kiemTra()
-//// bai3
+// bai3
 //class Dictionary {
 //    var key: String
 //    var value: Int
@@ -127,7 +127,7 @@ import UIKit
 //            return true
 //        }
 //        if value == 1 {
-//                  return false
+//            return false
 //        }
 //        for i in 2..<value  {
 //            if value % i == 0 {
@@ -703,8 +703,14 @@ class GiaoVien {
         self.maSoGiaoVien = maSoGiaoVien
         self.luong = luong
     }
+    func hienThongTin() {
+        print("Ho va ten \(hoTen) tuoi \(tuoi) co ma so giao vien la: \(maSoGiaoVien)")
+    }
+    func tienLuong() {
+        print("Luong thuc linh cua \(hoTen) la \(luong.luongThucLinh)")
+    }
 }
-class Luong{
+class Luong {
     var luongCung: Int
     var luongThuong: Int
     var tienPhat: Int
@@ -719,22 +725,43 @@ class Luong{
         self.tienPhat = tienPhat
     }
 }
-//class Nguoi {
-//    var quanLy: GiaoVien
-//    init(quanLy: Luong) {
-//        self.quanLy = quanLy
-//    }
-//    func thongTin() {
-//        print("Ho va ten \(quanLy.hoTen) co ma so giao vien \(quanLy.maSoGiaoVien)que quan \(quanLy.queQuan)")
-//    }
-//}
+class Nguoi {
+    var quanLy: GiaoVien
+    init(quanLy: GiaoVien) {
+        self.quanLy = quanLy
+    }
+    func thongTina() {
+        quanLy.hienThongTin()
+    }
+}
 class CBGV {
     var quanLyCacGiaoVien: [GiaoVien]
     init(quanLyCacGiaoVien: [GiaoVien]) {
         self.quanLyCacGiaoVien = quanLyCacGiaoVien
     }
-//    func themGiaoVien(giaoVienMoi: GiaoVien) {
-//            quanLyCacGiaoVien.append(giaoVienMoi)
-//        }
+    func themGiaoVien(giaoVienMoi: GiaoVien) {
+            quanLyCacGiaoVien.append(giaoVienMoi)
+    }
+     func quanLy() {
+        for i in quanLyCacGiaoVien {
+            i.hienThongTin()
+        }
+    }
+    func xoaGiaoVien(nhapMaSo: Int) {
+        quanLyCacGiaoVien.removeAll { (GiaoVien) -> Bool in
+            GiaoVien.maSoGiaoVien == nhapMaSo
+        }
+    }
+    func luongGV() {
+        for i in quanLyCacGiaoVien {
+            i.tienLuong()
+        }
+    }
 }
-var a = CBGV(quanLyCacGiaoVien: [GiaoVien(hoTen: "TranA ", tuoi: 22, queQuan: "DaNang", maSoGiaoVien: 2, luong: Luong(luongCung: 42, luongThuong: 42, tienPhat: 23)), GiaoVien(hoTen: "TranB", tuoi: 24, queQuan: "QuangNam", maSoGiaoVien: 13, luong: Luong(luongCung: 45, luongThuong: 23, tienPhat: 1))])
+var n = Nguoi(quanLy: GiaoVien(hoTen: "leHai", tuoi: 22, queQuan: "ĐN", maSoGiaoVien: 21, luong: Luong(luongCung: 34, luongThuong: 44, tienPhat: 34)))
+n.thongTina()
+var a = CBGV(quanLyCacGiaoVien: [GiaoVien(hoTen: "TranA", tuoi: 22, queQuan: "DaNang", maSoGiaoVien: 2, luong: Luong(luongCung: 42, luongThuong: 42, tienPhat: 23)), GiaoVien(hoTen: "TranB", tuoi: 24, queQuan: "QuangNam", maSoGiaoVien: 13, luong: Luong(luongCung: 45, luongThuong: 23, tienPhat: 1))])
+a.themGiaoVien(giaoVienMoi: GiaoVien(hoTen: "TranVanC", tuoi: 23, queQuan: "DaNang", maSoGiaoVien: 23, luong: Luong(luongCung: 45, luongThuong: 20, tienPhat: 44)))
+a.quanLy()
+a.xoaGiaoVien(nhapMaSo: 21)
+a.luongGV()
