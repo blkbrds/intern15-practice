@@ -14,14 +14,6 @@ class DaGiac{
         }
         return cv
     }
-    func chieuDai() -> [String: Int] {
-        var canh = [String: Int]()
-        
-        for i in 0...socanh-1{
-            canh["Canh \(i+1)"] = (mang[i])
-        }
-        return canh
-    }
     func hinhHoc() -> String{
         switch socanh {
         case 3:
@@ -46,5 +38,8 @@ let arr:[Int] = [3,4,5]
 let d = DaGiac(socanh: sc, mang: arr)
 let rs = d.chuVi()
 print("Chu vi cua \(d.hinhHoc()) la: \(rs)")
-print("Chieu dai cac canh lan luot la \(d.chieuDai())")
+print("Chieu dai cac canh lan luot la ")
+for i in 0...sc-1{
+    print(arr[i])
+}
 
