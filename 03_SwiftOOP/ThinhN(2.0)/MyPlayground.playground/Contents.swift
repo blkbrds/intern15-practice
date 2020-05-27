@@ -764,74 +764,61 @@ import UIKit
 //a.xoaGiaoVien(nhapMaSo: 21)
 //a.luongGV()
 // Bai Tap 1
-//class Account {
-//    var soTaiKhoan: Int
-//    var tenTaiKhoan: String
-//    var soTienTrongTaiKhoan: Double
-//    let laiSuat: Double = 0.0035
-//    init(soTaiKhoan: Int, tenTaiKhoan: String, soTienTrongTaiKhoan: Double) {
-//        self.soTaiKhoan = soTaiKhoan
-//        self.tenTaiKhoan = tenTaiKhoan
-//        self.soTienTrongTaiKhoan = soTienTrongTaiKhoan
-//
-//    }
-//    func hienThongTin() {
-//        print("\(tenTaiKhoan) so tai khoan \(soTaiKhoan) co so tien \(soTienTrongTaiKhoan) ")
-//    }
-//    func napTien(soTienMuonNap: Double) {
-//        if soTienMuonNap <= 0 {
-//            print("Khong the thuc hien giao dich nay")
-//        } else {
-//            soTienTrongTaiKhoan = soTienTrongTaiKhoan + soTienMuonNap
-//            print(soTienTrongTaiKhoan)
-//        }
-//    }
-//    func rutTien(soTienMuonRut: Double, phiRutTien: Double) {
-//        if soTienMuonRut > soTienTrongTaiKhoan {
-//            print("Khong the thuc hien giao dich nay")
-//        } else {
-//            soTienTrongTaiKhoan = soTienTrongTaiKhoan - (soTienMuonRut + phiRutTien)
-//            print(soTienTrongTaiKhoan)
-//        }
-//    }
-//    func daoHan() {
-//        soTienTrongTaiKhoan = soTienTrongTaiKhoan + soTienTrongTaiKhoan * laiSuat
-//        print(soTienTrongTaiKhoan)
-//    }
-//    func chuyenTien(soTienMuonChuyen: Double, tenNguoiThuHuong: String) {
-//        if soTienMuonChuyen > soTienTrongTaiKhoan {
-//            print("Khong the thuc hien giao dich nay")
-//        } else {
-//            soTienTrongTaiKhoan = soTienTrongTaiKhoan - soTienMuonChuyen
-//            print(soTienTrongTaiKhoan)
-//        }
-//    }
-//}
-//class Bank {
-//    var cacTaiKhoan: [Account]
-//    init(cacTaiKhoan: [Account]) {
-//        self.cacTaiKhoan = cacTaiKhoan
-//    }
-//    func display() {
-//        for i in cacTaiKhoan {
-//            i.hienThongTin()
-//        }
-//    }
-//}
-//
-//var a = Account(soTaiKhoan: 12, tenTaiKhoan: "TranAn", soTienTrongTaiKhoan: 525)
-//a.napTien(soTienMuonNap: -3)
-//a.chuyenTien(soTienMuonChuyen: 434, tenNguoiThuHuong: "TranVanC")
-//a.rutTien(soTienMuonRut: 33, phiRutTien: 10)
-//a.daoHan()
-
+class Account {
+    var soTaiKhoan: Int
+    var tenTaiKhoan: String
+    var soTienTrongTaiKhoan: Double
+    let laiSuat: Double = 0.0035
+    init(soTaiKhoan: Int, tenTaiKhoan: String, soTienTrongTaiKhoan: Double) {
+        self.soTaiKhoan = soTaiKhoan
+        self.tenTaiKhoan = tenTaiKhoan
+        self.soTienTrongTaiKhoan = soTienTrongTaiKhoan
+    }
+    func hienThongTin() {
+        print("\(tenTaiKhoan) so tai khoan \(soTaiKhoan) co so tien \(soTienTrongTaiKhoan) ")
+    }
+    func napTien(soTienMuonNap: Double) {
+        if soTienMuonNap <= 0 {
+            print("Khong the thuc hien giao dich nay")
+        } else {
+            soTienTrongTaiKhoan = soTienTrongTaiKhoan + soTienMuonNap
+            print(soTienTrongTaiKhoan)
+        }
+    }
+    func rutTien(soTienMuonRut: Double, phiRutTien: Double) {
+        if soTienMuonRut > soTienTrongTaiKhoan {
+            print("Khong the thuc hien giao dich nay")
+        } else {
+            soTienTrongTaiKhoan = soTienTrongTaiKhoan - (soTienMuonRut + phiRutTien)
+            print(soTienTrongTaiKhoan)
+        }
+    }
+    func daoHan() {
+        soTienTrongTaiKhoan = soTienTrongTaiKhoan + soTienTrongTaiKhoan * laiSuat
+        print(soTienTrongTaiKhoan)
+    }
+    func chuyenTien(soTienMuonChuyen: Double, tenNguoiThuHuong: String) {
+        if soTienMuonChuyen > soTienTrongTaiKhoan {
+            print("Khong the thuc hien giao dich nay")
+        } else {
+            soTienTrongTaiKhoan = soTienTrongTaiKhoan - soTienMuonChuyen
+            print(soTienTrongTaiKhoan)
+        }
+    }
+}
+var a = Account(soTaiKhoan: 12, tenTaiKhoan: "TranAn", soTienTrongTaiKhoan: 525)
+a.napTien(soTienMuonNap: -3)
+a.chuyenTien(soTienMuonChuyen: 434, tenNguoiThuHuong: "TranVanC")
+a.rutTien(soTienMuonRut: 33, phiRutTien: 10)
+a.daoHan()
+// BaiTap 2
 class CD {
     var maCD: Int
     var tuaCD: String
     var caSy: String
-    var soBaiHat: UInt
+    var soBaiHat: Int
     var giaThanh: Float
-    init(maCD: Int, tuaCD: String, caSy: String, soBaiHat: UInt, giaThanh: Float) {
+    init(maCD: Int, tuaCD: String, caSy: String, soBaiHat: Int, giaThanh: Float) {
         self.maCD = maCD
         self.tuaCD = tuaCD
         self.caSy = caSy
@@ -854,7 +841,7 @@ class danhSachCD {
     }
     func themCD(CDMoi: CD) {
         for i in mangCD {
-            if i.maCD == CDMoi.maCD || i.giaThanh < 0 {
+            if i.maCD == CDMoi.maCD || i.giaThanh < 0 || i.soBaiHat < 0 {
                 print("Ma CD da bi trung ")
             } else {
                 mangCD.append(CDMoi)
@@ -870,7 +857,7 @@ class danhSachCD {
     func tongGiaThanh() {
         var tong: Float = 0
         for i in mangCD {
-            if i.giaThanh < 0 {
+            if i.giaThanh < 0 || i.soBaiHat < 0{
                 print("Khong the thuc hien duoc ")
             } else {
                 tong += i.giaThanh
@@ -891,7 +878,7 @@ class danhSachCD {
         }
     }
 }
-var danhSach = danhSachCD(mangCD: [CD(maCD: 1, tuaCD: "Xuan", caSy: "TranVanA", soBaiHat: 3, giaThanh: 140), CD(maCD: 2, tuaCD: "Ha", caSy: "TranVanB", soBaiHat: 5, giaThanh: 130), CD(maCD: 3, tuaCD: "Thu", caSy: "TranC", soBaiHat: 2, giaThanh: 412)])
+var danhSach = danhSachCD(mangCD: [CD(maCD: 1, tuaCD: "Xuan", caSy: "TranVanA", soBaiHat: 3, giaThanh: 140), CD(maCD: 2, tuaCD: "Ha", caSy: "TranVanB", soBaiHat: 4, giaThanh: 130), CD(maCD: 3, tuaCD: "Thu", caSy: "TranC", soBaiHat: 2, giaThanh: 412)])
 danhSach.timSoLuong()
 danhSach.themCD(CDMoi: CD(maCD: 4, tuaCD: "Dong", caSy: "TranEE", soBaiHat: 14, giaThanh: 555))
 danhSach.tongGiaThanh()
