@@ -2,12 +2,12 @@ import Foundation
 
 // Return so Fibonacci thu n
 public func fibonacci(n: Int) -> Int{
-    if (n<0){
+    if n<0{
         return -1
-    }else if (n==0 || n==1){
+    } else if n == 0 || n == 1 {
         return n
-    }else{
-        return fibonacci(n:n-1)+fibonacci(n:n-2)
+    } else {
+        return fibonacci(n:n-1) + fibonacci(n:n-2)
     }
 }
 // Bai 4.1 Sum fibonnaci thu n
@@ -35,22 +35,22 @@ lietKe(x: 10)
 // Bai 4.3 Tinh sin(x) cos(x) bang chuoi taylor
 public func sincostaylor(x: Float, n: Int) -> Float {
     var a:Int
-    if(n % 2==0){
+    if n % 2 == 0 {
         a = 1
     }else{
         a = -1
     }
-    var temp:Float = 1;
-    for i in 1...(2*n+1){
-        temp = temp*x/Float(i)
+    var temp: Float = 1;
+    for i in 1...(2 * n + 1){
+        temp = temp *  x / Float(i)
     }
     return Float(a)*temp
 }
 // tinh sinx
 func tinhSinxCosX(){
-let x:Float = 6 //radian nhap x
-var n:Int = 0
-var sin:Float = 0
+let x: Float = 6 //radian nhap x
+var n: Int = 0
+var sin: Float = 0
 
 while (abs(sincostaylor(x: x, n: n))>0.00001) {
     sin += sincostaylor(x: x, n: n)
@@ -58,12 +58,12 @@ while (abs(sincostaylor(x: x, n: n))>0.00001) {
 }
 print("Bai 4.3 Sin: \(sin)")
 // tinh cosx
-print("Bai 4.3, Cos \(sqrt(1-sin*sin))")
+print("Bai 4.3, Cos \(sqrt(1 - sin * sin))")
 }
 tinhSinxCosX()
 
 // Bai 4.4 Liet ke so hanh phuc be hon 10.000
-public func tongBinhPhuong(n:Int) -> Int{
+public func tongBinhPhuong(n: Int) -> Int{
     var x: Int = 0
     var n1: Int
     n1 = n

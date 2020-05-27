@@ -1,20 +1,20 @@
 import Foundation
 
-public func bacNhat2An(a1: Int, b1:Int, c1:Int,a2: Int, b2:Int, c2:Int ){
-    let D: Float =  Float(a1 * b2 - a2 * b1);
-    let Dx: Float = Float(c1 * b2 - c2 * b1);
-    let Dy: Float = Float(a1 * c2 - a2 * c1);
+public func bacNhat2An(a1: Int, b1: Int, c1: Int, a2: Int, b2: Int, c2: Int ){
+    let d: Float =  Float(a1 * b2 - a2 * b1)
+    let dx: Float = Float(c1 * b2 - c2 * b1)
+    let dy: Float = Float(a1 * c2 - a2 * c1)
     var x: Float
     var y: Float
-    if (D==0){
-        if((Dx + Dy)==0){
+    if d==0 {
+        if (dx + dy)==0 {
             print("Vo so nghiem")
-        }else{
+        } else {
             print("Vo nghiem")
         }
-    }else{
-        x = Dx/D
-        y = Dx/D
+    } else {
+        x = dx/d
+        y = dx/d
         print("Gia tri x la \(x) , gia tri y la \(y)")
     }
 }
