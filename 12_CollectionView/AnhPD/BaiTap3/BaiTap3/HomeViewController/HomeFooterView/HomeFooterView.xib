@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HomeFooterView" customModule="BaiTap3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEC-Va-kBc">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOi-a5-7Ta">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6P-OY-blz">
+                            <rect key="frame" x="0.0" y="45" width="320" height="5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="hCt-uJ-NNq"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pOi-a5-7Ta" secondAttribute="trailing" id="2fg-6n-q9k"/>
+                        <constraint firstItem="H6P-OY-blz" firstAttribute="top" secondItem="pOi-a5-7Ta" secondAttribute="bottom" id="5b0-MA-R6t"/>
+                        <constraint firstItem="pOi-a5-7Ta" firstAttribute="leading" secondItem="VEC-Va-kBc" secondAttribute="leading" id="DMu-dh-XRc"/>
+                        <constraint firstAttribute="bottom" secondItem="H6P-OY-blz" secondAttribute="bottom" id="MBT-tR-24p"/>
+                        <constraint firstItem="H6P-OY-blz" firstAttribute="leading" secondItem="VEC-Va-kBc" secondAttribute="leading" id="ZVG-h3-jnb"/>
+                        <constraint firstAttribute="trailing" secondItem="H6P-OY-blz" secondAttribute="trailing" id="aLA-7X-yj5"/>
+                        <constraint firstItem="pOi-a5-7Ta" firstAttribute="top" secondItem="VEC-Va-kBc" secondAttribute="top" id="hps-Oy-Gff"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="VEC-Va-kBc" secondAttribute="bottom" id="F6r-mK-9Yv"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="VEC-Va-kBc" secondAttribute="trailing" id="XUu-ds-Ilf"/>
+                <constraint firstItem="VEC-Va-kBc" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="c5L-rs-4AG"/>
+                <constraint firstItem="VEC-Va-kBc" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="lMH-1Q-KGZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="nameFooterLabel" destination="pOi-a5-7Ta" id="yGw-WW-LeI"/>
+            </connections>
+            <point key="canvasLocation" x="121.73913043478262" y="152.67857142857142"/>
+        </collectionReusableView>
+    </objects>
+</document>
