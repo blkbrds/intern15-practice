@@ -580,48 +580,45 @@ bienLai.themKhachHang(khachHangMoi: KhachHang(hoTen: "TranVanE", soNha: 34, maCo
 //quanLy.timPhuongTien(hangCanTim: "Fortuner", mauCanTim: "Den")
 //quanLy.inThongTin()
 ////Bai 9
-//class ChuoiKiTu {
-//    var chuoiKiTu: String
-//    init(chuoiKiTu: String) {
-//        self.chuoiKiTu = chuoiKiTu
-//    }
-//}
-//class VanBan: ChuoiKiTu {
-//    func demSoTu() {
-//        var a = 0
-//        a = chuoiKiTu.count
-//        print("Van ban co \(a) tu ")
-//    }
-//    func demTuKhoa() {
-//        let a: Character = "a"
-//        let b: Character = "A"
-//        var dem: Int = 0
-//        for i in chuoiKiTu {
-//            if i == a || i == b {
-//                dem += 1
-//            }
-//        }
-//        print("So tu khoa la \(dem)")
-//    }
-//    func sapXep() {
-//        var n: String = ""
-//        let a = chuoiKiTu
-//        let d = a.split(separator: " ")
-//        for i in d {
-//            n += i + " "
-//        }
-//        n = n.trimmingCharacters(in: .whitespacesAndNewlines)
-//        print(n)
-//    }
-//
-//}
-//var nhapVanBan = VanBan(chuoiKiTu: " aab A A   A   ")
-//nhapVanBan.demSoTu()
-//nhapVanBan.demTuKhoa()
-//nhapVanBan.sapXep()
 class VanBan {
-    
+    var xauKiTu: String
+    init(xauKiTu: String) {
+        self.xauKiTu = xauKiTu
+    }
+    func vanBan() {
+    }
+    func nhapVanBan(nhapVanBan: String) {
+    }
+    func demSoTu() {
+        var soTu: Int = 0
+        soTu = xauKiTu.count
+        print(" So tu trong xau ki tu la \(soTu)")
+    }
+    func demTuKhoa() {
+        let a: Character = "a"
+        let A: Character = "A"
+        var dem: Int = 0
+        for i in xauKiTu {
+            if i == a || i == A {
+                dem += 1
+            }
+        }
+        print("So tu khoa la \(dem)")
+    }
+    func sapXep() {
+        var chuoi: String = " "
+        let a = xauKiTu.split(separator: " ")
+        for i in a {
+            chuoi += i + " "
+        }
+        chuoi = chuoi.trimmingCharacters(in: .whitespacesAndNewlines)
+        print(chuoi)
+    }
 }
+var a = VanBan(xauKiTu: " .  AAa aag ga gha ")
+a.demSoTu()
+a.demTuKhoa()
+a.sapXep()
 //// Bai 10
 //class GiaoVien {
 //    var luongCung: Int
