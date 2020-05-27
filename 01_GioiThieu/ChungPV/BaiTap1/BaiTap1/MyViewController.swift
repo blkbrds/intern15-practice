@@ -10,18 +10,18 @@ import UIKit
 
 class MyViewController: UIViewController {
 
-    @IBOutlet weak var btn_changecolor: UIButton!
+    @IBOutlet weak var changeColorButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    @IBAction func btn_change(_ sender: Any) {
+    @IBAction func changeColor(_ sender: Any) {
         let redcolor = CGFloat.random(in: 0...1)
         let greencolor = CGFloat.random(in: 0...1)
         let bluecolor = CGFloat.random(in: 0...1)
           
         let randomColor = UIColor(red: redcolor, green: greencolor, blue: bluecolor, alpha: 1.0)
-        self.view.backgroundColor = randomColor
+        view.backgroundColor = randomColor
     }
     
 }
