@@ -232,7 +232,7 @@ import UIKit
 //        self.soBanPhatHanh = soBanPhatHanh
 //    }
 //    func thongTin() {
-//        print(" Ma tai lieu \(maTaiLieu) cua nha xuat ban \(tenNhaXuatBan) xuat ban \(soBanPhatHanh)")
+//        print("Ma tai lieu \(maTaiLieu) cua nha xuat ban \(tenNhaXuatBan) xuat ban \(soBanPhatHanh)")
 //    }
 //}
 //class Sach: TaiLieu {
@@ -243,9 +243,6 @@ import UIKit
 //        self.soTrang = soTrang
 //        super.init(maTaiLieu: maTaiLieu, tenNhaXuatBan: tenNhaXuatBan, soBanPhatHanh: soBanPhatHanh)
 //    }
-//    func hienThongTin() {
-//        print(" Ma tai lieu \(maTaiLieu) cua nha xuat ban \(tenNhaXuatBan) xuat ban \(soBanPhatHanh)")
-//    }
 //}
 //class TapChi: TaiLieu {
 //    var soPhatHanh: Int
@@ -255,18 +252,12 @@ import UIKit
 //        self.thangPhatHanh = thangPhatHanh
 //        super.init(maTaiLieu: maTaiLieu, tenNhaXuatBan: tenNhaXuatBan, soBanPhatHanh: soBanPhatHanh)
 //    }
-//    func hienThongTin() {
-//        print(" Ma tai lieu \(maTaiLieu) cua nha xuat ban \(tenNhaXuatBan) xuat ban \(soBanPhatHanh)")
-//    }
 //}
 //class Bao: TaiLieu {
 //    var ngayPhatHanh: Int
 //    init(maTaiLieu: Int, tenNhaXuatBan: String, soBanPhatHanh: Int, ngayPhatHanh: Int) {
 //        self.ngayPhatHanh = ngayPhatHanh
 //        super.init(maTaiLieu: maTaiLieu, tenNhaXuatBan: tenNhaXuatBan, soBanPhatHanh: soBanPhatHanh)
-//    }
-//    func hienThongTin() {
-//       print(" Ma tai lieu \(maTaiLieu) cua nha xuat ban \(tenNhaXuatBan) xuat ban \(soBanPhatHanh)")
 //    }
 //}
 //class ThuVien {
@@ -477,111 +468,111 @@ import UIKit
 //bienLai.inThongTin()
 //bienLai.themKhachHang(khachHangMoi: KhachHang(hoTen: "TranVanE", soNha: 34, maCongToDien: 422))
 ////// Bai 8
-//class PhuongTien {
-//    var hangSanXuat: String
-//    var namSanXuat: Int
-//    var giaBan: Int
-//    var mauXe: String
-//    init(hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
-//        self.hangSanXuat = hangSanXuat
-//        self.namSanXuat = namSanXuat
-//        self.giaBan = giaBan
-//        self.mauXe = mauXe
-//    }
-//    func thongTin() {
-//        print(" Xe may: Hang san xuat \(hangSanXuat) gia ban \(giaBan) co mau xe \(mauXe) ")
-//    }
-//}
-//class OTo: PhuongTien {
-//    var soChoNgoi: Int
-//    var kieuDongCo: String
-//    init(soChoNgoi: Int, kieuDongCo: String, hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
-//        self.soChoNgoi = soChoNgoi
-//        self.kieuDongCo = kieuDongCo
-//        super.init(hangSanXuat: hangSanXuat, namSanXuat: namSanXuat, giaBan: giaBan, mauXe: mauXe)
-//    }
-//    func hienThongTin() {
-//        print(" Oto: Hang san xuat \(hangSanXuat) gia ban \(giaBan) kieu dong co \(kieuDongCo) co mau xe \(mauXe) " )
-//    }
-//}
-//class XeMay: PhuongTien {
-//    var congSuat: String
-//    init(congSuat: String, hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
-//        self.congSuat = congSuat
-//        super.init(hangSanXuat: hangSanXuat, namSanXuat: namSanXuat, giaBan: giaBan, mauXe: mauXe)
-//    }
-//    func hienThongTin() {
-//        print(" Xe may: Hang san xuat \(hangSanXuat) gia ban \(giaBan) cong suat \(congSuat) co mau xe \(mauXe) ")
-//    }
-//}
-//class XeTai: PhuongTien {
-//    var taiTrong: String
-//    init(taiTrong: String, hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
-//        self.taiTrong = taiTrong
-//        super.init(hangSanXuat: hangSanXuat, namSanXuat: namSanXuat, giaBan: giaBan, mauXe: mauXe)
-//    }
-//    func hienThongTin() {
-//        print(" Xe tai: Hang san xuat \(hangSanXuat) gia ban \(giaBan) tai trong \(taiTrong) co mau xe \(mauXe) ")
-//    }
-//}
-//class QLPTGT {
-//    var danhSachOto: [OTo]
-//    var danhSachXeMay: [XeMay]
-//    var danhSachXeTai: [XeTai]
-//    init(danhSachOto: [OTo], danhSachXeMay: [XeMay], danhSachXeTai: [XeTai]) {
-//        self.danhSachOto = danhSachOto
-//        self.danhSachXeMay = danhSachXeMay
-//        self.danhSachXeTai = danhSachXeTai
-//    }
-//    func inThongTin() {
-//        for i in danhSachOto {
-//            i.thongTin()
-//        }
-//        for i in danhSachXeMay {
-//            i.thongTin()
-//        }
-//        for i in danhSachXeTai {
-//            i.thongTin()
-//        }
-//    }
-//    func themOto(oToThem: OTo) {
-//        danhSachOto.append(oToThem)
-//    }
-//    func themXeMay(xeMayThem: XeMay) {
-//        danhSachXeMay.append(xeMayThem)
-//    }
-//    func themXeTai(xeTaiThem: XeTai) {
-//        danhSachXeTai.append(xeTaiThem)
-//    }
-//    func timPhuongTien(hangCanTim: String, mauCanTim: String ) {
-//        for i in 0..<danhSachOto.count {
-//            if danhSachOto[i].hangSanXuat == hangCanTim && danhSachOto[i].mauXe == mauCanTim {
-//                danhSachOto[i].thongTin()
-//            }
-//        }
-//        for i in 0..<danhSachXeMay.count {
-//            if danhSachXeMay[i].hangSanXuat == hangCanTim && danhSachXeMay[i].mauXe == mauCanTim {
-//                danhSachXeMay[i].thongTin()
-//            }
-//        }
-//        for i in 0..<danhSachXeTai.count {
-//            if danhSachXeTai[i].hangSanXuat == hangCanTim && danhSachXeTai[i].mauXe == mauCanTim {
-//                danhSachXeTai[i].thongTin()
-//            }
-//        }
-//
-//    }
-//}
-//
-//var quanLy = QLPTGT(danhSachOto: [OTo(soChoNgoi: 4, kieuDongCo: "AB", hangSanXuat: "Mazda", namSanXuat: 2020, giaBan: 1500, mauXe: "Den")], danhSachXeMay: [XeMay(congSuat: "150cc", hangSanXuat: "Honda", namSanXuat: 2019, giaBan: 150, mauXe: "Cam")], danhSachXeTai: [XeTai(taiTrong: "2500kg", hangSanXuat: "Hyundai", namSanXuat: 2018, giaBan: 3400, mauXe: "Vang")])
-//quanLy.themOto(oToThem: OTo(soChoNgoi: 4, kieuDongCo: "AA", hangSanXuat: "Toyota", namSanXuat: 2019, giaBan: 330, mauXe: "Xanh"))
-//quanLy.themOto(oToThem: OTo(soChoNgoi: 3, kieuDongCo: "bb", hangSanXuat: "Suzuki", namSanXuat: 2020, giaBan: 333, mauXe: "Cam"))
-//quanLy.themXeMay(xeMayThem: XeMay(congSuat: "125cc", hangSanXuat: "Yamaha", namSanXuat: 2018, giaBan: 255, mauXe: "Vang"))
-//quanLy.themXeTai(xeTaiThem: XeTai(taiTrong: "4459kg", hangSanXuat: "Fortuner", namSanXuat: 2005, giaBan: 34445, mauXe: "Den"))
-//quanLy.inThongTin()
-//quanLy.timPhuongTien(hangCanTim: "Toyota", mauCanTim: "Xanh")
-//quanLy.timPhuongTien(hangCanTim: "Fortuner", mauCanTim: "Den")
-//quanLy.inThongTin()
+class PhuongTien {
+    var hangSanXuat: String
+    var namSanXuat: Int
+    var giaBan: Int
+    var mauXe: String
+    init(hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
+        self.hangSanXuat = hangSanXuat
+        self.namSanXuat = namSanXuat
+        self.giaBan = giaBan
+        self.mauXe = mauXe
+    }
+    func thongTin() {
+        print("Hang san xuat \(hangSanXuat) gia ban \(giaBan) co mau xe \(mauXe) ")
+    }
+}
+class OTo: PhuongTien {
+    var soChoNgoi: Int
+    var kieuDongCo: String
+    init(soChoNgoi: Int, kieuDongCo: String, hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
+        self.soChoNgoi = soChoNgoi
+        self.kieuDongCo = kieuDongCo
+        super.init(hangSanXuat: hangSanXuat, namSanXuat: namSanXuat, giaBan: giaBan, mauXe: mauXe)
+    }
+    override func thongTin() {
+        print(" Oto: Hang san xuat \(hangSanXuat) gia ban \(giaBan) kieu dong co \(kieuDongCo) co mau xe \(mauXe) " )
+    }
+}
+class XeMay: PhuongTien {
+    var congSuat: String
+    init(congSuat: String, hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
+        self.congSuat = congSuat
+        super.init(hangSanXuat: hangSanXuat, namSanXuat: namSanXuat, giaBan: giaBan, mauXe: mauXe)
+    }
+    override func thongTin() {
+        print(" Xe may: Hang san xuat \(hangSanXuat) gia ban \(giaBan) cong suat \(congSuat) co mau xe \(mauXe) ")
+    }
+}
+class XeTai: PhuongTien {
+    var taiTrong: String
+    init(taiTrong: String, hangSanXuat: String, namSanXuat: Int, giaBan: Int, mauXe: String) {
+        self.taiTrong = taiTrong
+        super.init(hangSanXuat: hangSanXuat, namSanXuat: namSanXuat, giaBan: giaBan, mauXe: mauXe)
+    }
+    override func thongTin() {
+        print(" Xe tai: Hang san xuat \(hangSanXuat) gia ban \(giaBan) tai trong \(taiTrong) co mau xe \(mauXe) ")
+    }
+}
+class QLPTGT {
+    var danhSachOto: [OTo]
+    var danhSachXeMay: [XeMay]
+    var danhSachXeTai: [XeTai]
+    init(danhSachOto: [OTo], danhSachXeMay: [XeMay], danhSachXeTai: [XeTai]) {
+        self.danhSachOto = danhSachOto
+        self.danhSachXeMay = danhSachXeMay
+        self.danhSachXeTai = danhSachXeTai
+    }
+    func inThongTin() {
+        for i in danhSachOto {
+            i.thongTin()
+        }
+        for i in danhSachXeMay {
+            i.thongTin()
+        }
+        for i in danhSachXeTai {
+            i.thongTin()
+        }
+    }
+    func themOto(oToThem: OTo) {
+        danhSachOto.append(oToThem)
+    }
+    func themXeMay(xeMayThem: XeMay) {
+        danhSachXeMay.append(xeMayThem)
+    }
+    func themXeTai(xeTaiThem: XeTai) {
+        danhSachXeTai.append(xeTaiThem)
+    }
+    func timPhuongTien(hangCanTim: String, mauCanTim: String ) {
+        for i in 0..<danhSachOto.count {
+            if danhSachOto[i].hangSanXuat == hangCanTim && danhSachOto[i].mauXe == mauCanTim {
+                danhSachOto[i].thongTin()
+            }
+        }
+        for i in 0..<danhSachXeMay.count {
+            if danhSachXeMay[i].hangSanXuat == hangCanTim && danhSachXeMay[i].mauXe == mauCanTim {
+                danhSachXeMay[i].thongTin()
+            }
+        }
+        for i in 0..<danhSachXeTai.count {
+            if danhSachXeTai[i].hangSanXuat == hangCanTim && danhSachXeTai[i].mauXe == mauCanTim {
+                danhSachXeTai[i].thongTin()
+            }
+        }
+
+    }
+}
+
+var quanLy = QLPTGT(danhSachOto: [OTo(soChoNgoi: 4, kieuDongCo: "AB", hangSanXuat: "Mazda", namSanXuat: 2020, giaBan: 1500, mauXe: "Den")], danhSachXeMay: [XeMay(congSuat: "150cc", hangSanXuat: "Honda", namSanXuat: 2019, giaBan: 150, mauXe: "Cam")], danhSachXeTai: [XeTai(taiTrong: "2500kg", hangSanXuat: "Hyundai", namSanXuat: 2018, giaBan: 3400, mauXe: "Vang")])
+quanLy.themOto(oToThem: OTo(soChoNgoi: 4, kieuDongCo: "AA", hangSanXuat: "Toyota", namSanXuat: 2019, giaBan: 330, mauXe: "Xanh"))
+quanLy.themOto(oToThem: OTo(soChoNgoi: 3, kieuDongCo: "bb", hangSanXuat: "Suzuki", namSanXuat: 2020, giaBan: 333, mauXe: "Cam"))
+quanLy.themXeMay(xeMayThem: XeMay(congSuat: "125cc", hangSanXuat: "Yamaha", namSanXuat: 2018, giaBan: 255, mauXe: "Vang"))
+quanLy.themXeTai(xeTaiThem: XeTai(taiTrong: "4459kg", hangSanXuat: "Fortuner", namSanXuat: 2005, giaBan: 34445, mauXe: "Den"))
+quanLy.inThongTin()
+quanLy.timPhuongTien(hangCanTim: "Toyota", mauCanTim: "Xanh")
+quanLy.timPhuongTien(hangCanTim: "Fortuner", mauCanTim: "Den")
+quanLy.inThongTin()
 ////Bai 9
 //class VanBan {
 //    var xauKiTu: String
@@ -635,7 +626,7 @@ class Nguoi {
         self.queQuan = queQuan
     }
     func thongTin() {
-        print("Giao vien\(hoTen) \(tuoi) tuoi, que quan \(queQuan)")
+        print(" \(hoTen) \(tuoi) tuoi, que quan \(queQuan)")
     }
 }
 class GiaoVien: Nguoi {
@@ -655,7 +646,7 @@ class GiaoVien: Nguoi {
         self.tienPhat = tienPhat
         super.init(hoTen: hoTen, tuoi: tuoi, queQuan: queQuan)
     }
-    func hienThongTin() {
+    override func thongTin() {
         print("Giao vien \(hoTen) co ma so giao vien \(maSoGiaoVien) que quan \(queQuan) ")
     }
 }
@@ -669,7 +660,7 @@ class CBGV {
     }
     func thongTin() {
         for i in quanLyCacGiaoVien {
-            i.hienThongTin()
+            i.thongTin()
     }
         }
     func xoaGiaoVien(nhapMaSo: Int) {
@@ -722,7 +713,7 @@ canBo.luongGV()
 //        soTienTrongTaiKhoan = soTienTrongTaiKhoan + soTienTrongTaiKhoan * laiSuat
 //        print(soTienTrongTaiKhoan)
 //    }
-//    func chuyenTien(soTienMuonChuyen: Double, soTaiKhoanNhan: Int) {
+//    func chuyenTien(soTienMuonChuyen: Double, taiKhoanNhan: Account) {
 //        if soTienMuonChuyen > soTienTrongTaiKhoan {
 //            print("Khong the thuc hien giao dich nay")
 //        } else {
