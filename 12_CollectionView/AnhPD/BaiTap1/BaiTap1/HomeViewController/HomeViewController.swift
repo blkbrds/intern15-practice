@@ -24,10 +24,11 @@ final class HomeViewController: UIViewController {
         let nib = UINib(nibName: "HomeCell", bundle: .main)
         collectionView.register(nib, forCellWithReuseIdentifier: "HomeCell")
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     private func updateNumbers() {
-        for index in 1...50 {
+        for index in 1...100 {
             numbers.append(index)
         }
     }
@@ -42,5 +43,11 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as? HomeCell ?? HomeCell()
         cell.numberLabel.text = String(numbers[indexPath.row])
         return cell
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
     }
 }
