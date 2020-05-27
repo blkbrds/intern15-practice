@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MVCViewController" customModule="BaiTapMVC" customModuleProvider="target">
+            <connections>
+                <outlet property="resultLabel" destination="DgK-BF-xih" id="9Hx-ie-9Je"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgK-BF-xih">
+                    <rect key="frame" x="28" y="157" width="358" height="44.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="DgK-BF-xih" secondAttribute="height" multiplier="8" id="L5S-OK-bxN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7vj-S7-f5d">
+                    <rect key="frame" x="28" y="269" width="358" height="358"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ev5-sq-MCP">
+                            <rect key="frame" x="0.0" y="0.0" width="82" height="358"/>
+                            <subviews>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hu-QK-Bsy">
+                                    <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="OLw-Od-WHV"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc2-eN-cMk">
+                                    <rect key="frame" x="0.0" y="92" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="4">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="y0M-E7-845"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMy-zC-pJp">
+                                    <rect key="frame" x="0.0" y="184" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="7">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="zQH-yv-r3j"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WX6-af-SA6">
+                                    <rect key="frame" x="0.0" y="276" width="82" height="82"/>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="AC">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clearTouchUpInside:" destination="-1" eventType="touchUpInside" id="vBg-6v-FJp"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="lc2-eN-cMk" firstAttribute="height" secondItem="lMy-zC-pJp" secondAttribute="height" id="4yn-3R-wOx"/>
+                                <constraint firstItem="lMy-zC-pJp" firstAttribute="height" secondItem="WX6-af-SA6" secondAttribute="height" id="bfN-Ev-u5S"/>
+                                <constraint firstItem="2Hu-QK-Bsy" firstAttribute="height" secondItem="lc2-eN-cMk" secondAttribute="height" id="qDK-mj-GEa"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-R6-VEs">
+                            <rect key="frame" x="92" y="0.0" width="82" height="358"/>
+                            <subviews>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLN-f3-SIk">
+                                    <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="3G4-Kq-uwf"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eK-cf-98g">
+                                    <rect key="frame" x="0.0" y="92" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="5">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="GPP-E0-4lo"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-JA-h6v">
+                                    <rect key="frame" x="0.0" y="184" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="8">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="GHu-BU-w3s"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyZ-aF-3hE">
+                                    <rect key="frame" x="0.0" y="276" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="0">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="XDm-dh-8AN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="zyZ-aF-3hE" firstAttribute="height" secondItem="2ra-JA-h6v" secondAttribute="height" id="Is4-ui-LFA"/>
+                                <constraint firstItem="OLN-f3-SIk" firstAttribute="height" secondItem="0eK-cf-98g" secondAttribute="height" id="POr-QF-QUd"/>
+                                <constraint firstItem="2ra-JA-h6v" firstAttribute="height" secondItem="OLN-f3-SIk" secondAttribute="height" id="p6C-cc-JM4"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a0l-DP-9Qt">
+                            <rect key="frame" x="184" y="0.0" width="82" height="358"/>
+                            <subviews>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgd-z1-ddl">
+                                    <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="Xvx-UH-qBc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoc-OH-X6T">
+                                    <rect key="frame" x="0.0" y="92" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="6">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="uZE-1u-92R"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ps-Rg-SOa">
+                                    <rect key="frame" x="0.0" y="184" width="82" height="82"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="9">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheNumberTouchUpInside:" destination="-1" eventType="touchUpInside" id="8eb-aL-W1h"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X2-Sr-vgN">
+                                    <rect key="frame" x="0.0" y="276" width="82" height="82"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <state key="normal" title="=">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="showResults:" destination="-1" eventType="touchUpInside" id="Hq1-QZ-wIQ"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="dgd-z1-ddl" firstAttribute="height" secondItem="yoc-OH-X6T" secondAttribute="height" id="5FI-Pz-MCB"/>
+                                <constraint firstItem="2X2-Sr-vgN" firstAttribute="height" secondItem="1Ps-Rg-SOa" secondAttribute="height" id="6Nu-bE-Xw8"/>
+                                <constraint firstItem="1Ps-Rg-SOa" firstAttribute="height" secondItem="dgd-z1-ddl" secondAttribute="height" id="Zff-3o-BY0"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a9m-n2-8fd">
+                            <rect key="frame" x="276" y="0.0" width="82" height="358"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr3-BF-xQh">
+                                    <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <state key="normal" title="+">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheCalculationTouchUpInside:" destination="-1" eventType="touchUpInside" id="xq6-bt-iWE"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wh8-Tj-De7">
+                                    <rect key="frame" x="0.0" y="92" width="82" height="82"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <state key="normal" title="-">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheCalculationTouchUpInside:" destination="-1" eventType="touchUpInside" id="vhi-w0-UOm"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDJ-J8-7cX">
+                                    <rect key="frame" x="0.0" y="184" width="82" height="82"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <state key="normal" title="x">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheCalculationTouchUpInside:" destination="-1" eventType="touchUpInside" id="JlD-aG-uzf"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WJ-Ui-VoW">
+                                    <rect key="frame" x="0.0" y="276" width="82" height="82"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <state key="normal" title="/">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="enterTheCalculationTouchUpInside:" destination="-1" eventType="touchUpInside" id="OF6-8Y-cp6"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1WJ-Ui-VoW" firstAttribute="height" secondItem="yDJ-J8-7cX" secondAttribute="height" id="FMG-VV-fb3"/>
+                                <constraint firstItem="yDJ-J8-7cX" firstAttribute="height" secondItem="Nr3-BF-xQh" secondAttribute="height" id="lgv-sM-x66"/>
+                                <constraint firstItem="Nr3-BF-xQh" firstAttribute="height" secondItem="Wh8-Tj-De7" secondAttribute="height" id="ucq-oM-DAz"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Ev5-sq-MCP" firstAttribute="width" secondItem="7fm-R6-VEs" secondAttribute="width" id="1fL-Ay-Dul"/>
+                        <constraint firstItem="a0l-DP-9Qt" firstAttribute="width" secondItem="a9m-n2-8fd" secondAttribute="width" id="Ap6-rO-sHZ"/>
+                        <constraint firstItem="7fm-R6-VEs" firstAttribute="width" secondItem="a0l-DP-9Qt" secondAttribute="width" id="KJk-VP-Y9R"/>
+                        <constraint firstAttribute="width" secondItem="7vj-S7-f5d" secondAttribute="height" id="Tmh-b9-tuh"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7vj-S7-f5d" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qal-C2-X4u"/>
+                <constraint firstItem="DgK-BF-xih" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="2/5" id="Rqd-XV-GNY"/>
+                <constraint firstItem="DgK-BF-xih" firstAttribute="width" secondItem="7vj-S7-f5d" secondAttribute="width" id="VF6-Gx-alc"/>
+                <constraint firstItem="7vj-S7-f5d" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bG9-bJ-SNb"/>
+                <constraint firstItem="DgK-BF-xih" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iqU-1f-8yH"/>
+                <constraint firstItem="7vj-S7-f5d" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="nF9-8I-Osw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="132"/>
+        </view>
+    </objects>
+</document>
