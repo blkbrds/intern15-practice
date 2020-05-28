@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class HomeCollectionCellViewModel {
+    var nameTitle: String
+    var avatarName: String
+    var address: String
+    
+    init(nameTitle: String, avatarName: String, address: String) {
+        self.nameTitle = nameTitle
+        self.avatarName = avatarName
+        self.address = address
+    }
+}
