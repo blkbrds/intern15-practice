@@ -12,9 +12,7 @@ class SliderViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sliderView = SliderView()
-        sliderView.setUpThumbnailView()
-//        let sliderView = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil) ? [0] as? sliderView
+        let sliderView = SliderView(frame: CGRect(x: 150, y: 150, width: 20, height: 500))
         view.addSubview(sliderView)
     }
    

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		729327672484EF560028C508 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729327662484EF560028C508 /* SliderView.swift */; };
-		729327692484F6ED0028C508 /* SliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729327682484F6ED0028C508 /* SliderView.xib */; };
+		729327742485093E0028C508 /* SliderView2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729327722485093E0028C508 /* SliderView2Controller.swift */; };
+		729327752485093E0028C508 /* SliderView2Controller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729327732485093E0028C508 /* SliderView2Controller.xib */; };
 		7299FCED24810DE1000B391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299FCEC24810DE1000B391A /* AppDelegate.swift */; };
 		7299FCEF24810DE1000B391A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299FCEE24810DE1000B391A /* SceneDelegate.swift */; };
 		7299FCF124810DE1000B391A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299FCF024810DE1000B391A /* ContentView.swift */; };
@@ -21,7 +22,8 @@
 
 /* Begin PBXFileReference section */
 		729327662484EF560028C508 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
-		729327682484F6ED0028C508 /* SliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderView.xib; sourceTree = "<group>"; };
+		729327722485093E0028C508 /* SliderView2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView2Controller.swift; sourceTree = "<group>"; };
+		729327732485093E0028C508 /* SliderView2Controller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderView2Controller.xib; sourceTree = "<group>"; };
 		7299FCE924810DE1000B391A /* SliderViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SliderViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7299FCEC24810DE1000B391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7299FCEE24810DE1000B391A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,9 +47,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7293276B248507020028C508 /* SliderViewControllerWithXib */ = {
+			isa = PBXGroup;
+			children = (
+				729327722485093E0028C508 /* SliderView2Controller.swift */,
+				729327732485093E0028C508 /* SliderView2Controller.xib */,
+			);
+			path = SliderViewControllerWithXib;
+			sourceTree = "<group>";
+		};
 		7299FCE024810DE1000B391A = {
 			isa = PBXGroup;
 			children = (
+				7293276B248507020028C508 /* SliderViewControllerWithXib */,
 				7299FCEB24810DE1000B391A /* SliderViewController */,
 				7299FCEA24810DE1000B391A /* Products */,
 			);
@@ -65,11 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				729327662484EF560028C508 /* SliderView.swift */,
-				729327682484F6ED0028C508 /* SliderView.xib */,
 				7299FCEC24810DE1000B391A /* AppDelegate.swift */,
-				7299FCEE24810DE1000B391A /* SceneDelegate.swift */,
 				7299FCF024810DE1000B391A /* ContentView.swift */,
 				7299FD0424810E67000B391A /* SliderViewController.swift */,
+				7299FCEE24810DE1000B391A /* SceneDelegate.swift */,
 				7299FD0524810E67000B391A /* SliderViewController.xib */,
 				7299FCF224810DE2000B391A /* Assets.xcassets */,
 				7299FCF724810DE2000B391A /* LaunchScreen.storyboard */,
@@ -147,9 +158,9 @@
 			files = (
 				7299FCF924810DE2000B391A /* LaunchScreen.storyboard in Resources */,
 				7299FCF624810DE2000B391A /* Preview Assets.xcassets in Resources */,
-				729327692484F6ED0028C508 /* SliderView.xib in Resources */,
 				7299FCF324810DE2000B391A /* Assets.xcassets in Resources */,
 				7299FD0724810E67000B391A /* SliderViewController.xib in Resources */,
+				729327752485093E0028C508 /* SliderView2Controller.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729327742485093E0028C508 /* SliderView2Controller.swift in Sources */,
 				7299FCED24810DE1000B391A /* AppDelegate.swift in Sources */,
 				7299FCEF24810DE1000B391A /* SceneDelegate.swift in Sources */,
 				7299FCF124810DE1000B391A /* ContentView.swift in Sources */,
