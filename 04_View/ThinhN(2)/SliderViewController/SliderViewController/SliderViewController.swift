@@ -47,18 +47,17 @@ class SliderViewController: UIViewController {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let position = touch.location(in: self.view)
-            let textLabel: Int =  Int((650 - position.y) / 500 * 100)
-            if textLabel <= 100 && textLabel > 0 {
-                thumbnailLabel?.text = String(textLabel)
-                if position.y < 150 && position.y > 650 {
-                    return
-                }
-                if touch.view == thumbnailView {
-                    if var frame = thumbnailView?.frame {
-                    frame.origin.y = position.y
-                    thumbnailView?.frame = frame
-                    blueSliderView?.frame.origin = CGPoint(x: 150, y: position.y)
-                    blueSliderView?.frame.size = CGSize(width: 20, height: 650 - position.y)
+            if position.x > 150 && position.x < 190 {
+                let textLabel: Int =  Int((650 - position.y) / 500 * 100)
+                if textLabel <= 100 && textLabel >= 0 {
+                    thumbnailLabel?.text = String(textLabel)
+                    if touch.view == thumbnailView {
+                        if var frame = thumbnailView?.frame {
+                            frame.origin.y = position.y
+                            thumbnailView?.frame = frame
+                            blueSliderView?.frame.origin = CGPoint(x: 150, y: position.y)
+                            blueSliderView?.frame.size = CGSize(width: 20, height: 650 - position.y)
+                        }
                     }
                 }
             }
