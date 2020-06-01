@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Baitap1
+//  BaiTap1
 //
-//  Created by PCI0019 on 3/2/20.
-//  Copyright © 2020 asiantech. All rights reserved.
+//  Created by PCI0012 on 6/1/20.
+//  Copyright © 2020 PCI0012. All rights reserved.
 //
 
 import UIKit
