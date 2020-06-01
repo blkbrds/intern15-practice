@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BaiTap4" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="5WE-gO-QjF" id="Lo2-Cb-6nx"/>
+                <outlet property="tableView" destination="CV3-gU-sAZ" id="6J8-80-0UU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5WE-gO-QjF" userLabel="Collection View1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="179"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="feU-m3-oXd">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CV3-gU-sAZ">
+                    <rect key="frame" x="0.0" y="223" width="414" height="639"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAz-5f-0Rj">
+                    <rect key="frame" x="364" y="110" width="30" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="GXU-MO-WED"/>
+                        <constraint firstAttribute="height" constant="50" id="SnX-xd-Rfn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="chevron.compact.right" catalog="system"/>
+                    <connections>
+                        <action selector="turnRightButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="G3F-fw-2oW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56S-Hm-0v7">
+                    <rect key="frame" x="20" y="110" width="30" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AYh-WY-sSv"/>
+                        <constraint firstAttribute="width" constant="30" id="i7t-QQ-vne"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="41"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="chevron.compact.left" catalog="system"/>
+                    <connections>
+                        <action selector="turnLeftButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="Hlh-4g-AuS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5WE-gO-QjF" secondAttribute="trailing" id="5W8-tv-jLX"/>
+                <constraint firstItem="KAz-5f-0Rj" firstAttribute="centerY" secondItem="5WE-gO-QjF" secondAttribute="centerY" id="5bF-Ga-mzl"/>
+                <constraint firstItem="5WE-gO-QjF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MmU-L2-fDn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CV3-gU-sAZ" secondAttribute="bottom" id="Q8s-RL-jd0"/>
+                <constraint firstItem="56S-Hm-0v7" firstAttribute="centerY" secondItem="5WE-gO-QjF" secondAttribute="centerY" id="Qnc-nr-RTE"/>
+                <constraint firstItem="CV3-gU-sAZ" firstAttribute="top" secondItem="5WE-gO-QjF" secondAttribute="bottom" id="RIy-MR-jsV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KAz-5f-0Rj" secondAttribute="trailing" constant="20" id="WNG-eA-oyt"/>
+                <constraint firstItem="5WE-gO-QjF" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1/5" id="Xe6-tt-5KX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CV3-gU-sAZ" secondAttribute="trailing" id="bdj-HK-PUN"/>
+                <constraint firstItem="CV3-gU-sAZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ctZ-XW-f5d"/>
+                <constraint firstItem="56S-Hm-0v7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ic8-2G-Zly"/>
+                <constraint firstItem="5WE-gO-QjF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vAw-Ct-OdA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.compact.left" catalog="system" width="32" height="64"/>
+        <image name="chevron.compact.right" catalog="system" width="32" height="64"/>
+    </resources>
+</document>
