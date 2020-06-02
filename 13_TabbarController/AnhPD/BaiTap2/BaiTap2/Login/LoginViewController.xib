@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="BaiTap2" customModuleProvider="target">
+            <connections>
+                <outlet property="loginButton" destination="ui9-wQ-nfO" id="eRs-Jp-EK9"/>
+                <outlet property="notificationLabel" destination="5hM-C2-qNW" id="i2A-jP-02i"/>
+                <outlet property="passWordTextField" destination="0zb-Yu-haP" id="3RR-RU-KpJ"/>
+                <outlet property="registerButton" destination="D5V-P1-JBX" id="r2i-5E-FE4"/>
+                <outlet property="userNameTextField" destination="WWJ-dV-oUV" id="bSR-0N-Rds"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pass word:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sn5-9a-HMp">
+                    <rect key="frame" x="50" y="227" width="90" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vu-9v-DSk">
+                    <rect key="frame" x="50" y="144" width="93.5" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWJ-dV-oUV">
+                    <rect key="frame" x="153.5" y="144" width="210.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0zb-Yu-haP">
+                    <rect key="frame" x="153.5" y="227" width="210.5" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ui9-wQ-nfO">
+                    <rect key="frame" x="255" y="304" width="70" height="30"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="YK9-eL-xGK"/>
+                    </constraints>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loginButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="xdp-mH-fK6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-P1-JBX">
+                    <rect key="frame" x="89" y="304" width="70" height="30"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="nsU-R4-MXE"/>
+                    </constraints>
+                    <state key="normal" title=" Register">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="registerButtonTouchUpInSide:" destination="-1" eventType="touchUpInside" id="mK3-Y3-bcc"/>
+                    </connections>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tài khoản hoặc mật khẩu không hợp lệ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hM-C2-qNW">
+                    <rect key="frame" x="107" y="432.5" width="200" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="6Vj-dW-RIo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.024002201210000001" blue="0.072374784380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5hM-C2-qNW" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="13I-NE-ykg"/>
+                <constraint firstItem="D5V-P1-JBX" firstAttribute="top" secondItem="sn5-9a-HMp" secondAttribute="bottom" constant="56" id="71a-KM-XUX"/>
+                <constraint firstItem="0vu-9v-DSk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="9Eu-nq-Sgr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0zb-Yu-haP" secondAttribute="trailing" constant="50" id="Btu-5o-3JV"/>
+                <constraint firstItem="ui9-wQ-nfO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="1.4" id="DLw-r3-0bw"/>
+                <constraint firstItem="0zb-Yu-haP" firstAttribute="leading" secondItem="WWJ-dV-oUV" secondAttribute="leading" id="Vtc-md-69a"/>
+                <constraint firstItem="5hM-C2-qNW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="WI1-nw-FlF"/>
+                <constraint firstItem="WWJ-dV-oUV" firstAttribute="top" secondItem="0vu-9v-DSk" secondAttribute="top" id="ZZm-gk-RIG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WWJ-dV-oUV" secondAttribute="trailing" constant="50" id="gY6-YI-caq"/>
+                <constraint firstItem="ui9-wQ-nfO" firstAttribute="top" secondItem="D5V-P1-JBX" secondAttribute="top" id="gZ8-MU-e7u"/>
+                <constraint firstItem="0zb-Yu-haP" firstAttribute="top" secondItem="sn5-9a-HMp" secondAttribute="top" id="k1s-xb-8HD"/>
+                <constraint firstItem="D5V-P1-JBX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" multiplier="0.6" id="lOc-g3-OUl"/>
+                <constraint firstItem="sn5-9a-HMp" firstAttribute="leading" secondItem="0vu-9v-DSk" secondAttribute="leading" id="n1p-it-Po2"/>
+                <constraint firstItem="WWJ-dV-oUV" firstAttribute="leading" secondItem="0vu-9v-DSk" secondAttribute="trailing" constant="10" id="ub4-0K-Yfk"/>
+                <constraint firstItem="0vu-9v-DSk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="vyV-dh-u3E"/>
+                <constraint firstItem="sn5-9a-HMp" firstAttribute="top" secondItem="0vu-9v-DSk" secondAttribute="bottom" constant="62" id="y0u-8U-kuz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
+        </view>
+    </objects>
+</document>
