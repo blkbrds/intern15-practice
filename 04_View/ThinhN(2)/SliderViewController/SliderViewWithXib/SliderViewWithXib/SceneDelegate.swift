@@ -17,4 +17,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         let viewController = SliderViewController()
         window?.rootViewController = viewController
+    }
 }
