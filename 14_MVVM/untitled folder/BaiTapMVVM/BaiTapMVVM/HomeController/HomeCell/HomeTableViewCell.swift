@@ -23,6 +23,10 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        favoriteButton.isSelected = false
+    }
+    
     private func updateView() {
         guard let homeCellViewModel = homeCellViewModel else {
             return

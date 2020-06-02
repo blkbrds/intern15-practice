@@ -80,7 +80,11 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.detailViewModel = DetailViewModel(cafe: viewModel.cafes[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -93,11 +97,15 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.homeCellViewModel = viewModel.viewModelCellForRowAt(indexPath: indexPath)
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = 
-    }
 }
 
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.detailViewModel = DetailViewModel(cafe: viewModel.cafes[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (UIScreen.main.bounds.width - CGFloat(30)) / 2, height: 180)

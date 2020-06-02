@@ -16,7 +16,7 @@ final class Cafe {
     var km: String
     var favorite: Bool
     
-    init(avatarName: String, nameTitle: String, address: String, km: String, favorite: Bool = false) {
+    init(avatarName: String = "", nameTitle: String = "", address: String = "", km: String = "", favorite: Bool = false) {
         self.avatarName = avatarName
         self.nameTitle = nameTitle
         self.address = address

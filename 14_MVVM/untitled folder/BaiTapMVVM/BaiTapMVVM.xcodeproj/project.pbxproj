@@ -26,6 +26,9 @@
 		F24FD14024863EC600FABB03 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24FD13E24863EC600FABB03 /* SettingViewController.xib */; };
 		F24FD14A24863FDE00FABB03 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24FD14824863FDE00FABB03 /* FavoriteViewController.swift */; };
 		F24FD14B24863FDE00FABB03 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24FD14924863FDE00FABB03 /* FavoriteViewController.xib */; };
+		F24FD15224864AE100FABB03 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24FD15024864AE100FABB03 /* DetailViewController.swift */; };
+		F24FD15324864AE100FABB03 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F24FD15124864AE100FABB03 /* DetailViewController.xib */; };
+		F24FD155248655F200FABB03 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24FD154248655F200FABB03 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		F24FD13E24863EC600FABB03 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		F24FD14824863FDE00FABB03 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		F24FD14924863FDE00FABB03 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
+		F24FD15024864AE100FABB03 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F24FD15124864AE100FABB03 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		F24FD154248655F200FABB03 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewModel.swift; path = ../../../../../../../Documents/DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +91,13 @@
 				F24FD14624863FA900FABB03 /* SettingController */,
 				F24FD14524863F9E00FABB03 /* FavoriteController */,
 				F24FD1252485F2E000FABB03 /* Model */,
+				F24FD14724863FB100FABB03 /* MapController */,
 				F24FD13424863CD800FABB03 /* DetailController */,
 				F24FD1192485F1FB00FABB03 /* HomeController */,
 				F24FD1052485F1A300FABB03 /* AppDelegate.swift */,
 				F24FD1072485F1A300FABB03 /* SceneDelegate.swift */,
 				F24FD10E2485F1A400FABB03 /* Assets.xcassets */,
 				F24FD1132485F1A400FABB03 /* Info.plist */,
-				F24FD14724863FB100FABB03 /* MapController */,
 			);
 			path = BaiTapMVVM;
 			sourceTree = "<group>";
@@ -131,6 +137,9 @@
 		F24FD13424863CD800FABB03 /* DetailController */ = {
 			isa = PBXGroup;
 			children = (
+				F24FD15024864AE100FABB03 /* DetailViewController.swift */,
+				F24FD15124864AE100FABB03 /* DetailViewController.xib */,
+				F24FD154248655F200FABB03 /* DetailViewModel.swift */,
 			);
 			path = DetailController;
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 				F24FD1312486138100FABB03 /* HomeCollectionViewCell.xib in Resources */,
 				F24FD14B24863FDE00FABB03 /* FavoriteViewController.xib in Resources */,
 				F24FD13824863E8A00FABB03 /* MapViewController.xib in Resources */,
+				F24FD15324864AE100FABB03 /* DetailViewController.xib in Resources */,
 				F24FD1272485F31C00FABB03 /* Sections.plist in Resources */,
 				F24FD10F2485F1A400FABB03 /* Assets.xcassets in Resources */,
 				F24FD1242485F29500FABB03 /* HomeTableViewCell.xib in Resources */,
@@ -241,11 +251,13 @@
 				F24FD14A24863FDE00FABB03 /* FavoriteViewController.swift in Sources */,
 				F24FD1062485F1A300FABB03 /* AppDelegate.swift in Sources */,
 				F24FD1082485F1A300FABB03 /* SceneDelegate.swift in Sources */,
+				F24FD15224864AE100FABB03 /* DetailViewController.swift in Sources */,
 				F24FD12D2485FE1600FABB03 /* HomeViewModel.swift in Sources */,
 				F24FD12B2485F7E600FABB03 /* HomeCellViewModel.swift in Sources */,
 				F24FD13724863E8A00FABB03 /* MapViewController.swift in Sources */,
 				F24FD13F24863EC600FABB03 /* SettingViewController.swift in Sources */,
 				F24FD1292485F64A00FABB03 /* Cafe.swift in Sources */,
+				F24FD155248655F200FABB03 /* DetailViewModel.swift in Sources */,
 				F24FD1232485F29500FABB03 /* HomeTableViewCell.swift in Sources */,
 				F24FD11C2485F22100FABB03 /* HomeViewController.swift in Sources */,
 				F24FD1302486138100FABB03 /* HomeCollectionViewCell.swift in Sources */,
