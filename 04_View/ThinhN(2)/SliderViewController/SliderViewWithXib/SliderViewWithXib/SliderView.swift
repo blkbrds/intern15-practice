@@ -23,6 +23,11 @@ class SliderView: UIView {
         thumbnailSliderLabel.textAlignment = .center
         thumbnailSliderLabel.font = .systemFont(ofSize: 10)
     }
+    
+    override func awakeFromNib() {
+        setupView()
+    }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let position = touch.location(in: self)
