@@ -53,17 +53,17 @@ class SliderView: UIView {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let position = touch.location(in: self)
-            if position.x > whiteSliderView.frame.origin.x && position.x < whiteSliderView.frame.origin.x + whiteSliderView.frame.size.width {
-                let textLabel: Int =  Int((whiteSliderView.bounds.size.height + whiteSliderView.frame.origin.y - position.y) / whiteSliderView.bounds.size.height * 100)
-                if textLabel <= 100 && textLabel >= 0 {
-                    thumbnailLabel?.text = String(textLabel)
-                    if touch.view == thumbnailView {
+            if touch.view == thumbnailView {
+                if position.x > whiteSliderView.frame.origin.x && position.x < whiteSliderView.frame.origin.x + whiteSliderView.frame.size.width {
+                    let textLabel: Int =  Int((whiteSliderView.bounds.size.height  - position.y) / whiteSliderView.bounds.size.height * 100)
+                    if textLabel <= 100 && textLabel >= 0 {
+                        thumbnailLabel?.text = String(textLabel)
                         if var frame = thumbnailView?.frame {
                             if let thumbnailView = thumbnailView {
                                 frame.origin.y = position.y - thumbnailView.bounds.size.width / 2
                                 thumbnailView.frame = frame
                                 blueSliderView.frame.origin = CGPoint(x: blueSliderView.frame.origin.x, y: position.y)
-                                blueSliderView.frame.size = CGSize(width: 20, height: whiteSliderView.bounds.size.height + whiteSliderView.frame.origin.y  - position.y)
+                                blueSliderView.frame.size = CGSize(width: 20, height: whiteSliderView.bounds.size.height - position.y)
                             }
                         }
                     }

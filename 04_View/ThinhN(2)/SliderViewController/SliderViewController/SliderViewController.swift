@@ -15,5 +15,4 @@ class SliderViewController: UIViewController {
         let sliderView = SliderView(frame: CGRect(x: 150, y: 150, width: 20, height: 500))
         view.addSubview(sliderView)
     }
-   
 }

@@ -10,10 +10,8 @@
 		729327672484EF560028C508 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729327662484EF560028C508 /* SliderView.swift */; };
 		7299FCED24810DE1000B391A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299FCEC24810DE1000B391A /* AppDelegate.swift */; };
 		7299FCEF24810DE1000B391A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299FCEE24810DE1000B391A /* SceneDelegate.swift */; };
-		7299FCF124810DE1000B391A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299FCF024810DE1000B391A /* ContentView.swift */; };
 		7299FCF324810DE2000B391A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7299FCF224810DE2000B391A /* Assets.xcassets */; };
 		7299FCF624810DE2000B391A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7299FCF524810DE2000B391A /* Preview Assets.xcassets */; };
-		7299FCF924810DE2000B391A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7299FCF724810DE2000B391A /* LaunchScreen.storyboard */; };
 		7299FD0624810E67000B391A /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299FD0424810E67000B391A /* SliderViewController.swift */; };
 		7299FD0724810E67000B391A /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7299FD0524810E67000B391A /* SliderViewController.xib */; };
 /* End PBXBuildFile section */
@@ -23,10 +21,8 @@
 		7299FCE924810DE1000B391A /* SliderViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SliderViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7299FCEC24810DE1000B391A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7299FCEE24810DE1000B391A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7299FCF024810DE1000B391A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7299FCF224810DE2000B391A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7299FCF524810DE2000B391A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7299FCF824810DE2000B391A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7299FCFA24810DE2000B391A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7299FD0424810E67000B391A /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		7299FD0524810E67000B391A /* SliderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
@@ -64,12 +60,10 @@
 			children = (
 				729327662484EF560028C508 /* SliderView.swift */,
 				7299FCEC24810DE1000B391A /* AppDelegate.swift */,
-				7299FCF024810DE1000B391A /* ContentView.swift */,
 				7299FD0424810E67000B391A /* SliderViewController.swift */,
 				7299FCEE24810DE1000B391A /* SceneDelegate.swift */,
 				7299FD0524810E67000B391A /* SliderViewController.xib */,
 				7299FCF224810DE2000B391A /* Assets.xcassets */,
-				7299FCF724810DE2000B391A /* LaunchScreen.storyboard */,
 				7299FCFA24810DE2000B391A /* Info.plist */,
 				7299FCF424810DE2000B391A /* Preview Content */,
 			);
@@ -142,7 +136,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7299FCF924810DE2000B391A /* LaunchScreen.storyboard in Resources */,
 				7299FCF624810DE2000B391A /* Preview Assets.xcassets in Resources */,
 				7299FCF324810DE2000B391A /* Assets.xcassets in Resources */,
 				7299FD0724810E67000B391A /* SliderViewController.xib in Resources */,
@@ -158,24 +151,12 @@
 			files = (
 				7299FCED24810DE1000B391A /* AppDelegate.swift in Sources */,
 				7299FCEF24810DE1000B391A /* SceneDelegate.swift in Sources */,
-				7299FCF124810DE1000B391A /* ContentView.swift in Sources */,
 				7299FD0624810E67000B391A /* SliderViewController.swift in Sources */,
 				729327672484EF560028C508 /* SliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7299FCF724810DE2000B391A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7299FCF824810DE2000B391A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7299FCFB24810DE2000B391A /* Debug */ = {
