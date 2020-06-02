@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  SliderViewController
+//  SliderViewWithXib
 //
-//  Created by PCI0019 on 5/29/20.
+//  Created by PCI0019 on 6/2/20.
 //  Copyright © 2020 asiantech. All rights reserved.
 //
 
@@ -20,11 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-       guard let windowScene = (scene as? UIWindowScene) else { return }
-       window = UIWindow(windowScene: windowScene)
-       window?.makeKeyAndVisible()
-       let viewController = SliderViewController()
-       window?.rootViewController = viewController
+
+        // Use a UIHostingController as window root view controller.
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+              window = UIWindow(windowScene: windowScene)
+              window?.makeKeyAndVisible()
+              let viewController = SliderViewController()
+              window?.rootViewController = viewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -56,5 +58,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-
 }
+
