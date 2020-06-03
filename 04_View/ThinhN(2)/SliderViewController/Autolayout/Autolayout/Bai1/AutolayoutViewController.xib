@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AutolayoutViewController" customModule="Autolayout" customModuleProvider="target">
+            <connections>
+                <outlet property="blueView" destination="Wpq-t6-AW1" id="aEb-6H-NJI"/>
+                <outlet property="cancelButton" destination="sIn-Zn-hun" id="Cl2-ki-ioj"/>
+                <outlet property="goButton" destination="rUh-ZB-hwt" id="1sl-UE-BVE"/>
+                <outlet property="hiddenView" destination="wJJ-mZ-xEY" id="Aqd-kF-XeN"/>
+                <outlet property="subView" destination="KOT-9y-6pe" id="Izd-Xm-rrq"/>
+                <outlet property="titleLabel" destination="MH5-Xn-6pf" id="1eV-S6-erl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7C-FW-I9R">
+                    <rect key="frame" x="107" y="303" width="200" height="300"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-book-background" translatesAutoresizingMaskIntoConstraints="NO" id="wJJ-mZ-xEY">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOT-9y-6pe">
+                            <rect key="frame" x="-60" y="42" width="320" height="258"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW BOOKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MH5-Xn-6pf">
+                                    <rect key="frame" x="109" y="25" width="102" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have introduced a number of new books, a lot of interesting books. Go and see it !" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnn-E0-GOW">
+                                    <rect key="frame" x="20" y="61" width="280" height="61"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIn-Zn-hun">
+                                    <rect key="frame" x="20" y="203" width="100" height="31"/>
+                                    <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="C9v-q3-V2b"/>
+                                        <constraint firstAttribute="width" constant="100" id="Cfj-AA-MYm"/>
+                                    </constraints>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpq-t6-AW1">
+                                    <rect key="frame" x="150" y="5" width="20" height="5"/>
+                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="4X4-bD-AwE"/>
+                                        <constraint firstAttribute="height" constant="5" id="vcB-Gp-Tuc"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUh-ZB-hwt">
+                                    <rect key="frame" x="200" y="202" width="100" height="33"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="33" id="YCs-8d-F5V"/>
+                                        <constraint firstAttribute="width" constant="100" id="gKs-Qx-L46"/>
+                                    </constraints>
+                                    <state key="normal" title="Go">
+                                        <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="popButtonTouchUpInsine:" destination="-1" eventType="touchUpInside" id="htO-xq-7eU"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="Dnn-E0-GOW" firstAttribute="leading" secondItem="KOT-9y-6pe" secondAttribute="leading" constant="20" id="4NI-KM-o8b"/>
+                                <constraint firstItem="Dnn-E0-GOW" firstAttribute="top" secondItem="MH5-Xn-6pf" secondAttribute="bottom" constant="15" id="8Lb-Wa-YPj"/>
+                                <constraint firstItem="MH5-Xn-6pf" firstAttribute="top" secondItem="Wpq-t6-AW1" secondAttribute="bottom" constant="15" id="8V8-vr-JQZ"/>
+                                <constraint firstItem="sIn-Zn-hun" firstAttribute="top" secondItem="Dnn-E0-GOW" secondAttribute="bottom" constant="81" id="AQD-ga-z0O"/>
+                                <constraint firstItem="sIn-Zn-hun" firstAttribute="leading" secondItem="Dnn-E0-GOW" secondAttribute="leading" id="ErD-ov-MCm"/>
+                                <constraint firstItem="MH5-Xn-6pf" firstAttribute="centerX" secondItem="KOT-9y-6pe" secondAttribute="centerX" id="TNO-Oh-t4y"/>
+                                <constraint firstItem="rUh-ZB-hwt" firstAttribute="trailing" secondItem="Dnn-E0-GOW" secondAttribute="trailing" id="bRr-LV-5jP"/>
+                                <constraint firstItem="Wpq-t6-AW1" firstAttribute="top" secondItem="KOT-9y-6pe" secondAttribute="top" constant="5" id="ciV-2o-KfD"/>
+                                <constraint firstItem="rUh-ZB-hwt" firstAttribute="centerY" secondItem="sIn-Zn-hun" secondAttribute="centerY" id="lh3-2p-S9j"/>
+                                <constraint firstItem="Wpq-t6-AW1" firstAttribute="centerX" secondItem="KOT-9y-6pe" secondAttribute="centerX" id="n5y-FN-jq9"/>
+                                <constraint firstAttribute="trailing" secondItem="Dnn-E0-GOW" secondAttribute="trailing" constant="20" id="t1a-od-MiL"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="KOT-9y-6pe" secondAttribute="bottom" id="1m8-Mh-XbZ"/>
+                        <constraint firstItem="wJJ-mZ-xEY" firstAttribute="top" secondItem="d7C-FW-I9R" secondAttribute="top" id="6DR-6d-zUd"/>
+                        <constraint firstAttribute="width" constant="200" id="D6Z-yI-FaU"/>
+                        <constraint firstAttribute="trailing" secondItem="wJJ-mZ-xEY" secondAttribute="trailing" id="aOn-EJ-tmL"/>
+                        <constraint firstAttribute="trailing" secondItem="KOT-9y-6pe" secondAttribute="trailing" constant="-60" id="duB-jI-hoe"/>
+                        <constraint firstItem="wJJ-mZ-xEY" firstAttribute="leading" secondItem="d7C-FW-I9R" secondAttribute="leading" id="h6K-9a-P9g"/>
+                        <constraint firstAttribute="bottom" secondItem="wJJ-mZ-xEY" secondAttribute="bottom" id="neX-DB-5eo"/>
+                        <constraint firstItem="KOT-9y-6pe" firstAttribute="top" secondItem="d7C-FW-I9R" secondAttribute="top" constant="42" id="ohd-Lx-K0L"/>
+                        <constraint firstItem="KOT-9y-6pe" firstAttribute="leading" secondItem="d7C-FW-I9R" secondAttribute="leading" constant="-60" id="rST-a4-fkk"/>
+                        <constraint firstAttribute="height" constant="300" id="uoM-rg-8Xk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="d7C-FW-I9R" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="f6W-yd-6E9"/>
+                <constraint firstItem="d7C-FW-I9R" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hEx-JK-duL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="207.19999999999999" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blue-book-background" width="340" height="216"/>
+    </resources>
+</document>
