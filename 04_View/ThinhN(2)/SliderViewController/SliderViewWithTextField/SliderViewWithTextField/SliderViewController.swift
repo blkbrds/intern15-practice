@@ -8,40 +8,26 @@
 
 import UIKit
 
-protocol SliderViewControllerDelegate: class {
-    func sendValue(view: SliderViewController, value: Int)
-    
-}
-
 class SliderViewController: UIViewController {
-
+    
     @IBOutlet weak var valueTextFiled: UITextField!
-    var value = 0
-    var delegate: SliderViewControllerDelegate?
- 
+    let sliderView = Bundle.main.loadNibNamed ("SliderView", owner: self, options: nil )? [0] as? SliderView
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       if let sliderView = Bundle.main.loadNibNamed ("SliderView", owner: self, options: nil )? [0] as? SliderView {
+        guard let sliderView = sliderView else { return }
         sliderView.delegate = self
         sliderView.frame = CGRect(x: 200, y: 200, width: 40, height: 500)
         view.addSubview(sliderView)
-        }
     }
     
     @IBAction func okButtonTouchUpInsine(_ sender: Any) {
-        if let valueTextField = valueTextFiled.text {
-            value = Int(valueTextField) ?? 0
-        }
-        if let delegate = delegate {
-            delegate.sendValue(view: self, value: value)
-        }
+        guard let valueTextField = valueTextFiled.text, let value = Int(valueTextField) else { return }
+        sliderView?.getValue(value: value)
     }
-
 }
-
 extension SliderViewController: UserViewDelegate {
     func didTap(view: SliderView, count: Int) {
         valueTextFiled.text = String(count)
-        
     }
 }
