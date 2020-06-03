@@ -11,6 +11,7 @@ import Foundation
 
 class HomeCellViewModel {
     var cafes: Cafe
+    var isFavorite = false
     
     init(cafes: Cafe) {
         self.cafes = cafes

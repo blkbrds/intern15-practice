@@ -31,7 +31,7 @@ class HomeViewModel {
         }
     }
     
-    func viewModelNumberOfRowsInSection() -> Int {
+    func numberOfRowsInSection() -> Int {
         return cafes.count
     }
     

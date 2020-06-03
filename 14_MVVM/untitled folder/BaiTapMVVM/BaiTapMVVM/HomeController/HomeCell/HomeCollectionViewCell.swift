@@ -39,7 +39,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func favoriteButtonTouchUpInSide(_ sender: Any) {
-        favoriteButton.isSelected = !favorite
-        favorite = !favorite
+        if let homeCellViewModel = homeCellViewModel {
+            favoriteButton.isSelected = !homeCellViewModel.isFavorite
+            homeCellViewModel.isFavorite = !homeCellViewModel.isFavorite
+        }
     }
 }

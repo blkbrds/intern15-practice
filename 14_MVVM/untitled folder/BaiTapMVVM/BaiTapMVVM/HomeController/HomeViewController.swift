@@ -52,15 +52,15 @@ class HomeViewController: UIViewController {
         if status == .tableView {
             tableView.isHidden = true
             collection.isHidden = false
-            let tableView = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(selection))
-            navigationItem.rightBarButtonItem = tableView
+            let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(selection))
+            navigationItem.rightBarButtonItem = barButtonItem
             navigationController?.navigationBar.tintColor = .black
             status = .collectionView
         } else {
             collection.isHidden = true
             tableView.isHidden = false
-            let collectionView = UIBarButtonItem(image: UIImage(systemName: "square.grid.2x2.fill"), style: .plain, target: self, action: #selector(selection))
-            navigationItem.rightBarButtonItem = collectionView
+            let barButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.grid.2x2.fill"), style: .plain, target: self, action: #selector(selection))
+            navigationItem.rightBarButtonItem = barButtonItem
             navigationController?.navigationBar.tintColor = .black
             status = .tableView
         }
@@ -69,11 +69,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.viewModelNumberOfRowsInSection()
+        return viewModel.numberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as! HomeTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
         cell.homeCellViewModel = viewModel.viewModelCellForRowAt(indexPath: indexPath)
         return cell
     }
@@ -89,11 +91,13 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.viewModelNumberOfRowsInSection()
+        return viewModel.numberOfRowsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         cell.homeCellViewModel = viewModel.viewModelCellForRowAt(indexPath: indexPath)
         return cell
     }

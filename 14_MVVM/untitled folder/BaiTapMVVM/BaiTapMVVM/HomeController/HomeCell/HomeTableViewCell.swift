@@ -16,7 +16,6 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var kmLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    var favorite = false
     var homeCellViewModel: HomeCellViewModel? {
         didSet {
             updateView()
@@ -39,8 +38,10 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     @IBAction func favoriteButtonTouchUpInSide(_ sender: Any) {
-        favoriteButton.isSelected = !favorite
-        favorite = !favorite
+        if let homeCellViewModel = homeCellViewModel {
+            favoriteButton.isSelected = !homeCellViewModel.isFavorite
+            homeCellViewModel.isFavorite = !homeCellViewModel.isFavorite
+        }
     }
     
     override func awakeFromNib() {
