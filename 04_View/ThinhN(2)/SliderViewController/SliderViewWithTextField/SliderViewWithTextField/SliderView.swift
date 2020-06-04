@@ -37,7 +37,7 @@ class SliderView: UIView {
             thumbnailLabel.text = String(value)
             let y: CGFloat = whiteSliderView.frame.maxY - whiteSliderView.frame.height * CGFloat(value) / 100
             let frame: CGRect = CGRect(x: thumbnailLabel.frame.origin.x, y: y - thumbnailLabel.frame.height / 2, width: thumbnailLabel.frame.width, height: thumbnailLabel.frame.height)
-            blueSliderView.frame = CGRect(x: blueSliderView.frame.origin.x, y: y, width: blueSliderView.frame.width, height: blueSliderView.frame.maxY - y  )
+            blueSliderView.frame = CGRect(x: blueSliderView.frame.origin.x, y: y, width: blueSliderView.frame.width, height: blueSliderView.frame.maxY - y)
             thumbnailLabel.frame = frame
         }
     }
