@@ -10,10 +10,9 @@
 import Foundation
 
 class HomeCellViewModel {
-    var cafes: Cafe
-    var isFavorite = false
+    var cafe: Cafe
     
-    init(cafes: Cafe) {
-        self.cafes = cafes
+    init(cafe: Cafe) {
+        self.cafe = cafe
     }
 }

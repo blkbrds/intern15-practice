@@ -22,26 +22,21 @@ class HomeTableViewCell: UITableViewCell {
         }
     }
     
-    override func prepareForReuse() {
-        favoriteButton.isSelected = false
-    }
-    
     private func updateView() {
         guard let homeCellViewModel = homeCellViewModel else {
             return
         }
-        avatarImageView.image = UIImage(named: homeCellViewModel.cafes.avatarName)
-        nameTitleLabel.text = homeCellViewModel.cafes.nameTitle
-        addressLabel.text = homeCellViewModel.cafes.address
-        kmLabel.text = homeCellViewModel.cafes.km
-        
+        avatarImageView.image = UIImage(named: homeCellViewModel.cafe.avatarName)
+        nameTitleLabel.text = homeCellViewModel.cafe.nameTitle
+        addressLabel.text = homeCellViewModel.cafe.address
+        kmLabel.text = homeCellViewModel.cafe.km
+        favoriteButton.isSelected = homeCellViewModel.cafe.isFavorite
     }
     
     @IBAction func favoriteButtonTouchUpInSide(_ sender: Any) {
-        if let homeCellViewModel = homeCellViewModel {
-            favoriteButton.isSelected = !homeCellViewModel.isFavorite
-            homeCellViewModel.isFavorite = !homeCellViewModel.isFavorite
-        }
+        guard let homeCellViewModel = homeCellViewModel else { return }
+        homeCellViewModel.cafe.isFavorite = !homeCellViewModel.cafe.isFavorite
+        favoriteButton.isSelected = homeCellViewModel.cafe.isFavorite
     }
     
     override func awakeFromNib() {
@@ -51,6 +46,5 @@ class HomeTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
 }

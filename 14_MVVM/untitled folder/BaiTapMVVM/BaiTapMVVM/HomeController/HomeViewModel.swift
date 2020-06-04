@@ -37,7 +37,7 @@ class HomeViewModel {
     
     func viewModelCellForRowAt(indexPath: IndexPath) -> HomeCellViewModel {
         let item = cafes[indexPath.row]
-        let viewModel = HomeCellViewModel(cafes: item)
+        let viewModel = HomeCellViewModel(cafe: item)
         return viewModel
     }
 }

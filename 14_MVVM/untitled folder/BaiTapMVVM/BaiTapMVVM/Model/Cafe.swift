@@ -14,13 +14,13 @@ final class Cafe {
     var nameTitle: String
     var address: String
     var km: String
-    var favorite: Bool
+    var isFavorite: Bool
     
     init(avatarName: String = "", nameTitle: String = "", address: String = "", km: String = "", favorite: Bool = false) {
         self.avatarName = avatarName
         self.nameTitle = nameTitle
         self.address = address
         self.km = km
-        self.favorite = favorite
+        self.isFavorite = favorite
     }
 }

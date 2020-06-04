@@ -16,7 +16,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var kmLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    var favorite = false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,16 +31,18 @@ class HomeCollectionViewCell: UICollectionViewCell {
         guard let homeCellViewModel = homeCellViewModel  else {
             return
         }
-        avatarImageView.image = UIImage(named: homeCellViewModel.cafes.avatarName)
-        nameTitleLabel.text = homeCellViewModel.cafes.nameTitle
-        addressLabel.text = homeCellViewModel.cafes.address
-        kmLabel.text = homeCellViewModel.cafes.km
+        avatarImageView.image = UIImage(named: homeCellViewModel.cafe.avatarName)
+        nameTitleLabel.text = homeCellViewModel.cafe.nameTitle
+        addressLabel.text = homeCellViewModel.cafe.address
+        kmLabel.text = homeCellViewModel.cafe.km
+        favoriteButton.isSelected = homeCellViewModel.cafe.isFavorite
     }
     
     @IBAction func favoriteButtonTouchUpInSide(_ sender: Any) {
-        if let homeCellViewModel = homeCellViewModel {
-            favoriteButton.isSelected = !homeCellViewModel.isFavorite
-            homeCellViewModel.isFavorite = !homeCellViewModel.isFavorite
+        guard let homeCellViewModel = homeCellViewModel  else {
+            return
         }
+        favoriteButton.isSelected = !homeCellViewModel.cafe.isFavorite
+        homeCellViewModel.cafe.isFavorite = !homeCellViewModel.cafe.isFavorite
     }
 }
