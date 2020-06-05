@@ -8,12 +8,56 @@
 
 import UIKit
 
-class SubView: UIView {
+protocol SubViewDatasource: class {
+    func subView(nameOf userView: SubView) -> Person
+}
+protocol SubViewDelegate: class {
+    func passData(userView: SubView)
+}
 
-    @IBOutlet weak var avatarView: UIView!
-    @IBOutlet weak var button: UIButton!
-    func setupView() {
-        avatarView.layer.cornerRadius = 75
-        avatarView.layer.borderWidth = 0.5
+class SubView: UIView {
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    weak var delegate: SubViewDelegate?
+    weak var dataSource: SubViewDatasource? {
+        didSet {
+            setupView()
+        }
     }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        xibSetup()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        xibSetup()
+    }
+    private func xibSetup() {
+        let nib = UINib(nibName: "SubView", bundle: .main)
+        nib.instantiate(withOwner: self, options: nil)
+        addSubview(containerView)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        imageView.layer.cornerRadius = 75
+        imageView.layer.borderWidth = 0.5
+    }
+
+    func setupView() {
+        guard let person = dataSource?.subView(nameOf: self) else {return}
+        nameLabel.text = person.name
+        birthdayLabel.text = person.date
+    }
+
+    @IBAction func buttonTouchUpInsine(_ sender: Any) {
+        delegate?.passData(userView: self)
+    }
+    
 }

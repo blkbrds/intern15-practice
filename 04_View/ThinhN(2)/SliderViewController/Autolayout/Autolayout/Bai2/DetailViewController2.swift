@@ -19,7 +19,9 @@ class DetailViewController2: UIViewController {
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     
     weak var delegate: DetailDelegate?
-    
+
+    var person: Person = Person()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Detail"
@@ -36,7 +38,8 @@ class DetailViewController2: UIViewController {
         dateOfBirthTextField.clipsToBounds = true
         dateOfBirthTextField.layer.borderWidth = 1
         dateOfBirthTextField.layer.cornerRadius = 15
-        
+        nameTextField.text = person.name
+        dateOfBirthTextField.text = person.date
     }
     @IBAction func buttonTouchUpInsine(_ sender: Any) {
         if let delegate = delegate,

@@ -19,6 +19,10 @@
 		726D0B392488F661000EA1DC /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726D0B372488F661000EA1DC /* DetailViewController.xib */; };
 		726D0B3D248907DE000EA1DC /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726D0B3C248907DE000EA1DC /* SubView.swift */; };
 		726D0B3F248907F3000EA1DC /* SubView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726D0B3E248907F3000EA1DC /* SubView.xib */; };
+		7299BEEE2489E965007AD51E /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299BEEC2489E965007AD51E /* ScrollViewController.swift */; };
+		7299BEEF2489E965007AD51E /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7299BEED2489E965007AD51E /* ScrollViewController.xib */; };
+		7299BEF12489E9B4007AD51E /* SubViewScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7299BEF02489E9B4007AD51E /* SubViewScroll.swift */; };
+		7299BEF32489E9CF007AD51E /* SubViewScroll.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7299BEF22489E9CF007AD51E /* SubViewScroll.xib */; };
 		72F2C31024877EBB00A72A1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F2C30F24877EBB00A72A1C /* AppDelegate.swift */; };
 		72F2C31224877EBB00A72A1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F2C31124877EBB00A72A1C /* SceneDelegate.swift */; };
 		72F2C31624877EBC00A72A1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F2C31524877EBC00A72A1C /* Assets.xcassets */; };
@@ -41,6 +45,10 @@
 		726D0B372488F661000EA1DC /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		726D0B3C248907DE000EA1DC /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		726D0B3E248907F3000EA1DC /* SubView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubView.xib; sourceTree = "<group>"; };
+		7299BEEC2489E965007AD51E /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		7299BEED2489E965007AD51E /* ScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
+		7299BEF02489E9B4007AD51E /* SubViewScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewScroll.swift; sourceTree = "<group>"; };
+		7299BEF22489E9CF007AD51E /* SubViewScroll.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubViewScroll.xib; sourceTree = "<group>"; };
 		72F2C30C24877EBB00A72A1C /* Autolayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F2C30F24877EBB00A72A1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72F2C31124877EBB00A72A1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +71,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7299BEEB2489E924007AD51E /* Bai3 */ = {
+			isa = PBXGroup;
+			children = (
+				7299BEEC2489E965007AD51E /* ScrollViewController.swift */,
+				7299BEED2489E965007AD51E /* ScrollViewController.xib */,
+				7299BEF02489E9B4007AD51E /* SubViewScroll.swift */,
+				7299BEF22489E9CF007AD51E /* SubViewScroll.xib */,
+			);
+			path = Bai3;
+			sourceTree = "<group>";
+		};
 		72F2C30324877EBB00A72A1C = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +101,7 @@
 		72F2C30E24877EBB00A72A1C /* Autolayout */ = {
 			isa = PBXGroup;
 			children = (
+				7299BEEB2489E924007AD51E /* Bai3 */,
 				72F2C3282487913100A72A1C /* Bai2 */,
 				72F2C32324877F8400A72A1C /* Bai1 */,
 				72F2C30F24877EBB00A72A1C /* AppDelegate.swift */,
@@ -189,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72F2C31C24877EBC00A72A1C /* LaunchScreen.storyboard in Resources */,
+				7299BEEF2489E965007AD51E /* ScrollViewController.xib in Resources */,
 				72F2C31924877EBC00A72A1C /* Preview Assets.xcassets in Resources */,
 				726D0B2D248898D4000EA1DC /* HomeViewController2.xib in Resources */,
 				726D0B392488F661000EA1DC /* DetailViewController.xib in Resources */,
@@ -197,6 +218,7 @@
 				84218BF9248959A3004FD0AD /* HomeView2Controller.xib in Resources */,
 				726D0B352488CCDF000EA1DC /* PopUpView.xib in Resources */,
 				726D0B312488A0E9000EA1DC /* DetailViewController2.xib in Resources */,
+				7299BEF32489E9CF007AD51E /* SubViewScroll.xib in Resources */,
 				72568B9D2487AEE100AFC148 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,11 +232,13 @@
 			files = (
 				726D0B332488CCCA000EA1DC /* PopUpView.swift in Sources */,
 				72568B9C2487AEE100AFC148 /* HomeViewController.swift in Sources */,
+				7299BEF12489E9B4007AD51E /* SubViewScroll.swift in Sources */,
 				726D0B2C248898D4000EA1DC /* HomeViewController2.swift in Sources */,
 				726D0B302488A0E9000EA1DC /* DetailViewController2.swift in Sources */,
 				72F2C31024877EBB00A72A1C /* AppDelegate.swift in Sources */,
 				84218BF8248959A3004FD0AD /* HomeView2Controller.swift in Sources */,
 				726D0B3D248907DE000EA1DC /* SubView.swift in Sources */,
+				7299BEEE2489E965007AD51E /* ScrollViewController.swift in Sources */,
 				72F2C31224877EBB00A72A1C /* SceneDelegate.swift in Sources */,
 				726D0B382488F661000EA1DC /* DetailViewController.swift in Sources */,
 			);
