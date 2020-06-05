@@ -10,12 +10,10 @@ import UIKit
 
 class SubView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var avatarView: UIView!
+    @IBOutlet weak var button: UIButton!
+    func setupView() {
+        avatarView.layer.cornerRadius = 75
+        avatarView.layer.borderWidth = 0.5
     }
-    */
-
 }

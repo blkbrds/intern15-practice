@@ -1,18 +1,86 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SubView" customModule="Autolayout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-Sx-FeF">
+                    <rect key="frame" x="0.0" y="20" width="500" height="110"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-book-background" translatesAutoresizingMaskIntoConstraints="NO" id="9a4-N1-eAI">
+                            <rect key="frame" x="0.0" y="-17" width="150" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="7Hf-jN-Ihv"/>
+                                <constraint firstAttribute="height" constant="150" id="gdn-RR-lQ1"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adp-xT-dfD">
+                            <rect key="frame" x="180" y="15" width="69" height="30"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHI-hq-dxA">
+                            <rect key="frame" x="180" y="75" width="150" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="mIu-QR-Skj"/>
+                                <constraint firstAttribute="width" constant="150" id="peU-yZ-b79"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifg-Q6-9Sr">
+                            <rect key="frame" x="300" y="21" width="50" height="73.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="6O4-8R-ds2"/>
+                                <constraint firstAttribute="height" constant="80" id="mOP-rR-vzl"/>
+                            </constraints>
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" backgroundImage="greaterthan" catalog="system"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="9a4-N1-eAI" firstAttribute="top" secondItem="b1b-Sx-FeF" secondAttribute="top" constant="-17" id="5iB-7U-tkE"/>
+                        <constraint firstItem="9a4-N1-eAI" firstAttribute="leading" secondItem="b1b-Sx-FeF" secondAttribute="leading" id="8PV-KN-juO"/>
+                        <constraint firstAttribute="trailing" secondItem="Ifg-Q6-9Sr" secondAttribute="trailing" constant="150" id="ByD-r4-OMq"/>
+                        <constraint firstItem="adp-xT-dfD" firstAttribute="top" secondItem="b1b-Sx-FeF" secondAttribute="top" constant="15" id="F8K-E8-R7H"/>
+                        <constraint firstItem="ZHI-hq-dxA" firstAttribute="top" secondItem="adp-xT-dfD" secondAttribute="bottom" constant="30" id="Hpf-vF-gFH"/>
+                        <constraint firstItem="Ifg-Q6-9Sr" firstAttribute="centerY" secondItem="9a4-N1-eAI" secondAttribute="centerY" id="RcX-i4-kKl"/>
+                        <constraint firstItem="adp-xT-dfD" firstAttribute="leading" secondItem="9a4-N1-eAI" secondAttribute="trailing" constant="30" id="plV-9R-tfe"/>
+                        <constraint firstItem="ZHI-hq-dxA" firstAttribute="leading" secondItem="adp-xT-dfD" secondAttribute="leading" id="sXB-lQ-Mjh"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="b1b-Sx-FeF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="8rK-o0-60d"/>
+                <constraint firstAttribute="bottom" secondItem="b1b-Sx-FeF" secondAttribute="bottom" constant="20" symbolic="YES" id="OZR-ku-IKo"/>
+                <constraint firstItem="b1b-Sx-FeF" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Txy-6n-Cdz"/>
+                <constraint firstItem="b1b-Sx-FeF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="buz-sJ-X8b"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="avatarView" destination="9a4-N1-eAI" id="dZQ-Jp-9BJ"/>
+                <outlet property="button" destination="Ifg-Q6-9Sr" id="1Oj-fF-HFu"/>
+            </connections>
+            <point key="canvasLocation" x="-7.2463768115942031" y="32.8125"/>
         </view>
     </objects>
+    <resources>
+        <image name="blue-book-background" width="510" height="324"/>
+        <image name="greaterthan" catalog="system" width="64" height="54"/>
+    </resources>
 </document>
