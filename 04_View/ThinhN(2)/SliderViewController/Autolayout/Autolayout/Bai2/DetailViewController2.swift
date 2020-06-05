@@ -17,6 +17,7 @@ class DetailViewController2: UIViewController {
     @IBOutlet weak var imageDetailView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
+    @IBOutlet weak var datePickerView: UIDatePicker!
     
     weak var delegate: DetailDelegate?
 
@@ -26,7 +27,7 @@ class DetailViewController2: UIViewController {
         super.viewDidLoad()
         title = "Detail"
         setupView()
-        
+        dateOfBirthTextField.delegate = self
     }
     func setupView() {
         imageDetailView.layer.cornerRadius = 50
@@ -47,5 +48,10 @@ class DetailViewController2: UIViewController {
             let date = dateOfBirthTextField.text {
             delegate.passData(name: name, date: date)
         }
+    }
+}
+extension DetailViewController2: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        datePickerView.isHidden = false
     }
 }
