@@ -9,24 +9,24 @@
 import UIKit
 
 protocol DetailDelegate: class {
-    func passData(name: String,date: String)
+    func update(person: Person, index: Int)
 }
-
 class DetailViewController2: UIViewController {
     
     @IBOutlet weak var imageDetailView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
-    @IBOutlet weak var datePickerView: UIDatePicker!
     @IBOutlet weak var okButtonTouchUpInsine: UIButton!
-    weak var delegate: DetailDelegate?
     
+    weak var delegate: DetailDelegate?
     var person: Person = Person()
+    var index: Int = 0
+    var datePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Detail"
         setupView()
-        dateOfBirthTextField.delegate = self
+        showDatePicker()
     }
     func setupView() {
         imageDetailView.layer.cornerRadius = 50
@@ -40,37 +40,38 @@ class DetailViewController2: UIViewController {
         dateOfBirthTextField.layer.cornerRadius = 15
         nameTextField.text = person.name
         dateOfBirthTextField.text = person.date
-        datePickerView.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
     }
-    @objc func dateChanged(_ sender: UIDatePicker) {
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
-        if let day = components.day, let month = components.month, let year = components.year {
-            print("\(day) \(month) \(year)")
-        }
+    func showDatePicker() {
+        datePicker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneDatePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker))
+        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        dateOfBirthTextField.inputAccessoryView = toolbar
+        dateOfBirthTextField.inputView = datePicker
     }
-    @IBAction func buttonTouchUpInsine(_ sender: Any) {
-        if let delegate = delegate,
-            let name = nameTextField.text,
-            let date = dateOfBirthTextField.text {
-            delegate.passData(name: name, date: date)
-        }
-        let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(nameTextField.text!) and birth day \(datePickerView.date)", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in self.data()}
+    @objc func doneDatePicker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        dateOfBirthTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    @objc func cancelDatePicker() {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func okButtonTouchUpInsine(_ sender: Any) {
+        delegate?.update(person: Person(name: nameTextField.text!, date: dateOfBirthTextField.text!), index: index)
+        let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(nameTextField.text!) and birth day \(datePicker.date)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in self.giveValue()}
         ))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    func data() {
-        
-        let vc = HomeView2Controller()
-        
-        navigationController?.pushViewController(vc, animated: true)
-       
+    
+    func giveValue() {
+        navigationController?.popViewController(animated: true)
     }
 }
-extension DetailViewController2: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        datePickerView.isHidden = false
-    }
-}
-

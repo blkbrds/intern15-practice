@@ -10,7 +10,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController2" customModule="Autolayout" customModuleProvider="target">
             <connections>
                 <outlet property="dateOfBirthTextField" destination="l2A-T1-BmL" id="rGh-CO-j2B"/>
-                <outlet property="datePickerView" destination="nP8-Lc-zzr" id="MN6-U1-wjf"/>
                 <outlet property="imageDetailView" destination="kxE-6w-rfb" id="c7F-NE-3cA"/>
                 <outlet property="nameTextField" destination="aHE-LY-Lgx" id="BEP-0w-gyu"/>
                 <outlet property="okButtonTouchUpInsine" destination="A22-I1-uzg" id="kfv-KX-mrV"/>
@@ -60,7 +59,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="buttonTouchUpInsine:" destination="-1" eventType="touchUpInside" id="yo5-Lo-Ihr"/>
+                        <action selector="okButtonTouchUpInsine:" destination="-1" eventType="touchUpInside" id="ULU-6l-Jej"/>
                     </connections>
                 </button>
                 <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nP8-Lc-zzr">
