@@ -18,11 +18,12 @@ class DetailViewController2: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var datePickerView: UIDatePicker!
-    
+    @IBOutlet weak var okButtonTouchUpInsine: UIButton!
     weak var delegate: DetailDelegate?
-
+    
     var person: Person = Person()
-
+    //var alert: UIAlertController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Detail"
@@ -42,12 +43,24 @@ class DetailViewController2: UIViewController {
         nameTextField.text = person.name
         dateOfBirthTextField.text = person.date
     }
+    func dateChanged(_ sender: UIDatePicker) {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
+        if let day = components.day, let month = components.month, let year = components.year {
+            print("\(day) \(month) \(year)")
+        }
+    }
     @IBAction func buttonTouchUpInsine(_ sender: Any) {
         if let delegate = delegate,
             let name = nameTextField.text,
             let date = dateOfBirthTextField.text {
+            
             delegate.passData(name: name, date: date)
         }
+        let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(nameTextField.text!) and birth day \(dateOfBirthTextField.text!)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
 extension DetailViewController2: UITextFieldDelegate {
