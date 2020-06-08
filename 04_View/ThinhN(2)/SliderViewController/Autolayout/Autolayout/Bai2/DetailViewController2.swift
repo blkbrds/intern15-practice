@@ -22,8 +22,6 @@ class DetailViewController2: UIViewController {
     weak var delegate: DetailDelegate?
     
     var person: Person = Person()
-    //var alert: UIAlertController?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Detail"
@@ -42,8 +40,9 @@ class DetailViewController2: UIViewController {
         dateOfBirthTextField.layer.cornerRadius = 15
         nameTextField.text = person.name
         dateOfBirthTextField.text = person.date
+        datePickerView.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
     }
-    func dateChanged(_ sender: UIDatePicker) {
+    @objc func dateChanged(_ sender: UIDatePicker) {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
         if let day = components.day, let month = components.month, let year = components.year {
             print("\(day) \(month) \(year)")
@@ -53,14 +52,20 @@ class DetailViewController2: UIViewController {
         if let delegate = delegate,
             let name = nameTextField.text,
             let date = dateOfBirthTextField.text {
-            
             delegate.passData(name: name, date: date)
         }
-        let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(nameTextField.text!) and birth day \(dateOfBirthTextField.text!)", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(nameTextField.text!) and birth day \(datePickerView.date)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in self.data()}
+        ))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    func data() {
         
+        let vc = HomeView2Controller()
+        
+        navigationController?.pushViewController(vc, animated: true)
+       
     }
 }
 extension DetailViewController2: UITextFieldDelegate {
@@ -68,3 +73,4 @@ extension DetailViewController2: UITextFieldDelegate {
         datePickerView.isHidden = false
     }
 }
+

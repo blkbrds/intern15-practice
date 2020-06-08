@@ -9,13 +9,12 @@
 import UIKit
 
 class HomeView2Controller: UIViewController {
-    let  a: CGFloat = 50
     var arr: [Person] = [Person(name: "Name", date: "01/01/2000"),Person(name: "Name2", date: "01/01/2000"), Person(name: "Name3", date: "01/01/2000")]
     
     @IBOutlet weak var subView3: SubView!
     @IBOutlet weak var subView2: SubView!
     @IBOutlet weak var subView1: SubView!
-
+    
     override func viewDidLoad() {
         title = "Home "
         subView1.dataSource = self
@@ -24,9 +23,6 @@ class HomeView2Controller: UIViewController {
         subView1.delegate = self
         subView2.delegate = self
         subView3.delegate = self
-    }
-    func setupView() {
-        
     }
 }
 
