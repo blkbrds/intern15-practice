@@ -10,19 +10,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var showButtonTouchUpInsine: UIButton!
+    var popUpView: PopUpView?
     
-    let popUpView = Bundle.main.loadNibNamed("PopUpView", owner: self, options: nil)? [0] as? PopUpView
     override func viewDidLoad() {
-        popUpView?.setupView()
         super.viewDidLoad()
+        popUpView = Bundle.main.loadNibNamed("PopUpView", owner: self, options: nil)? [0] as? PopUpView
     }
     
-    @IBAction func push(_ sender: Any) {
-        guard let popUpView = popUpView else {return}
-        popUpView.frame = CGRect(x: 80, y: 200, width: UIScreen.main.bounds.width / 1.5 , height: 400)
+    @IBAction func showButtonTouchUpInsine(_ sender: Any) {
+       guard let popUpView = popUpView else {return}
+       popUpView.frame = CGRect(x: 100, y: 200, width: UIScreen.main.bounds.width / 2, height: 400)
+       view.addSubview(popUpView)
         popUpView.delegate = self
-        popUpView.isHidden = false
+        popUpView.removeFromSuperview()
         view.addSubview(popUpView)
     }
 }

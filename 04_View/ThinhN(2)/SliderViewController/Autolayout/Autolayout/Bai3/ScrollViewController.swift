@@ -26,15 +26,11 @@ class ScrollViewController: UIViewController {
         
         for i in 0...2 {
             x = CGFloat(i) * width + CGFloat(i) * space
-            if let avatarView = Bundle.main.loadNibNamed("AvatarView", owner: self, options: nil)? [0] as? AvatarView {
-                avatarView.frame = CGRect(x: x, y: y, width: width , height: heigth)
-                containerView.addSubview(avatarView)
-                for j in 0...2 {
-                    y = CGFloat(j) * width + CGFloat(j) * space
-                    if let avatarView = Bundle.main.loadNibNamed("AvatarView", owner: self, options: nil)? [0] as? AvatarView {
-                        avatarView.frame = CGRect(x: x, y: y, width: width , height: heigth)
-                        containerView.addSubview(avatarView)
-                    }
+            for j in 0...2 {
+                y = CGFloat(j) * width + CGFloat(j) * space
+                if let avatarView = Bundle.main.loadNibNamed("AvatarView", owner: self, options: nil)? [0] as? AvatarView {
+                    avatarView.frame = CGRect(x: x, y: y, width: width , height: heigth)
+                    containerView.addSubview(avatarView)
                 }
             }
         }

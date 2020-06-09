@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SubViewDatasource: class {
-    func subView(nameOf userView: SubView) -> Person
+    func subView(userView: SubView) -> Person
 }
 protocol SubViewDelegate: class {
     func passData(userView: SubView)
@@ -51,7 +51,7 @@ class SubView: UIView {
     }
 
     func setupView() {
-        guard let person = dataSource?.subView(nameOf: self) else {return}
+        guard let person = dataSource?.subView(userView: self) else { return }
         nameLabel.text = person.name
         birthdayLabel.text = person.date
     }

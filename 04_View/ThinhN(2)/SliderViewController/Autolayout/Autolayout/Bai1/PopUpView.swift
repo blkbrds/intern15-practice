@@ -20,6 +20,9 @@ class PopUpView: UIView {
     @IBOutlet weak var viewPopUp: UIView!
     
     weak var delegate: PopUpDelegate?
+    override func awakeFromNib() {
+        setupView()
+    }
     func setupView() {
         viewPopUp.layer.cornerRadius = 10
         goButton.layer.cornerRadius = 10

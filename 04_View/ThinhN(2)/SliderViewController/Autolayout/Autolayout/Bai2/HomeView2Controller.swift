@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeView2Controller: UIViewController {
-    var arr: [Person] = [Person(name: "Name", date: "01/01/2000"),Person(name: "Name1", date: "01/01/2000"), Person(name: "Name2", date: "01/01/2000")]
+    var arr: [Person] = [Person(name: "Name", date: "01/01/2000"), Person(name: "Name1", date: "01/01/2000"), Person(name: "Name2", date: "01/01/2000")]
     
     @IBOutlet weak var subView3: SubView!
     @IBOutlet weak var subView2: SubView!
@@ -21,25 +21,14 @@ class HomeView2Controller: UIViewController {
         subView1.delegate = self
         subView2.delegate = self
         subView3.delegate = self
-    }
-    override func viewWillAppear(_ animated: Bool) {
         subView1.dataSource = self
         subView2.dataSource = self
         subView3.dataSource = self
     }
 }
 
-class Person {
-    var name: String
-    var date: String
-    
-    init(name: String = "", date: String = "") {
-        self.name = name
-        self.date = date
-    }
-}
 extension HomeView2Controller: SubViewDatasource {
-    func subView(nameOf userView: SubView) -> Person {
+    func subView(userView: SubView) -> Person {
         let person = arr[userView.tag]
         return person
     }
@@ -49,13 +38,16 @@ extension HomeView2Controller: SubViewDelegate {
         let person = arr[userView.tag]
         let vc = DetailViewController2()
         vc.person = person
-        vc.index = userView.tag
+        vc.view.tag = userView.tag
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-extension HomeView2Controller: DetailDelegate {
-    func update(person: Person, index: Int) {
-        arr[index] = person
+extension HomeView2Controller: DetailViewControllerDelegate {
+    func update(person: Person, viewController: DetailViewController2) {
+        arr[viewController.view.tag] = person
+        subView1.setupView()
+        subView2.setupView()
+        subView3.setupView()
     }
 }
