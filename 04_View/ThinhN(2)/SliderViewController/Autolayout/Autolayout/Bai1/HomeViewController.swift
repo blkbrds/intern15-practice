@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         popUpView?.setupView()
         super.viewDidLoad()
     }
+    
     @IBAction func push(_ sender: Any) {
         guard let popUpView = popUpView else {return}
         popUpView.frame = CGRect(x: 80, y: 200, width: UIScreen.main.bounds.width / 1.5 , height: 400)

@@ -70,7 +70,6 @@ class DetailViewController2: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
     func giveValue() {
         navigationController?.popViewController(animated: true)
     }

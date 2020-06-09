@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScrollViewController" customModule="Autolayout" customModuleProvider="target">
             <connections>
+                <outlet property="containerView" destination="56B-Lr-vK6" id="EXJ-Aj-cN3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -114,94 +115,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56B-Lr-vK6">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56B-Lr-vK6" userLabel="ContainerView">
                                             <rect key="frame" x="20" y="50" width="394" height="395"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="oaG-Wj-wce">
-                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="125" id="7q9-zi-wvt"/>
-                                                        <constraint firstAttribute="width" constant="125" id="sE7-aE-dHR"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="xrK-Mu-Nvk">
-                                                    <rect key="frame" x="0.0" y="135" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="125" id="0Hb-cs-ZpD"/>
-                                                        <constraint firstAttribute="width" constant="125" id="lNl-W3-smG"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="x4L-yX-Gnm">
-                                                    <rect key="frame" x="134.5" y="135" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="fbU-79-Vtf"/>
-                                                        <constraint firstAttribute="height" constant="125" id="y5S-Ls-HHO"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="VMT-8R-a6V">
-                                                    <rect key="frame" x="134.5" y="0.0" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="IJD-zv-PbS"/>
-                                                        <constraint firstAttribute="height" constant="125" id="td7-d7-PVX"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="6V4-m3-1ln">
-                                                    <rect key="frame" x="269" y="0.0" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="125" id="S5J-n1-Pfp"/>
-                                                        <constraint firstAttribute="width" constant="125" id="uOF-um-MAc"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="SUZ-eU-X0c">
-                                                    <rect key="frame" x="269" y="135" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="125" id="Bjj-fi-SzO"/>
-                                                        <constraint firstAttribute="width" constant="125" id="Iq0-NU-gyc"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="max-Id-ZsC">
-                                                    <rect key="frame" x="0.0" y="270" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="d97-Kg-A3V"/>
-                                                        <constraint firstAttribute="height" constant="125" id="msK-SR-zUu"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="pxi-BE-qZt">
-                                                    <rect key="frame" x="134.5" y="270" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="125" id="rm4-qe-kVP"/>
-                                                        <constraint firstAttribute="width" constant="125" id="wFQ-8r-wSw"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IAFOR-Blank-Avatar-Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="tIx-H0-itJ">
-                                                    <rect key="frame" x="269" y="270" width="125" height="125"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="LrP-do-8so"/>
-                                                        <constraint firstAttribute="height" constant="125" id="zex-PQ-Om0"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstItem="SUZ-eU-X0c" firstAttribute="centerY" secondItem="x4L-yX-Gnm" secondAttribute="centerY" id="5GC-fY-WBj"/>
-                                                <constraint firstItem="oaG-Wj-wce" firstAttribute="leading" secondItem="56B-Lr-vK6" secondAttribute="leading" id="HCv-Fw-yro"/>
-                                                <constraint firstItem="oaG-Wj-wce" firstAttribute="centerY" secondItem="VMT-8R-a6V" secondAttribute="centerY" id="IcY-jV-mhD"/>
-                                                <constraint firstItem="xrK-Mu-Nvk" firstAttribute="top" secondItem="oaG-Wj-wce" secondAttribute="bottom" constant="10" id="MKV-2e-0x2"/>
-                                                <constraint firstItem="pxi-BE-qZt" firstAttribute="centerX" secondItem="x4L-yX-Gnm" secondAttribute="centerX" id="PzM-J8-4LB"/>
-                                                <constraint firstItem="SUZ-eU-X0c" firstAttribute="centerX" secondItem="6V4-m3-1ln" secondAttribute="centerX" id="TI6-nI-STj"/>
-                                                <constraint firstItem="tIx-H0-itJ" firstAttribute="centerY" secondItem="pxi-BE-qZt" secondAttribute="centerY" id="UYe-Cz-zLH"/>
-                                                <constraint firstItem="pxi-BE-qZt" firstAttribute="centerY" secondItem="max-Id-ZsC" secondAttribute="centerY" id="Uzf-Ci-jSK"/>
-                                                <constraint firstItem="oaG-Wj-wce" firstAttribute="top" secondItem="56B-Lr-vK6" secondAttribute="top" id="V20-xW-zd4"/>
-                                                <constraint firstItem="max-Id-ZsC" firstAttribute="centerX" secondItem="xrK-Mu-Nvk" secondAttribute="centerX" id="VQ3-HS-K8a"/>
-                                                <constraint firstItem="xrK-Mu-Nvk" firstAttribute="centerX" secondItem="oaG-Wj-wce" secondAttribute="centerX" id="XTU-Nn-GEE"/>
-                                                <constraint firstItem="x4L-yX-Gnm" firstAttribute="centerY" secondItem="xrK-Mu-Nvk" secondAttribute="centerY" id="dTQ-R4-AOf"/>
-                                                <constraint firstItem="6V4-m3-1ln" firstAttribute="leading" secondItem="VMT-8R-a6V" secondAttribute="trailing" constant="9.5" id="iwa-fe-uGd"/>
-                                                <constraint firstItem="VMT-8R-a6V" firstAttribute="centerX" secondItem="56B-Lr-vK6" secondAttribute="centerX" id="lm0-ow-76E"/>
-                                                <constraint firstItem="max-Id-ZsC" firstAttribute="top" secondItem="xrK-Mu-Nvk" secondAttribute="bottom" constant="10" id="mMt-bx-CZP"/>
-                                                <constraint firstItem="tIx-H0-itJ" firstAttribute="centerX" secondItem="SUZ-eU-X0c" secondAttribute="centerX" id="mkS-Nh-75L"/>
-                                                <constraint firstAttribute="bottom" secondItem="tIx-H0-itJ" secondAttribute="bottom" id="n5h-qq-z6X"/>
-                                                <constraint firstItem="6V4-m3-1ln" firstAttribute="centerY" secondItem="VMT-8R-a6V" secondAttribute="centerY" id="o3N-at-k1q"/>
-                                                <constraint firstItem="x4L-yX-Gnm" firstAttribute="centerX" secondItem="VMT-8R-a6V" secondAttribute="centerX" id="t1J-kB-SHe"/>
+                                                <constraint firstAttribute="height" constant="395" id="U7m-fa-2B2"/>
+                                                <constraint firstAttribute="width" constant="394" id="hlN-4a-tC7"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -259,7 +178,6 @@
         </view>
     </objects>
     <resources>
-        <image name="IAFOR-Blank-Avatar-Image-1" width="333.33334350585938" height="333.33334350585938"/>
         <image name="download" width="75" height="74.666664123535156"/>
         <image name="download (1)" width="88.666664123535156" height="63"/>
     </resources>

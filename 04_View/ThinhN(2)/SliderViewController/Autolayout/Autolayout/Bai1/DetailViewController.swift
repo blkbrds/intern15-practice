@@ -14,6 +14,4 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         title = "DetailView "
     }
-
-
 }

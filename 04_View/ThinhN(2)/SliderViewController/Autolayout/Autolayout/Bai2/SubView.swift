@@ -59,5 +59,4 @@ class SubView: UIView {
     @IBAction func buttonTouchUpInsine(_ sender: Any) {
         delegate?.passData(userView: self)
     }
-    
 }

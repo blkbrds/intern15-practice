@@ -10,7 +10,6 @@ import UIKit
 
 protocol PopUpDelegate: class {
     func passData(view: PopUpView)
-     
 }
 
 class PopUpView: UIView {
