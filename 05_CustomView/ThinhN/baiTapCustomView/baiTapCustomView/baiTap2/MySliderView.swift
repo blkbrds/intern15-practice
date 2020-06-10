@@ -13,7 +13,7 @@ protocol MySliderViewDelegate: MySliderViewController {
 
 final class MySliderView: UIView {
     let thumbLabel: UILabel = {
-        let label = UILabel()
+        let label = UILabel ()
         label.textColor = .white
         label.textAlignment = .center
         label.backgroundColor = .systemGray
@@ -21,7 +21,7 @@ final class MySliderView: UIView {
     }()
     
     weak var delegate: MySliderViewDelegate?
-        var isChange = false
+    var isChange = false
     var value: CGFloat = 0 {
         didSet {
             updateUI()
@@ -39,7 +39,7 @@ final class MySliderView: UIView {
     }
     override func draw(_ rect: CGRect) {
         let percent: CGFloat = value / 100.0
-        guard let context = UIGraphicsGetCurrentContext() else {return}
+        guard let context = UIGraphicsGetCurrentContext() else { return }
         context.setStrokeColor(UIColor.systemBlue.cgColor)
         context.move(to: CGPoint(x: 0,y: 0))
         context.addLine(to: CGPoint(x: bounds.midX,y: bounds.maxY - 15))
@@ -52,7 +52,7 @@ final class MySliderView: UIView {
         context.closePath()
         context.fillPath()
         
-        guard let context1 = UIGraphicsGetCurrentContext() else {return}
+        guard let context1 = UIGraphicsGetCurrentContext() else { return }
         context1.move(to: CGPoint(x: bounds.midX,y: bounds.maxY - 15))
         context1.addLine(to: CGPoint(x: bounds.midX + bounds.width / 2 * percent,y: bounds.maxY - bounds.height * percent - 15))
         context1.addLine(to: CGPoint(x:bounds.midX - bounds.width / 2 * percent, y: bounds.maxY - bounds.height * percent - 15))
@@ -60,16 +60,16 @@ final class MySliderView: UIView {
         context1.setFillColor(UIColor.systemBlue.cgColor)
         context1.fillPath()
     }
-    @objc func panThumb(_ sender:UIPanGestureRecognizer){
+    @objc func panThumb(_ sender:UIPanGestureRecognizer) {
         let transition = sender.translation(in: self)
-            guard thumbLabel.center.y + transition.y <= frame.height - 15 && thumbLabel.center.y + transition.y + 1 >= 0 else { return }
-            thumbLabel.center = CGPoint(x: thumbLabel.center.x, y: thumbLabel.center.y + transition.y)
-            sender.setTranslation(CGPoint.zero, in: self)
-            value = (frame.height - 15 - thumbLabel.center.y) * 100.0 / (frame.height - 15)
-            isChange = true
+        guard thumbLabel.center.y + transition.y <= frame.height - 15 && thumbLabel.center.y + transition.y + 1 >= 0 else { return }
+        thumbLabel.center = CGPoint(x: thumbLabel.center.x, y: thumbLabel.center.y + transition.y)
+        sender.setTranslation(CGPoint.zero, in: self)
+        value = (frame.height - 15 - thumbLabel.center.y) * 100.0 / (frame.height - 15)
+        isChange = true
         delegate?.changeValue(value: value)
     }
-    func updateUI(){
+    func updateUI() {
         thumbLabel.text = "\(Int(value))"
         if !isChange {
             thumbLabel.frame = CGRect(x: 0, y: frame.height - 15 - CGFloat(value) / 100.0 * frame.height, width: 50, height: 30)
@@ -77,6 +77,6 @@ final class MySliderView: UIView {
         setNeedsDisplay()
     }
     required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+        fatalError("init(coder:) has not been implemented")
+    }
 }

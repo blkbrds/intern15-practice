@@ -30,14 +30,14 @@ final class MyAvatarView: UIView{
         avatarImageView.image = UIImage(named: "avatar")
         avatarImageView.contentMode = .scaleToFill
         addSubview(avatarImageView)
-
+        
         usernameLabel = UILabel(frame: CGRect(x: 0, y:avatarImageView.frame.height, width: frame.width, height: frame.height * 0.2))
         usernameLabel.text = "Name"
         usernameLabel.textAlignment = .center
         usernameLabel.textColor = UIColor.white
         usernameLabel.backgroundColor = UIColor.systemBlue
         addSubview(usernameLabel)
-    
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
         tapGestureRecognizer.name = usernameLabel.text
         usernameLabel.isUserInteractionEnabled = true

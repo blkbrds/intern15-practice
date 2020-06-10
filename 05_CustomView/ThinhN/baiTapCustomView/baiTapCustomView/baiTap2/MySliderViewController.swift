@@ -9,9 +9,9 @@
 import UIKit
 
 final class MySliderViewController: UIViewController {
-
+    
     @IBOutlet weak private var valueTextField: UITextField!
-    private var value: Int = 50{
+    private var value: Int = 50 {
         didSet{
             valueTextField.text = String(value)
         }
@@ -29,13 +29,13 @@ final class MySliderViewController: UIViewController {
     }
     
     @IBAction private func changeValue(_ sender: Any) {
-        guard let text = valueTextField.text, let value = Int(text) else {return}
+        guard let text = valueTextField.text, let value = Int(text) else { return }
         self.value  = value
         mySliderView.isChange = false
         mySliderView.value = CGFloat(value)
     }
 }
-extension MySliderViewController :MySliderViewDelegate{
+extension MySliderViewController: MySliderViewDelegate {
     func changeValue(value: CGFloat) {
         self.value = Int(value)
     }

@@ -16,9 +16,10 @@ final class DatePickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         datePickerView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
-        datePickerView?.delegate = self
-        view.addSubview(datePickerView!)
+        guard let datePickerView = datePickerView else { return }
+        datePickerView.delegate = self
         dateTextField.delegate = self
+        view.addSubview(datePickerView)
     }
 }
 extension DatePickerViewController: DatePickerViewDelegate {

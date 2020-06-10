@@ -67,9 +67,8 @@ class BadgeNumberButton: UIView {
         case .bottomRight:
             badgeNumberLabel.center = CGPoint(x: button.frame.maxX, y: button.frame.maxY)
         }
-        
         if text != "0" {
-        addSubview(badgeNumberLabel)
+            addSubview(badgeNumberLabel)
         }
     }
 }

@@ -17,7 +17,7 @@ class DatePickerView: UIView {
     @IBOutlet weak var datePicker: UIDatePicker!
     
    weak var delegate: DatePickerViewDelegate?
-   func showContent(){
+   func showContent() {
        self.isHidden = false
        UIView.animate(withDuration: 0.5, animations: {
            self.contentView.alpha = 1

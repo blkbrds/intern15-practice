@@ -9,12 +9,12 @@
 import UIKit
 
 class BadgeNumberViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
-    private func setUpView(){
+    private func setUpView() {
         let buttonBadgeNumber1 = BadgeNumberButton(frame: CGRect(x: 100, y: 200, width: 200, height: 100), valueBadgeNumber: .topRight, text: "10")
         buttonBadgeNumber1.button.backgroundColor = UIColor.systemGreen
         buttonBadgeNumber1.button.setTitle("Email", for: .normal)
@@ -30,5 +30,5 @@ class BadgeNumberViewController: UIViewController {
         buttonBadgeNumber3.button.setTitle("Photos", for: .normal)
         view.addSubview(buttonBadgeNumber3)
     }
-
+    
 }
