@@ -8,30 +8,9 @@
 
 import UIKit
 
-class bai12ViewController: UIViewController {
+class Bai12ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    final class ThongButton: UIButton {
-
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-        }
-        required init?(coder: NSCoder) {
-            super.init(coder: coder)
-        }
-
-        override func layoutSubviews() {
-            super.layoutSubviews()
-            setup()
-        }
-
-        func setup() {
-            self.clipsToBounds = true
-            self.layer.borderColor = UIColor.black.cgColor
-            self.layer.borderWidth = 1.0
-        }
     }
 }
