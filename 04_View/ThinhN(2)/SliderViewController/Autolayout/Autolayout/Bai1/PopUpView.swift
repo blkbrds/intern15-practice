@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PopUpDelegate: class {
-    func passData(view: PopUpView)
+    func passValueToViewController(view: PopUpView)
 }
 
 class PopUpView: UIView {
@@ -21,6 +21,7 @@ class PopUpView: UIView {
     
     weak var delegate: PopUpDelegate?
     override func awakeFromNib() {
+        super.awakeFromNib()
         setupView()
     }
     func setupView() {
@@ -30,6 +31,6 @@ class PopUpView: UIView {
         imageView.layer.cornerRadius = 10 
     }
     @IBAction func goButtonTouchUpInsine(_ sender: Any) {
-        delegate?.passData(view: self)
+        delegate?.passValueToViewController(view: self)
     }
 }

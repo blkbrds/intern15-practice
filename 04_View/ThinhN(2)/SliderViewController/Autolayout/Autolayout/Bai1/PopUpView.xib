@@ -27,14 +27,18 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fkp-NA-ak7">
                             <rect key="frame" x="0.0" y="114" width="299" height="249"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW BOOKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwH-qF-l8b">
-                                    <rect key="frame" x="90.5" y="10" width="118" height="24"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW BOOKS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwH-qF-l8b">
+                                    <rect key="frame" x="20" y="10" width="259" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="cdi-XJ-ZtV"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have introduced a number of new books, a lot of interesting books. Go and see it !" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUx-CJ-jMD">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUx-CJ-jMD">
                                     <rect key="frame" x="30" y="44" width="239" height="81.5"/>
+                                    <string key="text">We have introduced a number of new books, a lot of interesting books. Go and see it !We have introduced a number of new books, a lot of interesting books. Go and see it !We have introduced a number of new books, a lot of interesting books. Go and see it !We have introduced a number of new books, a lot of interesting books. Go and see it !</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -68,13 +72,15 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="5F8-WX-OAf" firstAttribute="leading" secondItem="lUx-CJ-jMD" secondAttribute="leading" id="3Sw-Wz-n3R"/>
-                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="5F8-WX-OAf" secondAttribute="bottom" constant="63.5" id="Jy9-77-kLX"/>
+                                <constraint firstAttribute="bottom" secondItem="5F8-WX-OAf" secondAttribute="bottom" constant="63.5" id="Jy9-77-kLX"/>
                                 <constraint firstItem="lUx-CJ-jMD" firstAttribute="leading" secondItem="Fkp-NA-ak7" secondAttribute="leading" constant="30" id="MQT-hc-KsM"/>
                                 <constraint firstItem="SwH-qF-l8b" firstAttribute="top" secondItem="Fkp-NA-ak7" secondAttribute="top" constant="10" id="NbE-Zi-Rxq"/>
-                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="vQS-P3-7Ox" secondAttribute="bottom" constant="63.5" id="QKq-mp-eqv"/>
+                                <constraint firstAttribute="bottom" secondItem="vQS-P3-7Ox" secondAttribute="bottom" constant="63.5" id="QKq-mp-eqv"/>
                                 <constraint firstAttribute="width" constant="299" id="QdD-oM-XmV"/>
                                 <constraint firstItem="lUx-CJ-jMD" firstAttribute="top" secondItem="SwH-qF-l8b" secondAttribute="bottom" constant="10" id="Rzz-rJ-LYO"/>
                                 <constraint firstItem="vQS-P3-7Ox" firstAttribute="centerY" secondItem="5F8-WX-OAf" secondAttribute="centerY" id="dgg-8X-BCg"/>
+                                <constraint firstItem="SwH-qF-l8b" firstAttribute="leading" secondItem="Fkp-NA-ak7" secondAttribute="leading" constant="20" id="gHt-il-oNc"/>
+                                <constraint firstAttribute="trailing" secondItem="SwH-qF-l8b" secondAttribute="trailing" constant="20" id="hqK-j7-fml"/>
                                 <constraint firstAttribute="height" constant="249" id="pX3-jT-ipH"/>
                                 <constraint firstItem="vQS-P3-7Ox" firstAttribute="trailing" secondItem="lUx-CJ-jMD" secondAttribute="trailing" id="tTU-02-PUA"/>
                                 <constraint firstItem="5F8-WX-OAf" firstAttribute="top" secondItem="lUx-CJ-jMD" secondAttribute="bottom" constant="30" id="v7X-vJ-2JY"/>

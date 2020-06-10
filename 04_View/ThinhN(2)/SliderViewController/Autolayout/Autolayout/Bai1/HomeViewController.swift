@@ -14,21 +14,19 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        popUpView = Bundle.main.loadNibNamed("PopUpView", owner: self, options: nil)? [0] as? PopUpView
     }
     
     @IBAction func showButtonTouchUpInsine(_ sender: Any) {
-       guard let popUpView = popUpView else {return}
-       popUpView.frame = CGRect(x: 100, y: 200, width: UIScreen.main.bounds.width / 2, height: 400)
-       view.addSubview(popUpView)
+        popUpView = Bundle.main.loadNibNamed("PopUpView", owner: self, options: nil)? [0] as? PopUpView
+        guard let popUpView = popUpView else { return }
+        popUpView.frame = CGRect(x: 100, y: 200, width: UIScreen.main.bounds.width / 2, height: 400)
         popUpView.delegate = self
-        popUpView.removeFromSuperview()
         view.addSubview(popUpView)
     }
 }
 extension HomeViewController: PopUpDelegate {
-    func passData(view: PopUpView) {
-        view.isHidden = true
+    func passValueToViewController(view: PopUpView) {
+        popUpView?.removeFromSuperview()
         let vc = DetailViewController()
         navigationController?.pushViewController(vc, animated: true )
     }

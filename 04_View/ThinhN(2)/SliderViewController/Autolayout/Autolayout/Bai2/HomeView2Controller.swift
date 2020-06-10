@@ -28,13 +28,13 @@ class HomeView2Controller: UIViewController {
 }
 
 extension HomeView2Controller: SubViewDatasource {
-    func subView(userView: SubView) -> Person {
+    func getValueFromViewController(userView: SubView) -> Person {
         let person = arr[userView.tag]
         return person
     }
 }
 extension HomeView2Controller: SubViewDelegate {
-    func passData(userView: SubView) {
+    func sendValueToViewController(userView: SubView) {
         let person = arr[userView.tag]
         let vc = DetailViewController2()
         vc.person = person

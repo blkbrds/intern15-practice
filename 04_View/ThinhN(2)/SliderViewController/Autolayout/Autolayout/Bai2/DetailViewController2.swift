@@ -55,23 +55,25 @@ class DetailViewController2: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         dateOfBirthTextField.text = formatter.string(from: datePicker.date)
-    
+        
     }
     @objc func cancelButtonTouchUpInsine() {
-     
+        
     }
-    
     @IBAction func okButtonTouchUpInsine(_ sender: Any) {
-       
-        let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(nameTextField.text!) and birth day \(datePicker.date)", preferredStyle: UIAlertController.Style.alert)
+        guard let name = nameTextField.text, let date = dateOfBirthTextField.text else { return }
+        
+        let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(name) and birth day \(date)", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { action in self.popViewController()}
         ))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     func popViewController() {
-        guard let delegate = delegate else {return}
-               delegate.update(person: Person(name: nameTextField.text!, date: dateOfBirthTextField.text!), viewController: self)
+        guard let delegate = delegate, let name = nameTextField.text, let date = dateOfBirthTextField.text else { return }
+        person.date = date
+        person.name = name
+        delegate.update(person: person, viewController: self)
         navigationController?.popViewController(animated: true)
     }
 }

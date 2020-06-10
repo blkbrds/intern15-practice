@@ -9,10 +9,10 @@
 import UIKit
 
 protocol SubViewDatasource: class {
-    func subView(userView: SubView) -> Person
+    func getValueFromViewController(userView: SubView) -> Person
 }
 protocol SubViewDelegate: class {
-    func passData(userView: SubView)
+    func sendValueToViewController(userView: SubView)
 }
 
 class SubView: UIView {
@@ -51,12 +51,12 @@ class SubView: UIView {
     }
 
     func setupView() {
-        guard let person = dataSource?.subView(userView: self) else { return }
+        guard let person = dataSource?.getValueFromViewController(userView: self) else { return }
         nameLabel.text = person.name
         birthdayLabel.text = person.date
     }
 
     @IBAction func buttonTouchUpInsine(_ sender: Any) {
-        delegate?.passData(userView: self)
+        delegate?.sendValueToViewController(userView: self)
     }
 }

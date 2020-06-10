@@ -19,7 +19,7 @@ class SliderView: UIView {
     @IBOutlet weak var blueSliderView: UIView!
     
     weak var delegate: UserViewDelegate?
-    var textLabel = 50
+    var textLabel = 50 
     
     func setupView() {
         whiteSliderView.layer.borderWidth = 1

@@ -11,10 +11,11 @@ import UIKit
 class SliderViewController: UIViewController {
     
     @IBOutlet weak var valueTextFiled: UITextField!
-    let sliderView = Bundle.main.loadNibNamed ("SliderView", owner: self, options: nil )? [0] as? SliderView
     
+    var  sliderView: SliderView?
     override func viewDidLoad() {
         super.viewDidLoad()
+        sliderView = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)? [0] as? SliderView
         guard let sliderView = sliderView else { return }
         sliderView.delegate = self
         sliderView.frame = CGRect(x: 200, y: 200, width: 40, height: 500)
