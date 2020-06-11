@@ -9,12 +9,12 @@
 
 import UIKit
 
-class FavoritesCell: UITableViewCell {
+final class FavoritesCell: UITableViewCell {
     
     //MARK: Properties
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak private var typeLabel: UILabel!
+    @IBOutlet weak private var loginLabel: UILabel!
+    @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
 
     var viewModel: FavoritesCellViewModel? {

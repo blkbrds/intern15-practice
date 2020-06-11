@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GitDetailViewController: BaseViewController {
+final class GitDetailViewController: BaseViewController {
 
     //MARK: Properties
     @IBOutlet weak private var tableView: UITableView!

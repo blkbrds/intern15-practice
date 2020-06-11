@@ -12,7 +12,7 @@ import RealmSwift
 final class FavoritesViewController: BaseViewController {
 
     //MARK: Properties
-    var viewModel = FavoritesViewModel()
+    private var viewModel = FavoritesViewModel()
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {

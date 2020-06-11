@@ -8,16 +8,14 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
+final class HomeViewController: BaseViewController {
 
     // MARK: Properties
     @IBOutlet weak private var repoTableView: UITableView!
     @IBOutlet weak private var collectionView: UICollectionView!
 
-    var viewmodel = HomeModel()
-    var isShowTableView: Bool = true
-
-    var titles: [String] = ["Git", "Repositories"]
+    private var viewmodel = HomeModel()
+    private var isShowTableView: Bool = true
 
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -181,7 +179,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UIScro
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titles[section]
+        return viewmodel.titles[section]
     }
 }
 

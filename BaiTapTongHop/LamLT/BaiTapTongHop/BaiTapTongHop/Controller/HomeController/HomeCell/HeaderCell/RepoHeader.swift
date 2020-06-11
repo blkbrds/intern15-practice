@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class RepoHeader: UICollectionReusableView {
+final class RepoHeader: UICollectionReusableView {
 
     //MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!

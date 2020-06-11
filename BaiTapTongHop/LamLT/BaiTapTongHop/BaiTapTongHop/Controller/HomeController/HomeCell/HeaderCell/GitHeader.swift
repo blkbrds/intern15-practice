@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GitHeader: UICollectionReusableView {
+final class GitHeader: UICollectionReusableView {
     
     //MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!

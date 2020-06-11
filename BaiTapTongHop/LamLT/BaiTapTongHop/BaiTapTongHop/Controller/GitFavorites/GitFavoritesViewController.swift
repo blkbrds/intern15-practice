@@ -13,7 +13,7 @@ final class GitFavoritesViewController: BaseViewController {
     //MARK: Properties
     @IBOutlet weak var tableView: UITableView!
 
-    var viewModel = GitFavoritesViewModel()
+    private var viewModel = GitFavoritesViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

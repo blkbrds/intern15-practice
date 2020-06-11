@@ -8,12 +8,12 @@
 
 import UIKit
 
-class GitFavoritesTableViewCell: UITableViewCell {
+final class GitFavoritesTableViewCell: UITableViewCell {
 
     //MARK: Properties
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak private var typeLabel: UILabel!
+    @IBOutlet weak private var loginLabel: UILabel!
+    @IBOutlet weak private var urlLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
     var viewModel: GitFavoritesCellModel? {
@@ -27,7 +27,7 @@ class GitFavoritesTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func updateView() {
+    private func updateView() {
         typeLabel.text = viewModel?.type
         loginLabel.text = viewModel?.login
         urlLabel.text = viewModel?.url

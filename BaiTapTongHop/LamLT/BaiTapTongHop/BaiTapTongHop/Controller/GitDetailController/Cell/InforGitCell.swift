@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InforGitCell: UITableViewCell {
+final class InforGitCell: UITableViewCell {
 
     // MARK: Properties
     @IBOutlet weak private var valueLabel: UILabel!

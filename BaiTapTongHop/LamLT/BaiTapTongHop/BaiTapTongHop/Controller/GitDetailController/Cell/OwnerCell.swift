@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OwnerCell: UITableViewCell {
+final class OwnerCell: UITableViewCell {
 
     // MARK: Properties
     @IBOutlet weak private var valueLabel: UILabel!

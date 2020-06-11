@@ -22,6 +22,8 @@ final class HomeModel {
     var filesGit: [GitFile] = []
 
     var repo: [RepoRealm] = []
+    
+    var titles: [String] = ["Git", "Repositories"]
 
     //MARK: Load API
     func loadAPi(apiCompletion: @escaping (Bool, String) -> Void) {
