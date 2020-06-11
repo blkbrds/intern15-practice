@@ -46,6 +46,10 @@ final class DetailViewController: BaseViewController {
     override func setUpData() {
         loadAPI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configNavi()
+    }
 
     //MARK: Private Functions
     private func loadAPI() {
@@ -62,10 +66,6 @@ final class DetailViewController: BaseViewController {
         let alert = UIAlertController(title: "Connect API", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Connect", style: .default, handler: nil))
         self.present(alert, animated: true)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        configNavi()
     }
 
     private func configNavi() {
@@ -89,7 +89,7 @@ final class DetailViewController: BaseViewController {
           }
       }
     
-    func addToFavorites() {
+    private func addToFavorites() {
         viewModel?.addFavorites(addCompletion: { (done, msg) in
             if done {
                 let image = UIImage(named: "star2")
@@ -101,7 +101,7 @@ final class DetailViewController: BaseViewController {
         })
     }
 
-    func deteleToFavorties() {
+    private func deteleToFavorties() {
         viewModel?.deleteFavorites(deleteCompletion: { (done, msg) in
             if done {
                 let image = UIImage(named: "star1")

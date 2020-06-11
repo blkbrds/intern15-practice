@@ -16,7 +16,7 @@ class Owner {
     var htmlURL: String
     var siteAdmin: Bool
     var avatarUrl: String
-    
+
     var type: String
 
     init(json: JSON) {
@@ -27,15 +27,5 @@ class Owner {
         self.avatarUrl = json["avatar_url"] as! String
         self.type = json["type"] as! String
         self.siteAdmin = json["site_admin"] as! Bool
-    }
-    
-    init(login: String, type: String, id: Int, nodeId: String, htmlURL: String, siteAdmin: Bool, avatarUrl: String) {
-        self.login = login
-        self.type = type
-        self.id = id
-        self.nodeId = nodeId
-        self.htmlURL = htmlURL
-        self.siteAdmin = siteAdmin
-        self.avatarUrl = avatarUrl
     }
 }

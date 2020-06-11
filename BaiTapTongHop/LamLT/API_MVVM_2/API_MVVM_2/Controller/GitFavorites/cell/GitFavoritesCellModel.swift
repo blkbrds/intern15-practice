@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GitFavoritesCellModel {
+final class GitFavoritesCellModel {
     var url: String
     var login: String
     var type: String

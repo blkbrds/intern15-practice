@@ -62,7 +62,6 @@ class GitDetailViewController: BaseViewController {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "star2"), style: .plain, target: self, action: #selector(self.rightBarButtonTouchUpInside))
             }
         })
-
     }
 
     @objc func rightBarButtonTouchUpInside() {

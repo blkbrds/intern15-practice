@@ -27,6 +27,7 @@ class FavoritesCell: UITableViewCell {
         // Initialization code
     }
 
+    //MARK: Private Function
     private func updateView() {
         typeLabel.text = viewModel?.type
         nameLabel.text = viewModel?.name

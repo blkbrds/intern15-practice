@@ -162,7 +162,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UIScro
         } else if indexPath.section == 1 {
             let vc = DetailViewController()
             vc.viewModel = viewmodel.detailViewModelForCell(at: indexPath)
-//            vc.repo = viewmodel.getRepoRealm(at: indexPath)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -185,7 +184,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UIScro
         return titles[section]
     }
 }
-
 
 //MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {

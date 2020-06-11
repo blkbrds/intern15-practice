@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeModel {
+final class HomeModel {
 
     //MARK: Properties
     var page: Int = 1
@@ -167,8 +167,4 @@ class HomeModel {
             }
         }
     }
-
-//    func getRepoRealm(at indexPath: IndexPath) -> RepoRealm {
-//        return repo[indexPath.row]
-//    }
 }

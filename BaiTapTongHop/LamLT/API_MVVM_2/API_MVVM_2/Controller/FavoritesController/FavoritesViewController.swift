@@ -20,18 +20,16 @@ final class FavoritesViewController: BaseViewController {
         viewModel.delegate = self
         viewModel.setupObserve()
     }
-    
-    
+
     override func setUpUI() {
         registerTableView()
-        fetchData()
         configNavi()
     }
 
     override func setUpData() {
-
+        fetchData()
     }
-    
+
     //MARK: Private Functions
     private func configNavi() {
         title = "Repositoríes Favorites"
@@ -93,26 +91,6 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-
-//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-//        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
-//            print("Delete: \(indexPath.row + 1)")
-//            self.viewModel.deleteOneObject(indexPath: indexPath) { (done, msg) in
-//                if done {
-//                    tableView.deleteRows(at: [indexPath], with: .fade)
-//                    tableView.reloadData()
-//                } else {
-//                    print("Failed")
-//                }
-//            }
-//            completionHandler(true)
-//        }
-//        delete.image = UIImage(systemName: "trash")
-//        delete.backgroundColor = .red
-//
-//        let swipe = UISwipeActionsConfiguration(actions: [delete])
-//        return swipe
-//    }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {

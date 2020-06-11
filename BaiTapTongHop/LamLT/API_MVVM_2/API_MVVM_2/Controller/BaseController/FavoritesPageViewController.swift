@@ -9,8 +9,9 @@
 import UIKit
 import RealmSwift
 
-class FavoritesPageViewController: UIPageViewController {
+final class FavoritesPageViewController: UIPageViewController {
 
+    //MARK: Properties
     var subViewControllers: [UIViewController] = {
         return [FavoritesViewController(), GitFavoritesViewController()]
     }()
@@ -24,6 +25,7 @@ class FavoritesPageViewController: UIPageViewController {
             return subViewControllers.firstIndex(of: self.viewControllers!.first!)!
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -40,13 +42,13 @@ class FavoritesPageViewController: UIPageViewController {
         self.view.addSubview(pageControl)
     }
 
-    func configNavi() {
+    private func configNavi() {
         let imageDelete = UIImage(named: "trash")
         let backButton = UIBarButtonItem(image: imageDelete, style: .plain, target: self, action: #selector(deleteButtonTouchUpInside))
         navigationItem.leftBarButtonItem = backButton
     }
 
-    @objc func deleteButtonTouchUpInside() {
+    @objc private func deleteButtonTouchUpInside() {
         print(currentIndex)
         if currentIndex == 0 {
             do {
@@ -83,6 +85,7 @@ class FavoritesPageViewController: UIPageViewController {
     }
 }
 
+//MARK: UIPageViewControllerDataSource, UIPageViewControllerDelegate
 extension FavoritesPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return subViewControllers.count
@@ -114,14 +117,3 @@ extension FavoritesPageViewController: UIPageViewControllerDataSource, UIPageVie
         }
     }
 }
-
-//        set {
-//            guard newValue >= 0,
-//                newValue < subViewControllers.count else {
-//                    return
-//            }
-//            let vc = subViewControllers[newValue]
-//            let direction: UIPageViewController.NavigationDirection = newValue > currentIndex ? .forward : .reverse
-//            self.setViewControllers([vc], direction: direction, animated: true, completion: nil)
-//        }
-//    }

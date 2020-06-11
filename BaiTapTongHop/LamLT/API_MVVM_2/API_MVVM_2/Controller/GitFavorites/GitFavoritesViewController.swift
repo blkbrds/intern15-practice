@@ -42,7 +42,7 @@ final class GitFavoritesViewController: BaseViewController {
         navigationItem.leftBarButtonItem = backButton
     }
 
-    @objc func deleteButtonTouchUpInside() {
+    @objc private func deleteButtonTouchUpInside() {
         viewModel.deleteAll { (done) in
             if done {
                 self.fetchData()

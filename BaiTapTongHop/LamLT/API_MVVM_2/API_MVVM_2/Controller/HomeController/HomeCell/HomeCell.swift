@@ -13,7 +13,7 @@ protocol HomeCellDelegate: class {
     func downloadImage(indexPath: IndexPath)
 }
 
-class HomeCell: UITableViewCell {
+final class HomeCell: UITableViewCell {
 
     // MARK: Properties
     @IBOutlet weak private var loginLabel: UILabel!

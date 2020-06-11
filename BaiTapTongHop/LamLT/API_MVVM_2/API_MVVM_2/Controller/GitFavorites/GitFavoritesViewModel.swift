@@ -40,11 +40,8 @@ class GitFavoritesViewModel {
         do {
             // realm
             let realm = try Realm()
-
             let results = realm.objects(GitRealm.self)
-
             gits = Array(results)
-
             completion(true, "Success")
         } catch {
             completion(false, "Failed")
@@ -54,14 +51,11 @@ class GitFavoritesViewModel {
     func deleteAll(completion: (Bool) -> ()) {
         do {
             let realm = try Realm()
-
             let results = realm.objects(GitRealm.self)
-
             try realm.write {
                 realm.delete(results)
             }
             completion(true)
-
         } catch {
             completion(false)
         }

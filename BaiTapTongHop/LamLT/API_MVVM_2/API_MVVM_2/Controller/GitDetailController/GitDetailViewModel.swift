@@ -64,7 +64,7 @@ class GitDetailViewModel {
         self.url = git.owner.htmlURL
     }
 
-    //MARK: Tableview Data
+    //MARK: TableView Data
     func numberOfSections() -> Int {
         return 3
     }

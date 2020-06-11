@@ -13,7 +13,7 @@ protocol HomeCollectionCellDelegate: class {
     func downloadImageForCell(indexPath: IndexPath)
 }
 
-class HomeCollectionViewCell: UICollectionViewCell {
+final class HomeCollectionViewCell: UICollectionViewCell {
     
     //MARK: Properties
     @IBOutlet weak private var nameLabel: UILabel!

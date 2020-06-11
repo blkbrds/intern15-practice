@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeCellModel {
+final class HomeCellModel {
     var name: String 
     var login: String
     var type: String
