@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zST-bM-fA8" customClass="HomeCollectionViewCell" customModule="BaiTapTongHop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="136" height="220"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ya-PS-GEl">
+                        <rect key="frame" x="5" y="5" width="126" height="90.5"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg0-Qy-8J9">
+                        <rect key="frame" x="5" y="115.5" width="126" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="YFZ-8J-UAu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSN-d3-Bag">
+                        <rect key="frame" x="5" y="153.5" width="126" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcQ-qG-mdD">
+                        <rect key="frame" x="5" y="194.5" width="126" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="eg0-Qy-8J9" firstAttribute="leading" secondItem="zST-bM-fA8" secondAttribute="leading" constant="5" id="0EW-8A-Gce"/>
+                <constraint firstItem="lSN-d3-Bag" firstAttribute="leading" secondItem="zST-bM-fA8" secondAttribute="leading" constant="5" id="8Mb-jf-gwh"/>
+                <constraint firstAttribute="trailing" secondItem="eg0-Qy-8J9" secondAttribute="trailing" constant="5" id="Hj0-gZ-RQy"/>
+                <constraint firstAttribute="trailing" secondItem="PcQ-qG-mdD" secondAttribute="trailing" constant="5" id="Pg1-pr-23t"/>
+                <constraint firstItem="4ya-PS-GEl" firstAttribute="top" secondItem="zST-bM-fA8" secondAttribute="top" constant="5" id="ZFg-OZ-hR4"/>
+                <constraint firstItem="4ya-PS-GEl" firstAttribute="height" secondItem="zST-bM-fA8" secondAttribute="height" multiplier="0.411765" id="fHJ-3J-ZR9"/>
+                <constraint firstItem="PcQ-qG-mdD" firstAttribute="leading" secondItem="zST-bM-fA8" secondAttribute="leading" constant="5" id="nCu-EW-zIr"/>
+                <constraint firstItem="PcQ-qG-mdD" firstAttribute="top" secondItem="lSN-d3-Bag" secondAttribute="bottom" constant="20" id="rYV-7q-0qy"/>
+                <constraint firstItem="eg0-Qy-8J9" firstAttribute="top" secondItem="4ya-PS-GEl" secondAttribute="bottom" constant="20" id="sCs-AO-Krd"/>
+                <constraint firstAttribute="trailing" secondItem="4ya-PS-GEl" secondAttribute="trailing" constant="5" id="uQj-Al-bqJ"/>
+                <constraint firstAttribute="trailing" secondItem="lSN-d3-Bag" secondAttribute="trailing" constant="5" id="uRP-wX-eun"/>
+                <constraint firstItem="lSN-d3-Bag" firstAttribute="top" secondItem="eg0-Qy-8J9" secondAttribute="bottom" constant="20" id="vjA-AS-ir8"/>
+                <constraint firstItem="4ya-PS-GEl" firstAttribute="leading" secondItem="zST-bM-fA8" secondAttribute="leading" constant="5" id="wyM-1v-I1r"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="h6t-bC-l7a"/>
+            <size key="customSize" width="86" height="34"/>
+            <connections>
+                <outlet property="loginLabel" destination="lSN-d3-Bag" id="uRI-l1-m2p"/>
+                <outlet property="nameLabel" destination="eg0-Qy-8J9" id="m74-10-Uxf"/>
+                <outlet property="thumbnails" destination="4ya-PS-GEl" id="XCY-wk-i2m"/>
+                <outlet property="typeLabel" destination="PcQ-qG-mdD" id="QJb-6F-Tyy"/>
+            </connections>
+            <point key="canvasLocation" x="-305.79710144927537" y="-34.486607142857139"/>
+        </collectionViewCell>
+    </objects>
+</document>
