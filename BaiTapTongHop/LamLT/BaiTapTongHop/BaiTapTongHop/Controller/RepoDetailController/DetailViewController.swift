@@ -31,6 +31,8 @@ final class DetailViewController: BaseViewController {
 
     //MARK: Override Functions
     override func setUpUI() {
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
         let nib = UINib(nibName: "InforCell", bundle: .main)
         detailTableView.register(nib, forCellReuseIdentifier: "InforCell")
 
@@ -168,4 +170,3 @@ extension DetailViewController: RepoCellDelegate {
         }
     }
 }
-

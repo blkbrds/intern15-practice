@@ -29,6 +29,9 @@ class OwnerHeader: UITableViewHeaderFooterView {
     }
     
     override func awakeFromNib() {
+        guard let headerImageView = headerImageView else {
+            return
+        }
         headerImageView.layer.borderWidth = 1.0
         headerImageView.layer.masksToBounds = false
         headerImageView.layer.cornerRadius = headerImageView.frame.size.height / 2

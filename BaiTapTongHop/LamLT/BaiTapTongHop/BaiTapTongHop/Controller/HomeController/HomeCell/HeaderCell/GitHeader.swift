@@ -6,15 +6,16 @@
 //  Copyright © 2020 LeThanhLam. All rights reserved.
 //
 
-class GitHeader: UICollectionReusableView {
+import UIKit
 
+class GitHeader: UICollectionReusableView {
+    
     //MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
 }
-

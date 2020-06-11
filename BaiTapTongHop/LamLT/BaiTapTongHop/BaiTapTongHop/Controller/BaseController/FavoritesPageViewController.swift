@@ -111,7 +111,7 @@ extension FavoritesPageViewController: UIPageViewControllerDataSource, UIPageVie
 
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let viewControllers = pageViewController.viewControllers {
-            if let viewControllerIndex = self.subViewControllers.index(of: viewControllers[0]) {
+            if let viewControllerIndex = self.subViewControllers.firstIndex(of: viewControllers[0]) {
                 self.pageControl.currentPage = viewControllerIndex
             }
         }
