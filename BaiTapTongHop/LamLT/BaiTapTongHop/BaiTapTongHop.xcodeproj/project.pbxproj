@@ -74,6 +74,12 @@
 		F04911D12492170300148674 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911CF2492170300148674 /* FavoritesCell.swift */; };
 		F04911D22492170300148674 /* FavoritesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04911D02492170300148674 /* FavoritesCell.xib */; };
 		F04911D42492174E00148674 /* FavoritesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911D32492174E00148674 /* FavoritesCellViewModel.swift */; };
+		F04911D92492180F00148674 /* GitFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911D72492180F00148674 /* GitFavoritesViewController.swift */; };
+		F04911DA2492180F00148674 /* GitFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04911D82492180F00148674 /* GitFavoritesViewController.xib */; };
+		F04911DC2492185600148674 /* GitFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911DB2492185600148674 /* GitFavoritesViewModel.swift */; };
+		F04911DF249218B100148674 /* GitFavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911DD249218B100148674 /* GitFavoritesTableViewCell.swift */; };
+		F04911E0249218B100148674 /* GitFavoritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04911DE249218B100148674 /* GitFavoritesTableViewCell.xib */; };
+		F04911E22492191800148674 /* GitFavoritesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911E12492191800148674 /* GitFavoritesCellModel.swift */; };
 		F0C7DD8E2491ED75002C0C56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C7DD8D2491ED75002C0C56 /* AppDelegate.swift */; };
 		F0C7DD902491ED75002C0C56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C7DD8F2491ED75002C0C56 /* SceneDelegate.swift */; };
 		F0C7DD972491ED76002C0C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C7DD962491ED76002C0C56 /* Assets.xcassets */; };
@@ -149,6 +155,12 @@
 		F04911CF2492170300148674 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		F04911D02492170300148674 /* FavoritesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesCell.xib; sourceTree = "<group>"; };
 		F04911D32492174E00148674 /* FavoritesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCellViewModel.swift; sourceTree = "<group>"; };
+		F04911D72492180F00148674 /* GitFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFavoritesViewController.swift; sourceTree = "<group>"; };
+		F04911D82492180F00148674 /* GitFavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitFavoritesViewController.xib; sourceTree = "<group>"; };
+		F04911DB2492185600148674 /* GitFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFavoritesViewModel.swift; sourceTree = "<group>"; };
+		F04911DD249218B100148674 /* GitFavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		F04911DE249218B100148674 /* GitFavoritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitFavoritesTableViewCell.xib; sourceTree = "<group>"; };
+		F04911E12492191800148674 /* GitFavoritesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFavoritesCellModel.swift; sourceTree = "<group>"; };
 		F0C7DD8A2491ED75002C0C56 /* BaiTapTongHop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapTongHop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C7DD8D2491ED75002C0C56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C7DD8F2491ED75002C0C56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +199,7 @@
 		F04911392491EEDA00148674 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F04911D5249217CF00148674 /* GitFavorites */,
 				F04911C72492162200148674 /* RepoFavoritesController */,
 				F04911AF2492132000148674 /* RepoDetailController */,
 				F049118024920CE700148674 /* GitDetailController */,
@@ -368,6 +381,27 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		F04911D5249217CF00148674 /* GitFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				F04911D6249217E600148674 /* cell */,
+				F04911D72492180F00148674 /* GitFavoritesViewController.swift */,
+				F04911D82492180F00148674 /* GitFavoritesViewController.xib */,
+				F04911DB2492185600148674 /* GitFavoritesViewModel.swift */,
+			);
+			path = GitFavorites;
+			sourceTree = "<group>";
+		};
+		F04911D6249217E600148674 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F04911DD249218B100148674 /* GitFavoritesTableViewCell.swift */,
+				F04911DE249218B100148674 /* GitFavoritesTableViewCell.xib */,
+				F04911E12492191800148674 /* GitFavoritesCellModel.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		F0C7DD812491ED75002C0C56 = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04911E0249218B100148674 /* GitFavoritesTableViewCell.xib in Resources */,
 				F04911BA2492144300148674 /* InforCell.xib in Resources */,
 				F04911C0249214C900148674 /* DescriptionCell.xib in Resources */,
 				F049116F24920AB100148674 /* RepoHeader.xib in Resources */,
@@ -481,6 +516,7 @@
 				F049117F24920CBC00148674 /* SearchViewController.xib in Resources */,
 				F04911D22492170300148674 /* FavoritesCell.xib in Resources */,
 				F049116B24920A6900148674 /* GitHeader.xib in Resources */,
+				F04911DA2492180F00148674 /* GitFavoritesViewController.xib in Resources */,
 				F04911C62492154400148674 /* RepoCell.xib in Resources */,
 				F04911AC249211FA00148674 /* FileHeader.xib in Resources */,
 				F04911AA2492119000148674 /* InfoGitHeader.xib in Resources */,
@@ -556,10 +592,12 @@
 				F04911D12492170300148674 /* FavoritesCell.swift in Sources */,
 				F049115F2492086800148674 /* HomeCell.swift in Sources */,
 				F04911D42492174E00148674 /* FavoritesCellViewModel.swift in Sources */,
+				F04911DF249218B100148674 /* GitFavoritesTableViewCell.swift in Sources */,
 				F04911482491F0E500148674 /* Downloader.swift in Sources */,
 				F04911422491EFD800148674 /* Repositories.swift in Sources */,
 				F04911652492091400148674 /* HomeCollectionViewCell.swift in Sources */,
 				F04911BC249214A800148674 /* InforCellViewModel.swift in Sources */,
+				F04911D92492180F00148674 /* GitFavoritesViewController.swift in Sources */,
 				F049119C24920FBE00148674 /* OwnerCellModel.swift in Sources */,
 				F049114C2491F11400148674 /* Git.swift in Sources */,
 				F04911592492077500148674 /* HomeViewController.swift in Sources */,
@@ -568,12 +606,14 @@
 				F04911C22492151100148674 /* DescriptionCellViewModel.swift in Sources */,
 				F04911522491F18B00148674 /* GitRealm.swift in Sources */,
 				F04911B22492137800148674 /* DetailViewController.swift in Sources */,
+				F04911E22492191800148674 /* GitFavoritesCellModel.swift in Sources */,
 				F049116A24920A6900148674 /* GitHeader.swift in Sources */,
 				F049117A24920BAF00148674 /* GitCellModel.swift in Sources */,
 				F04911AE2492123200148674 /* FileHeader.swift in Sources */,
 				F049114E2491F13A00148674 /* GitFile.swift in Sources */,
 				F04911BF249214C900148674 /* DescriptionCell.swift in Sources */,
 				F04911B92492144300148674 /* InforCell.swift in Sources */,
+				F04911DC2492185600148674 /* GitFavoritesViewModel.swift in Sources */,
 				F04911CE249216DA00148674 /* FavoritesViewModel.swift in Sources */,
 				F049113F2491EFA400148674 /* BaseViewController.swift in Sources */,
 				F049119924920F9800148674 /* OwnerCell.swift in Sources */,

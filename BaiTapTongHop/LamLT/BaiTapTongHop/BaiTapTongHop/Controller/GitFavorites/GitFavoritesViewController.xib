@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GitFavoritesViewController" customModule="BaiTapTongHop" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="Paz-pL-BPO" id="nDP-Er-GUy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hJB-ed-lxn">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Paz-pL-BPO">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="72H-YZ-k9A"/>
+                        <outlet property="delegate" destination="-1" id="lRm-yR-yRF"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CMZ-bj-wmJ" firstAttribute="bottom" secondItem="Paz-pL-BPO" secondAttribute="bottom" id="DcT-Ov-hWx"/>
+                <constraint firstItem="Paz-pL-BPO" firstAttribute="top" secondItem="CMZ-bj-wmJ" secondAttribute="top" id="UoA-jl-iJ0"/>
+                <constraint firstItem="CMZ-bj-wmJ" firstAttribute="trailing" secondItem="Paz-pL-BPO" secondAttribute="trailing" id="ecY-Eo-KhE"/>
+                <constraint firstItem="Paz-pL-BPO" firstAttribute="leading" secondItem="CMZ-bj-wmJ" secondAttribute="leading" id="pAJ-z1-POI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="CMZ-bj-wmJ"/>
+            <point key="canvasLocation" x="-10" y="28"/>
+        </view>
+    </objects>
+</document>
