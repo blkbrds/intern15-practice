@@ -10,6 +10,7 @@ import UIKit
 
 protocol DatePickerViewDelegate: DatePickerViewController {
     func valueDate(pickerView: DatePickerView, select: Date?)
+   
 }
 class DatePickerView: UIView {
 
@@ -24,6 +25,7 @@ class DatePickerView: UIView {
        })
    }
     @IBAction private func doneTouchUpInsine(_ sender: Any) {
+        
         UIView.animate(withDuration: 0.5, animations: {self.contentView.alpha = 0})
         {(done) in
             self.isHidden = true

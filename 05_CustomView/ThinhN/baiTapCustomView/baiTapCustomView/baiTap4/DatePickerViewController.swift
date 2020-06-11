@@ -9,13 +9,13 @@
 import UIKit
 
 final class DatePickerViewController: UIViewController {
-
+    
     @IBOutlet weak var dateTextField: UITextField!
-
+    
     private var datePickerView: DatePickerView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePickerView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)?.first as? DatePickerView
+        datePickerView = Bundle.main.loadNibNamed("DatePickerView", owner: self, options: nil)? [0] as? DatePickerView
         guard let datePickerView = datePickerView else { return }
         datePickerView.delegate = self
         dateTextField.delegate = self

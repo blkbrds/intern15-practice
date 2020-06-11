@@ -23,7 +23,7 @@ class BadgeNumberButton: UIView {
         case bottomCenter
         case bottomRight
     }
-    init(frame: CGRect, valueBadgeNumber: Position, text: String){
+    init(frame: CGRect, valueBadgeNumber: Position, text: String) {
         self.badgePositon = valueBadgeNumber
         self.text = text
         super.init(frame: frame)
@@ -36,7 +36,7 @@ class BadgeNumberButton: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    private func setupUI(){
+    private func setupUI() {
         let temp = 20 + text.count * 10
         badgeNumberLabel.frame.size = CGSize(width: temp, height: 30)
         badgeNumberLabel.textColor = .white
