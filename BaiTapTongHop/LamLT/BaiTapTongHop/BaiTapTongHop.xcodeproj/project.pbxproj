@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		73D2EF81BDEBFC1BC9563563 /* Pods_BaiTapTongHop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07629E595712E4659637B44D /* Pods_BaiTapTongHop.framework */; };
 		F049113D2491EF7F00148674 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049113C2491EF7F00148674 /* BaseTabBarController.swift */; };
-		F049113F2491EFA400148674 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049113E2491EFA400148674 /* BaseViewController.swift */; };
 		F04911422491EFD800148674 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911412491EFD800148674 /* Repositories.swift */; };
 		F04911442491F04C00148674 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911432491F04C00148674 /* Data.swift */; };
 		F04911462491F0C200148674 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911452491F0C200148674 /* Networking.swift */; };
@@ -80,6 +79,8 @@
 		F04911DF249218B100148674 /* GitFavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911DD249218B100148674 /* GitFavoritesTableViewCell.swift */; };
 		F04911E0249218B100148674 /* GitFavoritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F04911DE249218B100148674 /* GitFavoritesTableViewCell.xib */; };
 		F04911E22492191800148674 /* GitFavoritesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911E12492191800148674 /* GitFavoritesCellModel.swift */; };
+		F04911E42492199500148674 /* FavoritesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911E32492199500148674 /* FavoritesPageViewController.swift */; };
+		F04911E624921AEE00148674 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04911E524921AEE00148674 /* BaseViewController.swift */; };
 		F0C7DD8E2491ED75002C0C56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C7DD8D2491ED75002C0C56 /* AppDelegate.swift */; };
 		F0C7DD902491ED75002C0C56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C7DD8F2491ED75002C0C56 /* SceneDelegate.swift */; };
 		F0C7DD972491ED76002C0C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C7DD962491ED76002C0C56 /* Assets.xcassets */; };
@@ -90,7 +91,6 @@
 		14AB5E3AAA641F3B679BA3F0 /* Pods-BaiTapTongHop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapTongHop.release.xcconfig"; path = "Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop.release.xcconfig"; sourceTree = "<group>"; };
 		7FB9607052990D1CE1D932E3 /* Pods-BaiTapTongHop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiTapTongHop.debug.xcconfig"; path = "Target Support Files/Pods-BaiTapTongHop/Pods-BaiTapTongHop.debug.xcconfig"; sourceTree = "<group>"; };
 		F049113C2491EF7F00148674 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		F049113E2491EFA400148674 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F04911412491EFD800148674 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		F04911432491F04C00148674 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F04911452491F0C200148674 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -161,6 +161,8 @@
 		F04911DD249218B100148674 /* GitFavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		F04911DE249218B100148674 /* GitFavoritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GitFavoritesTableViewCell.xib; sourceTree = "<group>"; };
 		F04911E12492191800148674 /* GitFavoritesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFavoritesCellModel.swift; sourceTree = "<group>"; };
+		F04911E32492199500148674 /* FavoritesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPageViewController.swift; sourceTree = "<group>"; };
+		F04911E524921AEE00148674 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F0C7DD8A2491ED75002C0C56 /* BaiTapTongHop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiTapTongHop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C7DD8D2491ED75002C0C56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C7DD8F2491ED75002C0C56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,7 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				F049113C2491EF7F00148674 /* BaseTabBarController.swift */,
-				F049113E2491EFA400148674 /* BaseViewController.swift */,
+				F04911E32492199500148674 /* FavoritesPageViewController.swift */,
+				F04911E524921AEE00148674 /* BaseViewController.swift */,
 			);
 			path = BaseController;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				F049116E24920AB100148674 /* RepoHeader.swift in Sources */,
 				F04911D12492170300148674 /* FavoritesCell.swift in Sources */,
 				F049115F2492086800148674 /* HomeCell.swift in Sources */,
+				F04911E624921AEE00148674 /* BaseViewController.swift in Sources */,
 				F04911D42492174E00148674 /* FavoritesCellViewModel.swift in Sources */,
 				F04911DF249218B100148674 /* GitFavoritesTableViewCell.swift in Sources */,
 				F04911482491F0E500148674 /* Downloader.swift in Sources */,
@@ -603,6 +607,7 @@
 				F04911592492077500148674 /* HomeViewController.swift in Sources */,
 				F04911502491F16800148674 /* RepoRealm.swift in Sources */,
 				F049114A2491F10200148674 /* Owner.swift in Sources */,
+				F04911E42492199500148674 /* FavoritesPageViewController.swift in Sources */,
 				F04911C22492151100148674 /* DescriptionCellViewModel.swift in Sources */,
 				F04911522491F18B00148674 /* GitRealm.swift in Sources */,
 				F04911B22492137800148674 /* DetailViewController.swift in Sources */,
@@ -615,7 +620,6 @@
 				F04911B92492144300148674 /* InforCell.swift in Sources */,
 				F04911DC2492185600148674 /* GitFavoritesViewModel.swift in Sources */,
 				F04911CE249216DA00148674 /* FavoritesViewModel.swift in Sources */,
-				F049113F2491EFA400148674 /* BaseViewController.swift in Sources */,
 				F049119924920F9800148674 /* OwnerCell.swift in Sources */,
 				F049118424920D2700148674 /* GitDetailViewController.swift in Sources */,
 				F0C7DD902491ED75002C0C56 /* SceneDelegate.swift in Sources */,

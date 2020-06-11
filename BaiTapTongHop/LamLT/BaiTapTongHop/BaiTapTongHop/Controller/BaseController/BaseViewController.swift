@@ -6,7 +6,7 @@
 //  Copyright © 2020 LeThanhLam. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class BaseViewController: UIViewController {
 
@@ -15,12 +15,12 @@ class BaseViewController: UIViewController {
         setUpUI()
         setUpData()
     }
-
+    
     func setUpUI() {
-
+        
     }
-
+    
     func setUpData() {
-
+        
     }
 }
