@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uu2-lf-Ngv" customClass="GitCollectionCell" customModule="API_MVVM_2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="191" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="191" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Xg-Yd-jgf">
+                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="EWi-F9-PVH"/>
+                            <constraint firstAttribute="height" constant="40" id="OIv-C9-KVD"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UZ-cF-gDF">
+                        <rect key="frame" x="60" y="10" width="111" height="12"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq5-kl-8FJ">
+                        <rect key="frame" x="60" y="27" width="111" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-4f-We6">
+                        <rect key="frame" x="60" y="40" width="111" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="0Xg-Yd-jgf" firstAttribute="leading" secondItem="uu2-lf-Ngv" secondAttribute="leading" constant="10" id="KD5-73-ZVb"/>
+                <constraint firstItem="cO3-4f-We6" firstAttribute="leading" secondItem="0Xg-Yd-jgf" secondAttribute="trailing" constant="10" id="KVA-HK-usH"/>
+                <constraint firstAttribute="trailing" secondItem="3UZ-cF-gDF" secondAttribute="trailing" constant="20" id="M8E-Ag-HIL"/>
+                <constraint firstItem="3UZ-cF-gDF" firstAttribute="top" secondItem="uu2-lf-Ngv" secondAttribute="top" constant="10" id="OVR-4n-Zay"/>
+                <constraint firstAttribute="trailing" secondItem="cO3-4f-We6" secondAttribute="trailing" constant="20" id="XTs-RI-yYI"/>
+                <constraint firstItem="0Xg-Yd-jgf" firstAttribute="top" secondItem="uu2-lf-Ngv" secondAttribute="top" constant="10" id="f5x-Af-KsC"/>
+                <constraint firstAttribute="trailing" secondItem="dq5-kl-8FJ" secondAttribute="trailing" constant="20" id="fjM-kF-Adq"/>
+                <constraint firstItem="3UZ-cF-gDF" firstAttribute="leading" secondItem="0Xg-Yd-jgf" secondAttribute="trailing" constant="10" id="iXv-5b-JqP"/>
+                <constraint firstItem="dq5-kl-8FJ" firstAttribute="leading" secondItem="0Xg-Yd-jgf" secondAttribute="trailing" constant="10" id="itf-BG-GWg"/>
+                <constraint firstItem="cO3-4f-We6" firstAttribute="top" secondItem="dq5-kl-8FJ" secondAttribute="bottom" constant="1" id="rbi-Ox-XDs"/>
+                <constraint firstItem="dq5-kl-8FJ" firstAttribute="top" secondItem="3UZ-cF-gDF" secondAttribute="bottom" constant="5" id="shk-v7-KJH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="PCN-Dd-OMa"/>
+            <size key="customSize" width="141" height="38"/>
+            <connections>
+                <outlet property="loginLabel" destination="dq5-kl-8FJ" id="gMA-Ym-0qs"/>
+                <outlet property="thumbnailGitImageView" destination="0Xg-Yd-jgf" id="C1t-VM-Yq6"/>
+                <outlet property="typeLabel" destination="cO3-4f-We6" id="Ggb-QT-ieg"/>
+                <outlet property="urlLabel" destination="3UZ-cF-gDF" id="Anz-mw-2DI"/>
+            </connections>
+            <point key="canvasLocation" x="-1083" y="-119"/>
+        </collectionViewCell>
+    </objects>
+</document>
