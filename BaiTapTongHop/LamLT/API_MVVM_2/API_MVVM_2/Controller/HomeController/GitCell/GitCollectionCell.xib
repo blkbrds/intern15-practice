@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ePf-Nm-PtJ" customClass="GitCollectionCell" customModule="API_MVVM_2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="191" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="191" height="70"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NqI-Hz-uAK">
+                        <rect key="frame" x="10" y="10" width="40" height="40"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="QQI-TX-Baz"/>
+                            <constraint firstAttribute="width" constant="40" id="crd-0z-5mT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-Lh-hjR">
+                        <rect key="frame" x="60" y="10" width="111" height="12"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuW-5h-yVS">
+                        <rect key="frame" x="60" y="27" width="111" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duT-0W-yai">
+                        <rect key="frame" x="60" y="40" width="111" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="duT-0W-yai" firstAttribute="leading" secondItem="NqI-Hz-uAK" secondAttribute="trailing" constant="10" id="4Vq-7h-EyN"/>
+                <constraint firstItem="VuW-5h-yVS" firstAttribute="leading" secondItem="NqI-Hz-uAK" secondAttribute="trailing" constant="10" id="6QR-ZM-M86"/>
+                <constraint firstItem="NqI-Hz-uAK" firstAttribute="top" secondItem="ePf-Nm-PtJ" secondAttribute="top" constant="10" id="g3b-cS-ubv"/>
+                <constraint firstAttribute="trailing" secondItem="duT-0W-yai" secondAttribute="trailing" constant="20" id="joF-hn-flI"/>
+                <constraint firstItem="NqI-Hz-uAK" firstAttribute="leading" secondItem="ePf-Nm-PtJ" secondAttribute="leading" constant="10" id="kJq-Kl-zmQ"/>
+                <constraint firstAttribute="trailing" secondItem="VuW-5h-yVS" secondAttribute="trailing" constant="20" id="lrj-Sf-jcc"/>
+                <constraint firstAttribute="trailing" secondItem="Bxh-Lh-hjR" secondAttribute="trailing" constant="20" id="msl-XG-cbL"/>
+                <constraint firstItem="VuW-5h-yVS" firstAttribute="top" secondItem="Bxh-Lh-hjR" secondAttribute="bottom" constant="5" id="tN3-iK-ixy"/>
+                <constraint firstItem="duT-0W-yai" firstAttribute="top" secondItem="VuW-5h-yVS" secondAttribute="bottom" constant="1" id="vUe-7x-MIY"/>
+                <constraint firstItem="Bxh-Lh-hjR" firstAttribute="leading" secondItem="NqI-Hz-uAK" secondAttribute="trailing" constant="10" id="vgv-a1-5Q5"/>
+                <constraint firstItem="Bxh-Lh-hjR" firstAttribute="top" secondItem="ePf-Nm-PtJ" secondAttribute="top" constant="10" id="zEb-Q8-QOK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="TRG-ER-MDM"/>
+            <size key="customSize" width="141" height="38"/>
+            <connections>
+                <outlet property="loginLabel" destination="VuW-5h-yVS" id="6rh-xT-Kod"/>
+                <outlet property="thumbnailGitImageView" destination="NqI-Hz-uAK" id="ahH-YX-aqH"/>
+                <outlet property="typeLabel" destination="duT-0W-yai" id="hix-Kl-S2z"/>
+                <outlet property="urlLabel" destination="Bxh-Lh-hjR" id="dFo-hG-cMP"/>
+            </connections>
+            <point key="canvasLocation" x="-518.1159420289855" y="39.508928571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>
