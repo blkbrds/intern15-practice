@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SubView2Datasource: class {
-    func passDataToViewController(script: Information, viewController: SubView2) 
+    func passDataToViewController(viewController: SubView2) -> [Information]
 }
 enum Information {
     case email
@@ -62,6 +62,7 @@ class SubView2: UIView {
         super.init(coder: coder)
         xibSetup()
     }
+   
     
     private func xibSetup() {
         let nib = UINib(nibName: "SubView2", bundle: .main)
@@ -74,9 +75,12 @@ class SubView2: UIView {
         scriptTextField.layer.cornerRadius = 10
         scriptTextField.placeholder = text
         imageView.image = UIImage(named: imageString)
+        setupView()
     }
+    
     func setupView() {
-       
+        guard let datasource = datasource else { return }
+        scriptTextField.placeholder = datasource.passDataToViewController(viewController: self)[0].value
     }
 }
 

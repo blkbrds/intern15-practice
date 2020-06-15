@@ -36,7 +36,7 @@ class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewD
         showNumber()
         locationTextField.scriptTextField.inputView = pickerView1
         jobTextField.scriptTextField.inputView = pickerView2
-        usernameTextField.datasource = self
+        emailTextField.datasource = self
         pickerView1.delegate = self
         pickerView2.delegate = self
         
@@ -129,14 +129,9 @@ class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewD
 
 
 extension HomeViewController3: SubView2Datasource {
-    func passDataToViewController(script: Information, viewController: SubView2) {
-        <#code#>
+    func passDataToViewController(viewController: SubView2) -> [Information] {
+        return arrInformation
     }
     
-    func passDataToViewController(script: Information, viewController: SubView2) -> SubView2 {
-        let infor = arrInformation[viewController.viewScript.tag]
-        
-    }
     
-
 }
