@@ -51,7 +51,12 @@ class SubView2: UIView {
     
     var text: String = ""
     var imageString: String = ""
-    weak var datasource: SubView2Datasource?
+    weak var datasource: SubView2Datasource? {
+        didSet {
+            setupView()
+        }
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,13 +80,13 @@ class SubView2: UIView {
         scriptTextField.layer.cornerRadius = 10
         scriptTextField.placeholder = text
         imageView.image = UIImage(named: imageString)
-//        setupView()
+     //  setupView()
     }
     
-//    func setupView() {
-//        guard let datasource = datasource else { return }
-//        scriptTextField.placeholder = datasource.passDataToViewController(viewController: self)[0].value
+    func setupView() {
+        guard let datasource = datasource else { return }
+        scriptTextField.placeholder = datasource.passDataToViewController(viewController: self)[0].value
 //        scriptTextField.placeholder = datasource.pa
-//    }
+    }
 }
 

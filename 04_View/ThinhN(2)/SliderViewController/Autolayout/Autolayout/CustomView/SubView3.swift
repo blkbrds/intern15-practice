@@ -7,20 +7,19 @@
 //
 
 import UIKit
-protocol SubView3Delegate: AvatarViewController {
+protocol SubView3Delegate: class {
     func sendDataToViewController(view: SubView3)
 }
-protocol SubView3Datasource: AvatarViewController {
-    func passDataToViewController(view: SubView3) -> String 
-    
+protocol SubView3Datasource: class {
+    func passDataToViewController(view: SubView3) -> String
 }
 
 class SubView3: UIView {
-    
+
     @IBOutlet weak var button: UIButton!
-    
+
     var nameButton: String = ""
-    
+
     weak var delegate: SubView3Delegate?
     weak var datasource: SubView3Datasource? {
         didSet {
@@ -28,18 +27,10 @@ class SubView3: UIView {
         }
     }
     @IBAction func buttonTouchUpInsine(_ sender: Any) {
-        
-        
-    }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+        delegate?.sendDataToViewController(view: self)
     }
     func setupView() {
-        guard let name = datasource?.passDataToViewController(view: self) else { return }
-        button.titleLabel?.text = name
+        guard let person = datasource?.passDataToViewController(view: self) else { return }
+        button.setTitle(person, for: .normal)
     }
 }
-

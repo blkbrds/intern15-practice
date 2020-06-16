@@ -17,9 +17,7 @@ class AvatarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-       
     }
-    
     func setupView() {
         var x: CGFloat = 0
         var y: CGFloat = 0
@@ -37,9 +35,9 @@ class AvatarViewController: UIViewController {
                     avatarView.frame = CGRect(x: x, y: y, width: width , height: heigth)
                     avatarView.tag = dem
                     avatarView.datasource = self
+                    avatarView.delegate = self
                     containerView.addSubview(avatarView)
                     dem += 1
-                    print(avatarView.tag)
                 }
             }
         }
@@ -50,6 +48,12 @@ extension AvatarViewController: SubView3Datasource {
         let person = name[view.tag]
         return person
     }
-    
-    
+}
+extension AvatarViewController: SubView3Delegate {
+    func sendDataToViewController(view: SubView3) {
+        let person = name[view.tag]
+        let alert = UIAlertController(title: "Xin chao", message: "Toi la \(person)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
