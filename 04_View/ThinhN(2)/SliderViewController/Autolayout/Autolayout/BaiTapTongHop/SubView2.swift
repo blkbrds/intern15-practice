@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol SubView2Delegate: class {
+    func sendDataToViewController(subView: SubView2)
+}
 protocol SubView2Datasource: class {
     func passDataToViewController(subView: SubView2) -> Information
 }
@@ -78,6 +80,7 @@ class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             setupView()
         }
     }
+    weak var delegate: SubView2Delegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -118,8 +121,9 @@ class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     func setupView() {
         guard let datasource = datasource else { return }
-        scriptTextField.placeholder = datasource.passDataToViewController(subView: self).value
-        imageView.image = datasource.passDataToViewController(subView: self).iconView
+        let info = datasource.passDataToViewController(subView: self)
+        scriptTextField.placeholder = info.value
+        imageView.image = info.iconView
     }
 }
 
