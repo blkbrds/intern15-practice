@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class HomeViewController3: UIViewController {
     var arrInformation: [Information] = [.email, .username, .birthday, .location, .phone_number, .job, .password, .confirm_password]
     let countryArr = ["America", "China", "Japan", "Russian", "Vietnam"]
     let jobArr = ["Professor", "Teacher", "Student", "Other"]
@@ -30,12 +30,9 @@ class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
         showDatePicker()
         hiddenPassword()
         showNumber()
-        locationTextField.scriptTextField.inputView = pickerView1
-        jobTextField.scriptTextField.inputView = pickerView2
         emailTextField.datasource = self
         usernameTextField.datasource = self
         birthdayTextField.datasource = self
@@ -43,9 +40,7 @@ class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewD
         phoneNumberTextField.datasource = self
         jobTextField.datasource = self
         passwordTextField.datasource = self
-        confirmPasswordTextField.datasource = self 
-        pickerView1.delegate = self
-        pickerView2.delegate = self
+        confirmPasswordTextField.datasource = self
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
            view.addGestureRecognizer(tap)
@@ -54,43 +49,6 @@ class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    func setUpView() {
-//        emailTextField.text = "Email"
-//        emailTextField.imageString = "email-1"
-//        usernameTextField.text = "Username"
-//        usernameTextField.imageString = "username"
-//        birthdayTextField.text = "Birthday"
-//        birthdayTextField.imageString = "birthday"
-//        locationTextField.text = "Location"
-//        locationTextField.imageString = "location"
-//        phoneNumberTextField.text = "Phone number"
-//        phoneNumberTextField.imageString = "phone_number"
-//        jobTextField.text = "Job"
-//        jobTextField.imageString = "job"
-//        passwordTextField.text = "Password"
-//        passwordTextField.imageString = "password"
-//        confirmPasswordTextField.text = "Confirm password"
-//        confirmPasswordTextField.imageString = "password"
-        
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countryArr.count
-    }
-
-    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return countryArr[row]
-    }
-
-    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        locationTextField.text = countryArr[row]
-    }
-              
-      
     func showDatePicker() {
         datePicker.datePickerMode = .date
         let toolbar = UIToolbar()
@@ -136,8 +94,9 @@ class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewD
 
 
 extension HomeViewController3: SubView2Datasource {
-    func passDataToViewController(viewController: SubView2) -> [Information] {
-        return arrInformation
+    func passDataToViewController(subView: SubView2) -> Information {
+        let name = arrInformation[subView.tag]
+        return name
     }
     
     
