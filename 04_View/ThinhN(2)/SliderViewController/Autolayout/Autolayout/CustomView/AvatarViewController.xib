@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvatarViewController" customModule="Autolayout" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="uLZ-rI-Ej3" id="z1U-RV-SG9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="uXP-ah-Ogq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ccu-K4-dd5">
+                    <rect key="frame" x="0.0" y="63" width="414" height="833"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLZ-rI-Ej3" userLabel="ContainerView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1000" id="jKm-Oc-dYo"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="uLZ-rI-Ej3" firstAttribute="top" secondItem="ccu-K4-dd5" secondAttribute="top" id="2CM-76-Qcb"/>
+                        <constraint firstItem="uLZ-rI-Ej3" firstAttribute="width" secondItem="ccu-K4-dd5" secondAttribute="width" id="TwI-Ip-WeM"/>
+                        <constraint firstAttribute="trailing" secondItem="uLZ-rI-Ej3" secondAttribute="trailing" id="eyq-IP-s2Q"/>
+                        <constraint firstAttribute="bottom" secondItem="uLZ-rI-Ej3" secondAttribute="bottom" constant="50" id="q97-SI-UNd"/>
+                        <constraint firstItem="uLZ-rI-Ej3" firstAttribute="leading" secondItem="ccu-K4-dd5" secondAttribute="leading" id="zUa-Gc-GNE"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ccu-K4-dd5" secondAttribute="bottom" id="8Lk-p3-2G8"/>
+                <constraint firstAttribute="trailing" secondItem="ccu-K4-dd5" secondAttribute="trailing" id="RoY-yr-4H8"/>
+                <constraint firstItem="ccu-K4-dd5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="63" id="h2r-Dk-cPs"/>
+                <constraint firstItem="ccu-K4-dd5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oOk-TS-ams"/>
+            </constraints>
+            <point key="canvasLocation" x="124.6376811594203" y="133.92857142857142"/>
+        </view>
+    </objects>
+</document>

@@ -75,12 +75,13 @@ class SubView2: UIView {
         scriptTextField.layer.cornerRadius = 10
         scriptTextField.placeholder = text
         imageView.image = UIImage(named: imageString)
-        setupView()
+//        setupView()
     }
     
-    func setupView() {
-        guard let datasource = datasource else { return }
-        scriptTextField.placeholder = datasource.passDataToViewController(viewController: self)[0].value
-    }
+//    func setupView() {
+//        guard let datasource = datasource else { return }
+//        scriptTextField.placeholder = datasource.passDataToViewController(viewController: self)[0].value
+//        scriptTextField.placeholder = datasource.pa
+//    }
 }
 

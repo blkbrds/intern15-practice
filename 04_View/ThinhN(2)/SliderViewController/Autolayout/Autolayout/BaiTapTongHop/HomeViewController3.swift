@@ -37,6 +37,13 @@ class HomeViewController3: UIViewController, UIPickerViewDelegate, UIPickerViewD
         locationTextField.scriptTextField.inputView = pickerView1
         jobTextField.scriptTextField.inputView = pickerView2
         emailTextField.datasource = self
+        usernameTextField.datasource = self
+        birthdayTextField.datasource = self
+        locationTextField.datasource = self
+        phoneNumberTextField.datasource = self
+        jobTextField.datasource = self
+        passwordTextField.datasource = self
+        confirmPasswordTextField.datasource = self 
         pickerView1.delegate = self
         pickerView2.delegate = self
         

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		72568B9C2487AEE100AFC148 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72568B9A2487AEE100AFC148 /* HomeViewController.swift */; };
 		72568B9D2487AEE100AFC148 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72568B9B2487AEE100AFC148 /* HomeViewController.xib */; };
+		725B440424985C7900482DDA /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B440224985C7900482DDA /* AvatarViewController.swift */; };
+		725B440524985C7900482DDA /* AvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 725B440324985C7900482DDA /* AvatarViewController.xib */; };
+		725B440724985CA500482DDA /* SubView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B440624985CA500482DDA /* SubView3.swift */; };
+		725B440924985CB100482DDA /* SubView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 725B440824985CB100482DDA /* SubView3.xib */; };
+		725B440D24986D6100482DDA /* Person2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B440C24986D6100482DDA /* Person2.swift */; };
 		72657841249718B40022530B /* SubView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72657840249718B40022530B /* SubView2.swift */; };
 		72657844249719770022530B /* HomeViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72657842249719770022530B /* HomeViewController3.swift */; };
 		72657845249719770022530B /* HomeViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72657843249719770022530B /* HomeViewController3.xib */; };
@@ -39,6 +44,11 @@
 /* Begin PBXFileReference section */
 		72568B9A2487AEE100AFC148 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		72568B9B2487AEE100AFC148 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		725B440224985C7900482DDA /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		725B440324985C7900482DDA /* AvatarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarViewController.xib; sourceTree = "<group>"; };
+		725B440624985CA500482DDA /* SubView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView3.swift; sourceTree = "<group>"; };
+		725B440824985CB100482DDA /* SubView3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubView3.xib; sourceTree = "<group>"; };
+		725B440C24986D6100482DDA /* Person2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person2.swift; sourceTree = "<group>"; };
 		72657840249718B40022530B /* SubView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView2.swift; sourceTree = "<group>"; };
 		72657842249719770022530B /* HomeViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController3.swift; sourceTree = "<group>"; };
 		72657843249719770022530B /* HomeViewController3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController3.xib; sourceTree = "<group>"; };
@@ -79,6 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		725B43FD24985C1F00482DDA /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				725B440224985C7900482DDA /* AvatarViewController.swift */,
+				725B440324985C7900482DDA /* AvatarViewController.xib */,
+				725B440624985CA500482DDA /* SubView3.swift */,
+				725B440824985CB100482DDA /* SubView3.xib */,
+				725B440C24986D6100482DDA /* Person2.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		727B79962497082E00722862 /* BaiTapTongHop */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +144,7 @@
 		72F2C30E24877EBB00A72A1C /* Autolayout */ = {
 			isa = PBXGroup;
 			children = (
+				725B43FD24985C1F00482DDA /* CustomView */,
 				727B79962497082E00722862 /* BaiTapTongHop */,
 				7299BEEB2489E924007AD51E /* Bai3 */,
 				72F2C3282487913100A72A1C /* Bai2 */,
@@ -230,6 +253,8 @@
 			files = (
 				7299BEEF2489E965007AD51E /* ScrollViewController.xib in Resources */,
 				72F2C31924877EBC00A72A1C /* Preview Assets.xcassets in Resources */,
+				725B440524985C7900482DDA /* AvatarViewController.xib in Resources */,
+				725B440924985CB100482DDA /* SubView3.xib in Resources */,
 				726D0B392488F661000EA1DC /* DetailViewController.xib in Resources */,
 				72A77096248F3B1000482E0C /* AvatarView.xib in Resources */,
 				727B799E24970A3100722862 /* SubView2.xib in Resources */,
@@ -253,6 +278,9 @@
 				726D0B332488CCCA000EA1DC /* PopUpView.swift in Sources */,
 				72568B9C2487AEE100AFC148 /* HomeViewController.swift in Sources */,
 				726D0B302488A0E9000EA1DC /* DetailViewController2.swift in Sources */,
+				725B440D24986D6100482DDA /* Person2.swift in Sources */,
+				725B440424985C7900482DDA /* AvatarViewController.swift in Sources */,
+				725B440724985CA500482DDA /* SubView3.swift in Sources */,
 				7265784B249763B80022530B /* Information.swift in Sources */,
 				72A77094248F3B0400482E0C /* AvatarView.swift in Sources */,
 				72A7709A248F8AA800482E0C /* Person.swift in Sources */,
