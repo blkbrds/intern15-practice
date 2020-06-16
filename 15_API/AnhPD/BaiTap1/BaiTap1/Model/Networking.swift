@@ -25,6 +25,9 @@ enum APIError: Error {
 }
 
 final class Networking {
+    
+    static var urlString = "https://rss.itunes.apple.com/api/v1/us/itunes-music/hot-tracks/all/10/explicit.json"
+    
     private static var sharedNetworking: Networking = {
         let networking = Networking()
         return networking

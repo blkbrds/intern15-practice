@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BaiTap1" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="hdc-9w-Maf" id="SCe-Zr-KR1"/>
+                <outlet property="tableView" destination="pcJ-Pm-oi7" id="fyj-OE-AkT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,17 +18,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hdc-9w-Maf">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pcJ-Pm-oi7">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="hdc-9w-Maf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CyK-d5-BO8"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hdc-9w-Maf" secondAttribute="bottom" id="X7I-TA-Vdw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hdc-9w-Maf" secondAttribute="trailing" id="a3t-bS-3Pu"/>
-                <constraint firstItem="hdc-9w-Maf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="it8-oH-wAy"/>
+                <constraint firstItem="pcJ-Pm-oi7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DZA-TM-cRL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pcJ-Pm-oi7" secondAttribute="trailing" id="ZE8-qy-XsC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pcJ-Pm-oi7" secondAttribute="bottom" id="tcL-hl-rgU"/>
+                <constraint firstItem="pcJ-Pm-oi7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v9D-j8-2qR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="96"/>

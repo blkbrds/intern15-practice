@@ -17,55 +17,48 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        
     }
     
     private func configTableView() {
         let nib = UINib(nibName: "HomeCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "HomeCell")
-        tableView.delegate = self
         tableView.dataSource = self
         loadAPI()
     }
     
-//    private func configNavigation() {
-//        let resetTabBarItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(loadAPI))
-//        navigationItem.rightBarButtonItem = resetTabBarItem
-//    }
-    
-    func loadAPI() {
+    private func loadAPI() {
         print("Load API")
         viewModel.loadAPI2 { (done, msg) in
             if done {
-                print(msg)
-                self.updateAPI()
+                print("aaaaaa")
+                self.updateUI()
             } else {
-                print("API ERROR: \(msg)")
+                let alert = UIAlertController(title: "Waring", message: msg, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+                    return
+                }
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
-        
-    func updateAPI() {
-        tableView.reloadData()
+    
+    private func updateUI() {
+        self.tableView.reloadData()
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.musics.count
+        return viewModel.numberOfRowsInSection()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell else {
+            return UITableViewCell()
+        }
         cell.viewModel = viewModel.viewModelCellForAtRow(indexPath: indexPath)
         return cell
     }
-}
-
-extension HomeViewController: UITableViewDelegate {
-    
 }

@@ -16,10 +16,34 @@ final class Music {
     var artworkUrl100: String
     
     init(json: JSON) {
-        self.id = json["id"] as! String
-        self.artistName = json["artistName"] as! String
-        self.name = json["name"] as! String
-        self.releaseDate = json["releaseDate"] as! String
-        self.artworkUrl100 = json["artworkUrl100"] as! String
+        if let id = json["id"] as? String {
+            self.id = id
+        } else {
+            self.id = ""
+        }
+        
+        if let artistName = json["artistName"] as? String {
+            self.artistName = artistName
+        } else {
+            self.artistName = ""
+        }
+        
+        if let name = json["name"] as? String {
+            self.name = name
+        } else {
+            self.name = ""
+        }
+        
+        if let releaseDate = json["releaseDate"] as? String {
+            self.releaseDate = releaseDate
+        } else {
+            self.releaseDate = ""
+        }
+        
+        if let artworkUrl100 = json["artworkUrl100"] as? String {
+            self.artworkUrl100 = artworkUrl100
+        } else {
+            self.artworkUrl100 = ""
+        }
     }
 }
