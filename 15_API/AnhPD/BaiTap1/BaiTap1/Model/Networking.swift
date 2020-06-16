@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias CompletionHandler = (Data?, APIError?) -> Void
+
 enum APIError: Error {
     case error(String)
     case errorURL
@@ -34,7 +36,7 @@ final class Networking {
     
     private init() {}
     
-    func request(with urlString: String, completion: @escaping (Data?, APIError?) -> Void) {
+    func request(with urlString: String, completion: @escaping CompletionHandler) {
         guard let url = URL(string: urlString) else {
             let error = APIError.error("URL loi")
             completion(nil,error)

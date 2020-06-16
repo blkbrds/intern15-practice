@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
         print("Load API")
         viewModel.loadAPI2 { (done, msg) in
             if done {
+                print(msg)
                 self.updateAPI()
             } else {
                 print("API ERROR: \(msg)")
@@ -44,9 +45,9 @@ class HomeViewController: UIViewController {
         }
     }
         
-        func updateAPI() {
-            tableView.reloadData()
-        }
+    func updateAPI() {
+        tableView.reloadData()
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
