@@ -15,9 +15,6 @@ class Item {
     var id: Int = 0
     var nodeID: String = ""
     var name: String = ""
-    var login: String = ""
-    var avatarURL: String = ""
-    var thumbnailImage: UIImage?
     
     init(json: JSON) {
         if let fullName = json["full_name"] as? String {
@@ -39,12 +36,6 @@ class Item {
         if let name = json["name"] as? String {
             self.name = name
         }
-        
-        if let ownerJS = json["owner"] as? JSON {
-            if let login = ownerJS["login"] as? String, let avatarURL = ownerJS["avatar_url"] as? String {
-                self.login = login
-                self.avatarURL = avatarURL
-            }
-        }
+
     }
 }
