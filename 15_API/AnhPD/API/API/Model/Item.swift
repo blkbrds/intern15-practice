@@ -10,11 +10,21 @@ import Foundation
 import UIKit
 
 class Item {
+    var fullName: String = ""
+    var htmlURL: String = ""
     var id: Int = 0
     var nodeID: String = ""
     var name: String = ""
     
     init(json: JSON) {
+        if let fullName = json["full_name"] as? String {
+            self.fullName = fullName
+        }
+        
+        if let htmlURL = json["html_url"] as? String {
+            self.htmlURL = htmlURL
+        }
+        
         if let id = json["id"] as? Int {
             self.id = id
         }
