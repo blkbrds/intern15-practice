@@ -68,18 +68,6 @@ class HomeViewController3: UIViewController {
     }
     @objc func cancelButtonTouchUpInsine() {
     }
-    
-    //    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    //       return 1
-    //    }
-    //    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    //       return dataArray.count
-    //    }
-    //    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    //       let row = dataArray[row]
-    //        locationTextField.scriptTextField.inputView = pickerView1
-    //       return row
-    //    }
     func hiddenPassword() {
         passwordTextField.scriptTextField.isSecureTextEntry = true
         confirmPasswordTextField.scriptTextField.isSecureTextEntry = true
@@ -96,10 +84,10 @@ class HomeViewController3: UIViewController {
 
 extension HomeViewController3: SubView2Datasource {
     func getDataForPickerView(subView: SubView2) -> [String] {
-        switch subView.tag {
-        case  3:
+        switch arrInformation[subView.tag] {
+        case .location:
             return countryArr
-        case 5:
+        case .job:
             return jobArr
         default:
             return []

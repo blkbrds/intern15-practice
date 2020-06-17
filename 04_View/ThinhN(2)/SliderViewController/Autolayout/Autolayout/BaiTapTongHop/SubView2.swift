@@ -75,7 +75,6 @@ class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     var keyBoard: [String] = []
     var text: String = ""
     var imageString: String = ""
-    var pickerView1 = UIPickerView()
     weak var datasource: SubView2Datasource? {
         didSet {
             setupView()
@@ -124,9 +123,9 @@ class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         guard let datasource = datasource else { return }
         let info = datasource.passDataToViewController(subView: self)
         let showPicker = datasource.getDataForPickerView(subView: self)
-        keyBoard = showPicker
         scriptTextField.placeholder = info.value
         imageView.image = info.iconView
+        keyBoard = showPicker
     }
 }
 
