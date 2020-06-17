@@ -32,7 +32,14 @@ class HomeViewController: UIViewController {
             if done {
                 self.tableView.reloadData()
             } else {
-                print("Fail \(msg)")
+                let alert = UIAlertController(title: "Waring", message: "API Error", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+                    return
+                }
+                
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }

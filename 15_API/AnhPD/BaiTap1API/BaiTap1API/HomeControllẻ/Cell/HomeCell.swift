@@ -52,7 +52,9 @@ class HomeCell: UITableViewCell {
         
         if viewModel.entry.thumbnailImage == nil {
             if let delegate = delegate {
-                delegate.homeCell(cell: self, indexPath: indexPath!)
+                if let indexPath = indexPath {
+                    delegate.homeCell(cell: self, indexPath: indexPath)
+                }
             }
         } else {
             avatarImageView.image = viewModel.entry.thumbnailImage

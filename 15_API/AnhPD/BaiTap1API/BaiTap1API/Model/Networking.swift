@@ -22,6 +22,7 @@ typealias APICompletion<T> = (APIResult<T>) -> Void
 
 class Networking {
     static let urlString = "https://itunes.apple.com/us/rss/topaudiobooks/limit=10/json"
+    
     static let shared = Networking()
     
     private init() {}
