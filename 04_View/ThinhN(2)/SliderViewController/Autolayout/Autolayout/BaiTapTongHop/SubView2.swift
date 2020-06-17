@@ -12,6 +12,7 @@ protocol SubView2Delegate: class {
 }
 protocol SubView2Datasource: class {
     func passDataToViewController(subView: SubView2) -> Information
+    func getDataForPickerView(subView: SubView2) -> [String]
 }
 enum Information {
     case email
@@ -117,11 +118,13 @@ class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         super.layoutSubviews()
         viewScript.layer.cornerRadius = 10
         scriptTextField.layer.cornerRadius = 10
-        //imageView.image = UIImage(named: imageString)
+       
     }
     func setupView() {
         guard let datasource = datasource else { return }
         let info = datasource.passDataToViewController(subView: self)
+        let showPicker = datasource.getDataForPickerView(subView: self)
+        keyBoard = showPicker
         scriptTextField.placeholder = info.value
         imageView.image = info.iconView
     }
