@@ -10,24 +10,30 @@ import Foundation
 import UIKit
 
 class Entry {
-    var labelName: String
-    var labelPrice: String
-    var labelArtist: String
-    var labelImage: String
+    var labelName: String = ""
+    var labelPrice: String = ""
+    var labelArtist: String = ""
+    var labelImage: String = ""
     var thumbnailImage: UIImage?
     
     init(json: JSON) {
-        let name = json["im:name"] as! JSON
-        self.labelName = name["label"] as! String
+        if let nameJS = json["im:name"] as? JSON, let name = nameJS["label"] as? String {
+            self.labelName = name
+        }
         
-        let price = json["im:price"] as! JSON
-        self.labelPrice = price["label"] as! String
+        if let priceJS = json["im:price"] as? JSON, let price = priceJS["label"] as? String {
+            self.labelPrice = price
+        }
         
-        let artist = json["im:artist"] as! JSON
-        self.labelArtist = artist["label"] as! String
+        if let artistJS = json["im:artist"] as? JSON, let artist = artistJS["label"] as? String {
+            self.labelArtist = artist
+        }
         
-        let images = json["im:image"] as! [JSON]
-        let image = images[2]
-        self.labelImage = image["label"] as! String
+        if let imageJS = json["im:image"] as? [JSON] {
+            let image = imageJS[2]
+            if let image = image["label"] as? String {
+                self.labelImage = image
+            }
+        }
     }
 }

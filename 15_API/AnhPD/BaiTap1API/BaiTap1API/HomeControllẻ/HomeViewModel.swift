@@ -15,7 +15,8 @@ class HomeViewModel {
     var entrys: [Entry] = []
     
     func loadAPI(completion: @escaping (Bool, String) -> Void) {
-        let urlString = "https://itunes.apple.com/us/rss/topaudiobooks/limit=10/json"
+        let urlString = Networking.urlString
+        
         Networking.shared.request(urlString: urlString) { (apiResult: APIResult<EntryResult>) in
             switch apiResult {
             case .failure(let stringError):

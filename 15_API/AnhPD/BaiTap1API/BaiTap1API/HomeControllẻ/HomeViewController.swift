@@ -58,7 +58,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: HomeCellDelegate {
     func homeCell(cell: HomeCell, indexPath: IndexPath) {
         viewModel.dowloadImage(at: indexPath) { (indexPath, image) in
-            if let image = image {
+            if let _ = image {
                 self.tableView.reloadRows(at: [indexPath], with: .none)
             }
         }
