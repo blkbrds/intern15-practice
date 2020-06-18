@@ -8,16 +8,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController3" customModule="Autolayout" customModuleProvider="target">
             <connections>
-                <outlet property="birthdayTextField" destination="V3b-bx-qWP" id="Trl-yV-1tT"/>
-                <outlet property="confirmPasswordTextField" destination="hAA-bk-KgE" id="k5A-3h-5FJ"/>
-                <outlet property="emailTextField" destination="1NL-Mn-VRO" id="ubf-4J-8sm"/>
                 <outlet property="imageView" destination="pcF-xW-nKA" id="BGD-m5-BbC"/>
-                <outlet property="jobTextField" destination="pCs-gG-da0" id="OoH-Cu-M8d"/>
-                <outlet property="locationTextField" destination="c1i-dh-dpY" id="2Ht-Vd-tkS"/>
-                <outlet property="passwordTextField" destination="g3I-fz-MOz" id="oBl-Rj-jdO"/>
-                <outlet property="phoneNumberTextField" destination="6SD-yv-8MS" id="CwZ-dO-oTE"/>
-                <outlet property="usernameTextField" destination="nPY-kV-Azi" id="a9v-wF-inl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="subViews" destination="1NL-Mn-VRO" collectionClass="NSMutableArray" id="BN5-3h-Osw"/>
+                <outletCollection property="subViews" destination="nPY-kV-Azi" collectionClass="NSMutableArray" id="APt-wK-iMz"/>
+                <outletCollection property="subViews" destination="V3b-bx-qWP" collectionClass="NSMutableArray" id="6wp-cm-rnD"/>
+                <outletCollection property="subViews" destination="c1i-dh-dpY" collectionClass="NSMutableArray" id="VSW-R0-wC8"/>
+                <outletCollection property="subViews" destination="6SD-yv-8MS" collectionClass="NSMutableArray" id="x95-Mh-t6x"/>
+                <outletCollection property="subViews" destination="pCs-gG-da0" collectionClass="NSMutableArray" id="Tdl-JZ-4Ly"/>
+                <outletCollection property="subViews" destination="g3I-fz-MOz" collectionClass="NSMutableArray" id="1aF-bY-nfq"/>
+                <outletCollection property="subViews" destination="hAA-bk-KgE" collectionClass="NSMutableArray" id="0DB-4y-bXr"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -102,6 +102,9 @@
                                         <constraint firstAttribute="width" constant="100" id="eBE-LC-0pQ"/>
                                     </constraints>
                                     <state key="normal" title="Resign"/>
+                                    <connections>
+                                        <action selector="resignButtonTouchUpInsine:" destination="-1" eventType="touchUpInside" id="Mbr-ql-slW"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

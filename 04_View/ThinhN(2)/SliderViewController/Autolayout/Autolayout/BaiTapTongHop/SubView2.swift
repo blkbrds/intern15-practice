@@ -60,21 +60,21 @@ enum Information {
         case .password:
             return UIImage(named: "password")
         case .confirm_password:
-            return UIImage(named: "confirm_password")
+            return UIImage(named: "password")
         }
     }
 }
 
-class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+class SubView2: UIView {
     
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var viewScript: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scriptTextField: UITextField!
     
-    var keyBoard: [String] = []
-    var text: String = ""
-    var imageString: String = ""
+    var pickerView = UIPickerView()
+    var pickerData: [String] = []
+    var datePicker =  UIDatePicker()
     weak var datasource: SubView2Datasource? {
         didSet {
             setupView()
@@ -82,6 +82,34 @@ class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     weak var delegate: SubView2Delegate?
     
+    
+    func showDatePicker() {
+        datePicker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInsine))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTouchUpInsine))
+        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        scriptTextField.inputAccessoryView = toolbar
+        scriptTextField.inputView = datePicker
+        
+    }
+    @objc func doneButtonTouchUpInsine() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        scriptTextField.text = formatter.string(from: datePicker.date)
+    }
+    @objc func cancelButtonTouchUpInsine() {
+        
+    }
+    func hiddenPassword() {
+        scriptTextField.isSecureTextEntry = true
+        scriptTextField.isSecureTextEntry = true
+    }
+    func showNumber() {
+        scriptTextField.keyboardType = .numberPad
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
@@ -91,41 +119,46 @@ class SubView2: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         super.init(coder: coder)
         xibSetup()
     }
-   
+    
     
     private func xibSetup() {
         let nib = UINib(nibName: "SubView2", bundle: .main)
         nib.instantiate(withOwner: self, options: nil)
         addSubview(containerView)
     }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return keyBoard.count
-    }
-
-    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return keyBoard[row]
-    }
-
-    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        scriptTextField.text = keyBoard[row]
-    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         viewScript.layer.cornerRadius = 10
         scriptTextField.layer.cornerRadius = 10
-       
+        
     }
     func setupView() {
         guard let datasource = datasource else { return }
         let info = datasource.passDataToViewController(subView: self)
-        let showPicker = datasource.getDataForPickerView(subView: self)
+        pickerData = datasource.getDataForPickerView(subView: self)
         scriptTextField.placeholder = info.value
         imageView.image = info.iconView
-        keyBoard = showPicker
+        pickerView.delegate = self
+        scriptTextField.inputView = pickerView
+        
     }
 }
 
+extension SubView2 : UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        scriptTextField.text = pickerData[row]
+    }
+}
