@@ -7,7 +7,7 @@
 //
 
 import UIKit
-protocol MySliderViewDelegate: MySliderViewController {
+protocol MySliderViewDelegate: class {
     func changeValue(value: CGFloat)
 }
 
