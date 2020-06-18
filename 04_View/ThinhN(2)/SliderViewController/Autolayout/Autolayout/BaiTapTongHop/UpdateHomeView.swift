@@ -8,11 +8,11 @@
 
 import UIKit
 protocol SubView2Delegate: class {
-    func sendDataToViewController(subView: SubView2)
+    func sendDataToViewController(text: String, subView: UpdateHomeView)
 }
 protocol SubView2Datasource: class {
-    func passDataToViewController(subView: SubView2) -> Information
-    func getDataForPickerView(subView: SubView2) -> [String]
+    func passDataToViewController(subView: UpdateHomeView) -> Information
+    func getDataForPickerView(subView: UpdateHomeView) -> [String]
 }
 enum Information {
     case email
@@ -65,7 +65,7 @@ enum Information {
     }
 }
 
-class SubView2: UIView {
+class UpdateHomeView: UIView {
     
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var viewScript: UIView!
@@ -75,6 +75,7 @@ class SubView2: UIView {
     var pickerView = UIPickerView()
     var pickerData: [String] = []
     var datePicker =  UIDatePicker()
+    
     weak var datasource: SubView2Datasource? {
         didSet {
             setupView()
@@ -85,6 +86,11 @@ class SubView2: UIView {
     
     func showDatePicker() {
         datePicker.datePickerMode = .date
+        scriptTextField.inputView = datePicker
+        configToolBar()
+    }
+    
+    func configToolBar() {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInsine))
@@ -92,19 +98,20 @@ class SubView2: UIView {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTouchUpInsine))
         toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         scriptTextField.inputAccessoryView = toolbar
-        scriptTextField.inputView = datePicker
-        
     }
+    
     @objc func doneButtonTouchUpInsine() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        scriptTextField.text = formatter.string(from: datePicker.date)
+        if scriptTextField.inputView == datePicker {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            scriptTextField.text = formatter.string(from: datePicker.date)
+        }
+        scriptTextField.resignFirstResponder()
     }
     @objc func cancelButtonTouchUpInsine() {
-        
+        scriptTextField.resignFirstResponder()
     }
     func hiddenPassword() {
-        scriptTextField.isSecureTextEntry = true
         scriptTextField.isSecureTextEntry = true
     }
     func showNumber() {
@@ -120,32 +127,44 @@ class SubView2: UIView {
         xibSetup()
     }
     
-    
     private func xibSetup() {
-        let nib = UINib(nibName: "SubView2", bundle: .main)
+        let nib = UINib(nibName: "UpdateHomeView", bundle: .main)
         nib.instantiate(withOwner: self, options: nil)
         addSubview(containerView)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        viewScript.layer.borderWidth = 0.5
         viewScript.layer.cornerRadius = 10
-        scriptTextField.layer.cornerRadius = 10
-        
     }
+    
     func setupView() {
         guard let datasource = datasource else { return }
         let info = datasource.passDataToViewController(subView: self)
         pickerData = datasource.getDataForPickerView(subView: self)
         scriptTextField.placeholder = info.value
         imageView.image = info.iconView
-        pickerView.delegate = self
-        scriptTextField.inputView = pickerView
+        scriptTextField.delegate = self
         
+        switch info {
+        case .birthday:
+            showDatePicker()
+        case .password, .confirm_password:
+            hiddenPassword()
+        case .phone_number:
+            showNumber()
+        case .location, .job:
+            scriptTextField.inputView = pickerView
+            pickerView.delegate = self
+            configToolBar()
+        default:
+            break
+        }
     }
 }
 
-extension SubView2 : UIPickerViewDataSource, UIPickerViewDelegate {
+extension UpdateHomeView : UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -160,5 +179,11 @@ extension SubView2 : UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         scriptTextField.text = pickerData[row]
+    }
+}
+
+extension UpdateHomeView: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.sendDataToViewController(text: scriptTextField.text!, subView: self)
     }
 }

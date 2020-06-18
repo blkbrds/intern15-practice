@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController3" customModule="Autolayout" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="zSV-3h-fFq" id="ksg-GO-2WP"/>
                 <outlet property="imageView" destination="pcF-xW-nKA" id="BGD-m5-BbC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="subViews" destination="1NL-Mn-VRO" collectionClass="NSMutableArray" id="BN5-3h-Osw"/>
@@ -38,56 +39,56 @@
                                         <constraint firstAttribute="width" constant="150" id="Iab-DB-Ff9"/>
                                     </constraints>
                                 </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1NL-Mn-VRO" userLabel="Emaill" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1NL-Mn-VRO" userLabel="Emaill" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="237" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="dTZ-tc-JLJ"/>
                                     </constraints>
                                 </view>
-                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPY-kV-Azi" userLabel="Usernamee" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPY-kV-Azi" userLabel="Usernamee" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="321" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="f71-JK-rqj"/>
                                     </constraints>
                                 </view>
-                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3b-bx-qWP" userLabel="Birthday" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3b-bx-qWP" userLabel="Birthday" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="405" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="N5Q-Fa-8oi"/>
                                     </constraints>
                                 </view>
-                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1i-dh-dpY" userLabel="Location" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c1i-dh-dpY" userLabel="Location" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="489" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="DFR-pq-1ME"/>
                                     </constraints>
                                 </view>
-                                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SD-yv-8MS" userLabel="PhonenumerTextField" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SD-yv-8MS" userLabel="PhonenumerTextField" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="573" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="RPJ-dF-35t"/>
                                     </constraints>
                                 </view>
-                                <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCs-gG-da0" userLabel="Job" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCs-gG-da0" userLabel="Job" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="657" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="1EW-rf-Cm3"/>
                                     </constraints>
                                 </view>
-                                <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3I-fz-MOz" userLabel="Password" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3I-fz-MOz" userLabel="Password" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="741" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="tco-2D-OCx"/>
                                     </constraints>
                                 </view>
-                                <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAA-bk-KgE" userLabel="ConfirmPassword" customClass="SubView2" customModule="Autolayout" customModuleProvider="target">
+                                <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAA-bk-KgE" userLabel="ConfirmPassword" customClass="UpdateHomeView" customModule="Autolayout" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="825" width="414" height="34"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
@@ -96,18 +97,21 @@
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnG-bb-P0s">
                                     <rect key="frame" x="157" y="909" width="100" height="50"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="9Gh-Bg-y84"/>
                                         <constraint firstAttribute="width" constant="100" id="eBE-LC-0pQ"/>
                                     </constraints>
-                                    <state key="normal" title="Resign"/>
+                                    <state key="normal" title="Resign">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <connections>
                                         <action selector="resignButtonTouchUpInsine:" destination="-1" eventType="touchUpInside" id="Mbr-ql-slW"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="g3I-fz-MOz" firstAttribute="top" secondItem="pCs-gG-da0" secondAttribute="bottom" constant="50" id="2gZ-AD-zIX"/>
                                 <constraint firstItem="c1i-dh-dpY" firstAttribute="top" secondItem="V3b-bx-qWP" secondAttribute="bottom" constant="50" id="2ya-ty-8wQ"/>

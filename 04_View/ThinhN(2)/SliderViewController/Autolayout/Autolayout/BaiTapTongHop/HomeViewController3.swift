@@ -12,10 +12,12 @@ class HomeViewController3: UIViewController {
     var arrInformation: [Information] = [.email, .username, .birthday, .location, .phone_number, .job, .password, .confirm_password]
     let countryArr = ["America", "China", "Japan", "Russian", "Vietnam"]
     let jobArr = ["Professor", "Teacher", "Student", "Other"]
+    var password: String = ""
+    var confirmPassword: String = ""
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet var subViews: [SubView2]!
-    
+    @IBOutlet var subViews: [UpdateHomeView]!
+    @IBOutlet weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,52 +25,29 @@ class HomeViewController3: UIViewController {
             view.datasource = self
             view.delegate = self
         }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyBoard))
+        contentView.addGestureRecognizer(tap)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-    }
-    
-//    func showDatePicker() {
-//        datePicker.datePickerMode = .date
-//        let toolbar = UIToolbar()
-//        toolbar.sizeToFit()
-//        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInsine))
-//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTouchUpInsine))
-//        toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-//        birthdayTextField.scriptTextField.inputAccessoryView = toolbar
-//        birthdayTextField.scriptTextField.inputView = datePicker
-//
-//    }
-//    @objc func doneButtonTouchUpInsine() {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "dd/MM/yyyy"
-//        birthdayTextField.scriptTextField.text = formatter.string(from: datePicker.date)
-//    }
-//    @objc func cancelButtonTouchUpInsine() {
-//    }
-//    func hiddenPassword() {
-//        passwordTextField.scriptTextField.isSecureTextEntry = true
-//        confirmPasswordTextField.scriptTextField.isSecureTextEntry = true
-//    }
-//    func showNumber() {
-//        phoneNumberTextField.scriptTextField.keyboardType = .numberPad
-//    }
-//
-    @objc func action() {
+   @objc func dismissKeyBoard() {
         view.endEditing(true)
     }
     
     @IBAction func resignButtonTouchUpInsine(_ sender: Any) {
-        
+        var title: String = ""
+        if password == confirmPassword {
+            title = "Ban da dang ki thanh cong"
+        } else {
+            title = "Password và Confirm password không khớp"
+        }
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
-    
 }
 
 extension HomeViewController3: SubView2Datasource {
-    func getDataForPickerView(subView: SubView2) -> [String] {
+    func getDataForPickerView(subView: UpdateHomeView) -> [String] {
         switch arrInformation[subView.tag] {
         case .location:
             return countryArr
@@ -78,14 +57,21 @@ extension HomeViewController3: SubView2Datasource {
             return []
         }
     }
-    func passDataToViewController(subView: SubView2) -> Information {
+    func passDataToViewController(subView: UpdateHomeView) -> Information {
         let name = arrInformation[subView.tag]
         return name
     }
 }
 
 extension HomeViewController3: SubView2Delegate {
-    func sendDataToViewController(subView: SubView2) {
-        
+    func sendDataToViewController(text: String, subView: UpdateHomeView) {
+        switch arrInformation[subView.tag] {
+        case .password:
+            password = text
+        case .confirm_password:
+            confirmPassword = text
+        default:
+            break
+        }
     }
 }
