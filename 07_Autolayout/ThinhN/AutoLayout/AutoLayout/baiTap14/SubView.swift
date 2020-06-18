@@ -19,12 +19,9 @@ class SubView: UIView {
         super.init(coder: coder)
         xibSetup()
     }
-
     func xibSetup() {
         let nib = UINib(nibName: "SubView", bundle: .main)
         nib.instantiate(withOwner: self, options: nil)    
         addSubview(containerView)
     }
-    
 }
-
