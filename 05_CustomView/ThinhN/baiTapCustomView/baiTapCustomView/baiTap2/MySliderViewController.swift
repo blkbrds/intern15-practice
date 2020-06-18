@@ -36,8 +36,8 @@ final class MySliderViewController: UIViewController {
     }
 }
 extension MySliderViewController: MySliderViewDelegate {
-    func changeValue(value: CGFloat) {
-        self.value = Int(value)
+    func changeValue(value: CGFloat, view: MySliderView) {
+         self.value = Int(value)
     }
 }
 extension MySliderViewController: UITextFieldDelegate {

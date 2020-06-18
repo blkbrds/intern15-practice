@@ -8,7 +8,7 @@
 
 import UIKit
 protocol MySliderViewDelegate: class {
-    func changeValue(value: CGFloat)
+    func changeValue(value: CGFloat, view: MySliderView)
 }
 
 final class MySliderView: UIView {
@@ -67,7 +67,7 @@ final class MySliderView: UIView {
         sender.setTranslation(CGPoint.zero, in: self)
         value = (frame.height - 15 - thumbLabel.center.y) * 100.0 / (frame.height - 15)
         isChange = true
-        delegate?.changeValue(value: value)
+        delegate?.changeValue(value: value, view: self)
     }
     func updateUI() {
         thumbLabel.text = "\(Int(value))"
