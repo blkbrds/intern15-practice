@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol MyAvatarViewDelegate: MyAvatarViewController {
-    func nameAvatar(avatar: String)
+protocol MyAvatarViewDelegate: class {
+    func nameAvatar(avatar: String, view: MyAvatarView)
 }
 
 final class MyAvatarView: UIView{
@@ -45,7 +45,7 @@ final class MyAvatarView: UIView{
     }
     @objc private func tapGesture(){
         if let username = usernameLabel.text{
-            delegate?.nameAvatar(avatar: username)
+            delegate?.nameAvatar(avatar: username, view: self)
         }
     }
     func updateUI(avatarImage: String, userName: Int){

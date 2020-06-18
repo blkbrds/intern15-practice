@@ -42,7 +42,7 @@ final class MyAvatarViewController: UIViewController {
     }
 }
 extension MyAvatarViewController: MyAvatarViewDelegate{
-    func nameAvatar(avatar: String) {
+    func nameAvatar(avatar: String, view: MyAvatarView) {
         print(avatar)
     }
 }
