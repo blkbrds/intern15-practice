@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubView" customModule="AutoLayout" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="iN0-l3-epB" id="XHQ-vw-VWL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="ContainerView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tb1-yD-JBr">
+                    <rect key="frame" x="17" y="15" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="62E-3r-5GS"/>
+                        <constraint firstAttribute="width" constant="120" id="dLt-Zl-4Pj"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="gLX-oG-epM">
+                    <rect key="frame" x="147" y="15" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="7Mk-NN-KiY"/>
+                        <constraint firstAttribute="width" constant="120" id="keS-k3-4lu"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-b3-CLZ">
+                    <rect key="frame" x="277" y="15" width="120" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="9KF-nH-B13"/>
+                        <constraint firstAttribute="width" constant="120" id="K94-Q3-WwD"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KZ2-b3-CLZ" firstAttribute="leading" secondItem="gLX-oG-epM" secondAttribute="trailing" constant="10" id="ALw-4i-Guq"/>
+                <constraint firstItem="KZ2-b3-CLZ" firstAttribute="centerY" secondItem="gLX-oG-epM" secondAttribute="centerY" id="DWY-aL-C01"/>
+                <constraint firstItem="Tb1-yD-JBr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="17" id="Ure-Xq-Y6L"/>
+                <constraint firstItem="Tb1-yD-JBr" firstAttribute="centerY" secondItem="gLX-oG-epM" secondAttribute="centerY" id="V9I-Ia-Bdv"/>
+                <constraint firstItem="gLX-oG-epM" firstAttribute="leading" secondItem="Tb1-yD-JBr" secondAttribute="trailing" constant="10" id="iJN-HH-yb8"/>
+                <constraint firstAttribute="trailing" secondItem="KZ2-b3-CLZ" secondAttribute="trailing" constant="17" id="l30-oE-1xv"/>
+                <constraint firstItem="gLX-oG-epM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rBB-G4-b0j"/>
+                <constraint firstItem="gLX-oG-epM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yq2-RL-5bW"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="93" y="-102"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="10" width="250" height="444.66665649414062"/>
+    </resources>
+</document>
