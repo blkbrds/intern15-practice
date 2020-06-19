@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         let nib = UINib(nibName: "HomeCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "HomeCell")
         tableView.dataSource = self
+        tableView.delegate = self
         loadAPI()
     }
     
@@ -32,20 +33,24 @@ class HomeViewController: UIViewController {
             if done {
                 self.tableView.reloadData()
             } else {
-                let alert = UIAlertController(title: "Waring", message: "API Error", preferredStyle: .alert)
-                
-                let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-                    return
-                }
-                
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
+                self.showAlert(msg: msg)
             }
         }
     }
+    
+    private func showAlert(msg: String) {
+        let alert = UIAlertController(title: "Waring", message: msg, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
+            return
+        }
+        
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection()
     }
@@ -54,11 +59,16 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell else {
             return UITableViewCell()
         }
-        cell.setupUI()
         cell.delegate = self
         cell.indexPath = indexPath
         cell.viewModel = viewModel.viewModelCellForRowAt(indexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.viewModel = viewModel.viewModelDidSelectRowAt(indexPath: indexPath)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

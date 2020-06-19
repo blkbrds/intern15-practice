@@ -21,13 +21,13 @@ enum APIResult<T> {
 typealias APICompletion<T> = (APIResult<T>) -> Void
 
 class Networking {
-    static let urlString = "https://itunes.apple.com/us/rss/topaudiobooks/limit=10/json"
-    
     static let shared = Networking()
+    
+    let urlString = "https://itunes.apple.com/us/rss/topaudiobooks/limit=10/json"
     
     private init() {}
     
-    func request(urlString: String, completion: @escaping APICompletion<EntryResult>) {
+    func request(completion: @escaping APICompletion<EntryResult>) {
         var entryResults: [Entry] = []
         guard let url = URL(string: urlString) else {
             let error = APIResult<EntryResult>.failure("URL Error")

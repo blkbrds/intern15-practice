@@ -29,6 +29,7 @@ class HomeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
         // Initialization code
     }
 

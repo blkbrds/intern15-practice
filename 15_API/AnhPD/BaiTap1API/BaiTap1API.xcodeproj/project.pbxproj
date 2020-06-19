@@ -19,6 +19,9 @@
 		F2A909B724986818008602C6 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A909B524986818008602C6 /* HomeCell.swift */; };
 		F2A909B824986818008602C6 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2A909B624986818008602C6 /* HomeCell.xib */; };
 		F2A909BA2498682D008602C6 /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2A909B92498682D008602C6 /* HomeCellViewModel.swift */; };
+		F2D42279249A051600AEFBE4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D42277249A051600AEFBE4 /* DetailViewController.swift */; };
+		F2D4227A249A051600AEFBE4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D42278249A051600AEFBE4 /* DetailViewController.xib */; };
+		F2D4227C249A074D00AEFBE4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4227B249A074D00AEFBE4 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		F2A909B524986818008602C6 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		F2A909B624986818008602C6 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		F2A909B92498682D008602C6 /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
+		F2D42277249A051600AEFBE4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F2D42278249A051600AEFBE4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		F2D4227B249A074D00AEFBE4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +74,8 @@
 		F24861D0248F22C6005502E4 /* BaiTap1API */ = {
 			isa = PBXGroup;
 			children = (
+				F2D4227D249A115B00AEFBE4 /* Controller */,
 				F24861EF248F2360005502E4 /* Model */,
-				F24861E5248F22EF005502E4 /* HomeController */,
 				F24861D1248F22C6005502E4 /* AppDelegate.swift */,
 				F24861D3248F22C6005502E4 /* SceneDelegate.swift */,
 				F24861DA248F22C8005502E4 /* Assets.xcassets */,
@@ -108,6 +114,25 @@
 				F24861FC249707E1005502E4 /* Networking.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F2D42276249A04ED00AEFBE4 /* DetailController */ = {
+			isa = PBXGroup;
+			children = (
+				F2D42277249A051600AEFBE4 /* DetailViewController.swift */,
+				F2D42278249A051600AEFBE4 /* DetailViewController.xib */,
+				F2D4227B249A074D00AEFBE4 /* DetailViewModel.swift */,
+			);
+			path = DetailController;
+			sourceTree = "<group>";
+		};
+		F2D4227D249A115B00AEFBE4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F24861E5248F22EF005502E4 /* HomeController */,
+				F2D42276249A04ED00AEFBE4 /* DetailController */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +196,7 @@
 				F24861DB248F22C8005502E4 /* Assets.xcassets in Resources */,
 				F2A909B824986818008602C6 /* HomeCell.xib in Resources */,
 				F24861E9248F2321005502E4 /* HomeViewController.xib in Resources */,
+				F2D4227A249A051600AEFBE4 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +214,9 @@
 				F24861D4248F22C6005502E4 /* SceneDelegate.swift in Sources */,
 				F24861FD249707E1005502E4 /* Networking.swift in Sources */,
 				F24861F7248F3113005502E4 /* HomeViewModel.swift in Sources */,
+				F2D42279249A051600AEFBE4 /* DetailViewController.swift in Sources */,
 				F2A909B424985ECB008602C6 /* Entry.swift in Sources */,
+				F2D4227C249A074D00AEFBE4 /* DetailViewModel.swift in Sources */,
 				F24861E8248F2321005502E4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

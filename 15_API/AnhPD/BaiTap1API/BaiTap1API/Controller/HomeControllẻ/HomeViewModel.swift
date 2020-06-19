@@ -15,9 +15,8 @@ class HomeViewModel {
     var entrys: [Entry] = []
     
     func loadAPI(completion: @escaping (Bool, String) -> Void) {
-        let urlString = Networking.urlString
         
-        Networking.shared.request(urlString: urlString) { (apiResult: APIResult<EntryResult>) in
+        Networking.shared.request() { (apiResult: APIResult<EntryResult>) in
             switch apiResult {
             case .failure(let stringError):
                 completion(false, stringError)
@@ -52,6 +51,12 @@ class HomeViewModel {
     func viewModelCellForRowAt(indexPath: IndexPath) -> HomeCellViewModel {
         let item = entrys[indexPath.row]
         let viewModel = HomeCellViewModel(entry: item)
+        return viewModel
+    }
+    
+    func viewModelDidSelectRowAt(indexPath: IndexPath) -> DetailViewModel {
+        let item = entrys[indexPath.row]
+        let viewModel = DetailViewModel(entry: item)
         return viewModel
     }
 }

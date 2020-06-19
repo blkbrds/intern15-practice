@@ -10,23 +10,29 @@ import Foundation
 import UIKit
 
 class Entry {
-    var labelName: String = ""
-    var labelPrice: String = ""
-    var labelArtist: String = ""
+    var labelName: String
+    var labelPrice: String
+    var labelArtist: String
     var labelImage: String = ""
     var thumbnailImage: UIImage?
     
     init(json: JSON) {
         if let nameJS = json["im:name"] as? JSON, let name = nameJS["label"] as? String {
             self.labelName = name
+        } else {
+            self.labelName = ""
         }
         
         if let priceJS = json["im:price"] as? JSON, let price = priceJS["label"] as? String {
             self.labelPrice = price
+        }else {
+            self.labelPrice = ""
         }
         
         if let artistJS = json["im:artist"] as? JSON, let artist = artistJS["label"] as? String {
             self.labelArtist = artist
+        }else {
+            self.labelArtist = ""
         }
         
         if let imageJS = json["im:image"] as? [JSON] {
