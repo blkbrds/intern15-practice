@@ -13,9 +13,7 @@ class HomeViewControllerD: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "View Controller D"
-        // Do any additional setup after loading the view.
     }
-
 
     @IBAction func nextButtonTouchUpInsine(_ sender: Any) {
         let vc = HomeViewControllerE()

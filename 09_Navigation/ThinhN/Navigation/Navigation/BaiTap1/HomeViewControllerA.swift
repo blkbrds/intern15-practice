@@ -14,10 +14,9 @@ class HomeViewControllerA: UIViewController {
         super.viewDidLoad()
         title = "View Controller A"
     }
-
+    
     @IBAction func nextButtonTouchUpInsine(_ sender: Any) {
         let vc = HomeViewControllerB()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
