@@ -33,7 +33,7 @@ class HomeViewModel {
     func dowloadImage(at indexPath: IndexPath, completion: @escaping (IndexPath, UIImage?) -> Void) {
         let item = entrys[indexPath.row]
         if item.thumbnailImage == nil {
-            Networking.shared.downloadImage(url: item.labelImage) { (image) in
+            Networking.shared.downloadImage(url: item.image) { (image) in
                 if let image = image {
                     item.thumbnailImage = image
                     completion(indexPath, image)

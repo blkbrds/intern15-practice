@@ -47,9 +47,9 @@ class HomeCell: UITableViewCell {
         guard let viewModel = viewModel else {
             return
         }
-        nameLabel.text = viewModel.entry.labelName
-        priceLabel.text = viewModel.entry.labelPrice
-        artistLabel.text = viewModel.entry.labelArtist
+        nameLabel.text = viewModel.entry.name
+        priceLabel.text = viewModel.entry.price
+        artistLabel.text = viewModel.entry.artist
         
         if viewModel.entry.thumbnailImage == nil {
             if let delegate = delegate {

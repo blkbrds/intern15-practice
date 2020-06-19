@@ -28,8 +28,8 @@ class DetailViewController: UIViewController {
             return
         }
         avatarImageView.image = viewModel.entry.thumbnailImage
-        nameLabel.text = viewModel.entry.labelName
-        priceLabel.text = viewModel.entry.labelPrice
-        artistLabel.text = viewModel.entry.labelArtist
+        nameLabel.text = viewModel.entry.name
+        priceLabel.text = viewModel.entry.price
+        artistLabel.text = viewModel.entry.artist
     }
 }
