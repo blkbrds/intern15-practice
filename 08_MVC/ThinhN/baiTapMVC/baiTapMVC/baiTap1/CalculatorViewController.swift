@@ -21,11 +21,11 @@ class CalculatorViewController: UIViewController {
         hienThiKetQuaLabel.text = String(giaTri.themSo(soDuocThem: Int(sender.tag)))
     }
     @IBAction func chooseOperatorButtonTouchUpInsine(_ sender: UIButton) {
-        hienThiKetQuaLabel.text = String(TinhToan.share.nhanPhepTinh)
+        
         switch sender.tag {
         case 0:
             hienThiKetQuaLabel.text = "+"
-          //  TinhToan.share.cacPhepTinh.append("+")
+            TinhToan.share.cacPhepTinh.append("+")
             giaTri.cacSoTrongMang.append(giaTri.soBanDau)
             giaTri.soBanDau = 0
         case 1:
@@ -35,12 +35,12 @@ class CalculatorViewController: UIViewController {
             giaTri.soBanDau = 0
         case 2:
             hienThiKetQuaLabel.text = "x"
-        //    TinhToan.share.cacPhepTinh.append("x")
+            TinhToan.share.cacPhepTinh.append("x")
             giaTri.cacSoTrongMang.append(giaTri.soBanDau)
             giaTri.soBanDau = 0
         default:
             hienThiKetQuaLabel.text = "/"
-        //    TinhToan.share.cacPhepTinh.append("/")
+           TinhToan.share.cacPhepTinh.append("/")
             giaTri.cacSoTrongMang.append(giaTri.soBanDau)
             giaTri.soBanDau = 0
         }
@@ -53,14 +53,12 @@ class CalculatorViewController: UIViewController {
         ketQuaCuoi = 0
     }
     @IBAction func resultButtonTouchUpInsine(_ sender: Any) {
-        guard giaTri.soBanDau != 0 else {
-            return
-        }
+        guard giaTri.soBanDau != 0 else { return }
         giaTri.cacSoTrongMang.append(giaTri.soBanDau)
         if giaTri.cacSoTrongMang[0] == 0 {
             TinhToan.share.ketQua = ketQuaCuoi
             TinhToan.share.nhanPhepTinh = TinhToan.share.cacPhepTinh[0]
-            ketQuaCuoi = TinhToan.share.phepTinh(giaTriNhapVao: giaTri.cacSoTrongMang[1])
+            ketQuaCuoi = TinhToan.share.phepTinh(giaTriNhapVao: giaTri.cacSoTrongMang[1]) + giaTri.cacSoTrongMang[2]
         } else {
             TinhToan.share.ketQua = giaTri.cacSoTrongMang[0]
             for index in 1 ..< giaTri.cacSoTrongMang.count {
