@@ -10,7 +10,7 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
-    @IBOutlet weak var hienKetQua: UILabel!
+    @IBOutlet weak var hienThiKetQuaLabel: UILabel!
     
     private var giaTri: ToanHang = ToanHang()
     private var ketQuaCuoi: Int = 0
@@ -18,35 +18,35 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func chooseNumberTouchUpInsine(_ sender: UIButton) {
-        hienKetQua.text = String(giaTri.themSo(soDuocThem: Int(sender.tag)))
+        hienThiKetQuaLabel.text = String(giaTri.themSo(soDuocThem: Int(sender.tag)))
     }
     @IBAction func chooseOperatorButtonTouchUpInsine(_ sender: UIButton) {
-        hienKetQua.text = String(TinhToan.share.nhanPhepTinh)
+        hienThiKetQuaLabel.text = String(TinhToan.share.nhanPhepTinh)
         switch sender.tag {
         case 0:
-            hienKetQua.text = "+"
-            TinhToan.share.cacPhepTinh.append("+")
+            hienThiKetQuaLabel.text = "+"
+          //  TinhToan.share.cacPhepTinh.append("+")
             giaTri.cacSoTrongMang.append(giaTri.soBanDau)
             giaTri.soBanDau = 0
         case 1:
-            hienKetQua.text = "-"
+            hienThiKetQuaLabel.text = "-"
             TinhToan.share.cacPhepTinh.append("-")
             giaTri.cacSoTrongMang.append(giaTri.soBanDau)
             giaTri.soBanDau = 0
         case 2:
-            hienKetQua.text = "x"
-            TinhToan.share.cacPhepTinh.append("x")
+            hienThiKetQuaLabel.text = "x"
+        //    TinhToan.share.cacPhepTinh.append("x")
             giaTri.cacSoTrongMang.append(giaTri.soBanDau)
             giaTri.soBanDau = 0
         default:
-            hienKetQua.text = "/"
-            TinhToan.share.cacPhepTinh.append("/")
+            hienThiKetQuaLabel.text = "/"
+        //    TinhToan.share.cacPhepTinh.append("/")
             giaTri.cacSoTrongMang.append(giaTri.soBanDau)
             giaTri.soBanDau = 0
         }
     }
     @IBAction private func clearButtonTouchUpInsine(_ sender: Any) {
-        hienKetQua.text = "0"
+        hienThiKetQuaLabel.text = "0"
         giaTri.cacSoTrongMang = []
         TinhToan.share.cacPhepTinh = []
         giaTri.soBanDau = 0
@@ -70,9 +70,9 @@ class CalculatorViewController: UIViewController {
             ketQuaCuoi = TinhToan.share.ketQua
         }
         if ketQuaCuoi <= 999999 {
-            hienKetQua.text = String(ketQuaCuoi)
+            hienThiKetQuaLabel.text = String(ketQuaCuoi)
         } else {
-            hienKetQua.text = "999999"
+            hienThiKetQuaLabel.text = "999999"
         }
         giaTri.cacSoTrongMang = []
         TinhToan.share.cacPhepTinh = []
