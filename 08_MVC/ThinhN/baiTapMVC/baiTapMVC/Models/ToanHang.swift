@@ -13,7 +13,7 @@ final class ToanHang {
     var cacSoTrongMang: [Int] = []
     func themSo(soDuocThem: Int) -> Int {
         if self.soBanDau * 10 + soDuocThem <= 999999 {
-           self.soBanDau = self.soBanDau * 10 + soDuocThem
+            self.soBanDau = self.soBanDau * 10 + soDuocThem
         }
         return self.soBanDau
     }

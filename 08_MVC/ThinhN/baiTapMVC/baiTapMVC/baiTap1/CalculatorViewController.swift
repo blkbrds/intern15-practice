@@ -13,10 +13,10 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var hienKetQua: UILabel!
     
     private var giaTri: ToanHang = ToanHang()
-       private var ketQuaCuoi: Int = 0
-       override func viewDidLoad() {
-           super.viewDidLoad()
-       }
+    private var ketQuaCuoi: Int = 0
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     @IBAction func chooseNumberTouchUpInsine(_ sender: UIButton) {
         hienKetQua.text = String(giaTri.themSo(soDuocThem: Int(sender.tag)))
     }
@@ -53,29 +53,29 @@ class CalculatorViewController: UIViewController {
         ketQuaCuoi = 0
     }
     @IBAction func resultButtonTouchUpInsine(_ sender: Any) {
-      guard giaTri.soBanDau != 0 else {
-               return
+        guard giaTri.soBanDau != 0 else {
+            return
         }
         giaTri.cacSoTrongMang.append(giaTri.soBanDau)
-           if giaTri.cacSoTrongMang[0] == 0 {
-               TinhToan.share.ketQua = ketQuaCuoi
-               TinhToan.share.nhanPhepTinh = TinhToan.share.cacPhepTinh[0]
-               ketQuaCuoi = TinhToan.share.phepTinh(giaTriNhapVao: giaTri.cacSoTrongMang[1])
-           } else {
-               TinhToan.share.ketQua = giaTri.cacSoTrongMang[0]
-               for index in 1 ..< giaTri.cacSoTrongMang.count {
-                   TinhToan.share.nhanPhepTinh = TinhToan.share.cacPhepTinh[index - 1 ]
-                   TinhToan.share.ketQua = TinhToan.share.phepTinh(giaTriNhapVao: giaTri.cacSoTrongMang[index])
-               }
-               ketQuaCuoi = TinhToan.share.ketQua
-           }
-           if ketQuaCuoi <= 999999 {
-               hienKetQua.text = String(ketQuaCuoi)
-           } else {
-               hienKetQua.text = "999999"
-           }
-           giaTri.cacSoTrongMang = []
-           TinhToan.share.cacPhepTinh = []
-           giaTri.soBanDau = 0
-       }
+        if giaTri.cacSoTrongMang[0] == 0 {
+            TinhToan.share.ketQua = ketQuaCuoi
+            TinhToan.share.nhanPhepTinh = TinhToan.share.cacPhepTinh[0]
+            ketQuaCuoi = TinhToan.share.phepTinh(giaTriNhapVao: giaTri.cacSoTrongMang[1])
+        } else {
+            TinhToan.share.ketQua = giaTri.cacSoTrongMang[0]
+            for index in 1 ..< giaTri.cacSoTrongMang.count {
+                TinhToan.share.nhanPhepTinh = TinhToan.share.cacPhepTinh[index - 1 ]
+                TinhToan.share.ketQua = TinhToan.share.phepTinh(giaTriNhapVao: giaTri.cacSoTrongMang[index])
+            }
+            ketQuaCuoi = TinhToan.share.ketQua
+        }
+        if ketQuaCuoi <= 999999 {
+            hienKetQua.text = String(ketQuaCuoi)
+        } else {
+            hienKetQua.text = "999999"
+        }
+        giaTri.cacSoTrongMang = []
+        TinhToan.share.cacPhepTinh = []
+        giaTri.soBanDau = 0
+    }
 }
