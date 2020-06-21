@@ -29,6 +29,16 @@
 		7270AE3A249C9551001AD6B4 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7270AE38249C9551001AD6B4 /* EditViewController.xib */; };
 		7270AE3C249CA551001AD6B4 /* DataUser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7270AE3B249CA551001AD6B4 /* DataUser.plist */; };
 		7270AE3E249CB123001AD6B4 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7270AE3D249CB123001AD6B4 /* DataUser.swift */; };
+		84C07945249DC3ED00DA3CCA /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C07943249DC3ED00DA3CCA /* AvatarViewController.swift */; };
+		84C07946249DC3ED00DA3CCA /* AvatarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C07944249DC3ED00DA3CCA /* AvatarViewController.xib */; };
+		84C07948249DC4A900DA3CCA /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C07947249DC4A900DA3CCA /* AvatarView.swift */; };
+		84C0794A249DC4BA00DA3CCA /* AvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C07949249DC4BA00DA3CCA /* AvatarView.xib */; };
+		84C0794D249EF33300DA3CCA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0794B249EF33300DA3CCA /* ProfileViewController.swift */; };
+		84C0794E249EF33300DA3CCA /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C0794C249EF33300DA3CCA /* ProfileViewController.xib */; };
+		84C07952249FCAFD00DA3CCA /* ColorNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C07950249FCAFD00DA3CCA /* ColorNavigationViewController.swift */; };
+		84C07953249FCAFD00DA3CCA /* ColorNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C07951249FCAFD00DA3CCA /* ColorNavigationViewController.xib */; };
+		84C07956249FD77100DA3CCA /* NewfeedNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C07954249FD77100DA3CCA /* NewfeedNavigationViewController.swift */; };
+		84C07957249FD77100DA3CCA /* NewfeedNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C07955249FD77100DA3CCA /* NewfeedNavigationViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +66,16 @@
 		7270AE38249C9551001AD6B4 /* EditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		7270AE3B249CA551001AD6B4 /* DataUser.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DataUser.plist; sourceTree = "<group>"; };
 		7270AE3D249CB123001AD6B4 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
+		84C07943249DC3ED00DA3CCA /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		84C07944249DC3ED00DA3CCA /* AvatarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarViewController.xib; sourceTree = "<group>"; };
+		84C07947249DC4A900DA3CCA /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		84C07949249DC4BA00DA3CCA /* AvatarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarView.xib; sourceTree = "<group>"; };
+		84C0794B249EF33300DA3CCA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84C0794C249EF33300DA3CCA /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		84C07950249FCAFD00DA3CCA /* ColorNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorNavigationViewController.swift; sourceTree = "<group>"; };
+		84C07951249FCAFD00DA3CCA /* ColorNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorNavigationViewController.xib; sourceTree = "<group>"; };
+		84C07954249FD77100DA3CCA /* NewfeedNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewfeedNavigationViewController.swift; sourceTree = "<group>"; };
+		84C07955249FD77100DA3CCA /* NewfeedNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewfeedNavigationViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +108,8 @@
 		7270AE03249C626C001AD6B4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				84C0794F249F145100DA3CCA /* Baitap4 */,
+				84C07942249DC3D500DA3CCA /* Baitap3 */,
 				7270AE2D249C94F8001AD6B4 /* Baitap2 */,
 				7270AE18249C62B3001AD6B4 /* BaiTap1 */,
 				7270AE04249C626C001AD6B4 /* AppDelegate.swift */,
@@ -137,6 +159,30 @@
 				7270AE3D249CB123001AD6B4 /* DataUser.swift */,
 			);
 			path = Baitap2;
+			sourceTree = "<group>";
+		};
+		84C07942249DC3D500DA3CCA /* Baitap3 */ = {
+			isa = PBXGroup;
+			children = (
+				84C07943249DC3ED00DA3CCA /* AvatarViewController.swift */,
+				84C07944249DC3ED00DA3CCA /* AvatarViewController.xib */,
+				84C07947249DC4A900DA3CCA /* AvatarView.swift */,
+				84C07949249DC4BA00DA3CCA /* AvatarView.xib */,
+				84C0794B249EF33300DA3CCA /* ProfileViewController.swift */,
+				84C0794C249EF33300DA3CCA /* ProfileViewController.xib */,
+			);
+			path = Baitap3;
+			sourceTree = "<group>";
+		};
+		84C0794F249F145100DA3CCA /* Baitap4 */ = {
+			isa = PBXGroup;
+			children = (
+				84C07950249FCAFD00DA3CCA /* ColorNavigationViewController.swift */,
+				84C07951249FCAFD00DA3CCA /* ColorNavigationViewController.xib */,
+				84C07954249FD77100DA3CCA /* NewfeedNavigationViewController.swift */,
+				84C07955249FD77100DA3CCA /* NewfeedNavigationViewController.xib */,
+			);
+			path = Baitap4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,11 +243,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C0794E249EF33300DA3CCA /* ProfileViewController.xib in Resources */,
 				7270AE31249C9513001AD6B4 /* LoginViewController.xib in Resources */,
 				7270AE24249C6386001AD6B4 /* HomeViewControllerC.xib in Resources */,
 				7270AE3A249C9551001AD6B4 /* EditViewController.xib in Resources */,
+				84C07953249FCAFD00DA3CCA /* ColorNavigationViewController.xib in Resources */,
+				84C07946249DC3ED00DA3CCA /* AvatarViewController.xib in Resources */,
 				7270AE0E249C626D001AD6B4 /* Preview Assets.xcassets in Resources */,
+				84C0794A249DC4BA00DA3CCA /* AvatarView.xib in Resources */,
 				7270AE28249C63BC001AD6B4 /* HomeViewControllerD.xib in Resources */,
+				84C07957249FD77100DA3CCA /* NewfeedNavigationViewController.xib in Resources */,
 				7270AE2C249C63D2001AD6B4 /* HomeViewControllerE.xib in Resources */,
 				7270AE0B249C626D001AD6B4 /* Assets.xcassets in Resources */,
 				7270AE20249C6329001AD6B4 /* HomeViewControllerB.xib in Resources */,
@@ -220,15 +271,20 @@
 			files = (
 				7270AE39249C9551001AD6B4 /* EditViewController.swift in Sources */,
 				7270AE27249C63BC001AD6B4 /* HomeViewControllerD.swift in Sources */,
+				84C07952249FCAFD00DA3CCA /* ColorNavigationViewController.swift in Sources */,
 				7270AE05249C626C001AD6B4 /* AppDelegate.swift in Sources */,
 				7270AE1B249C6309001AD6B4 /* HomeViewControllerA.swift in Sources */,
+				84C0794D249EF33300DA3CCA /* ProfileViewController.swift in Sources */,
+				84C07948249DC4A900DA3CCA /* AvatarView.swift in Sources */,
 				7270AE3E249CB123001AD6B4 /* DataUser.swift in Sources */,
 				7270AE1F249C6329001AD6B4 /* HomeViewControllerB.swift in Sources */,
 				7270AE30249C9513001AD6B4 /* LoginViewController.swift in Sources */,
 				7270AE35249C9546001AD6B4 /* HomeViewController.swift in Sources */,
 				7270AE23249C6386001AD6B4 /* HomeViewControllerC.swift in Sources */,
 				7270AE07249C626C001AD6B4 /* SceneDelegate.swift in Sources */,
+				84C07956249FD77100DA3CCA /* NewfeedNavigationViewController.swift in Sources */,
 				7270AE2B249C63D2001AD6B4 /* HomeViewControllerE.swift in Sources */,
+				84C07945249DC3ED00DA3CCA /* AvatarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
