@@ -23,5 +23,4 @@ class NewfeedNavigationViewController: UIViewController {
         let settingButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
         navigationItem.rightBarButtonItem = settingButton
     }
-    
 }

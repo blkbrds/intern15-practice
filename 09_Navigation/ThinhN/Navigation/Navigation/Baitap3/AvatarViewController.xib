@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,17 +20,19 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcV-wT-lk0">
                     <rect key="frame" x="0.0" y="50" width="414" height="846"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exX-4w-CJ9" userLabel="ContainerView" customClass="AvatarView" customModule="Navigation" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1792"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exX-4w-CJ9" userLabel="ContainerView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1500" id="vgl-2e-8e4"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="exX-4w-CJ9" secondAttribute="trailing" id="Caz-8n-0yZ"/>
                         <constraint firstItem="exX-4w-CJ9" firstAttribute="width" secondItem="xcV-wT-lk0" secondAttribute="width" id="Dds-fa-Bm9"/>
-                        <constraint firstItem="exX-4w-CJ9" firstAttribute="height" secondItem="xcV-wT-lk0" secondAttribute="height" multiplier="2" constant="100" id="Mob-de-8k7"/>
                         <constraint firstItem="exX-4w-CJ9" firstAttribute="top" secondItem="xcV-wT-lk0" secondAttribute="top" id="jKd-8s-D4l"/>
-                        <constraint firstAttribute="bottom" secondItem="exX-4w-CJ9" secondAttribute="bottom" constant="400" id="lGG-Wl-nVb"/>
+                        <constraint firstAttribute="bottom" secondItem="exX-4w-CJ9" secondAttribute="bottom" constant="50" id="lGG-Wl-nVb"/>
                         <constraint firstItem="exX-4w-CJ9" firstAttribute="leading" secondItem="xcV-wT-lk0" secondAttribute="leading" id="oas-u3-YhK"/>
                     </constraints>
                 </scrollView>

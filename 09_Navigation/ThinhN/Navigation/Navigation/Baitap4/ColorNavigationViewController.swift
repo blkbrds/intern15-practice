@@ -10,8 +10,7 @@ import UIKit
 
 class ColorNavigationViewController: UIViewController {
     
-    
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         title = "Gradient NavigationBar"
         setupView()
