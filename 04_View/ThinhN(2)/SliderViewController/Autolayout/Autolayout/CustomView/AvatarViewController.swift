@@ -54,6 +54,6 @@ extension AvatarViewController: SubView3Delegate {
         let person = name[view.tag]
         let alert = UIAlertController(title: "Xin chao", message: "Toi la \(person)", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 }

@@ -11,7 +11,7 @@ protocol SubView2Delegate: class {
     func sendDataToViewController(text: String, subView: UpdateHomeView)
 }
 protocol SubView2Datasource: class {
-    func passDataToViewController(subView: UpdateHomeView) -> Information
+    func getInformation(subView: UpdateHomeView) -> Information
     func getDataForPickerView(subView: UpdateHomeView) -> [String]
 }
 enum Information {
@@ -23,7 +23,7 @@ enum Information {
     case job
     case password
     case confirm_password
-    var value: String {
+    var placeholder: String {
         switch self {
         case .email:
             return "Email"
@@ -43,7 +43,7 @@ enum Information {
             return "Confirm password "
         }
     }
-    var iconView: UIImage? {
+    var iconImage: UIImage? {
         switch self {
         case .email:
             return UIImage(named: "email")
@@ -141,10 +141,10 @@ class UpdateHomeView: UIView {
     
     func setupView() {
         guard let datasource = datasource else { return }
-        let info = datasource.passDataToViewController(subView: self)
+        let info = datasource.getInformation(subView: self)
         pickerData = datasource.getDataForPickerView(subView: self)
-        scriptTextField.placeholder = info.value
-        imageView.image = info.iconView
+        scriptTextField.placeholder = info.placeholder
+        imageView.image = info.iconImage
         scriptTextField.delegate = self
         
         switch info {

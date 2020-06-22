@@ -57,7 +57,7 @@ extension HomeViewController3: SubView2Datasource {
             return []
         }
     }
-    func passDataToViewController(subView: UpdateHomeView) -> Information {
+    func getInformation(subView: UpdateHomeView) -> Information {
         let name = arrInformation[subView.tag]
         return name
     }

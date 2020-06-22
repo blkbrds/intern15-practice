@@ -19,7 +19,7 @@ class SliderView: UIView {
     @IBOutlet weak var blueSliderView: UIView!
     
     weak var delegate: UserViewDelegate?
-    var textLabel = 50 
+    var value = 50
     
     func setupView() {
         whiteSliderView.layer.borderWidth = 1
@@ -30,6 +30,7 @@ class SliderView: UIView {
         thumbnailLabel.clipsToBounds = true
     }
     override func awakeFromNib() {
+        super.awakeFromNib()
         setupView()
     }
     func getValue(value: Int) {
@@ -45,10 +46,10 @@ class SliderView: UIView {
         if let touch = touches.first {
             let position = touch.location(in: self)
             if touch.view == thumbnailLabel {
-                textLabel = Int((whiteSliderView.bounds.height - position.y) / whiteSliderView.bounds.height * 100)
-                if textLabel >= 0 && textLabel <= 100 {
-                    delegate?.didTap(view: self, count: textLabel)
-                    thumbnailLabel.text = String(textLabel)
+                value = Int((whiteSliderView.bounds.height - position.y) / whiteSliderView.bounds.height * 100)
+                if value >= 0 && value <= 100 {
+                    delegate?.didTap(view: self, count: value)
+                    thumbnailLabel.text = String(value)
                     thumbnailLabel.frame = CGRect(x: thumbnailLabel.frame.origin.x, y: position.y - thumbnailLabel.frame.height / 2, width: thumbnailLabel.frame.width, height: thumbnailLabel.frame.height)
                     blueSliderView.frame = CGRect(x: blueSliderView.frame.origin.x, y: position.y , width: blueSliderView.frame.width, height: blueSliderView.frame.maxY - position.y)
                 }

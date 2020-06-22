@@ -12,7 +12,7 @@ class SliderViewController: UIViewController {
     
     @IBOutlet weak var valueTextFiled: UITextField!
     
-    var  sliderView: SliderView?
+    var sliderView: SliderView?
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderView = Bundle.main.loadNibNamed("SliderView", owner: self, options: nil)? [0] as? SliderView

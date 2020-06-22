@@ -18,8 +18,6 @@ class SubView3: UIView {
 
     @IBOutlet weak var button: UIButton!
 
-    var nameButton: String = ""
-
     weak var delegate: SubView3Delegate?
     weak var datasource: SubView3Datasource? {
         didSet {
