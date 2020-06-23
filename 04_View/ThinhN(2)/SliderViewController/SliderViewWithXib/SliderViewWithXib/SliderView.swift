@@ -25,6 +25,7 @@ class SliderView: UIView {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         setupView()
     }
     

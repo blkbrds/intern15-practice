@@ -56,7 +56,7 @@ class SubView: UIView {
         birthdayLabel.text = person.date
     }
 
-    @IBAction func buttonTouchUpInsine(_ sender: Any) {
+    @IBAction func buttonTouchUpInside(_ sender: Any) {
         delegate?.sendValueToViewController(userView: self)
     }
 }

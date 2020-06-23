@@ -7,10 +7,10 @@
 //
 
 import UIKit
-protocol SubView2Delegate: class {
+protocol UpdateHomeViewDelegate: class {
     func sendDataToViewController(text: String, subView: UpdateHomeView)
 }
-protocol SubView2Datasource: class {
+protocol UpdateHomeViewDatasource: class {
     func getInformation(subView: UpdateHomeView) -> Information
     func getDataForPickerView(subView: UpdateHomeView) -> [String]
 }
@@ -76,15 +76,14 @@ class UpdateHomeView: UIView {
     var pickerData: [String] = []
     var datePicker =  UIDatePicker()
     
-    weak var datasource: SubView2Datasource? {
+    weak var datasource: UpdateHomeViewDatasource? {
         didSet {
             setupView()
         }
     }
-    weak var delegate: SubView2Delegate?
+    weak var delegate: UpdateHomeViewDelegate?
     
-    
-    func showDatePicker() {
+    func configDatePicker() {
         datePicker.datePickerMode = .date
         scriptTextField.inputView = datePicker
         configToolBar()
@@ -111,10 +110,10 @@ class UpdateHomeView: UIView {
     @objc func cancelButtonTouchUpInsine() {
         scriptTextField.resignFirstResponder()
     }
-    func hiddenPassword() {
+    func configPasswordTextField() {
         scriptTextField.isSecureTextEntry = true
     }
-    func showNumber() {
+    func configNumberKeyboard() {
         scriptTextField.keyboardType = .numberPad
     }
     override init(frame: CGRect) {
@@ -149,11 +148,11 @@ class UpdateHomeView: UIView {
         
         switch info {
         case .birthday:
-            showDatePicker()
+            configDatePicker()
         case .password, .confirm_password:
-            hiddenPassword()
+            configPasswordTextField()
         case .phone_number:
-            showNumber()
+            configNumberKeyboard()
         case .location, .job:
             scriptTextField.inputView = pickerView
             pickerView.delegate = self
@@ -184,6 +183,7 @@ extension UpdateHomeView : UIPickerViewDataSource, UIPickerViewDelegate {
 
 extension UpdateHomeView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate?.sendDataToViewController(text: scriptTextField.text!, subView: self)
+        guard let delegate = delegate, let text = scriptTextField.text else { return }
+        delegate.sendDataToViewController(text: text, subView: self)
     }
 }

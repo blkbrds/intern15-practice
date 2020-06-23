@@ -24,7 +24,7 @@ class SubView3: UIView {
             setupView()
         }
     }
-    @IBAction func buttonTouchUpInsine(_ sender: Any) {
+    @IBAction func buttonTouchUpInside(_ sender: Any) {
         delegate?.sendDataToViewController(view: self)
     }
     func setupView() {

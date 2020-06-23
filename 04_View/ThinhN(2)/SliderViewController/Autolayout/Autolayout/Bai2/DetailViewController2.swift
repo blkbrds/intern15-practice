@@ -44,23 +44,23 @@ class DetailViewController2: UIViewController {
         datePicker.datePickerMode = .date
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInsine))
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneButtonTouchUpInside))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTouchUpInsine))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelButtonTouchUpInside))
         toolbar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         dateOfBirthTextField.inputAccessoryView = toolbar
         dateOfBirthTextField.inputView = datePicker
     }
-    @objc func doneButtonTouchUpInsine() {
+    @objc func doneButtonTouchUpInside() {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         dateOfBirthTextField.text = formatter.string(from: datePicker.date)
         
     }
-    @objc func cancelButtonTouchUpInsine() {
+    @objc func cancelButtonTouchUpInside() {
         
     }
-    @IBAction func okButtonTouchUpInsine(_ sender: Any) {
+    @IBAction func okButtonTouchUpInside(_ sender: Any) {
         guard let name = nameTextField.text, let date = dateOfBirthTextField.text else { return }
         
         let alert = UIAlertController(title: "Warning", message: "Do you want to edit this users with \(name) and birth day \(date)", preferredStyle: UIAlertController.Style.alert)

@@ -33,7 +33,7 @@ class HomeViewController3: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func resignButtonTouchUpInsine(_ sender: Any) {
+    @IBAction func resignButtonTouchUpInside(_ sender: Any) {
         var title: String = ""
         if password == confirmPassword {
             title = "Ban da dang ki thanh cong"
@@ -46,7 +46,7 @@ class HomeViewController3: UIViewController {
     }
 }
 
-extension HomeViewController3: SubView2Datasource {
+extension HomeViewController3: UpdateHomeViewDatasource {
     func getDataForPickerView(subView: UpdateHomeView) -> [String] {
         switch arrInformation[subView.tag] {
         case .location:
@@ -63,7 +63,7 @@ extension HomeViewController3: SubView2Datasource {
     }
 }
 
-extension HomeViewController3: SubView2Delegate {
+extension HomeViewController3: UpdateHomeViewDelegate {
     func sendDataToViewController(text: String, subView: UpdateHomeView) {
         switch arrInformation[subView.tag] {
         case .password:
