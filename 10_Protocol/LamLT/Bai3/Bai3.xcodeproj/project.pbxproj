@@ -1,0 +1,382 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0B1801D24344653007DD0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1801C24344653007DD0A1 /* AppDelegate.swift */; };
+		F0B1801F24344653007DD0A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1801E24344653007DD0A1 /* SceneDelegate.swift */; };
+		F0B1802624344654007DD0A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0B1802524344654007DD0A1 /* Assets.xcassets */; };
+		F0B1804224344AB0007DD0A1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1803524344AB0007DD0A1 /* BaseViewController.swift */; };
+		F0B1804324344AB0007DD0A1 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B1803724344AB0007DD0A1 /* HomeViewController.xib */; };
+		F0B1804424344AB0007DD0A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1803824344AB0007DD0A1 /* HomeViewController.swift */; };
+		F0B1804524344AB0007DD0A1 /* ProvinceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B1803A24344AB0007DD0A1 /* ProvinceViewController.xib */; };
+		F0B1804624344AB0007DD0A1 /* ProvinceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1803B24344AB0007DD0A1 /* ProvinceViewController.swift */; };
+		F0B1804724344AB0007DD0A1 /* DistrictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1803D24344AB0007DD0A1 /* DistrictViewController.swift */; };
+		F0B1804824344AB0007DD0A1 /* DistrictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B1803E24344AB0007DD0A1 /* DistrictViewController.xib */; };
+		F0B1804924344AB0007DD0A1 /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1804024344AB0007DD0A1 /* LocalViewController.swift */; };
+		F0B1804A24344AB0007DD0A1 /* LocalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B1804124344AB0007DD0A1 /* LocalViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F0B1801924344653007DD0A1 /* Bai3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bai3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B1801C24344653007DD0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0B1801E24344653007DD0A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F0B1802524344654007DD0A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0B1802A24344654007DD0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0B1803524344AB0007DD0A1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../../../../../Documents/LamTest/baitap3.Protocol/baitap3.Protocol/BaseViewController.swift; sourceTree = "<group>"; };
+		F0B1803724344AB0007DD0A1 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F0B1803824344AB0007DD0A1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F0B1803A24344AB0007DD0A1 /* ProvinceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProvinceViewController.xib; sourceTree = "<group>"; };
+		F0B1803B24344AB0007DD0A1 /* ProvinceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvinceViewController.swift; sourceTree = "<group>"; };
+		F0B1803D24344AB0007DD0A1 /* DistrictViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictViewController.swift; sourceTree = "<group>"; };
+		F0B1803E24344AB0007DD0A1 /* DistrictViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistrictViewController.xib; sourceTree = "<group>"; };
+		F0B1804024344AB0007DD0A1 /* LocalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
+		F0B1804124344AB0007DD0A1 /* LocalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocalViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0B1801624344653007DD0A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0B1801024344653007DD0A1 = {
+			isa = PBXGroup;
+			children = (
+				F0B1801B24344653007DD0A1 /* Bai3 */,
+				F0B1801A24344653007DD0A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0B1801A24344653007DD0A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0B1801924344653007DD0A1 /* Bai3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0B1801B24344653007DD0A1 /* Bai3 */ = {
+			isa = PBXGroup;
+			children = (
+				F0B1801C24344653007DD0A1 /* AppDelegate.swift */,
+				F0B1803524344AB0007DD0A1 /* BaseViewController.swift */,
+				F0B1803C24344AB0007DD0A1 /* DistrictViewController */,
+				F0B1803624344AB0007DD0A1 /* HomeViewController */,
+				F0B1803F24344AB0007DD0A1 /* LocalViewController */,
+				F0B1803924344AB0007DD0A1 /* ProvinceViewController */,
+				F0B1801E24344653007DD0A1 /* SceneDelegate.swift */,
+				F0B1802524344654007DD0A1 /* Assets.xcassets */,
+				F0B1802A24344654007DD0A1 /* Info.plist */,
+			);
+			path = Bai3;
+			sourceTree = "<group>";
+		};
+		F0B1803624344AB0007DD0A1 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F0B1803724344AB0007DD0A1 /* HomeViewController.xib */,
+				F0B1803824344AB0007DD0A1 /* HomeViewController.swift */,
+			);
+			name = HomeViewController;
+			path = ../../../../../Documents/LamTest/baitap3.Protocol/baitap3.Protocol/HomeViewController;
+			sourceTree = "<group>";
+		};
+		F0B1803924344AB0007DD0A1 /* ProvinceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F0B1803A24344AB0007DD0A1 /* ProvinceViewController.xib */,
+				F0B1803B24344AB0007DD0A1 /* ProvinceViewController.swift */,
+			);
+			name = ProvinceViewController;
+			path = ../../../../../Documents/LamTest/baitap3.Protocol/baitap3.Protocol/ProvinceViewController;
+			sourceTree = "<group>";
+		};
+		F0B1803C24344AB0007DD0A1 /* DistrictViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F0B1803D24344AB0007DD0A1 /* DistrictViewController.swift */,
+				F0B1803E24344AB0007DD0A1 /* DistrictViewController.xib */,
+			);
+			name = DistrictViewController;
+			path = ../../../../../Documents/LamTest/baitap3.Protocol/baitap3.Protocol/DistrictViewController;
+			sourceTree = "<group>";
+		};
+		F0B1803F24344AB0007DD0A1 /* LocalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F0B1804024344AB0007DD0A1 /* LocalViewController.swift */,
+				F0B1804124344AB0007DD0A1 /* LocalViewController.xib */,
+			);
+			name = LocalViewController;
+			path = ../../../../../Documents/LamTest/baitap3.Protocol/baitap3.Protocol/LocalViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0B1801824344653007DD0A1 /* Bai3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0B1802D24344654007DD0A1 /* Build configuration list for PBXNativeTarget "Bai3" */;
+			buildPhases = (
+				F0B1801524344653007DD0A1 /* Sources */,
+				F0B1801624344653007DD0A1 /* Frameworks */,
+				F0B1801724344653007DD0A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bai3;
+			productName = Bai3;
+			productReference = F0B1801924344653007DD0A1 /* Bai3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0B1801124344653007DD0A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = LeThanhLam;
+				TargetAttributes = {
+					F0B1801824344653007DD0A1 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+				};
+			};
+			buildConfigurationList = F0B1801424344653007DD0A1 /* Build configuration list for PBXProject "Bai3" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0B1801024344653007DD0A1;
+			productRefGroup = F0B1801A24344653007DD0A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0B1801824344653007DD0A1 /* Bai3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0B1801724344653007DD0A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B1804A24344AB0007DD0A1 /* LocalViewController.xib in Resources */,
+				F0B1804824344AB0007DD0A1 /* DistrictViewController.xib in Resources */,
+				F0B1804524344AB0007DD0A1 /* ProvinceViewController.xib in Resources */,
+				F0B1802624344654007DD0A1 /* Assets.xcassets in Resources */,
+				F0B1804324344AB0007DD0A1 /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0B1801524344653007DD0A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B1804424344AB0007DD0A1 /* HomeViewController.swift in Sources */,
+				F0B1804724344AB0007DD0A1 /* DistrictViewController.swift in Sources */,
+				F0B1801D24344653007DD0A1 /* AppDelegate.swift in Sources */,
+				F0B1804224344AB0007DD0A1 /* BaseViewController.swift in Sources */,
+				F0B1801F24344653007DD0A1 /* SceneDelegate.swift in Sources */,
+				F0B1804624344AB0007DD0A1 /* ProvinceViewController.swift in Sources */,
+				F0B1804924344AB0007DD0A1 /* LocalViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F0B1802B24344654007DD0A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0B1802C24344654007DD0A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0B1802E24344654007DD0A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Bai3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lybkit.Bai3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0B1802F24344654007DD0A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Bai3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lybkit.Bai3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0B1801424344653007DD0A1 /* Build configuration list for PBXProject "Bai3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B1802B24344654007DD0A1 /* Debug */,
+				F0B1802C24344654007DD0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0B1802D24344654007DD0A1 /* Build configuration list for PBXNativeTarget "Bai3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B1802E24344654007DD0A1 /* Debug */,
+				F0B1802F24344654007DD0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0B1801124344653007DD0A1 /* Project object */;
+}
