@@ -24,13 +24,13 @@ class HomeViewController: UIViewController {
     }
     
     func setupView() {
-        let backButton = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain, target: self, action: #selector(popToLoginView))
+        let backButton = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain, target: self, action: #selector(logoutButtonTouchUpInside))
         let nextButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(editButtonTouchUpInside))
         navigationItem.leftBarButtonItem = backButton
         navigationItem.rightBarButtonItem = nextButton
     }
     
-    @objc func popToLoginView() {
+    @objc func logoutButtonTouchUpInside() {
         delegate?.clearTextFieldOfLoginView()
         navigationController?.popToRootViewController(animated: true)
     }
