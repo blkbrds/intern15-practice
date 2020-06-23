@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         configTableView()
         configNavigation()
+        viewModel.delegate = self
+        viewModel.setupObserve()
         title = "List"
         // Do any additional setup after loading the view.
     }
@@ -96,10 +98,6 @@ class HomeViewController: UIViewController {
     private func updateInformation(id: Int, title: String, subTitle: String) {
         viewModel.update(id: id, title: title, subTitle: subTitle)
     }
-    
-    @IBAction func deleteItemButtonTouchUpInSide(_ sender: Any) {
-        
-    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -114,12 +112,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.viewModel = viewModel.viewModelCellForRowAt(indexPath: indexPath.row)
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            viewModel.items
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -142,5 +134,11 @@ extension HomeViewController: ChangeViewControllerDelegate {
     func changeInfo(view: ChangeViewController, id: Int, title: String, subTitle: String) {
         updateInformation(id: id, title: title, subTitle: subTitle)
         navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func viewModel(viewModel: HomeViewModel, needperfomAction action: HomeViewModel.Action) {
+        fetchData()	
     }
 }

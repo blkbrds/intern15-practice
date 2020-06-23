@@ -9,8 +9,32 @@
 import Foundation
 import RealmSwift
 
+protocol HomeViewModelDelegate: class {
+    func viewModel(viewModel: HomeViewModel, needperfomAction action: HomeViewModel.Action)
+}
+
 final class HomeViewModel {
+    
+    enum Action {
+        case reloadData
+    }
+    
     var items: [Item] = []
+    private var notificationToken: NotificationToken?
+    weak var delegate: HomeViewModelDelegate?
+    
+    func setupObserve() {
+        do {
+            let realm = try Realm()
+            notificationToken = realm.objects(Item.self).observe({ (change) in
+                if let delegate = self.delegate {
+                    delegate.viewModel(viewModel: self, needperfomAction: .reloadData)
+                }
+            })
+        } catch {
+            print(error)
+        }
+    }
     
     func fetchData(completion: (Bool) -> Void) {
         do {
@@ -46,7 +70,7 @@ final class HomeViewModel {
                 realm.add(item)
             }
         } catch {
-            print("Error")
+            print(error)
         }
     }
     
@@ -60,7 +84,7 @@ final class HomeViewModel {
                 nextValue = maxValue + 1
             }
         } catch {
-            print("Error")
+            print(error)
         }
         return nextValue
     }
@@ -79,7 +103,7 @@ final class HomeViewModel {
                 realm.add(item, update: Realm.UpdatePolicy.modified)
             }
         } catch {
-            print("Error")
+            print(error)
         }
     }
     
@@ -91,7 +115,7 @@ final class HomeViewModel {
                 realm.delete(items)
             }
         } catch {
-            print("Error")
+            print(error)
         }
     }
     

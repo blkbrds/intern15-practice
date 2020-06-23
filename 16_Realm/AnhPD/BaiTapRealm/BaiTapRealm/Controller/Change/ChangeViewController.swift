@@ -49,7 +49,7 @@ class ChangeViewController: UIViewController {
                 navigationController?.popToRootViewController(animated: true)
             }
         } catch {
-            print("Error")
+            print(error)
         }
     }
     
