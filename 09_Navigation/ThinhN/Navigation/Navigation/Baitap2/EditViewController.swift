@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol EdidViewControllerDelegate: class {
+    func editUsername(view: EditViewController, text: String)
+}
 class EditViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    weak var delegate: EdidViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,20 +25,18 @@ class EditViewController: UIViewController {
         setupView()
     }
     func setupView() {
-          let backButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(popHomeViewController))
+          let backButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonTouchUpInside))
           let nextButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(editHomeViewController))
           navigationItem.leftBarButtonItem = backButton
           navigationItem.rightBarButtonItem = nextButton
       }
-    @objc func popHomeViewController() {
+    @objc func backButtonTouchUpInside() {
         navigationController?.popViewController(animated: true )
     }
     @objc func editHomeViewController() {
-        guard let text = usernameTextField.text else {return }
-        let vc = navigationController?.viewControllers[1]
-        if vc is HomeViewController {
-            (vc as! HomeViewController).welcomeLabel.text = text
-            navigationController?.popViewController(animated: true )
-        }
+        guard let text = usernameTextField.text, let delegate = delegate else { return }
+        delegate.editUsername(view: self, text: text)
+        let vc = (self.navigationController?.viewControllers[1])
+        navigationController?.popViewController(animated: true)
     }
 }

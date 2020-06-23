@@ -20,7 +20,6 @@ class AvatarView: UIView {
     
     weak var delegate: AvatarViewDelegate?
     
-    var index: Int = 0
     func updateName(name: String) {
         nameLabel.text = name
     }

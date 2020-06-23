@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     
     func setupView() {
         let backButton = UIBarButtonItem(title: "Logout", style: UIBarButtonItem.Style.plain, target: self, action: #selector(popToLoginView))
-        let nextButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(pushToEditView))
+        let nextButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(editButtonTouchUpInside))
         navigationItem.leftBarButtonItem = backButton
         navigationItem.rightBarButtonItem = nextButton
     }
@@ -35,9 +35,14 @@ class HomeViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @objc func pushToEditView() {
+    @objc func editButtonTouchUpInside() {
         let vc = EditViewController()
+        vc.delegate = self 
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+extension HomeViewController: EdidViewControllerDelegate {
+    func editUsername(view: EditViewController, text: String) {
+        welcomeLabel.text = text
+    }
+}

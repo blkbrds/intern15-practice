@@ -11,12 +11,12 @@ import UIKit
 class AvatarViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
-    var avatarNumbers: [String] = []
+    var names: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         for i in 0...30 {
-            avatarNumbers.append("Name \(i)")
+            names.append("Name \(i)")
         }
         setUpView()
     }
@@ -38,7 +38,7 @@ class AvatarViewController: UIViewController {
                 x = CGFloat(i) * width + space * CGFloat(i)
                 if let avatarView = Bundle.main.loadNibNamed("AvatarView", owner: self, options: nil)? [0] as? AvatarView {
                     avatarView.frame = CGRect(x: x, y: y, width: width, height: height)
-                    avatarView.updateName(name: avatarNumbers[count])
+                    avatarView.updateName(name: names[count])
                     containerView.addSubview(avatarView)
                     avatarView.tag = count
                     avatarView.delegate = self
@@ -53,7 +53,7 @@ extension AvatarViewController: AvatarViewDelegate {
     func showNameLabel(userView: AvatarView) {
         let vc = ProfileViewController()
         vc.delegate = self 
-        vc.name = avatarNumbers[userView.tag]
+        vc.name = names[userView.tag]
         vc.view.tag = userView.tag
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -61,7 +61,7 @@ extension AvatarViewController: AvatarViewDelegate {
 
 extension AvatarViewController: ProfileViewControllerDelegate {
     func updateName(viewController: ProfileViewController, name: String) {
-        avatarNumbers[viewController.view.tag] = name
+        names[viewController.view.tag] = name
         setUpView()
     }    
 }
