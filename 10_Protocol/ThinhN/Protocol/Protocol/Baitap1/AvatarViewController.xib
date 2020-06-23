@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvatarViewController" customModule="Protocol" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="Nqv-uQ-uEI" id="ktz-DQ-rt8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m12-wv-M5S">
+                    <rect key="frame" x="0.0" y="40" width="414" height="856"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqv-uQ-uEI" userLabel="ContainerView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1712"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Nqv-uQ-uEI" firstAttribute="leading" secondItem="m12-wv-M5S" secondAttribute="leading" id="2cT-Xr-iq1"/>
+                        <constraint firstItem="Nqv-uQ-uEI" firstAttribute="width" secondItem="m12-wv-M5S" secondAttribute="width" id="42Q-Te-mjJ"/>
+                        <constraint firstAttribute="trailing" secondItem="Nqv-uQ-uEI" secondAttribute="trailing" id="KaL-1B-i5Q"/>
+                        <constraint firstItem="Nqv-uQ-uEI" firstAttribute="top" secondItem="m12-wv-M5S" secondAttribute="top" id="S64-lq-UKb"/>
+                        <constraint firstItem="Nqv-uQ-uEI" firstAttribute="height" secondItem="m12-wv-M5S" secondAttribute="height" multiplier="2" id="V2j-Y2-310"/>
+                        <constraint firstAttribute="bottom" secondItem="Nqv-uQ-uEI" secondAttribute="bottom" id="tF7-5Z-nrf"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="m12-wv-M5S" secondAttribute="bottom" id="4gR-zn-ahU"/>
+                <constraint firstItem="m12-wv-M5S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PAB-EV-PaL"/>
+                <constraint firstAttribute="trailing" secondItem="m12-wv-M5S" secondAttribute="trailing" id="Vpk-KB-9od"/>
+                <constraint firstItem="m12-wv-M5S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="XdZ-OK-BnN"/>
+            </constraints>
+            <point key="canvasLocation" x="-426.08695652173918" y="120.53571428571428"/>
+        </view>
+    </objects>
+</document>

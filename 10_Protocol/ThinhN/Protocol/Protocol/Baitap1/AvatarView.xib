@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="AvatarView" customModule="Protocol" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YN-az-ec7">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="180"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-MI-nhz">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="SyU-2a-wBR"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goY-YO-ndj">
+                            <rect key="frame" x="0.0" y="120" width="120" height="33"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhD-lz-Ho1">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
+                            <connections>
+                                <action selector="buttonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="bGi-Oj-heZ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="KBW-MI-nhz" secondAttribute="trailing" id="2kN-dA-3ZC"/>
+                        <constraint firstItem="vhD-lz-Ho1" firstAttribute="top" secondItem="9YN-az-ec7" secondAttribute="top" id="C1d-rl-gPP"/>
+                        <constraint firstAttribute="trailing" secondItem="vhD-lz-Ho1" secondAttribute="trailing" id="ExK-GX-mhN"/>
+                        <constraint firstItem="goY-YO-ndj" firstAttribute="top" secondItem="KBW-MI-nhz" secondAttribute="bottom" id="F1h-04-FGn"/>
+                        <constraint firstAttribute="trailing" secondItem="goY-YO-ndj" secondAttribute="trailing" id="KGn-51-s43"/>
+                        <constraint firstAttribute="bottom" secondItem="vhD-lz-Ho1" secondAttribute="bottom" constant="30" id="SHz-Br-Nfc"/>
+                        <constraint firstItem="vhD-lz-Ho1" firstAttribute="leading" secondItem="9YN-az-ec7" secondAttribute="leading" id="bnF-16-cWb"/>
+                        <constraint firstItem="KBW-MI-nhz" firstAttribute="leading" secondItem="9YN-az-ec7" secondAttribute="leading" id="ddn-vp-cME"/>
+                        <constraint firstAttribute="bottom" secondItem="goY-YO-ndj" secondAttribute="bottom" constant="27" id="gLe-Da-yq7"/>
+                        <constraint firstItem="KBW-MI-nhz" firstAttribute="top" secondItem="9YN-az-ec7" secondAttribute="top" id="xw2-mI-59a"/>
+                        <constraint firstItem="goY-YO-ndj" firstAttribute="leading" secondItem="9YN-az-ec7" secondAttribute="leading" id="zPA-9c-STF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9YN-az-ec7" secondAttribute="trailing" id="Dh0-zo-yFj"/>
+                <constraint firstAttribute="bottom" secondItem="9YN-az-ec7" secondAttribute="bottom" id="UWP-Qu-8Ub"/>
+                <constraint firstItem="9YN-az-ec7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZhW-o6-Aiz"/>
+                <constraint firstItem="9YN-az-ec7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qwc-nc-aGi"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="avatarView" destination="KBW-MI-nhz" id="mAv-G7-S9H"/>
+                <outlet property="nameLabel" destination="goY-YO-ndj" id="bOw-7V-vao"/>
+            </connections>
+            <point key="canvasLocation" x="-455.07246376811599" y="148.66071428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="download" width="75" height="74.666664123535156"/>
+    </resources>
+</document>
