@@ -11,7 +11,7 @@ protocol HomeViewControllerDelegate: class {
     func clearTextFieldOfLoginView()
 }
 class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var welcomeLabel: UILabel!
     var name: String = ""
     
@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
         title = "Home"
         welcomeLabel.text = "Welcome \(name)"
         setupView()
-        
     }
     
     func setupView() {
@@ -30,22 +29,15 @@ class HomeViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
         navigationItem.rightBarButtonItem = nextButton
     }
-
+    
     @objc func popToLoginView() {
         delegate?.clearTextFieldOfLoginView()
         navigationController?.popToRootViewController(animated: true)
     }
-
+    
     @objc func pushToEditView() {
         let vc = EditViewController()
-        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-extension HomeViewController: EditViewControllerDelegate {
-    func showNewUsername(view: EditViewController, userName: String) {
-        welcomeLabel.text = userName
-    }
-    
-   
-}
+

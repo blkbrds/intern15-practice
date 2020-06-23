@@ -8,16 +8,12 @@
 
 import UIKit
 
-protocol EditViewControllerDelegate: class {
-    func showNewUsername(view: EditViewController, userName: String)
-}
 class EditViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var newPasswordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
-    weak var delegate: EditViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Edit"
@@ -38,8 +34,6 @@ class EditViewController: UIViewController {
         if vc is HomeViewController {
             (vc as! HomeViewController).welcomeLabel.text = text
             navigationController?.popViewController(animated: true )
-
         }
-       // delegate?.showNewUsername(view: self, userName: text)
     }
 }
