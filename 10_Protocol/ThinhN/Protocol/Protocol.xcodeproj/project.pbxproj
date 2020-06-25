@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		727C535424A47D68003D034E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C535224A47D68003D034E /* SearchViewController.swift */; };
+		727C535524A47D68003D034E /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C535324A47D68003D034E /* SearchViewController.xib */; };
+		727C535924A4A781003D034E /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C535724A4A781003D034E /* CalculatorViewController.swift */; };
+		727C535A24A4A781003D034E /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C535824A4A781003D034E /* CalculatorViewController.xib */; };
+		727C535E24A4A81A003D034E /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C535D24A4A81A003D034E /* CalculatorView.swift */; };
+		727C536024A4A82B003D034E /* CalculatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C535F24A4A82B003D034E /* CalculatorView.xib */; };
 		7288C3D924A1DC8D003A6959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288C3D824A1DC8D003A6959 /* AppDelegate.swift */; };
 		7288C3DB24A1DC8D003A6959 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288C3DA24A1DC8D003A6959 /* SceneDelegate.swift */; };
 		7288C3DF24A1DC8F003A6959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7288C3DE24A1DC8F003A6959 /* Assets.xcassets */; };
@@ -24,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		727C535224A47D68003D034E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		727C535324A47D68003D034E /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		727C535724A4A781003D034E /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		727C535824A4A781003D034E /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		727C535D24A4A81A003D034E /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		727C535F24A4A82B003D034E /* CalculatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorView.xib; sourceTree = "<group>"; };
 		7288C3D524A1DC8D003A6959 /* Protocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Protocol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7288C3D824A1DC8D003A6959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7288C3DA24A1DC8D003A6959 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +65,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		727C535124A47D3C003D034E /* Baitap4 */ = {
+			isa = PBXGroup;
+			children = (
+				727C535224A47D68003D034E /* SearchViewController.swift */,
+				727C535324A47D68003D034E /* SearchViewController.xib */,
+			);
+			path = Baitap4;
+			sourceTree = "<group>";
+		};
+		727C535624A4A73B003D034E /* Baitap5 */ = {
+			isa = PBXGroup;
+			children = (
+				727C535724A4A781003D034E /* CalculatorViewController.swift */,
+				727C535824A4A781003D034E /* CalculatorViewController.xib */,
+				727C535D24A4A81A003D034E /* CalculatorView.swift */,
+				727C535F24A4A82B003D034E /* CalculatorView.xib */,
+			);
+			path = Baitap5;
+			sourceTree = "<group>";
+		};
 		7288C3CC24A1DC8D003A6959 = {
 			isa = PBXGroup;
 			children = (
@@ -72,8 +104,10 @@
 		7288C3D724A1DC8D003A6959 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				7288C3F924A1F7FB003A6959 /* Baitap2 */,
-				7288C3EC24A1DD00003A6959 /* Baitap1 */,
+				727C535624A4A73B003D034E /* Baitap5 */,
+				727C535124A47D3C003D034E /* Baitap4 */,
+				7288C3F924A1F7FB003A6959 /* Baitap3 */,
+				7288C3EC24A1DD00003A6959 /* Baitap2 */,
 				7288C3D824A1DC8D003A6959 /* AppDelegate.swift */,
 				7288C3DA24A1DC8D003A6959 /* SceneDelegate.swift */,
 				7288C3DE24A1DC8F003A6959 /* Assets.xcassets */,
@@ -91,7 +125,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7288C3EC24A1DD00003A6959 /* Baitap1 */ = {
+		7288C3EC24A1DD00003A6959 /* Baitap2 */ = {
 			isa = PBXGroup;
 			children = (
 				7288C3ED24A1DD14003A6959 /* AvatarViewController.swift */,
@@ -101,10 +135,10 @@
 				7288C3F524A1EDC7003A6959 /* ProfileViewController.swift */,
 				7288C3F624A1EDC7003A6959 /* ProfileViewController.xib */,
 			);
-			path = Baitap1;
+			path = Baitap2;
 			sourceTree = "<group>";
 		};
-		7288C3F924A1F7FB003A6959 /* Baitap2 */ = {
+		7288C3F924A1F7FB003A6959 /* Baitap3 */ = {
 			isa = PBXGroup;
 			children = (
 				7288C3FA24A1F938003A6959 /* LocationViewController.swift */,
@@ -112,7 +146,7 @@
 				7288C3FE24A1FA11003A6959 /* AreaViewController.swift */,
 				7288C3FF24A1FA11003A6959 /* AreaViewController.xib */,
 			);
-			path = Baitap2;
+			path = Baitap3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,11 +208,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7288C3E224A1DC8F003A6959 /* Preview Assets.xcassets in Resources */,
+				727C535A24A4A781003D034E /* CalculatorViewController.xib in Resources */,
+				727C536024A4A82B003D034E /* CalculatorView.xib in Resources */,
 				7288C3FD24A1F938003A6959 /* LocationViewController.xib in Resources */,
 				7288C3F424A1DE37003A6959 /* AvatarView.xib in Resources */,
 				7288C3DF24A1DC8F003A6959 /* Assets.xcassets in Resources */,
 				7288C40124A1FA11003A6959 /* AreaViewController.xib in Resources */,
 				7288C3F824A1EDC7003A6959 /* ProfileViewController.xib in Resources */,
+				727C535524A47D68003D034E /* SearchViewController.xib in Resources */,
 				7288C3F024A1DD14003A6959 /* AvatarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,10 +229,13 @@
 			files = (
 				7288C3D924A1DC8D003A6959 /* AppDelegate.swift in Sources */,
 				7288C3F224A1DDE0003A6959 /* AvatarView.swift in Sources */,
+				727C535424A47D68003D034E /* SearchViewController.swift in Sources */,
 				7288C3F724A1EDC7003A6959 /* ProfileViewController.swift in Sources */,
 				7288C3FC24A1F938003A6959 /* LocationViewController.swift in Sources */,
 				7288C40024A1FA11003A6959 /* AreaViewController.swift in Sources */,
+				727C535E24A4A81A003D034E /* CalculatorView.swift in Sources */,
 				7288C3DB24A1DC8D003A6959 /* SceneDelegate.swift in Sources */,
+				727C535924A4A781003D034E /* CalculatorViewController.swift in Sources */,
 				7288C3EF24A1DD14003A6959 /* AvatarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

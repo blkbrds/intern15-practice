@@ -7,17 +7,13 @@
 //
 
 import UIKit
-//protocol LocationViewControllerDatasource: class {
-//    func getValueAreaViewController(view: LocationViewController) -> String
-//}
+
 class LocationViewController: UIViewController {
     
-    @IBOutlet weak var diaDiemLabel: UILabel!
+    @IBOutlet weak var tinhLabel: UILabel!
     @IBOutlet weak var mienLabel: UILabel!
     @IBOutlet weak var huyenLabel: UILabel!
     
-    var valueOfMien: String = ""
-//    weak var datasource: LocationViewControllerDatasource?
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Địa điểm"
@@ -27,25 +23,30 @@ class LocationViewController: UIViewController {
     func setupView() {
         let editButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(editButtonTouchUpInside))
         navigationItem.rightBarButtonItem = editButton
-        
     }
+    
     @objc func editButtonTouchUpInside() {
         let vc = AreaViewController()
+        vc.area = .mien
         vc.datasource = self
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
-//    func configValue() {
-//        guard let datasource = datasource else { return }
-//        datasource.getValueAreaViewController(view: self)
-//    }
-    
 }
 extension LocationViewController: AreaViewControllerDatasource {
     func getViewController(view: AreaViewController, location: Location) -> Location {
         return location
     }
-    
-//    func getViewController(view: AreaViewController) -> Location {
-//        return Location.mien
-//    }
+}
+
+extension LocationViewController: AreaViewControllerDelegate {
+    func getLocationButton(locationButton: String, location: Location) {
+        if location == .mien {
+            mienLabel.text = locationButton
+        } else if location == .tinh {
+            tinhLabel.text = locationButton
+        } else {
+            huyenLabel.text = locationButton
+        }
+    }
 }
