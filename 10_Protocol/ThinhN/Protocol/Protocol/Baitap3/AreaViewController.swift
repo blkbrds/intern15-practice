@@ -98,9 +98,6 @@ class AreaViewController: UIViewController {
     @IBAction func buttonTouchUpInside(_ sender: UIButton) {
         guard let delegate = delegate else { return }
         delegate.getLocationButton(locationButton: sender.titleLabel?.text ?? "empty", location: area)
-        
-       
-        
     }
     
     @objc func chooseButton() {
@@ -114,6 +111,5 @@ class AreaViewController: UIViewController {
         }
         setupView()
         changeView()
-    
     }
 }

@@ -20,9 +20,7 @@ class CalculatorViewController: UIViewController {
     var y: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getValue()
-        
-        
+   
     }
     
     func getValue() {
@@ -38,7 +36,7 @@ class CalculatorViewController: UIViewController {
         calculator.datasource = self
         calculator.delegate = self 
         calculator.sendValue()
-        calculator.frame = CGRect(x: 0, y: 0, width: 400, height: 600)
+        calculator.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
         operatorView.addSubview(calculator)
     }
     
@@ -60,8 +58,6 @@ extension CalculatorViewController: CalculatorViewDelegate {
         yValueTextField.text = ""
     }
     func touchDoneButton(result: String) {
-        resultLabel.text = result
+        resultLabel.text = "Result: \(result)"
     }
-    
-    
 }

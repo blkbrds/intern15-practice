@@ -33,6 +33,7 @@ class LocationViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
 extension LocationViewController: AreaViewControllerDatasource {
     func getViewController(view: AreaViewController, location: Location) -> Location {
         return location
