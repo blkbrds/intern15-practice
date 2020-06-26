@@ -9,7 +9,7 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
+    
     @IBOutlet weak var operatorView: UIView!
     @IBOutlet weak var xValueTextField: UITextField!
     @IBOutlet weak var yValueTextField: UITextField!
@@ -20,7 +20,6 @@ class CalculatorViewController: UIViewController {
     var y: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-   
     }
     
     func getValue() {
@@ -29,6 +28,7 @@ class CalculatorViewController: UIViewController {
             self.y = y
         }
     }
+    
     func setupView() {
         getValue()
         calculator = Bundle.main.loadNibNamed("CalculatorView", owner: self, options: nil)? [0] as? CalculatorView

@@ -29,10 +29,6 @@ class CalculatorView: UIView {
     @IBOutlet weak var yValueTextField: UILabel!
     @IBOutlet weak var xValueTextField: UILabel!
     
-    func setupView() {
-        
-    }
-    
     @IBAction func cancelButtonTouchUpInside(_ sender: Any) {
         self.isHidden = true
         delegate?.touchClearButton()
