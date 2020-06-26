@@ -8,26 +8,78 @@
 
 import UIKit
 
+protocol CalculatorViewDatasource: class {
+    func getXValue() -> String
+    func getYValue() -> String
+}
+protocol CalculatorViewDelegate: class {
+    func touchClearButton()
+    func touchDoneButton(result: String)
+}
 class CalculatorView: UIView {
-
-   
-    @IBOutlet weak var plusButton: UILabel!
-    @IBOutlet weak var subtractButton: UILabel!
-    @IBOutlet weak var divideButton: UILabel!
-    @IBOutlet weak var multiButton: UILabel!
-    @IBOutlet weak var percentButton: UILabel!
-    @IBOutlet weak var factorialButton: UILabel!
-    @IBOutlet weak var clearButton: UILabel!
+    
+    weak var datasource: CalculatorViewDatasource?
+    weak var delegate: CalculatorViewDelegate?
+    var result: Int = 0
+    var x1: Int = 0
+    var x2: Int = 0
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var resultTextField: UILabel!
+    @IBOutlet weak var yValueTextField: UILabel!
+    @IBOutlet weak var xValueTextField: UILabel!
     
     func setupView() {
         
     }
-    @objc func cancelButtonTouchUpInside() {
+    
+    @IBAction func cancelButtonTouchUpInside(_ sender: Any) {
+        self.isHidden = true
+    }
+    @IBAction func doneButtonTouchUpInside(_ sender: Any) {
+        delegate?.touchDoneButton(result: String(result))
+    }
+    
+    @IBAction func plusButtonTouchUpInside(_ sender: Any) {
+        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
+        x1 = Int(x) ?? 0
+        x2 = Int(y) ?? 0
+        resultTextField.text = String(x1 + x2)
+    }
+    @IBAction func subButtonTouchUpInside(_ sender: Any) {
+        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
+        x1 = Int(x) ?? 0
+        x2 = Int(y) ?? 0
+        resultTextField.text = String(x1 - x2)
         
     }
-    @objc func doneButtonTouchUpInside() {
-        
+    @IBAction func mulButtonTouchUpInside(_ sender: Any) {
+        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
+        x1 = Int(x) ?? 0
+        x2 = Int(y) ?? 0
+        resultTextField.text = String(x1 * x2)
+    }
+    @IBAction func divButtonTouchUpInside(_ sender: Any) {
+        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
+        x1 = Int(x) ?? 0
+        x2 = Int(y) ?? 0
+        resultTextField.text = String(x1 / x2)
+    }
+    @IBAction func percentButtonTouchUpInside(_ sender: Any) {
+        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
+        x1 = Int(x) ?? 0
+        x2 = Int(y) ?? 0
+        resultTextField.text = String(x1 % x2)
+    }
+    @IBAction func powButtonTouchUpInside(_ sender: Any) {
+        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
+        x1 = Int(x) ?? 0
+        x2 = Int(y) ?? 0
+        resultTextField.text = String(pow(Double(x1), Double(x2)))
+    }
+    func sendValue() {
+        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
+        xValueTextField.text = x
+        yValueTextField.text = y
     }
 }
