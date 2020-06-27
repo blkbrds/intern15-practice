@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="AvatarView" customModule="Navigation" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="142"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COw-XE-Tas">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="142"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="RKf-6b-gq7">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="M5v-eT-bst"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57W-fP-BTH">
+                            <rect key="frame" x="0.0" y="120" width="120" height="21"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Y4X-dF-VdR"/>
+                                <constraint firstAttribute="width" constant="120" id="oXR-F1-P46"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLG-Cq-UJK">
+                            <rect key="frame" x="0.0" y="120" width="120" height="22"/>
+                            <connections>
+                                <action selector="buttonTouchUpInsine:" destination="iN0-l3-epB" eventType="touchUpInside" id="AFP-vu-xkK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="CLG-Cq-UJK" firstAttribute="top" secondItem="COw-XE-Tas" secondAttribute="top" constant="120" id="47s-kR-Fhp"/>
+                        <constraint firstItem="RKf-6b-gq7" firstAttribute="top" secondItem="COw-XE-Tas" secondAttribute="top" id="6mM-L2-Ain"/>
+                        <constraint firstItem="RKf-6b-gq7" firstAttribute="leading" secondItem="COw-XE-Tas" secondAttribute="leading" id="GFP-4O-oFd"/>
+                        <constraint firstAttribute="bottom" secondItem="CLG-Cq-UJK" secondAttribute="bottom" id="KQa-4B-Uon"/>
+                        <constraint firstItem="57W-fP-BTH" firstAttribute="leading" secondItem="COw-XE-Tas" secondAttribute="leading" id="X4S-SY-zjt"/>
+                        <constraint firstAttribute="trailing" secondItem="RKf-6b-gq7" secondAttribute="trailing" id="c7Y-8p-DJC"/>
+                        <constraint firstAttribute="trailing" secondItem="CLG-Cq-UJK" secondAttribute="trailing" id="lMo-7A-OYk"/>
+                        <constraint firstItem="57W-fP-BTH" firstAttribute="top" secondItem="RKf-6b-gq7" secondAttribute="bottom" id="mho-f8-ebj"/>
+                        <constraint firstItem="CLG-Cq-UJK" firstAttribute="leading" secondItem="COw-XE-Tas" secondAttribute="leading" id="yV6-Rn-c9q"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="COw-XE-Tas" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8l7-tC-vyS"/>
+                <constraint firstAttribute="bottom" secondItem="COw-XE-Tas" secondAttribute="bottom" id="NHY-X0-GoG"/>
+                <constraint firstItem="COw-XE-Tas" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZGb-Xc-lCY"/>
+                <constraint firstAttribute="trailing" secondItem="COw-XE-Tas" secondAttribute="trailing" id="rOO-GJ-xOp"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="avatarView" destination="COw-XE-Tas" id="bDR-c6-zFO"/>
+                <outlet property="imageView" destination="RKf-6b-gq7" id="MJS-yw-mSh"/>
+                <outlet property="nameLabel" destination="57W-fP-BTH" id="8FK-MY-a4i"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="105.13392857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="download" width="225" height="224"/>
+    </resources>
+</document>
