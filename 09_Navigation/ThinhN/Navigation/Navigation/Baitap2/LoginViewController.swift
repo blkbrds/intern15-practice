@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
 }
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+        if textField == usernameTextField {
             textField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()

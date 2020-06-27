@@ -43,6 +43,6 @@ class HomeViewController: UIViewController {
 }
 extension HomeViewController: EdidViewControllerDelegate {
     func editUsername(view: EditViewController, text: String) {
-        welcomeLabel.text = text
+        welcomeLabel.text = "Welcome \(text)"
     }
 }

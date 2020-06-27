@@ -26,17 +26,16 @@ class EditViewController: UIViewController {
     }
     func setupView() {
           let backButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonTouchUpInside))
-          let nextButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(editHomeViewController))
+          let nextButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(doneButtonTouchUpInside))
           navigationItem.leftBarButtonItem = backButton
           navigationItem.rightBarButtonItem = nextButton
       }
     @objc func backButtonTouchUpInside() {
         navigationController?.popViewController(animated: true )
     }
-    @objc func editHomeViewController() {
+    @objc func doneButtonTouchUpInside() {
         guard let text = usernameTextField.text, let delegate = delegate else { return }
         delegate.editUsername(view: self, text: text)
-        let vc = (self.navigationController?.viewControllers[1])
         navigationController?.popViewController(animated: true)
     }
 }
