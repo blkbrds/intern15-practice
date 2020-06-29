@@ -23,6 +23,11 @@
 		728EE39C24A99DD00008EBBC /* SectionList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 728EE39B24A99DD00008EBBC /* SectionList.plist */; };
 		728EE3A324A9A01E0008EBBC /* ListSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728EE3A124A9A01E0008EBBC /* ListSectionsViewController.swift */; };
 		728EE3A424A9A01E0008EBBC /* ListSectionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728EE3A224A9A01E0008EBBC /* ListSectionsViewController.xib */; };
+		843F759324A9EC02004B01A4 /* SectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F759224A9EC02004B01A4 /* SectionList.swift */; };
+		843F759724AA56EF004B01A4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F759524AA56EF004B01A4 /* SearchViewController.swift */; };
+		843F759824AA56EF004B01A4 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F759624AA56EF004B01A4 /* SearchViewController.xib */; };
+		843F759B24AA5F42004B01A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F759924AA5F42004B01A4 /* DetailViewController.swift */; };
+		843F759C24AA5F42004B01A4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F759A24AA5F42004B01A4 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		728EE39B24A99DD00008EBBC /* SectionList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SectionList.plist; sourceTree = "<group>"; };
 		728EE3A124A9A01E0008EBBC /* ListSectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionsViewController.swift; sourceTree = "<group>"; };
 		728EE3A224A9A01E0008EBBC /* ListSectionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListSectionsViewController.xib; sourceTree = "<group>"; };
+		843F759224A9EC02004B01A4 /* SectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionList.swift; sourceTree = "<group>"; };
+		843F759524AA56EF004B01A4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		843F759624AA56EF004B01A4 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		843F759924AA5F42004B01A4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		843F759A24AA5F42004B01A4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 		728EE36D24A97E800008EBBC /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				843F759424AA56C3004B01A4 /* Baitap5 */,
 				728EE39824A99D610008EBBC /* Baitap4 */,
 				728EE38F24A98D950008EBBC /* Baitap3 */,
 				728EE38724A988B00008EBBC /* Baitap2 */,
@@ -133,8 +144,20 @@
 				728EE39B24A99DD00008EBBC /* SectionList.plist */,
 				728EE3A124A9A01E0008EBBC /* ListSectionsViewController.swift */,
 				728EE3A224A9A01E0008EBBC /* ListSectionsViewController.xib */,
+				843F759224A9EC02004B01A4 /* SectionList.swift */,
 			);
 			path = Baitap4;
+			sourceTree = "<group>";
+		};
+		843F759424AA56C3004B01A4 /* Baitap5 */ = {
+			isa = PBXGroup;
+			children = (
+				843F759524AA56EF004B01A4 /* SearchViewController.swift */,
+				843F759624AA56EF004B01A4 /* SearchViewController.xib */,
+				843F759924AA5F42004B01A4 /* DetailViewController.swift */,
+				843F759A24AA5F42004B01A4 /* DetailViewController.xib */,
+			);
+			path = Baitap5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,10 +222,12 @@
 				728EE39724A99A3F0008EBBC /* DetailNameViewController.xib in Resources */,
 				728EE37824A97E810008EBBC /* Preview Assets.xcassets in Resources */,
 				728EE38624A97FBF0008EBBC /* ListSimpleNameViewController.xib in Resources */,
+				843F759C24AA5F42004B01A4 /* DetailViewController.xib in Resources */,
 				728EE39C24A99DD00008EBBC /* SectionList.plist in Resources */,
 				728EE37524A97E810008EBBC /* Assets.xcassets in Resources */,
 				728EE3A424A9A01E0008EBBC /* ListSectionsViewController.xib in Resources */,
 				728EE38B24A988EA0008EBBC /* ListNamesViewController.xib in Resources */,
+				843F759824AA56EF004B01A4 /* SearchViewController.xib in Resources */,
 				728EE38D24A989560008EBBC /* ListNames.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,8 +242,11 @@
 				728EE39624A99A3F0008EBBC /* DetailNameViewController.swift in Sources */,
 				728EE39224A98E0F0008EBBC /* DetailListNamesViewController.swift in Sources */,
 				728EE36F24A97E800008EBBC /* AppDelegate.swift in Sources */,
+				843F759724AA56EF004B01A4 /* SearchViewController.swift in Sources */,
 				728EE37124A97E800008EBBC /* SceneDelegate.swift in Sources */,
 				728EE38524A97FBF0008EBBC /* ListSimpleNameViewController.swift in Sources */,
+				843F759324A9EC02004B01A4 /* SectionList.swift in Sources */,
+				843F759B24AA5F42004B01A4 /* DetailViewController.swift in Sources */,
 				728EE3A324A9A01E0008EBBC /* ListSectionsViewController.swift in Sources */,
 				728EE38A24A988EA0008EBBC /* ListNamesViewController.swift in Sources */,
 			);
