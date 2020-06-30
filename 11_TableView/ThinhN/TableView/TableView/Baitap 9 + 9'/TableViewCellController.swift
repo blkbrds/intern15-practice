@@ -52,8 +52,6 @@ extension TableViewCellController: UITableViewDataSource, UITableViewDelegate {
         let contactDetailViewController = ContactDetailViewController()
         contactDetailViewController.name = (Array(plistData)[indexPath.section].value)[indexPath.row]
         navigationController?.pushViewController(contactDetailViewController, animated: true)
-        
-        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100

@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactViewController" customModule="TableView" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="kfk-bh-pgb" id="p2W-JC-fg2"/>
                 <outlet property="tableView" destination="fJc-Mb-lxb" id="HiC-Vy-Fo7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,20 +19,25 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfk-bh-pgb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fJc-Mb-lxb">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fJc-Mb-lxb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1nk-MB-Gm3"/>
+                <constraint firstItem="fJc-Mb-lxb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="1nk-MB-Gm3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fJc-Mb-lxb" secondAttribute="bottom" id="Kxk-o0-2N0"/>
                 <constraint firstItem="fJc-Mb-lxb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bDd-bG-K2n"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fJc-Mb-lxb" secondAttribute="trailing" id="vRg-PH-LLR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="153"/>
+            <point key="canvasLocation" x="-278" y="88"/>
         </view>
     </objects>
 </document>

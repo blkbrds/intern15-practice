@@ -34,6 +34,8 @@
 		72F4AE8524AB36A900C8A336 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4AE8324AB36A900C8A336 /* ContactViewController.swift */; };
 		72F4AE8624AB36A900C8A336 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4AE8424AB36A900C8A336 /* ContactViewController.xib */; };
 		72F4AE8824AB36EA00C8A336 /* ContactList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72F4AE8724AB36EA00C8A336 /* ContactList.plist */; };
+		72F4AE8B24AB3B0700C8A336 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4AE8924AB3B0700C8A336 /* ContactTableViewCell.swift */; };
+		72F4AE8C24AB3B0700C8A336 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72F4AE8A24AB3B0700C8A336 /* ContactTableViewCell.xib */; };
 		843F759724AA56EF004B01A4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F759524AA56EF004B01A4 /* SearchViewController.swift */; };
 		843F759824AA56EF004B01A4 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F759624AA56EF004B01A4 /* SearchViewController.xib */; };
 		843F759B24AA5F42004B01A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F759924AA5F42004B01A4 /* DetailViewController.swift */; };
@@ -70,6 +72,8 @@
 		72F4AE8324AB36A900C8A336 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		72F4AE8424AB36A900C8A336 /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 		72F4AE8724AB36EA00C8A336 /* ContactList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ContactList.plist; sourceTree = "<group>"; };
+		72F4AE8924AB3B0700C8A336 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		72F4AE8A24AB3B0700C8A336 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		843F759524AA56EF004B01A4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		843F759624AA56EF004B01A4 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		843F759924AA5F42004B01A4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 		728EE36D24A97E800008EBBC /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				72F4AE8D24AB42B900C8A336 /* Baitap11 */,
 				72F4AE8224AB33A200C8A336 /* Baitap 10 */,
 				72F4AE7524AB154A00C8A336 /* Baitap 9 + 9' */,
 				72F4AE7024AACF7800C8A336 /* Baitap7 + 8 */,
@@ -199,8 +204,17 @@
 				72F4AE8324AB36A900C8A336 /* ContactViewController.swift */,
 				72F4AE8424AB36A900C8A336 /* ContactViewController.xib */,
 				72F4AE8724AB36EA00C8A336 /* ContactList.plist */,
+				72F4AE8924AB3B0700C8A336 /* ContactTableViewCell.swift */,
+				72F4AE8A24AB3B0700C8A336 /* ContactTableViewCell.xib */,
 			);
 			path = "Baitap 10";
+			sourceTree = "<group>";
+		};
+		72F4AE8D24AB42B900C8A336 /* Baitap11 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Baitap11;
 			sourceTree = "<group>";
 		};
 		843F759424AA56C3004B01A4 /* Baitap5 */ = {
@@ -272,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F4AE8C24AB3B0700C8A336 /* ContactTableViewCell.xib in Resources */,
 				72F4AE7424AACFAD00C8A336 /* IndexTableViewController.xib in Resources */,
 				728EE39324A98E0F0008EBBC /* DetailListNamesViewController.xib in Resources */,
 				728EE39724A99A3F0008EBBC /* DetailNameViewController.xib in Resources */,
@@ -305,6 +320,7 @@
 				72F4AE7824AB156600C8A336 /* TableViewCellController.swift in Sources */,
 				728EE39224A98E0F0008EBBC /* DetailListNamesViewController.swift in Sources */,
 				728EE36F24A97E800008EBBC /* AppDelegate.swift in Sources */,
+				72F4AE8B24AB3B0700C8A336 /* ContactTableViewCell.swift in Sources */,
 				843F759724AA56EF004B01A4 /* SearchViewController.swift in Sources */,
 				72F4AE7C24AB167C00C8A336 /* CustomTableViewCell.swift in Sources */,
 				728EE37124A97E800008EBBC /* SceneDelegate.swift in Sources */,

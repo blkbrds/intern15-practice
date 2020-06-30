@@ -31,9 +31,4 @@ class CustomTableViewCell: UITableViewCell {
     @IBAction func buttonTouchUpInside(_ sender: Any) {
         delegate?.tapButton(_customTabViewCell: self)
     }
-//    func updateTableCell(avatar: String, contactName: String = "", subtitleName: String = "") {
-//        avatarImageView.image = UIImage(named: "dowload")
-//        contactNameLabel.text = contactName
-//        subtitleNameLabel.text = subtitleName
-//    }
 }

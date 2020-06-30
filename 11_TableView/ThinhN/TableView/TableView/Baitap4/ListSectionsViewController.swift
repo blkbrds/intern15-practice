@@ -34,7 +34,9 @@ extension ListSectionsViewController: UITableViewDataSource {
         return plistData.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(Array(plistData.keys))
         return Array(plistData)[section].value.count
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
