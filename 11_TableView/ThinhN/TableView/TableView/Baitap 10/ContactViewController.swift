@@ -2,7 +2,6 @@
 //  ContactViewController.swift
 //  TableView
 //
-//  Created by PCI0019 on 6/30/20.
 //  Copyright © 2020 asiantech. All rights reserved.
 //
 
@@ -61,7 +60,7 @@ extension ContactViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as! ContactTableViewCell
         cell.nameLabel.text = (Array(plistData)[indexPath.section].value)[indexPath.row]
-        cell.phoneNumber.text = "Sub title"
+        cell.phoneNumberLabel.text = "Sub title"
         cell.nameLabel.textColor = .red
         //        cell.delegate = self
         return cell
