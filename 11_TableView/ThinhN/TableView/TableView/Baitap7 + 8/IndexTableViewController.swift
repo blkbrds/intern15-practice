@@ -53,7 +53,6 @@ extension IndexTableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-
         let label = UILabel(frame: CGRect(x: cell.bounds.midX, y: cell.bounds.midY , width: 80, height: 50))
         label.text = "Name + \(indexPath.row)"
         label.textColor = .red

@@ -1,22 +1,18 @@
 //
-//  ContactTableViewCell.swift
+//  CommentTableViewCell.swift
 //  TableView
 //
+//  Created by PCI0019 on 7/1/20.
 //  Copyright © 2020 asiantech. All rights reserved.
 //
 
 import UIKit
 
-class ContactTableViewCell: UITableViewCell {
-    
+class CommentTableViewCell: UITableViewCell {
+
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        avatarImageView.layer.cornerRadius = 10
-        avatarImageView.clipsToBounds = true
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
