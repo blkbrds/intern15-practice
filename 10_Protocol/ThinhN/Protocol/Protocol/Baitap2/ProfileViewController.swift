@@ -16,7 +16,6 @@ class ProfileViewController: UIViewController {
     weak var delegate: ProfileViewControllerDelegate?
     var name: String = ""
     
-    
     @IBOutlet weak var nameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()

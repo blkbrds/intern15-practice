@@ -51,7 +51,6 @@ class CalculatorView: UIView {
         x2 = Int(y) ?? 0
         result = x1 - x2
         resultTextField.text = String(result)
-        
     }
     @IBAction func mulButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
@@ -84,10 +83,5 @@ class CalculatorView: UIView {
     @IBAction func clearButtonTouchUpInside(_ sender: Any) {
         delegate?.touchClearButton()
         self.isHidden = true 
-    }
-    func sendValue() {
-        guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
-        xValueTextField.text = x
-        yValueTextField.text = y
     }
 }

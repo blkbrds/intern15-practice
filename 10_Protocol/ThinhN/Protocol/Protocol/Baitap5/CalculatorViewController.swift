@@ -15,7 +15,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var yValueTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
-    var calculator: CalculatorView?
+    var calculatorView: CalculatorView?
     var x: String = ""
     var y: String = ""
     override func viewDidLoad() {
@@ -31,11 +31,10 @@ class CalculatorViewController: UIViewController {
     
     func setupView() {
         getValue()
-        calculator = Bundle.main.loadNibNamed("CalculatorView", owner: self, options: nil)? [0] as? CalculatorView
-        guard let calculator = calculator else {return}
+        calculatorView = Bundle.main.loadNibNamed("CalculatorView", owner: self, options: nil)? [0] as? CalculatorView
+        guard let calculator = calculatorView else {return}
         calculator.datasource = self
         calculator.delegate = self 
-        calculator.sendValue()
         calculator.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
         operatorView.addSubview(calculator)
     }

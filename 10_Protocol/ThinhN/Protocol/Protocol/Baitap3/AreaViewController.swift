@@ -24,9 +24,9 @@ enum Location: Int {
         switch self {
         case .tinh:
             return "Tinh"
-        case.huyen:
+        case .huyen:
             return "Huyen"
-        case.mien:
+        case .mien:
             return "Mien"
         }
     }
@@ -50,7 +50,7 @@ enum Location: Int {
             return "Miền"
         }
     }
-    var nextTitle: String {
+    var nextButtonTitle: String {
         switch self {
         case .tinh:
             return "Huyện"
@@ -68,10 +68,10 @@ class AreaViewController: UIViewController {
     
     weak var datasource: AreaViewControllerDatasource?
     weak var delegate: AreaViewControllerDelegate?
-    
-    var locationTinhButton: String = ""
-    var locationHuyenButton: String = ""
-    var locationMienButton: String = ""
+//    
+//    var locationTinhButton: String = ""
+//    var locationHuyenButton: String = ""
+//    var locationMienButton: String = ""
     
     var area: Location = .tinh
     override func viewDidLoad() {
@@ -91,8 +91,8 @@ class AreaViewController: UIViewController {
     }
     
     func changeView() {
-        let doneButton = UIBarButtonItem(title: area.nextTitle, style: UIBarButtonItem.Style.plain, target: self, action: #selector(chooseButton))
-        navigationItem.rightBarButtonItem = doneButton
+        let nextButton = UIBarButtonItem(title: area.nextButtonTitle, style: UIBarButtonItem.Style.plain, target: self, action: #selector(nextButtonTouchUpInside))
+        navigationItem.rightBarButtonItem = nextButton
     }
     
     @IBAction func buttonTouchUpInside(_ sender: UIButton) {
@@ -100,7 +100,7 @@ class AreaViewController: UIViewController {
         delegate.getLocationButton(locationButton: sender.titleLabel?.text ?? "empty", location: area)
     }
     
-    @objc func chooseButton() {
+    @objc func nextButtonTouchUpInside() {
         if area == .mien {
             area = .tinh
         } else if area == .tinh {

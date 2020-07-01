@@ -18,8 +18,8 @@ class LocationViewController: UIViewController {
         super.viewDidLoad()
         title = "Địa điểm"
         setupView()
-        
     }
+    
     func setupView() {
         let editButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(editButtonTouchUpInside))
         navigationItem.rightBarButtonItem = editButton
@@ -42,12 +42,13 @@ extension LocationViewController: AreaViewControllerDatasource {
 
 extension LocationViewController: AreaViewControllerDelegate {
     func getLocationButton(locationButton: String, location: Location) {
-        if location == .mien {
+        switch location  {
+        case .mien:
             mienLabel.text = locationButton
-        } else if location == .tinh {
-            tinhLabel.text = locationButton
-        } else {
+        case .huyen:
             huyenLabel.text = locationButton
-        }
+        case .tinh:
+            tinhLabel.text = locationButton
     }
+}
 }
