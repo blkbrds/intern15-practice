@@ -8,11 +8,8 @@
 
 import UIKit
 
-protocol AreaViewControllerDatasource: class {
-    func getViewController(view: AreaViewController, location: Location) -> Location
-}
 protocol AreaViewControllerDelegate: class {
-    func getLocationButton(locationButton: String, location: Location)
+    func getLocationButton(viewController: AreaViewController, locationButton: String)
 }
 
 enum Location: Int {
@@ -65,15 +62,9 @@ enum Location: Int {
 class AreaViewController: UIViewController {
     
     @IBOutlet var buttonName: [UIButton]!
-    
-    weak var datasource: AreaViewControllerDatasource?
     weak var delegate: AreaViewControllerDelegate?
-//    
-//    var locationTinhButton: String = ""
-//    var locationHuyenButton: String = ""
-//    var locationMienButton: String = ""
-    
     var area: Location = .tinh
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -81,15 +72,13 @@ class AreaViewController: UIViewController {
     }
     
     func setupView() {
-        guard let datasource = datasource else { return }
-        let location = datasource.getViewController(view: self, location: area)
         for (index, button) in buttonName.enumerated() {
-            button.setTitle(location.buttonName + "\(index + 1)", for: .normal)
-            button.backgroundColor = location.buttonColor
-            title = location.title
+            button.setTitle(area.buttonName + "\(index + 1)", for: .normal)
+            button.backgroundColor = area.buttonColor
+            title = area.title
         }
     }
-    
+
     func changeView() {
         let nextButton = UIBarButtonItem(title: area.nextButtonTitle, style: UIBarButtonItem.Style.plain, target: self, action: #selector(nextButtonTouchUpInside))
         navigationItem.rightBarButtonItem = nextButton
@@ -97,19 +86,28 @@ class AreaViewController: UIViewController {
     
     @IBAction func buttonTouchUpInside(_ sender: UIButton) {
         guard let delegate = delegate else { return }
-        delegate.getLocationButton(locationButton: sender.titleLabel?.text ?? "empty", location: area)
+        delegate.getLocationButton(viewController: self, locationButton: sender.titleLabel?.text ?? "empty")
     }
     
     @objc func nextButtonTouchUpInside() {
         if area == .mien {
-            area = .tinh
+            let vc = AreaViewController()
+            vc.area = .tinh
+            vc.delegate = self
+            navigationController?.pushViewController(vc, animated: true)
         } else if area == .tinh {
-            area = .huyen
+            let vc1 = AreaViewController()
+            vc1.area = .huyen
+            vc1.delegate = self
+            navigationController?.pushViewController(vc1, animated: true)
         } else {
-            navigationController?.popViewController(animated: true)
+            navigationController?.popToRootViewController(animated: true)
             return
         }
-        setupView()
-        changeView()
+    }
+}
+extension AreaViewController: AreaViewControllerDelegate {
+    func getLocationButton(viewController: AreaViewController, locationButton: String) {
+        delegate?.getLocationButton(viewController: viewController, locationButton: locationButton)
     }
 }

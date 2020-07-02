@@ -28,27 +28,20 @@ class LocationViewController: UIViewController {
     @objc func editButtonTouchUpInside() {
         let vc = AreaViewController()
         vc.area = .mien
-        vc.datasource = self
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
-extension LocationViewController: AreaViewControllerDatasource {
-    func getViewController(view: AreaViewController, location: Location) -> Location {
-        return location
-    }
-}
-
 extension LocationViewController: AreaViewControllerDelegate {
-    func getLocationButton(locationButton: String, location: Location) {
-        switch location  {
+    func getLocationButton(viewController: AreaViewController, locationButton: String) {
+        switch viewController.area  {
         case .mien:
             mienLabel.text = locationButton
         case .huyen:
             huyenLabel.text = locationButton
         case .tinh:
             tinhLabel.text = locationButton
+        }
     }
-}
 }
