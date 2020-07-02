@@ -62,7 +62,7 @@ class ContactViewController: UIViewController {
     
     func convertContactsToNames() {
         for contact in contacts {
-            names.append(contact.identifier)
+            names.append(contact.givenName + contact.familyName)
         }
     }
 }
@@ -83,14 +83,6 @@ extension ContactViewController: UITableViewDataSource {
             
         }
     }
-    //    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    //        if isSearch {
-    //            return ""
-    //        } else {
-    //             return Array(plistData)[section].key
-    //        }
-    //
-    //    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as! ContactTableViewCell
         if isSearch {
