@@ -23,12 +23,6 @@
                             <constraint firstAttribute="width" constant="80" id="w91-ko-Ueh"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyl-iv-sQb">
-                        <rect key="frame" x="120" y="71" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBu-XU-6ra">
                         <rect key="frame" x="120" y="10" width="162" height="21"/>
                         <constraints>
@@ -41,8 +35,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="yBu-XU-6ra" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0zV-po-Xob"/>
-                    <constraint firstItem="Qyl-iv-sQb" firstAttribute="leading" secondItem="yBu-XU-6ra" secondAttribute="leading" id="2CS-7B-J36"/>
-                    <constraint firstItem="Qyl-iv-sQb" firstAttribute="top" secondItem="yBu-XU-6ra" secondAttribute="bottom" constant="40" id="9si-IT-Ox1"/>
                     <constraint firstItem="T0k-sa-4Ry" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Qwr-Ok-N8a"/>
                     <constraint firstItem="T0k-sa-4Ry" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Skg-7h-lCu"/>
                     <constraint firstItem="yBu-XU-6ra" firstAttribute="leading" secondItem="T0k-sa-4Ry" secondAttribute="trailing" constant="30" id="V9i-9j-7yA"/>
@@ -53,7 +45,6 @@
             <connections>
                 <outlet property="avatarImageView" destination="T0k-sa-4Ry" id="Igb-Mm-Qy6"/>
                 <outlet property="nameLabel" destination="yBu-XU-6ra" id="y7e-ip-Zo4"/>
-                <outlet property="phoneNumberLabel" destination="Qyl-iv-sQb" id="BPr-M6-D4k"/>
             </connections>
             <point key="canvasLocation" x="-430.43478260869568" y="-19.419642857142858"/>
         </tableViewCell>

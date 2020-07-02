@@ -18,6 +18,7 @@ class ListSimpleNameViewController: UIViewController {
         title = "Home"
         configName()
     }
+    
     func configName() {
         listSimpleName.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         listSimpleName.dataSource = self
@@ -27,9 +28,11 @@ extension ListSimpleNameViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.textLabel?.text = " Name\(indexPath.row + 1)"

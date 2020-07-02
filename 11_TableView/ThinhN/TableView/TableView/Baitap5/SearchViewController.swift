@@ -21,30 +21,35 @@ class SearchViewController: UIViewController {
         configTableView()
         configSearchBar()
         loadData()
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         names = contacts
         searchBar.text = ""
         tableView.reloadData()
     }
+    
     func configTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
     func configSearchBar() {
         searchBar.delegate = self
     }
+    
     func loadData() {
         guard let path = Bundle.main.url(forResource: "ListNames", withExtension: "plist") else { return }
         guard let contactData = NSArray(contentsOf: path) as? [String] else { return }
         contacts = contactData
     }
+    
     func search(keyword: String) {
         names = getContacts(keyword: keyword)
         tableView.reloadData()
     }
+    
     func getContacts(keyword: String) -> [String] {
         if keyword.trimmingCharacters(in: CharacterSet(charactersIn: "")) == "" {
             return contacts

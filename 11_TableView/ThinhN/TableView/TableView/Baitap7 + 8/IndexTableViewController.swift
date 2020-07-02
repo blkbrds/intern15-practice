@@ -25,10 +25,6 @@ class IndexTableViewController: UIViewController {
             let contactData = NSDictionary(contentsOf: path) as? [String: [String]]
         else { return }
         plistData = contactData
-        
-//        plistData.sorted { (ke, <#(key: String, value: [String])#>) -> Bool in
-//            <#code#>
-//        }
         plistDataIndex = ["T", "G", "D"]
     }
     func configTableView() {

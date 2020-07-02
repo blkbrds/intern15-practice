@@ -17,7 +17,5 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         title = "Detail"
         contactNameLabel.text = name
-        
-        // Do any additional setup after loading the view.
     }
 }

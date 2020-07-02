@@ -12,7 +12,7 @@ class ActionCellViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var numbersValue: [String] = []
-    var cheking: Bool = true
+    var checking: Bool = true
     var selectedIndexes = [[IndexPath.init(row: 0, section: 0)], [IndexPath.init(row: 0, section: 1)]]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,12 @@ class ActionCellViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "ChangeActive", style: UIBarButtonItem.Style.plain, target: self, action: #selector(buttonTouchUpInside))
     }
     @objc func buttonTouchUpInside () {
-        if cheking {
-            tableView.isEditing = cheking
-            cheking = false
+        if checking {
+            tableView.isEditing = checking
+            checking = false
         } else {
-            tableView.isEditing = cheking
-            cheking = true
+            tableView.isEditing = checking
+            checking = true
         }
         tableView.isEditing = true
     }

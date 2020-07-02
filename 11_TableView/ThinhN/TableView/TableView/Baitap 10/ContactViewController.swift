@@ -32,11 +32,6 @@ class ContactViewController: UIViewController {
         searchBar.delegate = self
     }
     
-    //    func loadData() {
-    //        guard let path = Bundle.main.url(forResource: "ContactList", withExtension: "plist"), let contactData = NSDictionary(contentsOf: path) as? [String: [String]]  else { return }
-    //        plistData = contactData
-    //    }
-    
     func configTableView() {
         let nib = UINib(nibName: "ContactTableViewCell", bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: "ContactTableViewCell")
@@ -46,11 +41,9 @@ class ContactViewController: UIViewController {
     func getContacts() {
         let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
         let request = CNContactFetchRequest(keysToFetch: keys)
-        
         do {
             try self.contactStore.enumerateContacts(with: request) {
                 (contact, stop) in
-                // Array containing all unified contacts from everywhere
                 self.contacts.append(contact)
             }
         }
@@ -78,9 +71,7 @@ extension ContactViewController: UITableViewDataSource {
         if isSearch {
             return result.count
         } else {
-            //            return Array(plistData)[section].value.count
             return names.count
-            
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,7 +91,6 @@ extension ContactViewController: UISearchBarDelegate {
             isSearch = false
         } else {
             isSearch = true
-            
         }
         for item in names {
             searchResult.append(item)
