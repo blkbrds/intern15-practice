@@ -16,5 +16,7 @@ class AvatarCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    func setupCell() {
+        
+    }
 }
