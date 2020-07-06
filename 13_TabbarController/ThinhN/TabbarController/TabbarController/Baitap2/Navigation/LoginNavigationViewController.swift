@@ -19,21 +19,20 @@ class LoginNavigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
-        notificationLabel.text = "Bạn đã nhập sai"
-        notificationLabel.isHidden = true 
+        notificationLabel.textColor = .red
     }
    
     @IBAction func loginButtonTouchUpInside(_ sender: Any) {
         if usernameTextField.text == name || passwordTextField.text == password {
             SceneDelegate.shared.changeRoot(root: .tabbar)
         } else {
-            notificationLabel.textColor = .red
-            notificationLabel.isHidden = false
+            notificationLabel.text = "Bạn đã nhập sai "
         }
     }
     
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
         let vc = RegisterViewController()
         navigationController?.pushViewController(vc, animated: true)
+        super.viewDidLoad()
     }
 }

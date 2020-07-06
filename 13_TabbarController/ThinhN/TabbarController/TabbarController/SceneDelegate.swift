@@ -45,18 +45,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func setupTabbar() -> UITabBarController {
+        
         let homeVC = HomeViewController2()
         let homeNavi = UINavigationController(rootViewController: homeVC)
         homeNavi.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "homefill"), selectedImage: UIImage(named: "home"))
+        homeNavi.tabBarItem.badgeValue = "99"
         
         let mapVC = MapViewController2()
         let mapNavi = UINavigationController(rootViewController: mapVC)
         mapNavi.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "map"), selectedImage: UIImage(named: "mapfill"))
+        mapNavi.tabBarItem.badgeValue = "DaNang"
         
         
         let favoritesVC = FavoritesViewController2()
         let favoritesNavi = UINavigationController(rootViewController: favoritesVC)
         favoritesNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        favoritesNavi.tabBarItem.badgeValue = "11"
         
         let profileVC = ProfileViewController2()
         let profileNavi = UINavigationController(rootViewController: profileVC)
@@ -67,4 +71,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return tabbarController
     }
 }
-

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="TabbarController" customModuleProvider="target">
             <connections>
+                <outlet property="confirmPasswordTextField" destination="Dsb-rS-iuW" id="5qe-DA-qny"/>
+                <outlet property="newPasswordTextField" destination="hQ8-rN-AJl" id="BGa-66-dN6"/>
+                <outlet property="notificationLabel" destination="vFW-ni-dw1" id="fPh-10-hxc"/>
+                <outlet property="usernameTextField" destination="fft-vd-CmU" id="gBC-cV-Wly"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,7 +37,7 @@
                         <constraint firstAttribute="width" constant="300" id="p0A-Rn-0cw"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="newpassword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQ8-rN-AJl">
                     <rect key="frame" x="57" y="274" width="300" height="30"/>
@@ -42,12 +46,31 @@
                         <constraint firstAttribute="height" constant="30" id="qgd-iU-WVx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpy-cA-tth">
-                    <rect key="frame" x="181.5" y="453" width="51" height="30"/>
-                    <state key="normal" title="Update"/>
+                    <rect key="frame" x="177" y="453" width="60" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="hBk-LO-dW9"/>
+                    </constraints>
+                    <state key="normal" title="Register">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="reginsterButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="uhp-Nu-7Qj"/>
+                    </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFW-ni-dw1">
+                    <rect key="frame" x="7" y="417" width="400" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="1vA-Ha-HYa"/>
+                        <constraint firstAttribute="height" constant="30" id="tmE-P2-am7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -57,7 +80,9 @@
                 <constraint firstItem="fft-vd-CmU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JfC-hr-AaK"/>
                 <constraint firstItem="fft-vd-CmU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="Tia-sv-svv"/>
                 <constraint firstItem="Dsb-rS-iuW" firstAttribute="top" secondItem="hQ8-rN-AJl" secondAttribute="bottom" constant="50" id="Vah-DX-05v"/>
+                <constraint firstItem="vFW-ni-dw1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fSb-1A-ocL"/>
                 <constraint firstItem="Dsb-rS-iuW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rFl-wC-KOf"/>
+                <constraint firstItem="vFW-ni-dw1" firstAttribute="top" secondItem="Dsb-rS-iuW" secondAttribute="bottom" constant="33" id="ws2-Pu-cLg"/>
                 <constraint firstItem="hQ8-rN-AJl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zXt-Rk-ai7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
