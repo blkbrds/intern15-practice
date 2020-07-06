@@ -48,8 +48,8 @@ class CustomHeaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
-        
     }
+    
     func configCollectionView() {
         let cellNib = UINib(nibName: "AvatarCollectionViewCell", bundle: .main)
         collectionView.register(cellNib, forCellWithReuseIdentifier: "cell")
@@ -67,6 +67,7 @@ extension CustomHeaderViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let phone = Phone(rawValue: section) else {
             fatalError("Phone value is nil")

@@ -13,7 +13,5 @@ class SectionHeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var nameSectionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
 }

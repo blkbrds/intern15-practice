@@ -13,7 +13,5 @@ class SliderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var sliderCell: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
 }

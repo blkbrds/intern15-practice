@@ -12,10 +12,8 @@ class ListCellLayoutViewController: UIViewController {
 
    
     @IBOutlet weak var collectionView: UICollectionView!
-    
-
     var imageOfCell: UIImage = UIImage(named: "download")!
-    var height: [CGFloat] = [100, 70, 90, 100, 30 ]
+    var height: [CGFloat] = [100, 70, 90, 100, 30]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +22,16 @@ class ListCellLayoutViewController: UIViewController {
         }
         configCollectionView()
     }
+    
     func configCollectionView() {
         let nib = UINib(nibName: "ImageCollectionViewCell", bundle: .main)
         collectionView.register(nib, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
-
     }
 }
-extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return height.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,8 +43,6 @@ extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectio
 }
 extension ListCellLayoutViewController: ListCellLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return height[indexPath.row]
+        return height[indexPath.section]
     }
-    
 }
-

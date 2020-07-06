@@ -12,7 +12,6 @@ class NumberCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var viewNumber: UIView!
     @IBOutlet weak var numberLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
