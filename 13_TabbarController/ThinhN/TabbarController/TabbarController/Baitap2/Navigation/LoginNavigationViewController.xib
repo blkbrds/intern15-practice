@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginNavigationViewController" customModule="TabbarController" customModuleProvider="target">
             <connections>
+                <outlet property="notificationLabel" destination="0WF-Kc-Mgf" id="iEZ-to-wyZ"/>
+                <outlet property="passwordTextField" destination="zNS-Hp-KYf" id="Qxh-UT-u7B"/>
+                <outlet property="usernameTextField" destination="det-QM-pVa" id="d7r-T0-OVV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,16 +38,50 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skC-YQ-qCg">
+                    <rect key="frame" x="188" y="385" width="38" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="FR2-rI-ybg"/>
+                        <constraint firstAttribute="width" constant="38" id="d7U-Gb-Nfv"/>
+                    </constraints>
+                    <state key="normal" title="Login"/>
+                    <connections>
+                        <action selector="loginButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="u7y-Dd-c2t"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlp-J0-7gV">
+                    <rect key="frame" x="178.5" y="475" width="57" height="30"/>
+                    <state key="normal" title="Register"/>
+                    <connections>
+                        <action selector="registerButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="qMD-5Y-d7m"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WF-Kc-Mgf">
+                    <rect key="frame" x="83" y="334" width="226" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="GYa-is-Eru"/>
+                        <constraint firstAttribute="width" constant="226" id="shq-fA-P1L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="0WF-Kc-Mgf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="83" id="6pq-qC-K24"/>
+                <constraint firstItem="skC-YQ-qCg" firstAttribute="top" secondItem="0WF-Kc-Mgf" secondAttribute="bottom" constant="30" id="Fno-hy-LLe"/>
                 <constraint firstItem="det-QM-pVa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="OPn-Zg-A8k"/>
                 <constraint firstItem="zNS-Hp-KYf" firstAttribute="top" secondItem="det-QM-pVa" secondAttribute="bottom" constant="50" id="Zs4-Rz-xYZ"/>
                 <constraint firstItem="det-QM-pVa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fT2-GU-K3w"/>
                 <constraint firstItem="zNS-Hp-KYf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fk4-6N-KOQ"/>
+                <constraint firstItem="Zlp-J0-7gV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hmt-uN-yCi"/>
+                <constraint firstItem="skC-YQ-qCg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iLe-75-CyO"/>
+                <constraint firstItem="Zlp-J0-7gV" firstAttribute="top" secondItem="skC-YQ-qCg" secondAttribute="bottom" constant="60" id="q2U-uu-B4m"/>
+                <constraint firstItem="0WF-Kc-Mgf" firstAttribute="top" secondItem="zNS-Hp-KYf" secondAttribute="bottom" constant="30" id="zuk-ZG-LBy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>
+            <point key="canvasLocation" x="-1.4492753623188408" y="134.59821428571428"/>
         </view>
     </objects>
 </document>
