@@ -28,7 +28,6 @@
 		7288852824AD98370022DCF3 /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7288852624AD98370022DCF3 /* NumberCollectionViewCell.xib */; };
 		7288852C24ADBA040022DCF3 /* ListCellLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288852A24ADBA040022DCF3 /* ListCellLayoutViewController.swift */; };
 		7288852D24ADBA040022DCF3 /* ListCellLayoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7288852B24ADBA040022DCF3 /* ListCellLayoutViewController.xib */; };
-		7288852F24ADBA8C0022DCF3 /* ListCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288852E24ADBA8C0022DCF3 /* ListCellLayout.swift */; };
 		7288853324ADC80B0022DCF3 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288853124ADC80B0022DCF3 /* ImageCollectionViewCell.swift */; };
 		7288853424ADC80B0022DCF3 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7288853224ADC80B0022DCF3 /* ImageCollectionViewCell.xib */; };
 		7288853724ADEEC50022DCF3 /* CustomHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7288853524ADEEC50022DCF3 /* CustomHeaderViewController.swift */; };
@@ -37,6 +36,7 @@
 		843F75A424AE46D4004B01A4 /* SectionHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F75A224AE46D4004B01A4 /* SectionHeaderCollectionReusableView.xib */; };
 		843F75AB24AE4C30004B01A4 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F75A924AE4C30004B01A4 /* AvatarCollectionViewCell.swift */; };
 		843F75AC24AE4C30004B01A4 /* AvatarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843F75AA24AE4C30004B01A4 /* AvatarCollectionViewCell.xib */; };
+		843F75B224B37B4C004B01A4 /* HomeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F75B124B37B4C004B01A4 /* HomeLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,6 @@
 		7288852624AD98370022DCF3 /* NumberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberCollectionViewCell.xib; sourceTree = "<group>"; };
 		7288852A24ADBA040022DCF3 /* ListCellLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellLayoutViewController.swift; sourceTree = "<group>"; };
 		7288852B24ADBA040022DCF3 /* ListCellLayoutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCellLayoutViewController.xib; sourceTree = "<group>"; };
-		7288852E24ADBA8C0022DCF3 /* ListCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellLayout.swift; sourceTree = "<group>"; };
 		7288853124ADC80B0022DCF3 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		7288853224ADC80B0022DCF3 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		7288853524ADEEC50022DCF3 /* CustomHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		843F75A224AE46D4004B01A4 /* SectionHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		843F75A924AE4C30004B01A4 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
 		843F75AA24AE4C30004B01A4 /* AvatarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarCollectionViewCell.xib; sourceTree = "<group>"; };
+		843F75B124B37B4C004B01A4 /* HomeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +159,9 @@
 			children = (
 				7288852A24ADBA040022DCF3 /* ListCellLayoutViewController.swift */,
 				7288852B24ADBA040022DCF3 /* ListCellLayoutViewController.xib */,
-				7288852E24ADBA8C0022DCF3 /* ListCellLayout.swift */,
 				7288853124ADC80B0022DCF3 /* ImageCollectionViewCell.swift */,
 				7288853224ADC80B0022DCF3 /* ImageCollectionViewCell.xib */,
+				843F75B124B37B4C004B01A4 /* HomeLayout.swift */,
 			);
 			path = Baitap2;
 			sourceTree = "<group>";
@@ -264,6 +264,7 @@
 			files = (
 				7280237A24AF0C65005474AE /* HeaderCollectionReusableView.swift in Sources */,
 				7288852724AD98370022DCF3 /* NumberCollectionViewCell.swift in Sources */,
+				843F75B224B37B4C004B01A4 /* HomeLayout.swift in Sources */,
 				7280237024AEE263005474AE /* SliderCollectionViewController.swift in Sources */,
 				7280238224AF3AC3005474AE /* SliderCollectionViewCell.swift in Sources */,
 				7288850924AD959B0022DCF3 /* AppDelegate.swift in Sources */,
@@ -275,7 +276,6 @@
 				7288852C24ADBA040022DCF3 /* ListCellLayoutViewController.swift in Sources */,
 				7288851F24AD962B0022DCF3 /* ListNumberViewController.swift in Sources */,
 				7288850B24AD959B0022DCF3 /* SceneDelegate.swift in Sources */,
-				7288852F24ADBA8C0022DCF3 /* ListCellLayout.swift in Sources */,
 				843F75AB24AE4C30004B01A4 /* AvatarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

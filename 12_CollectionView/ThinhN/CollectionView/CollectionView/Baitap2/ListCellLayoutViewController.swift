@@ -9,16 +9,16 @@
 import UIKit
 
 class ListCellLayoutViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var imageOfCell: UIImage = UIImage(named: "download")!
-    var height: [CGFloat] = [100, 70, 90, 100, 30]
+    var height: [CGFloat] = [20, 70, 90, 100, 30,90, 22, 100,50,60, 10]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let layout = collectionView.collectionViewLayout as? ListCellLayout {
-            layout.delegate = self
+        if let layout = collectionView.collectionViewLayout as? HomeLayout {
+            layout.dataSource = self
         }
         configCollectionView()
     }
@@ -36,13 +36,16 @@ extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
-        cell.backgroundColor = .blue
         cell.imageView.image = imageOfCell
         return cell
     }
 }
-extension ListCellLayoutViewController: ListCellLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        return height[indexPath.section]
+extension ListCellLayoutViewController: HomeLayoutDataSource {
+    func getNumberOfColum() -> Int {
+        3
+    }
+    
+    func collectionView(_ controller: UICollectionView, heightForColumnAtIndexPath indexPath: IndexPath) -> CGFloat {
+        return height[indexPath.row]
     }
 }
