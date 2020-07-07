@@ -16,14 +16,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableViewCell()
-        
     }
+    
     func configTableViewCell() {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
