@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MVVM" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="xtm-J3-aPq" id="agS-23-jAj"/>
                 <outlet property="tableView" destination="Xph-gQ-fCz" id="St5-9o-xnj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,11 +23,20 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xtm-J3-aPq">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewLayout key="collectionViewLayout" id="VIn-Rf-WzP"/>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Xph-gQ-fCz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HlN-vJ-xCY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xph-gQ-fCz" secondAttribute="trailing" id="hrq-X9-VhD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xtm-J3-aPq" secondAttribute="trailing" id="mVO-fo-l5U"/>
+                <constraint firstItem="xtm-J3-aPq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mYR-Ni-FJc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xtm-J3-aPq" secondAttribute="bottom" id="mwa-Ex-vYq"/>
+                <constraint firstItem="xtm-J3-aPq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tdj-2L-Jxy"/>
                 <constraint firstItem="Xph-gQ-fCz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uvX-Dg-O88"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Xph-gQ-fCz" secondAttribute="bottom" id="zje-aw-Ptf"/>
             </constraints>

@@ -13,16 +13,26 @@ class HomeViewController: UIViewController {
     var viewModel: HomeViewModel = HomeViewModel()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableViewCell()
-        
+        configCollectionViewCell()
     }
     func configTableViewCell() {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    func configCollectionViewCell() {
+        let nib2 = UINib(nibName: "HomeCollectionViewCell", bundle: .main)
+        collectionView.register(nib2, forCellWithReuseIdentifier: "collectionCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,4 +63,26 @@ extension HomeViewController: HomeTableViewCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         viewModel.caffe[indexPath.row].isFavorite = isFavorite
     }
+}
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.numberOfRowsInSection()
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         viewModel.numberOfRowsInSection()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? HomeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.viewModel = viewModel.cellForRowAt(indexPath: indexPath)
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.viewModel = DetailViewModel(caffee: viewModel.caffe[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
