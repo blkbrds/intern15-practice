@@ -12,7 +12,7 @@ protocol HomeCollectionViewCellDelegate: class  {
     func passValueToHomeViewController(view: HomeCollectionViewCell, isFavorite: Bool)
 }
 class HomeCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
@@ -45,5 +45,4 @@ class HomeCollectionViewCell: UICollectionViewCell {
         favoritesButton.isSelected = !favoritesButton.isSelected
         delegate.passValueToHomeViewController(view: self, isFavorite: favoritesButton.isSelected)
     }
-    
 }

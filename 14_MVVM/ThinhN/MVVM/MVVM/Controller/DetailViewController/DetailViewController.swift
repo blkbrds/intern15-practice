@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        title = "DETAIL"
     }
     func updateView() {
         guard let viewModel = viewModel else { return }
