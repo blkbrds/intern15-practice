@@ -10,9 +10,7 @@ import UIKit
 
 class ListCellLayoutViewController: UIViewController {
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    var imageOfCell: UIImage = UIImage(named: "download")!
     var height: [CGFloat] = [20, 70, 90, 100, 30,90, 22, 100,50,60, 10]
     
     override func viewDidLoad() {
@@ -35,14 +33,14 @@ extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
-        cell.imageView.image = imageOfCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
+        cell.imageView.image = UIImage(named: "download")
         return cell
     }
 }
 extension ListCellLayoutViewController: HomeLayoutDataSource {
-    func getNumberOfColum() -> Int {
-        3
+    func getNumberOfColumn() -> Int {
+        return 3
     }
     
     func collectionView(_ controller: UICollectionView, heightForColumnAtIndexPath indexPath: IndexPath) -> CGFloat {

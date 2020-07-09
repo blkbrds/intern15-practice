@@ -8,12 +8,11 @@
 
 import UIKit
 
-
 class SliderCollectionViewController: UIViewController {
     
-    @IBOutlet weak var sliderView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    var number: [Int] = []
+    var number: [Int] = Array(0...4)
     var images: [UIImage] = [#imageLiteral(resourceName: "calculator"),#imageLiteral(resourceName: "icons8-apple-logo-50"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "calculator"), #imageLiteral(resourceName: "download"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "icons8-smartphone-tablet-50") ]
     var currentIndex: Int = 0
     
@@ -21,13 +20,6 @@ class SliderCollectionViewController: UIViewController {
         super.viewDidLoad()
         configTableView()
         configCollectionView()
-        titleNumber()
-    }
-    
-    func titleNumber() {
-        for i in 0...4 {
-            number.append(i)
-        }
     }
     
     func configTableView() {
@@ -39,20 +31,20 @@ class SliderCollectionViewController: UIViewController {
     
     func configCollectionView() {
         let cell = UINib(nibName: "SliderCollectionViewCell", bundle: .main)
-        sliderView.register(cell, forCellWithReuseIdentifier: "cell")
-        sliderView.dataSource = self
-        sliderView.delegate = self
+        collectionView.register(cell, forCellWithReuseIdentifier: "cell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     @IBAction func backButtonTouchUpInside(_ sender: Any) {
         if currentIndex > 0 {
             currentIndex -= 1
-            sliderView.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: true)
+            collectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: true)
         }
     }
     @IBAction func nextButtonTouchUpInside(_ sender: Any) {
         if currentIndex < images.count - 1 {
             currentIndex += 1
-            sliderView.scrollToItem(at: IndexPath(row: currentIndex  , section: 0), at: .right, animated: true)
+            collectionView.scrollToItem(at: IndexPath(row: currentIndex  , section: 0), at: .right, animated: true)
         }
     }
 }
@@ -66,7 +58,7 @@ extension SliderCollectionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "icon", for: indexPath) as! IconTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "icon", for: indexPath) as? IconTableViewCell else {return UITableViewCell() }
         cell.configTableView()
         return cell
     }
@@ -82,8 +74,8 @@ extension SliderCollectionViewController: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SliderCollectionViewCell
-        cell.sliderCell.image = images[indexPath.row]
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SliderCollectionViewCell else { return UICollectionViewCell() }
+        cell.sliderImageView.image = images[indexPath.row]
         return cell
     }
     

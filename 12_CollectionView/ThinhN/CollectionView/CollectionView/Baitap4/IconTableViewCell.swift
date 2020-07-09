@@ -10,20 +10,13 @@ import UIKit
 
 class IconTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var collectionIcon: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     var images: [UIImage] = [#imageLiteral(resourceName: "calculator"),#imageLiteral(resourceName: "icons8-apple-logo-50"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "calculator"), #imageLiteral(resourceName: "download"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "icons8-smartphone-tablet-50"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "icons8-smartphone-tablet-50"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "icons8-smartphone-tablet-50"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "icons8-smartphone-tablet-50"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "icons8-smartphone-tablet-50"), #imageLiteral(resourceName: "icons8-iphone-x-40"), #imageLiteral(resourceName: "icons8-smartphone-tablet-50")]
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
+
     func configTableView() {
         let nib = UINib(nibName: "IconCollectionViewCell", bundle: .main)
-        collectionIcon.register(nib, forCellWithReuseIdentifier: "collectionIcon")
-        collectionIcon.dataSource = self
+        collectionView.register(nib, forCellWithReuseIdentifier: "collectionIcon")
+        collectionView.dataSource = self
     }
 }
 extension IconTableViewCell: UICollectionViewDataSource {
@@ -32,7 +25,7 @@ extension IconTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionIcon", for: indexPath) as! IconCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionIcon", for: indexPath) as? IconCollectionViewCell else { return UICollectionViewCell () }
         cell.iconView.image = images[indexPath.row]
         return cell
     }

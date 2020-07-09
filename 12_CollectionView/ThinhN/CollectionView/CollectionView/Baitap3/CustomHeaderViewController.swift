@@ -20,9 +20,9 @@ enum Phone: Int {
         switch self {
         case .iphone:
             return "IPHONE"
-        case.samsung:
+        case .samsung:
             return "SAMSUNG"
-        default:
+        case .xiaomi:
             return "XIAOMI"
         }
     }
@@ -32,13 +32,13 @@ enum Phone: Int {
             return [Member(name: "iphone 6", avatar: #imageLiteral(resourceName: "icons8-iphone-x-40")), Member(name: "iphone 6s", avatar: #imageLiteral(resourceName: "icons8-smartphone-tablet-50")), Member(name: "iphone 7", avatar: #imageLiteral(resourceName: "icons8-apple-logo-50"))]
         case .samsung:
             return [Member(name: "Note 9", avatar: #imageLiteral(resourceName: "samsung-social.png")), Member(name: "Note 10", avatar: #imageLiteral(resourceName: "phone")), Member(name: "S9", avatar: #imageLiteral(resourceName: "calculator")), Member(name: "S10", avatar: #imageLiteral(resourceName: "calculator")), Member(name: "S10 +", avatar: #imageLiteral(resourceName: "samsung-social")), Member(name: "Note 9", avatar: #imageLiteral(resourceName: "samsung-social.png")), Member(name: "Note 10", avatar: #imageLiteral(resourceName: "phone")), Member(name: "S9", avatar: #imageLiteral(resourceName: "calculator")), Member(name: "S10", avatar: #imageLiteral(resourceName: "calculator")), Member(name: "S10 +", avatar: #imageLiteral(resourceName: "samsung-social")), Member(name: "Note 9", avatar: #imageLiteral(resourceName: "samsung-social.png")), Member(name: "Note 10", avatar: #imageLiteral(resourceName: "phone")), Member(name: "S9", avatar: #imageLiteral(resourceName: "calculator")), Member(name: "S10", avatar: #imageLiteral(resourceName: "calculator")), Member(name: "S10 +", avatar: #imageLiteral(resourceName: "samsung-social"))]
-        default:
+        case .xiaomi:
             return [Member(name: "Mi 8", avatar: #imageLiteral(resourceName: "download")), Member(name: "Mi 9", avatar: #imageLiteral(resourceName: "download")), Member(name: "Mi 10", avatar: #imageLiteral(resourceName: "download"))]
         }
     }
-    static var count: Int {
-        return Phone.iphone.hashValue + 1
-    }
+//    static var count: Int {
+//        return Phone.iphone.hashValue + 1
+//    }
 }
 
 class CustomHeaderViewController: UIViewController {
@@ -55,9 +55,6 @@ class CustomHeaderViewController: UIViewController {
         collectionView.register(cellNib, forCellWithReuseIdentifier: "cell")
         let headerNib = UINib(nibName: "SectionHeaderCollectionReusableView", bundle: .main)
         collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
-        let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width: collectionView.frame.size.width, height: 100)
-        collectionView.collectionViewLayout = layout
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -70,14 +67,13 @@ extension CustomHeaderViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let phone = Phone(rawValue: section) else {
-            fatalError("Phone value is nil")
+            return 0
         }
         return phone.member.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let phone = Phone(rawValue: indexPath.section) else {fatalError("Out of range")}
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AvatarCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? AvatarCollectionViewCell, let phone = Phone(rawValue: indexPath.section)  else { return UICollectionViewCell() }
         switch phone {
         case .iphone:
             cell.imageView.image = phone.member[indexPath.item].avatar
@@ -92,11 +88,14 @@ extension CustomHeaderViewController: UICollectionViewDataSource {
 
 extension CustomHeaderViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let phone = Phone(rawValue: indexPath.section) else { fatalError("Phone value is nil")}
+        guard let phone = Phone(rawValue: indexPath.section) else { return UICollectionReusableView() }
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! SectionHeaderCollectionReusableView
-        header.nameSectionLabel.text = phone.titleName
-        header.nameSectionLabel.textColor = .red
+        header.sectionTitleLabel.text = phone.titleName
+        header.sectionTitleLabel.textColor = .red
         return header
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 30 , height: 50)
     }
 }
 

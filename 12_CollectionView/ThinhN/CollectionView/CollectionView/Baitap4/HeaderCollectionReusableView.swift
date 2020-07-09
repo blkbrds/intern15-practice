@@ -10,11 +10,7 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
 
-    @IBOutlet weak var listCell: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var leftButton: UIButton!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }

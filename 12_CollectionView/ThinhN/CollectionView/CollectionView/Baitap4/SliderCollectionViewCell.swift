@@ -10,8 +10,6 @@ import UIKit
 
 class SliderCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var sliderCell: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var sliderImageView: UIImageView!
+
 }

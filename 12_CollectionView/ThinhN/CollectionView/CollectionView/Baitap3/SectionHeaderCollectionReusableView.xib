@@ -14,20 +14,20 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8z-zb-0bq">
-                    <rect key="frame" x="27" y="15" width="42" height="12"/>
+                    <rect key="frame" x="27" y="15" width="42" height="9"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="X8z-zb-0bq" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="27" id="Lag-9k-E9C"/>
-                <constraint firstItem="X8z-zb-0bq" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="15" id="SXK-Rc-QM4"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="X8z-zb-0bq" secondAttribute="bottom" constant="14" id="Sxq-Ge-j0F"/>
+                <constraint firstItem="X8z-zb-0bq" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="27" id="GFT-tE-thP"/>
+                <constraint firstItem="X8z-zb-0bq" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="15" id="b1s-bC-a71"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="X8z-zb-0bq" secondAttribute="bottom" constant="17" id="oZ0-Zx-4hC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
-                <outlet property="nameSectionLabel" destination="X8z-zb-0bq" id="JPc-N7-Qcs"/>
+                <outlet property="sectionTitleLabel" destination="X8z-zb-0bq" id="JPc-N7-Qcs"/>
             </connections>
             <point key="canvasLocation" x="46.376811594202906" y="57.924107142857139"/>
         </collectionReusableView>

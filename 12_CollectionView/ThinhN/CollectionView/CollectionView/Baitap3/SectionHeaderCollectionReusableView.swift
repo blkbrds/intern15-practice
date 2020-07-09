@@ -10,8 +10,6 @@ import UIKit
 
 class SectionHeaderCollectionReusableView: UICollectionReusableView {
 
-    @IBOutlet weak var nameSectionLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+   
 }

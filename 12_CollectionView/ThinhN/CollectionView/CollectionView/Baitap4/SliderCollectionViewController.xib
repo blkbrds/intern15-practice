@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SliderCollectionViewController" customModule="CollectionView" customModuleProvider="target">
             <connections>
-                <outlet property="sliderView" destination="0HM-eX-sYh" id="mX0-XE-1uB"/>
+                <outlet property="collectionView" destination="0HM-eX-sYh" id="mX0-XE-1uB"/>
                 <outlet property="tableView" destination="GsQ-GW-tUQ" id="V02-Fx-Y3r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0HM-eX-sYh">
-                    <rect key="frame" x="0.0" y="44" width="414" height="128"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="DMo-ro-Geh"/>
@@ -33,11 +32,11 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GsQ-GW-tUQ">
-                    <rect key="frame" x="0.0" y="172" width="414" height="690"/>
+                    <rect key="frame" x="0.0" y="128" width="414" height="768"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0I-Os-dxu">
-                    <rect key="frame" x="40" y="93" width="60" height="40"/>
+                    <rect key="frame" x="40" y="49" width="60" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Uf3-1B-TXg"/>
                         <constraint firstAttribute="width" constant="60" id="rF7-Nc-ZJ7"/>
@@ -48,7 +47,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIr-hM-mH8">
-                    <rect key="frame" x="314" y="93" width="60" height="40"/>
+                    <rect key="frame" x="314" y="49" width="60" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="FVB-Uh-6fF"/>
                         <constraint firstAttribute="width" constant="60" id="uW5-L5-UZR"/>

@@ -8,7 +8,7 @@
 
 import UIKit
 protocol HomeLayoutDataSource: class {
-    func getNumberOfColum() -> Int
+    func getNumberOfColumn() -> Int
     func collectionView(_ controller: UICollectionView, heightForColumnAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 class HomeLayout: UICollectionViewLayout {
@@ -26,7 +26,7 @@ class HomeLayout: UICollectionViewLayout {
         super.prepare()
         self.attributeArray.removeAllObjects()
         guard  let dataSource = dataSource else { return }
-        let numberOfColumn : Int = dataSource.getNumberOfColum();
+        let numberOfColumn : Int = dataSource.getNumberOfColumn();
         let padding:CGFloat = 15.0;
         let collectionViewWidth = self.collectionView?.frame.size.width
         let itemWidth : CGFloat = (collectionViewWidth! - padding * CGFloat((numberOfColumn + 1))) / CGFloat(numberOfColumn)
