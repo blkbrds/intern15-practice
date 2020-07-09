@@ -12,11 +12,12 @@ import UIKit
 class Caffee {
     var title: String
     var address: String
-    var rating: String
+    var rating: Int
     var distance: String
     var imageName: String
     var isFavorite: Bool
-    init(title: String, address: String, rating: String, distance: String, imageName: String, isFavorite: Bool = false) {
+
+    init(title: String, address: String, rating: Int, distance: String, imageName: String, isFavorite: Bool = false) {
         self.title = title
         self.address = address
         self.rating = rating

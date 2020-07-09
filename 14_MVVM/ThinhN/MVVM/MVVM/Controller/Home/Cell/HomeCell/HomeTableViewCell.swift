@@ -40,12 +40,4 @@ class HomeTableViewCell: UITableViewCell {
         favoritesButton.isSelected = !favoritesButton.isSelected
         delegate.passValueToHomeViewController(cell: self, isFavorite: favoritesButton.isSelected)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }

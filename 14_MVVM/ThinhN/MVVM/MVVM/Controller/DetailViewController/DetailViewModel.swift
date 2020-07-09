@@ -8,12 +8,13 @@
 
 import Foundation
 
-class DetailViewModel {
-    var title: String
-    var address: String
-    var rating: String
-    var distance: String
-    var imageName: String
+final class DetailViewModel {
+    private(set) var title: String
+    private(set) var address: String
+    private(set) var rating: Int
+    private(set) var distance: String
+    private(set) var imageName: String
+    
     init(caffee: Caffee) {
         self.title = caffee.title
         self.address = caffee.address

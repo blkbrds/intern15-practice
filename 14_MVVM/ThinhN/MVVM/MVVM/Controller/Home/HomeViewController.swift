@@ -12,6 +12,7 @@ enum Status {
     case tableView
     case collectionView
 }
+
 class HomeViewController: UIViewController {
     
     var viewModel: HomeViewModel = HomeViewModel()

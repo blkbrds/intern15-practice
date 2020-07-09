@@ -21,9 +21,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favoritesButton: UIButton!
     weak var delegate: HomeCollectionViewCellDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     var viewModel: HomeCellViewModel? {
         didSet {
             updateView()

@@ -8,13 +8,14 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var ratingLabel: UILabel!
+    @IBOutlet private weak var distanceLabel: UILabel!
+    
     var viewModel: DetailViewModel?
     
     override func viewDidLoad() {
@@ -22,12 +23,13 @@ class DetailViewController: UIViewController {
         updateView()
         title = "DETAIL"
     }
+    
     func updateView() {
         guard let viewModel = viewModel else { return }
         avatarImageView.image = UIImage(named: viewModel.imageName)
         titleLabel.text = viewModel.title
         addressLabel.text = viewModel.address
-        ratingLabel.text = viewModel.rating
+        ratingLabel.text = "\(viewModel.rating)/10"
         distanceLabel.text = viewModel.distance
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HomeCellViewModel {
+final class HomeCellViewModel {
     
     var title: String
     var address: String
@@ -20,7 +20,7 @@ class HomeCellViewModel {
     init(caffee: Caffee) {
         self.title = caffee.title
         self.address = caffee.address
-        self.rating = caffee.rating
+        self.rating = ("\(caffee.rating)/10")
         self.distance = caffee.distance
         self.imageName = caffee.imageName
         self.isFavorite = caffee.isFavorite
