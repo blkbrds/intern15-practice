@@ -21,8 +21,7 @@ class CalculatorView: UIView {
     weak var datasource: CalculatorViewDatasource?
     weak var delegate: CalculatorViewDelegate?
     var result: Int = 0
-    var x1: Int = 0
-    var x2: Int = 0
+    
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var resultTextField: UILabel!
@@ -35,48 +34,48 @@ class CalculatorView: UIView {
     }
     @IBAction func doneButtonTouchUpInside(_ sender: Any) {
         delegate?.touchDoneButton(result: String(result))
-         self.isHidden = true
+        self.isHidden = true
     }
     
     @IBAction func plusButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
-        x1 = Int(x) ?? 0
-        x2 = Int(y) ?? 0
+        let x1 = Int(x) ?? 0
+        let x2 = Int(y) ?? 0
         result = x1 + x2
         resultTextField.text = String(result)
     }
     @IBAction func subButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
-        x1 = Int(x) ?? 0
-        x2 = Int(y) ?? 0
+        let x1 = Int(x) ?? 0
+        let x2 = Int(y) ?? 0
         result = x1 - x2
         resultTextField.text = String(result)
     }
     @IBAction func mulButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
-        x1 = Int(x) ?? 0
-        x2 = Int(y) ?? 0
+        let x1 = Int(x) ?? 0
+        let x2 = Int(y) ?? 0
         result = x1 * x2
         resultTextField.text = String(result)
     }
     @IBAction func divButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
-        x1 = Int(x) ?? 0
-        x2 = Int(y) ?? 0
+        let x1 = Int(x) ?? 0
+        let x2 = Int(y) ?? 0
         result = x1 / x2
         resultTextField.text = String(result)
     }
     @IBAction func percentButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
-        x1 = Int(x) ?? 0
-        x2 = Int(y) ?? 0
+        let x1 = Int(x) ?? 0
+        let x2 = Int(y) ?? 0
         result = x1 % x2
         resultTextField.text = String(result)
     }
     @IBAction func powButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
-        x1 = Int(x) ?? 0
-        x2 = Int(y) ?? 0
+        let x1 = Int(x) ?? 0
+        let x2 = Int(y) ?? 0
         result = Int(pow(Double(x1), Double(x2)))
         resultTextField.text = String(result)
     }

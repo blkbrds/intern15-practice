@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AreaViewControllerDelegate: class {
-    func getLocationButton(viewController: AreaViewController, locationButton: String)
+    func passChooseLocation(viewController: AreaViewController, locationButton: String)
 }
 
 enum Location: Int {
@@ -31,19 +31,19 @@ enum Location: Int {
         switch self {
         case .tinh:
             return .green
-        case.huyen:
-            return.orange
-        case.mien:
-            return.systemBlue
+        case .huyen:
+            return .orange
+        case .mien:
+            return .systemBlue
         }
     }
     var title: String {
         switch self {
         case .tinh:
             return "Tỉnh"
-        case.huyen:
+        case .huyen:
             return "Huyện"
-        case.mien:
+        case .mien:
             return "Miền"
         }
     }
@@ -51,9 +51,9 @@ enum Location: Int {
         switch self {
         case .tinh:
             return "Huyện"
-        case.huyen:
+        case .huyen:
             return "Done"
-        case.mien:
+        case .mien:
             return "Tỉnh"
         }
     }
@@ -86,7 +86,7 @@ class AreaViewController: UIViewController {
     
     @IBAction func buttonTouchUpInside(_ sender: UIButton) {
         guard let delegate = delegate else { return }
-        delegate.getLocationButton(viewController: self, locationButton: sender.titleLabel?.text ?? "empty")
+        delegate.passChooseLocation(viewController: self, locationButton: sender.titleLabel?.text ?? "empty")
     }
     
     @objc func nextButtonTouchUpInside() {
@@ -96,10 +96,10 @@ class AreaViewController: UIViewController {
             vc.delegate = self
             navigationController?.pushViewController(vc, animated: true)
         } else if area == .tinh {
-            let vc1 = AreaViewController()
-            vc1.area = .huyen
-            vc1.delegate = self
-            navigationController?.pushViewController(vc1, animated: true)
+            let vc = AreaViewController()
+            vc.area = .huyen
+            vc.delegate = self
+            navigationController?.pushViewController(vc, animated: true)
         } else {
             navigationController?.popToRootViewController(animated: true)
             return
@@ -107,7 +107,7 @@ class AreaViewController: UIViewController {
     }
 }
 extension AreaViewController: AreaViewControllerDelegate {
-    func getLocationButton(viewController: AreaViewController, locationButton: String) {
-        delegate?.getLocationButton(viewController: viewController, locationButton: locationButton)
+    func passChooseLocation(viewController: AreaViewController, locationButton: String) {
+        delegate?.passChooseLocation(viewController: viewController, locationButton: locationButton)
     }
 }

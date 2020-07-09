@@ -34,7 +34,7 @@ class LocationViewController: UIViewController {
 }
 
 extension LocationViewController: AreaViewControllerDelegate {
-    func getLocationButton(viewController: AreaViewController, locationButton: String) {
+    func passChooseLocation(viewController: AreaViewController, locationButton: String) {
         switch viewController.area  {
         case .mien:
             mienLabel.text = locationButton
