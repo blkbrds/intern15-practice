@@ -10,7 +10,7 @@ import UIKit
 
 class ListSimpleNameViewController: UIViewController {
     
-    @IBOutlet weak var listSimpleName: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var names: [String] = []
     override func viewDidLoad() {
@@ -20,8 +20,8 @@ class ListSimpleNameViewController: UIViewController {
     }
     
     func configName() {
-        listSimpleName.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-        listSimpleName.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.dataSource = self
     }
 }
 extension ListSimpleNameViewController: UITableViewDataSource {

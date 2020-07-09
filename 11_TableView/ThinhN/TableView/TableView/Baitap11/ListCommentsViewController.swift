@@ -25,8 +25,7 @@ class ListCommentsViewController: UIViewController {
     }
     
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "ListComment", withExtension: "plist") else { return }
-        guard let contactData = NSArray(contentsOf: path) as? [String] else { return }
+        guard let path = Bundle.main.url(forResource: "ListComment", withExtension: "plist"), let contactData = NSArray(contentsOf: path) as? [String] else { return }
         textComment = contactData
     }
 }
@@ -40,7 +39,7 @@ extension ListCommentsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as! CommentTableViewCell
-        cell.nameLabel.text = textComment[indexPath.row]
+        cell.commentLabel.text = textComment[indexPath.row]
         return cell
     }
 }

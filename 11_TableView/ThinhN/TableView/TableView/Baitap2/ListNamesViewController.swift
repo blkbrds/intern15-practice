@@ -11,7 +11,7 @@ import UIKit
 class ListNamesViewController: UIViewController {
 
     var names: [String] = []
-    @IBOutlet weak var listNamesView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -19,14 +19,13 @@ class ListNamesViewController: UIViewController {
     }
     
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "ListNames", withExtension: "plist") else { return }
-        guard let contactData = NSArray(contentsOf: path) as? [String] else { return }
+        guard let path = Bundle.main.url(forResource: "ListNames", withExtension: "plist"), let contactData = NSArray(contentsOf: path) as? [String] else { return }
         names = contactData
     }
     
     func configTableView() {
-        listNamesView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-        listNamesView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.dataSource = self
     }
 }
 extension ListNamesViewController: UITableViewDataSource {

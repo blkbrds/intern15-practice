@@ -40,8 +40,7 @@ class SearchViewController: UIViewController {
     }
     
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "ListNames", withExtension: "plist") else { return }
-        guard let contactData = NSArray(contentsOf: path) as? [String] else { return }
+        guard let path = Bundle.main.url(forResource: "ListNames", withExtension: "plist"), let contactData = NSArray(contentsOf: path) as? [String]  else { return }
         contacts = contactData
     }
     
@@ -81,9 +80,9 @@ extension SearchViewController: UITableViewDataSource {
 }
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vcDetail = DetailViewController()
-        vcDetail.name = names[indexPath.row]
-        navigationController?.pushViewController(vcDetail, animated: true)
+        let detailVC = DetailViewController()
+        detailVC.name = names[indexPath.row]
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

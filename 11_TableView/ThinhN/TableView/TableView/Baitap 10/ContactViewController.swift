@@ -12,12 +12,11 @@ class ContactViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    var plistData: [String: [String]] = [:]
+//    var plistData: [String: [String]] = [:]
     var result: [String] = []
     var names: [String] = []
-    var isSearch: Bool = false
-    var contactStore = CNContactStore()
-    var contacts = [CNContact]()
+    var isSearching: Bool = false
+//    var contacts = [CNContact]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,7 @@ class ContactViewController: UIViewController {
         // loadData()
         configTableView()
         searchBar.delegate = self
-        getContacts()
+//        getContacts()
     }
     
     func configSearchBar() {
@@ -38,37 +37,40 @@ class ContactViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    func getContacts() {
-        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
-        let request = CNContactFetchRequest(keysToFetch: keys)
-        do {
-            try self.contactStore.enumerateContacts(with: request) {
-                (contact, stop) in
-                self.contacts.append(contact)
-            }
-        }
-        catch {
-            print("unable to fetch contacts")
-        }
-        convertContactsToNames()
-    }
+//    func getContacts() {
+//        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
+//        let request = CNContactFetchRequest(keysToFetch: keys)
+//        do {
+//            try self.contactStore.enumerateContacts(with: request) {
+//                (contact, stop) in
+//                self.contacts.append(contact)
+//            }
+//        }
+//        catch {
+//            print("unable to fetch contacts")
+//        }
+//        for contact in contacts {
+//                  names.append(contact.givenName + contact.familyName)
+//              }
+////        convertContactsToNames()
+//    }
     
-    func convertContactsToNames() {
-        for contact in contacts {
-            names.append(contact.givenName + contact.familyName)
-        }
-    }
+//    func convertContactsToNames() {
+//        for contact in contacts {
+//            names.append(contact.givenName + contact.familyName)
+//        }
+//    }
 }
 extension ContactViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if isSearch {
+        if isSearching {
             return 1
         } else {
             return names.count
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isSearch {
+        if isSearching {
             return result.count
         } else {
             return names.count
@@ -76,7 +78,7 @@ extension ContactViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactTableViewCell", for: indexPath) as! ContactTableViewCell
-        if isSearch {
+        if isSearching {
             cell.nameLabel.text = result[indexPath.row]
         } else {
             cell.nameLabel.text = names[indexPath.row]
@@ -88,9 +90,9 @@ extension ContactViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var searchResult: [String] = []
         if searchText == "" {
-            isSearch = false
+            isSearching = false
         } else {
-            isSearch = true
+            isSearching = true
         }
         for item in names {
             searchResult.append(item)

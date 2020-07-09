@@ -20,14 +20,13 @@ class TableViewCellController: UIViewController {
     }
     
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "SectionList", withExtension: "plist") else { return }
-        guard let contactData = NSDictionary(contentsOf: path) as? [String: [String]] else { return }
+        guard let path = Bundle.main.url(forResource: "SectionList", withExtension: "plist"), let contactData = NSDictionary(contentsOf: path) as? [String: [String]] else { return }
         plistData = contactData
     }
     
     func configTableView() {
-        let nib = UINib(nibName: "CustomTableViewCell", bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
+        let nib = UINib(nibName: "ContactCell", bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -42,7 +41,7 @@ extension TableViewCellController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContactCell
         cell.contactNameLabel.text = (Array(plistData)[indexPath.section].value)[indexPath.row]
         cell.subtitleNameLabel.text = "Sub title"
         cell.contactNameLabel.textColor = .red
@@ -64,8 +63,8 @@ extension TableViewCellController: UITableViewDataSource, UITableViewDelegate {
         return 100
     }
 }
-extension TableViewCellController: CustomTableViewCellDelegate {
-    func tapButton(_customTabViewCell: CustomTableViewCell) {
+extension TableViewCellController: ContactCellDelegate {
+    func tapButton(customTableViewCell: ContactCell) {
         print("Tap me !!")
     }
 }
