@@ -39,8 +39,7 @@ class ActionCellViewController: UIViewController {
         tableView.isEditing = true
     }
     func loadData() {
-        guard let path = Bundle.main.url(forResource: "ListNumber", withExtension: "plist") else { return }
-        guard let contactData = NSArray(contentsOf: path) as? [String] else { return }
+        guard let path = Bundle.main.url(forResource: "ListNumber", withExtension: "plist"), let contactData = NSArray(contentsOf: path) as? [String] else { return }
         numbersValue = contactData
     }
 }

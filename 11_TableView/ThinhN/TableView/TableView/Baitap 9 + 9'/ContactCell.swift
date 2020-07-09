@@ -7,14 +7,17 @@
 //
 
 import UIKit
+
 protocol ContactCellDelegate: class {
     func tapButton(customTableViewCell: ContactCell)
 }
+
 class ContactCell: UITableViewCell {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var contactNameLabel: UILabel!
-    @IBOutlet weak var subtitleNameLabel: UILabel!
+    @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var contactNameLabel: UILabel!
+    @IBOutlet private weak var subtitleNameLabel: UILabel!
+    
     weak var delegate: ContactCellDelegate?
     
     override func awakeFromNib() {
@@ -23,7 +26,7 @@ class ContactCell: UITableViewCell {
         avatarImageView.clipsToBounds = true
     }
 
-    @IBAction func tapButtonTouchUpInside(_ sender: Any) {
+    @IBAction private func tapButtonTouchUpInside(_ sender: Any) {
         delegate?.tapButton(customTableViewCell: self)
     }
 }

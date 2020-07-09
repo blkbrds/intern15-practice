@@ -41,7 +41,7 @@ extension TableViewCellController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContactCell
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ContactCell else { return UITableViewCell() }
         cell.contactNameLabel.text = (Array(plistData)[indexPath.section].value)[indexPath.row]
         cell.subtitleNameLabel.text = "Sub title"
         cell.contactNameLabel.textColor = .red
