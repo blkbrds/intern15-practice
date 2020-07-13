@@ -15,11 +15,11 @@ final class DetailViewModel {
     private(set) var distance: String
     private(set) var imageName: String
     
-    init(caffee: Caffee) {
-        self.title = caffee.title
-        self.address = caffee.address
-        self.rating = caffee.rating
-        self.distance = caffee.distance
-        self.imageName = caffee.imageName
+    init(cafe: Cafe) {
+        self.title = cafe.title
+        self.address = cafe.address
+        self.rating = cafe.rating
+        self.distance = cafe.distance
+        self.imageName = cafe.imageName
     }
 }

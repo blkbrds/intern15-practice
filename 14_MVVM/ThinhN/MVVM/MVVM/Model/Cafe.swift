@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Caffee {
+class Cafe {
     var title: String
     var address: String
     var rating: Int

@@ -28,12 +28,14 @@ class HomeViewController: UIViewController {
         configCollectionViewCell()
         changeView()
     }
+    
     func configTableViewCell() {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
     func configCollectionViewCell() {
         let nib2 = UINib(nibName: "HomeCollectionViewCell", bundle: .main)
         collectionView.register(nib2, forCellWithReuseIdentifier: "collectionCell")
@@ -49,6 +51,7 @@ class HomeViewController: UIViewController {
         let barButton = UIBarButtonItem(image: UIImage(systemName: "rectangle.split.3x1"), style: .plain, target: self, action: #selector(changeViewButtonTouchUpInside))
         navigationItem.rightBarButtonItem = barButton
     }
+    
     @objc func changeViewButtonTouchUpInside() {
         if status == .tableView {
             tableView.isHidden = true
@@ -79,9 +82,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.viewModel = viewModel.cellForRowAt(indexPath: indexPath)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.viewModel = DetailViewModel(caffee: viewModel.listCaffe[indexPath.row])
+        vc.viewModel = DetailViewModel(cafe: viewModel.listCafes[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -89,7 +93,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController: HomeTableViewCellDelegate {
     func passValueToHomeViewController(cell: HomeTableViewCell, isFavorite: Bool) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        viewModel.listCaffe[indexPath.row].isFavorite = isFavorite
+        viewModel.listCafes[indexPath.row].isFavorite = isFavorite
     }
 }
 
@@ -110,18 +114,22 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.viewModel = viewModel.cellForRowAt(indexPath: indexPath)
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.viewModel = DetailViewModel(caffee: viewModel.listCaffe[indexPath.row])
+        vc.viewModel = DetailViewModel(cafe: viewModel.listCafes[indexPath.row])
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
 extension HomeViewController: HomeCollectionViewCellDelegate {
+
     func passValueToHomeViewController(view: HomeCollectionViewCell, isFavorite: Bool) {
         guard let indexPath = collectionView.indexPath(for: view) else { return }
-        viewModel.listCaffe[indexPath.row].isFavorite = isFavorite
+        viewModel.listCafes[indexPath.row].isFavorite = isFavorite
     }
 }
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (UIScreen.main.bounds.width - 30) / 2, height: 200)
