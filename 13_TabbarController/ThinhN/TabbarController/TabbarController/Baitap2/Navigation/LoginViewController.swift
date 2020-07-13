@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginNavigationViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -16,14 +16,14 @@ class LoginNavigationViewController: UIViewController {
     
     var name: String = "Admin"
     var password: String = "123"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
-        notificationLabel.textColor = .red
     }
    
     @IBAction func loginButtonTouchUpInside(_ sender: Any) {
-        if usernameTextField.text == name || passwordTextField.text == password {
+        if usernameTextField.text == name && passwordTextField.text == password {
             SceneDelegate.shared.changeRoot(root: .tabbar)
         } else {
             notificationLabel.text = "Bạn đã nhập sai "
@@ -33,6 +33,5 @@ class LoginNavigationViewController: UIViewController {
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
         let vc = RegisterViewController()
         navigationController?.pushViewController(vc, animated: true)
-        super.viewDidLoad()
     }
 }

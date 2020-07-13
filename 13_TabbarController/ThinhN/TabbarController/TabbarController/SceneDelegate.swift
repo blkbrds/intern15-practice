@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowSence = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowSence)
         
-        let navi = UINavigationController(rootViewController: LoginNavigationViewController())
+        let navi = UINavigationController(rootViewController: LoginViewController())
         window.rootViewController = navi
         self.window = window
         window.makeKeyAndVisible()
@@ -37,8 +37,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func changeRoot(root: RootViewController) {
         switch root {
         case .login:
-            window?.rootViewController = LoginNavigationViewController()
-        default:
+            window?.rootViewController = LoginViewController()
+        case .tabbar:
             window?.rootViewController = setupTabbar()
         }
         window?.makeKeyAndVisible()

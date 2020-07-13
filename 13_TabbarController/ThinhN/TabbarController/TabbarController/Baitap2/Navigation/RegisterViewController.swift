@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
 
     @IBAction func reginsterButtonTouchUpInside(_ sender: Any) {
         switch (usernameTextField.text, confirmPasswordTextField.text) {
-        case ("",""):
+        case ("", ""):
             notificationLabel.text = "Chưa nhập username và password"
         case ("", _):
             notificationLabel.text = "Chưa nhập username"

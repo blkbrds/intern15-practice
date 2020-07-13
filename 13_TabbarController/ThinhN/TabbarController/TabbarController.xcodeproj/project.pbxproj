@@ -27,10 +27,12 @@
 		727C12A024B318E500CCB8C4 /* MapViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C129E24B318E500CCB8C4 /* MapViewController2.xib */; };
 		727C12A324B318FC00CCB8C4 /* ProfileViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C12A124B318FC00CCB8C4 /* ProfileViewController2.swift */; };
 		727C12A424B318FC00CCB8C4 /* ProfileViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C12A224B318FC00CCB8C4 /* ProfileViewController2.xib */; };
-		727C12A824B31B0E00CCB8C4 /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C12A624B31B0E00CCB8C4 /* LoginNavigationViewController.swift */; };
-		727C12A924B31B0E00CCB8C4 /* LoginNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C12A724B31B0E00CCB8C4 /* LoginNavigationViewController.xib */; };
+		727C12A824B31B0E00CCB8C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C12A624B31B0E00CCB8C4 /* LoginViewController.swift */; };
+		727C12A924B31B0E00CCB8C4 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C12A724B31B0E00CCB8C4 /* LoginViewController.xib */; };
 		727C12AC24B31CF500CCB8C4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C12AA24B31CF500CCB8C4 /* RegisterViewController.swift */; };
 		727C12AD24B31CF500CCB8C4 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C12AB24B31CF500CCB8C4 /* RegisterViewController.xib */; };
+		727E82F824BC5312008C9893 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727E82F624BC5312008C9893 /* ForgotPasswordViewController.swift */; };
+		727E82F924BC5312008C9893 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727E82F724BC5312008C9893 /* ForgotPasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,10 +58,12 @@
 		727C129E24B318E500CCB8C4 /* MapViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController2.xib; sourceTree = "<group>"; };
 		727C12A124B318FC00CCB8C4 /* ProfileViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController2.swift; sourceTree = "<group>"; };
 		727C12A224B318FC00CCB8C4 /* ProfileViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController2.xib; sourceTree = "<group>"; };
-		727C12A624B31B0E00CCB8C4 /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
-		727C12A724B31B0E00CCB8C4 /* LoginNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginNavigationViewController.xib; sourceTree = "<group>"; };
+		727C12A624B31B0E00CCB8C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		727C12A724B31B0E00CCB8C4 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		727C12AA24B31CF500CCB8C4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		727C12AB24B31CF500CCB8C4 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		727E82F624BC5312008C9893 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		727E82F724BC5312008C9893 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,10 +213,12 @@
 		727C12A524B31AEC00CCB8C4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				727C12A624B31B0E00CCB8C4 /* LoginNavigationViewController.swift */,
-				727C12A724B31B0E00CCB8C4 /* LoginNavigationViewController.xib */,
+				727C12A624B31B0E00CCB8C4 /* LoginViewController.swift */,
+				727C12A724B31B0E00CCB8C4 /* LoginViewController.xib */,
 				727C12AA24B31CF500CCB8C4 /* RegisterViewController.swift */,
 				727C12AB24B31CF500CCB8C4 /* RegisterViewController.xib */,
+				727E82F624BC5312008C9893 /* ForgotPasswordViewController.swift */,
+				727E82F724BC5312008C9893 /* ForgotPasswordViewController.xib */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -275,9 +281,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727E82F924BC5312008C9893 /* ForgotPasswordViewController.xib in Resources */,
 				727C12A024B318E500CCB8C4 /* MapViewController2.xib in Resources */,
 				727C12AD24B31CF500CCB8C4 /* RegisterViewController.xib in Resources */,
-				727C12A924B31B0E00CCB8C4 /* LoginNavigationViewController.xib in Resources */,
+				727C12A924B31B0E00CCB8C4 /* LoginViewController.xib in Resources */,
 				727C128824B3087100CCB8C4 /* MapViewController.xib in Resources */,
 				727C129824B3188800CCB8C4 /* HomeViewController2.xib in Resources */,
 				727C126F24B3073200CCB8C4 /* Preview Assets.xcassets in Resources */,
@@ -307,8 +314,9 @@
 				727C128B24B3087C00CCB8C4 /* HomeViewController.swift in Sources */,
 				727C129724B3188800CCB8C4 /* HomeViewController2.swift in Sources */,
 				727C129B24B318CB00CCB8C4 /* FavoritesViewController2.swift in Sources */,
+				727E82F824BC5312008C9893 /* ForgotPasswordViewController.swift in Sources */,
 				727C12AC24B31CF500CCB8C4 /* RegisterViewController.swift in Sources */,
-				727C12A824B31B0E00CCB8C4 /* LoginNavigationViewController.swift in Sources */,
+				727C12A824B31B0E00CCB8C4 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
