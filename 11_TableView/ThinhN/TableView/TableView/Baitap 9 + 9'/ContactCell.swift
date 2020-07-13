@@ -14,9 +14,9 @@ protocol ContactCellDelegate: class {
 
 class ContactCell: UITableViewCell {
 
-    @IBOutlet private weak var avatarImageView: UIImageView!
-    @IBOutlet private weak var contactNameLabel: UILabel!
-    @IBOutlet private weak var subtitleNameLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var contactNameLabel: UILabel!
+    @IBOutlet weak var subtitleNameLabel: UILabel!
     
     weak var delegate: ContactCellDelegate?
     

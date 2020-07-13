@@ -14,6 +14,7 @@ class ActionCellViewController: UIViewController {
     var numbersValue: [String] = []
     var checking: Bool = true
     var selectedIndexes = [[IndexPath.init(row: 0, section: 0)], [IndexPath.init(row: 0, section: 1)]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -26,9 +27,28 @@ class ActionCellViewController: UIViewController {
     }
     
     func configNavigationBar() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "ChangeActive", style: UIBarButtonItem.Style.plain, target: self, action: #selector(buttonTouchUpInside))
+        let changeActive = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(changeActiveButtonTouchUpInside))
+        let delete  = UIBarButtonItem(image: UIImage(systemName: "trash"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(deleteButtonTouchUpInside))
+        navigationItem.leftBarButtonItems = [changeActive, delete]
     }
-    @objc func buttonTouchUpInside () {
+    
+    @objc func deleteButtonTouchUpInside() {
+        
+        if let selectRow = tableView.indexPathsForSelectedRows {
+            var items = [String]()
+            for indexPath in selectRow {
+                items.append(numbersValue[indexPath.row])
+            }
+            for item in items {
+                if let index = numbersValue.firstIndex(of: item) {
+                    numbersValue.remove(at: index)
+                }
+            }
+            tableView.deleteRows(at: selectRow, with: .automatic)
+        }
+    }
+    
+    @objc func changeActiveButtonTouchUpInside () {
         if checking {
             tableView.isEditing = checking
             checking = false
@@ -36,13 +56,14 @@ class ActionCellViewController: UIViewController {
             tableView.isEditing = checking
             checking = true
         }
-        tableView.isEditing = true
     }
+    
     func loadData() {
         guard let path = Bundle.main.url(forResource: "ListNumber", withExtension: "plist"), let contactData = NSArray(contentsOf: path) as? [String] else { return }
         numbersValue = contactData
     }
 }
+
 extension ActionCellViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numbersValue.count
@@ -60,21 +81,33 @@ extension ActionCellViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.numbersValue.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = "\(indexPath.row + 1)"
-        if let cell = tableView.cellForRow(at: indexPath) {
-               cell.accessoryType = .checkmark
-           }
         return cell
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: UIContextualAction.Style.normal, title: "Delete") { (action, view, completionHandler) in completionHandler(true)
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: UIContextualAction.Style.normal, title: "Delete") { (action, view, completionHandler) in
+            self.numbersValue.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandler(true)
         }
-        delete.image = UIImage(systemName: "list")
+        delete.image = UIImage(systemName: "trash")
         delete.backgroundColor = .red
-        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        let insert = UIContextualAction(style: .normal, title: "Insert") { (action, view, completionHandler) in
+            self.numbersValue.insert("new", at: indexPath.row)
+            tableView.insertRows(at: [indexPath], with: .fade)
+            completionHandler(true)
+        }
+        let swipe = UISwipeActionsConfiguration(actions: [delete, insert])
         return swipe
     }
     
