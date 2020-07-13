@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ListCellLayoutViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!

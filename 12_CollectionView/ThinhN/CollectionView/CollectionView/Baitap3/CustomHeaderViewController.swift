@@ -36,9 +36,6 @@ enum Phone: Int {
             return [Member(name: "Mi 8", avatar: #imageLiteral(resourceName: "download")), Member(name: "Mi 9", avatar: #imageLiteral(resourceName: "download")), Member(name: "Mi 10", avatar: #imageLiteral(resourceName: "download"))]
         }
     }
-//    static var count: Int {
-//        return Phone.iphone.hashValue + 1
-//    }
 }
 
 class CustomHeaderViewController: UIViewController {
