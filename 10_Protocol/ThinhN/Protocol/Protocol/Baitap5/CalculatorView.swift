@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 protocol CalculatorViewDatasource: class {
     func getXValue() -> String
     func getYValue() -> String
@@ -29,12 +28,11 @@ class CalculatorView: UIView {
     @IBOutlet weak var xValueTextField: UILabel!
     
     @IBAction func cancelButtonTouchUpInside(_ sender: Any) {
-        self.isHidden = true
         delegate?.touchClearButton()
     }
+    
     @IBAction func doneButtonTouchUpInside(_ sender: Any) {
         delegate?.touchDoneButton(result: String(result))
-        self.isHidden = true
     }
     
     @IBAction func plusButtonTouchUpInside(_ sender: Any) {
@@ -44,6 +42,7 @@ class CalculatorView: UIView {
         result = x1 + x2
         resultTextField.text = String(result)
     }
+    
     @IBAction func subButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
         let x1 = Int(x) ?? 0
@@ -51,6 +50,7 @@ class CalculatorView: UIView {
         result = x1 - x2
         resultTextField.text = String(result)
     }
+    
     @IBAction func mulButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
         let x1 = Int(x) ?? 0
@@ -58,6 +58,7 @@ class CalculatorView: UIView {
         result = x1 * x2
         resultTextField.text = String(result)
     }
+    
     @IBAction func divButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
         let x1 = Int(x) ?? 0
@@ -65,6 +66,7 @@ class CalculatorView: UIView {
         result = x1 / x2
         resultTextField.text = String(result)
     }
+    
     @IBAction func percentButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
         let x1 = Int(x) ?? 0
@@ -72,6 +74,7 @@ class CalculatorView: UIView {
         result = x1 % x2
         resultTextField.text = String(result)
     }
+    
     @IBAction func powButtonTouchUpInside(_ sender: Any) {
         guard let x = datasource?.getXValue(), let y = datasource?.getYValue() else { return }
         let x1 = Int(x) ?? 0
@@ -79,6 +82,7 @@ class CalculatorView: UIView {
         result = Int(pow(Double(x1), Double(x2)))
         resultTextField.text = String(result)
     }
+    
     @IBAction func clearButtonTouchUpInside(_ sender: Any) {
         delegate?.touchClearButton()
         self.isHidden = true 

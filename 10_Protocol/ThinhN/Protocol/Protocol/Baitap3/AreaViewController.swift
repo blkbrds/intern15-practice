@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AreaViewControllerDelegate: class {
-    func passChooseLocation(viewController: AreaViewController, locationButton: String)
+    func passChooseLocation(viewController: AreaViewController, chooseLocationName: String)
 }
 
 enum Location: Int {
@@ -61,7 +61,7 @@ enum Location: Int {
 
 class AreaViewController: UIViewController {
     
-    @IBOutlet var buttonName: [UIButton]!
+    @IBOutlet var buttons: [UIButton]!
     weak var delegate: AreaViewControllerDelegate?
     var area: Location = .tinh
     
@@ -72,7 +72,7 @@ class AreaViewController: UIViewController {
     }
     
     func setupView() {
-        for (index, button) in buttonName.enumerated() {
+        for (index, button) in buttons.enumerated() {
             button.setTitle(area.buttonName + "\(index + 1)", for: .normal)
             button.backgroundColor = area.buttonColor
             title = area.title
@@ -86,7 +86,7 @@ class AreaViewController: UIViewController {
     
     @IBAction func buttonTouchUpInside(_ sender: UIButton) {
         guard let delegate = delegate else { return }
-        delegate.passChooseLocation(viewController: self, locationButton: sender.titleLabel?.text ?? "empty")
+        delegate.passChooseLocation(viewController: self, chooseLocationName: sender.titleLabel?.text ?? "empty")
     }
     
     @objc func nextButtonTouchUpInside() {
@@ -107,7 +107,7 @@ class AreaViewController: UIViewController {
     }
 }
 extension AreaViewController: AreaViewControllerDelegate {
-    func passChooseLocation(viewController: AreaViewController, locationButton: String) {
-        delegate?.passChooseLocation(viewController: viewController, locationButton: locationButton)
+    func passChooseLocation(viewController: AreaViewController, chooseLocationName: String) {
+        delegate?.passChooseLocation(viewController: viewController, chooseLocationName: chooseLocationName)
     }
 }

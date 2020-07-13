@@ -34,14 +34,14 @@ class LocationViewController: UIViewController {
 }
 
 extension LocationViewController: AreaViewControllerDelegate {
-    func passChooseLocation(viewController: AreaViewController, locationButton: String) {
+    func passChooseLocation(viewController: AreaViewController, chooseLocationName: String) {
         switch viewController.area  {
         case .mien:
-            mienLabel.text = locationButton
+            mienLabel.text = chooseLocationName
         case .huyen:
-            huyenLabel.text = locationButton
+            huyenLabel.text = chooseLocationName
         case .tinh:
-            tinhLabel.text = locationButton
+            tinhLabel.text = chooseLocationName
         }
     }
 }
