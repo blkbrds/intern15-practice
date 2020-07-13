@@ -21,8 +21,10 @@ class ListCellLayoutViewController: UIViewController {
     }
     
     func configCollectionView() {
-        let nib = UINib(nibName: "ImageCollectionViewCell", bundle: .main)
-        collectionView.register(nib, forCellWithReuseIdentifier: "cell")
+//        let nib = UINib(nibName: "ImageCollectionViewCell", bundle: .main)
+//        collectionView.register(nib, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
+        
         collectionView.dataSource = self
     }
 }
@@ -32,9 +34,14 @@ extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
         cell.imageView.image = UIImage(named: "download")
         return cell
+//        let image: UIImage {
+//            image
+//        }
+        
     }
 }
 extension ListCellLayoutViewController: HomeLayoutDataSource {

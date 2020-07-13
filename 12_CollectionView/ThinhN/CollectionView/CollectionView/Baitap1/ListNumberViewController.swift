@@ -10,8 +10,27 @@ import UIKit
 
 class ListNumberViewController: UIViewController {
     
-//    let label: UILabel = CGRect(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY, width: 100, height: 100)
-    
+    class cole: UICollectionViewCell {
+        var label: UILabel!
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            configView()
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        func configView() {
+            label = UILabel()
+            label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+            label.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+            label.textColor = .red
+            label.textAlignment = .center
+            addSubview(label)
+        }
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     var numbers: [Int] = Array(0...100)
@@ -19,24 +38,28 @@ class ListNumberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
-//        let label = UILabel(frame: CGRect(x: 0, y: self.view.center.y, width: 50, height: 50))
-//        view.addSubview(label)
     }
     
     func configCollectionView() {
-        let nib = UINib(nibName: "NumberCollectionViewCell", bundle: Bundle.main)
-        collectionView.register(nib, forCellWithReuseIdentifier: "cell")
+        collectionView.register(cole.self, forCellWithReuseIdentifier: "cole")
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
 }
-extension ListNumberViewController: UICollectionViewDataSource {
+extension ListNumberViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numbers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? NumberCollectionViewCell else { return UICollectionViewCell() }
-        cell.numberLabel.text = String(numbers[indexPath.row])
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cole", for: indexPath) as? cole else { return  UICollectionViewCell()}
+        
+        cell.label?.text = String(numbers[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
     }
 }
