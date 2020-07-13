@@ -34,7 +34,7 @@ class SliderCollectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    @IBAction func backButtonTouchUpInside(_ sender: Any) {
+    @IBAction func previousButtonTouchUpInside (_ sender: Any) {
         if currentIndex > 0 {
             currentIndex -= 1
             collectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .right, animated: true)

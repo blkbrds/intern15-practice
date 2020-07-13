@@ -10,12 +10,17 @@ import UIKit
 
 class ListNumberViewController: UIViewController {
     
+//    let label: UILabel = CGRect(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY, width: 100, height: 100)
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var numbers: [Int] = Array(0...100)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
+//        let label = UILabel(frame: CGRect(x: 0, y: self.view.center.y, width: 50, height: 50))
+//        view.addSubview(label)
     }
     
     func configCollectionView() {
@@ -26,7 +31,7 @@ class ListNumberViewController: UIViewController {
 }
 extension ListNumberViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        numbers.count
+        return numbers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
