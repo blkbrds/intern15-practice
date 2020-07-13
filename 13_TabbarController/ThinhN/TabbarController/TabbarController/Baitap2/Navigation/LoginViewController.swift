@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
     var name: String = "Admin"
     var password: String = "123"
     
@@ -32,6 +33,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func registerButtonTouchUpInside(_ sender: Any) {
         let vc = RegisterViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func forgotPasswordTouchUpInside(_ sender: Any) {
+        let vc = ForgotPasswordViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
