@@ -48,14 +48,12 @@ class CustomHeaderViewController: UIViewController {
     }
     
     func configCollectionView() {
-        let cellNib = UINib(nibName: "AvatarCollectionViewCell", bundle: .main)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CollectionCell.self, forCellWithReuseIdentifier: "collection")
         let headerNib = UINib(nibName: "SectionHeaderCollectionReusableView", bundle: .main)
         collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
 }
 extension CustomHeaderViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -70,7 +68,7 @@ extension CustomHeaderViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? AvatarCollectionViewCell, let phone = Phone(rawValue: indexPath.section)  else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection", for: indexPath) as? CollectionCell, let phone = Phone(rawValue: indexPath.section) else { return UICollectionViewCell()}
         switch phone {
         case .iphone:
             cell.imageView.image = phone.member[indexPath.item].avatar
@@ -91,8 +89,27 @@ extension CustomHeaderViewController: UICollectionViewDelegateFlowLayout {
         header.sectionTitleLabel.textColor = .red
         return header
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 30 , height: 50)
     }
 }
 
+class CollectionCell: UICollectionViewCell {
+    var imageView: UIImageView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configView() {
+        imageView = UIImageView()
+        imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        addSubview(imageView)
+    }
+}

@@ -21,11 +21,9 @@ class ListCellLayoutViewController: UIViewController {
     }
     
     func configCollectionView() {
-//        let nib = UINib(nibName: "ImageCollectionViewCell", bundle: .main)
-//        collectionView.register(nib, forCellWithReuseIdentifier: "cell")
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
-        
+        collectionView.register(ImagesCell.self, forCellWithReuseIdentifier: "collectionCell")
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
 }
 extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -35,13 +33,9 @@ extension ListCellLayoutViewController: UICollectionViewDataSource , UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
-        cell.imageView.image = UIImage(named: "download")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? ImagesCell else { return UICollectionViewCell() }
+        cell.image.image = UIImage(named: "download")
         return cell
-//        let image: UIImage {
-//            image
-//        }
-        
     }
 }
 extension ListCellLayoutViewController: HomeLayoutDataSource {
@@ -51,5 +45,24 @@ extension ListCellLayoutViewController: HomeLayoutDataSource {
     
     func collectionView(_ controller: UICollectionView, heightForColumnAtIndexPath indexPath: IndexPath) -> CGFloat {
         return height[indexPath.row]
+    }
+}
+
+class ImagesCell: UICollectionViewCell {
+    var image: UIImageView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configView()
+        
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func configView() {
+        image = UIImageView()
+        image.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        image.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        addSubview(image)
     }
 }

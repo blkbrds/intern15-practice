@@ -10,28 +10,6 @@ import UIKit
 
 class ListNumberViewController: UIViewController {
     
-    class cole: UICollectionViewCell {
-        var label: UILabel!
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            configView()
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        func configView() {
-            label = UILabel()
-            label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-            label.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
-            label.textColor = .red
-            label.textAlignment = .center
-            addSubview(label)
-        }
-    }
-    
     @IBOutlet weak var collectionView: UICollectionView!
     var numbers: [Int] = Array(0...100)
     
@@ -41,7 +19,7 @@ class ListNumberViewController: UIViewController {
     }
     
     func configCollectionView() {
-        collectionView.register(cole.self, forCellWithReuseIdentifier: "cole")
+        collectionView.register(ListNumberCell.self, forCellWithReuseIdentifier: "colectionCell")
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -53,13 +31,35 @@ extension ListNumberViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cole", for: indexPath) as? cole else { return  UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colectionCell", for: indexPath) as? ListNumberCell else { return  UICollectionViewCell()}
         
-        cell.label?.text = String(numbers[indexPath.row])
+        cell.label.text = String(numbers[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
+    }
+}
+
+class ListNumberCell: UICollectionViewCell {
+    var label: UILabel!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configView() {
+        label = UILabel()
+        label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        label.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        label.textColor = .red
+        label.textAlignment = .center
+        addSubview(label)
     }
 }
