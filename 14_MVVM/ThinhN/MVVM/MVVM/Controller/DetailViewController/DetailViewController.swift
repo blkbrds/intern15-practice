@@ -9,7 +9,7 @@
 import UIKit
 
 final class DetailViewController: UIViewController {
-
+    
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
@@ -30,6 +30,6 @@ final class DetailViewController: UIViewController {
         titleLabel.text = viewModel.title
         addressLabel.text = viewModel.address
         ratingLabel.text = "\(viewModel.rating)/10"
-        distanceLabel.text = viewModel.distance
+        distanceLabel.text = "\(viewModel.distance)/km"
     }
 }

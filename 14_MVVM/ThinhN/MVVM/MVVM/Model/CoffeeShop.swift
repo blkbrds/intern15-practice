@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-class Cafe {
+class CoffeeShop {
     var title: String
     var address: String
     var rating: Int
-    var distance: String
+    var distance: Double
     var imageName: String
     var isFavorite: Bool
 
-    init(title: String, address: String, rating: Int, distance: String, imageName: String, isFavorite: Bool = false) {
+    init(title: String, address: String, rating: Int, distance: Double, imageName: String, isFavorite: Bool = false) {
         self.title = title
         self.address = address
         self.rating = rating

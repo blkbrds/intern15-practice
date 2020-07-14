@@ -17,12 +17,12 @@ final class HomeCellViewModel {
     var imageName: String
     var isFavorite: Bool
     
-    init(cafe: Cafe) {
-        self.title = cafe.title
-        self.address = cafe.address
-        self.rating = ("\(cafe.rating)/10")
-        self.distance = cafe.distance
-        self.imageName = cafe.imageName
-        self.isFavorite = cafe.isFavorite
+    init(cafe: CoffeeShop) {
+        title = cafe.title
+        address = cafe.address
+        rating = ("\(cafe.rating)/10")
+        distance = ("\(cafe.distance)/km")
+        imageName = cafe.imageName
+        isFavorite = cafe.isFavorite
     }
 }

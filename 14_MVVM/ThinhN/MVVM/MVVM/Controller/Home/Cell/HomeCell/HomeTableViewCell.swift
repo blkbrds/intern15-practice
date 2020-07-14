@@ -8,16 +8,19 @@
 
 import UIKit
 protocol HomeTableViewCellDelegate: class  {
-    func passValueToHomeViewController(cell: HomeTableViewCell, isFavorite: Bool)
+    func cell(_cell: HomeTableViewCell, ineedPerforms action: HomeTableViewCell.Action)
 }
+
 class HomeTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var caffeeImageView: UIImageView!
+    enum Action { case favorite(isFavorite: Bool) }
+    
+    @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var favoritesButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
     weak var delegate: HomeTableViewCellDelegate?
     
     var viewModel: HomeCellViewModel? {
@@ -31,13 +34,14 @@ class HomeTableViewCell: UITableViewCell {
         addressLabel.text = viewModel.address
         ratingLabel.text = viewModel.rating
         distanceLabel.text = viewModel.distance
-        caffeeImageView.image = UIImage(named: viewModel.imageName)
-        favoritesButton.isSelected = viewModel.isFavorite
+        coffeeImageView.image = UIImage(named: viewModel.imageName)
+        favoriteButton.isSelected = viewModel.isFavorite
     }
     
     @IBAction func favoritesButtonTouchUpInside(_ sender: Any) {
-        guard let delegate = delegate else { return }
-        favoritesButton.isSelected = !favoritesButton.isSelected
-        delegate.passValueToHomeViewController(cell: self, isFavorite: favoritesButton.isSelected)
+        guard let delegate = delegate  else { return }
+        favoriteButton.isSelected = !favoriteButton.isSelected
+        delegate.cell(_cell: self, ineedPerforms: HomeTableViewCell.Action.favorite(isFavorite: isSelected))
+        //delegate.cell(_cell: self, ineedPerforms: favoriteButton?.isSelected)
     }
 }

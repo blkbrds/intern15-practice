@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Status {
+enum ViewModel {
     case tableView
     case collectionView
 }
@@ -19,14 +19,14 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
-    var status = Status.tableView
+    var status = ViewModel.tableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "HOME"
         configTableViewCell()
         configCollectionViewCell()
-        changeView()
+        configNavigationBar()
     }
     
     func configTableViewCell() {
@@ -37,29 +37,26 @@ class HomeViewController: UIViewController {
     }
     
     func configCollectionViewCell() {
-        let nib2 = UINib(nibName: "HomeCollectionViewCell", bundle: .main)
-        collectionView.register(nib2, forCellWithReuseIdentifier: "collectionCell")
+        let nib = UINib(nibName: "HomeCollectionViewCell", bundle: .main)
+        collectionView.register(nib, forCellWithReuseIdentifier: "collectionCell")
         collectionView.dataSource = self
         collectionView.delegate = self
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func changeView() {
+    func configNavigationBar() {
         let barButton = UIBarButtonItem(image: UIImage(systemName: "rectangle.split.3x1"), style: .plain, target: self, action: #selector(changeViewButtonTouchUpInside))
         navigationItem.rightBarButtonItem = barButton
     }
     
     @objc func changeViewButtonTouchUpInside() {
-        if status == .tableView {
+        switch status {
+        case .tableView:
             tableView.isHidden = true
             collectionView.isHidden = false
             status = .collectionView
             let barButton = UIBarButtonItem(image: UIImage(systemName: "table"), style: .plain, target: self, action: #selector(changeViewButtonTouchUpInside))
             navigationItem.rightBarButtonItem = barButton
-        } else {
+        case .collectionView:
             tableView.isHidden = false
             collectionView.isHidden = true
             let barButton = UIBarButtonItem(image: UIImage(systemName: "rectangle.split.3x1"), style: .plain, target: self, action: #selector(changeViewButtonTouchUpInside))
@@ -79,7 +76,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.delegate = self
-        cell.viewModel = viewModel.cellForRowAt(indexPath: indexPath)
+        cell.viewModel = viewModel.viewModelForCellAt(indexPath: indexPath)
         return cell
     }
     
@@ -91,19 +88,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: HomeTableViewCellDelegate {
-    func passValueToHomeViewController(cell: HomeTableViewCell, isFavorite: Bool) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        viewModel.listCafes[indexPath.row].isFavorite = isFavorite
+    func cell(_cell: HomeTableViewCell, ineedPerforms action: HomeTableViewCell.Action) {
+        guard let indexPath = tableView.indexPath(for: _cell) else { return }
+        viewModel.listCafes[indexPath.row].isFavorite = true
     }
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.numberOfRowsInSection()
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfRowsInSection()
+        return viewModel.numberOfRowsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,7 +104,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return UICollectionViewCell()
         }
         cell.delegate = self
-        cell.viewModel = viewModel.cellForRowAt(indexPath: indexPath)
+        cell.viewModel = viewModel.viewModelForCellAt(indexPath: indexPath)
         return cell
     }
     
@@ -123,10 +116,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 extension HomeViewController: HomeCollectionViewCellDelegate {
-
-    func passValueToHomeViewController(view: HomeCollectionViewCell, isFavorite: Bool) {
-        guard let indexPath = collectionView.indexPath(for: view) else { return }
-        viewModel.listCafes[indexPath.row].isFavorite = isFavorite
+    func cell(_cell: HomeCollectionViewCell, ineedPerforms action: HomeTableViewCell.Action) {
+        guard let indexPath = collectionView.indexPath(for: _cell) else { return }
+        viewModel.listCafes[indexPath.row].isFavorite = true
     }
 }
 
