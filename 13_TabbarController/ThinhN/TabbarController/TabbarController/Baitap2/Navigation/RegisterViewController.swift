@@ -18,7 +18,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Register"
-        notificationLabel.textColor = .red
     }
 
     @IBAction func reginsterButtonTouchUpInside(_ sender: Any) {

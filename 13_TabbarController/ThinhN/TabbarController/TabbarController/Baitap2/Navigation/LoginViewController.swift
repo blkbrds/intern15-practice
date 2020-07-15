@@ -14,7 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
     var name: String = "Admin"
     var password: String = "123"
     
