@@ -20,8 +20,8 @@ final class HomeCellViewModel {
     init(cafe: CoffeeShop) {
         title = cafe.title
         address = cafe.address
-        rating = ("\(cafe.rating)/10")
-        distance = ("\(cafe.distance)/km")
+        rating = "\(cafe.rating)/10"
+        distance = "\(cafe.distance)/km"
         imageName = cafe.imageName
         isFavorite = cafe.isFavorite
     }

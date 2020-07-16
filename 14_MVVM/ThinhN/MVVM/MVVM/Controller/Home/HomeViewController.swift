@@ -8,9 +8,9 @@
 
 import UIKit
 
-enum ViewModel {
-    case tableView
-    case collectionView
+enum ViewMode {
+    case list
+    case grid
 }
 
 class HomeViewController: UIViewController {
@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
-    var status = ViewModel.tableView
+    var status = ViewMode.list
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,18 +50,18 @@ class HomeViewController: UIViewController {
     
     @objc func changeViewButtonTouchUpInside() {
         switch status {
-        case .tableView:
+        case .list:
             tableView.isHidden = true
             collectionView.isHidden = false
-            status = .collectionView
+            status = .grid
             let barButton = UIBarButtonItem(image: UIImage(systemName: "table"), style: .plain, target: self, action: #selector(changeViewButtonTouchUpInside))
             navigationItem.rightBarButtonItem = barButton
-        case .collectionView:
+        case .grid:
             tableView.isHidden = false
             collectionView.isHidden = true
             let barButton = UIBarButtonItem(image: UIImage(systemName: "rectangle.split.3x1"), style: .plain, target: self, action: #selector(changeViewButtonTouchUpInside))
             navigationItem.rightBarButtonItem = barButton
-            status = .tableView
+            status = .list
         }
     }
 }
@@ -88,9 +88,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: HomeTableViewCellDelegate {
-    func cell(_cell: HomeTableViewCell, ineedPerforms action: HomeTableViewCell.Action) {
-        guard let indexPath = tableView.indexPath(for: _cell) else { return }
-        viewModel.listCafes[indexPath.row].isFavorite = true
+    func cell(_ cell: HomeTableViewCell, needPerforms action: HomeTableViewCell.Action) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        viewModel.listCafes[indexPath.row].isFavorite = true 
     }
 }
 
@@ -116,8 +116,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 extension HomeViewController: HomeCollectionViewCellDelegate {
-    func cell(_cell: HomeCollectionViewCell, ineedPerforms action: HomeTableViewCell.Action) {
-        guard let indexPath = collectionView.indexPath(for: _cell) else { return }
+    func cell(_ cell: HomeCollectionViewCell, needPerforms action: HomeTableViewCell.Action) {
+        guard let indexPath = collectionView.indexPath(for: cell) else { return }
         viewModel.listCafes[indexPath.row].isFavorite = true
     }
 }
