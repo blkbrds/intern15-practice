@@ -22,15 +22,15 @@ class SliderCollectionViewController: UIViewController {
     }
     
     func configTableView() {
-        let icon = UINib(nibName: "IconTableViewCell", bundle: .main)
-        tableView.register(icon, forCellReuseIdentifier: "icon")
+        let cellNib = UINib(nibName: "IconTableViewCell", bundle: .main)
+        tableView.register(cellNib, forCellReuseIdentifier: "icon")
         tableView.dataSource = self
         tableView.rowHeight = 100 
     }
     
     func configCollectionView() {
-        let cell = UINib(nibName: "SliderCollectionViewCell", bundle: .main)
-        collectionView.register(cell, forCellWithReuseIdentifier: "cell")
+        let cellNib = UINib(nibName: "SliderCollectionViewCell", bundle: .main)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -63,7 +63,7 @@ extension SliderCollectionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return String(" Section \(number[section])")
+        return "Section \(number[section])"
     }
 }
 extension SliderCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

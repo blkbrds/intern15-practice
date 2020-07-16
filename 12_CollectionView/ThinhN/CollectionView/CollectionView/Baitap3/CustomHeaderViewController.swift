@@ -69,14 +69,7 @@ extension CustomHeaderViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collection", for: indexPath) as? CollectionCell, let phone = Phone(rawValue: indexPath.section) else { return UICollectionViewCell()}
-        switch phone {
-        case .iphone:
-            cell.imageView.image = phone.member[indexPath.item].avatar
-        case .samsung:
-            cell.imageView.image = phone.member[indexPath.item].avatar
-        default:
-            cell.imageView.image = phone.member[indexPath.item].avatar
-        }
+        cell.imageView.image = phone.member[indexPath.item].avatar
         return cell
     }
 }
