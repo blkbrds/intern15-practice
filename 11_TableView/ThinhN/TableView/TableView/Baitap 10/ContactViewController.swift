@@ -7,6 +7,7 @@
 
 import UIKit
 import Contacts
+import ContactsUI
 
 class ContactViewController: UIViewController {
     
@@ -17,12 +18,10 @@ class ContactViewController: UIViewController {
     var names: [String] = []
     var isSearching: Bool = false
     var contacts = [CNContact]()
-    var contactStore = CNContactStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Contact"
-        // loadData()
         configTableView()
         searchBar.delegate = self
         getContacts()
@@ -39,10 +38,11 @@ class ContactViewController: UIViewController {
     }
     
     func getContacts() {
+        let contactStore = CNContactStore()
         let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
         let request = CNContactFetchRequest(keysToFetch: keys)
         do {
-            try self.contactStore.enumerateContacts(with: request) {
+            try contactStore.enumerateContacts(with: request) {
                 (contact, stop) in
                 self.contacts.append(contact)
             }
@@ -83,11 +83,7 @@ extension ContactViewController: UITableViewDataSource {
 extension ContactViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         var searchResult: [String] = []
-        if searchText == "" {
-            isSearching = false
-        } else {
-            isSearching = true
-        }
+        isSearching = searchText != ""
         for item in names {
             searchResult.append(item)
         }
