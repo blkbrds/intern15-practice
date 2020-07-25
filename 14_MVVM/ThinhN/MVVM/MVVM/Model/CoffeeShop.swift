@@ -16,7 +16,7 @@ class CoffeeShop {
     var distance: Double
     var imageName: String
     var isFavorite: Bool
-
+    
     init(title: String, address: String, rating: Int, distance: Double, imageName: String, isFavorite: Bool = false) {
         self.title = title
         self.address = address

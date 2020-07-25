@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol HomeTableViewCellDelegate: class  {
     func cell(_ cell: HomeTableViewCell, needPerforms action: HomeTableViewCell.Action)
 }
@@ -43,6 +44,6 @@ class HomeTableViewCell: UITableViewCell {
     @IBAction func favoritesButtonTouchUpInside(_ sender: Any) {
         guard let delegate = delegate  else { return }
         favoriteButton.isSelected = !favoriteButton.isSelected
-        delegate.cell(self, needPerforms: .favorite(isFavorite: true))
+        delegate.cell(self, needPerforms: .favorite(isFavorite: favoriteButton.isSelected))
     }
 }

@@ -45,6 +45,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBAction func favoritesButtonTouchUpInside(_ sender: Any) {
         guard let delegate = delegate else { return }
         favoritesButton.isSelected = !favoritesButton.isSelected
-        delegate.cell(self, needPerforms: .favorite(isFavorite: true))
+        delegate.cell(self, needPerforms: .favorite(isFavorite: favoritesButton.isSelected))
     }
 }
