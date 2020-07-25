@@ -17,7 +17,6 @@ class ContactViewController: UIViewController {
     var result: [String] = []
     var names: [String] = []
     var isSearching: Bool = false
-    var contacts = [CNContact]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +38,13 @@ class ContactViewController: UIViewController {
     
     func getContacts() {
         let contactStore = CNContactStore()
+        var contacts = [CNContact]()
         let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
         let request = CNContactFetchRequest(keysToFetch: keys)
         do {
             try contactStore.enumerateContacts(with: request) {
                 (contact, stop) in
-                self.contacts.append(contact)
+                contacts.append(contact)
             }
         }
         catch {
