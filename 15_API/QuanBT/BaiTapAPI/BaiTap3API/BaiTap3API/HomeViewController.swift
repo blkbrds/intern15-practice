@@ -1,0 +1,101 @@
+//
+//  HomeViewController.swift
+//  BaiTap3API
+//
+//  Created by Sếp Quân on 4/13/20.
+//  Copyright © 2020 QuanBT. All rights reserved.
+//
+
+import UIKit
+
+final class HomeViewController: UIViewController {
+    // MARK: - IBOutlet
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    
+    // MARK: - Properties
+    private var viewModel = HomeViewModel()
+    private var isLoadingMore = false
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    // MARK: - Function
+    private func setupView() {
+        title = "Home"
+        let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        tableView.rowHeight = 100
+        loadAPI()
+        searchBar.delegate = self
+        tableView.delegate = self
+    }
+    
+    private func loadAPI() {
+        print("Load API")
+        viewModel.loadAPI {  (done, msg) in
+            if done {
+                self.viewModel.dataAPISearchs = self.viewModel.dataAPIs
+                self.tableView.reloadData()
+            } else {
+                print("API erorr: \(msg)")
+            }
+        }
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRowInSection()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
+        cell.viewModel = self.viewModel.viewModelForCell(at: indexPath)
+        let item = viewModel.dataAPISearchs[indexPath.row]
+        viewModel.downloadImage(url: item.url) { (image) in
+            if let image = image {
+                cell.configImage(image: image)
+            } else {
+                cell.configImage(image: nil)
+            }
+        }
+        return cell
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.isLoadingMore = true
+        let upperText = searchText.uppercased()
+        viewModel.titleSearchs = viewModel.titleVideos.filter {
+            $0.uppercased().hasPrefix(upperText)
+        }
+        viewModel.search()
+        tableView.reloadData()
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if !isLoadingMore && (maximumOffset - contentOffset <= 100) {
+            // Get more data - API call
+            loadAPI()
+            self.isLoadingMore = true
+            // Update UI
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.tableView.reloadData()
+                self.isLoadingMore = false
+            }
+        }
+    }
+}
