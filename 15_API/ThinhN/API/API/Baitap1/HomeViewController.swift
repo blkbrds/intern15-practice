@@ -27,7 +27,8 @@ class HomeViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let resetTabbarView = UIBarButtonItem(image: UIImage(systemName: "circle"), style: .plain, target: self, action: #selector(loadAPI))
+        let resetTabbarView = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(loadAPI))
+        resetTabbarView.tintColor = .gray
         self.navigationItem.rightBarButtonItem = resetTabbarView
     }
     
