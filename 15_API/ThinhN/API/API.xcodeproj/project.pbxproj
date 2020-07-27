@@ -26,6 +26,11 @@
 		72738A3424CAEB9700620DC3 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72738A3224CAEB9700620DC3 /* HomeCollectionViewCell.xib */; };
 		72738A3724CAEBBC00620DC3 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72738A3524CAEBBC00620DC3 /* HomeTableViewCell.swift */; };
 		72738A3824CAEBBC00620DC3 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72738A3624CAEBBC00620DC3 /* HomeTableViewCell.xib */; };
+		8490F9D924CD20D400019E51 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F9D824CD20D400019E51 /* HomeViewModel.swift */; };
+		8490F9DC24CD311E00019E51 /* Data.Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F9DB24CD311E00019E51 /* Data.Ext.swift */; };
+		8490F9DE24CD355700019E51 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F9DD24CD355700019E51 /* Music.swift */; };
+		8490F9E024CD391900019E51 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F9DF24CD391900019E51 /* Networking.swift */; };
+		8490F9E224CD649500019E51 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F9E124CD649500019E51 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,11 @@
 		72738A3224CAEB9700620DC3 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		72738A3524CAEBBC00620DC3 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		72738A3624CAEBBC00620DC3 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		8490F9D824CD20D400019E51 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8490F9DB24CD311E00019E51 /* Data.Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.Ext.swift; sourceTree = "<group>"; };
+		8490F9DD24CD355700019E51 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		8490F9DF24CD391900019E51 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		8490F9E124CD649500019E51 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,7 @@
 		727389FC24CA80B500620DC3 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8490F9DA24CD310200019E51 /* Model */,
 				72738A1124CAB9E400620DC3 /* Baitap1 */,
 				727389FD24CA80B500620DC3 /* AppDelegate.swift */,
 				727389FF24CA80B500620DC3 /* SceneDelegate.swift */,
@@ -110,6 +121,7 @@
 				72738A1624CAE39400620DC3 /* BaseController */,
 				72738A1224CABA1500620DC3 /* HomeViewController.swift */,
 				72738A1324CABA1500620DC3 /* HomeViewController.xib */,
+				8490F9D824CD20D400019E51 /* HomeViewModel.swift */,
 			);
 			path = Baitap1;
 			sourceTree = "<group>";
@@ -144,6 +156,17 @@
 				72738A3624CAEBBC00620DC3 /* HomeTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8490F9DA24CD310200019E51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8490F9DB24CD311E00019E51 /* Data.Ext.swift */,
+				8490F9DD24CD355700019E51 /* Music.swift */,
+				8490F9DF24CD391900019E51 /* Networking.swift */,
+				8490F9E124CD649500019E51 /* API.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,7 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				72738A1824CAE3AC00620DC3 /* BaseViewController.swift in Sources */,
+				8490F9DE24CD355700019E51 /* Music.swift in Sources */,
+				8490F9D924CD20D400019E51 /* HomeViewModel.swift in Sources */,
 				72738A2024CAE44600620DC3 /* MessagesViewController.swift in Sources */,
+				8490F9E224CD649500019E51 /* API.swift in Sources */,
 				727389FE24CA80B500620DC3 /* AppDelegate.swift in Sources */,
 				72738A0024CA80B500620DC3 /* SceneDelegate.swift in Sources */,
 				72738A3724CAEBBC00620DC3 /* HomeTableViewCell.swift in Sources */,
@@ -232,7 +258,9 @@
 				72738A0224CA80B500620DC3 /* ContentView.swift in Sources */,
 				72738A1C24CAE42D00620DC3 /* FeaturedViewController.swift in Sources */,
 				72738A2424CAE46000620DC3 /* ProfileViewController.swift in Sources */,
+				8490F9DC24CD311E00019E51 /* Data.Ext.swift in Sources */,
 				72738A1424CABA1500620DC3 /* HomeViewController.swift in Sources */,
+				8490F9E024CD391900019E51 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

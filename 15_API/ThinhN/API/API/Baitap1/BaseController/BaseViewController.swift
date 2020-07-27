@@ -13,10 +13,11 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTabbar()
-        
+        setupUI()
     }
+    
     func createTabbar() -> UITabBarController {
-        let featuredVC = FeaturedViewController()
+        let featuredVC = HomeViewController()
         let featuredNavi = UINavigationController(rootViewController: featuredVC)
         featuredNavi.tabBarItem = UITabBarItem(title: "feature", image: UIImage(systemName: "star"), selectedImage: UIImage(systemName: "star.fill"))
         
@@ -32,5 +33,11 @@ class BaseViewController: UIViewController {
         tabbarViewController.viewControllers = [featuredNavi, messagesNavi, profileNavi]
         return tabbarViewController
     }
+    func setupUI() {
+        
+    }
     
+    func setupData() {
+        
+    }
 }
