@@ -11,7 +11,7 @@ import Foundation
 enum APIError: Error {
     case error(String)
     case errorURL
-    
+
     var localizedDescription: String {
         switch self {
         case .error(let string):

@@ -15,8 +15,8 @@ class HomeViewModel {
     var musics: [Music] = []
     
     func numberOfRowsInSection() -> Int {
-           return musics.count
-       }
+        return musics.count
+    }
     
     func loadAPI(completion: @escaping Completion) {
         let urlString = "https://rss.itunes.apple.com/api/v1/vn/itunes-music/top-songs/all/10/explicit.json"
@@ -57,27 +57,27 @@ class HomeViewModel {
         print("DONE MISSION")
     }
     func loadAPI2(completion: @escaping Completion) {
-           
-           let urlString = "https://rss.itunes.apple.com/api/v1/vn/itunes-music/top-songs/all/10/explicit.json"
-           Networking.shared().request(with: urlString) { (data, error) in
-               if let error = error {
-                   completion(false, error.localizedDescription)
-               } else {
-                   if let data = data {
-                       let json = data.toJSON()
-                       let feed = json["feed"] as! JSON
-                       let results = feed["results"] as! [JSON]
-                       
-                       for item in results {
-                           let music = Music(json: item)
-                           self.musics.append(music)
-                           
-                           completion(true, "")
-                       }
-                   } else {
-                       completion(false, "Data format is error.")
-                   }
-               }
-           }
-       }
+        
+        let urlString = "https://rss.itunes.apple.com/api/v1/vn/itunes-music/top-songs/all/10/explicit.json"
+        Networking.shared().request(with: urlString) { (data, error) in
+            if let error = error {
+                completion(false, error.localizedDescription)
+            } else {
+                if let data = data {
+                    let json = data.toJSON()
+                    let feed = json["feed"] as! JSON
+                    let results = feed["results"] as! [JSON]
+                    
+                    for item in results {
+                        let music = Music(json: item)
+                        self.musics.append(music)
+                        
+                        completion(true, "")
+                    }
+                } else {
+                    completion(false, "Data format is error.")
+                }
+            }
+        }
+    }
 }
