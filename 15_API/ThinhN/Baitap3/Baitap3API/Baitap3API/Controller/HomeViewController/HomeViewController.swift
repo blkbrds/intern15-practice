@@ -19,8 +19,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        
     }
+    
     func configTableView() {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "tableView")
@@ -29,8 +29,8 @@ class HomeViewController: UIViewController {
         loadAPI()
         tableView.delegate = self
         searchBar.delegate = self
-        
     }
+    
     func loadAPI() {
         print("load API")
         viewModel.loadAPI { (done, msg) in
@@ -61,8 +61,8 @@ extension HomeViewController: UITableViewDataSource {
         }
         return cell
     }
-    
 }
+
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.isLoadingMore = true

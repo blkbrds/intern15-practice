@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8490FA2424D17A9100019E51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490FA2324D17A9100019E51 /* AppDelegate.swift */; };
 		8490FA2624D17A9100019E51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490FA2524D17A9100019E51 /* SceneDelegate.swift */; };
-		8490FA2824D17A9100019E51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490FA2724D17A9100019E51 /* ContentView.swift */; };
 		8490FA2A24D17A9200019E51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8490FA2924D17A9200019E51 /* Assets.xcassets */; };
 		8490FA2D24D17A9200019E51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8490FA2C24D17A9200019E51 /* Preview Assets.xcassets */; };
 		8490FA3024D17A9200019E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8490FA2E24D17A9200019E51 /* LaunchScreen.storyboard */; };
@@ -19,13 +18,14 @@
 		8490FA4124D17B3B00019E51 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8490FA3F24D17B3B00019E51 /* HomeTableViewCell.xib */; };
 		8490FA4324D17C6B00019E51 /* Data.Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490FA4224D17C6B00019E51 /* Data.Ext.swift */; };
 		8490FA4524D17FFC00019E51 /* BookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490FA4424D17FFC00019E51 /* BookAPI.swift */; };
+		8490FA4724D2585400019E51 /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490FA4624D2585300019E51 /* HomeCellViewModel.swift */; };
+		8490FA4924D2586F00019E51 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490FA4824D2586F00019E51 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8490FA2024D17A9100019E51 /* Baitap2API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baitap2API.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8490FA2324D17A9100019E51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8490FA2524D17A9100019E51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8490FA2724D17A9100019E51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8490FA2924D17A9200019E51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8490FA2C24D17A9200019E51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8490FA2F24D17A9200019E51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		8490FA3F24D17B3B00019E51 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		8490FA4224D17C6B00019E51 /* Data.Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.Ext.swift; sourceTree = "<group>"; };
 		8490FA4424D17FFC00019E51 /* BookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPI.swift; sourceTree = "<group>"; };
+		8490FA4624D2585300019E51 /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
+		8490FA4824D2586F00019E51 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,6 @@
 				8490FA3724D17A9F00019E51 /* Model */,
 				8490FA2324D17A9100019E51 /* AppDelegate.swift */,
 				8490FA2524D17A9100019E51 /* SceneDelegate.swift */,
-				8490FA2724D17A9100019E51 /* ContentView.swift */,
 				8490FA2924D17A9200019E51 /* Assets.xcassets */,
 				8490FA2E24D17A9200019E51 /* LaunchScreen.storyboard */,
 				8490FA3124D17A9200019E51 /* Info.plist */,
@@ -104,6 +105,7 @@
 				8490FA3D24D17B1600019E51 /* Cell */,
 				8490FA3924D17B0500019E51 /* HomeViewController.swift */,
 				8490FA3A24D17B0500019E51 /* HomeViewController.xib */,
+				8490FA4824D2586F00019E51 /* HomeViewModel.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -113,6 +115,7 @@
 			children = (
 				8490FA3E24D17B3B00019E51 /* HomeTableViewCell.swift */,
 				8490FA3F24D17B3B00019E51 /* HomeTableViewCell.xib */,
+				8490FA4624D2585300019E51 /* HomeCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -191,12 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8490FA2424D17A9100019E51 /* AppDelegate.swift in Sources */,
+				8490FA4924D2586F00019E51 /* HomeViewModel.swift in Sources */,
 				8490FA4524D17FFC00019E51 /* BookAPI.swift in Sources */,
 				8490FA4024D17B3B00019E51 /* HomeTableViewCell.swift in Sources */,
 				8490FA2624D17A9100019E51 /* SceneDelegate.swift in Sources */,
-				8490FA2824D17A9100019E51 /* ContentView.swift in Sources */,
 				8490FA4324D17C6B00019E51 /* Data.Ext.swift in Sources */,
 				8490FA3B24D17B0500019E51 /* HomeViewController.swift in Sources */,
+				8490FA4724D2585400019E51 /* HomeCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

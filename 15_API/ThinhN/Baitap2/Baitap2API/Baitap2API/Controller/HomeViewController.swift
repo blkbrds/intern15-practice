@@ -9,22 +9,67 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    var viewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configTableView()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func configTableView() {
+        let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: "tableView")
+        tableView.dataSource = self
+        loadAPI()
+        loadAPIImage()
+        tableView.rowHeight = 100
     }
-    */
+    
+    func loadAPI() {
+        print("load API")
+        viewModel.loadNameAPI { (done, msg) in
+            if done {
+                self.tableView.reloadData()
+            } else {
+                print("API Error: \(msg)")
+            }
+        }
+    }
+    
+    private func loadAPIImage() {
+        print("Load APIImage")
+        viewModel.loadImageAPI { (done, msg) in
+            if done {
+                self.updateUI()
+            } else {
+                print("API erorr: \(msg)")
+            }
+        }
+    }
+    
+    private func updateUI() {
+        tableView.reloadData()
+    }
+}
 
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.nameBooks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tableView", for: indexPath) as? HomeTableViewCell else {return UITableViewCell()}
+        cell.bookNameLabel.text = viewModel.nameBooks[indexPath.row]
+        if viewModel.urlBooks.count != 0 {
+            let item = viewModel.urlBooks[indexPath.row]
+            viewModel.loadImage(at: indexPath) { (done, error, url) in
+                if done, url == item {
+                    cell.bookImageView.image = self.viewModel.images
+                }
+            }
+        }
+        return cell
+    }
 }
