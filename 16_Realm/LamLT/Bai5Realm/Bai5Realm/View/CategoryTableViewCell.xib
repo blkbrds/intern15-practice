@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="152" id="KGk-i7-Jjw" customClass="CategoryTableViewCell" customModule="Bai5Realm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="152"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="325" height="152"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjv-eT-6zS">
+                        <rect key="frame" x="10" y="10" width="24.5" height="30.5"/>
+                        <state key="normal" image="star.fill" catalog="system"/>
+                        <connections>
+                            <action selector="favoriteButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hZ5-LZ-LkA"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vz0-9q-rwN">
+                        <rect key="frame" x="10" y="60.5" width="115" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7U-ox-dan">
+                        <rect key="frame" x="10" y="101.5" width="115" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gd-H8-g6O">
+                        <rect key="frame" x="184.5" y="10" width="40.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="O7U-ox-dan" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="66w-hw-Dpx"/>
+                    <constraint firstAttribute="trailing" secondItem="7gd-H8-g6O" secondAttribute="trailing" constant="100" id="DHg-eU-VL4"/>
+                    <constraint firstAttribute="bottom" secondItem="O7U-ox-dan" secondAttribute="bottom" constant="30" id="O9r-Qa-eza"/>
+                    <constraint firstItem="Vz0-9q-rwN" firstAttribute="top" secondItem="rjv-eT-6zS" secondAttribute="bottom" constant="20" id="UlL-ow-wyQ"/>
+                    <constraint firstItem="Vz0-9q-rwN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="YCJ-DR-DaG"/>
+                    <constraint firstItem="7gd-H8-g6O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="YXZ-HG-fZh"/>
+                    <constraint firstItem="7gd-H8-g6O" firstAttribute="leading" secondItem="rjv-eT-6zS" secondAttribute="trailing" constant="150" id="hxq-OG-2dv"/>
+                    <constraint firstItem="rjv-eT-6zS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jG1-m2-ax6"/>
+                    <constraint firstAttribute="trailing" secondItem="O7U-ox-dan" secondAttribute="trailing" constant="200" id="rnx-5h-7fG"/>
+                    <constraint firstItem="rjv-eT-6zS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sDu-OJ-nps"/>
+                    <constraint firstAttribute="trailing" secondItem="Vz0-9q-rwN" secondAttribute="trailing" constant="200" id="tdP-Fu-Rap"/>
+                    <constraint firstItem="O7U-ox-dan" firstAttribute="top" secondItem="Vz0-9q-rwN" secondAttribute="bottom" constant="20" id="x7T-v6-aC4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="O7U-ox-dan" id="Z3g-s5-pSd"/>
+                <outlet property="dateTimeLabel" destination="7gd-H8-g6O" id="Z13-Mf-TQ9"/>
+                <outlet property="fatoriteButton" destination="rjv-eT-6zS" id="8Er-y1-7BS"/>
+                <outlet property="titlePostLabel" destination="Vz0-9q-rwN" id="2Lj-Dy-V8a"/>
+            </connections>
+            <point key="canvasLocation" x="-746" y="-15"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
