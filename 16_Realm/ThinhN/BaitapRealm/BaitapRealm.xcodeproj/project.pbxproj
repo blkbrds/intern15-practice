@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		637C3815D1F494BB634BA8F1 /* Pods_BaitapRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C990672F9B5AE5226DF675 /* Pods_BaitapRealm.framework */; };
+		84D1F4BF24D8145A000D71D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1F4BE24D8145A000D71D3 /* AppDelegate.swift */; };
+		84D1F4C124D8145A000D71D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1F4C024D8145A000D71D3 /* SceneDelegate.swift */; };
+		84D1F4C524D8145B000D71D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1F4C424D8145B000D71D3 /* Assets.xcassets */; };
+		84D1F4C824D8145B000D71D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D1F4C724D8145B000D71D3 /* Preview Assets.xcassets */; };
+		84D1F4CB24D8145B000D71D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D1F4C924D8145B000D71D3 /* LaunchScreen.storyboard */; };
+		84D1F4D624D816F3000D71D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1F4D424D816F3000D71D3 /* HomeViewController.swift */; };
+		84D1F4D724D816F3000D71D3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D1F4D524D816F3000D71D3 /* HomeViewController.xib */; };
+		84D1F4DB24D8174D000D71D3 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1F4D924D8174D000D71D3 /* HomeCell.swift */; };
+		84D1F4DC24D8174D000D71D3 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D1F4DA24D8174D000D71D3 /* HomeCell.xib */; };
+		84D1F4DE24D81778000D71D3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1F4DD24D81778000D71D3 /* HomeViewModel.swift */; };
+		84D1F4E224D81BD9000D71D3 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1F4E124D81BD9000D71D3 /* Book.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84D1F4BB24D8145A000D71D3 /* BaitapRealm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaitapRealm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D1F4BE24D8145A000D71D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84D1F4C024D8145A000D71D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84D1F4C424D8145B000D71D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84D1F4C724D8145B000D71D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84D1F4CA24D8145B000D71D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84D1F4CC24D8145B000D71D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D1F4D424D816F3000D71D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84D1F4D524D816F3000D71D3 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		84D1F4D924D8174D000D71D3 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		84D1F4DA24D8174D000D71D3 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		84D1F4DD24D81778000D71D3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		84D1F4E124D81BD9000D71D3 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		BAFD266E3736591E722F8529 /* Pods-BaitapRealm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaitapRealm.debug.xcconfig"; path = "Target Support Files/Pods-BaitapRealm/Pods-BaitapRealm.debug.xcconfig"; sourceTree = "<group>"; };
+		E3C990672F9B5AE5226DF675 /* Pods_BaitapRealm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaitapRealm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92B6FAED584787268DF3F4D /* Pods-BaitapRealm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaitapRealm.release.xcconfig"; path = "Target Support Files/Pods-BaitapRealm/Pods-BaitapRealm.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84D1F4B824D8145A000D71D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				637C3815D1F494BB634BA8F1 /* Pods_BaitapRealm.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84D1F4B224D8145A000D71D3 = {
+			isa = PBXGroup;
+			children = (
+				84D1F4BD24D8145A000D71D3 /* BaitapRealm */,
+				84D1F4BC24D8145A000D71D3 /* Products */,
+				9E023536B7DBDDFEE4E85D66 /* Pods */,
+				FF473387A1CEA01B5388BD6D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84D1F4BC24D8145A000D71D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4BB24D8145A000D71D3 /* BaitapRealm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84D1F4BD24D8145A000D71D3 /* BaitapRealm */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4DF24D8179D000D71D3 /* Models */,
+				84D1F4D224D816AA000D71D3 /* Controllers */,
+				84D1F4BE24D8145A000D71D3 /* AppDelegate.swift */,
+				84D1F4C024D8145A000D71D3 /* SceneDelegate.swift */,
+				84D1F4C424D8145B000D71D3 /* Assets.xcassets */,
+				84D1F4C924D8145B000D71D3 /* LaunchScreen.storyboard */,
+				84D1F4CC24D8145B000D71D3 /* Info.plist */,
+				84D1F4C624D8145B000D71D3 /* Preview Content */,
+			);
+			path = BaitapRealm;
+			sourceTree = "<group>";
+		};
+		84D1F4C624D8145B000D71D3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4C724D8145B000D71D3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84D1F4D224D816AA000D71D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4D324D816CF000D71D3 /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84D1F4D324D816CF000D71D3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4D824D816FB000D71D3 /* Cells */,
+				84D1F4D424D816F3000D71D3 /* HomeViewController.swift */,
+				84D1F4D524D816F3000D71D3 /* HomeViewController.xib */,
+				84D1F4DD24D81778000D71D3 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84D1F4D824D816FB000D71D3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4D924D8174D000D71D3 /* HomeCell.swift */,
+				84D1F4DA24D8174D000D71D3 /* HomeCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84D1F4DF24D8179D000D71D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4E024D81BC8000D71D3 /* Object */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84D1F4E024D81BC8000D71D3 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				84D1F4E124D81BD9000D71D3 /* Book.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		9E023536B7DBDDFEE4E85D66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAFD266E3736591E722F8529 /* Pods-BaitapRealm.debug.xcconfig */,
+				E92B6FAED584787268DF3F4D /* Pods-BaitapRealm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF473387A1CEA01B5388BD6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3C990672F9B5AE5226DF675 /* Pods_BaitapRealm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84D1F4BA24D8145A000D71D3 /* BaitapRealm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D1F4CF24D8145B000D71D3 /* Build configuration list for PBXNativeTarget "BaitapRealm" */;
+			buildPhases = (
+				EE1BDE50CAA51A806C3BCA78 /* [CP] Check Pods Manifest.lock */,
+				84D1F4B724D8145A000D71D3 /* Sources */,
+				84D1F4B824D8145A000D71D3 /* Frameworks */,
+				84D1F4B924D8145A000D71D3 /* Resources */,
+				DA72D6369B32D7EF085830B3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaitapRealm;
+			productName = BaitapRealm;
+			productReference = 84D1F4BB24D8145A000D71D3 /* BaitapRealm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84D1F4B324D8145A000D71D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = asiantech;
+				TargetAttributes = {
+					84D1F4BA24D8145A000D71D3 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 84D1F4B624D8145A000D71D3 /* Build configuration list for PBXProject "BaitapRealm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84D1F4B224D8145A000D71D3;
+			productRefGroup = 84D1F4BC24D8145A000D71D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84D1F4BA24D8145A000D71D3 /* BaitapRealm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84D1F4B924D8145A000D71D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D1F4CB24D8145B000D71D3 /* LaunchScreen.storyboard in Resources */,
+				84D1F4C824D8145B000D71D3 /* Preview Assets.xcassets in Resources */,
+				84D1F4C524D8145B000D71D3 /* Assets.xcassets in Resources */,
+				84D1F4D724D816F3000D71D3 /* HomeViewController.xib in Resources */,
+				84D1F4DC24D8174D000D71D3 /* HomeCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA72D6369B32D7EF085830B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaitapRealm/Pods-BaitapRealm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaitapRealm/Pods-BaitapRealm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaitapRealm/Pods-BaitapRealm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE1BDE50CAA51A806C3BCA78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaitapRealm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84D1F4B724D8145A000D71D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D1F4BF24D8145A000D71D3 /* AppDelegate.swift in Sources */,
+				84D1F4C124D8145A000D71D3 /* SceneDelegate.swift in Sources */,
+				84D1F4E224D81BD9000D71D3 /* Book.swift in Sources */,
+				84D1F4DB24D8174D000D71D3 /* HomeCell.swift in Sources */,
+				84D1F4DE24D81778000D71D3 /* HomeViewModel.swift in Sources */,
+				84D1F4D624D816F3000D71D3 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84D1F4C924D8145B000D71D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84D1F4CA24D8145B000D71D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84D1F4CD24D8145B000D71D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84D1F4CE24D8145B000D71D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84D1F4D024D8145B000D71D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAFD266E3736591E722F8529 /* Pods-BaitapRealm.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BaitapRealm/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BaitapRealm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.BaitapRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84D1F4D124D8145B000D71D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E92B6FAED584787268DF3F4D /* Pods-BaitapRealm.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BaitapRealm/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BaitapRealm/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.BaitapRealm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84D1F4B624D8145A000D71D3 /* Build configuration list for PBXProject "BaitapRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D1F4CD24D8145B000D71D3 /* Debug */,
+				84D1F4CE24D8145B000D71D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D1F4CF24D8145B000D71D3 /* Build configuration list for PBXNativeTarget "BaitapRealm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D1F4D024D8145B000D71D3 /* Debug */,
+				84D1F4D124D8145B000D71D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84D1F4B324D8145A000D71D3 /* Project object */;
+}
