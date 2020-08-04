@@ -14,12 +14,18 @@ enum Section {
     case abilities
     case moves
 }
+enum URLSection {
+    case urlAbilities
+    case urlMoves
+}
 class PokemonDetailViewModel {
     var url: String
     var abilities: [String] = []
     var moves: [String] = []
     var section: [Section] = [.abilities, .moves]
-    var status = Section.abilities
+    var urlAbilities: [String] = []
+    var urlMoves: [String] = []
+    var urlSection: [URLSection] = [.urlAbilities, .urlMoves]
     
     init(url: String ) {
         self.url = url
@@ -43,15 +49,14 @@ class PokemonDetailViewModel {
                         let json = data.toJSON()
                         guard let abilities = json["abilities"] as? [JSON], let moves = json["moves"] as? [JSON] else { return }
                         for item in abilities {
-                            guard let ability = item["ability"] as? JSON, let name = ability["name"] as? String else {return}
+                            guard let ability = item["ability"] as? JSON, let name = ability["name"] as? String, let url = ability["url"] as? String else {return}
                             self.abilities.append(name)
-                            print(self.abilities)
+                            self.urlAbilities.append(url)
                         }
                         for item in moves {
-                            guard let move = item["move"] as? JSON, let name = move["name"] as? String else { return }
+                            guard let move = item["move"] as? JSON, let name = move["name"] as? String, let url = move["url"] as? String else { return }
                             self.moves.append(name)
-                            print(self.moves)
-                            
+                            self.urlMoves.append(url)
                         }
                         completion(true, "")
                     } else {
@@ -63,13 +68,14 @@ class PokemonDetailViewModel {
         task.resume()
         print("done")
     }
-    func numberOfRowsInSection() -> Int {
-        switch status {
-        case .abilities:
-            return abilities.count
-        case .moves:
-            return moves.count
-        }
+    func didSelectRowAt(indexPath: IndexPath) -> AbilityDetailViewModel {
+        let item = urlAbilities[indexPath.row]
+        let viewModel = AbilityDetailViewModel(url: item)
+        return viewModel
     }
-   
+    func didSelectRowAt1(indexPath: IndexPath) -> MoveDetailViewModel {
+        let item = url
+        let viewModel = MoveDetailViewModel(url: item)
+        return viewModel
+    }
 }

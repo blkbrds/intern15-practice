@@ -8,13 +8,11 @@
 
 import UIKit
 
-
 class PokemonDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: PokemonDetailViewModel?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,23 +23,24 @@ class PokemonDetailViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "tableView")
         tableView.dataSource = self
         loadAPI()
+        tableView.delegate = self
     }
     
     func loadAPI() {
-           print("load API")
+        print("load API")
         viewModel?.loadAPI { (done, msg) in
-               if done {
-                   self.tableView.reloadData()
-               } else {
-                   print("API Error: \(msg)")
-               }
-           }
-       }
-       private func updateUI() {
-           tableView.reloadData()
-       }
+            if done {
+                self.tableView.reloadData()
+            } else {
+                print("API Error: \(msg)")
+            }
+        }
+    }
+    private func updateUI() {
+        tableView.reloadData()
+    }
 }
-extension PokemonDetailViewController: UITableViewDataSource {
+extension PokemonDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -65,7 +64,6 @@ extension PokemonDetailViewController: UITableViewDataSource {
         case .none:
             return cell
         }
-        
         return cell 
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -78,5 +76,18 @@ extension PokemonDetailViewController: UITableViewDataSource {
             return ""
         }
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = AbilityDetailViewController()
+        vc.title = viewModel?.abilities[indexPath.row]
+        vc.viewModel = viewModel?.didSelectRowAt(indexPath: indexPath)
+        let vc2 = MoveDetailViewController()
+        vc2.title = viewModel?.moves[indexPath.row]
+        vc2.viewModel = viewModel?.didSelectRowAt1(indexPath: indexPath)
+        switch viewModel?.section[indexPath.section] {
+        case .abilities:
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            navigationController?.pushViewController(vc2, animated: true)
+        }
+    }
 }

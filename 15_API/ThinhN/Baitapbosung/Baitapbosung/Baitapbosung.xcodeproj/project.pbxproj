@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843A393A24D873650060B11E /* AbilityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A393824D873650060B11E /* AbilityDetailTableViewCell.swift */; };
+		843A393B24D873650060B11E /* AbilityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843A393924D873650060B11E /* AbilityDetailTableViewCell.xib */; };
+		843A393D24D87CC60060B11E /* MoveDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A393C24D87CC60060B11E /* MoveDetailViewModel.swift */; };
+		843A394024D953060060B11E /* MoveDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A393E24D953060060B11E /* MoveDetailTableViewCell.swift */; };
+		843A394124D953060060B11E /* MoveDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843A393F24D953060060B11E /* MoveDetailTableViewCell.xib */; };
+		843A394324D97A900060B11E /* MoveDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A394224D97A900060B11E /* MoveDetail.swift */; };
+		84D1F4E424D85084000D71D3 /* AbillityDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1F4E324D85084000D71D3 /* AbillityDetailViewModel.swift */; };
 		84D90C3324D522580040C9E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D90C3224D522580040C9E1 /* AppDelegate.swift */; };
 		84D90C3524D522580040C9E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D90C3424D522580040C9E1 /* SceneDelegate.swift */; };
 		84D90C3924D522590040C9E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84D90C3824D522590040C9E1 /* Assets.xcassets */; };
@@ -32,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843A393824D873650060B11E /* AbilityDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityDetailTableViewCell.swift; sourceTree = "<group>"; };
+		843A393924D873650060B11E /* AbilityDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbilityDetailTableViewCell.xib; sourceTree = "<group>"; };
+		843A393C24D87CC60060B11E /* MoveDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetailViewModel.swift; sourceTree = "<group>"; };
+		843A393E24D953060060B11E /* MoveDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetailTableViewCell.swift; sourceTree = "<group>"; };
+		843A393F24D953060060B11E /* MoveDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoveDetailTableViewCell.xib; sourceTree = "<group>"; };
+		843A394224D97A900060B11E /* MoveDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetail.swift; sourceTree = "<group>"; };
+		84D1F4E324D85084000D71D3 /* AbillityDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbillityDetailViewModel.swift; sourceTree = "<group>"; };
 		84D90C2F24D522580040C9E1 /* Baitapbosung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baitapbosung.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84D90C3224D522580040C9E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84D90C3424D522580040C9E1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +127,7 @@
 			children = (
 				84D90C6A24D5772D0040C9E1 /* Data.Ext.swift */,
 				84D90C7A24D5CC040040C9E1 /* PokemonAPI.swift */,
+				843A394224D97A900060B11E /* MoveDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,7 +143,7 @@
 		84D90C5824D56C4D0040C9E1 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				84D90C7324D5AA0E0040C9E1 /* New Group2 */,
+				84D90C7324D5AA0E0040C9E1 /* Cell 4 */,
 				84D90C7224D5AA0B0040C9E1 /* Cell 3 */,
 				84D90C7124D5AA060040C9E1 /* Cell 2 */,
 				84D90C7024D5A9F30040C9E1 /* Cell 1 */,
@@ -165,6 +180,7 @@
 			children = (
 				84D90C5024D56A9A0040C9E1 /* AbilityDetailViewController.swift */,
 				84D90C5124D56A9A0040C9E1 /* AbilityDetailViewController.xib */,
+				84D1F4E324D85084000D71D3 /* AbillityDetailViewModel.swift */,
 			);
 			path = ViewController3;
 			sourceTree = "<group>";
@@ -174,6 +190,7 @@
 			children = (
 				84D90C5424D56AB10040C9E1 /* MoveDetailViewController.swift */,
 				84D90C5524D56AB10040C9E1 /* MoveDetailViewController.xib */,
+				843A393C24D87CC60060B11E /* MoveDetailViewModel.swift */,
 			);
 			path = ViewController4;
 			sourceTree = "<group>";
@@ -200,15 +217,19 @@
 		84D90C7224D5AA0B0040C9E1 /* Cell 3 */ = {
 			isa = PBXGroup;
 			children = (
+				843A393824D873650060B11E /* AbilityDetailTableViewCell.swift */,
+				843A393924D873650060B11E /* AbilityDetailTableViewCell.xib */,
 			);
 			path = "Cell 3";
 			sourceTree = "<group>";
 		};
-		84D90C7324D5AA0E0040C9E1 /* New Group2 */ = {
+		84D90C7324D5AA0E0040C9E1 /* Cell 4 */ = {
 			isa = PBXGroup;
 			children = (
+				843A393E24D953060060B11E /* MoveDetailTableViewCell.swift */,
+				843A393F24D953060060B11E /* MoveDetailTableViewCell.xib */,
 			);
-			path = "New Group2";
+			path = "Cell 4";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +297,9 @@
 				84D90C5324D56A9A0040C9E1 /* AbilityDetailViewController.xib in Resources */,
 				84D90C4B24D56A4B0040C9E1 /* ListPokemonViewController.xib in Resources */,
 				84D90C6024D56D2B0040C9E1 /* ListPokemonTableViewCell.xib in Resources */,
+				843A393B24D873650060B11E /* AbilityDetailTableViewCell.xib in Resources */,
 				84D90C3924D522590040C9E1 /* Assets.xcassets in Resources */,
+				843A394124D953060060B11E /* MoveDetailTableViewCell.xib in Resources */,
 				84D90C4F24D56A7B0040C9E1 /* PokemonDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,13 +312,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D90C5224D56A9A0040C9E1 /* AbilityDetailViewController.swift in Sources */,
+				843A393A24D873650060B11E /* AbilityDetailTableViewCell.swift in Sources */,
 				84D90C6B24D5772D0040C9E1 /* Data.Ext.swift in Sources */,
+				843A394324D97A900060B11E /* MoveDetail.swift in Sources */,
 				84D90C5F24D56D2B0040C9E1 /* ListPokemonTableViewCell.swift in Sources */,
 				84D90C6524D573720040C9E1 /* ListPokemonViewModel.swift in Sources */,
 				84D90C7624D5AA3A0040C9E1 /* PokemonDetailTableViewCell.swift in Sources */,
+				84D1F4E424D85084000D71D3 /* AbillityDetailViewModel.swift in Sources */,
+				843A394024D953060060B11E /* MoveDetailTableViewCell.swift in Sources */,
 				84D90C3324D522580040C9E1 /* AppDelegate.swift in Sources */,
 				84D90C3524D522580040C9E1 /* SceneDelegate.swift in Sources */,
 				84D90C4E24D56A7B0040C9E1 /* PokemonDetailViewController.swift in Sources */,
+				843A393D24D87CC60060B11E /* MoveDetailViewModel.swift in Sources */,
 				84D90C5624D56AB10040C9E1 /* MoveDetailViewController.swift in Sources */,
 				84D90C6F24D59DF90040C9E1 /* PokemonDetailViewModel.swift in Sources */,
 				84D90C4A24D56A4B0040C9E1 /* ListPokemonViewController.swift in Sources */,

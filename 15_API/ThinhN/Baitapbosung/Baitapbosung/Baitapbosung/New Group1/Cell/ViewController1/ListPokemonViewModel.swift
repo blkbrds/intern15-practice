@@ -50,7 +50,6 @@ class ListPokemonViewModel {
     }
     func didSelectRowAt(indexPath: IndexPath) -> PokemonDetailViewModel {
         let item = urlnamePokemon[indexPath.row]
-        print(item)
         let viewModel = PokemonDetailViewModel(url: item)
         return viewModel
     }
