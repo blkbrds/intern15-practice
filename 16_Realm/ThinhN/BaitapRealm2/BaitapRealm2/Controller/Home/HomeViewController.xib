@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="BaitapRealm2" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="BVb-Z0-yMa" id="lLq-FY-OfN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BVb-Z0-yMa">
+                    <rect key="frame" x="0.0" y="44" width="414" height="708"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XK0-hn-d72">
+                    <rect key="frame" x="40" y="772" width="334" height="50"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="NVU-sE-RSd"/>
+                    </constraints>
+                    <state key="normal" title="Add New Post "/>
+                    <connections>
+                        <action selector="addNewPostButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="yVc-2I-1Te"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BVb-Z0-yMa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0xP-44-rjI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XK0-hn-d72" secondAttribute="bottom" constant="40" id="EtZ-jd-Uui"/>
+                <constraint firstItem="XK0-hn-d72" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="L9x-mu-jff"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XK0-hn-d72" secondAttribute="trailing" constant="40" id="Wkn-09-Rz5"/>
+                <constraint firstItem="XK0-hn-d72" firstAttribute="top" secondItem="BVb-Z0-yMa" secondAttribute="bottom" constant="20" id="ljs-Fi-LHk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BVb-Z0-yMa" secondAttribute="trailing" id="pu7-TB-GKv"/>
+                <constraint firstItem="BVb-Z0-yMa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wpH-dD-p6e"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="125"/>
+        </view>
+    </objects>
+</document>

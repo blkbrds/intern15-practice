@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28A421CE1565CE791D6F4A50 /* Pods_BaitapRealm2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643EF0C4BFBE0FEF62BE3CA8 /* Pods_BaitapRealm2.framework */; };
+		843A395124DA62B70060B11E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A395024DA62B70060B11E /* AppDelegate.swift */; };
+		843A395324DA62B70060B11E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A395224DA62B70060B11E /* SceneDelegate.swift */; };
+		843A395524DA62B70060B11E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A395424DA62B70060B11E /* ContentView.swift */; };
+		843A395724DA62B80060B11E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A395624DA62B80060B11E /* Assets.xcassets */; };
+		843A395A24DA62B80060B11E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843A395924DA62B80060B11E /* Preview Assets.xcassets */; };
+		843A395D24DA62B80060B11E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843A395B24DA62B80060B11E /* LaunchScreen.storyboard */; };
+		843A396924DA659E0060B11E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A396724DA659E0060B11E /* HomeViewController.swift */; };
+		843A396A24DA659E0060B11E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843A396824DA659E0060B11E /* HomeViewController.xib */; };
+		843A396E24DA92CA0060B11E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A396C24DA92CA0060B11E /* BaseViewController.swift */; };
+		843A396F24DA92CA0060B11E /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843A396D24DA92CA0060B11E /* BaseViewController.xib */; };
+		843A397724DA970A0060B11E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A397524DA970A0060B11E /* CategoryTableViewCell.swift */; };
+		843A397824DA970A0060B11E /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843A397624DA970A0060B11E /* CategoryTableViewCell.xib */; };
+		843A397A24DA9A2B0060B11E /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A397924DA9A2B0060B11E /* PostViewModel.swift */; };
+		843A397C24DA9A8E0060B11E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A397B24DA9A8E0060B11E /* Category.swift */; };
+		849DD13724DAADB4002349FA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DD13624DAADB3002349FA /* Post.swift */; };
+		849DD13B24DAB8A1002349FA /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DD13924DAB8A1002349FA /* AddPostViewController.swift */; };
+		849DD13C24DAB8A1002349FA /* AddPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849DD13A24DAB8A1002349FA /* AddPostViewController.xib */; };
+		849DD14024DABA69002349FA /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DD13E24DABA69002349FA /* DetailPostViewController.swift */; };
+		849DD14124DABA69002349FA /* DetailPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849DD13F24DABA69002349FA /* DetailPostViewController.xib */; };
+		849DD14324DAC54B002349FA /* CategoryTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DD14224DAC54B002349FA /* CategoryTableViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1BC272ECE47875EAB37D6AF5 /* Pods-BaitapRealm2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaitapRealm2.debug.xcconfig"; path = "Target Support Files/Pods-BaitapRealm2/Pods-BaitapRealm2.debug.xcconfig"; sourceTree = "<group>"; };
+		311D323CF1124F20A24761F7 /* Pods-BaitapRealm2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaitapRealm2.release.xcconfig"; path = "Target Support Files/Pods-BaitapRealm2/Pods-BaitapRealm2.release.xcconfig"; sourceTree = "<group>"; };
+		643EF0C4BFBE0FEF62BE3CA8 /* Pods_BaitapRealm2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaitapRealm2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843A394D24DA62B70060B11E /* BaitapRealm2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaitapRealm2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		843A395024DA62B70060B11E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		843A395224DA62B70060B11E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		843A395424DA62B70060B11E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		843A395624DA62B80060B11E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		843A395924DA62B80060B11E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		843A395C24DA62B80060B11E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		843A395E24DA62B80060B11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843A396724DA659E0060B11E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		843A396824DA659E0060B11E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		843A396C24DA92CA0060B11E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		843A396D24DA92CA0060B11E /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		843A397524DA970A0060B11E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		843A397624DA970A0060B11E /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		843A397924DA9A2B0060B11E /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		843A397B24DA9A8E0060B11E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		849DD13624DAADB3002349FA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		849DD13924DAB8A1002349FA /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		849DD13A24DAB8A1002349FA /* AddPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPostViewController.xib; sourceTree = "<group>"; };
+		849DD13E24DABA69002349FA /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		849DD13F24DABA69002349FA /* DetailPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPostViewController.xib; sourceTree = "<group>"; };
+		849DD14224DAC54B002349FA /* CategoryTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		843A394A24DA62B70060B11E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28A421CE1565CE791D6F4A50 /* Pods_BaitapRealm2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66281C48904B89BDFB15DA17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BC272ECE47875EAB37D6AF5 /* Pods-BaitapRealm2.debug.xcconfig */,
+				311D323CF1124F20A24761F7 /* Pods-BaitapRealm2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		843A394424DA62B70060B11E = {
+			isa = PBXGroup;
+			children = (
+				843A394F24DA62B70060B11E /* BaitapRealm2 */,
+				843A394E24DA62B70060B11E /* Products */,
+				66281C48904B89BDFB15DA17 /* Pods */,
+				8FC0C0B15DC6CF22A032CB80 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		843A394E24DA62B70060B11E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				843A394D24DA62B70060B11E /* BaitapRealm2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		843A394F24DA62B70060B11E /* BaitapRealm2 */ = {
+			isa = PBXGroup;
+			children = (
+				843A396524DA64EF0060B11E /* Controller */,
+				843A396424DA64EB0060B11E /* Models */,
+				843A395024DA62B70060B11E /* AppDelegate.swift */,
+				843A395224DA62B70060B11E /* SceneDelegate.swift */,
+				843A395424DA62B70060B11E /* ContentView.swift */,
+				843A395624DA62B80060B11E /* Assets.xcassets */,
+				843A395B24DA62B80060B11E /* LaunchScreen.storyboard */,
+				843A395E24DA62B80060B11E /* Info.plist */,
+				843A395824DA62B80060B11E /* Preview Content */,
+			);
+			path = BaitapRealm2;
+			sourceTree = "<group>";
+		};
+		843A395824DA62B80060B11E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				843A395924DA62B80060B11E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		843A396424DA64EB0060B11E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				843A397B24DA9A8E0060B11E /* Category.swift */,
+				849DD13624DAADB3002349FA /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		843A396524DA64EF0060B11E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				849DD13D24DABA46002349FA /* DetailPost */,
+				849DD13824DAB7FC002349FA /* AddPost */,
+				843A396B24DA92B30060B11E /* Base */,
+				843A396624DA65830060B11E /* Home */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		843A396624DA65830060B11E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				843A397024DA967D0060B11E /* Cell */,
+				843A396724DA659E0060B11E /* HomeViewController.swift */,
+				843A396824DA659E0060B11E /* HomeViewController.xib */,
+				843A397924DA9A2B0060B11E /* PostViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		843A396B24DA92B30060B11E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				843A396C24DA92CA0060B11E /* BaseViewController.swift */,
+				843A396D24DA92CA0060B11E /* BaseViewController.xib */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		843A397024DA967D0060B11E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				843A397524DA970A0060B11E /* CategoryTableViewCell.swift */,
+				843A397624DA970A0060B11E /* CategoryTableViewCell.xib */,
+				849DD14224DAC54B002349FA /* CategoryTableViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		849DD13824DAB7FC002349FA /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				849DD13924DAB8A1002349FA /* AddPostViewController.swift */,
+				849DD13A24DAB8A1002349FA /* AddPostViewController.xib */,
+			);
+			path = AddPost;
+			sourceTree = "<group>";
+		};
+		849DD13D24DABA46002349FA /* DetailPost */ = {
+			isa = PBXGroup;
+			children = (
+				849DD13E24DABA69002349FA /* DetailPostViewController.swift */,
+				849DD13F24DABA69002349FA /* DetailPostViewController.xib */,
+			);
+			path = DetailPost;
+			sourceTree = "<group>";
+		};
+		8FC0C0B15DC6CF22A032CB80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				643EF0C4BFBE0FEF62BE3CA8 /* Pods_BaitapRealm2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		843A394C24DA62B70060B11E /* BaitapRealm2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 843A396124DA62B80060B11E /* Build configuration list for PBXNativeTarget "BaitapRealm2" */;
+			buildPhases = (
+				1C7B8CFFE035956438B4B638 /* [CP] Check Pods Manifest.lock */,
+				843A394924DA62B70060B11E /* Sources */,
+				843A394A24DA62B70060B11E /* Frameworks */,
+				843A394B24DA62B70060B11E /* Resources */,
+				B053ED3D83806A1011C1F7C7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaitapRealm2;
+			productName = BaitapRealm2;
+			productReference = 843A394D24DA62B70060B11E /* BaitapRealm2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		843A394524DA62B70060B11E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = asiantech;
+				TargetAttributes = {
+					843A394C24DA62B70060B11E = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 843A394824DA62B70060B11E /* Build configuration list for PBXProject "BaitapRealm2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 843A394424DA62B70060B11E;
+			productRefGroup = 843A394E24DA62B70060B11E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				843A394C24DA62B70060B11E /* BaitapRealm2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		843A394B24DA62B70060B11E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843A395D24DA62B80060B11E /* LaunchScreen.storyboard in Resources */,
+				843A396F24DA92CA0060B11E /* BaseViewController.xib in Resources */,
+				843A395A24DA62B80060B11E /* Preview Assets.xcassets in Resources */,
+				843A397824DA970A0060B11E /* CategoryTableViewCell.xib in Resources */,
+				843A395724DA62B80060B11E /* Assets.xcassets in Resources */,
+				849DD14124DABA69002349FA /* DetailPostViewController.xib in Resources */,
+				849DD13C24DAB8A1002349FA /* AddPostViewController.xib in Resources */,
+				843A396A24DA659E0060B11E /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C7B8CFFE035956438B4B638 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaitapRealm2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B053ED3D83806A1011C1F7C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaitapRealm2/Pods-BaitapRealm2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BaitapRealm2/Pods-BaitapRealm2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BaitapRealm2/Pods-BaitapRealm2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		843A394924DA62B70060B11E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843A396E24DA92CA0060B11E /* BaseViewController.swift in Sources */,
+				843A397A24DA9A2B0060B11E /* PostViewModel.swift in Sources */,
+				843A395124DA62B70060B11E /* AppDelegate.swift in Sources */,
+				843A395324DA62B70060B11E /* SceneDelegate.swift in Sources */,
+				843A395524DA62B70060B11E /* ContentView.swift in Sources */,
+				843A396924DA659E0060B11E /* HomeViewController.swift in Sources */,
+				849DD13B24DAB8A1002349FA /* AddPostViewController.swift in Sources */,
+				849DD13724DAADB4002349FA /* Post.swift in Sources */,
+				843A397724DA970A0060B11E /* CategoryTableViewCell.swift in Sources */,
+				849DD14324DAC54B002349FA /* CategoryTableViewModel.swift in Sources */,
+				849DD14024DABA69002349FA /* DetailPostViewController.swift in Sources */,
+				843A397C24DA9A8E0060B11E /* Category.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		843A395B24DA62B80060B11E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				843A395C24DA62B80060B11E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		843A395F24DA62B80060B11E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		843A396024DA62B80060B11E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		843A396224DA62B80060B11E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BC272ECE47875EAB37D6AF5 /* Pods-BaitapRealm2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BaitapRealm2/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BaitapRealm2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.BaitapRealm2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		843A396324DA62B80060B11E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 311D323CF1124F20A24761F7 /* Pods-BaitapRealm2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BaitapRealm2/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BaitapRealm2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.asiantech.BaitapRealm2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		843A394824DA62B70060B11E /* Build configuration list for PBXProject "BaitapRealm2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843A395F24DA62B80060B11E /* Debug */,
+				843A396024DA62B80060B11E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		843A396124DA62B80060B11E /* Build configuration list for PBXNativeTarget "BaitapRealm2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				843A396224DA62B80060B11E /* Debug */,
+				843A396324DA62B80060B11E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 843A394524DA62B70060B11E /* Project object */;
+}

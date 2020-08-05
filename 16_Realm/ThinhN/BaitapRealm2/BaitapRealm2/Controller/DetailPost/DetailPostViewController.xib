@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailPostViewController" customModule="BaitapRealm2" customModuleProvider="target">
+            <connections>
+                <outlet property="contentLabel" destination="Pcf-aa-JnL" id="iEj-bR-qbn"/>
+                <outlet property="datePostLabel" destination="Wjk-Iv-dZ7" id="5J8-ae-Kup"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjk-Iv-dZ7">
+                    <rect key="frame" x="10" y="74" width="374" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcf-aa-JnL">
+                    <rect key="frame" x="30" y="154.5" width="354" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="mMg-N1-03N"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aok-7H-DPL">
+                    <rect key="frame" x="20" y="494.5" width="374" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="dwU-DB-2mZ"/>
+                    </constraints>
+                    <state key="normal" title="Edit"/>
+                    <connections>
+                        <action selector="editPostButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="GVZ-uT-X97"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwa-cd-Fxo">
+                    <rect key="frame" x="20" y="600.5" width="374" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="SLQ-Ko-CuP"/>
+                    </constraints>
+                    <state key="normal" title="Delete"/>
+                    <connections>
+                        <action selector="deletePostButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="8qt-gC-G08"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Cwa-cd-Fxo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4zC-8q-c8N"/>
+                <constraint firstItem="Pcf-aa-JnL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="6Pz-Mb-v2L"/>
+                <constraint firstItem="Cwa-cd-Fxo" firstAttribute="top" secondItem="Aok-7H-DPL" secondAttribute="bottom" constant="56" id="JbF-tY-njb"/>
+                <constraint firstItem="Wjk-Iv-dZ7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="OpF-Iu-whz"/>
+                <constraint firstItem="Aok-7H-DPL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Q12-8n-9F0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pcf-aa-JnL" secondAttribute="trailing" constant="30" id="Qyz-Ec-yQx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cwa-cd-Fxo" secondAttribute="trailing" constant="20" id="VnQ-xu-XJh"/>
+                <constraint firstItem="Pcf-aa-JnL" firstAttribute="top" secondItem="Wjk-Iv-dZ7" secondAttribute="bottom" constant="60" id="WBw-cf-VCa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Aok-7H-DPL" secondAttribute="trailing" constant="20" id="b4M-mC-bxL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wjk-Iv-dZ7" secondAttribute="trailing" constant="30" id="gfr-oL-P2G"/>
+                <constraint firstItem="Wjk-Iv-dZ7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="jCD-9T-m5z"/>
+                <constraint firstItem="Aok-7H-DPL" firstAttribute="top" secondItem="Pcf-aa-JnL" secondAttribute="bottom" constant="40" id="mrX-mW-6cI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
+        </view>
+    </objects>
+</document>
