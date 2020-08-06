@@ -16,12 +16,8 @@ class AddPostViewController: BaseViewController {
     
     var isAdd = false
     var post: Post?
-    var currentDate = NSDate()
-    var dateFormatter = DateFormatter()
-    var currentDateTime = Date()
     let formatter = DateFormatter()
     var detailContentPost: String = ""
-    var detailDatePost: String = ""
     var titlePost: String = ""
     
     
@@ -39,7 +35,7 @@ class AddPostViewController: BaseViewController {
         
     }
     override func customNavi() {
-        let backButton = UIBarButtonItem(barButtonSystemItem: .done , target: self, action: #selector(backButtonTouchUpInside))
+        let backButton = UIBarButtonItem(barButtonSystemItem: .cancel , target: self, action: #selector(backButtonTouchUpInside))
         navigationItem.leftBarButtonItem = backButton
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(doneButtonTouchUpInside))
@@ -52,8 +48,8 @@ class AddPostViewController: BaseViewController {
     
     @objc func doneButtonTouchUpInside() {
         formatter.timeStyle = .medium
-        formatter.dateStyle = .long
-        let dateTimeString = formatter.string(from: currentDateTime)
+        formatter.dateStyle = .medium
+        let dateTimeString = formatter.string(from: Date())
         guard let title = titlePostTextField.text,
             let content = contentPostTextView.text else { return }
         if isAdd {

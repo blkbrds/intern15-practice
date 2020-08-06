@@ -14,14 +14,12 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel = PostViewModel()
-    var check: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.setupObserve()
     }
-    
     
     func updateUI() {
         tableView.reloadData()
@@ -39,17 +37,17 @@ class HomeViewController: BaseViewController {
         tableView.dataSource = self
     }
     override func customNavi() {
-        let backButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(backButtonTouchuUpInside))
+        let backButton = UIBarButtonItem(barButtonSystemItem: .undo, target: self, action: #selector(backButtonTouchUpInside))
         navigationItem.leftBarButtonItem = backButton
         
-        let editButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(removeButtonTouchUpInside))
+        let editButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(editButtonTouchUpInside))
         navigationItem.rightBarButtonItem = editButton
         
     }
-    @objc func backButtonTouchuUpInside() {
+    @objc func backButtonTouchUpInside() {
         
     }
-    @objc func removeButtonTouchUpInside() {
+    @objc func editButtonTouchUpInside() {
         
     }
     func addPost(title: String, content: String,date: String, isFavorite: Bool ) {
@@ -111,7 +109,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         
         let post = viewModel.postIndex(at: indexPath)
         let detailPost = DetailPostViewController()
@@ -120,6 +117,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         detailPost.detailDatePost = post.createDate
         detailPost.post = viewModel.postIndex(at: indexPath)
         self.navigationController?.pushViewController(detailPost, animated: true )
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandle) in
+            self.viewModel.posts.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            completionHandle(true)
+        }
+        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        return swipe
     }
 
 }

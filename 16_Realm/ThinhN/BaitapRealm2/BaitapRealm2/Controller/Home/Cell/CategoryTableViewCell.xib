@@ -28,12 +28,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EB3-b0-q4q">
-                        <rect key="frame" x="20" y="11" width="83" height="20"/>
+                    <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EB3-b0-q4q">
+                        <rect key="frame" x="20" y="11" width="33" height="20"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" backgroundImage="star" catalog="system"/>
-                        <state key="selected" backgroundImage="star" catalog="system"/>
+                        <state key="selected" backgroundImage="star.fill" catalog="system"/>
                         <connections>
                             <action selector="favoriteButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="v7H-lj-Lsr"/>
                         </connections>
@@ -52,7 +52,7 @@
                     <constraint firstItem="VV5-2z-Rmp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LaN-Hv-PBN"/>
                     <constraint firstAttribute="trailing" secondItem="VV5-2z-Rmp" secondAttribute="trailing" constant="10" id="Qsd-YQ-9g4"/>
                     <constraint firstItem="VV5-2z-Rmp" firstAttribute="top" secondItem="EB3-b0-q4q" secondAttribute="bottom" constant="8" id="UdP-xB-gh5"/>
-                    <constraint firstItem="cED-bP-hxf" firstAttribute="leading" relation="lessThanOrEqual" secondItem="EB3-b0-q4q" secondAttribute="trailing" constant="250" id="crs-e4-L0h"/>
+                    <constraint firstItem="cED-bP-hxf" firstAttribute="leading" relation="lessThanOrEqual" secondItem="EB3-b0-q4q" secondAttribute="trailing" constant="300" id="crs-e4-L0h"/>
                     <constraint firstItem="cED-bP-hxf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="da7-h4-AMb"/>
                     <constraint firstItem="B7a-0O-oo2" firstAttribute="top" secondItem="VV5-2z-Rmp" secondAttribute="bottom" constant="13" id="ecs-Si-CiZ"/>
                     <constraint firstAttribute="trailing" secondItem="B7a-0O-oo2" secondAttribute="trailing" constant="10" id="mAR-g5-pRz"/>
@@ -72,5 +72,6 @@
     </objects>
     <resources>
         <image name="star" catalog="system" width="64" height="58"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>

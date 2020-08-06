@@ -40,10 +40,12 @@ class DetailPostViewController: BaseViewController {
     }
     
     @IBAction func deletePostButtonTouchUpInside(_ sender: Any) {
-        let alert = UIAlertController(title: "Delete Item", message: "Are You Sure?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Not Yet", style: UIAlertAction.Style.default, handler: { _ in
+        let alert = UIAlertController(title: "Warning", message: "Do you want to delete this post?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.popToRootViewController(animated: true)
         }))
-        alert.addAction(UIAlertAction(title: "Yeah", style: UIAlertAction.Style.default, handler: { (_: UIAlertAction!) in
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (_: UIAlertAction!) in
             do {
                 if let post = self.post {
                     let realm = try Realm()
@@ -53,7 +55,7 @@ class DetailPostViewController: BaseViewController {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             } catch {
-                print("Failed Delete Item")
+                print("Lỗi Delete đối tượng")
             }
         }))
         self.present(alert, animated: true, completion: nil)

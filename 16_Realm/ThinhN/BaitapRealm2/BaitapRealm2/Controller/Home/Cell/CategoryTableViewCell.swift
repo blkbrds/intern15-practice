@@ -26,6 +26,12 @@ class CategoryTableViewCell: UITableViewCell {
     weak var delegate: CategoryTableViewCellDelegate?
     var check: Bool = true
     
+    var viewModel: CategoryTableViewModel? {
+        didSet {
+            favoriteButton.isSelected = viewModel!.isFavorite
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
