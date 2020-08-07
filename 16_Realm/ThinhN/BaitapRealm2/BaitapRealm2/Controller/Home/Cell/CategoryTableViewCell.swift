@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 protocol CategoryTableViewCellDelegate: class {
      func cell(_ cell: CategoryTableViewCell, needPerforms action: CategoryTableViewCell.Action)
 }
@@ -34,18 +33,11 @@ class CategoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+
     @IBAction func favoriteButtonTouchUpInside(_ sender: Any) {
         guard let delegate = delegate else { return }
         favoriteButton.isSelected  = !favoriteButton.isSelected
         delegate.cell(self, needPerforms: .favorite(isFavorite: isSelected))
     }
-
 }

@@ -44,28 +44,24 @@ class HomeViewController: BaseViewController {
         navigationItem.rightBarButtonItem = editButton
         
     }
-    @objc func backButtonTouchUpInside() {
-        
-    }
-    @objc func editButtonTouchUpInside() {
-        
-    }
+    @objc func backButtonTouchUpInside() {}
+    @objc func editButtonTouchUpInside() {}
+    
     func addPost(title: String, content: String,date: String, isFavorite: Bool ) {
         let realm = try! Realm()
-        
         let post = Post()
         post.title = title
         post.content = content
         post.createDate = date
         post.isFavorite = isFavorite
-        
         try! realm.write {
             realm.add(post)
         }
     }
+    
     @IBAction func addNewPostButtonTouchUpInside(_ sender: Any) {
         let addPost = AddPostViewController()
-        addPost.isAdd = true
+        addPost.status = true
         self.navigationController?.pushViewController(addPost, animated: true)
     }
     
@@ -109,7 +105,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let post = viewModel.postIndex(at: indexPath)
         let detailPost = DetailPostViewController()
         detailPost.titlePost = post.title
@@ -136,9 +131,9 @@ extension HomeViewController: HomeViewModelDelegate {
     }
 }
 
-extension HomeViewController: CategoryTableViewCellDelegate {
-    func cell(_ cell: CategoryTableViewCell, needPerforms action: CategoryTableViewCell.Action) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        viewModel.posts[indexPath.row].isFavorite = true
-    }
-}
+//extension HomeViewController: CategoryTableViewCellDelegate {
+//    func cell(_ cell: CategoryTableViewCell, needPerforms action: CategoryTableViewCell.Action) {
+//        guard let indexPath = tableView.indexPath(for: cell) else { return }
+//        viewModel.posts[indexPath.row].isFavorite = true
+//    }
+//}

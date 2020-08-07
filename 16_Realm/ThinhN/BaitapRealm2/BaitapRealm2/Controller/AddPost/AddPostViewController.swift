@@ -14,19 +14,19 @@ class AddPostViewController: BaseViewController {
     @IBOutlet weak var titlePostTextField: UITextField!
     @IBOutlet weak var contentPostTextView: UITextView!
     
-    var isAdd = false
+    var status = false
     var post: Post?
     let formatter = DateFormatter()
     var detailContentPost: String = ""
     var titlePost: String = ""
-    
-    
+    let titleAddPost: String = "Add Post"
+    let editPost: String = "Edit Post"
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     override func setupUI() {
-        title = isAdd ? "Add Post" : "Edit Post"
+        title = status ? titleAddPost : editPost
         titlePostTextField.text = titlePost
         contentPostTextView.text = detailContentPost
         contentPostTextView.clipsToBounds = true
@@ -50,10 +50,8 @@ class AddPostViewController: BaseViewController {
         formatter.timeStyle = .medium
         formatter.dateStyle = .medium
         let dateTimeString = formatter.string(from: Date())
-        guard let title = titlePostTextField.text,
-            let content = contentPostTextView.text else { return }
-        if isAdd {
-            //add new a item
+        guard let title = titlePostTextField.text, let content = contentPostTextView.text else { return }
+        if status {
             do {
                 let realm = try Realm()
                 let post = Post()
@@ -69,7 +67,6 @@ class AddPostViewController: BaseViewController {
                 print("Lỗi thêm đối tượng vào Realm")
             }
         } else {
-            // Edit Post
             do {
                 if let post = post {
                     let realm = try Realm()

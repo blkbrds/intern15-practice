@@ -31,12 +31,12 @@ class DetailPostViewController: BaseViewController {
     }
     
     @IBAction func editPostButtonTouchUpInside(_ sender: Any) {
-        let add = AddPostViewController()
-        add.isAdd = false
-        add.titlePost = titlePost
-        add.detailContentPost = detailContentPost
-        add.post = post
-        self.navigationController?.pushViewController(add, animated: true)
+        let addPost = AddPostViewController()
+        addPost.status = false
+        addPost.titlePost = titlePost
+        addPost.detailContentPost = detailContentPost
+        addPost.post = post
+        self.navigationController?.pushViewController(addPost, animated: true)
     }
     
     @IBAction func deletePostButtonTouchUpInside(_ sender: Any) {

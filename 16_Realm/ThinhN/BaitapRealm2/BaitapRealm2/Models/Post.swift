@@ -15,4 +15,5 @@ class Post: Object {
     @objc dynamic var createDate: String = ""
     @objc dynamic var isFavorite = true
     @objc dynamic var owner: Category?
+    
 }
