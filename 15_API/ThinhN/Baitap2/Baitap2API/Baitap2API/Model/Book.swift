@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class BookAPI {
+final class Book {
     var name: String
     var image: UIImage?
     var urlImage: String

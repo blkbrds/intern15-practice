@@ -16,13 +16,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+         loadAPI()
     }
     
     func configTableView() {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "tableView")
         tableView.dataSource = self
-        loadAPI()
         loadAPIImage()
         tableView.rowHeight = 100
     }
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         print("load API")
         viewModel.loadNameAPI { (done, msg) in
             if done {
-                self.tableView.reloadData()
+                self.updateUI()
             } else {
                 print("API Error: \(msg)")
             }
@@ -40,6 +40,7 @@ class HomeViewController: UIViewController {
     
     private func loadAPIImage() {
         print("Load APIImage")
+        
         viewModel.loadImageAPI { (done, msg) in
             if done {
                 self.updateUI()

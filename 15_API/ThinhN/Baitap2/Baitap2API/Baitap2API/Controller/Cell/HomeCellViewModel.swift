@@ -9,9 +9,9 @@
 import Foundation
 
 class HomeCellViewModel {
-    var bookAPI: BookAPI = BookAPI()
+    var book: Book = Book()
     
-    init(bookAPI: BookAPI ) {
-        self.bookAPI = bookAPI
+    init(book: Book ) {
+        self.book = book
     }
 }
