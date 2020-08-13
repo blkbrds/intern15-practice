@@ -22,21 +22,27 @@ class HomeViewController: UIViewController {
         let nib = UINib(nibName: "HomeTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
-        
     }
     
     private func updateUI() {
         tableView.reloadData()
     }
+    
     func loadAPI() {
         viewModel.loadNameAPI { [weak self] (done, msg) in
             guard let self = self else { return}
             if done {
                 self.updateUI()
             } else {
-                print("API ERROR : \(msg)")
+                self.showAlert(msg: msg)
             }
         }
+    }
+    
+    func showAlert(msg: String) {
+        let alert = UIAlertController(title: "Warning", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        self.present(alert,animated: true, completion: nil )
     }
 }
 extension HomeViewController: UITableViewDataSource {
@@ -53,7 +59,7 @@ extension HomeViewController: UITableViewDataSource {
         } else {
             cell.bookImageView.image = nil
         }
-        Networking.shared().dowloadImage(url: item.urlImage) { (image) in
+        Networking.shared().dowloadImage(urlString: item.urlImage) { (image) in
             if let image = image {
                 cell.bookImageView.image = image
                 item.image = image
