@@ -21,13 +21,13 @@ class AddPostViewController: BaseViewController {
     var titlePost: String = ""
     let titleAddPost: String = "Add Post"
     let editPost: String = "Edit Post"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func setupUI() {
-        title = "Add Post"
-       // title = status ? titleAddPost : editPost
+        title = status ? titleAddPost : editPost
         titlePostTextField.text = titlePost
         contentPostTextField.text = detailContentPost
         contentPostTextField.clipsToBounds = true
