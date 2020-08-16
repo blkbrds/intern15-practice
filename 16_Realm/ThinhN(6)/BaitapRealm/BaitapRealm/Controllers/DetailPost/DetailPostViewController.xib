@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailPostViewController" customModule="BaitapRealm" customModuleProvider="target">
+            <connections>
+                <outlet property="contentPostLabel" destination="ODE-Ki-eF4" id="Mg4-SG-3QY"/>
+                <outlet property="datePostLabel" destination="Sve-rC-gbT" id="7OS-IU-CRA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-rC-gbT">
+                    <rect key="frame" x="20" y="64" width="374" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODE-Ki-eF4">
+                    <rect key="frame" x="30" y="114" width="354" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="PMx-cl-mIg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btb-Ou-lrT">
+                    <rect key="frame" x="20" y="610" width="374" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Edit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="editPostButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="ONo-gv-SYM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGP-ne-vLC">
+                    <rect key="frame" x="20" y="690" width="374" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Delete">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="deletePostButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="scS-Nm-K0t"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jGP-ne-vLC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Gac-aW-Rsm"/>
+                <constraint firstItem="btb-Ou-lrT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Jfr-YZ-bzx"/>
+                <constraint firstItem="ODE-Ki-eF4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="LdC-z0-V9z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jGP-ne-vLC" secondAttribute="trailing" constant="20" id="Nmv-Mx-zS6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sve-rC-gbT" secondAttribute="trailing" constant="20" id="OAh-QP-OGT"/>
+                <constraint firstItem="jGP-ne-vLC" firstAttribute="top" secondItem="btb-Ou-lrT" secondAttribute="bottom" constant="50" id="WXA-GV-WAj"/>
+                <constraint firstItem="Sve-rC-gbT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YNB-p9-JgJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ODE-Ki-eF4" secondAttribute="trailing" constant="30" id="Yh3-mh-brg"/>
+                <constraint firstItem="btb-Ou-lrT" firstAttribute="top" secondItem="ODE-Ki-eF4" secondAttribute="bottom" constant="196" id="b9n-kR-E4a"/>
+                <constraint firstItem="ODE-Ki-eF4" firstAttribute="top" secondItem="Sve-rC-gbT" secondAttribute="bottom" constant="50" id="daV-xN-zoN"/>
+                <constraint firstItem="Sve-rC-gbT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="g55-vy-NbR"/>
+                <constraint firstItem="btb-Ou-lrT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iXn-oS-lfy"/>
+                <constraint firstItem="jGP-ne-vLC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tqp-HD-ANX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="btb-Ou-lrT" secondAttribute="trailing" constant="20" id="tuo-ui-6yj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="125"/>
+        </view>
+    </objects>
+</document>
