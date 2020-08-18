@@ -11,24 +11,18 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    let locationManager = CLLocationManager()
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestLocation()
-        locationManager.requestWhenInUseAuthorization()
-        
-        
+        searchBar.delegate = self
         addAnnotations()
         //addAnnotation()
         addOverlayData()
         mapView.delegate = self
-        
         
         let hanoi = CLLocation(latitude: 16.072163, longitude: 108.227071)
         let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -61,6 +55,7 @@ class MapViewController: UIViewController {
             return
         }
         let location = sender.location(in: mapView)
+        
         let myCoordinate: CLLocationCoordinate2D = mapView.convert(location, toCoordinateFrom: mapView)
         
         // Generate pins.
@@ -69,11 +64,7 @@ class MapViewController: UIViewController {
         // Set the coordinates.
         myPin.coordinate = myCoordinate
         
-        // Set the title.
-        myPin.title = "title"
-        
-        // Set subtitle.
-        myPin.subtitle = "subtitle"
+        addPin(coordinate: myCoordinate, title: " This latitude:\(myPin.coordinate.latitude)", subTitle: " This longitude \(myPin.coordinate.longitude)")
         
         // Added pins to MapView.
         mapView.addAnnotation(myPin)
@@ -188,7 +179,7 @@ extension MapViewController: MKMapViewDelegate {
             } else {
                 view = MKPinAnnotationView(annotation: pin, reuseIdentifier: identifier)
                 // view.animatesDrop = true
-                //view.pinTintColor = .brown
+                // view.pinTintColor = .brown
                 view.canShowCallout = true
                 view.image = UIImage(named: "marker")
                 view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
@@ -221,13 +212,7 @@ extension MapViewController: MKMapViewDelegate {
     //MARK: - Action
     @objc func selectPinView(_ sender: UIButton?) {
     }
-    //
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        print("selected callout")
-    }
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-    }
+ 
     
     //MARK: - Renderer
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -251,27 +236,22 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager (manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            locationManager.requestLocation ()
-        }
-    }
-    
-//    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        if let location = locations.first {
-//            print("location:: (location)")
-//        }
-//    }
-    
-    func locationManager (manager: CLLocationManager, didFailWithError error: NSError) {
-        print ("error :: (error)")
-    }
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            let region = MKCoordinateRegion(center: location.coordinate, span: span)
-            mapView.setRegion(region, animated: true)
+extension MapViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.becomeFirstResponder()
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(searchBar.text!) { (placemakers: [CLPlacemark]?, error: Error?) in
+            if error == nil {
+                let placeMark = placemakers?.first
+                let ano = MKPointAnnotation ()
+                ano.coordinate = (placeMark?.location!.coordinate)!
+                ano.title = self.searchBar.text
+                self.mapView.addAnnotation(ano)
+                self.mapView.selectAnnotation(ano, animated: true )
+            } else {
+                print(error?.localizedDescription ?? "")
+            }
         }
     }
 }
+
