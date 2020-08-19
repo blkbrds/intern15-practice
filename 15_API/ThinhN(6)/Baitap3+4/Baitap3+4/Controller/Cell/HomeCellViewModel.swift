@@ -10,10 +10,10 @@ import Foundation
 
 class HomeCellViewModel {
     
-    var dataAPI: DataAPI = DataAPI()
+    var dataAPI: DataAPI
     
-    init(dataAPI: DataAPI = DataAPI()) {
+    init(dataAPI: DataAPI ) {
         self.dataAPI = dataAPI
     }
 }
-    
+

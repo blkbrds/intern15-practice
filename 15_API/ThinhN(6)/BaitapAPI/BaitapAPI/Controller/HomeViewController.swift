@@ -52,19 +52,13 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        cell.viewModel = viewModel.viewModelForCell(at: indexPath)
         let item = viewModel.books[indexPath.row]
-        cell.bookNameLabel.text = item.name
-        if item.image != nil {
-            cell.bookImageView.image = item.image
-        } else {
-            cell.bookImageView.image = nil
-        }
-        Networking.shared().dowloadImage(urlString: item.urlImage) { (image) in
+        viewModel.loadImage(urlString: item.urlImage) { (image) in
             if let image = image {
-                cell.bookImageView.image = image
-                item.image = image
+                cell.configImage(image: image)
             } else {
-                cell.bookImageView.image = nil
+                cell.configImage(image: nil)
             }
         }
         return cell 

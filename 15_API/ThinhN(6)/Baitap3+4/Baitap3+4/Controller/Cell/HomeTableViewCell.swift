@@ -12,16 +12,17 @@ class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleVideoLabel: UILabel!
     @IBOutlet weak var channelTitleLabel: UILabel!
-    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var publishedAtLabel: UILabel!
     
-    var viewModel = HomeCellViewModel() {
+    var viewModel: HomeCellViewModel? {
         didSet {
             updateUI()
         }
     }
 
     func updateUI() {
+        guard let viewModel = viewModel else {return }
         let dataAPI = viewModel.dataAPI
         titleVideoLabel.text = dataAPI.titleVideo
         channelTitleLabel.text = dataAPI.channelTitle
@@ -29,6 +30,7 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     func configImage(image: UIImage?) {
-        cellImageView.image = image
+        thumbnailImageView.image = image
     }
+    
 }

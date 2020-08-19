@@ -13,28 +13,56 @@ typealias Completion = (Bool, String) -> Void
 
 class HomeViewModel {
     var books: [Book] = []
+    static var cache: [String: UIImage] = [:]
     
     func loadNameAPI(completion: @escaping Completion) {
-        let urlString = Networking.urlString
-        Networking.shared().request(with: urlString) { (data, error) in
-            if let error = error {
-                completion(false, error.localizedDescription)
-            } else {
-                if let data = data {
-                    let json = data.toJSON()
-                    guard let feed = json["feed"] as? JSON, let entry = feed["entry"] as? [JSON] else { return }
-                    for item in entry {
-                        let book = Book(json: item)
-                        self.books.append(book)
-                    }
-                    completion(true,"")
+        Networking.shared().request { (apiResult: APIResult<DataAPIResult>) in
+            switch apiResult {
+            case .success(let entryResults):
+                let array = entryResults.dataAPI
+                for item in array {
+                    self.books.append(item )
+                }
+                completion(true, "stringError")
+            case .failure(let stringError ):
+                completion(false, stringError)
+                
+            }
+        }
+        
+    }
+ 
+    func loadImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
+        if let image = HomeViewModel.cache[urlString] {
+            completion(image)
+            return
+        }
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+        let config = URLSessionConfiguration.default
+        config.waitsForConnectivity = true
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+                if let data = data, let image = UIImage(data: data) {
+                    HomeViewModel.cache[urlString] = image
+                    completion(image)
                 } else {
-                    completion(false, "Data format is error")
+                    completion(nil)
                 }
             }
         }
+        task.resume()
     }
+    
     func numberOfRowsInSection() -> Int {
         return books.count
+    }
+    func viewModelForCell(at indexPath: IndexPath) -> HomeCellViewModel {
+        let item = books[indexPath.row]
+        let viewModel = HomeCellViewModel(book: item)
+        return viewModel
     }
 }

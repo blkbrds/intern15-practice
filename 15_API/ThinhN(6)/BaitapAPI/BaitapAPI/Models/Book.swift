@@ -10,17 +10,19 @@ import Foundation
 import UIKit
 
 class Book {
-    var name: String
+    var name: String = ""
     var image: UIImage?
-    var urlImage: String
-   
+    var urlImage: String = ""
+    
     init(json: JSON) {
-        let imname = json["im:name"] as! JSON
-        self.name = imname["label"] as! String
-        
-        let imimage = json["im:image"] as! [JSON]
-        let item2 = imimage[0]
-        self.urlImage = item2["label"] as! String
-       
+        if let imname = json["im:name"] as? JSON, let name = imname["label"] as? String {
+            self.name = name
+        } 
+        if let imimage = json["im:image"] as? [JSON] {
+            let item = imimage[0]
+            if let image = item["label"] as? String {
+                self.urlImage = image
+            }
+        }
     }
 }

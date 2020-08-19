@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
+typealias APICompletion<T> = (APIResult<T>) -> Void
+
 class Networking {
     
     static var cache: [String: UIImage] = [:]
-    static var urlString = "https://itunes.apple.com/us/rss/topaudiobooks/limit=10/json"
+    var urlString = "https://itunes.apple.com/us/rss/topaudiobooks/limit=10/json"
     
     private static var shareAPI: Networking = {
         let networking = Networking()
@@ -25,25 +27,32 @@ class Networking {
     
     private init() {}
     
-    func request(with urlString: String, completion: @escaping (Data?, APIError?) -> Void) {
+    func request(completion: @escaping APICompletion<DataAPIResult>) {
+        var books: [Book] = []
         guard let url = URL(string: urlString) else {
-            let error = APIError.error("URL Failed")
-            completion(nil, error)
+            let error = APIResult<DataAPIResult>.failure("URL Error")
+            completion(error)
             return
         }
         let config = URLSessionConfiguration.ephemeral
         config.waitsForConnectivity = true
-        
         let session = URLSession(configuration: config)
-        let task = session.dataTask(with: url) { (data, response, error ) in
+        let task = session.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
-                if let error = error {
-                    completion(nil, APIError.error(error.localizedDescription))
+                if let _ = error {
+                    completion(.failure("Error"))
                 } else {
                     if let data = data {
-                        completion(data, nil)
+                        let json = data.toJSON()
+                        guard let feed = json["feed"] as? JSON, let entry = feed["entry"] as? [JSON] else { return }
+                        for item in entry {
+                            let book = Book(json: item)
+                            books.append(book)
+                        }
+                        completion(.success(DataAPIResult(dataAPI: books)))
+                        
                     } else {
-                        completion(nil, APIError.error("Data format is error "))
+                        completion(.failure("Data format is error"))
                     }
                 }
             }

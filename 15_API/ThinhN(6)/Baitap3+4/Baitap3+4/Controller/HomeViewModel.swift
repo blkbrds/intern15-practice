@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-typealias Completion = (Bool,String) -> Void
+typealias Completion = (Bool, String?) -> Void
 
 class HomeViewModel {
     var titleVideos: [String] = []
@@ -37,7 +37,7 @@ class HomeViewModel {
                         self.dataAPI.append(dataAPI)
                         self.titleVideos.append(title)
                     }
-                    completion(true, "")
+                    completion(true, nil)
                 }
                 else {
                     completion(false, "Data format is error ")

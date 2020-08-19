@@ -8,16 +8,12 @@
 
 import Foundation
 
-enum APIError: Error {
-    case error(String)
-    case errorURL
-    
-    var localizedDescription: String {
-        switch self {
-        case .error(let string):
-            return string
-        case .errorURL:
-            return "URL String is error."
-        }
-    }
+struct DataAPIResult {
+    var dataAPI: [Book]
 }
+
+enum APIResult<T> {
+    case success(T)
+    case failure(String)
+}
+
