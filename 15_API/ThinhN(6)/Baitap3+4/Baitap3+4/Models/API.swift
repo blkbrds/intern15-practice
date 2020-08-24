@@ -8,16 +8,12 @@
 
 import Foundation
 
-enum APIError: Error {
-    case error(String)
-    case errorURL
+struct DataAPI {
+    var videos: [VideoAPI]
+}
+
+enum APIResult<T> {
     
-    var localizedDescription: String {
-        switch self {
-        case .error(let string):
-            return string
-        case .errorURL:
-            return "URL String is error."
-        }
-    }
+    case success(T)
+    case error(String)
 }

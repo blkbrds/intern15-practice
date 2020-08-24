@@ -27,10 +27,10 @@ class HomeTableViewCell: UITableViewCell {
         titleVideoLabel.text = dataAPI.titleVideo
         channelTitleLabel.text = dataAPI.channelTitle
         publishedAtLabel.text = dataAPI.publishedAt
+        
+        viewModel.loadImage { [weak self ] image in
+            guard let self = self else {return}
+            self.thumbnailImageView.image = image
+        }
     }
-    
-    func configImage(image: UIImage?) {
-        thumbnailImageView.image = image
-    }
-    
 }

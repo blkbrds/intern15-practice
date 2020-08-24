@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeCellViewModel {
     
-    var dataAPI: DataAPI
+    var dataAPI: VideoAPI
     
-    init(dataAPI: DataAPI ) {
+    init(dataAPI: VideoAPI ) {
         self.dataAPI = dataAPI
+    }
+    func loadImage(completion: @escaping (UIImage?) -> Void) {
+        ImageCache.loadImage(urlString: dataAPI.url, completion: completion)
     }
 }
 
