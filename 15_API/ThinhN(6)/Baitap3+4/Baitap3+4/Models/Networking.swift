@@ -45,7 +45,7 @@ class Networking {
                     guard let items = json["items"] as? [JSON] else {return }
                     for item in items {
                         if let snippet = item["snippet"] as? JSON {
-                            let video = VideoAPI(snippet)
+                            let video = VideoAPI(snippet: snippet)
                             videos.append(video)
                         }
                     }

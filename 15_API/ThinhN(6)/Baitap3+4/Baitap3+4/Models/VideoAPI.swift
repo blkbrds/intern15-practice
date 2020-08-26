@@ -14,7 +14,7 @@ class VideoAPI {
     var publishedAt: String = ""
     var url: String = ""
     
-    init(_ snippet: JSON) {
+    init(snippet: JSON) {
         guard let title = snippet["title"] as? String, let publishedAt = snippet["publishedAt"] as? String, let channelTitle = snippet["channelTitle"] as? String, let thumbnail = snippet["thumbnails"] as? JSON, let defaultAPI = thumbnail["default"] as? JSON, let urlAPI = defaultAPI["url"] as? String else { return }
         self.titleVideo = title
         self.channelTitle = channelTitle
