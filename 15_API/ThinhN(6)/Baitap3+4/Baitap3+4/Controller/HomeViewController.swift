@@ -49,7 +49,7 @@ class HomeViewController: UIViewController {
         }
     }
 }
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowInSection()
@@ -59,9 +59,9 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? HomeTableViewCell else { return UITableViewCell()}
         let itemViewModel = viewModel.viewModelForCell(at: indexPath)
         cell.viewModel = itemViewModel
-        return cell 
-        
+        return cell
     }
+    func detail
 }
 
 extension HomeViewController: UITableViewDelegate {
