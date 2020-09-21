@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Bai3v3ViewController" customModule="Bai3" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldq-0E-yO9" customClass="view1">
+                    <rect key="frame" x="20" y="219" width="130" height="130"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Ldq-0E-yO9" secondAttribute="height" multiplier="1:1" id="rLI-mS-5Nk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-kb-mPn" customClass="view2">
+                    <rect key="frame" x="170" y="219" width="130" height="130"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hbS-kb-mPn" secondAttribute="height" multiplier="1:1" id="g2Y-JV-p4E"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hbS-kb-mPn" secondAttribute="trailing" constant="20" id="KWf-55-5V2"/>
+                <constraint firstItem="hbS-kb-mPn" firstAttribute="leading" secondItem="Ldq-0E-yO9" secondAttribute="trailing" constant="20" id="SDe-dG-OSx"/>
+                <constraint firstItem="Ldq-0E-yO9" firstAttribute="top" secondItem="hbS-kb-mPn" secondAttribute="top" id="fhV-hF-09E"/>
+                <constraint firstItem="Ldq-0E-yO9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mC5-1d-huO"/>
+                <constraint firstItem="Ldq-0E-yO9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="sem-9e-sI2"/>
+                <constraint firstItem="hbS-kb-mPn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ydU-Ng-bib"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.25" y="153.16901408450704"/>
+        </view>
+    </objects>
+</document>

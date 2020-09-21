@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Bai5v5ViewController" customModule="Bai5" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gnl-eC-Swd" userLabel="View1">
+                    <rect key="frame" x="30" y="225" width="30" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Gnl-eC-Swd" secondAttribute="height" multiplier="1:1" id="T6W-Ry-LxU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kf-ef-dSd" userLabel="ViewBig">
+                    <rect key="frame" x="68" y="0.0" width="184" height="480"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-K5-SS5" userLabel="View2">
+                            <rect key="frame" x="34" y="225" width="30" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Teq-K5-SS5" secondAttribute="height" multiplier="1:1" id="5Ry-CV-ChV"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdw-Sa-Td0" userLabel="View3">
+                            <rect key="frame" x="115" y="225" width="30" height="30"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="zdw-Sa-Td0" secondAttribute="height" multiplier="1:1" id="u6p-pp-lAq"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="zdw-Sa-Td0" firstAttribute="centerY" secondItem="4Kf-ef-dSd" secondAttribute="centerY" id="2j7-CS-Zqk"/>
+                        <constraint firstItem="Teq-K5-SS5" firstAttribute="centerY" secondItem="4Kf-ef-dSd" secondAttribute="centerY" id="5b4-6G-4aR"/>
+                        <constraint firstItem="Teq-K5-SS5" firstAttribute="width" secondItem="4Kf-ef-dSd" secondAttribute="width" multiplier="0.163043" id="Ovz-nz-O0V"/>
+                        <constraint firstItem="zdw-Sa-Td0" firstAttribute="width" secondItem="Teq-K5-SS5" secondAttribute="width" id="PS4-5i-7q3"/>
+                        <constraint firstAttribute="trailing" secondItem="zdw-Sa-Td0" secondAttribute="trailing" constant="39" id="XgX-dy-oiE"/>
+                        <constraint firstItem="Teq-K5-SS5" firstAttribute="leading" secondItem="4Kf-ef-dSd" secondAttribute="leading" constant="34" id="beV-x2-ZFq"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ic6-cv-2uP" userLabel="View4">
+                    <rect key="frame" x="260" y="225" width="30" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Ic6-cv-2uP" secondAttribute="height" multiplier="1:1" id="bPE-35-UxX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4Kf-ef-dSd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="1wS-AN-XfY"/>
+                <constraint firstItem="Gnl-eC-Swd" firstAttribute="width" secondItem="4Kf-ef-dSd" secondAttribute="width" multiplier="0.163043" id="272-eu-aTl"/>
+                <constraint firstItem="4Kf-ef-dSd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="69R-DF-p80"/>
+                <constraint firstItem="4Kf-ef-dSd" firstAttribute="leading" secondItem="Gnl-eC-Swd" secondAttribute="trailing" constant="8" id="6RT-hM-OKl"/>
+                <constraint firstItem="Ic6-cv-2uP" firstAttribute="width" secondItem="Gnl-eC-Swd" secondAttribute="width" id="Aj0-AP-teJ"/>
+                <constraint firstItem="Ic6-cv-2uP" firstAttribute="centerY" secondItem="4Kf-ef-dSd" secondAttribute="centerY" id="FRK-DG-bsD"/>
+                <constraint firstItem="Ic6-cv-2uP" firstAttribute="leading" secondItem="4Kf-ef-dSd" secondAttribute="trailing" constant="8" id="Uer-u5-7Zy"/>
+                <constraint firstItem="4Kf-ef-dSd" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="ZGe-3M-RHv"/>
+                <constraint firstItem="4Kf-ef-dSd" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.575" id="cQe-2a-rHX"/>
+                <constraint firstItem="Gnl-eC-Swd" firstAttribute="centerY" secondItem="4Kf-ef-dSd" secondAttribute="centerY" id="tdJ-Ls-Otl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.25" y="153.16901408450704"/>
+        </view>
+    </objects>
+</document>

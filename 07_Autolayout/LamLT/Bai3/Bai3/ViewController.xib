@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Bai3" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkj-23-EgE" customClass="view2">
+                    <rect key="frame" x="237" y="403" width="100" height="100"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibi-g0-6O7" customClass="view1">
+                    <rect key="frame" x="77" y="403" width="100" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="HRb-n3-9HY"/>
+                        <constraint firstAttribute="width" constant="100" id="tt2-ny-Gt3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tkj-23-EgE" firstAttribute="leading" secondItem="ibi-g0-6O7" secondAttribute="trailing" constant="60" id="31l-bf-GH5"/>
+                <constraint firstItem="ibi-g0-6O7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="C4Y-YB-bgo"/>
+                <constraint firstItem="Tkj-23-EgE" firstAttribute="width" secondItem="ibi-g0-6O7" secondAttribute="width" id="KkJ-fz-YoL"/>
+                <constraint firstItem="ibi-g0-6O7" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="234" id="Nzi-wh-ebI"/>
+                <constraint firstItem="Tkj-23-EgE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="80" id="cMt-l8-hEX"/>
+                <constraint firstItem="Tkj-23-EgE" firstAttribute="height" secondItem="ibi-g0-6O7" secondAttribute="height" id="h9b-Gv-kJc"/>
+                <constraint firstItem="ibi-g0-6O7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="tXP-DY-JUK"/>
+                <constraint firstItem="Tkj-23-EgE" firstAttribute="centerY" secondItem="ibi-g0-6O7" secondAttribute="centerY" id="vj3-xE-hjH"/>
+                <constraint firstItem="Tkj-23-EgE" firstAttribute="centerY" secondItem="ibi-g0-6O7" secondAttribute="centerY" id="x83-Ph-y7M"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.25" y="153.16901408450704"/>
+        </view>
+    </objects>
+</document>
